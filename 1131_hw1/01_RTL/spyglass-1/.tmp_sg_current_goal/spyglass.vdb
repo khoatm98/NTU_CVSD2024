@@ -1,0 +1,1 @@
+##MESSAGESORT -rule LogicDepth -language Verilog+VHDL -arg6 NUMBER:DESCENDING -message %1Logic delay from %2 %3 to %4 %5 (%6 levels) exceeds allowed max (%7)

@@ -1,0 +1,99 @@
+read_file -type verilog alu.v
+# Started at 11:08:04, Completed at 11:08:05 (Elapsed time = 00:00:01.459)
+
+set_option top alu
+# Started at 11:08:51, Completed at 11:08:51 (Elapsed time = 00:00:00.030)
+
+current_goal Design_Read -top alu
+# Started at 11:08:59, Completed at 11:08:59 (Elapsed time = 00:00:00.830)
+
+link_design -force
+# Started at 11:09:06, Completed at 11:09:13 (Elapsed time = 00:00:05.439)
+
+current_goal lint/lint_rtl -top alu
+# Started at 11:12:31, Completed at 11:12:36 (Elapsed time = 00:00:04.270)
+
+run_goal
+# Started at 11:12:36, Completed at 11:12:51 (Elapsed time = 00:00:16.379)
+
+current_goal lint/lint_rtl_enhanced -top alu
+# Started at 11:12:52, Completed at 11:12:57 (Elapsed time = 00:00:04.509)
+
+run_goal
+# Started at 11:12:57, Completed at 11:13:06 (Elapsed time = 00:00:09.829)
+
+current_goal lint/lint_rtl -top alu
+# Started at 11:13:06, Completed at 11:13:11 (Elapsed time = 00:00:04.379)
+
+gui_select_message -rule W416 -msg {Return type width '20' is greater than return value width '16' in function 'SAT' [Hierarchy: ':alu:SAT']}
+# Started at 11:13:32, Completed at 11:13:32 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W263 -msg {Case label (4'd0) width (4) does not match selector (i_data_b[4:0] ) width (5).[Hierarchy: ':alu']}
+# Started at 11:14:11, Completed at 11:14:11 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 11:16:07, Completed at 11:16:27 (Elapsed time = 00:00:18.330)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'alu.i_rst_n' (flop: 'alu.data_accumulated_r[0]') used as non-reset/synchronous-reset at instance 'alu.\curr_state_reg[0] .D' (File Name: 'alu.v' ,Line no.: '283')}
+# Started at 11:16:38, Completed at 11:16:38 (Elapsed time = 00:00:00.000)
+
+current_goal lint/lint_rtl_enhanced -top alu
+# Started at 11:17:47, Completed at 11:17:55 (Elapsed time = 00:00:05.519)
+
+run_goal
+# Started at 11:17:55, Completed at 11:18:09 (Elapsed time = 00:00:11.170)
+
+gui_select_message -rule CombLoop -msg {Combinational loop exists at 'alu.result_wait_r[15]'}
+# Started at 11:20:56, Completed at 11:20:56 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 11:21:24, Completed at 11:21:45 (Elapsed time = 00:00:18.990)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'alu.i_rst_n' (flop: 'alu.data_accumulated_r[0]') used as non-reset/synchronous-reset at instance 'alu.\curr_state_reg[0] .D' (File Name: 'alu.v' ,Line no.: '283')}
+# Started at 11:22:36, Completed at 11:22:36 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 11:25:02, Completed at 11:25:21 (Elapsed time = 00:00:17.610)
+
+run_goal
+# Started at 11:25:48, Completed at 11:26:09 (Elapsed time = 00:00:18.579)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'inst_r[3:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'alu']}
+# Started at 11:26:19, Completed at 11:26:19 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 11:27:43, Completed at 11:28:04 (Elapsed time = 00:00:18.920)
+
+gui_select_message -rule W164a -msg {LHS: 'tmp' width 16 is less than RHS: '(tmp + round)' width 17 in assignment [Hierarchy: ':alu']}
+# Started at 11:28:09, Completed at 11:28:09 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W164a -msg {LHS: 'fx_softplus' width 16 is less than RHS: '(res_extend[((3 * DATA_W) - 1) -:DATA_W]  + res_extend[(((3 * DATA_W) - 1) - DATA_W)])' width 17 in assignment [Hierarchy: ':alu']}
+# Started at 11:29:43, Completed at 11:29:43 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W164b -msg {LHS: 'numerator' width 18 is greater than RHS: 'i_data_a' width 16 in assignment [Hierarchy: ':alu']}
+# Started at 11:31:32, Completed at 11:31:32 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 11:31:46, Completed at 11:32:06 (Elapsed time = 00:00:15.469)
+
+gui_select_message -rule W164a -msg {LHS: 'tmp' width 17 is less than RHS: '(tmp + round)' width 18 in assignment [Hierarchy: ':alu']}
+# Started at 11:32:28, Completed at 11:32:28 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 11:33:00, Completed at 11:33:20 (Elapsed time = 00:00:15.120)
+
+gui_select_message -rule CMD_overloadrule01 -msg {Overload Specification for rule 'W339' has been ignored}
+# Started at 11:33:29, Completed at 11:33:29 (Elapsed time = 00:00:00.000)
+
+current_goal lint/lint_rtl -top alu
+# Started at 11:34:01, Completed at 11:34:09 (Elapsed time = 00:00:05.510)
+
+run_goal
+# Started at 11:34:09, Completed at 11:34:22 (Elapsed time = 00:00:07.860)
+
+current_goal lint/lint_rtl_enhanced -top alu
+# Started at 11:34:46, Completed at 11:34:53 (Elapsed time = 00:00:05.250)
+
+gui_select_message -rule CMD_overloadrule01 -msg {Overload Specification for rule 'W339' has been ignored}
+# Started at 11:35:18, Completed at 11:35:18 (Elapsed time = 00:00:00.009)
+
