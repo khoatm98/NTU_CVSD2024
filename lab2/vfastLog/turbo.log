@@ -1,0 +1,3 @@
+Command Line: /usr/spring_soft/verdi/cur/platform/LINUXAMD64/bin/vfast -silent -del . -o /home/raid7_2/user12/r2k41036/NTU_CVSD2024/lab2/Lab2_alu.vcd.fsdb -ft verilog /home/raid7_2/user12/r2k41036/NTU_CVSD2024/lab2/Lab2_alu.vcd
+uname(Linux cad27 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64)
+au time 1.714666 1.580349 0.058738 delta 70918144 70918144 total 168943616 168943616

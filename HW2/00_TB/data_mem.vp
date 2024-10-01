@@ -1,0 +1,26 @@
+module data_mem (
+	input             i_clk,
+	input             i_rst_n,
+	input             i_we,
+	input  [ 31 : 0 ] i_addr,
+	input  [ 31 : 0 ] i_wdata,
+	output [ 31 : 0 ] o_rdata
+);
+`protected
+7D@5?,752fJQ0LVB;5F4T9f4-2H2;S-DaRG0RDW-1AQ-gd+;0RL>,)WQQJc._U5,
++20Y43ORFJc0K@&V67JWMX;VNR7gdQ,)8YX&cf?)GCAU@4X[fW^2gg7_F]JgS\Fc
+aC&O+aP;G8NUb=b-^I=HIE&WB^Z^FH/01B;FW=de]+=N(8.0d^56fFG,@Z.:OVS+
+[+6T=_P@72-<>712SW7HQ<F1df]aSULSWSgeO87Id]Mc7[4TGd5Ga82LAAAJ2b@L
+.GcEJBTB,&^IdNfLI/NSKg-\+SL(;&Kb2BTZJRII&S@Z^0@U)#4^7N+,gH7f\P;E
+d9S3E#0DgL7L-fJJW;];J#N6cXFea.JbNOS2R0YH6:0d_5KIU1]SG)9K?^?.N:N/
+SPc9T\@FZB01>JW^HOY^F9W5NXZDCGaJCec6.:;g#S_6H@,f1YVg:R,B#9&ebR^a
+I(4C+#VZLLC:G#5ML/H5I(.=.-AC.94T48WA/HO&O/]U4Jg>,Sa>-E)>-:4;15+C
+K_8?,>#/[0)MO)a#Z\[-CZ,H3P+WaDGX(^P1.c1OL(C?dL]NPRK\d@=7??:HWcc5
+MQIDE5Y?:.@c=0WOUNF(I[JLe9/(TaO]G@[NcM4-15:0T(+RU9@Q)BeK.<eXB\N-
+)g3=@?A>WdKU#SB7g681,QO1g<.YJK#0.BOMSJbP9?LEOg##ST]b1R(T7F)XLWYY
+\R6JgPF=]/aC]HJ<ZMVM_b]-_ZC\C\.]EbKHRP=F?21=\MS<J>5^RXK+Zc:OF08T
+GW-bT]25^6Qc[3&(;EfaD0H[[@EEgdE<=YafgTV>1+bRN6N,NW8d@XLVNH/..fbK
+2P5CY,7I2ZH:Xe,<\gJ=ea,WZfZUTFEfHc):d0J/^f:M9#]b@)f]ZabTcC7LR8Pf
+OWZ\BT6gBYZ_:J\]5?Q#WWM]N)DR?J;L??,VH+U_03SbI?5N&E:FDL=C+LS@JbdQ
+:UccE5M+IC1De5RcZ0\W]W)bEAQCS=Xd_31:0(]CWKcb,-7BGRU:4W=CM$
+`endprotected
