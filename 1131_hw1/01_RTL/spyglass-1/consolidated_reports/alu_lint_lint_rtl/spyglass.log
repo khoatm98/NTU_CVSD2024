@@ -1,4 +1,4 @@
-SpyGlass run started at 11:07:04 AM on Sep 18 2024 
+SpyGlass run started at 07:26:15 PM on Sep 23 2024 
 
 SpyGlass Predictive Analyzer(R) - Version SpyGlass_vT-2022.06
 Synopsys TestMAX(TM)
@@ -1888,7 +1888,7 @@ Version of Policy 'starc2002': SpyGlass_vT-2022.06
 
 ##build_id : T-2022.06
 ##system   : Linux cad27 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64
-##cwd      : /home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL
+##cwd      : /home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL
 ##lang     : Verilog+VHDL
 ##args     : -mSpyGlass::Compatibility::v2_7_3 \
              -mSpyGlass::Compatibility::v2_7_3 \
@@ -1932,7 +1932,7 @@ Version of Policy 'starc2002': SpyGlass_vT-2022.06
 ##verbosity level   : 2
 ##exact cmdline arg : -batch -project spyglass-1.prj -goal lint/lint_rtl -64bit
 ##spyglass_run.csh begins :
-;	cd /home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL
+;	cd /home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL
 ;	setenv ATRENTA_LICENSE_FILE 26585@lshc
 ;	setenv SPYGLASS_LD_PRELOAD /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/libreplacemalloc.so
 ;	setenv SPYGLASS_DW_PATH /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/dw_support
@@ -2028,9 +2028,9 @@ WARNING [237]    Following rules can not run on restored design database. Hence,
 INFO [76]    Using './spyglass-1/alu/WORK/64' as the Work Directory for 64bit precompiled dump.
 Checking Rule PrecompileLibCheck01 (Rule 1 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PrecompileLibCheck02 (Rule 2 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule PrecompileLibCheck03 (Rule 3 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PrecompileLibCheck03 (Rule 3 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
 Checking Rule PrecompileLibCheck04 (Rule 4 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule AbstractInterface (Rule 5 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule AbstractInterface (Rule 5 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_assume_path01 (Rule 6 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_sdcschema02 (Rule 7 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
 Checking Rule SGDC_clock05 (Rule 8 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2054,11 +2054,11 @@ Checking Rule SGDC_waive08 (Rule 25 of total 267) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_waive09 (Rule 26 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive10 (Rule 27 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive11 (Rule 28 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive12 (Rule 29 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_waive12 (Rule 29 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive13 (Rule 30 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive21 (Rule 31 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive22 (Rule 32 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive30 (Rule 33 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_waive30 (Rule 33 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive32 (Rule 34 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive33 (Rule 35 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive36 (Rule 36 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2078,32 +2078,32 @@ Checking Rule CMD_ignorelibs01 (Rule 49 of total 267) .... done (Time = 0.00s, M
 Checking Rule ReportRuleNotRun (Rule 50 of total 267) .... done (Time = 0.02s, Memory = -8.0K)
 Checking Rule STARC05-2.3.1.2c (Rule 51 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W442a (Rule 52 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule W442b (Rule 53 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule W442b (Rule 53 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
 Checking Rule W442c (Rule 54 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W442f (Rule 55 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule mixedsenselist (Rule 56 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule badimplicitSM1 (Rule 57 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule badimplicitSM2 (Rule 58 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule badimplicitSM4 (Rule 59 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule badimplicitSM4 (Rule 59 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule bothedges (Rule 60 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule BlockHeader (Rule 61 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W421 (Rule 62 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-2.1.6.5 (Rule 63 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportStopSummary (Rule 64 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportStopSummary (Rule 64 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule ReportIgnoreSummary (Rule 65 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 5 sec, 4.72 sec, 1158556 KB, 3640248 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis started: 5 sec, 4.72 sec, 1158556 KB, 3640248 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 6 sec, 5.40 sec, 1228764 KB, 3671472 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis started: 6 sec, 5.40 sec, 1228764 KB, 3671472 KB
  Analyzing source file "alu.v" ....
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 5 sec, 4.74 sec, 1226468 KB, 3640248 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.02 sec, 67912 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 5 sec, 4.74 sec, 1224164 KB, 3640248 KB
-##SGDEBUG [BENCHMARK_INCR]: Elaboration started: 0 sec, 0.00 sec, -2304 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 6 sec, 5.42 sec, 1294388 KB, 3671472 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.02 sec, 65624 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 6 sec, 5.42 sec, 1296668 KB, 3671472 KB
+##SGDEBUG [BENCHMARK_INCR]: Elaboration started: 0 sec, 0.00 sec, 2280 KB, 0 KB
  Elaborating Top Verilog Design Unit 'alu' ..... done
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 5 sec, 4.74 sec, 1289860 KB, 3640248 KB
-##SGDEBUG [BENCHMARK_INCR]: Elaboration finished: 0 sec, 0.00 sec, 65696 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 5 sec, 4.74 sec, 1289860 KB, 3640248 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 6 sec, 5.43 sec, 1360060 KB, 3671472 KB
+##SGDEBUG [BENCHMARK_INCR]: Elaboration finished: 0 sec, 0.00 sec, 63392 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 6 sec, 5.43 sec, 1360060 KB, 3671472 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker started: 0 sec, 0.00 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 5 sec, 4.75 sec, 1289860 KB, 3640248 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 6 sec, 5.43 sec, 1360060 KB, 3671472 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker finished: 0 sec, 0.00 sec, 0 KB, 0 KB
 Checking Rule ElabSummary (Rule 66 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportCheckDataSummary (Rule 67 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2126,7 +2126,7 @@ Checking Rule SGDC_reset02 (Rule 76 of total 267) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_reset03 (Rule 77 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_libgroup03 (Rule 78 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_ungroup02 (Rule 79 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule HdlLibDuCheck (Rule 80 of total 267) .... done (Time = 0.00s, Memory = 24.0K)
+Checking Rule HdlLibDuCheck (Rule 80 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule RtlDesignInfo (Rule 81 of total 267)
 ##SGDEBUG [BENCHMARK_DATA]: Number of RTL Design Units = 1
 ##SGDEBUG: RTL statistics for Verilog design units:
@@ -2141,23 +2141,23 @@ Checking Rule RtlDesignInfo (Rule 81 of total 267)
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 0
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Terms = 57
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Paths = 0
- .... done (Time = 0.00s, Memory = 2280.0K)
-Checking Rule W339a (Rule 82 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+ .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule W339a (Rule 82 of total 267) .... done (Time = 0.00s, Memory = -32.0K)
 Checking Rule W416 (Rule 83 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule mixedsenselist (Rule 84 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W110a (Rule 85 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule preReq_ConsCase (Rule 86 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule CheckCelldefine (Rule 87 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive23 (Rule 88 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive26 (Rule 89 of total 267) .... done (Time = 0.00s, Memory = 16.0K)
+Checking Rule SGDC_waive26 (Rule 89 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive27 (Rule 90 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive29 (Rule 91 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_waive29 (Rule 91 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-2.3.1.5b (Rule 92 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule STARC05-2.3.3.1 (Rule 93 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule STARC05-2.3.3.1 (Rule 93 of total 267) .... done (Time = 0.01s, Memory = 32.0K)
 Checking Rule STARC05-2.3.3.1 (Rule 94 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-2.11.3.1 (Rule 95 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule W317 (Rule 96 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule W422 (Rule 97 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule W317 (Rule 96 of total 267) .... done (Time = 0.00s, Memory = -8.0K)
+Checking Rule W422 (Rule 97 of total 267) .... done (Time = 0.00s, Memory = 2280.0K)
 Checking Rule W426 (Rule 98 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W480 (Rule 99 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W481a (Rule 100 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2165,26 +2165,26 @@ Checking Rule W481b (Rule 101 of total 267) .... done (Time = 0.00s, Memory = 0.
 Checking Rule W422 (Rule 102 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W292 (Rule 103 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W71 (Rule 104 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule W287b (Rule 105 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule W287b (Rule 105 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W293 (Rule 106 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W398 (Rule 107 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W421 (Rule 108 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W424 (Rule 109 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W467 (Rule 110 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Prereqs_RegInputOutputs (Rule 111 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule PragmaComments-ML (Rule 112 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule PragmaComments-ML (Rule 112 of total 267) .... done (Time = 0.01s, Memory = 8.0K)
 Checking Rule PragmaComments-ML (Rule 113 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule CheckDelayTimescale-ML (Rule 114 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Prereqs_CheckTimeUnitandPrecision-ML (Rule 115 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking ELABDU Rules for designUnit alu
     Checking Rule Prereqs_InferLatch (Rule 116 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.1.4.5 (Rule 117 of total 267) .... done (Time = 0.00s, Memory = 24.0K)
+    Checking Rule STARC05-2.1.4.5 (Rule 117 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.5.3 (Rule 118 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.2.3.3 (Rule 119 of total 267) .... done (Time = 0.00s, Memory = 2256.0K)
+    Checking Rule STARC05-2.2.3.3 (Rule 119 of total 267) .... done (Time = 0.00s, Memory = 2264.0K)
     Checking Rule STARC05-2.3.1.6 (Rule 120 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.10.2.3 (Rule 121 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule STARC05-2.10.2.3 (Rule 121 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.3.2a (Rule 122 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.11.3.1 (Rule 123 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule STARC05-2.11.3.1 (Rule 123 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.3.1 (Rule 124 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4a (Rule 125 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4b (Rule 126 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2193,16 +2193,16 @@ Checking ELABDU Rules for designUnit alu
     Checking Rule W122 (Rule 129 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W496a (Rule 130 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W496b (Rule 131 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W19 (Rule 132 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W66 (Rule 133 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W19 (Rule 132 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W66 (Rule 133 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
     Checking Rule W116 (Rule 134 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W123 (Rule 135 of total 267) .... done (Time = 0.00s, Memory = 16.0K)
+    Checking Rule W123 (Rule 135 of total 267) .... done (Time = 0.00s, Memory = 24.0K)
     Checking Rule W156 (Rule 136 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W215 (Rule 137 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W216 (Rule 138 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule W216 (Rule 138 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W218 (Rule 139 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W224 (Rule 140 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W263 (Rule 141 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W263 (Rule 141 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
     Checking Rule W289 (Rule 142 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W337 (Rule 143 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W416 (Rule 144 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2211,7 +2211,7 @@ Checking ELABDU Rules for designUnit alu
     Checking Rule W415a (Rule 147 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W486 (Rule 148 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W499 (Rule 149 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W502 (Rule 150 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W502 (Rule 150 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W116 (Rule 151 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W122 (Rule 152 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W123 (Rule 153 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2219,7 +2219,7 @@ Checking ELABDU Rules for designUnit alu
     Checking Rule W71 (Rule 155 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W240 (Rule 156 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W240 (Rule 157 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W287a (Rule 158 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W287a (Rule 158 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
     Checking Rule W293 (Rule 159 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W398 (Rule 160 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W424 (Rule 161 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2227,10 +2227,10 @@ Checking ELABDU Rules for designUnit alu
     Checking Rule W505 (Rule 163 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W505 (Rule 164 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W528 (Rule 165 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W528 (Rule 166 of total 267) .... done (Time = 0.00s, Memory = 472.0K)
+    Checking Rule W528 (Rule 166 of total 267) .... done (Time = 0.00s, Memory = 528.0K)
     Checking Rule Prereqs_Usage (Rule 167 of total 267) .... done (Time = 0.00s, Memory = -16.0K)
     Checking Rule Prereqs_ConstantInput-ML (Rule 168 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule ReportPortInfo-ML (Rule 169 of total 267) .... done (Time = 0.00s, Memory = 48.0K)
+    Checking Rule ReportPortInfo-ML (Rule 169 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Prereqs_ReportPortInfo-ML (Rule 170 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Prereqs_ReportPortInfo-ML (Rule 171 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule NoAssignX-ML (Rule 172 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2238,28 +2238,28 @@ Checking ELABDU Rules for designUnit alu
     Checking Rule Postreqs_Usage_ML (Rule 174 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule NoXInCase-ML (Rule 175 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking ELABDU Rules for designUnit alu
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Restoring NOM started: 6 sec, 5.50 sec, 1290388 KB, 3640252 KB
-##SGDEBUG [BENCHMARK_INCR]: Restoring NOM started: 1 sec, 0.75 sec, 528 KB, 4 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Restoring NOM started: 7 sec, 6.21 sec, 1360644 KB, 3671476 KB
+##SGDEBUG [BENCHMARK_INCR]: Restoring NOM started: 1 sec, 0.78 sec, 584 KB, 4 KB
 
 INFO [235]    Restoring design database from directory './spyglass-1/alu/.SG_SaveRestoreDB/autogenerated__default_snapshot' ...
               done
 
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Restoring NOM completed: 6 sec, 5.53 sec, 1327412 KB, 3640252 KB
-##SGDEBUG [BENCHMARK_INCR]: Restoring NOM completed: 0 sec, 0.03 sec, 37024 KB, 0 KB
-     (Memory Used = 37024.0K(incr), 1327412.0K(tot), Cpu Time = 0.03s(incr))
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Restoring NOM completed: 7 sec, 6.24 sec, 1397732 KB, 3671476 KB
+##SGDEBUG [BENCHMARK_INCR]: Restoring NOM completed: 0 sec, 0.03 sec, 37088 KB, 0 KB
+     (Memory Used = 37088.0K(incr), 1397732.0K(tot), Cpu Time = 0.04s(incr))
 Checking Rule InferBlackBox (Rule 176 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 ##SGDEBUG [BENCHMARK_DATA]: Number of NOM Modules = 1
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances = 1371
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Nets = 4598
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Terminals = 17179
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances per Module (max and avg) = 1371, 1371
-Checking Rule checkCMD_mthresh (Rule 177 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Restoring SDE Data started: 6 sec, 5.56 sec, 1328292 KB, 3640252 KB
-##SGDEBUG [BENCHMARK_INCR]: Restoring SDE Data started: 0 sec, 0.03 sec, 880 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Restoring SDE Data completed: 6 sec, 5.56 sec, 1328292 KB, 3640252 KB
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances = 1688
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Nets = 5230
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Terminals = 18484
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances per Module (max and avg) = 1688, 1688
+Checking Rule checkCMD_mthresh (Rule 177 of total 267) .... done (Time = 0.00s, Memory = 40.0K)
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Restoring SDE Data started: 7 sec, 6.27 sec, 1398604 KB, 3671476 KB
+##SGDEBUG [BENCHMARK_INCR]: Restoring SDE Data started: 0 sec, 0.03 sec, 872 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Restoring SDE Data completed: 7 sec, 6.27 sec, 1398604 KB, 3671476 KB
 ##SGDEBUG [BENCHMARK_INCR]: Restoring SDE Data completed: 0 sec, 0.00 sec, 0 KB, 0 KB
-     (Memory Used = 0.0K(incr), 1328292.0K(tot), Cpu Time = 0.00s(incr))
-Checking Rule SGDC_waive37 (Rule 178 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+     (Memory Used = 0.0K(incr), 1398604.0K(tot), Cpu Time = 0.00s(incr))
+Checking Rule SGDC_waive37 (Rule 178 of total 267) .... done (Time = 0.00s, Memory = -3512.0K)
 Checking Rule Prereq_IntClock for module alu (Rule 179 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W336 for module alu (Rule 180 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W414 for module alu (Rule 181 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2274,53 +2274,53 @@ Checking Rule _abstractPortSGDC (Rule 186 of total 267) .... done (Time = 0.00s,
 Checking Rule SGDC_abstract_port03 (Rule 187 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port04 (Rule 188 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port05 (Rule 189 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port07 (Rule 190 of total 267) .... done (Time = 0.00s, Memory = -8.0K)
-Checking Rule SGDC_abstract_port08 (Rule 191 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port10 (Rule 192 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port11 (Rule 193 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port07 (Rule 190 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port08 (Rule 191 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule SGDC_abstract_port10 (Rule 192 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_abstract_port11 (Rule 193 of total 267) .... done (Time = 0.00s, Memory = 2280.0K)
 Checking Rule SGDC_abstract_port12 (Rule 194 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port13 (Rule 195 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule HangingNetPreReq-ML (Rule 196 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportUngroup (Rule 197 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule ReportUngroup (Rule 197 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule LINT_portReten (Rule 198 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port21 (Rule 199 of total 267) .... done (Time = 0.00s, Memory = 2272.0K)
+Checking Rule SGDC_abstract_port21 (Rule 199 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule InferLatch (Rule 200 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
-Checking Rule UndrivenInTerm-ML (Rule 201 of total 267) .... done (Time = 0.03s, Memory = -2304.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: VS rule checking finished...: 6 sec, 6.52 sec, 1330884 KB, 3640252 KB
-##SGDEBUG [BENCHMARK_INCR]: VS rule checking finished...: 0 sec, 0.96 sec, 2592 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elab View Deletion Finished: 6 sec, 6.53 sec, 1267492 KB, 3640252 KB
+Checking Rule UndrivenInTerm-ML (Rule 201 of total 267) .... done (Time = 0.04s, Memory = -2304.0K)
+##SGDEBUG [BENCHMARK_ABSOLUTE]: VS rule checking finished...: 7 sec, 7.27 sec, 1401196 KB, 3671476 KB
+##SGDEBUG [BENCHMARK_INCR]: VS rule checking finished...: 0 sec, 1.00 sec, 2592 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elab View Deletion Finished: 7 sec, 7.28 sec, 1337804 KB, 3671476 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elab View Deletion Finished: 0 sec, 0.01 sec, -63392 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: After deleting RTL view: 6 sec, 6.53 sec, 1200172 KB, 3640252 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: After deleting RTL view: 7 sec, 7.28 sec, 1270484 KB, 3671476 KB
 ##SGDEBUG [BENCHMARK_INCR]: After deleting RTL view: 0 sec, 0.00 sec, -67320 KB, 0 KB
 Checking Rule SGDC_assume_path05 (Rule 202 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening started: 6 sec, 6.54 sec, 1201484 KB, 3640252 KB
-##SGDEBUG [BENCHMARK_INCR]: Flattening started: 0 sec, 0.01 sec, 1312 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening started: 7 sec, 7.29 sec, 1271820 KB, 3671476 KB
+##SGDEBUG [BENCHMARK_INCR]: Flattening started: 0 sec, 0.00 sec, 1336 KB, 0 KB
  Flattening alu (.lib instances separately flattened) ....
-     (Memory Used = 2896.0K(incr), 1204380.0K(tot), Cpu Time = 0.03s(incr))
+     (Memory Used = 3040.0K(incr), 1274860.0K(tot), Cpu Time = 0.04s(incr))
  Flattening completed
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Instances = 1371
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Nets = 4485
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Terms = 16747
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Instances = 1688
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Nets = 5098
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Terms = 18080
 ##SGDEBUG [BENCHMARK_DATA]: Number of Flat Paths = 1
 ##SGDEBUG [BENCHMARK_DATA]: Number of Flat Ports = 61
 ##SGDEBUG [BENCHMARK_DATA]: Number of Black-Box Instances = 0
 ##SGDEBUG [BENCHMARK_DATA]: Number of Lib Instances = 0
 ##SGDEBUG [BENCHMARK_DATA]: Number of ILM Instances = 0
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening finished: 6 sec, 6.57 sec, 1204380 KB, 3640252 KB
-##SGDEBUG [BENCHMARK_INCR]: Flattening finished: 0 sec, 0.03 sec, 2896 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening finished: 7 sec, 7.32 sec, 1274860 KB, 3671476 KB
+##SGDEBUG [BENCHMARK_INCR]: Flattening finished: 0 sec, 0.03 sec, 3040 KB, 0 KB
 Checking Rule SGDC_set_case_analysis_LC (Rule 203 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule BufClock (Rule 204 of total 267) .... done (Time = 0.05s, Memory = -720.0K)
-Checking Rule CombLoop (Rule 205 of total 267) .... done (Time = 0.04s, Memory = 920.0K)
-Checking Rule STARC05-2.5.1.2 (Rule 206 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
-Checking Rule STARC05-1.3.1.3 (Rule 207 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule BufClock (Rule 204 of total 267) .... done (Time = 0.07s, Memory = -720.0K)
+Checking Rule CombLoop (Rule 205 of total 267) .... done (Time = 0.05s, Memory = 952.0K)
+Checking Rule STARC05-2.5.1.2 (Rule 206 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule STARC05-1.3.1.3 (Rule 207 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
 Checking Rule STARC05-1.4.3.4 (Rule 208 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule FlopClockConstant (Rule 209 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
-Checking Rule FlopSRConst (Rule 210 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
-Checking Rule FlopEConst (Rule 211 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
-Checking Rule checkPinConnectedToSupply (Rule 212 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
-Checking Rule W392 (Rule 213 of total 267) .... done (Time = 0.00s, Memory = 2312.0K)
-Checking Rule W415 (Rule 214 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
-Checking Rule LatchFeedback (Rule 215 of total 267) .... done (Time = 0.03s, Memory = 8.0K)
+Checking Rule FlopClockConstant (Rule 209 of total 267) .... done (Time = 0.00s, Memory = 48.0K)
+Checking Rule FlopSRConst (Rule 210 of total 267) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule FlopEConst (Rule 211 of total 267) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule checkPinConnectedToSupply (Rule 212 of total 267) .... done (Time = 0.00s, Memory = -24.0K)
+Checking Rule W392 (Rule 213 of total 267) .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule W415 (Rule 214 of total 267) .... done (Time = 0.01s, Memory = 2304.0K)
+Checking Rule LatchFeedback (Rule 215 of total 267) .... done (Time = 0.05s, Memory = 8.0K)
 Checking Rule STARC05-2.4.1.5 (Rule 216 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-1.2.1.2 (Rule 217 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule AnalyzeBBox (Rule 218 of total 267) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2329,12 +2329,12 @@ Checking Rule ReportCheckDataSummary (Rule 67 of total 267) .... done (Time = 0.
 Applying user specified and internally generated waivers on violation database .... done (Time = 0.01s)
 
 Generating data for Console...
-##SGDEBUG [PEAK_VMSIZE_END_RULE]: 3640252 KB for entire run at 'Restoring NOM started' stage
+##SGDEBUG [PEAK_VMSIZE_END_RULE]: 3671476 KB for entire run at 'Restoring NOM started' stage
 ##SGDEBUG [PEAK_SWAP_MEMORY_END_RULE]: 0 KB for entire run
-##SGDEBUG [VMPEAK_MEMORY]: 3849792 KB for entire run
-##SGDEBUG [PEAK_RSS_MEMORY]: 1347068 KB for entire run
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 7 sec, 7.07 sec, 1203540 KB, 3640244 KB
-##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 1 sec, 0.50 sec, -840 KB, -8 KB
+##SGDEBUG [VMPEAK_MEMORY]: 3879124 KB for entire run
+##SGDEBUG [PEAK_RSS_MEMORY]: 1355556 KB for entire run
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 8 sec, 7.84 sec, 1271748 KB, 3671468 KB
+##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 1 sec, 0.52 sec, -3112 KB, -8 KB
 
 
 =====================================================================================
@@ -4372,16 +4372,16 @@ Results Summary:
    Top Module         :      alu
 ---------------------------------------------------------------------------------------------------
    Reports Directory: 
-   /home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/spyglass-1/consolidated_reports/alu_lint_lint_rtl/ 
+   /home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/consolidated_reports/alu_lint_lint_rtl/ 
 
    SpyGlass LogFile: 
-    /home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/spyglass-1/alu/lint/lint_rtl/spyglass.log 
+    /home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/alu/lint/lint_rtl/spyglass.log 
 
    Standard Reports: 
      moresimple.rpt          no_msg_reporting_rules.rpt       
 
    HTML report:
-    /home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/spyglass-1/html_reports/goals_summary.html
+    /home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/html_reports/goals_summary.html
   
 
    Technology Reports:  
@@ -4397,7 +4397,7 @@ Results Summary:
 ---------------------------------------------------------------------------------------------------
  
 SpyGlass Exit Code 0 (Rule-checking completed with warnings)
-SpyGlass total run-time is 00:27:14 (1634 secs)
+SpyGlass total run-time is 00:55:40 (3340 secs)
 SpyGlass total goal run-time is 00:00:08 (8 secs)
-SpyGlass total cpu-time is 7 secs
-SpyGlass run completed at 11:34:18 AM on Sep 18 2024
+SpyGlass total cpu-time is 8 secs
+SpyGlass run completed at 08:21:55 PM on Sep 23 2024

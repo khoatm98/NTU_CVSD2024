@@ -1,0 +1,22 @@
+-1 "CMD_overloadrule01" 2
+"RULEGROUP"
+["Command-line read"]
+"BUILTIN"
+"1"
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ReportPortInfo-ML" 3
+"TEMPLATE"
+["lint/lint_rtl_enhanced"]
+"RULE_ORDER"
+[28]
+"RULEGROUP"
+["morelint"]

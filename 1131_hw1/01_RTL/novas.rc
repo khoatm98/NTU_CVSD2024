@@ -203,7 +203,7 @@ StickSet-TextColor = ID_BLACK
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveOpenFsdbDirHistory = "\"/home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/alu.fsdb\""
+nWaveOpenFsdbDirHistory = "\"/home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/alu.fsdb\"" "\"/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/alu.fsdb\""
 [Form]
 version = Verdi_T-2022.06
 [General]
@@ -321,9 +321,10 @@ FileName = test.ps
 PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
 [QtDialog]
-openFileDlg = 659,286,602,483
 unknownSave = 80,78,461,245
+QwUserAskDlg = 788,367,324,142
 QwWarnMsgDlg = 650,375,600,250
+openFileDlg = 659,286,602,483
 qWaveSignalDialog = 560,288,800,479
 [Session Cache]
 1 = string (session file name)
@@ -769,7 +770,8 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/alu.fsdb\""
+RecentFile1 = "\"/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/alu.fsdb\""
+RecentFile2 = "\"/home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/alu.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5

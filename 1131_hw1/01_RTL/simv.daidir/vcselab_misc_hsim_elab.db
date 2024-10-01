@@ -1,6 +1,6 @@
 psSimBaseName                      	simv
 psLogFileName                      	NULL
-pDaiDir                            	/home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/simv.daidir
+pDaiDir                            	/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/simv.daidir
 destPath                           	csrc/
 fSharedMaster                      	0
 fHsimPCSharedLibSpecified          	0

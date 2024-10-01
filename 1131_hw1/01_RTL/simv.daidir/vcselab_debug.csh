@@ -1,6 +1,6 @@
 #!/bin/csh -f
 
-cd /home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL
+cd /home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL
 
 #This ENV is used to avoid overriding current script in next vcselab run 
 setenv SNPS_VCSELAB_SCRIPT_NO_OVERRIDE  1

@@ -1,4 +1,4 @@
-SpyGlass run started at 11:07:04 AM on Sep 18 2024 
+SpyGlass run started at 07:26:15 PM on Sep 23 2024 
 
 SpyGlass Predictive Analyzer(R) - Version SpyGlass_vT-2022.06
 Synopsys TestMAX(TM)
@@ -40,4 +40,5 @@ Loading Shared library libVhMoreLint-Linux4.spyso from /home/raid7_4/raid1_1/lin
 Version of Policy 'timing': SpyGlass_vT-2022.06
 Loading Shared library libtiming-Linux4.spyso from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/timing/libtiming-Linux4.spyso 
 Version of Policy 'starc2002': SpyGlass_vT-2022.06
- Reading waiver file "./spyglass-1/alu/lint/lint_rtl_enhanced/spyglass_spysch/waiver/pragma2Waiver.swl" ...
+ Reading waiver file "./spyglass-1/alu/lint/lint_rtl/spyglass_spysch/waiver/pragma2Waiver.swl" ...
+0 {Rule-checking completed with warnings}

@@ -4,8 +4,8 @@
 <!-- This file schema is internal to Atrenta DashBoard and subject to change in future without notice --> 
 <goal name="lint/lint_rtl_enhanced"/>
 <top name="alu"/>
-<dir name="/home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/spyglass-1/consolidated_reports/alu_lint_lint_rtl_enhanced/"/>
-<log name="/home/raid7_2/user12/r2k41036/CVSD_2024/1131_hw1/01_RTL/spyglass-1/alu/lint/lint_rtl_enhanced/spyglass.log" link="data_files/alu_lint-lint_rtl_enhanced_spyglass.log"/>
+<dir name="/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/consolidated_reports/alu_lint_lint_rtl_enhanced/"/>
+<log name="/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/alu/lint/lint_rtl_enhanced/spyglass.log" link="data_files/alu_lint-lint_rtl_enhanced_spyglass.log"/>
   <std_reports> 
 <report name="moresimple" link="data_files/alu_lint-lint_rtl_enhanced_moresimple.rpt" tooltip="moresimple.rpt" />
 <report name="no_msg_reporting_rules" link="data_files/alu_lint-lint_rtl_enhanced_no_msg_reporting_rules.rpt" tooltip="no_msg_reporting_rules.rpt" />
