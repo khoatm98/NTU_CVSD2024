@@ -31,91 +31,89 @@ localparam RESET     			  = 4'd8;
 reg [ADDR_WIDTH-1:0]  curr_pc, next_pc;
 reg [3:0]  curr_state, next_state;
 // Reigister declaration
-reg [11:0] imm_r;
-reg [4:0]  r1_f1_addr_r;
-reg [4:0]  r2_f2_addr_r;
-reg [4:0]  rd_fd_addr_r;
+reg         [11:0          ]   imm_r;
+reg         [4:0           ]   r1_f1_addr_r;
+reg         [4:0           ]   r2_f2_addr_r;
+reg         [4:0           ]   rd_fd_addr_r;
 
 
 // Output from reg files
-wire [31:0]  r1_data_w;
-wire [31:0]  r2_data_w;
-wire [31:0]  f1_data_w;
-wire [31:0]  f2_data_w;
-
-wire         fl_en_w;
-wire         int_en_w;
-wire  [31:0] r_f_wdata_w;
-wire [4:0]  r_f_waddr_w;
+wire        [31:0          ]   r1_data_w;
+wire        [31:0          ]   r2_data_w;
+wire        [31:0          ]   f1_data_w;
+wire        [31:0          ]   f2_data_w;
+							   
+wire                           fl_en_w;
+wire                           int_en_w;
+wire        [31:0          ]   r_f_wdata_w;
+wire        [4:0           ]   r_f_waddr_w;
 //ALU
-wire signed [DATA_WIDTH-1:0] ALUinputA_w;
-wire signed [DATA_WIDTH-1:0] ALUinputB_w;
-wire				  	  ALUen_w;
-wire signed [DATA_WIDTH-1:0]  ALUout_w;
-reg  [DATA_WIDTH-1:0]  ALUout_r;
+wire signed [DATA_WIDTH-1:0]   ALUinputA_w;
+wire signed [DATA_WIDTH-1:0]   ALUinputB_w;
+wire				  	       ALUen_w;
+wire signed [DATA_WIDTH-1:0]   ALUout_w;
+reg         [DATA_WIDTH-1:0]   ALUout_r;
 
-wire					  ALUout_valid_w;
-wire					  ALUcond_w;
-wire					  ALUovf_w;
-reg					  ALUcond_r;
-wire 				  ALUbusy_w;
-wire mux_int_or_fl_1_w;
-wire mux_int_or_fl_2_w;
-wire mux_int_or_fl_3_w;
+wire                           ALUcond_w;
+wire                           ALUovf_w;
+reg	                           ALUcond_r;
+wire                           mux_int_or_fl_1_w;
+wire                           mux_int_or_fl_2_w;
+wire                           mux_int_or_fl_3_w;
+						       
+reg         [DATA_WIDTH-1:0]   inst_r;
+						       
+reg  [2:0]                     o_status_r;
+reg                            o_status_valid_r;
+			                   
+reg  [2:0]                     o_status_wait_r;
+wire [2:0]                     o_status_w;
+wire                           o_status_valid_w;
 
-reg  [DATA_WIDTH-1:0]  inst_r;
-
-reg  [2:0]   o_status_r;
-reg          o_status_valid_r;
-
-reg  [2:0]   o_status_wait_r;
-wire  [2:0]  o_status_w;
-wire         o_status_valid_w;
-
-wire error_flag_w;
-wire invalid_mem_w;
-reg pc_overflow_r;
-reg alu_overflow_r;
-reg addr_overflow_r;
+wire                           error_flag_w;
+wire                           invalid_mem_w;
+reg                            pc_overflow_r;
+reg                            alu_overflow_r;
+reg                            addr_overflow_r;
 
 
-wire [DATA_WIDTH-1:0]  inst_w;
-wire b_type_w;
-wire r_type_w;
-wire i_type_w;
-wire s_type_w;
-wire l_type_w;
-wire eof_type_w;
+wire        [DATA_WIDTH-1:0]   inst_w;
+wire                           b_type_w;
+wire                           r_type_w;
+wire                           i_type_w;
+wire                           s_type_w;
+wire                           l_type_w;
+wire                           eof_type_w;
 
-wire [2:0] funct3_w;
-wire [6:0] funct7_w;
-wire [6:0] opcode_w;
-wire [ADDR_WIDTH-1:0] ALUPCRes_i_w;
+wire        [2:0]              funct3_w;
+wire        [6:0]              funct7_w;
+wire        [6:0]              opcode_w;
+wire        [ADDR_WIDTH-1:0]   ALUPCRes_i_w;
 				  
 // ---------------------------------------------------------------------------
 // Continuous Assignment
 // ---------------------------------------------------------------------------
 // ---- Add your own wire data assignments here if needed ---- //
-assign b_type_w =    (opcode_w == `OP_BEQ & funct3_w == `FUNCT3_BEQ ) ||  
-					                          (opcode_w == `OP_BLT & funct3_w == `FUNCT3_BLT );
-assign r_type_w =  (opcode_w == `OP_ADD    & funct7_w == `FUNCT7_ADD    & funct3_w == `FUNCT3_ADD   )    ||  
-				                              (opcode_w == `OP_SLT    & funct7_w == `FUNCT7_SLT    & funct3_w == `FUNCT3_SLT   )    ||  
-				                              (opcode_w == `OP_SRL    & funct7_w == `FUNCT7_SRL    & funct3_w == `FUNCT3_SRL   )    ||  
-				                              (opcode_w == `OP_FSUB   & funct7_w == `FUNCT7_FSUB   & funct3_w == `FUNCT3_FSUB  )    ||  
-					                          (opcode_w == `OP_SUB    & funct7_w == `FUNCT7_SUB    & funct3_w == `FUNCT3_SUB   )    ||
-					                          (opcode_w == `OP_SLL    & funct7_w == `FUNCT7_SLL    & funct3_w == `FUNCT3_SLL   )    ||
-					                          (opcode_w == `OP_FADD   & funct7_w == `FUNCT7_FADD   & funct3_w == `FUNCT3_FADD  )    ||
-					                          (opcode_w == `OP_FLT    & funct7_w == `FUNCT7_FLT    & funct3_w == `FUNCT3_FLT   )    ||
-					                          (opcode_w == `OP_FCLASS & funct7_w == `FUNCT7_FCLASS & funct3_w == `FUNCT3_FCLASS);
-assign i_type_w =   (opcode_w == `OP_ADDI & funct3_w == `FUNCT3_ADDI) ||  
-					                          (opcode_w == `OP_LW   & funct3_w == `FUNCT3_LW  ) ||
-				                              (opcode_w == `OP_FLW  & funct3_w == `FUNCT3_FLW );
-assign s_type_w =  (opcode_w == `OP_SW   & funct3_w == `FUNCT3_SW ) || 
-					                          (opcode_w == `OP_FSW  & funct3_w == `FUNCT3_FSW);
-assign eof_type_w = (opcode_w == `OP_EOF);
-
-assign l_type_w =    (opcode_w == `OP_LW   & funct3_w == `FUNCT3_LW  ) ||
-											  (opcode_w == `OP_FLW  & funct3_w == `FUNCT3_FLW );
+assign b_type_w =        (opcode_w == `OP_BEQ & funct3_w == `FUNCT3_BEQ ) ||  
+				         (opcode_w == `OP_BLT & funct3_w == `FUNCT3_BLT );
+assign r_type_w =        (opcode_w == `OP_ADD    & funct7_w == `FUNCT7_ADD    & funct3_w == `FUNCT3_ADD   )    ||  
+				         (opcode_w == `OP_SLT    & funct7_w == `FUNCT7_SLT    & funct3_w == `FUNCT3_SLT   )    ||  
+				         (opcode_w == `OP_SRL    & funct7_w == `FUNCT7_SRL    & funct3_w == `FUNCT3_SRL   )    ||  
+				         (opcode_w == `OP_FSUB   & funct7_w == `FUNCT7_FSUB   & funct3_w == `FUNCT3_FSUB  )    ||  
+				         (opcode_w == `OP_SUB    & funct7_w == `FUNCT7_SUB    & funct3_w == `FUNCT3_SUB   )    ||
+				         (opcode_w == `OP_SLL    & funct7_w == `FUNCT7_SLL    & funct3_w == `FUNCT3_SLL   )    ||
+				         (opcode_w == `OP_FADD   & funct7_w == `FUNCT7_FADD   & funct3_w == `FUNCT3_FADD  )    ||
+				         (opcode_w == `OP_FLT    & funct7_w == `FUNCT7_FLT    & funct3_w == `FUNCT3_FLT   )    ||
+				         (opcode_w == `OP_FCLASS & funct7_w == `FUNCT7_FCLASS & funct3_w == `FUNCT3_FCLASS);
+assign i_type_w =        (opcode_w == `OP_ADDI & funct3_w == `FUNCT3_ADDI) ||  
+				         (opcode_w == `OP_LW   & funct3_w == `FUNCT3_LW  ) ||
+				         (opcode_w == `OP_FLW  & funct3_w == `FUNCT3_FLW );
+assign s_type_w =        (opcode_w == `OP_SW   & funct3_w == `FUNCT3_SW ) || 
+						 (opcode_w == `OP_FSW  & funct3_w == `FUNCT3_FSW);
+assign eof_type_w =      (opcode_w == `OP_EOF);
+				         
+assign l_type_w =        (opcode_w == `OP_LW   & funct3_w == `FUNCT3_LW  ) ||
+				         (opcode_w == `OP_FLW  & funct3_w == `FUNCT3_FLW );
 
 assign inst_w = i_rdata;
 
@@ -132,6 +130,31 @@ assign funct7_w = inst_r[31:25] ;
 assign ALUPCRes_i_w = curr_pc + (imm_r<<1);
 
 
+assign mux_int_or_fl_1_w = !(opcode_w == `OP_FADD   || opcode_w == `OP_FSUB  || 
+							 opcode_w == `OP_FCLASS || opcode_w == `OP_FLT);
+assign mux_int_or_fl_2_w = !(opcode_w == `OP_FADD   || opcode_w == `OP_FSUB  || 
+							 opcode_w == `OP_FCLASS || opcode_w == `OP_FLW   || 
+							 opcode_w == `OP_FLT    || opcode_w == `OP_FSW);
+assign mux_int_or_fl_3_w = mux_int_or_fl_2_w        || (funct7_w == `FUNCT7_FCLASS && opcode_w == `OP_FCLASS) 
+													|| (opcode_w == `OP_FLT && funct7_w == `FUNCT7_FLT);
+
+assign ALUen_w = curr_state == EXECUTION;
+assign ALUinputA_w = mux_int_or_fl_1_w ? r1_data_w : f1_data_w;
+assign ALUinputB_w = mux_int_or_fl_2_w ? r2_data_w : f2_data_w;
+
+assign error_flag_w = pc_overflow_r | ALUovf_w | invalid_mem_w;
+
+assign o_addr = curr_state == MEMORY_ACCESS ? ALUout_w : curr_pc;
+assign o_we   = (curr_state == MEMORY_ACCESS) && s_type_w && ~error_flag_w;
+assign o_wdata = mux_int_or_fl_2_w ? r2_data_w : f2_data_w	;
+assign o_status = o_status_r;
+assign o_status_valid = o_status_valid_r;
+
+//Write back to reg file
+assign int_en_w = curr_state == WRITEBACK ? mux_int_or_fl_3_w : 0;
+assign fl_en_w = curr_state == WRITEBACK ? ~mux_int_or_fl_3_w : 0;
+assign r_f_waddr_w = rd_fd_addr_r;
+assign r_f_wdata_w = l_type_w ?  i_rdata : ALUout_w;
 
 /*************************************************/
 /*************  Register file    *****************/
@@ -207,19 +230,6 @@ end
 /*************************************************/
 /*************        ALU        *****************/
 /*************************************************/
-
-assign mux_int_or_fl_1_w = !(opcode_w == `OP_FADD || opcode_w == `OP_FSUB  || 
-							 opcode_w == `OP_FCLASS || opcode_w == `OP_FLT);
-assign mux_int_or_fl_2_w = !(opcode_w == `OP_FADD || opcode_w == `OP_FSUB  || 
-							 opcode_w == `OP_FCLASS || opcode_w == `OP_FLW || 
-							 opcode_w == `OP_FLT || opcode_w == `OP_FSW);
-assign mux_int_or_fl_3_w = mux_int_or_fl_2_w || (funct7_w == `FUNCT7_FCLASS && opcode_w == `OP_FCLASS) 
-														|| (opcode_w == `OP_FLT && funct7_w == `FUNCT7_FLT);
-wire mux_int_or_fl_debug_w = (funct7_w == `FUNCT7_FCLASS && opcode_w == `OP_FCLASS) 
-														|| (opcode_w == `OP_FLT && funct7_w == `FUNCT7_FLT);
-assign ALUen_w = curr_state == EXECUTION;
-assign ALUinputA_w = mux_int_or_fl_1_w ? r1_data_w : f1_data_w;
-assign ALUinputB_w = mux_int_or_fl_2_w ? r2_data_w : f2_data_w;
 	alu #(
     .INST_W(17),
     .INT_W(9),
@@ -230,12 +240,12 @@ assign ALUinputB_w = mux_int_or_fl_2_w ? r2_data_w : f2_data_w;
         .i_rst_n        (i_rst_n       ),
         .i_data_a       (ALUinputA_w   ),
         .i_data_b       (ALUinputB_w   ),
-		.o_busy         (ALUbusy_w     ),
+		.o_busy         (),
 		.i_imm          (imm_r         ),
 		.i_in_valid     (ALUen_w       ),
         .i_inst         ({funct3_w, funct7_w, opcode_w}),
         .o_data         (ALUout_w      ), 
-		.o_out_valid	(ALUout_valid_w),
+		.o_out_valid	(),
 		.o_cond			(ALUcond_w     ),
 		.o_ovf			(ALUovf_w      )
     );
@@ -333,19 +343,6 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	end
 end
 
-assign error_flag_w = pc_overflow_r | ALUovf_w | invalid_mem_w;
-
-assign o_addr = curr_state == MEMORY_ACCESS ? ALUout_w : curr_pc;
-assign o_we   = (curr_state == MEMORY_ACCESS) && s_type_w;
-assign o_wdata = mux_int_or_fl_2_w ? r2_data_w : f2_data_w	;
-assign o_status = o_status_r;
-assign o_status_valid = o_status_valid_r;
-
-//Write back to reg file
-assign int_en_w = curr_state == WRITEBACK ? mux_int_or_fl_3_w : 0;
-assign fl_en_w = curr_state == WRITEBACK ? ~mux_int_or_fl_3_w : 0;
-assign r_f_waddr_w = rd_fd_addr_r;
-assign r_f_wdata_w = l_type_w ?  i_rdata : ALUout_w;
 
 
 //DEBUG
