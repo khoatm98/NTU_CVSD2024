@@ -14,7 +14,7 @@
 `define OP_LW     7'b0000011
 `define OP_SW     7'b0100011
 `define OP_BEQ    7'b1100011
-`define OP_BNE    7'b1100011
+`define OP_BLT    7'b1100011
 `define OP_SLT    7'b0110011
 `define OP_SLL    7'b0110011
 `define OP_SRL    7'b0110011

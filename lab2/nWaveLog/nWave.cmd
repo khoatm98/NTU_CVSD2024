@@ -70,3 +70,6 @@ wvResizeWindow -win $_nWave1 475 270 1103 332
 wvResizeWindow -win $_nWave1 475 270 1103 332
 wvResizeWindow -win $_nWave1 475 270 1103 362
 wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvZoomAll -win $_nWave1
+wvSetCursor -win $_nWave1 2491446.772124 -snap {("G1" 4)}
+wvExit
