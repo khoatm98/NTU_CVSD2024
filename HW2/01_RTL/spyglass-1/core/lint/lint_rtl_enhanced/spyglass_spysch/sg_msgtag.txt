@@ -1,0 +1,103 @@
+3 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core"
+5 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+6 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+7 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+8 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+9 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+10 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+11 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+12 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+13 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+14 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+15 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+16 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+17 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+18 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+19 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+20 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+21 "W164a" 2
+"SPG_MSGTAG_HIERARCHY"
+":core:u_alu@alu"
+"VCLINT_FORMAL_SKIP_TAG"
+2
+-1 "CMD_overloadrule01" 2
+"RULEGROUP"
+["Command-line read"]
+"BUILTIN"
+"1"
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ReportPortInfo-ML" 3
+"TEMPLATE"
+["lint/lint_rtl_enhanced"]
+"RULE_ORDER"
+[28]
+"RULEGROUP"
+["morelint"]
+-1 "W164a" 3
+"TEMPLATE"
+["lint/lint_rtl_enhanced"]
+"RULE_ORDER"
+[82]
+"RULEGROUP"
+["lint/width_rules_lint","lint/Lint_Elab_Rules","lint/Assign/W164"]

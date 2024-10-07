@@ -28,10 +28,10 @@ localparam RESET     			  = 4'd8;
 // Wires and Registers
 // ---------------------------------------------------------------------------
 // ---- Add your own wires and registers here if needed ---- //
-reg [ADDR_WIDTH-1:0]  curr_pc, next_pc;
-reg [3:0]  curr_state, next_state;
+reg signed  [ADDR_WIDTH-1:0]   curr_pc, next_pc;
+reg         [3:0]              curr_state, next_state;
 // Reigister declaration
-reg         [11:0          ]   imm_r;
+reg  signed [11:0          ]   imm_r;
 reg         [4:0           ]   r1_f1_addr_r;
 reg         [4:0           ]   r2_f2_addr_r;
 reg         [4:0           ]   rd_fd_addr_r;
@@ -151,8 +151,8 @@ assign o_status = o_status_r;
 assign o_status_valid = o_status_valid_r;
 
 //Write back to reg file
-assign int_en_w = curr_state == WRITEBACK ? mux_int_or_fl_3_w : 0;
-assign fl_en_w = curr_state == WRITEBACK ? ~mux_int_or_fl_3_w : 0;
+assign int_en_w = curr_state == WRITEBACK && ~error_flag_w ? mux_int_or_fl_3_w : 0;
+assign fl_en_w = curr_state == WRITEBACK && ~error_flag_w ? ~mux_int_or_fl_3_w : 0;
 assign r_f_waddr_w = rd_fd_addr_r;
 assign r_f_wdata_w = l_type_w ?  i_rdata : ALUout_w;
 
@@ -175,7 +175,7 @@ always @ (*) begin
 			rd_fd_addr_r = inst_r[11:7];
 		end
 		4'b0010: begin // b type
-			imm_r   = {inst_r[12], inst_r[7], inst_r[30:25], inst_r[11:8]};
+			imm_r   = {inst_r[31], inst_r[7], inst_r[30:25], inst_r[11:8]};
 			r1_f1_addr_r = inst_r[19:15];
 			r2_f2_addr_r = inst_r[24:20];
 			rd_fd_addr_r = 0;

@@ -1,0 +1,28 @@
+#x HLBEGIN S.1
+#x {{COLOR=>1;}}
+#x 194 { @@n 8 a 0 @@p 8 a 0 }
+#x HLEND
+#x HLBEGIN S.2
+#x {{COLOR=>1;}}
+#x 194 { @@n 9 a 0 @@p 9 a 0 }
+#x HLEND
+#x HLBEGIN S.3
+#x {{COLOR=>1;}}
+#x 194 { @@n 41 a 0 @@p 41 a 0 }
+#x HLEND
+#x HLBEGIN S.4
+#x {{COLOR=>1;}}
+#x 194 { @@n 42 a 0 @@p 42 a 0 }
+#x HLEND
+#x HLBEGIN S.5
+#x {{COLOR=>1;}}
+#x 194 { @@n 73 a 0 @@p 73 a 0 }
+#x HLEND
+#x HLBEGIN S.6
+#x {{COLOR=>1;}}
+#x 194 { @@n 75 a 0 @@p 75 a 0 }
+#x HLEND
+#x HLBEGIN S.7
+#x {{COLOR=>1;}}
+#x 194 { @@n 76 a 0 @@p 76 a 0 }
+#x HLEND

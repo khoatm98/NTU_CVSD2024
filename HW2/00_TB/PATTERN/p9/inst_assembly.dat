@@ -1,0 +1,8 @@
+addi    $0     $0     2044
+addi    $0     $0     2044
+addi    $0     $0     2044
+addi    $0     $0     2044
+sw      $0     $0     12   //boundary
+lw      $8     $0     16   //overflow
+sw      $8     $0     8    //boundary
+eof 

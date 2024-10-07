@@ -1,0 +1,4 @@
+0 ../00_TB/define.v
+1 ./reg_file.v
+2 ./alu.v
+3 ./core.v

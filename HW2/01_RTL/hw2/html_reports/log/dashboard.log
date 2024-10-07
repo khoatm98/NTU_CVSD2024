@@ -1,0 +1,34 @@
+SpyGlass Predictive Analyzer(R) - SpyGlass_vT-2022.06
+All Rights Reserved. Use, disclosure or duplication 
+without prior written permission of Synopsys Inc. is prohibited.
+Technical support: email spyglass_support@synopsys.com 
+
+Creating 'dashboard' reports using config file '/tmp/config_246270'
+##cwd         : /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL
+##system      : Linux cad27 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+##Date & Time : Fri Oct  4 18:09:26 2024
+Checkout 'dashboard' license at Fri Oct  4 18:09:24 2024 
+Checkout 'dashboard' license completed at Fri Oct  4 18:09:24 2024 
+Generating Dashboard report started at Fri Oct  4 18:09:24 2024 
+Checking project file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2.prj at Fri Oct  4 18:09:24 2024 
+Processing Project File:/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2.prj 
+     Work Directory:/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2 
+     Top Name: core 
+     Group Mode: 0 
+     Methodology:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/GuideWare/2022.06/block/rtl_handoff 
+    Goals executed: lint/lint_rtl::,lint/lint_rtl_enhanced:: 
+  Goal lint/lint_rtl run status: Completed 
+  Goal lint/lint_rtl_enhanced run status: Completed 
+No or invalid 'SUCCESS_CRITERIA_FILE_PATH' set in Config file.The report will use some of the SpyGlass default set values but it may be incomplete. 
+Adding data for block: core, from project: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2.prj 
+Generating data for block 'core' 
+  Generating data for goal 'lint/lint_rtl' from directory '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2/core/lint/lint_rtl' 
+  Generating data for goal 'lint/lint_rtl_enhanced' from directory '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2/core/lint/lint_rtl_enhanced' 
+Report Dashboard creation completed at Fri Oct  4 18:09:25 2024 
+Checkin 'dashboard' license at Fri Oct  4 18:09:25 2024 
+----------------------------------------------------------------
+Report 'dashboard' created.
+  File: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2/html_reports/dashboard.html 
+----------------------------------------------------------------
+
+SpyGlass Exit Code 0
