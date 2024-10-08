@@ -37,37 +37,33 @@ module alu #(
 	wire [7:0]  exp_a;
 	wire [7:0]  exp_b;
 	wire [7:0]  exp_c;
-	wire [22:0] mantissa_a;
-	wire [22:0] mantissa_b;
-	wire [22:0] mantissa_c;
+
     // Continuous Assignments
 	assign exp_a = i_data_a[30:23];
 	assign exp_b = i_data_b[30:23];
 	assign exp_c = result_wait_r[30:23];
 	
-	assign mantissa_a = i_data_a[22:0];
-	assign mantissa_b = i_data_b[22:0];
-	assign mantissa_c = result_wait_r[22:0];
-	
 	//Combinational logic
 	
     // Combinatorial Blocks
 	always @ (*) begin
-
+		
         casez (i_inst) 
             {`FUNCT3_ADD, `FUNCT7_ADD,`OP_ADD}    :  begin
 				result_wait_r = i_data_a + i_data_b;   
 				ovf_addr_wait_r = 0;
 				if ( (result_wait_r[31] != i_data_a[31]) && (i_data_a[31] == i_data_b[31])) begin
 					ovf_data_wait_r = 1;
-				end
+				end else 
+					ovf_data_wait_r = 0;
 			end
             {`FUNCT3_SUB, `FUNCT7_SUB,`OP_SUB}    :  begin
 				result_wait_r = i_data_a - i_data_b;   
 				ovf_addr_wait_r = 0;
 				if ( (result_wait_r[31] != i_data_a[31]) && (i_data_a[31] != i_data_b[31])) begin
 					ovf_data_wait_r = 1;
-				end
+				end else 
+					ovf_data_wait_r = 0;
 			end 
             {`FUNCT3_ADDI, 7'bzzzzzzz,`OP_ADDI}    :  begin
 				result_wait_r = i_data_a + {{20{i_imm[11]}},i_imm};   
@@ -75,21 +71,24 @@ module alu #(
 				ovf_addr_wait_r = 0;
 				if ( (result_wait_r[31] != i_data_a[31]) && (i_data_a[31] == i_imm[11])) begin
 					ovf_data_wait_r = 1;
-				end
+				end else 
+					ovf_data_wait_r = 0;
 			end 
             {`FUNCT3_LW, 7'bzzzzzzz,`OP_LW}      :  begin
 				result_wait_r = i_data_a + {{20{i_imm[11]}},i_imm};   
 				ovf_addr_wait_r = result_wait_r > 'd8191 || result_wait_r < 'd4096;
 				if ( (result_wait_r[31] != i_data_a[31]) && (i_data_a[31] == i_imm[11])) begin
 					ovf_data_wait_r = 1;
-				end
+				end else 
+					ovf_data_wait_r = 0;
 			end  
             {`FUNCT3_SW, 7'bzzzzzzz,`OP_SW}     :  begin
 				result_wait_r = i_data_a + {{20{i_imm[11]}},i_imm};   
 				ovf_addr_wait_r = result_wait_r > 'd8191 || result_wait_r < 'd4096;
 				if ( (result_wait_r[31] != i_data_a[31]) && (i_data_a[31] == i_imm[11])) begin
 					ovf_data_wait_r = 1;
-				end
+				end else 
+					ovf_data_wait_r = 0;
 			end    
             {`FUNCT3_SLT, `FUNCT7_SLT,`OP_SLT}    :  begin
 				result_wait_r = (i_data_a < i_data_b) ? 32'd1 : 32'd0;
@@ -122,29 +121,36 @@ module alu #(
 				if ( (result_wait_r[31] != i_data_a[31]) && (i_data_a[31] == i_imm[11])) begin
 					ovf_data_wait_r = 1;
 				end
+				else 
+					ovf_data_wait_r = 0;
 			end   
 			{`FUNCT3_FSW, 7'bzzzzzzz,`OP_FSW }   :  begin
 				result_wait_r = i_data_a + {{20{i_imm[11]}},i_imm};   
 				ovf_addr_wait_r = result_wait_r > 'd8191 || result_wait_r < 'd4096;
 				if ( (result_wait_r[31] != i_data_a[31]) && (i_data_a[31] == i_imm[11])) begin
 					ovf_data_wait_r = 1;
-				end
+				end else 
+					ovf_data_wait_r = 0;
 			end  
 			{`FUNCT3_FCLASS, `FUNCT7_FCLASS,`OP_FCLASS} :  begin //todo
 				result_wait_r = fp_fclass(i_data_a);
-				ovf_data_wait_r = (exp_a == 8'hff) || (exp_b == 8'hff)  ;
+				ovf_data_wait_r = 0;
 				ovf_addr_wait_r = 0;
 			end  
 			{`FUNCT3_FLT, `FUNCT7_FLT,`OP_FLT}    :  begin
 				result_wait_r = fp_compare(i_data_a, i_data_b);
-				ovf_data_wait_r = 0;
+				ovf_data_wait_r = (exp_a == 8'hff) || (exp_b == 8'hff) ;
 				ovf_addr_wait_r = 0;
 			end  
-			{3'bzzz, 7'bzzzzzzz,`OP_EOF}    :  result_wait_r = 0;   
+			{3'bzzz, 7'bzzzzzzz,`OP_EOF}    :  begin
+				result_wait_r = 0;
+				ovf_data_wait_r = 0;
+				ovf_addr_wait_r = 0; 
+			end
             default: begin 
 				result_wait_r = 0;
 				ovf_data_wait_r = 0;
-				ovf_addr_wait_r = 0;
+				ovf_addr_wait_r = 0; 
 			end
         endcase
 		
@@ -309,92 +315,63 @@ module alu #(
 	function automatic [DATA_W-1:0] fp_add_amb;
     input signed [DATA_W-1:0]     i_data_a;
     input signed [DATA_W-1:0]     i_data_b;
-    reg   [FRAC_W*2 +1 :0] mantissa_a, mantissa_b, mantissa_greater;
-    reg    [INT_W - 2:0]          exp_a, exp_b, exp_greater;
-    reg   [4:0]                   leading_zeros;
+	
+	reg signed [DATA_W-1:0]       data_a;
+    reg signed [DATA_W-1:0]       data_b;
+	reg signed [DATA_W-1:0]       ret_value;
+    reg   [FRAC_W*2 +1 :0]        mantissa_a, mantissa_b, mantissa_greater, mantissa_b_shifted, mantissa_greater_shifted;
+    reg    [INT_W - 2:0]          exp_a, exp_b, exp_res;
+    reg   [4:0]                   leading_zeros, leading_zeros_shifted;
     reg                           s;  //signed
     begin
-        exp_a      = i_data_a[DATA_W-2 -:INT_W-1];
-        exp_b      = i_data_b[DATA_W-2 -:INT_W-1];
-        mantissa_a = {2'b01,i_data_a[FRAC_W-1 :0], 23'b0};
-        mantissa_b = {2'b01,i_data_b[FRAC_W-1 :0], 23'b0};
-        if (exp_a > exp_b ) begin
-            exp_greater = exp_a;
-            mantissa_greater = mantissa_a - (mantissa_b >> (exp_a-exp_b) );
-            s = 0;
-        end
-        else if (exp_a < exp_b ) begin
-            exp_greater = exp_b;
-            mantissa_greater = mantissa_b - (mantissa_a >> (exp_b-exp_a) );
-            s = 1;
-        end
-        else begin
-            if (mantissa_a > mantissa_b) begin
-                exp_greater = exp_a;
-                mantissa_greater = mantissa_a - mantissa_b;
-                s = 0;
-            end
-            else begin
-                exp_greater = exp_b;
-                mantissa_greater = mantissa_b - mantissa_a;
-                s = 1;
-            end
-        end
-
-        if (mantissa_greater[FRAC_W*2 + 1]) begin
-            exp_greater = exp_greater + 1;
-            mantissa_greater = mantissa_greater >> 1;
-        end
-        leading_zeros = count_leading_zeros48(mantissa_greater);
-        mantissa_greater = mantissa_greater << leading_zeros;
-        exp_greater = exp_greater - leading_zeros;
-        if (leading_zeros == 47) begin 
-            exp_greater = 0;
-            s = 0;
-        end
-        exp_greater = exp_greater + mantissa_greater[FRAC_W*2 + 1];
-        mantissa_greater = mantissa_greater + ((|mantissa_greater[FRAC_W-2:0] | (mantissa_greater[FRAC_W -:2] == 2'b11))  ? 1<<(FRAC_W-1) : 0);
-        if (mantissa_greater[FRAC_W*2 + 1]) begin
-            exp_greater = exp_greater + 1;
-            mantissa_greater = mantissa_greater >> 1;
-        end
-        fp_add_amb = {s, exp_greater, mantissa_greater[FRAC_W*2-1 -:FRAC_W]};
+        {data_a,data_b} = (i_data_a[30:0] > i_data_b[30:0]) ? {i_data_a,i_data_b} : {i_data_b,i_data_a};	
+        exp_a      = data_a[DATA_W-2 -:INT_W-1];
+        exp_b      = data_b[DATA_W-2 -:INT_W-1];
+		mantissa_a = (|exp_a) ? {2'b01,data_a[FRAC_W-1:0], 23'b0} : {2'b00,data_a[FRAC_W-1:0], 23'b0};
+		mantissa_b = (|exp_b) ? {2'b01,data_b[FRAC_W-1:0], 23'b0} : {2'b00,data_b[FRAC_W-1:0], 23'b0};
+		mantissa_b_shifted = (|exp_b ) ? (mantissa_b >> (exp_a-exp_b) ) : (|exp_a ) ? (mantissa_b >> (exp_a-1) ) :  mantissa_b;
+		s = data_a[DATA_W-1];
+		
+		mantissa_greater = mantissa_a - mantissa_b_shifted ;
+		
+		leading_zeros = count_leading_zeros48(mantissa_greater);
+		mantissa_greater_shifted = exp_a > {3'b000, leading_zeros} ? mantissa_greater << leading_zeros : mantissa_greater << (exp_a - 1);
+		leading_zeros_shifted = exp_a > {3'b000, leading_zeros} ? leading_zeros : exp_a;
+		exp_res = (|exp_a ) ? exp_a - leading_zeros_shifted : exp_a;
+        //Rounding
+		ret_value[22:0] = mantissa_greater_shifted[FRAC_W*2-1 -:FRAC_W] + ((mantissa_greater_shifted[FRAC_W-1]&&(|mantissa_greater_shifted[FRAC_W-2:0])) | (mantissa_greater_shifted[FRAC_W -:2] == 2'b11));
+		ret_value[30:23]  = exp_res;	
+		ret_value[31] = s;
+        fp_add_amb = ret_value;
     end
     endfunction
 
     function automatic [DATA_W-1:0] fp_add_apb;
     input signed [DATA_W-1:0]     i_data_a;
     input signed [DATA_W-1:0]     i_data_b;
-    reg    [FRAC_W*2 +1 :0]       mantissa_a, mantissa_b, mantissa_greater;
-    reg    [INT_W - 2:0]          exp_a, exp_b, exp_greater;
-    reg   [4:0]                   leading_zeros;
+	
+	reg signed [DATA_W-1:0]       data_a;
+    reg signed [DATA_W-1:0]       data_b;
+	reg signed [DATA_W-1:0]       ret_value;
+    reg    [FRAC_W*2 +1 :0]       mantissa_a, mantissa_b, mantissa_b_shifted, mantissa_greater;
+    reg    [INT_W - 2:0]          exp_a, exp_b;
+	
     begin
-        exp_a      = i_data_a[DATA_W-2 -:INT_W-1];
-        exp_b      = i_data_b[DATA_W-2 -:INT_W-1];
-        mantissa_a = (|i_data_a[30:23]) ? {1'b1,i_data_a[FRAC_W-1:0], 23'b0} : {1'b0,i_data_a[FRAC_W-1:0], 23'b0};
-		mantissa_a = (|mantissa_b[30:23]) ? {1'b1,mantissa_b[FRAC_W-1:0], 23'b0} : {1'b0,mantissa_b[FRAC_W-1:0], 23'b0};
-        if (exp_a > exp_b ) begin
-            exp_greater = exp_a;
-            mantissa_greater = mantissa_a + (mantissa_b >> (exp_a-exp_b) );
-        end
-        else  begin
-            exp_greater = exp_b;
-            mantissa_greater = mantissa_b + (mantissa_a >> (exp_b-exp_a) );
-        end
-        if (mantissa_greater[FRAC_W*2 + 1]) begin
-            exp_greater = exp_greater + 1;
-            mantissa_greater = mantissa_greater >> 1;
-        end
-        leading_zeros = count_leading_zeros48(mantissa_greater);
-        exp_greater = exp_greater + mantissa_greater[FRAC_W*2 + 1];
-        mantissa_greater = mantissa_greater << leading_zeros;
-        exp_greater = exp_greater - leading_zeros;
-        mantissa_greater = mantissa_greater + ((|mantissa_greater[FRAC_W-2:0] | (mantissa_greater[FRAC_W -:2] == 2'b11))  ? 1<<(FRAC_W-1) : 0); //(1<<(FRAC_W-1));//
-        if (mantissa_greater[FRAC_W*2 + 1]) begin
-            exp_greater = exp_greater + 1;
-            mantissa_greater[FRAC_W*2 + 1] = mantissa_greater >> 1;
-        end
-        fp_add_apb = {i_data_a[DATA_W-1], exp_greater, mantissa_greater[FRAC_W*2-1 -:FRAC_W]};
+		{data_a,data_b} = (i_data_a[30:0] > i_data_b[30:0]) ? {i_data_a,i_data_b} : {i_data_b,i_data_a};	
+        exp_a      = data_a[DATA_W-2 -:INT_W-1];
+        exp_b      = data_b[DATA_W-2 -:INT_W-1];
+		mantissa_a = (|exp_a) ? {2'b01,data_a[FRAC_W-1:0], 23'b0} : {2'b00,data_a[FRAC_W-1:0], 23'b0};
+		mantissa_b = (|exp_b) ? {2'b01,data_b[FRAC_W-1:0], 23'b0} : {2'b00,data_b[FRAC_W-1:0], 23'b0};
+		mantissa_b_shifted = (|exp_b ) ? (mantissa_b >> (exp_a-exp_b) ) : (|exp_a ) ? (mantissa_b >> (exp_a-1) ) :  mantissa_b;
+		mantissa_greater = mantissa_a + mantissa_b_shifted ;
+/* 		if (i_data_a == 32'b10000000011110100001100100101010 && i_data_b == 32'b10000000011000100011001001001100)
+			$display("%b",mantissa_greater ); */
+		//Rounding
+		ret_value[22:0] = mantissa_greater[FRAC_W*2 + 1] ? mantissa_greater[FRAC_W*2 -:FRAC_W] + ((mantissa_greater[FRAC_W]&&(|mantissa_greater[FRAC_W-1:0])) | (mantissa_greater[FRAC_W+1 -:2] == 2'b11))  
+						: mantissa_greater[FRAC_W*2-1 -:FRAC_W] + ((mantissa_greater[FRAC_W-1]&&(|mantissa_greater[FRAC_W-2:0])) | (mantissa_greater[FRAC_W -:2] == 2'b11))   ;
+		ret_value[30:23]  = |exp_a ? (mantissa_greater[FRAC_W*2 + 1] ? (1'b1 + exp_a) : exp_a) : {7'b0000000, mantissa_greater[FRAC_W*2]} ;	
+		ret_value[31] = data_a[DATA_W-1];
+        fp_add_apb = ret_value;
     end
     endfunction
 

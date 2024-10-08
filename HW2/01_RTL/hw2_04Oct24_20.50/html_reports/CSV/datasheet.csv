@@ -1,0 +1,70 @@
+IO Definitions
+Pin,Direction,Range,Type,Reference Clock,Registered,Internally Synchronized,IO Delay,Mode,Description
+i_clk,INPUT,,-,-,Yes,-,,,DO NOT MODIFY INTERFACE!!!
+i_rdata,INPUT,[31:0],-,-,No,-,,,-
+i_rst_n,INPUT,,-,-,Yes,-,,,-
+o_addr,OUTPUT,[31:0],-,-,No,-,,,Memory IOs
+o_status,OUTPUT,[2:0],-,-,Yes,-,,,Testbench IOs
+o_status_valid,OUTPUT,,-,-,Yes,-,,,-
+o_wdata,OUTPUT,[31:0],-,-,No,-,,,-
+o_we,OUTPUT,,-,-,No,-,,,-
+*** Port clock info not available. Please refer to documentation for help
+*** Input/Output delay information unavailable. Please refer to documentation for help
+
+ Clock Trees
+
+Power 
+Technology - 
+Register bit width threshold for clock gating - 
+Registers enabled with clock gating -  (Total -) 
+Number of non gated registers - 
+Clock Gating percentage -% 
+Clock Gating efficiency -% 
+Annotation percentage -% 
+Inferred clock gating percentage -% 
+Number of registers with new enable(ODC) - 
+Number of registers with new enable(STC) - 
+Number of registers with stronger enable(ODC) - 
+Number of registers with stronger enable(STC) - 
+Leakage Power,Internal Power,Switching Power,Total Power,Power Savings
+-,-,-,-,-
+
+Power Clocks
+
+Potential Table
+
+Number of Registers (CGE v/s ROADF table)
+
+ VCLP Power Domain Statistics 
+Current Scope,Element Count,Level Shifter Strategies,Repeater Strategies,Isolation Strategies,Retention Strategies,Power Switch Strategies,Power,Ground,Pwell,Nwell
+*** VCLP PowerDomainStats data not available. Please refer to documentation for help
+
+ VCLP UPF Statistics 
+Statistics,Value
+*** VCLP UPFStats data not available. Please refer to documentation for help
+
+Constraints
+Ports constrained -% 
+Registers constrained -% 
+Exception Type,Total Number of exceptions
+*** Constraints data not available. Please refer to documentation for help
+*** FP/MCP data not available.Please refer to documentation for help
+
+Testability 
+*** Undetected Faults data not available.
+*** Transition Faults data not available. Please refer to documentation for help
+Testability,Fault Coverage,Test Coverage
+Stuck-at Test,-%,-% 
+Transition Fault,-%,-% 
+
+Design Statistics
+*** Gate counts not available. Please refer to documentation for help
+*** Audit counts not available. Please refer to documentation for help
+Statistic,Count
+Synthesizable gates (NAND2 equivalent),-
+Registers,-
+Latches,-
+Tristates,-
+
+Black Boxes (Analog, Mixed-Signal, Memory, Custom IP)
+Name,Number of Ports

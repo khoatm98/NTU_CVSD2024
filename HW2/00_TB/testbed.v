@@ -64,6 +64,10 @@
 	`define Inst   "../00_TB/PATTERN/p14/inst.dat"
 	`define Data   "../00_TB/PATTERN/p14/data.dat"
 	`define Status "../00_TB/PATTERN/p14/status.dat"
+`elsif p15
+	`define Inst   "../00_TB/PATTERN/p15/inst.dat"
+	`define Data   "../00_TB/PATTERN/p15/data.dat"
+	`define Status "../00_TB/PATTERN/p15/status.dat"
 `else
 	`define Inst   "../00_TB/PATTERN/p0/inst.dat"
 	`define Data   "../00_TB/PATTERN/p0/data.dat"

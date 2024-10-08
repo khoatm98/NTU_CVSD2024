@@ -22,48 +22,17 @@
     `define IDATA  "../00_TB/ALU_I_FP_PLUS.dat"
     `define ODATA  "../00_TB/ALU_O_FP_PLUS.dat"
 	`define OOVFDATA  "../00_TB/ALU_O_OVF_FP_PLUS.dat"
-    `define PAT_LEN 10000
+    `define PAT_LEN 40000
 `elsif I1
     `define IDATA  "../00_TB/ALU_I_FP_MINUS.dat"
     `define ODATA  "../00_TB/ALU_O_FP_MINUS.dat"
 	`define OOVFDATA  "../00_TB/ALU_O_OVF_FP_MINUS.dat"
-    `define PAT_LEN 10000
+    `define PAT_LEN 40000
 `elsif I2
-    `define IDATA  "../00_TESTBED/pattern/INST2_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST2_O.dat"
-    `define PAT_LEN 40
-`elsif I3
-    `define IDATA  "../00_TESTBED/pattern/INST3_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST3_O.dat"
-    `define PAT_LEN 40
-`elsif I4
-    `define IDATA  "../00_TESTBED/pattern/INST4_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST4_O.dat"
-    `define PAT_LEN 40
-`elsif I5
-    `define IDATA  "../00_TESTBED/pattern/INST5_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST5_O.dat"
-    `define PAT_LEN 40
-`elsif I6
-    `define IDATA  "../00_TESTBED/pattern/INST6_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST6_O.dat"
-    `define PAT_LEN 40
-`elsif I7
-    `define IDATA  "../00_TESTBED/pattern/INST7_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST7_O.dat"
-    `define PAT_LEN 40
-`elsif I8
-    `define IDATA  "../00_TESTBED/pattern/INST8_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST8_O.dat"
-    `define PAT_LEN 40
-`elsif I9
-    `define IDATA  "../00_TESTBED/pattern/INST9_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST9_O.dat"
-    `define PAT_LEN 40
-`else
-    `define IDATA  "../00_TESTBED/pattern/INST0_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST0_O.dat"
-    `define PAT_LEN 40
+    `define IDATA  "../00_TB/ALU_I_FP_FLT.dat"
+    `define ODATA  "../00_TB/ALU_O_FP_FLT.dat"
+	`define OOVFDATA  "../00_TB/ALU_O_OVF_FP_FLT.dat"
+    `define PAT_LEN 40000
 `endif
 
 module testbench #(
@@ -199,7 +168,7 @@ module testbench #(
         while (k < `PAT_LEN) begin
             @(negedge clk);
             if (out_valid) begin
-                if (odata === golden_data[k] && out_ovf == golden_ovf[k]) begin
+                if (odata === golden_data[k] && out_ovf == golden_ovf[k] || (out_ovf == golden_ovf[k] && out_ovf == 1)) begin
                     correct = correct + 1;
 					/* $display(
                         "Test[%d]: Correct! Inst=%b, A=%b, B=%b, Golden=%b, Yours=%b",

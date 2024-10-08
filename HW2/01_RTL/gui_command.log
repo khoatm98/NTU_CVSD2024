@@ -1,78 +1,117 @@
-open_project /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2.prj
-# Started at 16:55:44, Completed at 16:55:54 (Elapsed time = 00:00:07.470)
-
-current_goal lint/lint_rtl -top core
-# Started at 16:56:08, Completed at 16:56:16 (Elapsed time = 00:00:05.959)
-
-gui_select_message -rule W528 -msg {Variable 'ALUbusy_w' set but not read.[Hierarchy: ':core']}
-# Started at 16:56:20, Completed at 16:56:20 (Elapsed time = 00:00:00.000)
-
-run_goal
-# Started at 18:06:55, Completed at 18:07:15 (Elapsed time = 00:00:19.380)
-
-gui_select_message -rule STX_VE_561 -msg {Keyword 'endmodule' missing for module data_mem}
-# Started at 18:07:20, Completed at 18:07:20 (Elapsed time = 00:00:00.000)
-
-gui_select_message -rule STX_VE_606 -msg {Identifier ( testbed ) not declared in current scope}
-# Started at 18:07:30, Completed at 18:07:30 (Elapsed time = 00:00:00.000)
-
-gui_select_message -rule SYNTH_89 -msg {Initial Assignment at Declaration for ( clk ) is ignored by synthesis}
-# Started at 18:07:35, Completed at 18:07:35 (Elapsed time = 00:00:00.000)
-
-gui_select_message -rule STX_VE_561 -msg {Keyword 'endmodule' missing for module data_mem}
-# Started at 18:07:43, Completed at 18:07:43 (Elapsed time = 00:00:00.009)
-
-remove_file -type hdl
-# Started at 18:08:06, Completed at 18:08:06 (Elapsed time = 00:00:00.009)
-
-read_file -type hdl {../00_TB/define.v ../00_TB/data_mem.vp ./reg_file.v ./alu.v ./core.v}
-# Started at 18:08:06, Completed at 18:08:06 (Elapsed time = 00:00:00.019)
-
-remove_file -type hdl
-# Started at 18:08:09, Completed at 18:08:09 (Elapsed time = 00:00:00.020)
-
-read_file -type hdl {../00_TB/define.v ./reg_file.v ./alu.v ./core.v}
-# Started at 18:08:09, Completed at 18:08:09 (Elapsed time = 00:00:00.030)
+open_project /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/hw2_04Oct24_20.50.prj
+# Started at 19:20:58, Completed at 19:21:00 (Elapsed time = 00:00:02.870)
 
 current_goal Design_Read -top core
-# Started at 18:08:15, Completed at 18:08:19 (Elapsed time = 00:00:02.399)
+# Started at 19:21:01, Completed at 19:21:01 (Elapsed time = 00:00:00.000)
+
+link_design -force
+# Started at 19:21:09, Completed at 19:21:15 (Elapsed time = 00:00:06.160)
+
+gui_select_message -rule STX_VE_561 -msg {Keyword 'endmodule' missing for module data_mem}
+# Started at 19:21:19, Completed at 19:21:19 (Elapsed time = 00:00:00.000)
+
+remove_file -type hdl
+# Started at 19:21:28, Completed at 19:21:29 (Elapsed time = 00:00:00.009)
+
+read_file -type hdl {../00_TB/define.v ../00_TB/data_mem.vp ./reg_file.v ./alu.v ./core.v}
+# Started at 19:21:29, Completed at 19:21:29 (Elapsed time = 00:00:00.019)
+
+remove_file -type hdl
+# Started at 19:21:31, Completed at 19:21:31 (Elapsed time = 00:00:00.019)
+
+read_file -type hdl {../00_TB/define.v ./reg_file.v ./alu.v ./core.v}
+# Started at 19:21:31, Completed at 19:21:31 (Elapsed time = 00:00:00.010)
+
+link_design -force
+# Started at 19:21:36, Completed at 19:21:46 (Elapsed time = 00:00:07.760)
 
 current_goal lint/lint_rtl -top core
-# Started at 18:08:29, Completed at 18:08:34 (Elapsed time = 00:00:05.589)
+# Started at 19:21:53, Completed at 19:21:58 (Elapsed time = 00:00:05.030)
 
 run_goal
-# Started at 18:08:34, Completed at 18:08:54 (Elapsed time = 00:00:21.340)
+# Started at 19:21:58, Completed at 19:22:18 (Elapsed time = 00:00:19.779)
 
 current_goal lint/lint_rtl_enhanced -top core
-# Started at 18:08:54, Completed at 18:09:00 (Elapsed time = 00:00:05.829)
+# Started at 19:22:18, Completed at 19:22:24 (Elapsed time = 00:00:05.399)
 
 run_goal
-# Started at 18:09:00, Completed at 18:09:12 (Elapsed time = 00:00:12.590)
+# Started at 19:22:24, Completed at 19:22:35 (Elapsed time = 00:00:12.310)
 
 current_goal lint/lint_rtl -top core
-# Started at 18:09:12, Completed at 18:09:18 (Elapsed time = 00:00:05.570)
+# Started at 19:22:35, Completed at 19:22:41 (Elapsed time = 00:00:05.379)
 
-gui_select_message -rule W287b -msg {Instance output port 'o_busy' is not connected}
-# Started at 18:09:26, Completed at 18:09:26 (Elapsed time = 00:00:00.000)
+gui_select_message -rule InferLatch -msg {Latch inferred for signal 'ovf_addr_wait_r' in module 'alu'}
+# Started at 19:22:50, Completed at 19:22:50 (Elapsed time = 00:00:00.000)
 
-gui_select_message -rule W287b -msg {Instance output port 'o_out_valid' is not connected}
-# Started at 18:09:27, Completed at 18:09:27 (Elapsed time = 00:00:00.000)
+gui_select_message -rule InferLatch -msg {Latch inferred for signal 'ovf_data_wait_r' in module 'alu'}
+# Started at 19:22:54, Completed at 19:22:54 (Elapsed time = 00:00:00.000)
 
-gui_select_message -rule W287b -msg {Instance output port 'o_busy' is not connected}
-# Started at 18:09:29, Completed at 18:09:29 (Elapsed time = 00:00:00.000)
+run_goal
+# Started at 19:23:51, Completed at 19:24:14 (Elapsed time = 00:00:22.860)
 
-gui_select_message -rule W287b -msg {Instance output port 'o_out_valid' is not connected}
-# Started at 18:09:30, Completed at 18:09:30 (Elapsed time = 00:00:00.000)
+gui_select_message -rule InferLatch -msg {Latch inferred for signal 'ovf_data_wait_r' in module 'alu'}
+# Started at 19:24:40, Completed at 19:24:40 (Elapsed time = 00:00:00.000)
 
-gui_select_message -rule W287b -msg {Instance output port 'o_busy' is not connected}
-# Started at 18:09:31, Completed at 18:09:31 (Elapsed time = 00:00:00.000)
+run_goal
+# Started at 19:24:45, Completed at 19:25:02 (Elapsed time = 00:00:14.700)
 
-gui_select_message -rule W287b -msg {Instance output port 'o_out_valid' is not connected}
-# Started at 18:09:32, Completed at 18:09:32 (Elapsed time = 00:00:00.000)
+gui_select_message -rule InferLatch -msg {Latch inferred for signal 'ovf_data_wait_r' in module 'alu'}
+# Started at 19:25:05, Completed at 19:25:05 (Elapsed time = 00:00:00.000)
 
-gui_select_message -rule W287b -msg {Instance output port 'o_busy' is not connected}
-# Started at 18:09:35, Completed at 18:09:35 (Elapsed time = 00:00:00.000)
+current_goal Design_Read -top core
+# Started at 19:25:11, Completed at 19:25:15 (Elapsed time = 00:00:02.099)
 
-save_project
-# Started at 20:50:03, Completed at 20:50:03 (Elapsed time = 00:00:00.000)
+link_design -force
+# Started at 19:25:15, Completed at 19:25:25 (Elapsed time = 00:00:08.390)
+
+current_goal lint/lint_rtl -top core
+# Started at 19:25:30, Completed at 19:25:36 (Elapsed time = 00:00:11.039)
+
+run_goal
+# Started at 19:25:36, Completed at 19:25:56 (Elapsed time = 00:00:22.039)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 19:25:56, Completed at 19:26:02 (Elapsed time = 00:00:05.920)
+
+run_goal
+# Started at 19:26:02, Completed at 19:26:15 (Elapsed time = 00:00:13.760)
+
+current_goal lint/lint_rtl -top core
+# Started at 19:26:15, Completed at 19:26:21 (Elapsed time = 00:00:05.599)
+
+run_goal
+# Started at 19:26:41, Completed at 19:27:03 (Elapsed time = 00:00:18.529)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 19:28:13, Completed at 19:28:21 (Elapsed time = 00:00:06.799)
+
+gui_select_message -rule InferLatch -msg {Latch inferred for signal 'ovf_data_wait_r' in module 'alu'}
+# Started at 19:30:13, Completed at 19:30:13 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 19:31:59, Completed at 19:32:22 (Elapsed time = 00:00:19.089)
+
+gui_select_message -rule W164b -msg {LHS: 'ret_value[30:23] ' width 8 is greater than RHS: 'mantissa_greater[(FRAC_W * 2)]' width 1 in assignment [Hierarchy: ':core:u_alu@alu']}
+# Started at 19:33:01, Completed at 19:33:01 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 19:43:22, Completed at 19:43:45 (Elapsed time = 00:00:19.100)
+
+gui_select_message -rule W164b -msg {LHS: 'ret_value[30:23] ' width 8 is greater than RHS: 'mantissa_greater[(FRAC_W * 2)]' width 1 in assignment [Hierarchy: ':core:u_alu@alu']}
+# Started at 19:43:49, Completed at 19:43:49 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W362 -msg For\ operator\ (>),\ left\ expression:\ \"exp_a\"\ width\ 8\ should\ match\ right\ expression:\ \"leading_zeros\"\ width\ 5\ [Hierarchy:\ ':core:u_alu@alu:fp_add_amb']
+# Started at 19:45:10, Completed at 19:45:10 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 19:45:32, Completed at 19:45:56 (Elapsed time = 00:00:19.369)
+
+current_goal lint/lint_rtl -top core
+# Started at 19:46:08, Completed at 19:46:16 (Elapsed time = 00:00:06.959)
+
+run_goal
+# Started at 19:46:27, Completed at 19:46:41 (Elapsed time = 00:00:09.889)
+
+run_goal
+# Started at 19:48:04, Completed at 19:48:27 (Elapsed time = 00:00:18.780)
 

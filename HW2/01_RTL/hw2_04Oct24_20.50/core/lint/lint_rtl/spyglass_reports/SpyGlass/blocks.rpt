@@ -1,0 +1,3 @@
+reg_file@@@@core.u_int_reg_file
+reg_file@@@@core.u_float_reg_file
+alu@@@@core.u_alu
