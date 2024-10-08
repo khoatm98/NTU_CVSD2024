@@ -1,0 +1,5 @@
+StudentID: 
+
+Clock period: 5.0 (ns)
+
+Area : 210673.118129 (um^2)
