@@ -1,0 +1,101 @@
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Sat Oct 12 00:11:28 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Multiply driven inputs (LINT-6)                                 2
+
+Cells                                                              43
+    Cells do not drive (LINT-1)                                    43
+
+Tristate                                                           35
+    A tristate bus has a non tri-state driver (LINT-34)            35
+--------------------------------------------------------------------------------
+
+Warning: In design 'core', cell 'C2991' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3048' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3060' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3108' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3112' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3170' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3174' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3196' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3207' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3211' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3215' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3254' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3258' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3276' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3287' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3291' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3295' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3334' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3338' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3356' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3367' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3371' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3375' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3414' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3418' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3440' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3451' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3455' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3459' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3645' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3646' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3647' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3648' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3649' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3650' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3654' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3660' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3663' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3664' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3690' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3691' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3728' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C3729' does not drive any nets. (LINT-1)
+Warning: In design 'core', input port 'i_clk' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'core', input port 'i_rst_n' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'core', three-state bus 'med_isFirst_signal_r' has non three-state driver 'med_isFirst_signal_r_reg/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'conv_calc_done_r' has non three-state driver 'conv_calc_done_r_reg/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'conv_isFirst_signal_r' has non three-state driver 'conv_isFirst_signal_r_reg/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[0]' has non three-state driver 'input_data_r_reg[0]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[1]' has non three-state driver 'input_data_r_reg[1]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[2]' has non three-state driver 'input_data_r_reg[2]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[3]' has non three-state driver 'input_data_r_reg[3]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[4]' has non three-state driver 'input_data_r_reg[4]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[5]' has non three-state driver 'input_data_r_reg[5]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[6]' has non three-state driver 'input_data_r_reg[6]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[7]' has non three-state driver 'input_data_r_reg[7]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[8]' has non three-state driver 'input_data_r_reg[8]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[9]' has non three-state driver 'input_data_r_reg[9]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[10]' has non three-state driver 'input_data_r_reg[10]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[11]' has non three-state driver 'input_data_r_reg[11]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[12]' has non three-state driver 'input_data_r_reg[12]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[13]' has non three-state driver 'input_data_r_reg[13]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[14]' has non three-state driver 'input_data_r_reg[14]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[15]' has non three-state driver 'input_data_r_reg[15]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[16]' has non three-state driver 'input_data_r_reg[16]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[17]' has non three-state driver 'input_data_r_reg[17]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[18]' has non three-state driver 'input_data_r_reg[18]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[19]' has non three-state driver 'input_data_r_reg[19]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[20]' has non three-state driver 'input_data_r_reg[20]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[21]' has non three-state driver 'input_data_r_reg[21]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[22]' has non three-state driver 'input_data_r_reg[22]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[23]' has non three-state driver 'input_data_r_reg[23]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[24]' has non three-state driver 'input_data_r_reg[24]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[25]' has non three-state driver 'input_data_r_reg[25]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[26]' has non three-state driver 'input_data_r_reg[26]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[27]' has non three-state driver 'input_data_r_reg[27]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[28]' has non three-state driver 'input_data_r_reg[28]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[29]' has non three-state driver 'input_data_r_reg[29]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[30]' has non three-state driver 'input_data_r_reg[30]/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[31]' has non three-state driver 'input_data_r_reg[31]/Q'. (LINT-34)
+1

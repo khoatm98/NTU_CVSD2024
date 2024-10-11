@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 `define CYCLE       5.0     // CLK period.
 `define HCYCLE      (`CYCLE/2)
-`define MAX_CYCLE   10000000
+`define MAX_CYCLE   40000
 `define RST_DELAY   2
 
 
@@ -51,8 +51,11 @@ reg  [13:0] golden_mem [0:4095];
 // ==============================================
 // TODO: Declare regs and wires you need
 // ==============================================
-
-
+integer i, j, k, error, cycle;
+reg        op_valid_r;
+reg [ 3:0] op_mode_r;
+reg        in_valid_r;
+reg [ 7:0] in_data_r;
 // For gate-level simulation only
 `ifdef SDF
     initial $sdf_annotate(`SDFFILE, u_core);
@@ -65,18 +68,24 @@ initial begin
   $fsdbDumpvars(0, "+mda");
 end
 
+assign op_valid    = op_valid_r;
+assign op_mode     = op_mode_r;
+assign in_valid    = in_valid_r;
+assign in_data     = in_data_r;
+
+
 
 core u_core (
-	.i_clk       (),
-	.i_rst_n     (),
-	.i_op_valid  (),
-	.i_op_mode   (),
-    .o_op_ready  (),
-	.i_in_valid  (),
-	.i_in_data   (),
-	.o_in_ready  (),
-	.o_out_valid (),
-	.o_out_data  ()
+	.i_clk       (clk),
+	.i_rst_n     (rst_n),
+	.i_op_valid  (op_valid),
+	.i_op_mode   (op_mode ),
+    .o_op_ready  (op_ready),
+	.i_in_valid  (in_valid),
+	.i_in_data   (in_data),
+	.o_in_ready  (in_ready),
+	.o_out_valid (out_valid),
+	.o_out_data  (out_data)
 );
 
 // Read in test pattern and golden pattern
@@ -97,7 +106,88 @@ initial begin
     $finish;
 end
 
+initial begin
+	i = 0;
+	j = 0;
+	op_mode_r = 0;
+	in_valid_r = 0;
+	op_valid_r = 0;
+	in_data_r = 0;
+	while (opmode_mem[i] !== 4'dx) begin
+		@(negedge clk);
+		if(op_ready) begin
+			@(negedge clk);
+			op_valid_r = 1;
+			op_mode_r = opmode_mem[i][3:0];
+			@(negedge clk);
+			op_valid_r = 0;
+			if (op_mode_r == 0) begin // map loading
+				j = 0;
+				// Load imput feature map
+                while (j < 2048) begin
+					
+					in_valid_r = 1;
+					in_data_r = indata_mem[j][7:0];
+                    if (in_ready) begin
+                    j = j + 1;
+                    end
+					@(negedge clk);
+                end
+                in_valid_r = 0;
+			end
+			i = i + 1;
+			
+		end
+	end
+	# ( 2 * `CYCLE);
+	$display("count instruction %d", i);
+end
 
+integer flag;
+initial begin
+    k = 0;
+    error = 0;
+	flag = 0;
+    while (golden_mem[k] !== 14'dx ) begin
+        @(negedge clk);
+        if (out_valid) begin
+            if (out_data !== golden_mem[k][13:0]) begin
+                $display ("Test[%4d]: Error! GOLDEN=(%d), yours=(%d)", k, golden_mem[k][13:0], out_data);
+                //$finish;
+                error = error+1;
+            end
+			else begin
+				$display ("Test[%4d]: Correct! GOLDEN=(%d), yours=(%d)", k, golden_mem[k][13:0], out_data);
+			end
+            k = k + 1;
+			flag = 0;
+        end
+		else if (flag == 0) begin
+			$display ("Processing...");
+			flag = 1;
+		end
+    end
+    if(error == 0) begin
+        $display("----------------------------------------------------");
+        $display("-                    ALL PASS!                     -");
+        $display("-           Latency: %0d/%0d cycle/ns           -",cycle,$time);
+        $display("----------------------------------------------------");
+    end else begin
+        $display("----------------------------------------------");
+        $display("         Wrong! Total error: %d               ", error);
+        $display("----------------------------------------------");
+    end
+    # ( 2 * `CYCLE);
+    //$display("End of Process, total cycle = %d",cycle_count);
+    $finish;
+end
+
+always @ (posedge clk) begin
+if (!rst_n)
+	cycle <= 0;
+else
+	cycle <= cycle + 1;
+end
 // ==============================================
 // TODO: Check pattern after process finish
 // ==============================================

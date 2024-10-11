@@ -1,0 +1,61 @@
+4 "W486" 1
+"SPG_MSGTAG_HIERARCHY"
+":core"
+13 "InfoAnalyzeBBox" 2
+"BBoxEng"
+["sram_512x8","BB_NO_MOD_DEF"]
+"BBoxEngAuxiInfo"
+["WORK","sram_512x8","1"]
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "InfoAnalyzeBBox" 2
+"RULEGROUP"
+["Blackbox Resolution"]
+"BUILTIN"
+"1"
+-1 "RegInputOutput-ML" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[63]
+"RULEGROUP"
+["morelint"]
+-1 "ReportIgnoreSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ReportPortInfo-ML" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[42]
+"RULEGROUP"
+["morelint"]
+-1 "W486" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[57]
+"RULEGROUP"
+["lint/Lint_Elab_Rules","lint/Expression"]
+-1 "W528" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[95]
+"RULEGROUP"
+["lint/Lint_Elab_Rules","lint/Usage"]
+-1 "WRN_69" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"

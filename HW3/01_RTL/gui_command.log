@@ -1,0 +1,381 @@
+read_file -type verilog {define.v core.v}
+# Started at 14:32:55, Completed at 14:32:56 (Elapsed time = 00:00:01.719)
+
+set_option top core
+# Started at 14:33:09, Completed at 14:33:09 (Elapsed time = 00:00:00.029)
+
+current_goal Design_Read -top core
+# Started at 14:33:12, Completed at 14:33:13 (Elapsed time = 00:00:00.919)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:33:21, Completed at 14:33:25 (Elapsed time = 00:00:04.900)
+
+run_goal
+# Started at 14:33:25, Completed at 14:33:44 (Elapsed time = 00:00:18.919)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 14:33:44, Completed at 14:33:49 (Elapsed time = 00:00:05.409)
+
+run_goal
+# Started at 14:33:49, Completed at 14:34:00 (Elapsed time = 00:00:11.040)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:34:00, Completed at 14:34:05 (Elapsed time = 00:00:05.270)
+
+current_goal Design_Read -top core
+# Started at 14:34:20, Completed at 14:34:23 (Elapsed time = 00:00:01.909)
+
+read_file -type verilog ../sram_512x8/sram_512x8.v
+# Started at 14:34:37, Completed at 14:34:37 (Elapsed time = 00:00:00.000)
+
+current_goal Design_Read -top core
+# Started at 14:34:49, Completed at 14:34:49 (Elapsed time = 00:00:00.019)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:34:56, Completed at 14:35:01 (Elapsed time = 00:00:05.189)
+
+run_goal
+# Started at 14:35:01, Completed at 14:35:26 (Elapsed time = 00:00:26.180)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 14:35:26, Completed at 14:35:32 (Elapsed time = 00:00:05.819)
+
+run_goal
+# Started at 14:35:32, Completed at 14:35:49 (Elapsed time = 00:00:17.539)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:35:49, Completed at 14:35:55 (Elapsed time = 00:00:05.789)
+
+gui_select_message -rule W71 -msg {Case statement does not have a default clause and is not preceded by assignment of target signal in combinational block[Hierarchy: ':core']}
+# Started at 14:36:04, Completed at 14:36:04 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W71 -msg {Case statement does not have a default clause and is not preceded by assignment of target signal in combinational block[Hierarchy: ':core']}
+# Started at 14:36:11, Completed at 14:36:11 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W71 -msg {Case statement does not have a default clause and is not preceded by assignment of target signal in combinational block[Hierarchy: ':core']}
+# Started at 14:36:20, Completed at 14:36:20 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W123 -msg {Variable 'conv_calc_done_w' read but never set.[Hierarchy: ':core']}
+# Started at 14:37:40, Completed at 14:37:40 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W486 -msg {Rhs width '11' with shift (Expr: '((y_origin_r + cnt) >> 3)') is more than lhs width '4' (Expr: 'y_next_r'), this may cause overflow [Hierarchy: ':core']}
+# Started at 14:37:52, Completed at 14:37:52 (Elapsed time = 00:00:00.000)
+
+current_goal Design_Read -top core
+# Started at 14:40:33, Completed at 14:40:36 (Elapsed time = 00:00:01.959)
+
+link_design -force
+# Started at 14:40:36, Completed at 14:40:44 (Elapsed time = 00:00:07.219)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:40:53, Completed at 14:40:58 (Elapsed time = 00:00:05.650)
+
+run_goal
+# Started at 14:40:58, Completed at 14:41:25 (Elapsed time = 00:00:28.289)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 14:41:25, Completed at 14:41:31 (Elapsed time = 00:00:06.079)
+
+run_goal
+# Started at 14:41:31, Completed at 14:41:49 (Elapsed time = 00:00:18.759)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:41:49, Completed at 14:41:55 (Elapsed time = 00:00:06.129)
+
+gui_select_message -rule STARC05-1.4.3.4 -msg {Clock signal 'core.i_clk' used as a non-clock (Used with name 'core.\SRAM_inst_loop[0].u_sram .LAST_CLK')}
+# Started at 14:42:38, Completed at 14:42:38 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W415 -msg {Signal 'core.sram_data_wait_r[3][7:0]' has multiple simultaneous drivers}
+# Started at 14:43:41, Completed at 14:43:41 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W415 -msg {Please refer 'W415_Report.rpt' for driver details}
+# Started at 14:43:58, Completed at 14:43:58 (Elapsed time = 00:00:00.000)
+
+current_goal Design_Read -top core
+# Started at 14:46:38, Completed at 14:46:42 (Elapsed time = 00:00:02.420)
+
+remove_option ignoredu
+# Started at 14:47:34, Completed at 14:47:34 (Elapsed time = 00:00:00.039)
+
+set_option ignoredu sram_512x8
+# Started at 14:47:34, Completed at 14:47:35 (Elapsed time = 00:00:00.030)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:47:58, Completed at 14:48:05 (Elapsed time = 00:00:06.359)
+
+run_goal
+# Started at 14:48:05, Completed at 14:48:26 (Elapsed time = 00:00:22.770)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 14:48:26, Completed at 14:48:32 (Elapsed time = 00:00:06.370)
+
+run_goal
+# Started at 14:48:32, Completed at 14:48:45 (Elapsed time = 00:00:13.839)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:48:45, Completed at 14:48:51 (Elapsed time = 00:00:05.939)
+
+gui_select_message -rule W415 -msg {Please refer 'W415_Report.rpt' for driver details}
+# Started at 14:49:16, Completed at 14:49:16 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 14:49:55, Completed at 14:50:16 (Elapsed time = 00:00:18.730)
+
+run_goal
+# Started at 14:51:27, Completed at 14:51:51 (Elapsed time = 00:00:19.039)
+
+gui_select_message -rule W486 -msg {Rhs width '11' with shift (Expr: '(cnt >> 2)') is more than lhs width '9' (Expr: 'sram_addr_wait_r[i]'), this may cause overflow [Hierarchy: ':core:\SRAM_input[3] ']}
+# Started at 14:52:09, Completed at 14:52:09 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W486 -msg {Rhs width '12' with shift (Expr: '(cnt_next_w >> 2)') is more than lhs width '5' (Expr: 'z_r'), this may cause overflow [Hierarchy: ':core']}
+# Started at 14:52:25, Completed at 14:52:25 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 14:53:58, Completed at 14:54:22 (Elapsed time = 00:00:19.009)
+
+gui_select_message -rule W486 -msg {Rhs width '11' with shift (Expr: '(cnt >> 2)') is more than lhs width '9' (Expr: 'sram_addr_wait_r[i]'), this may cause overflow [Hierarchy: ':core:\SRAM_input[0] ']}
+# Started at 14:54:27, Completed at 14:54:27 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W486 -msg {Rhs width '11' with shift (Expr: '(cnt >> 2)') is more than lhs width '9' (Expr: 'sram_addr_wait_r[i]'), this may cause overflow [Hierarchy: ':core:\SRAM_input[1] ']}
+# Started at 14:56:02, Completed at 14:56:02 (Elapsed time = 00:00:00.010)
+
+gui_select_message -rule W486 -msg {Rhs width '11' with shift (Expr: '(cnt >> 2)') is more than lhs width '9' (Expr: 'sram_addr_wait_r[i]'), this may cause overflow [Hierarchy: ':core:\SRAM_input[1] ']}
+# Started at 14:56:04, Completed at 14:56:04 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W486 -msg {Rhs width '11' with shift (Expr: '(cnt >> 2)') is more than lhs width '9' (Expr: 'sram_addr_wait_r[i]'), this may cause overflow [Hierarchy: ':core:\SRAM_input[0] ']}
+# Started at 14:56:06, Completed at 14:56:06 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W486 -msg {Rhs width '11' with shift (Expr: '(cnt >> 2)') is more than lhs width '9' (Expr: 'sram_addr_wait_r[i]'), this may cause overflow [Hierarchy: ':core:\SRAM_input[1] ']}
+# Started at 14:56:08, Completed at 14:56:08 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W486 -msg {Rhs width '11' with shift (Expr: '(cnt >> 2)') is more than lhs width '9' (Expr: 'sram_addr_wait_r[i]'), this may cause overflow [Hierarchy: ':core:\SRAM_input[2] ']}
+# Started at 14:56:09, Completed at 14:56:09 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 14:56:11, Completed at 14:56:35 (Elapsed time = 00:00:19.449)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 14:56:36, Completed at 14:56:46 (Elapsed time = 00:00:10.979)
+
+gui_select_message -rule DuplicateCaseLabel-ML -msg {Case '{4'bzzzz ,4'bzzzz ,DISPLAY}' covered more than once at '{4'bzzzz ,MAP_LOAD ,4'bzzzz}'}
+# Started at 14:56:58, Completed at 14:56:58 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 14:57:06, Completed at 14:57:21 (Elapsed time = 00:00:10.509)
+
+gui_select_message -rule DuplicateCaseLabel-ML -msg {Case '{4'bzzzz ,4'bzzzz ,DISPLAY}' covered more than once at '{4'bzzzz ,MAP_LOAD ,4'bzzzz}'}
+# Started at 14:57:44, Completed at 14:57:44 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule DuplicateCaseLabel-ML -msg {Case '{DISPLAY ,4'bzzzz ,DELAY3}' covered more than once at '{4'bzzzz ,MAP_LOAD ,4'bzzzz}'}
+# Started at 14:57:59, Completed at 14:57:59 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 14:59:14, Completed at 14:59:38 (Elapsed time = 00:00:19.310)
+
+gui_select_message -rule PragmaComments-ML -msg {Pragma(synopsys) : (RTL_CODE) 'parallel_case'}
+# Started at 14:59:42, Completed at 14:59:42 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'out_valid_ready_r' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core']}
+# Started at 15:00:02, Completed at 15:00:02 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 15:00:23, Completed at 15:00:49 (Elapsed time = 00:00:19.800)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'out_valid_ready_r' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core']}
+# Started at 15:00:52, Completed at 15:00:52 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 15:01:32, Completed at 15:01:57 (Elapsed time = 00:00:20.509)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'out_valid_ready_r' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core']}
+# Started at 15:02:00, Completed at 15:02:00 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'z_r[4:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core']}
+# Started at 15:02:19, Completed at 15:02:19 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'out_data_ready_r[13:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core']}
+# Started at 15:02:30, Completed at 15:02:30 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'out_valid_ready_r' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core']}
+# Started at 15:02:36, Completed at 15:02:36 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 15:06:10, Completed at 15:06:35 (Elapsed time = 00:00:20.139)
+
+gui_select_message -rule W164a -msg {LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_r >> 2)) + (y_r << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']}
+# Started at 15:06:39, Completed at 15:06:39 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W164a -msg {LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_r >> 2)) + (y_r << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']}
+# Started at 15:06:49, Completed at 15:06:49 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W164b -msg {LHS: 'out_data_wait_r' width 14 is greater than RHS: 'sram_data_out_w[sram_select_delay_r[1]]' width 8 in assignment [Hierarchy: ':core']}
+# Started at 15:07:05, Completed at 15:07:05 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule W486 -msg {Rhs width '7' with shift (Expr: '(depth_ready_r << 1)') is more than lhs width '6' (Expr: 'depth_wait_r'), this may cause overflow [Hierarchy: ':core']}
+# Started at 15:07:21, Completed at 15:07:21 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 15:09:06, Completed at 15:09:30 (Elapsed time = 00:00:19.800)
+
+current_goal lint/lint_rtl -top core
+# Started at 15:10:06, Completed at 15:10:15 (Elapsed time = 00:00:07.519)
+
+run_goal
+# Started at 15:10:16, Completed at 15:10:31 (Elapsed time = 00:00:10.159)
+
+run_goal
+# Started at 15:56:27, Completed at 15:56:48 (Elapsed time = 00:00:18.320)
+
+run_goal
+# Started at 15:56:58, Completed at 15:57:22 (Elapsed time = 00:00:19.230)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 15:57:24, Completed at 15:57:32 (Elapsed time = 00:00:10.909)
+
+run_goal
+# Started at 15:57:34, Completed at 15:57:49 (Elapsed time = 00:00:10.570)
+
+run_goal
+# Started at 16:19:06, Completed at 16:19:30 (Elapsed time = 00:00:19.789)
+
+gui_select_message -rule STARC05-2.8.1.3 -msg {Case label '{DISPLAY ,4'bzzzz ,DELAY3}' overlaps with another case label {DISPLAY ,4'bzzzz ,DELAY3}}
+# Started at 16:19:37, Completed at 16:19:37 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 16:20:20, Completed at 16:20:44 (Elapsed time = 00:00:21.240)
+
+gui_select_message -rule W164a -msg {LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_r >> 2)) + (y_r << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']}
+# Started at 16:20:49, Completed at 16:20:49 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule W164a -msg {LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_r >> 2)) + (y_r << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']}
+# Started at 16:20:50, Completed at 16:20:50 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 17:04:18, Completed at 17:04:43 (Elapsed time = 00:00:21.620)
+
+run_goal
+# Started at 14:26:01, Completed at 14:26:25 (Elapsed time = 00:00:21.340)
+
+current_goal Design_Read -top core
+# Started at 14:26:45, Completed at 14:26:49 (Elapsed time = 00:00:02.799)
+
+read_file -type verilog conv.v
+# Started at 14:26:56, Completed at 14:26:56 (Elapsed time = 00:00:00.019)
+
+link_design -force
+# Started at 14:27:13, Completed at 14:27:21 (Elapsed time = 00:00:04.500)
+
+gui_select_message -rule WRN_69 -msg {Compiler directive `timescale found for module 'conv' (in the file ../sram_512x8/sram_512x8.v at line 53) while previous modules do not}
+# Started at 14:27:29, Completed at 14:27:29 (Elapsed time = 00:00:00.019)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:27:46, Completed at 14:27:53 (Elapsed time = 00:00:07.129)
+
+run_goal
+# Started at 14:27:53, Completed at 14:28:14 (Elapsed time = 00:00:20.529)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 14:28:14, Completed at 14:28:22 (Elapsed time = 00:00:07.420)
+
+run_goal
+# Started at 14:28:22, Completed at 14:28:34 (Elapsed time = 00:00:10.939)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:28:34, Completed at 14:28:41 (Elapsed time = 00:00:07.120)
+
+gui_select_message -rule WRN_69 -msg {Compiler directive `timescale found for module 'conv' (in the file ../sram_512x8/sram_512x8.v at line 53) while previous modules do not}
+# Started at 14:28:58, Completed at 14:28:58 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule W123 -msg {Please refer to 'SignalUsageReport.rpt' for details of violating bits}
+# Started at 14:29:14, Completed at 14:29:14 (Elapsed time = 00:00:00.019)
+
+gui_select_message -rule W123 -msg {Variable 'partial_sum_wait_r[16:0]' read but never set.[Hierarchy: ':core:conv_inst@conv']}
+# Started at 14:29:17, Completed at 14:29:17 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule InferLatch -msg {Latch inferred for signal 'conv_isFirst_signal_wait_r' in module 'core'}
+# Started at 14:29:20, Completed at 14:29:21 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 14:29:56, Completed at 14:30:23 (Elapsed time = 00:00:22.039)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 14:30:42, Completed at 14:30:52 (Elapsed time = 00:00:08.259)
+
+run_goal
+# Started at 14:31:04, Completed at 14:31:20 (Elapsed time = 00:00:12.769)
+
+run_goal
+# Started at 17:51:27, Completed at 17:51:54 (Elapsed time = 00:00:22.950)
+
+gui_select_message -rule ImproperRangeIndex-ML -msg {Index 'sram_select3_delay_r[1]' of width '3' is larger than the width '2' required for the max value '3' of the signal 'sram_data_out_w'[Hierarchy: :core]}
+# Started at 17:52:00, Completed at 17:52:00 (Elapsed time = 00:00:00.019)
+
+gui_select_message -rule ImproperRangeIndex-ML -msg {Index 'sram_select2_delay_r[1]' of width '3' is larger than the width '2' required for the max value '3' of the signal 'sram_data_out_w'[Hierarchy: :core]}
+# Started at 17:53:14, Completed at 17:53:14 (Elapsed time = 00:00:00.030)
+
+gui_select_message -rule ImproperRangeIndex-ML -msg {Index 'sram_select2_delay_r[1]' of width '3' is larger than the width '2' required for the max value '3' of the signal 'sram_data_out_w'[Hierarchy: :core]}
+# Started at 17:53:17, Completed at 17:53:17 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule InstPortConnType-ML -msg {Register 'out_data_r' is connected to output port 'o_out_data' of module 'small_alu_add' in instance 'u_alu'}
+# Started at 17:54:12, Completed at 17:54:12 (Elapsed time = 00:00:00.019)
+
+gui_select_message -rule ImproperRangeIndex-ML -msg {Index 'sram_select_delay_r[1]' of width '3' is larger than the width '2' required for the max value '3' of the signal 'sram_data_out_w'[Hierarchy: :core]}
+# Started at 19:07:30, Completed at 19:07:30 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule ImproperRangeIndex-ML -msg {Index 'sram_select3_delay_r[1]' of width '3' is larger than the width '2' required for the max value '3' of the signal 'sram_data_out_w'[Hierarchy: :core]}
+# Started at 19:07:46, Completed at 19:07:46 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 19:07:58, Completed at 19:08:24 (Elapsed time = 00:00:22.950)
+
+run_goal
+# Started at 19:08:27, Completed at 19:08:52 (Elapsed time = 00:00:25.680)
+
+gui_select_message -rule ImproperRangeIndex-ML -msg {Index 'sram_select_delay_r[1]' of width '3' is larger than the width '2' required for the max value '3' of the signal 'sram_data_out_w'[Hierarchy: :core]}
+# Started at 19:08:57, Completed at 19:08:57 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule STARC05-2.2.3.3 -msg {Flipflop 'cnt' is assigned over the same signal in an always construct for sequential circuits (at line '482')}
+# Started at 19:09:30, Completed at 19:09:30 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule STARC05-2.2.3.3 -msg {Flipflop 'cnt' is assigned over the same signal in an always construct for sequential circuits (at line '482')}
+# Started at 19:09:49, Completed at 19:09:49 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 19:14:25, Completed at 19:14:51 (Elapsed time = 00:00:22.900)
+
+gui_select_message -rule UndrivenInTerm-ML -msg {Detected undriven input terminal core.conv_inst.partial_sum_wait_r[16:0]}
+# Started at 19:14:56, Completed at 19:14:56 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule W164b -msg {LHS: 'y_r' width 5 is greater than RHS: 'y_origin_r' width 4 in assignment [Hierarchy: ':core']}
+# Started at 19:15:06, Completed at 19:15:06 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule W263 -msg {Case label (IDLE) width (1) does not match selector (cs) width (3).[Hierarchy: ':core:conv_inst@conv']}
+# Started at 19:15:33, Completed at 19:15:33 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 19:43:18, Completed at 19:43:44 (Elapsed time = 00:00:23.160)
+
+gui_select_message -rule STARC05-2.8.1.3 -msg {Case label '{4'bzzzz ,4'bzzzz ,4'bzzzz ,OUTPUT}' overlaps with another case label {DISPLAY ,DISPLAY ,DELAY3 ,4'bzzzz}}
+# Started at 19:43:49, Completed at 19:43:49 (Elapsed time = 00:00:00.019)
+
+gui_select_message -rule W263 -msg {Case label ({CALC ,3'd0}) width (5) does not match selector ({cs ,out_cnt}) width (6).[Hierarchy: ':core:conv_inst@conv']}
+# Started at 19:45:10, Completed at 19:45:10 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule W398 -msg {Case '{4'bzzzz ,4'bzzzz ,4'bzzzz ,OUTPUT}' covered more than once at '{4'bzzzz ,DISPLAY ,DISPLAY ,4'bzzzz}'}
+# Started at 19:45:47, Completed at 19:45:47 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 19:45:51, Completed at 19:46:17 (Elapsed time = 00:00:23.170)
+
+gui_select_message -rule W164b -msg {LHS: 'y_r' width 5 is greater than RHS: 'y_origin_r' width 4 in assignment [Hierarchy: ':core']}
+# Started at 19:46:24, Completed at 19:46:24 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 19:46:56, Completed at 19:47:22 (Elapsed time = 00:00:22.930)
+
+current_goal lint/lint_rtl -top core
+# Started at 19:47:28, Completed at 19:47:38 (Elapsed time = 00:00:08.420)
+
+run_goal
+# Started at 19:47:38, Completed at 19:47:54 (Elapsed time = 00:00:12.330)
+

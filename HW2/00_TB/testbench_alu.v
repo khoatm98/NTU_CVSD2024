@@ -170,15 +170,17 @@ module testbench #(
             if (out_valid) begin
                 if (odata === golden_data[k] && out_ovf == golden_ovf[k] || (out_ovf == golden_ovf[k] && out_ovf == 1)) begin
                     correct = correct + 1;
-					/* $display(
-                        "Test[%d]: Correct! Inst=%b, A=%b, B=%b, Golden=%b, Yours=%b",
+					$display(
+                        "Test[%d]: Correct! Inst=%b, A=%b, B=%b, Golden=%b, OVF=%b Yours=%b OVF=%b",
                         k,
                         input_data[k][2*DATA_W +: INST_W],
                         input_data[k][  DATA_W +: DATA_W],
                         input_data[k][       0 +: DATA_W],
                         golden_data[k],
-                        odata
-                    ); */
+						golden_ovf[k],
+                        odata,
+						out_ovf
+                    );
                 end
                 else begin
                     error = error + 1;

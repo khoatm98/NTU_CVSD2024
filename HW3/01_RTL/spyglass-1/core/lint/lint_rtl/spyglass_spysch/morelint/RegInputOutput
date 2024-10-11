@@ -1,0 +1,17 @@
+SCHEMA@@PName@@HierName
+VALUE@@i_op_valid@@core
+VALUE@@i_op_mode[0]@@core
+VALUE@@i_op_mode[1]@@core
+VALUE@@i_op_mode[2]@@core
+VALUE@@i_op_mode[3]@@core
+VALUE@@o_op_ready@@core
+VALUE@@i_in_valid@@core
+VALUE@@i_in_data[0]@@core
+VALUE@@i_in_data[1]@@core
+VALUE@@i_in_data[2]@@core
+VALUE@@i_in_data[3]@@core
+VALUE@@i_in_data[4]@@core
+VALUE@@i_in_data[5]@@core
+VALUE@@i_in_data[6]@@core
+VALUE@@i_in_data[7]@@core
+VALUE@@o_in_ready@@core

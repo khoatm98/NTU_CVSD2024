@@ -174,6 +174,7 @@ module sram_512x8 (
 	end
 	2'b00: begin
 	   write_mem(Ai,Di);
+	   //$display("%d %b", Ai,  Di);
 	   read_mem(0,0);
 	end
 	2'b?1: ;
@@ -294,7 +295,10 @@ module sram_512x8 (
       casez({valid_address(a)})
 	1'b0: 
 		x_mem;
-	1'b1: mem[a]=wordx;
+	1'b1: begin
+		mem[a]=wordx;
+		//$display("%d %b", a,  wordx);
+	end//mem[a]=wordx;
       endcase
    end
    endtask

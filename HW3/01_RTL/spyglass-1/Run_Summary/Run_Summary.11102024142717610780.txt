@@ -1,0 +1,14 @@
+Date Created     : 11-10-2024 14:27:17
+SpyGlass Version : SpyGlass_vT-2022.06
+Project Name     : spyglass-1
+Goal Name        : Design_Read
+Scenario Name    : default_scenario
+Top              : core
+
+Message Summary
+Severity   Non-Waived  Waived
+FATAL           0         0
+ERROR           0         0
+WARNING         1         0
+INFO            4         0
+

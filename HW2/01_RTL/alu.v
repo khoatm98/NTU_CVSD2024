@@ -241,7 +241,10 @@ module alu #(
 		end else begin
 			// Compare sign first
 			if (sign_a != sign_b) begin
-				a_lt_b = sign_a;
+				if ({exp_a,mantissa_a} == {exp_b,mantissa_b})
+					a_lt_b = 0;
+				else
+					a_lt_b = sign_a;
 			end
 			// Compare exponents
 			else if (exp_a != exp_b) begin

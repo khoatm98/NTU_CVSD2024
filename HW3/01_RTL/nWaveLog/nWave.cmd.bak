@@ -1,0 +1,847 @@
+verdiSetActWin -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 0)}
+wvOpenFile -win $_nWave1 \
+           {/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/core.fsdb}
+wvResizeWindow -win $_nWave1 0 23 1920 1009
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbed"
+wvGetSignalSetScope -win $_nWave1 "/testbed/u_core"
+wvSetPosition -win $_nWave1 {("G1" 6)}
+wvSetPosition -win $_nWave1 {("G1" 6)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 1 2 3 4 5 6 )} 
+wvSetPosition -win $_nWave1 {("G1" 6)}
+wvSetPosition -win $_nWave1 {("G1" 6)}
+wvSetPosition -win $_nWave1 {("G1" 6)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 1 2 3 4 5 6 )} 
+wvSetPosition -win $_nWave1 {("G1" 6)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 84421.363440 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvSetCursor -win $_nWave1 9943.862521 -snap {("G1" 6)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbed"
+wvGetSignalSetScope -win $_nWave1 "/testbed/u_core"
+wvSetPosition -win $_nWave1 {("G1" 7)}
+wvSetPosition -win $_nWave1 {("G1" 7)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 7 )} 
+wvSetPosition -win $_nWave1 {("G1" 7)}
+wvSetPosition -win $_nWave1 {("G1" 7)}
+wvSetPosition -win $_nWave1 {("G1" 7)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 7 )} 
+wvSetPosition -win $_nWave1 {("G1" 7)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 6 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 1 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 7 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 6 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 7 )} 
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 8 )} 
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 8 )} 
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 6 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 8 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomOut -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 9 )} 
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvSetCursor -win $_nWave1 43022.425599 -snap {("G2" 0)}
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 9 )} 
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvGetSignalClose -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 6 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 10)}
+wvSetPosition -win $_nWave1 {("G1" 10)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 10 )} 
+wvSetPosition -win $_nWave1 {("G1" 10)}
+wvSetPosition -win $_nWave1 {("G1" 10)}
+wvSetPosition -win $_nWave1 {("G1" 10)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 10 )} 
+wvSetPosition -win $_nWave1 {("G1" 10)}
+wvGetSignalClose -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 1 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 9 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 10 )} 
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvSetCursor -win $_nWave1 21815.616754 -snap {("G1" 10)}
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 21714.148770 -snap {("G2" 0)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 10 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 14)}
+wvSetPosition -win $_nWave1 {("G1" 14)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 11 12 13 14 )} 
+wvSetPosition -win $_nWave1 {("G1" 14)}
+wvSetPosition -win $_nWave1 {("G1" 14)}
+wvSetPosition -win $_nWave1 {("G1" 14)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 11 12 13 14 )} 
+wvSetPosition -win $_nWave1 {("G1" 14)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 12 )} 
+wvResizeWindow -win $_nWave1 0 23 1920 1009
+wvSelectSignal -win $_nWave1 {( "G1" 13 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+{/testbed/u_core/x_r\[3:0\]} \
+{/testbed/u_core/y_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 15 16 )} 
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+{/testbed/u_core/x_r\[3:0\]} \
+{/testbed/u_core/y_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 15 16 )} 
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvGetSignalClose -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 11 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 11 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 11 )} 
+wvSetPosition -win $_nWave1 {("G1" 11)}
+wvExpandBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 20)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 25797.132430 -snap {("G1" 1)}
+wvSetCursor -win $_nWave1 29808.891213 -snap {("G1" 1)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvExpandBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 24)}
+wvSetCursor -win $_nWave1 22953.354052 -snap {("G1" 21)}
+wvSetCursor -win $_nWave1 31941.724997 -snap {("G1" 20)}
+wvSetCursor -win $_nWave1 22242.409457 -snap {("G1" 18)}
+wvSetCursor -win $_nWave1 38594.135131 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 22090.064187 -snap {("G1" 20)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 20 )} 
+wvSetCursor -win $_nWave1 30012.018240 -snap {("G1" 20)}
+wvSetCursor -win $_nWave1 27371.366889 -snap {("G1" 20)}
+wvSelectSignal -win $_nWave1 {( "G1" 22 )} 
+wvSetPosition -win $_nWave1 {("G1" 22)}
+wvExpandBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 28)}
+wvSetCursor -win $_nWave1 15031.399998 -snap {("G1" 26)}
+wvSelectSignal -win $_nWave1 {( "G1" 10 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 11 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvSetPosition -win $_nWave1 {("G1" 21)}
+wvExpandBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 32)}
+wvSetCursor -win $_nWave1 27929.966213 -snap {("G1" 25)}
+wvSetCursor -win $_nWave1 21886.937160 -snap {("G1" 10)}
+wvSetCursor -win $_nWave1 26101.822970 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 22090.064187 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave1 {( "G1" 9 )} 
+wvSetCursor -win $_nWave1 23968.989187 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 27828.402700 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 30113.581754 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 20312.702701 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvSetCursor -win $_nWave1 21886.937160 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 23918.207430 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 26051.041213 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[3\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[2\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[1\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[0\]\[8:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3\]} \
+{/testbed/u_core/sram_cen_ready_r\[2\]} \
+{/testbed/u_core/sram_cen_ready_r\[1\]} \
+{/testbed/u_core/sram_cen_ready_r\[0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[2\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[1\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[0\]\[7:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3\]} \
+{/testbed/u_core/sram_wen_ready_r\[2\]} \
+{/testbed/u_core/sram_wen_ready_r\[1\]} \
+{/testbed/u_core/sram_wen_ready_r\[0\]} \
+{/testbed/u_core/x_r\[3:0\]} \
+{/testbed/u_core/y_r\[3:0\]} \
+{/testbed/u_core/i_in_data\[7:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetCursor -win $_nWave1 10613.387161 -snap {("G1" 32)}
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[3\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[2\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[1\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[0\]\[8:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3\]} \
+{/testbed/u_core/sram_cen_ready_r\[2\]} \
+{/testbed/u_core/sram_cen_ready_r\[1\]} \
+{/testbed/u_core/sram_cen_ready_r\[0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[2\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[1\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[0\]\[7:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3\]} \
+{/testbed/u_core/sram_wen_ready_r\[2\]} \
+{/testbed/u_core/sram_wen_ready_r\[1\]} \
+{/testbed/u_core/sram_wen_ready_r\[0\]} \
+{/testbed/u_core/x_r\[3:0\]} \
+{/testbed/u_core/y_r\[3:0\]} \
+{/testbed/u_core/i_in_data\[7:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 27980.747970 -snap {("G1" 33)}
+wvSetCursor -win $_nWave1 22394.754727 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 26152.604727 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 28082.311483 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 31687.816213 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 14066.546620 -snap {("G1" 8)}
+wvSetCursor -win $_nWave1 12086.058107 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave1 {( "G1" 8 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSetCursor -win $_nWave1 16047.035133 -snap {("G1" 5)}
+wvSetCursor -win $_nWave1 20058.793917 -snap {("G1" 5)}
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSetCursor -win $_nWave1 23968.989187 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 27980.747970 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 23968.989187 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 21988.500673 -snap {("G1" 7)}
+wvSetCursor -win $_nWave1 26000.259457 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 22343.972971 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 25949.477700 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 21734.591890 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 25949.477700 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 21988.500673 -snap {("G1" 2)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbed"
+wvGetSignalSetScope -win $_nWave1 "/testbed/u_core"
+wvGetSignalSetScope -win $_nWave1 "/testbed/u_core"
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[3\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[2\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[1\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[0\]\[8:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3\]} \
+{/testbed/u_core/sram_cen_ready_r\[2\]} \
+{/testbed/u_core/sram_cen_ready_r\[1\]} \
+{/testbed/u_core/sram_cen_ready_r\[0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[2\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[1\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[0\]\[7:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3\]} \
+{/testbed/u_core/sram_wen_ready_r\[2\]} \
+{/testbed/u_core/sram_wen_ready_r\[1\]} \
+{/testbed/u_core/sram_wen_ready_r\[0\]} \
+{/testbed/u_core/x_r\[3:0\]} \
+{/testbed/u_core/y_r\[3:0\]} \
+{/testbed/u_core/i_in_data\[7:0\]} \
+{/testbed/u_core/x_next_r\[3:0\]} \
+{/testbed/u_core/y_next_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 34 35 )} 
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[3\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[2\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[1\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[0\]\[8:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3\]} \
+{/testbed/u_core/sram_cen_ready_r\[2\]} \
+{/testbed/u_core/sram_cen_ready_r\[1\]} \
+{/testbed/u_core/sram_cen_ready_r\[0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[2\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[1\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[0\]\[7:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3\]} \
+{/testbed/u_core/sram_wen_ready_r\[2\]} \
+{/testbed/u_core/sram_wen_ready_r\[1\]} \
+{/testbed/u_core/sram_wen_ready_r\[0\]} \
+{/testbed/u_core/x_r\[3:0\]} \
+{/testbed/u_core/y_r\[3:0\]} \
+{/testbed/u_core/i_in_data\[7:0\]} \
+{/testbed/u_core/x_next_r\[3:0\]} \
+{/testbed/u_core/y_next_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 34 35 )} 
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 26000.259457 -snap {("G1" 2)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvSetCursor -win $_nWave1 30012.018240 -snap {("G1" 25)}
+wvSetCursor -win $_nWave1 33820.649996 -snap {("G1" 25)}
+wvSetCursor -win $_nWave1 30164.363510 -snap {("G1" 25)}
+wvSetCursor -win $_nWave1 21785.373646 -snap {("G1" 10)}
+wvSetCursor -win $_nWave1 25949.477700 -snap {("G1" 25)}
+wvSetCursor -win $_nWave1 30215.145267 -snap {("G1" 25)}
+wvSetCursor -win $_nWave1 26051.041213 -snap {("G1" 25)}
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[3\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[2\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[1\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[0\]\[8:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3\]} \
+{/testbed/u_core/sram_cen_ready_r\[2\]} \
+{/testbed/u_core/sram_cen_ready_r\[1\]} \
+{/testbed/u_core/sram_cen_ready_r\[0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[2\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[1\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[0\]\[7:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3\]} \
+{/testbed/u_core/sram_wen_ready_r\[2\]} \
+{/testbed/u_core/sram_wen_ready_r\[1\]} \
+{/testbed/u_core/sram_wen_ready_r\[0\]} \
+{/testbed/u_core/x_r\[3:0\]} \
+{/testbed/u_core/y_r\[3:0\]} \
+{/testbed/u_core/i_in_data\[7:0\]} \
+{/testbed/u_core/x_next_r\[3:0\]} \
+{/testbed/u_core/y_next_r\[3:0\]} \
+{/testbed/u_core/sram_data_wait_r\[3:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvExpandBus -win $_nWave1
+wvSetCursor -win $_nWave1 24476.806754 -snap {("G1" 37)}
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbed/u_core/cnt\[10:0\]} \
+{/testbed/u_core/i_clk} \
+{/testbed/u_core/i_in_valid} \
+{/testbed/u_core/i_op_mode\[3:0\]} \
+{/testbed/u_core/i_op_valid} \
+{/testbed/u_core/i_rst_n} \
+{/testbed/u_core/curr_state\[3:0\]} \
+{/testbed/u_core/o_op_ready} \
+{/testbed/u_core/op_mode_r\[3:0\]} \
+{/testbed/u_core/o_in_ready} \
+{/testbed/u_core/sram_addr_ready_r\[3:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[3\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[2\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[1\]\[8:0\]} \
+{/testbed/u_core/sram_addr_ready_r\[0\]\[8:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_cen_ready_r\[3\]} \
+{/testbed/u_core/sram_cen_ready_r\[2\]} \
+{/testbed/u_core/sram_cen_ready_r\[1\]} \
+{/testbed/u_core/sram_cen_ready_r\[0\]} \
+{/testbed/u_core/sram_data_ready_r\[3:0\]} \
+{/testbed/u_core/sram_data_ready_r\[3\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[2\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[1\]\[7:0\]} \
+{/testbed/u_core/sram_data_ready_r\[0\]\[7:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3:0\]} \
+{/testbed/u_core/sram_wen_ready_r\[3\]} \
+{/testbed/u_core/sram_wen_ready_r\[2\]} \
+{/testbed/u_core/sram_wen_ready_r\[1\]} \
+{/testbed/u_core/sram_wen_ready_r\[0\]} \
+{/testbed/u_core/x_r\[3:0\]} \
+{/testbed/u_core/y_r\[3:0\]} \
+{/testbed/u_core/i_in_data\[7:0\]} \
+{/testbed/u_core/x_next_r\[3:0\]} \
+{/testbed/u_core/y_next_r\[3:0\]} \
+{/testbed/u_core/sram_data_wait_r\[3:0\]} \
+{/testbed/u_core/sram_data_wait_r\[3\]\[7:0\]} \
+{/testbed/u_core/sram_data_wait_r\[2\]\[7:0\]} \
+{/testbed/u_core/sram_data_wait_r\[1\]\[7:0\]} \
+{/testbed/u_core/sram_data_wait_r\[0\]\[7:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 27828.402700 -snap {("G1" 40)}
+wvSetCursor -win $_nWave1 21683.810133 -snap {("G1" 40)}
+wvSetCursor -win $_nWave1 26000.259457 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSetCursor -win $_nWave1 20109.575674 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 24019.770943 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 20058.793917 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 10 )} 
+wvSetCursor -win $_nWave1 22090.064187 -snap {("G1" 10)}
+wvSetCursor -win $_nWave1 24019.770943 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 27828.402700 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 23816.643916 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 22140.845944 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 23968.989187 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 28133.093240 -snap {("G1" 2)}
+wvSelectSignal -win $_nWave1 {( "G1" 9 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 10 )} 
+wvSetCursor -win $_nWave1 22140.845944 -snap {("G1" 10)}
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 29 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 30 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 20 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 1 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 1 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvSetCursor -win $_nWave1 5008658.080411 -snap {("G1" 7)}
+wvSelectSignal -win $_nWave1 {( "G1" 37 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 1 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 2 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 30 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 24 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 20 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 23918.207430 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 22090.064187 -snap {("G1" 10)}
+wvSetCursor -win $_nWave1 23918.207430 -snap {("G1" 2)}
+wvSetCursor -win $_nWave1 27980.747970 -snap {("G1" 2)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 22343.972971 -snap {("G1" 40)}
+wvSetCursor -win $_nWave1 24019.770943 -snap {("G1" 2)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 7 )} 
+wvZoomOut -win $_nWave1

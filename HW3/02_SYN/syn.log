@@ -1,0 +1,901 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version U-2022.12 for linux64 - Nov 22, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+# Setting environment
+sh mkdir -p Netlist
+sh mkdir -p Report
+set company {NTUGIEE}
+NTUGIEE
+set designer {Student}
+Student
+set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  ../sram_256x8 ../sram_512x8 ../sram_4096x8 $search_path ../ ./"
+. /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  ../sram_256x8 ../sram_512x8 ../sram_4096x8 . /usr/cad/synopsys/synthesis/cur/libraries/syn /usr/cad/synopsys/synthesis/cur/dw/syn_ver /usr/cad/synopsys/synthesis/cur/dw/sim_ver ../ ./
+set target_library   "slow.db                 \
+                      sram_256x8_slow_syn.db  \
+                      sram_512x8_slow_syn.db  \
+                      sram_4096x8_slow_syn.db \
+                     "
+slow.db                  sram_256x8_slow_syn.db   sram_512x8_slow_syn.db   sram_4096x8_slow_syn.db  
+set link_library     "* $target_library dw_foundation.sldb"
+* slow.db                  sram_256x8_slow_syn.db   sram_512x8_slow_syn.db   sram_4096x8_slow_syn.db   dw_foundation.sldb
+set symbol_library   "tsmc13.sdb generic.sdb"
+tsmc13.sdb generic.sdb
+set synthetic_library "dw_foundation.sldb"
+dw_foundation.sldb
+set default_schematic_options {-size infinite}
+-size infinite
+# Import Design
+set DESIGN "core"
+core
+set hdlin_translate_off_skip_text "TRUE"
+Information: Variable 'hdlin_translate_off_skip_text' is obsolete and is being ignored. (INFO-100)
+TRUE
+set edifout_netlist_only "TRUE"
+TRUE
+set verilogout_no_tri true
+true
+set hdlin_enable_presto_for_vhdl "TRUE"
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+TRUE
+set sh_enable_line_editing true
+true
+set sh_line_editing_mode emacs
+emacs
+history keep 100
+100
+alias h history
+analyze -format sverilog "flist.sv"
+Running PRESTO HDLC
+Compiling source file ./flist.sv
+Opening include file ../01_RTL/define.v
+Opening include file ../01_RTL/core.v
+Presto compilation completed successfully.
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow'
+  Loading link library 'sram_256x8'
+  Loading link library 'sram_512x8'
+  Loading link library 'sram_4096x8'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ../01_RTL/core.v:152: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:154: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:155: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:193: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:197: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:202: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:203: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:204: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:285: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:286: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:287: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:299: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:300: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:301: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:408: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:421: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:434: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:435: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:436: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:437: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:644: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:649: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:659: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:519: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 212 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           213            |    auto/auto     |
+|           215            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 246 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           247            |    auto/auto     |
+|           249            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 268 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           269            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 377 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           379            |    auto/auto     |
+|           433            |     auto/no      |
+===============================================
+
+Statistics for case statements in always block at line 464 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           465            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 485 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           486            |    auto/auto     |
+|           491            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 540 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           544            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 634 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           641            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine core line 139 in file
+		'../01_RTL/core.v'.
+========================================================================================
+|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+========================================================================================
+| sram_select_forecase_3_r_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     conv_calc_done_r_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        med_done_r_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| sram_select_forecase_0_r_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select_forecase_1_r_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select_forecase_2_r_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+========================================================================================
+
+Inferred memory devices in process
+	in routine core line 527 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pre_state_reg    | Flip-flop |   4   |  Y  | N  | N  | Y  | N  | N  | N  |
+|    pre_state_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   curr_state_reg    | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|   curr_state_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 540 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 557 in file
+		'../01_RTL/core.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| cnt_next4_mod16_r_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    output_cnt_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine core line 567 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    op_mode_r_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 574 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  depth_ready_r_reg  | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|  depth_ready_r_reg  | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   x_origin_r_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   y_origin_r_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 587 in file
+		'../01_RTL/core.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+| sram_select3_delay_r_reg | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select_delay_r_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select1_delay_r_reg | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select2_delay_r_reg | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine core line 610 in file
+		'../01_RTL/core.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| out_valid_ready_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| out_data_ready_r_reg  | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine core line 621 in file
+		'../01_RTL/core.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| med_isFirst_signal_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| conv_isFirst_signal_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     input_data_r_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+
+Inferred memory devices in process
+	in routine core line 634 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       z_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       x_r_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       y_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 668 in file
+		'../01_RTL/core.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| sram_wen_ready_r_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_addr_ready_r_reg | Flip-flop |  36   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_data_ready_r_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_cen_ready_r_reg  | Flip-flop |   4   |  Y  | N  | N  | Y  | N  | N  | N  |
+=================================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|     core/362     |   4    |    8    |      2       |
+|     core/362     |   4    |    8    |      2       |
+|     core/362     |   4    |    8    |      2       |
+|     core/364     |   4    |    8    |      2       |
+======================================================
+Presto compilation completed successfully. (core)
+Elaborated 1 design.
+Current design is now 'core'.
+Information: Building the design 'conv'. (HDL-193)
+Warning: Cannot find the design 'conv' in the library 'WORK'. (LBR-1)
+Information: Building the design 'median'. (HDL-193)
+Warning: Cannot find the design 'median' in the library 'WORK'. (LBR-1)
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+current_design [get_designs $DESIGN]
+Current design is 'core'.
+{core}
+link
+
+  Linking design 'core'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  core                        /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/core.db
+  slow (library)              /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db
+  sram_256x8 (library)        /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db
+  sram_512x8 (library)        /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db
+  sram_4096x8 (library)       /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+Information: Building the design 'conv'. (HDL-193)
+Warning: Cannot find the design 'conv' in the library 'WORK'. (LBR-1)
+Information: Building the design 'median'. (HDL-193)
+Warning: Cannot find the design 'median' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'conv' in 'core'. (LINK-5)
+Warning: Unable to resolve reference 'median' in 'core'. (LINK-5)
+0
+source -echo -verbose ./core_dc.sdc
+# operating conditions and boundary conditions #
+set cycle  3.0;  # modify your clock cycle here #
+3.0
+create_clock -period $cycle [get_ports  i_clk]
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_dont_touch_network      [get_clocks i_clk]
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_fix_hold                [get_clocks i_clk]
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_ideal_network           [get_ports i_clk]
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_clock_uncertainty  0.1  [get_clocks i_clk]
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_clock_latency      0.5  [get_clocks i_clk]
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_input_delay  [ expr $cycle*0.5 ] -clock i_clk [all_inputs]
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_output_delay [ expr $cycle*0.5 ] -clock i_clk [all_outputs] 
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_load         0.05     [all_outputs]
+1
+set_operating_conditions  -max_library slow -max slow
+Using operating conditions 'slow' found in library 'slow'.
+1
+set_wire_load_model -name tsmc13_wl10 -library slow                        
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_max_fanout 20 [all_inputs]
+1
+1
+# Compile Design
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+check_design > Report/check_design.txt
+check_timing > Report/check_timing.txt
+#set high_fanout_net_threshold 0
+uniquify
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+1
+compile
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | U-2022.12-DWBB_202212.0 |     *     |
+| Licensed DW Building Blocks        | U-2022.12-DWBB_202212.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 1427                                   |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 225                                    |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 463                                    |
+| Number of Dont Touch Nets                               | 1                                      |
+| Number of Size Only Cells                               | 35                                     |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+
+Information: There are 88 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'core'
+Information: Added key list 'DesignWare' to design 'core'. (DDB-72)
+Information: The register 'x_origin_r_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'y_origin_r_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: Building the design 'conv'. (HDL-193)
+Warning: Cannot find the design 'conv' in the library 'WORK'. (LBR-1)
+Information: Building the design 'median'. (HDL-193)
+Warning: Cannot find the design 'median' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'conv' in 'core'. (LINK-5)
+Warning: Unable to resolve reference 'median' in 'core'. (LINK-5)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'core_DW01_add_0_DW01_add_3'
+  Processing 'core_DW01_add_1_DW01_add_4'
+  Processing 'core_DW01_inc_0_DW01_inc_3'
+  Mapping 'core_DW_cmp_0'
+  Mapping 'core_DW_cmp_1'
+  Processing 'core_DW01_dec_0'
+  Processing 'core_DW01_add_2_DW01_add_5'
+  Processing 'core_DW01_inc_1_DW01_inc_4'
+  Processing 'core_DW01_dec_1'
+  Processing 'core_DW01_add_3_DW01_add_6'
+  Processing 'core_DW01_dec_2'
+  Processing 'core_DW01_add_4_DW01_add_7'
+  Processing 'core_DW01_add_5_DW01_add_8'
+  Mapping 'core_DW_cmp_2'
+  Mapping 'core_DW_cmp_3'
+  Processing 'core_DW01_add_6_DW01_add_9'
+  Processing 'core_DW01_dec_3'
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width5' (rpl)
+  Processing 'DW01_add_width5'
+  Building model 'DW01_add_width9' (rpl)
+  Processing 'DW01_add_width9'
+  Building model 'DW01_inc_width5' (rpl)
+  Processing 'DW01_inc_width5'
+  Processing 'core_DW01_add_7_DW01_add_10'
+  Processing 'core_DW01_add_8_DW01_add_11'
+  Processing 'core_DW01_add_9_DW01_add_12'
+  Processing 'core_DW01_add_10_DW01_add_13'
+  Processing 'core_DW01_add_11_DW01_add_14'
+  Processing 'core_DW01_inc_2_DW01_inc_5'
+  Processing 'core_DW01_add_12_DW01_add_15'
+  Processing 'core_DW01_add_13_DW01_add_16'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+Information: The register 'y_r_reg[4]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:18  151121.4      0.26      21.3     566.9                                0.00  
+    0:00:18  151223.2      0.36      26.4     566.9                                0.00  
+    0:00:18  151223.2      0.36      26.4     566.9                                0.00  
+    0:00:18  151223.2      0.36      26.4     566.9                                0.00  
+    0:00:18  151223.2      0.36      26.4     566.9                                0.00  
+    0:00:19  145136.4      2.36     240.7     553.8                                0.00  
+    0:00:19  145309.5      2.86     281.3     551.1                                0.00  
+    0:00:19  145273.8      2.54     271.0     551.1                                0.00  
+    0:00:19  145205.9      2.30     271.2     551.1                                0.00  
+    0:00:20  145177.1      2.85     305.6     551.1                                0.00  
+    0:00:20  145290.8      2.34     254.0     551.1                                0.00  
+    0:00:20  145323.1      1.92     217.0     551.1                                0.00  
+    0:00:20  145355.3      1.94     201.7     551.1                                0.00  
+    0:00:20  145382.5      1.79     199.6     551.1                                0.00  
+    0:00:20  145394.4      1.74     187.7     551.1                                0.00  
+    0:00:20  145501.3      1.55     173.2     551.1                                0.00  
+    0:00:20  145555.6      1.40     152.2     551.1                                0.00  
+    0:00:20  145552.2      1.37     150.8     551.1                                0.00  
+    0:00:20  145582.8      1.30     142.8     551.1                                0.00  
+    0:00:20  145559.0      1.21     137.7     551.1                                0.00  
+    0:00:20  145628.6      1.17     135.9     551.1                                0.00  
+    0:00:20  145642.2      1.12     134.0     551.1                                0.00  
+    0:00:21  145705.0      1.10     132.8     551.1                                0.00  
+    0:00:21  145735.5      1.09     131.7     546.8                                0.00  
+    0:00:21  145598.0      1.09     131.7     546.8                                0.00  
+    0:00:21  145598.0      1.09     131.7     546.8                                0.00  
+    0:00:21  145606.5      1.09     135.1     413.7                                0.00  
+    0:00:21  145616.7      1.09     135.7     301.0                                0.00  
+    0:00:21  145621.8      1.09     135.6     249.5                                0.00  
+    0:00:21  145591.3      1.09     135.6     198.0                                0.00  
+    0:00:21  145591.3      1.09     135.6     198.0                                0.00  
+    0:00:21  145591.3      1.09     135.6     198.0                                0.00  
+    0:00:21  145591.3      1.09     135.6     198.0                                0.00  
+    0:00:21  145957.9      0.82      97.1     198.0 sram_addr_ready_r_reg[3][8]/D      0.00  
+    0:00:21  146360.2      0.70      82.0     198.0 sram_addr_ready_r_reg[3][6]/D      0.00  
+    0:00:22  146625.0      0.57      68.0     198.0 sram_addr_ready_r_reg[3][1]/D      0.00  
+    0:00:22  146900.0      0.45      50.5     198.0 x_r_reg[0]/D                   0.00  
+    0:00:22  147037.4      0.41      47.6     198.0 input_data_r_reg[28]/D         0.00  
+    0:00:22  147704.5      0.38      42.8     198.0 input_data_r_reg[2]/D          0.00  
+    0:00:22  147775.8      0.37      42.1     198.0 input_data_r_reg[24]/D         0.00  
+    0:00:22  147913.3      0.36      40.0     198.0 input_data_r_reg[18]/D         0.00  
+    0:00:23  148018.5      0.33      37.8     198.0                                0.00  
+    0:00:23  148154.3      0.32      34.1     198.0                                0.00  
+    0:00:23  148201.9      0.32      33.1     198.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:23  148201.9      0.32      33.1     198.0                                0.00  
+    0:00:23  148183.2      0.32      32.9     198.0 input_data_r_reg[0]/D          0.00  
+    0:00:24  148196.8      0.29      31.7     198.0 sram_addr_ready_r_reg[0][8]/D      0.00  
+    0:00:24  148468.3      0.25      27.3     198.0 sram_addr_ready_r_reg[1][7]/D      0.00  
+    0:00:25  148466.7      0.24      26.7     198.0                                0.00  
+    0:00:25  148380.1      0.24      26.9     198.0                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:25  148380.1      0.24      26.9     198.0                                0.00  
+    0:00:26  148461.6      0.23      24.4       0.0 sram_addr_ready_r_reg[3][8]/D      0.00  
+    0:00:26  148566.8      0.21      22.5       0.0 sram_addr_ready_r_reg[3][7]/D      0.00  
+    0:00:26  148585.5      0.19      21.4       0.0 z_r_reg[1]/D                   0.00  
+    0:00:26  148680.5      0.18      21.5       0.0 z_r_reg[1]/D                   0.00  
+    0:00:26  148911.4      0.18      21.2       1.3 out_data_ready_r_reg[4]/D      0.00  
+    0:00:26  148986.1      0.18      20.1       1.3 sram_addr_ready_r_reg[0][1]/D      0.00  
+    0:00:26  149159.2      0.17      19.4       1.4 sram_addr_ready_r_reg[3][7]/D      0.00  
+    0:00:27  149250.8      0.16      18.8       1.4 y_r_reg[1]/D                   0.00  
+    0:00:27  149301.8      0.16      18.4       1.4 input_data_r_reg[31]/D         0.00  
+    0:00:27  149395.1      0.15      17.2       1.4 sram_addr_ready_r_reg[2][4]/D      0.00  
+    0:00:27  149459.6      0.15      15.7       1.4 sram_addr_ready_r_reg[2][2]/D      0.00  
+    0:00:27  149497.0      0.14      15.0       2.1 y_r_reg[1]/D                   0.00  
+    0:00:27  149520.7      0.14      14.5       2.1 sram_data_ready_r_reg[2][5]/D      0.00  
+    0:00:27  149570.0      0.14      12.0       2.1 sram_cen_ready_r_reg[2]/D      0.00  
+    0:00:27  149588.6      0.13      12.0       4.0 sram_addr_ready_r_reg[3][6]/D      0.00  
+    0:00:28  149617.5      0.12      11.6       4.0 cnt_reg[7]/D                   0.00  
+    0:00:28  149710.8      0.12      10.8       4.0 sram_addr_ready_r_reg[0][8]/D      0.00  
+    0:00:28  149755.0      0.11      10.1       4.0 input_data_r_reg[4]/D          0.00  
+    0:00:28  149901.0      0.11       9.7       6.0 sram_addr_ready_r_reg[3][7]/D      0.00  
+    0:00:28  149917.9      0.11       9.3       4.1 sram_addr_ready_r_reg[3][8]/D      0.00  
+    0:00:28  150001.1      0.10       9.1       4.1 sram_cen_ready_r_reg[2]/D      0.00  
+    0:00:28  150036.7      0.10       8.6       4.1 out_data_ready_r_reg[5]/D      0.00  
+    0:00:28  150072.4      0.10       8.3       4.1 sram_addr_ready_r_reg[3][0]/D      0.00  
+    0:00:28  150057.1      0.09       8.0       4.1 sram_cen_ready_r_reg[2]/D      0.00  
+    0:00:28  150102.9      0.09       7.5       2.0 sram_addr_ready_r_reg[3][0]/D      0.00  
+    0:00:29  150216.7      0.09       6.8       2.0 input_data_r_reg[19]/D         0.00  
+    0:00:29  150209.9      0.08       6.4       0.0 sram_addr_ready_r_reg[1][7]/D      0.00  
+    0:00:29  150221.8      0.08       6.3       0.0 sram_addr_ready_r_reg[0][7]/D      0.00  
+    0:00:29  150247.2      0.07       6.0       0.0 input_data_r_reg[29]/D         0.00  
+    0:00:29  150245.5      0.07       5.6       1.3 sram_addr_ready_r_reg[3][7]/D      0.00  
+    0:00:29  150271.0      0.07       5.4       1.3 out_data_ready_r_reg[4]/D      0.00  
+    0:00:29  150238.7      0.07       4.9       1.3 sram_addr_ready_r_reg[0][8]/D      0.00  
+    0:00:29  150247.2      0.07       4.9       1.3 sram_addr_ready_r_reg[0][8]/D      0.00  
+    0:00:29  150240.4      0.06       4.4       1.3 sram_addr_ready_r_reg[0][7]/D      0.00  
+    0:00:29  150320.2      0.06       4.3       1.3 input_data_r_reg[1]/D          0.00  
+    0:00:29  150360.9      0.06       3.8       1.3 sram_cen_ready_r_reg[1]/D      0.00  
+    0:00:30  150490.0      0.05       3.6       1.3 sram_addr_ready_r_reg[3][8]/D      0.00  
+    0:00:30  150476.4      0.05       3.2       1.6 sram_addr_ready_r_reg[0][3]/D      0.00  
+    0:00:30  150506.9      0.05       3.1       1.6 sram_addr_ready_r_reg[1][2]/D      0.00  
+    0:00:30  150490.0      0.04       3.0       1.5 out_data_ready_r_reg[5]/D      0.00  
+    0:00:30  150530.7      0.04       2.8       2.1 sram_addr_ready_r_reg[3][4]/D      0.00  
+    0:00:30  150608.8      0.04       2.7       2.1 sram_addr_ready_r_reg[1][5]/D      0.00  
+    0:00:30  150647.8      0.04       2.6       2.1 sram_addr_ready_r_reg[1][5]/D      0.00  
+    0:00:30  150637.6      0.04       2.5       2.1 sram_addr_ready_r_reg[0][0]/D      0.00  
+    0:00:30  150483.2      0.04       2.4       2.1 sram_addr_ready_r_reg[3][8]/D      0.00  
+    0:00:30  150479.8      0.04       2.3       2.1 sram_addr_ready_r_reg[3][0]/D      0.00  
+    0:00:30  150476.4      0.03       2.3       2.1 sram_cen_ready_r_reg[2]/D      0.00  
+    0:00:31  150454.3      0.03       2.3       2.1 sram_cen_ready_r_reg[2]/D      0.00  
+    0:00:31  150425.5      0.03       2.2       0.0 sram_data_ready_r_reg[1][2]/D      0.00  
+    0:00:31  150442.4      0.03       2.2       0.0 sram_cen_ready_r_reg[2]/D      0.00  
+    0:00:31  150471.3      0.03       2.1       0.0 sram_addr_ready_r_reg[1][8]/D      0.00  
+    0:00:31  150462.8      0.03       1.9       0.0 sram_data_ready_r_reg[1][4]/D      0.00  
+    0:00:31  150469.6      0.03       1.9       0.0 sram_addr_ready_r_reg[1][5]/D      0.00  
+    0:00:31  150498.4      0.03       1.8       0.0 sram_data_ready_r_reg[1][6]/D      0.00  
+    0:00:31  150547.7      0.03       1.7       0.0 sram_cen_ready_r_reg[2]/D      0.00  
+    0:00:31  150546.0      0.03       1.7       0.0 sram_addr_ready_r_reg[2][5]/D      0.00  
+    0:00:31  150552.8      0.03       1.6       0.0 sram_data_ready_r_reg[2][4]/D      0.00  
+    0:00:32  150564.6      0.02       1.3       0.0 sram_data_ready_r_reg[0][2]/D      0.00  
+    0:00:32  150579.9      0.02       1.2       0.0 cnt_reg[10]/D                  0.00  
+    0:00:32  150603.7      0.02       1.0       0.0 cnt_reg[10]/D                  0.00  
+    0:00:32  150622.3      0.02       1.0       0.0 sram_addr_ready_r_reg[2][5]/D      0.00  
+    0:00:32  150578.2      0.02       0.9       0.0 cnt_reg[10]/D                  0.00  
+    0:00:32  150586.7      0.02       0.9       0.0 input_data_r_reg[17]/D         0.00  
+    0:00:32  150619.0      0.02       0.8       0.0                                0.00  
+    0:00:32  150664.8      0.02       0.6       0.0                                0.00  
+    0:00:32  150666.5      0.02       0.5       0.0                                0.00  
+    0:00:32  150668.2      0.02       0.5       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:32  150668.2      0.02       0.5       0.0                                0.00  
+    0:00:33  150668.2      0.02       0.5       0.0                                0.00  
+    0:00:33  149819.5      0.11       2.7       0.0                                0.00  
+    0:00:33  149568.3      0.11       2.7       0.0                                0.00  
+    0:00:33  149546.2      0.11       2.9       0.0                                0.00  
+    0:00:33  149546.2      0.11       2.9       0.0                                0.00  
+    0:00:33  149546.2      0.11       2.9       0.0                                0.00  
+    0:00:33  149546.2      0.11       2.9       0.0                                0.00  
+    0:00:33  149561.5      0.02       0.6       0.0 sram_addr_ready_r_reg[1][6]/D      0.00  
+    0:00:33  149561.5      0.01       0.4       0.0 cnt_reg[4]/D                   0.00  
+    0:00:33  149576.8      0.01       0.2       0.0 input_data_r_reg[22]/D         0.00  
+    0:00:33  149581.8      0.01       0.1       0.0 input_data_r_reg[20]/D         0.00  
+    0:00:33  149605.6      0.00       0.0       0.0 sram_wen_ready_r_reg[1]/D      0.00  
+    0:00:34  149592.0      0.00       0.0       0.0                                0.00  
+    0:00:34  148398.8      0.84      58.2       0.0                                0.00  
+    0:00:34  147796.2      0.90      57.9       0.0                                0.00  
+    0:00:34  147701.1      0.91      59.1       0.0                                0.00  
+    0:00:34  147697.7      0.91      59.1       0.0                                0.00  
+    0:00:34  147697.7      0.91      59.1       0.0                                0.00  
+    0:00:34  147697.7      0.91      59.1       0.0                                0.00  
+    0:00:34  147697.7      0.91      59.1       0.0                                0.00  
+    0:00:34  147697.7      0.91      59.1       0.0                                0.00  
+    0:00:34  148038.9      0.25      12.8       0.0 sram_addr_ready_r_reg[2][5]/D      0.00  
+    0:00:35  148302.0      0.12       2.8       0.0 cnt_reg[1]/D                   0.00  
+    0:00:35  148487.0      0.03       0.8       0.0 sram_cen_ready_r_reg[2]/D      0.00  
+    0:00:35  148565.1      0.01       0.3       0.0                                0.00  
+    0:00:35  148592.3      0.00       0.1       0.0                                0.00  
+    0:00:36  148544.7      0.00       0.0       0.0                                0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+# Report Output
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+report_timing > "./Report/${DESIGN}_syn.timing"
+report_area > "./Report/${DESIGN}_syn.area"
+# Output Design
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set verilogout_higher_designs_first true
+true
+write -format ddc     -hierarchy -output "./Netlist/${DESIGN}_syn.ddc"
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Writing ddc file './Netlist/core_syn.ddc'.
+1
+write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Writing verilog file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/Netlist/core_syn.v'.
+1
+write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Writing timing information to file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/Netlist/core_syn.sdf'. (WT-3)
+Warning: Design contains black-box components.  These cells will have no timing information. (WT-7)
+1
+write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+report_timing
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : core
+Version: U-2022.12
+Date   : Sat Oct 12 00:12:08 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: SRAM_inst_loop_3__u_sram
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: input_data_r_reg_29_
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  SRAM_inst_loop_3__u_sram/CLK (sram_512x8)               0.00       0.50 r
+  SRAM_inst_loop_3__u_sram/Q[5] (sram_512x8)              2.14       2.64 f
+  U1241/Y (NOR2BX2)                                       0.20       2.83 f
+  U1185/Y (OR2X4)                                         0.21       3.04 f
+  U1454/Y (OR2X8)                                         0.14       3.18 f
+  U1111/Y (NOR2BX2)                                       0.16       3.34 f
+  input_data_r_reg_29_/D (DFFRX4)                         0.00       3.34 f
+  data arrival time                                                  3.34
+
+  clock i_clk (rise edge)                                 3.00       3.00
+  clock network delay (ideal)                             0.50       3.50
+  clock uncertainty                                      -0.10       3.40
+  input_data_r_reg_29_/CK (DFFRX4)                        0.00       3.40 r
+  library setup time                                     -0.06       3.34
+  data required time                                                 3.34
+  --------------------------------------------------------------------------
+  data required time                                                 3.34
+  data arrival time                                                 -3.34
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+report_area
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : core
+Version: U-2022.12
+Date   : Sat Oct 12 00:12:08 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
+    sram_512x8 (File: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db)
+
+Number of ports:                           69
+Number of nets:                          1670
+Number of cells:                         1507
+Number of combinational cells:           1275
+Number of sequential cells:               220
+Number of macros/black boxes:               4
+Number of buf/inv:                        297
+Number of references:                     201
+
+Combinational area:              16361.238593
+Buf/Inv area:                     2963.660406
+Noncombinational area:            8391.945499
+Macro/Black Box area:           123791.546875
+Net Interconnect area:          181954.270813
+
+Total cell area:                148544.730968
+Total area:                     330499.001781
+
+Information: This design contains black box (unknown) components. (RPT-8)
+1
+check_design
+Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Sat Oct 12 00:12:08 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Multiply driven inputs (LINT-6)                                 2
+
+Tristate                                                           35
+    A tristate bus has a non tri-state driver (LINT-34)            35
+--------------------------------------------------------------------------------
+
+Warning: In design 'core', input port 'i_clk' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'core', input port 'i_rst_n' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'core', three-state bus 'med_isFirst_signal_r' has non three-state driver 'med_isFirst_signal_r_reg/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'conv_calc_done_r' has non three-state driver 'conv_calc_done_r_reg/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'conv_isFirst_signal_r' has non three-state driver 'conv_isFirst_signal_r_reg/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[0]' has non three-state driver 'input_data_r_reg_0_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[1]' has non three-state driver 'input_data_r_reg_1_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[2]' has non three-state driver 'input_data_r_reg_2_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[3]' has non three-state driver 'input_data_r_reg_3_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[4]' has non three-state driver 'input_data_r_reg_4_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[5]' has non three-state driver 'input_data_r_reg_5_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[6]' has non three-state driver 'input_data_r_reg_6_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[7]' has non three-state driver 'input_data_r_reg_7_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[8]' has non three-state driver 'input_data_r_reg_8_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[9]' has non three-state driver 'input_data_r_reg_9_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[10]' has non three-state driver 'input_data_r_reg_10_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[11]' has non three-state driver 'input_data_r_reg_11_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[12]' has non three-state driver 'input_data_r_reg_12_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[13]' has non three-state driver 'input_data_r_reg_13_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[14]' has non three-state driver 'input_data_r_reg_14_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[15]' has non three-state driver 'input_data_r_reg_15_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[16]' has non three-state driver 'input_data_r_reg_16_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[17]' has non three-state driver 'input_data_r_reg_17_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[18]' has non three-state driver 'input_data_r_reg_18_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[19]' has non three-state driver 'input_data_r_reg_19_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[20]' has non three-state driver 'input_data_r_reg_20_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[21]' has non three-state driver 'input_data_r_reg_21_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[22]' has non three-state driver 'input_data_r_reg_22_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[23]' has non three-state driver 'input_data_r_reg_23_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[24]' has non three-state driver 'input_data_r_reg_24_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[25]' has non three-state driver 'input_data_r_reg_25_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[26]' has non three-state driver 'input_data_r_reg_26_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[27]' has non three-state driver 'input_data_r_reg_27_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[28]' has non three-state driver 'input_data_r_reg_28_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[29]' has non three-state driver 'input_data_r_reg_29_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[30]' has non three-state driver 'input_data_r_reg_30_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'input_data_r[31]' has non three-state driver 'input_data_r_reg_31_/Q'. (LINT-34)
+1
+exit
+
+Memory usage for this session 186 Mbytes.
+Memory usage for this session including child processes 186 Mbytes.
+CPU usage for this session 42 seconds ( 0.01 hours ).
+Elapsed time for this session 47 seconds ( 0.01 hours ).
+
+Thank you...
