@@ -79,7 +79,6 @@ Compiling source file ./flist.sv
 Opening include file ../01_RTL/define.v
 Opening include file ../01_RTL/conv.v
 Opening include file ../01_RTL/median.v
-Warning:  ../01_RTL/median.v:233: the undeclared symbol 'a69' assumed to have the default net type, which is 'wire'. (VER-936)
 Opening include file ../01_RTL/core.v
 Presto compilation completed successfully.
 Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
@@ -97,59 +96,58 @@ Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
   Loading link library 'sram_4096x8'
   Loading link library 'gtech'
 Running PRESTO HDLC
-Warning:  ../01_RTL/core.v:189: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:191: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:190: signed to unsigned assignment occurs. (VER-318)
 Warning:  ../01_RTL/core.v:192: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:203: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:207: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:212: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:193: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:204: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:208: signed to unsigned conversion occurs. (VER-318)
 Warning:  ../01_RTL/core.v:213: unsigned to signed assignment occurs. (VER-318)
 Warning:  ../01_RTL/core.v:214: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:357: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:370: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:383: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:215: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:358: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:371: signed to unsigned conversion occurs. (VER-318)
 Warning:  ../01_RTL/core.v:384: signed to unsigned conversion occurs. (VER-318)
 Warning:  ../01_RTL/core.v:385: signed to unsigned conversion occurs. (VER-318)
 Warning:  ../01_RTL/core.v:386: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:593: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:598: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:603: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:608: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:468: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ../01_RTL/core.v:387: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:592: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:597: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:602: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:467: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
 
-Statistics for case statements in always block at line 222 in file
+Statistics for case statements in always block at line 223 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           223            |    auto/auto     |
-|           225            |    auto/auto     |
+|           224            |    auto/auto     |
+|           226            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 256 in file
+Statistics for case statements in always block at line 257 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           257            |    auto/auto     |
-|           259            |    auto/auto     |
+|           258            |    auto/auto     |
+|           260            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 278 in file
+Statistics for case statements in always block at line 279 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           279            |    auto/auto     |
+|           280            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 326 in file
+Statistics for case statements in always block at line 327 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           328            |    auto/auto     |
-|           382            |     auto/no      |
+|           329            |    auto/auto     |
+|           383            |     auto/no      |
 ===============================================
 
 Statistics for case statements in always block at line 413 in file
@@ -169,24 +167,24 @@ Statistics for case statements in always block at line 434 in file
 |           440            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 489 in file
+Statistics for case statements in always block at line 488 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           493            |    auto/auto     |
+|           492            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 583 in file
+Statistics for case statements in always block at line 582 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           590            |    auto/auto     |
+|           589            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine core line 142 in file
+	in routine core line 143 in file
 		'../01_RTL/core.v'.
 ========================================================================================
 |        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -194,14 +192,18 @@ Inferred memory devices in process
 |       y_forecase_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
 |     conv_calc_done_r_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |        med_done_r_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-| sram_select_forecase_0_r_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
-| sram_select_forecase_1_r_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
-| sram_select_forecase_2_r_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
-| sram_select_forecase_3_r_reg | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select_forecase_0_r_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+| sram_select_forecase_0_r_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select_forecase_1_r_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+| sram_select_forecase_1_r_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select_forecase_2_r_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+| sram_select_forecase_2_r_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select_forecase_3_r_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+| sram_select_forecase_3_r_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
 ========================================================================================
 
 Inferred memory devices in process
-	in routine core line 476 in file
+	in routine core line 475 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -213,7 +215,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 489 in file
+	in routine core line 488 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -222,7 +224,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 506 in file
+	in routine core line 503 in file
 		'../01_RTL/core.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -232,7 +234,7 @@ Inferred memory devices in process
 =================================================================================
 
 Inferred memory devices in process
-	in routine core line 516 in file
+	in routine core line 513 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -241,7 +243,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 523 in file
+	in routine core line 520 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -253,7 +255,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 536 in file
+	in routine core line 533 in file
 		'../01_RTL/core.v'.
 ====================================================================================
 |      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -265,7 +267,7 @@ Inferred memory devices in process
 ====================================================================================
 
 Inferred memory devices in process
-	in routine core line 559 in file
+	in routine core line 556 in file
 		'../01_RTL/core.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -275,18 +277,19 @@ Inferred memory devices in process
 =================================================================================
 
 Inferred memory devices in process
-	in routine core line 570 in file
+	in routine core line 567 in file
 		'../01_RTL/core.v'.
 =====================================================================================
 |       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =====================================================================================
 | med_isFirst_signal_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 | conv_isFirst_signal_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|     input_data_r_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   conv_input_data_r_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   med_input_data_r_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 =====================================================================================
 
 Inferred memory devices in process
-	in routine core line 583 in file
+	in routine core line 582 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -297,7 +300,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 617 in file
+	in routine core line 611 in file
 		'../01_RTL/core.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -311,10 +314,10 @@ Statistics for MUX_OPs
 ======================================================
 | block name/line  | Inputs | Outputs | # sel inputs |
 ======================================================
-|     core/311     |   4    |    8    |      2       |
-|     core/311     |   4    |    8    |      2       |
-|     core/311     |   4    |    8    |      2       |
-|     core/313     |   4    |    8    |      2       |
+|     core/312     |   4    |    8    |      2       |
+|     core/312     |   4    |    8    |      2       |
+|     core/312     |   4    |    8    |      2       |
+|     core/314     |   4    |    8    |      2       |
 ======================================================
 Presto compilation completed successfully. (core)
 Elaborated 1 design.
@@ -520,15 +523,15 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 2220                                   |
+| Leaf Cell Count                                         | 2206                                   |
 | Number of User Hierarchies                              | 3                                      |
-| Sequential Cell Count                                   | 648                                    |
+| Sequential Cell Count                                   | 680                                    |
 | Macro Count                                             | 0                                      |
 | Number of Power Domains                                 | 0                                      |
 | Number of Path Groups                                   | 2                                      |
 | Number of VT Class                                      | 0                                      |
 | Number of Clocks                                        | 1                                      |
-| Number of Dont Touch Cells                              | 644                                    |
+| Number of Dont Touch Cells                              | 634                                    |
 | Number of Dont Touch Nets                               | 4                                      |
 | Number of Size Only Cells                               | 0                                      |
 | Design with UPF Data                                    | false                                  |
@@ -538,7 +541,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | set_fix_multiple_port_nets                              | -all -buffer_constants                 |
 ====================================================================================================
 
-Information: There are 143 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 142 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
@@ -583,47 +586,46 @@ Information: Updating design information... (UID-85)
   Processing 'core_DW01_add_0_DW01_add_3'
   Processing 'core_DW01_add_1_DW01_add_4'
   Processing 'core_DW01_add_2_DW01_add_5'
-  Processing 'core_DW01_add_3_DW01_add_6'
   Processing 'core_DW01_inc_0_DW01_inc_5'
   Mapping 'core_DW_cmp_0'
   Mapping 'core_DW_cmp_1'
   Processing 'core_DW01_dec_0'
+  Processing 'core_DW01_add_3_DW01_add_6'
   Processing 'core_DW01_add_4_DW01_add_7'
-  Processing 'core_DW01_add_5_DW01_add_8'
   Processing 'core_DW01_inc_1_DW01_inc_6'
   Processing 'core_DW01_dec_1'
-  Processing 'core_DW01_add_6_DW01_add_9'
+  Processing 'core_DW01_add_5_DW01_add_8'
   Processing 'core_DW01_dec_2'
+  Processing 'core_DW01_add_6_DW01_add_9'
   Processing 'core_DW01_add_7_DW01_add_10'
-  Processing 'core_DW01_add_8_DW01_add_11'
   Processing 'core_DW01_dec_3'
   Processing 'median_DW01_inc_0_DW01_inc_7'
   Processing 'conv_DW01_inc_0_DW01_inc_8'
-  Processing 'conv_DW01_add_0_DW01_add_12'
-  Processing 'conv_DW01_add_1_DW01_add_13'
-  Processing 'conv_DW01_add_2_DW01_add_14'
-  Processing 'conv_DW01_add_3_DW01_add_15'
-  Processing 'conv_DW01_add_4_DW01_add_16'
-  Processing 'conv_DW01_add_5_DW01_add_17'
-  Processing 'conv_DW01_add_6_DW01_add_18'
-  Processing 'conv_DW01_add_7_DW01_add_19'
-  Processing 'conv_DW01_add_8_DW01_add_20'
-  Processing 'conv_DW01_add_9_DW01_add_21'
-  Processing 'conv_DW01_add_10_DW01_add_22'
-  Processing 'conv_DW01_add_11_DW01_add_23'
-  Processing 'conv_DW01_add_12_DW01_add_24'
-  Processing 'conv_DW01_add_13_DW01_add_25'
-  Processing 'conv_DW01_add_14_DW01_add_26'
-  Processing 'conv_DW01_add_15_DW01_add_27'
+  Processing 'conv_DW01_add_0_DW01_add_11'
+  Processing 'conv_DW01_add_1_DW01_add_12'
+  Processing 'conv_DW01_add_2_DW01_add_13'
+  Processing 'conv_DW01_add_3_DW01_add_14'
+  Processing 'conv_DW01_add_4_DW01_add_15'
+  Processing 'conv_DW01_add_5_DW01_add_16'
+  Processing 'conv_DW01_add_6_DW01_add_17'
+  Processing 'conv_DW01_add_7_DW01_add_18'
+  Processing 'conv_DW01_add_8_DW01_add_19'
+  Processing 'conv_DW01_add_9_DW01_add_20'
+  Processing 'conv_DW01_add_10_DW01_add_21'
+  Processing 'conv_DW01_add_11_DW01_add_22'
+  Processing 'conv_DW01_add_12_DW01_add_23'
+  Processing 'conv_DW01_add_13_DW01_add_24'
+  Processing 'conv_DW01_add_14_DW01_add_25'
+  Processing 'conv_DW01_add_15_DW01_add_26'
   Processing 'small_alu_add_DW01_inc_0_DW01_inc_9'
-  Processing 'small_alu_add_DW01_add_0_DW01_add_28'
-  Processing 'small_alu_add_DW01_add_1_DW01_add_29'
-  Processing 'small_alu_add_DW01_add_2_DW01_add_30'
-  Processing 'small_alu_add_DW01_add_3_DW01_add_31'
-  Processing 'small_alu_add_DW01_add_4_DW01_add_32'
-  Processing 'small_alu_add_DW01_add_5_DW01_add_33'
-  Processing 'small_alu_add_DW01_add_6_DW01_add_34'
-  Processing 'small_alu_add_DW01_add_7_DW01_add_35'
+  Processing 'small_alu_add_DW01_add_0_DW01_add_27'
+  Processing 'small_alu_add_DW01_add_1_DW01_add_28'
+  Processing 'small_alu_add_DW01_add_2_DW01_add_29'
+  Processing 'small_alu_add_DW01_add_3_DW01_add_30'
+  Processing 'small_alu_add_DW01_add_4_DW01_add_31'
+  Processing 'small_alu_add_DW01_add_5_DW01_add_32'
+  Processing 'small_alu_add_DW01_add_6_DW01_add_33'
+  Processing 'small_alu_add_DW01_add_7_DW01_add_34'
   Building model 'DW01_NAND2'
   Processing 'DW01_NAND2'
   Building model 'DW01_add_width5' (rpl)
@@ -634,17 +636,702 @@ Information: Updating design information... (UID-85)
   Processing 'DW01_inc_width5'
   Building model 'DW01_dec_width5' (rpl)
   Processing 'DW01_dec_width5'
+  Processing 'core_DW01_add_8_DW01_add_35'
   Processing 'core_DW01_add_9_DW01_add_36'
   Processing 'core_DW01_add_10_DW01_add_37'
   Processing 'core_DW01_add_11_DW01_add_38'
   Processing 'core_DW01_add_12_DW01_add_39'
-  Processing 'core_DW01_add_13_DW01_add_40'
   Processing 'core_DW01_inc_2_DW01_inc_10'
+  Processing 'core_DW01_add_13_DW01_add_40'
   Processing 'core_DW01_add_14_DW01_add_41'
   Processing 'core_DW01_add_15_DW01_add_42'
-  Processing 'core_DW01_add_16_DW01_add_43'
   Processing 'core_DW01_dec_4'
 
   Beginning Mapping Optimizations  (Medium effort)
   -------------------------------
   Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+  Mapping Optimization (Phase 6)
+  Mapping Optimization (Phase 7)
+  Mapping Optimization (Phase 8)
+  Mapping Optimization (Phase 9)
+  Mapping Optimization (Phase 10)
+  Mapping Optimization (Phase 11)
+Information: The register 'conv_inst/u_alu/out_data_s2_1_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv_inst/u_alu/out_data_s2_1_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv_inst/u_alu/out_data_s1_1_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv_inst/u_alu/out_data_s2_0_ready_r_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'conv_inst/u_alu/out_data_s1_0_ready_r_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'y_forecase_r_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'y_r_reg[4]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:33  231717.3      0.20      23.4     470.4                                0.00  
+    0:00:33  231732.6      0.19      16.9     470.4                                0.00  
+    0:00:33  231732.6      0.19      16.9     470.4                                0.00  
+    0:00:33  231742.8      0.19      16.9     470.4                                0.00  
+    0:00:33  231742.8      0.19      16.9     470.4                                0.00  
+    0:00:36  182365.4      2.38     448.1     453.1                                0.00  
+    0:00:37  182440.1      2.34     453.0     443.9                                0.00  
+    0:00:38  182411.3      2.22     430.0     443.9                                0.00  
+    0:00:38  182375.6      2.10     458.9     443.9                                0.00  
+    0:00:39  182273.8      1.98     449.8     443.9                                0.00  
+    0:00:39  182263.6      2.29     447.9     443.9                                0.00  
+    0:00:39  182317.9      1.73     397.8     443.9                                0.00  
+    0:00:39  182338.3      1.70     387.7     443.9                                0.00  
+    0:00:40  182363.7      2.02     393.4     443.9                                0.00  
+    0:00:40  182311.1      2.00     384.4     443.9                                0.00  
+    0:00:40  182462.2      1.64     375.4     443.9                                0.00  
+    0:00:40  182518.2      1.59     374.0     443.9                                0.00  
+    0:00:40  182582.7      1.59     372.3     443.9                                0.00  
+    0:00:40  182806.7      1.54     370.9     443.9                                0.00  
+    0:00:40  182969.7      1.59     353.1     443.9                                0.00  
+    0:00:41  183151.3      1.39     349.5     443.9                                0.00  
+    0:00:41  183304.1      1.36     348.1     443.9                                0.00  
+    0:00:41  183334.6      1.34     340.0     443.9                                0.00  
+    0:00:41  183553.6      1.28     333.8     443.9                                0.00  
+    0:00:41  183553.6      1.28     333.8     443.9                                0.00  
+    0:00:41  183553.6      1.28     333.8     443.9                                0.00  
+    0:00:41  183577.4      1.28     336.4     207.2                                0.00  
+    0:00:41  183733.5      1.28     335.5      67.0                                0.00  
+    0:00:41  183781.1      1.28     335.8      32.6                                0.00  
+    0:00:41  183859.1      1.28     323.4       0.0                                0.00  
+    0:00:41  183859.1      1.28     323.4       0.0                                0.00  
+    0:00:41  183859.1      1.28     323.4       0.0                                0.00  
+    0:00:41  183859.1      1.28     323.4       0.0                                0.00  
+    0:00:42  184548.3      1.06     293.2       0.0 conv_inst/u_alu/out_data_s2_0_ready_r_reg[14]/D      0.00  
+    0:00:42  184896.2      0.93     277.8       0.0 conv_inst/u_alu/out_data_s1_3_ready_r_reg[8]/D      0.00  
+    0:00:43  185203.5      0.85     251.5       0.0 conv_inst/u_alu/out_data_s1_1_ready_r_reg[14]/D      0.00  
+    0:00:43  185522.6      0.74     224.0       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[13]/D      0.00  
+    0:00:43  185831.5      0.69     212.5       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[10]/D      0.00  
+    0:00:44  186569.9      0.61     201.6       0.0 conv_inst/u_alu/out_data_s2_0_ready_r_reg[12]/D      0.00  
+    0:00:44  187520.4      0.56     182.8       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[11]/D      0.00  
+    0:00:44  187786.9      0.53     176.8       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[8]/D      0.00  
+    0:00:44  188279.2      0.50     162.5       0.0 sram_addr_ready_r_reg[1][5]/D      0.00  
+    0:00:45  188827.4      0.47     154.7       0.0 conv_inst/u_alu/out_data_s1_1_ready_r_reg[8]/D      0.00  
+    0:00:45  189365.5      0.42     137.7       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[13]/D      0.00  
+    0:00:45  189744.0      0.40     121.1      17.6 med_input_data_r_reg[0]/D      0.00  
+    0:00:45  189973.2      0.38     118.4      17.6 conv_inst/conv_e_r_reg[10][3]/D      0.00  
+    0:00:45  190136.1      0.36     113.3      17.6 out_data_ready_r_reg[7]/D      0.00  
+    0:00:46  190521.4      0.34     108.7      17.6 conv_inst/u_alu/out_data_s3_0_ready_r_reg[12]/D      0.00  
+    0:00:46  190698.0      0.33      87.5      17.6 conv_inst/u_alu/out_data_s2_0_ready_r_reg[13]/D      0.00  
+    0:00:46  190857.5      0.31      84.6      17.6 conv_inst/u_alu/out_data_s1_3_ready_r_reg[10]/D      0.00  
+    0:00:46  191034.0      0.30      81.7      17.6 sram_data_ready_r_reg[1][0]/D      0.00  
+    0:00:46  191130.8      0.28      78.1      17.6 sram_addr_ready_r_reg[3][8]/D      0.00  
+    0:00:46  191215.7      0.27      74.3      17.6 med_input_data_r_reg[11]/D      0.00  
+    0:00:47  191957.4      0.25      67.8      17.6                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:47  191957.4      0.25      67.8      17.6                                0.00  
+    0:00:48  191989.7      0.24      67.5      17.6 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
+    0:00:48  192122.1      0.23      64.9      17.6 sram_addr_ready_r_reg[0][1]/D      0.00  
+    0:00:49  192205.3      0.21      62.0      17.6 conv_inst/u_alu/out_data_s4_0_ready_r_reg[9]/D      0.00  
+    0:00:49  192203.6      0.21      61.8      17.6                                0.00  
+    0:00:50  192290.1      0.20      59.6      17.6                                0.00  
+    0:00:50  192510.8      0.19      55.2      17.6 sram_addr_ready_r_reg[1][2]/D      0.00  
+    0:00:50  192638.1      0.18      52.1      17.6 conv_inst/u_alu/out_data_s3_0_ready_r_reg[9]/D      0.00  
+    0:00:50  192809.5      0.18      50.1      17.6 conv_inst/u_alu/out_data_s2_0_ready_r_reg[10]/D      0.00  
+    0:00:50  193065.8      0.17      47.7      17.6 med_input_data_r_reg[23]/D      0.00  
+    0:00:51  193250.9      0.16      45.5       0.0 conv_inst/u_alu/out_data_s1_3_ready_r_reg[4]/D      0.00  
+    0:00:51  193303.5      0.16      29.1       0.0 conv_inst/conv_e_r_reg[15][3]/D      0.00  
+    0:00:51  193476.6      0.15      25.9       0.0 conv_inst/u_alu/out_data_s2_0_ready_r_reg[10]/D      0.00  
+    0:00:51  193542.8      0.14      24.7       0.0 conv_input_data_r_reg[11]/D      0.00  
+    0:00:51  193671.8      0.14      23.0       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[9]/D      0.00  
+    0:00:51  193783.8      0.13      21.0       4.5 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
+    0:00:51  193828.0      0.13      19.5       4.5 conv_inst/u_alu/out_data_s1_0_ready_r_reg[10]/D      0.00  
+    0:00:52  193996.0      0.12      17.5       4.5 med_input_data_r_reg[20]/D      0.00  
+    0:00:52  194030.0      0.12      16.4       4.5                                0.00  
+    0:00:53  194108.0      0.11      15.7       4.5                                0.00  
+    0:00:53  194131.8      0.11      15.4       4.5 sram_addr_ready_r_reg[1][6]/D      0.00  
+    0:00:53  194179.3      0.10      13.1       4.5 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
+    0:00:53  194250.6      0.09      10.7       4.5 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
+    0:00:53  194303.2      0.09      10.2       4.5 conv_input_data_r_reg[11]/D      0.00  
+    0:00:54  194386.4      0.08       7.3       4.5                                0.00  
+    0:00:55  194327.0      0.08       7.8       4.5                                0.00  
+    0:00:56  194308.3      0.08       8.0      12.1                                0.00  
+    0:00:56  194254.0      0.08       8.0      27.2                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:56  194254.0      0.08       8.0      27.2                                0.00  
+    0:00:56  194250.6      0.07       5.2       0.0 sram_addr_ready_r_reg[0][8]/D      0.00  
+    0:00:56  194257.4      0.05       3.5       0.0 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
+    0:00:57  194276.1      0.04       2.7       0.0 med_input_data_r_reg[2]/D      0.00  
+    0:00:57  194345.7      0.03       2.3       0.0 sram_addr_ready_r_reg[1][6]/D      0.00  
+    0:00:57  194394.9      0.02       1.6       0.5 sram_addr_ready_r_reg[1][5]/D      0.00  
+    0:00:57  194394.9      0.01       0.2       0.5 conv_calc_done_r_reg/D         0.00  
+    0:00:57  194377.9      0.01       0.1       0.5 conv_inst/u_alu/out_data_s1_2_ready_r_reg[13]/D      0.00  
+    0:00:57  194374.5      0.00       0.0       0.2 alt4849/net12336               0.00  
+    0:00:57  194377.9      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:57  194377.9      0.00       0.0       0.0                                0.00  
+    0:00:57  194377.9      0.00       0.0       0.0                                0.00  
+    0:00:58  192293.5      0.11       2.1       0.0                                0.00  
+    0:00:58  191575.5      0.14       2.1       0.0                                0.00  
+    0:00:58  191366.7      0.14       2.0       0.0                                0.00  
+    0:00:58  191317.5      0.14       1.9       0.0                                0.00  
+    0:00:58  191278.5      0.14       1.7       0.0                                0.00  
+    0:00:58  191278.5      0.14       1.7       0.0                                0.00  
+    0:00:59  191327.7      0.00       0.0       0.0 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
+    0:00:59  191331.1      0.00       0.0       0.0                                0.00  
+    0:00:59  188438.7      0.82      60.3       0.0                                0.00  
+    0:01:00  187393.1      0.87      89.9       0.0                                0.00  
+    0:01:00  187216.6      0.88      91.8       0.0                                0.00  
+    0:01:00  187189.4      0.88      91.8       0.0                                0.00  
+    0:01:00  187189.4      0.88      91.8       0.0                                0.00  
+    0:01:00  187189.4      0.88      91.8       0.0                                0.00  
+    0:01:00  187189.4      0.88      91.8       0.0                                0.00  
+    0:01:00  187189.4      0.88      91.8       0.0                                0.00  
+    0:01:00  187535.7      0.45      65.7       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[10]/D      0.00  
+    0:01:00  187921.0      0.28      45.9       0.0 sram_data_ready_r_reg[1][4]/D      0.00  
+    0:01:01  188286.0      0.18      25.2       0.0 median_inst/cnt_reg[7]/D       0.00  
+    0:01:02  188513.4      0.14      13.3       0.0 sram_cen_ready_r_reg[2]/D      0.00  
+    0:01:02  188825.7      0.09       6.6       0.0 sram_data_ready_r_reg[1][4]/D      0.00  
+    0:01:02  189000.6      0.05       3.5       0.0 conv_inst/u_alu/out_data_s2_0_ready_r_reg[11]/D      0.00  
+    0:01:03  189536.9      0.03       1.4       0.0 conv_inst/conv_e_r_reg[2][5]/D      0.00  
+    0:01:03  189633.7      0.02       0.6       0.0 sram_addr_ready_r_reg[1][5]/D      0.00  
+    0:01:03  189669.3      0.01       0.3       0.0 conv_inst/u_alu/out_data_s1_0_ready_r_reg[9]/D      0.00  
+    0:01:04  189701.6      0.00       0.2       0.0                                0.00  
+    0:01:04  189672.7      0.00       0.0       0.0                                0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+# Report Output
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+report_timing > "./Report/${DESIGN}_syn.timing"
+report_area > "./Report/${DESIGN}_syn.area"
+# Output Design
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+Removing port 'i_data[31]' from design 'median'
+Removing port 'i_data[30]' from design 'median'
+Removing port 'i_data[29]' from design 'median'
+Removing port 'i_data[28]' from design 'median'
+Removing port 'i_data[27]' from design 'median'
+Removing port 'i_data[26]' from design 'median'
+Removing port 'i_data[25]' from design 'median'
+Removing port 'i_data[24]' from design 'median'
+Removing port 'i_data[23]' from design 'median'
+Removing port 'i_data[22]' from design 'median'
+Removing port 'i_data[21]' from design 'median'
+Removing port 'i_data[20]' from design 'median'
+Removing port 'i_data[19]' from design 'median'
+Removing port 'i_data[18]' from design 'median'
+Removing port 'i_data[17]' from design 'median'
+Removing port 'i_data[16]' from design 'median'
+Removing port 'i_data[15]' from design 'median'
+Removing port 'i_data[14]' from design 'median'
+Removing port 'i_data[13]' from design 'median'
+Removing port 'i_data[12]' from design 'median'
+Removing port 'i_data[11]' from design 'median'
+Removing port 'i_data[10]' from design 'median'
+Removing port 'i_data[9]' from design 'median'
+Removing port 'i_data[8]' from design 'median'
+Removing port 'i_data[7]' from design 'median'
+Removing port 'i_data[6]' from design 'median'
+Removing port 'i_data[5]' from design 'median'
+Removing port 'i_data[4]' from design 'median'
+Removing port 'i_data[3]' from design 'median'
+Removing port 'i_data[2]' from design 'median'
+Removing port 'i_data[1]' from design 'median'
+Removing port 'i_data[0]' from design 'median'
+Removing port 'i_input_done' from design 'median'
+Removing port 'o_out_data[7]' from design 'median'
+Removing port 'o_out_data[6]' from design 'median'
+Removing port 'o_out_data[5]' from design 'median'
+Removing port 'o_out_data[4]' from design 'median'
+Removing port 'o_out_data[3]' from design 'median'
+Removing port 'o_out_data[2]' from design 'median'
+Removing port 'o_out_data[1]' from design 'median'
+Removing port 'o_out_data[0]' from design 'median'
+Removing port 'B[12]' from design 'conv_DW01_add_31'
+Removing port 'B[11]' from design 'conv_DW01_add_31'
+Removing port 'B[10]' from design 'conv_DW01_add_31'
+Removing port 'B[9]' from design 'conv_DW01_add_31'
+Removing port 'B[8]' from design 'conv_DW01_add_31'
+Removing port 'CI' from design 'conv_DW01_add_31'
+Removing port 'CO' from design 'conv_DW01_add_31'
+Removing port 'B[12]' from design 'conv_DW01_add_30'
+Removing port 'B[11]' from design 'conv_DW01_add_30'
+Removing port 'B[10]' from design 'conv_DW01_add_30'
+Removing port 'B[9]' from design 'conv_DW01_add_30'
+Removing port 'B[8]' from design 'conv_DW01_add_30'
+Removing port 'CI' from design 'conv_DW01_add_30'
+Removing port 'CO' from design 'conv_DW01_add_30'
+Removing port 'B[12]' from design 'conv_DW01_add_29'
+Removing port 'B[11]' from design 'conv_DW01_add_29'
+Removing port 'B[10]' from design 'conv_DW01_add_29'
+Removing port 'B[9]' from design 'conv_DW01_add_29'
+Removing port 'B[8]' from design 'conv_DW01_add_29'
+Removing port 'CI' from design 'conv_DW01_add_29'
+Removing port 'CO' from design 'conv_DW01_add_29'
+Removing port 'B[12]' from design 'conv_DW01_add_28'
+Removing port 'B[11]' from design 'conv_DW01_add_28'
+Removing port 'B[10]' from design 'conv_DW01_add_28'
+Removing port 'B[9]' from design 'conv_DW01_add_28'
+Removing port 'B[8]' from design 'conv_DW01_add_28'
+Removing port 'CI' from design 'conv_DW01_add_28'
+Removing port 'CO' from design 'conv_DW01_add_28'
+Removing port 'B[12]' from design 'conv_DW01_add_27'
+Removing port 'B[11]' from design 'conv_DW01_add_27'
+Removing port 'B[10]' from design 'conv_DW01_add_27'
+Removing port 'B[9]' from design 'conv_DW01_add_27'
+Removing port 'B[8]' from design 'conv_DW01_add_27'
+Removing port 'CI' from design 'conv_DW01_add_27'
+Removing port 'CO' from design 'conv_DW01_add_27'
+Removing port 'B[12]' from design 'conv_DW01_add_26'
+Removing port 'B[11]' from design 'conv_DW01_add_26'
+Removing port 'B[10]' from design 'conv_DW01_add_26'
+Removing port 'B[9]' from design 'conv_DW01_add_26'
+Removing port 'B[8]' from design 'conv_DW01_add_26'
+Removing port 'CI' from design 'conv_DW01_add_26'
+Removing port 'CO' from design 'conv_DW01_add_26'
+Removing port 'B[12]' from design 'conv_DW01_add_25'
+Removing port 'B[11]' from design 'conv_DW01_add_25'
+Removing port 'B[10]' from design 'conv_DW01_add_25'
+Removing port 'B[9]' from design 'conv_DW01_add_25'
+Removing port 'B[8]' from design 'conv_DW01_add_25'
+Removing port 'CI' from design 'conv_DW01_add_25'
+Removing port 'CO' from design 'conv_DW01_add_25'
+Removing port 'B[12]' from design 'conv_DW01_add_24'
+Removing port 'B[11]' from design 'conv_DW01_add_24'
+Removing port 'B[10]' from design 'conv_DW01_add_24'
+Removing port 'B[9]' from design 'conv_DW01_add_24'
+Removing port 'B[8]' from design 'conv_DW01_add_24'
+Removing port 'CI' from design 'conv_DW01_add_24'
+Removing port 'CO' from design 'conv_DW01_add_24'
+Removing port 'B[12]' from design 'conv_DW01_add_23'
+Removing port 'B[11]' from design 'conv_DW01_add_23'
+Removing port 'B[10]' from design 'conv_DW01_add_23'
+Removing port 'B[9]' from design 'conv_DW01_add_23'
+Removing port 'B[8]' from design 'conv_DW01_add_23'
+Removing port 'CI' from design 'conv_DW01_add_23'
+Removing port 'CO' from design 'conv_DW01_add_23'
+Removing port 'B[12]' from design 'conv_DW01_add_22'
+Removing port 'B[11]' from design 'conv_DW01_add_22'
+Removing port 'B[10]' from design 'conv_DW01_add_22'
+Removing port 'B[9]' from design 'conv_DW01_add_22'
+Removing port 'B[8]' from design 'conv_DW01_add_22'
+Removing port 'CI' from design 'conv_DW01_add_22'
+Removing port 'CO' from design 'conv_DW01_add_22'
+Removing port 'B[12]' from design 'conv_DW01_add_21'
+Removing port 'B[11]' from design 'conv_DW01_add_21'
+Removing port 'B[10]' from design 'conv_DW01_add_21'
+Removing port 'B[9]' from design 'conv_DW01_add_21'
+Removing port 'B[8]' from design 'conv_DW01_add_21'
+Removing port 'CI' from design 'conv_DW01_add_21'
+Removing port 'CO' from design 'conv_DW01_add_21'
+Removing port 'B[12]' from design 'conv_DW01_add_20'
+Removing port 'B[11]' from design 'conv_DW01_add_20'
+Removing port 'B[10]' from design 'conv_DW01_add_20'
+Removing port 'B[9]' from design 'conv_DW01_add_20'
+Removing port 'B[8]' from design 'conv_DW01_add_20'
+Removing port 'CI' from design 'conv_DW01_add_20'
+Removing port 'CO' from design 'conv_DW01_add_20'
+Removing port 'B[12]' from design 'conv_DW01_add_19'
+Removing port 'B[11]' from design 'conv_DW01_add_19'
+Removing port 'B[10]' from design 'conv_DW01_add_19'
+Removing port 'B[9]' from design 'conv_DW01_add_19'
+Removing port 'B[8]' from design 'conv_DW01_add_19'
+Removing port 'CI' from design 'conv_DW01_add_19'
+Removing port 'CO' from design 'conv_DW01_add_19'
+Removing port 'B[12]' from design 'conv_DW01_add_18'
+Removing port 'B[11]' from design 'conv_DW01_add_18'
+Removing port 'B[10]' from design 'conv_DW01_add_18'
+Removing port 'B[9]' from design 'conv_DW01_add_18'
+Removing port 'B[8]' from design 'conv_DW01_add_18'
+Removing port 'CI' from design 'conv_DW01_add_18'
+Removing port 'CO' from design 'conv_DW01_add_18'
+Removing port 'B[12]' from design 'conv_DW01_add_17'
+Removing port 'B[11]' from design 'conv_DW01_add_17'
+Removing port 'B[10]' from design 'conv_DW01_add_17'
+Removing port 'B[9]' from design 'conv_DW01_add_17'
+Removing port 'B[8]' from design 'conv_DW01_add_17'
+Removing port 'CI' from design 'conv_DW01_add_17'
+Removing port 'CO' from design 'conv_DW01_add_17'
+Removing port 'B[12]' from design 'conv_DW01_add_16'
+Removing port 'B[11]' from design 'conv_DW01_add_16'
+Removing port 'B[10]' from design 'conv_DW01_add_16'
+Removing port 'B[9]' from design 'conv_DW01_add_16'
+Removing port 'B[8]' from design 'conv_DW01_add_16'
+Removing port 'CI' from design 'conv_DW01_add_16'
+Removing port 'CO' from design 'conv_DW01_add_16'
+Removing port 'A[14]' from design 'small_alu_add_DW01_inc_3'
+Removing port 'SUM[0]' from design 'small_alu_add_DW01_inc_3'
+Removing port 'A[1]' from design 'small_alu_add_DW01_add_13'
+Removing port 'A[0]' from design 'small_alu_add_DW01_add_13'
+Removing port 'B[16]' from design 'small_alu_add_DW01_add_13'
+Removing port 'B[15]' from design 'small_alu_add_DW01_add_13'
+Removing port 'B[1]' from design 'small_alu_add_DW01_add_13'
+Removing port 'B[0]' from design 'small_alu_add_DW01_add_13'
+Removing port 'CI' from design 'small_alu_add_DW01_add_13'
+Removing port 'SUM[2]' from design 'small_alu_add_DW01_add_13'
+Removing port 'SUM[1]' from design 'small_alu_add_DW01_add_13'
+Removing port 'SUM[0]' from design 'small_alu_add_DW01_add_13'
+Removing port 'CO' from design 'small_alu_add_DW01_add_13'
+Removing port 'A[16]' from design 'small_alu_add_DW01_add_15'
+Removing port 'A[15]' from design 'small_alu_add_DW01_add_15'
+Removing port 'A[14]' from design 'small_alu_add_DW01_add_15'
+Removing port 'B[16]' from design 'small_alu_add_DW01_add_15'
+Removing port 'B[15]' from design 'small_alu_add_DW01_add_15'
+Removing port 'B[14]' from design 'small_alu_add_DW01_add_15'
+Removing port 'CI' from design 'small_alu_add_DW01_add_15'
+Removing port 'SUM[16]' from design 'small_alu_add_DW01_add_15'
+Removing port 'SUM[15]' from design 'small_alu_add_DW01_add_15'
+Removing port 'CO' from design 'small_alu_add_DW01_add_15'
+Removing port 'A[16]' from design 'small_alu_add_DW01_add_14'
+Removing port 'A[15]' from design 'small_alu_add_DW01_add_14'
+Removing port 'A[0]' from design 'small_alu_add_DW01_add_14'
+Removing port 'B[16]' from design 'small_alu_add_DW01_add_14'
+Removing port 'B[15]' from design 'small_alu_add_DW01_add_14'
+Removing port 'B[0]' from design 'small_alu_add_DW01_add_14'
+Removing port 'CI' from design 'small_alu_add_DW01_add_14'
+Removing port 'SUM[16]' from design 'small_alu_add_DW01_add_14'
+Removing port 'SUM[0]' from design 'small_alu_add_DW01_add_14'
+Removing port 'CO' from design 'small_alu_add_DW01_add_14'
+Removing port 'A[16]' from design 'small_alu_add_DW01_add_12'
+Removing port 'B[16]' from design 'small_alu_add_DW01_add_12'
+Removing port 'B[15]' from design 'small_alu_add_DW01_add_12'
+Removing port 'CI' from design 'small_alu_add_DW01_add_12'
+Removing port 'CO' from design 'small_alu_add_DW01_add_12'
+Removing port 'A[14]' from design 'small_alu_add_DW01_add_11'
+Removing port 'A[0]' from design 'small_alu_add_DW01_add_11'
+Removing port 'B[14]' from design 'small_alu_add_DW01_add_11'
+Removing port 'B[0]' from design 'small_alu_add_DW01_add_11'
+Removing port 'CI' from design 'small_alu_add_DW01_add_11'
+Removing port 'SUM[0]' from design 'small_alu_add_DW01_add_11'
+Removing port 'CO' from design 'small_alu_add_DW01_add_11'
+Removing port 'A[14]' from design 'small_alu_add_DW01_add_10'
+Removing port 'A[0]' from design 'small_alu_add_DW01_add_10'
+Removing port 'B[14]' from design 'small_alu_add_DW01_add_10'
+Removing port 'B[0]' from design 'small_alu_add_DW01_add_10'
+Removing port 'CI' from design 'small_alu_add_DW01_add_10'
+Removing port 'SUM[0]' from design 'small_alu_add_DW01_add_10'
+Removing port 'CO' from design 'small_alu_add_DW01_add_10'
+Removing port 'A[13]' from design 'small_alu_add_DW01_add_9'
+Removing port 'B[13]' from design 'small_alu_add_DW01_add_9'
+Removing port 'CI' from design 'small_alu_add_DW01_add_9'
+Removing port 'CO' from design 'small_alu_add_DW01_add_9'
+Removing port 'A[13]' from design 'small_alu_add_DW01_add_8'
+Removing port 'B[13]' from design 'small_alu_add_DW01_add_8'
+Removing port 'CI' from design 'small_alu_add_DW01_add_8'
+Removing port 'CO' from design 'small_alu_add_DW01_add_8'
+1
+set verilogout_higher_designs_first true
+true
+write -format ddc     -hierarchy -output "./Netlist/${DESIGN}_syn.ddc"
+Writing ddc file './Netlist/core_syn.ddc'.
+1
+write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
+Writing verilog file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/Netlist/core_syn.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
+Information: Writing timing information to file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/Netlist/core_syn.sdf'. (WT-3)
+1
+write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : core
+Version: U-2022.12
+Date   : Sat Oct 12 17:15:48 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: x_r_reg_2_ (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sram_addr_ready_r_reg_1__8_
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  x_r_reg_2_/CK (DFFRX4)                                  0.00       0.50 r
+  x_r_reg_2_/Q (DFFRX4)                                   0.48       0.98 f
+  U1751/Y (BUFX20)                                        0.13       1.11 f
+  U904/Y (AND3X4)                                         0.16       1.27 f
+  U1820/Y (AOI32X2)                                       0.26       1.53 r
+  U1126/Y (AOI21X2)                                       0.14       1.67 f
+  U1760/Y (XOR2X4)                                        0.18       1.85 r
+  U865/Y (INVX8)                                          0.12       1.97 f
+  U1392/Y (AND3X4)                                        0.16       2.13 f
+  U931/Y (CLKAND2X6)                                      0.14       2.27 f
+  U1821/Y (AOI221X2)                                      0.20       2.47 r
+  U623/Y (MX2X4)                                          0.33       2.80 r
+  U1112/Y (NAND2X6)                                       0.10       2.90 f
+  U975/Y (NAND2X1)                                        0.21       3.11 r
+  U1531/Y (NAND4X2)                                       0.16       3.27 f
+  sram_addr_ready_r_reg_1__8_/D (DFFRX2)                  0.00       3.27 f
+  data arrival time                                                  3.27
+
+  clock i_clk (rise edge)                                 3.00       3.00
+  clock network delay (ideal)                             0.50       3.50
+  clock uncertainty                                      -0.10       3.40
+  sram_addr_ready_r_reg_1__8_/CK (DFFRX2)                 0.00       3.40 r
+  library setup time                                     -0.13       3.27
+  data required time                                                 3.27
+  --------------------------------------------------------------------------
+  data required time                                                 3.27
+  data arrival time                                                 -3.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+report_area
+ 
+****************************************
+Report : area
+Design : core
+Version: U-2022.12
+Date   : Sat Oct 12 17:15:48 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
+    sram_512x8 (File: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db)
+
+Number of ports:                         1203
+Number of nets:                          6398
+Number of cells:                         5011
+Number of combinational cells:           4270
+Number of sequential cells:               644
+Number of macros/black boxes:               4
+Number of buf/inv:                        989
+Number of references:                     210
+
+Combinational area:              42815.217349
+Buf/Inv area:                     6319.420166
+Noncombinational area:           23065.968182
+Macro/Black Box area:           123791.546875
+Net Interconnect area:          554262.823730
+
+Total cell area:                189672.732406
+Total area:                     743935.556136
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Sat Oct 12 17:15:48 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               1
+    Connected to power or ground (LINT-32)                          1
+
+Nets                                                              122
+    Unloaded nets (LINT-2)                                        104
+    Undriven nets (LINT-3)                                         18
+--------------------------------------------------------------------------------
+
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_14' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_13' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_12' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_11' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_10' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_9' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_8' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_7' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_6' driven by pin 'median_inst/o_out_data[8]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_5' driven by pin 'median_inst/o_out_data[9]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_4' driven by pin 'median_inst/o_out_data[10]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_3' driven by pin 'median_inst/o_out_data[11]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_2' driven by pin 'median_inst/o_out_data[12]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_1' driven by pin 'median_inst/o_out_data[13]' has no loads. (LINT-2)
+Warning: In design 'core', net 'net574' driven by pin 'C0/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[0]' driven by pin 'med_input_data_r_reg_0_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[1]' driven by pin 'med_input_data_r_reg_1_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[2]' driven by pin 'med_input_data_r_reg_2_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[3]' driven by pin 'med_input_data_r_reg_3_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[4]' driven by pin 'med_input_data_r_reg_4_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[5]' driven by pin 'med_input_data_r_reg_5_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[6]' driven by pin 'med_input_data_r_reg_6_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[7]' driven by pin 'med_input_data_r_reg_7_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[8]' driven by pin 'med_input_data_r_reg_8_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[9]' driven by pin 'med_input_data_r_reg_9_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[10]' driven by pin 'med_input_data_r_reg_10_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[11]' driven by pin 'med_input_data_r_reg_11_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[12]' driven by pin 'med_input_data_r_reg_12_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[13]' driven by pin 'med_input_data_r_reg_13_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[14]' driven by pin 'med_input_data_r_reg_14_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[15]' driven by pin 'med_input_data_r_reg_15_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[16]' driven by pin 'med_input_data_r_reg_16_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[17]' driven by pin 'med_input_data_r_reg_17_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[18]' driven by pin 'med_input_data_r_reg_18_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[19]' driven by pin 'med_input_data_r_reg_19_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[20]' driven by pin 'med_input_data_r_reg_20_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[21]' driven by pin 'med_input_data_r_reg_21_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[22]' driven by pin 'med_input_data_r_reg_22_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[23]' driven by pin 'med_input_data_r_reg_23_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[24]' driven by pin 'med_input_data_r_reg_24_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[25]' driven by pin 'med_input_data_r_reg_25_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[26]' driven by pin 'med_input_data_r_reg_26_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[27]' driven by pin 'med_input_data_r_reg_27_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[28]' driven by pin 'med_input_data_r_reg_28_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[29]' driven by pin 'med_input_data_r_reg_29_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[30]' driven by pin 'med_input_data_r_reg_30_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'med_input_data_r[31]' driven by pin 'med_input_data_r_reg_31_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n16' driven by pin 'conv_inst/U21/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n15' driven by pin 'conv_inst/U20/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n14' driven by pin 'conv_inst/U19/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n13' driven by pin 'conv_inst/U18/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n12' driven by pin 'conv_inst/U17/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n11' driven by pin 'conv_inst/U16/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n10' driven by pin 'conv_inst/U15/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n9' driven by pin 'conv_inst/U14/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n8' driven by pin 'conv_inst/U13/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n7' driven by pin 'conv_inst/U12/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n6' driven by pin 'conv_inst/U11/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n5' driven by pin 'conv_inst/U10/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4' driven by pin 'conv_inst/U9/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n3' driven by pin 'conv_inst/U8/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n2' driven by pin 'conv_inst/U7/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n1' driven by pin 'conv_inst/U6/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_10' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_9' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_8' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_7' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_6' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_5' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_4' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_3' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_2' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_1' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n9' driven by pin 'conv_inst/u_alu/U25/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n8' driven by pin 'conv_inst/u_alu/U24/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n7' driven by pin 'conv_inst/u_alu/U23/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n6' driven by pin 'conv_inst/u_alu/U22/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n5' driven by pin 'conv_inst/u_alu/U21/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n4' driven by pin 'conv_inst/u_alu/U20/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n3' driven by pin 'conv_inst/u_alu/U19/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n2' driven by pin 'conv_inst/u_alu/U18/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n1' driven by pin 'conv_inst/u_alu/U17/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_2_ready_r[0]' driven by pin 'conv_inst/u_alu/U3/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_2_ready_r[1]' driven by pin 'conv_inst/u_alu/U4/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_2_ready_r[15]' driven by pin 'conv_inst/u_alu/U5/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_2_ready_r[16]' driven by pin 'conv_inst/u_alu/U6/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s1_2_ready_r[0]' driven by pin 'conv_inst/u_alu/out_data_s1_2_ready_r_reg_0_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s1_2_ready_r[1]' driven by pin 'conv_inst/u_alu/out_data_s1_2_ready_r_reg_1_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_1_ready_r[15]' driven by pin 'conv_inst/u_alu/U60/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_1_ready_r[16]' driven by pin 'conv_inst/u_alu/U59/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s1_1_ready_r[16]' driven by pin 'conv_inst/u_alu/U58/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s4_0_ready_r[14]' driven by pin 'conv_inst/u_alu/U7/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s4_0_ready_r[15]' driven by pin 'conv_inst/u_alu/U8/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s4_0_ready_r[16]' driven by pin 'conv_inst/u_alu/U9/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s3_0_ready_r[14]' driven by pin 'conv_inst/u_alu/U10/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s3_0_ready_r[15]' driven by pin 'conv_inst/u_alu/U11/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s3_0_ready_r[16]' driven by pin 'conv_inst/u_alu/U12/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_0_ready_r[0]' driven by pin 'conv_inst/u_alu/U57/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_0_ready_r[15]' driven by pin 'conv_inst/u_alu/U13/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_0_ready_r[16]' driven by pin 'conv_inst/u_alu/U14/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s1_0_ready_r[0]' driven by pin 'conv_inst/u_alu/U56/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s1_0_ready_r[15]' driven by pin 'conv_inst/u_alu/U15/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s1_0_ready_r[16]' driven by pin 'conv_inst/u_alu/U16/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n_Logic0_' driven by pin 'conv_inst/u_alu/U2/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_14' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_13' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_12' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_11' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_10' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_9' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_8' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_7' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_10' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_9' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_8' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_7' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_6' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_5' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_4' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_3' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_2' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_1' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', a pin on submodule 'median_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_isFirst' is connected to logic 0. 
+1
+exit
+
+Memory usage for this session 199 Mbytes.
+Memory usage for this session including child processes 199 Mbytes.
+CPU usage for this session 71 seconds ( 0.02 hours ).
+Elapsed time for this session 75 seconds ( 0.02 hours ).
+
+Thank you...

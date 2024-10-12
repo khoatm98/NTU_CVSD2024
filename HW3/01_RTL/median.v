@@ -131,7 +131,7 @@ end
 generate
 	for(i = 0; i < 16; i = i + 1) begin:conv_e_read
 		always @(*) begin
-			if(cnt == i/4)
+			if(cnt == i>>2)
 				med_e_wait_r[i] = i_data[{i[1:0],3'b000} + 7 -: 8];
 			else
 				med_e_wait_r[i] = med_e_r[i];
@@ -205,7 +205,7 @@ module median_filter_submodule(
 	input   clk,
     output wire [7:0] median
 );
-
+/* 
 	// Internal wires to hold the sorted values
 	wire [7:0] sorted [0:8];
 
@@ -486,6 +486,6 @@ module median_filter_submodule(
 	
 	
 	// Finding the median value (middle value in sorted list)
-	assign median = c2;
+	assign median = c2; */
 
 endmodule

@@ -1,5 +1,5 @@
 ##spyglass_version: SpyGlass_vT-2022.06
-##date: Sat Oct 12 13:22:40 2024
+##date: Sat Oct 12 17:08:27 2024
 ##user: r2k41036
 ##cwd: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL
 ##lang: verilog+vhdl
@@ -1594,40 +1594,41 @@ ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/lint/lint_rtl/spyglass_reports
 ##sde_property: msg_label DEFAULT
 ##sde_property: msg_id DEFAULT
 ##files_verilog: core.v conv.v median.v
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/define.v -id 1
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 slc 116 119 1 mlc 120 11 120 0 slc 207 210 1 mlc 211 22 211 0 mlc 245 20 245 0 mlc 310 9 337 0 mlc 346 33 346 0 mlc 463 13 463 0 slc 484 484 1 slc 512 512 1 slc 522 525 1 mlc 652 10 656 0
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8.v -id 3
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/conv.v -id 4 -inactiveList slc 12 15 1 slc 45 48 1 slc 67 70 1 slc 160 163 1
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/median.v -id 5 -inactiveList slc 12 15 1 slc 45 48 1 slc 66 69 1 slc 151 154 1 slc 209 209 1 slc 212 212 1 slc 237 237 1 slc 242 242 1 slc 247 247 1 slc 252 252 1 slc 257 257 1 slc 262 262 1 slc 275 275 1 slc 280 280 1 slc 285 285 1 slc 290 290 1 slc 295 295 1 slc 300 300 1 slc 312 312 1 slc 317 317 1 slc 322 322 1 slc 327 327 1 slc 332 332 1 slc 337 337 1 slc 350 350 1 slc 376 376 1 slc 379 379 1 slc 382 382 1 slc 385 385 1 slc 388 388 1 slc 391 391 1 slc 400 400 1 slc 403 403 1 slc 406 406 1 slc 409 409 1 slc 412 412 1 slc 415 415 1 slc 424 424 1 slc 427 427 1 slc 430 430 1 slc 433 433 1 slc 436 436 1 slc 439 439 1 slc 448 448 1 slc 461 461 1 slc 464 464 1 slc 467 467 1 slc 470 470 1 slc 473 473 1 slc 476 476 1 slc 488 488 1
-#span core core.v 2 684
+##sde_property: file define.v -id 1
+##sde_property: file core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 slc 120 123 1 mlc 124 11 124 0 slc 154 154 1 slc 196 196 1 slc 198 198 1 slc 218 221 1 mlc 222 22 222 0 mlc 256 20 256 0 mlc 296 33 296 0 mlc 401 10 419 0 mlc 431 13 431 0 slc 452 452 1 slc 480 480 1 slc 490 493 1 mlc 620 10 624 0
+##sde_property: file ../sram_512x8/sram_512x8.v -id 3
+##sde_property: file conv.v -id 4 -inactiveList slc 12 15 1 slc 45 48 1 slc 67 70 1 slc 160 163 1 slc 228 228 1 slc 241 241 1 slc 249 249 1 slc 255 255 1 slc 261 261 1 slc 267 267 1 slc 271 271 1 slc 274 274 1
+##sde_property: file median.v -id 5 -inactiveList slc 12 15 1 slc 45 48 1 mlc 53 14 65 0 slc 66 69 1 mlc 71 7 150 0 slc 151 154 1 mlc 208 24 489 0
+#span core core.v 2 652
 #rtl_idmap core 1 -lang 1
 #span conv conv.v 2 210
 #rtl_idmap conv 2 -lang 1
-#span small_alu_add conv.v 212 259
+#span small_alu_add conv.v 212 315
 #rtl_idmap small_alu_add 3 -lang 1
 #span median median.v 2 201
 #rtl_idmap median 4 -lang 1
-#span median_filter_submodule median.v 203 491
-#rtl_idmap median_filter_submodule 5 -lang 1
 #greybox core 15
 #greybox conv 15
 #greybox small_alu_add 15
 #greybox median 15
-#greybox median_filter_submodule 15
 #greybox sram_512x8 9 -ignore_spec sram_512x8
 DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@core.v@@2@@1@@2@@Module core is a top level design unit
 ##sde_property: violation -duId 1 
 #rtl_top_modules core
 ##file_label: SPG_CHECKSUM_RPT_FILE -file ./spyglass-1/core/lint/lint_rtl/spyglass_reports/SpyGlass/checksum.rpt -policy SpyGlass -external
-W486@@@@Warning@@core.v@@650@@1@@10@@Rhs width '12' with shift (Expr: '(cnt_next4_w >> 4)') is more than lhs width '5' (Expr: 'z_r'), this may cause overflow [Hierarchy: ':core']
+W486@@@@Warning@@core.v@@618@@1@@10@@Rhs width '12' with shift (Expr: '(cnt_next4_w >> 4)') is more than lhs width '5' (Expr: 'z_r'), this may cause overflow [Hierarchy: ':core']
 ##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
 ##sde_property: msg_label W486_ve
 ##sde_property: msg_id W486_ve
-W287a@@@@Warning@@core.v@@131@@1@@5@@Input 'i_input_done' of instance 'median_inst' is unconnected.[Hierarchy: ':core']
+W287a@@@@Warning@@core.v@@135@@1@@5@@Input 'i_input_done' of instance 'median_inst' is unconnected.[Hierarchy: ':core']
 ##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
 ##sde_property: msg_label W287a_msg2
 ##sde_property: msg_id W287a_msg2
-W528@@@@Warning@@core.v@@196@@1@@10@@Variable 'conv_disp_done_w' set but not read.[Hierarchy: ':core']
+W528@@@@Warning@@core.v@@207@@1@@10@@Variable 'conv_disp_done_w' set but not read.[Hierarchy: ':core']
+##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
+##sde_property: msg_label veCheckUsage_Viol_Msg
+##sde_property: msg_id veCheckUsage_Viol_Msg
+W528@@@@Warning@@core.v@@140@@1@@10@@Variable 'med_out_valid_w' set but not read.[Hierarchy: ':core']
 ##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
 ##sde_property: msg_label veCheckUsage_Viol_Msg
 ##sde_property: msg_id veCheckUsage_Viol_Msg
@@ -1635,31 +1636,55 @@ W528@@@@Info@@./spyglass-1/core/lint/lint_rtl/spyglass_reports/lint/SignalUsageR
 ##sde_property: violation -ruleLang 1 -elabDuId 1 
 ##sde_property: msg_label SignalUsageReport_Refer
 ##sde_property: msg_id SignalUsageReport_Refer
-W528@@@@Warning@@core.v@@274@@1@@10@@Variable 'sram_select_r3[2:0]' set but not read.[Hierarchy: ':core']
+W528@@@@Warning@@core.v@@141@@1@@10@@Variable 'med_result_w[13:0]' set but not read.[Hierarchy: ':core']
 ##continue:
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 sram_select_r3 -mergeRange1 2:0 -completeRange1 -1:0  
-##sde_property: msg_label veCheckUsage_Viol_Msg
-##sde_property: msg_id veCheckUsage_Viol_Msg
-W528@@@@Warning@@core.v@@273@@1@@10@@Variable 'sram_select_r2[2:0]' set but not read.[Hierarchy: ':core']
-##continue:
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 sram_select_r2 -mergeRange1 2:0 -completeRange1 -1:0  
-##sde_property: msg_label veCheckUsage_Viol_Msg
-##sde_property: msg_id veCheckUsage_Viol_Msg
-W528@@@@Warning@@core.v@@272@@1@@10@@Variable 'sram_select_r1[2:0]' set but not read.[Hierarchy: ':core']
-##continue:
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 sram_select_r1 -mergeRange1 2:0 -completeRange1 -1:0  
+##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_result_w -mergeRange1 13:0 -completeRange1 -1:0  
 ##sde_property: msg_label veCheckUsage_Viol_Msg
 ##sde_property: msg_id veCheckUsage_Viol_Msg
 ReportPortInfo-ML@@@@Data@@./spyglass-1/core/lint/lint_rtl/spyglass_reports/morelint/ReportPortInfo@@1@@1@@2@@Port Information for top design unit has been generated. For details see report ReportPortInfo.rpt
 ##sde_property: violation -elabDuId 1 
+W123@@@@Error@@./spyglass-1/core/lint/lint_rtl/spyglass_reports/lint/SignalUsageReport.rpt@@0@@1@@10@@Please refer to 'SignalUsageReport.rpt' for details of violating bits
+##sde_property: violation -ruleLang 1 -elabDuId 4 
+##sde_property: msg_label SignalUsageReport_Refer
+##sde_property: msg_id SignalUsageReport_Refer
+W123@@@@Error@@median.v@@196@@1@@10@@Variable 'med_e_wait_r'(128 bits) read but never set.[Hierarchy: ':core:median_inst@median']
+##sde_property: violation -ruleLang 1 -duId 4 -elabDuId 4 
+##sde_property: msg_label veCheckUsage_Viol_Msg
+##sde_property: msg_id veCheckUsage_Viol_Msg
+W123@@@@Error@@median.v@@52@@1@@10@@Variable 'out_data_w[7:0]' read but never set.[Hierarchy: ':core:median_inst@median']
+##continue:
+##sde_property: violation -ruleLang 1 -duId 4 -elabDuId 4 -type 1WBusMerge -mergeStr1 out_data_w -mergeRange1 7:0 -completeRange1 -1:0  
+##sde_property: msg_label veCheckUsage_Viol_Msg
+##sde_property: msg_id veCheckUsage_Viol_Msg
+W123@@@@Error@@median.v@@161@@1@@10@@Variable 'ns[1:0]' read but never set.[Hierarchy: ':core:median_inst@median']
+##continue:
+##sde_property: violation -ruleLang 1 -duId 4 -elabDuId 4 -type 1WBusMerge -mergeStr1 ns -mergeRange1 1:0 -completeRange1 -1:0  
+##sde_property: msg_label veCheckUsage_Viol_Msg
+##sde_property: msg_id veCheckUsage_Viol_Msg
+W240@@@@Info@@./spyglass-1/core/lint/lint_rtl/spyglass_reports/lint/SignalUsageReport.rpt@@0@@1@@10@@Please refer to 'SignalUsageReport.rpt' for details of violating bits
+##sde_property: violation -ruleLang 1 -elabDuId 4 
+##sde_property: msg_label SignalUsageReport_Refer
+##sde_property: msg_id SignalUsageReport_Refer
 W240@@@@Warning@@median.v@@7@@1@@10@@Input 'i_input_done' declared but not read.[Hierarchy: ':core:median_inst@median']
 ##sde_property: violation -ruleLang 1 -duId 4 -elabDuId 4 
 ##sde_property: msg_label veCheckUsage_Viol_Msg
 ##sde_property: msg_id veCheckUsage_Viol_Msg
-#childElab sram_512x8 sram_512x8 -elabDuId 6
+W240@@@@Warning@@median.v@@6@@1@@10@@Input 'i_isFirst' declared but not read.[Hierarchy: ':core:median_inst@median']
+##sde_property: violation -ruleLang 1 -duId 4 -elabDuId 4 
+##sde_property: msg_label veCheckUsage_Viol_Msg
+##sde_property: msg_id veCheckUsage_Viol_Msg
+W240@@@@Warning@@median.v@@5@@1@@10@@Input 'i_data[31:0]' declared but not read.[Hierarchy: ':core:median_inst@median']
+##continue:
+##sde_property: violation -ruleLang 1 -duId 4 -elabDuId 4 -type 1WBusMerge -mergeStr1 i_data -mergeRange1 31:0 -completeRange1 -1:0  
+##sde_property: msg_label veCheckUsage_Viol_Msg
+##sde_property: msg_id veCheckUsage_Viol_Msg
+W528@@@@Warning@@median.v@@196@@1@@10@@Variable 'med_e_r'(128 bits) set but not read.[Hierarchy: ':core:median_inst@median']
+##sde_property: violation -ruleLang 1 -duId 4 -elabDuId 4 
+##sde_property: msg_label veCheckUsage_Viol_Msg
+##sde_property: msg_id veCheckUsage_Viol_Msg
+#childElab sram_512x8 sram_512x8 -elabDuId 5
 #elab_rtl_namemap sram_512x8 sram_512x8 sram_512x8
-#child median_filter_submodule median_filter_submodule median_filter_submodule -elabDuId 5
-#child median median median -elabDuId 4 u_median_filter_submodule median_filter_submodule
+#child median median median -elabDuId 4
 #child small_alu_add small_alu_add small_alu_add -elabDuId 3
 #child conv conv conv -elabDuId 2 u_alu small_alu_add
 #child core core core -elabDuId 1 \SRAM_inst_loop[0].u_sram  sram_512x8 \SRAM_inst_loop[1].u_sram  sram_512x8 \SRAM_inst_loop[2].u_sram  sram_512x8 \SRAM_inst_loop[3].u_sram  sram_512x8 conv_inst conv median_inst median
@@ -1668,55 +1693,157 @@ W240@@@@Warning@@median.v@@7@@1@@10@@Input 'i_input_done' declared but not read.
 InferBlackBox@@inferblackbox@@Info@@N.A.@@0@@1@@10@@Interfaces for blackbox modules have been inferred. Please refer to AnalyzeBBox violations for more details
 ##sde_property: violation -ruleLang 1 
 #precompiled_dulist
-RegInputOutput-ML@@@@Data@@core.v@@503@@1@@10@@Port 'i_op_valid' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@457@@1@@10@@Port 'i_op_valid' is not registered [Hierarchy: 'core']@@0
 ##continue: S.1
 ##sde_property: container S.1 -rtlpath 1 -nonprob
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@core.v@@188@@1@@10@@Port 'o_op_ready' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@199@@1@@10@@Port 'o_op_ready' is not registered [Hierarchy: 'core']@@0
 ##continue: S.4
 ##sde_property: container S.4 -rtlpath 1 -nonprob
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@core.v@@398@@1@@10@@Port 'i_in_valid' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@348@@1@@10@@Port 'i_in_valid' is not registered [Hierarchy: 'core']@@0
 ##continue: S.5
 ##sde_property: container S.5 -rtlpath 1 -nonprob
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@core.v@@189@@1@@10@@Port 'o_in_ready' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@200@@1@@10@@Port 'o_in_ready' is not registered [Hierarchy: 'core']@@0
 ##continue: S.8
 ##sde_property: container S.8 -rtlpath 1 -nonprob
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@core.v@@396@@1@@10@@Port 'i_in_data[7:0]' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@346@@1@@10@@Port 'i_in_data[7:0]' is not registered [Hierarchy: 'core']@@0
 ##continue: S.6
 ##sde_property: container S.6 -rtlpath 1 
 ##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 i_in_data -mergeRange1 7:0 -completeRange1 7:0  
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@core.v@@571@@1@@10@@Port 'i_op_mode[3:0]' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@537@@1@@10@@Port 'i_op_mode[3:0]' is not registered [Hierarchy: 'core']@@0
 ##continue: S.2
 ##sde_property: container S.2 -rtlpath 1 
 ##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 i_op_mode -mergeRange1 3:0 -completeRange1 3:0  
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-InfoAnalyzeBBox@@InfoAnalyzeBBox@@Info@@core.v@@167@@1@@10@@Design Unit 'sram_512x8' has empty definition; Ignore specification applied on design unit using 'ignoredu' option
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[15][7:0]@@0
+##continue: S.41
+##sde_property: container S.41 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[15] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[14][7:0]@@0
+##continue: S.39
+##sde_property: container S.39 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[14] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[13][7:0]@@0
+##continue: S.37
+##sde_property: container S.37 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[13] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[12][7:0]@@0
+##continue: S.35
+##sde_property: container S.35 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[12] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[11][7:0]@@0
+##continue: S.33
+##sde_property: container S.33 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[11] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[10][7:0]@@0
+##continue: S.31
+##sde_property: container S.31 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[10] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[9][7:0]@@0
+##continue: S.29
+##sde_property: container S.29 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[9] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[8][7:0]@@0
+##continue: S.27
+##sde_property: container S.27 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[8] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[7][7:0]@@0
+##continue: S.25
+##sde_property: container S.25 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[7] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[6][7:0]@@0
+##continue: S.23
+##sde_property: container S.23 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[6] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[5][7:0]@@0
+##continue: S.21
+##sde_property: container S.21 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[5] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[4][7:0]@@0
+##continue: S.19
+##sde_property: container S.19 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[4] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[3][7:0]@@0
+##continue: S.17
+##sde_property: container S.17 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[3] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[2][7:0]@@0
+##continue: S.15
+##sde_property: container S.15 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[2] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[1][7:0]@@0
+##continue: S.13
+##sde_property: container S.13 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[1] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@196@@1@@10@@Detected undriven input terminal core.median_inst.med_e_wait_r[0][7:0]@@0
+##continue: S.11
+##sde_property: container S.11 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 med_e_wait_r[0] -mergeRange1 7:0 -completeRange1 7:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+UndrivenInTerm-ML@@@@Error@@median.v@@170@@1@@10@@Detected undriven input terminal core.median_inst.ns[1:0]@@0
+##continue: S.9
+##sde_property: container S.9 -rtlpath 1.4 
+##sde_property: violation -duId 4 -elabDuId 1 -type 1WBusMerge -mergeStr1 ns -mergeRange1 1:0 -completeRange1 1:0  
+##sde_property: msg_label vsMLHangingNet_2
+##sde_property: msg_id vsMLHangingNet_2
+InfoAnalyzeBBox@@InfoAnalyzeBBox@@Info@@core.v@@173@@1@@10@@Design Unit 'sram_512x8' has empty definition; Ignore specification applied on design unit using 'ignoredu' option
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label Label_1
 ##sde_property: msg_id Label_1
 ##warning_total_suppressed_count:         0
 ##error_total_suppressed_count:         0
-##warning_total_reported_count:        14
-##error_total_reported_count:         0
+##warning_total_reported_count:        17
+##error_total_reported_count:        21
 ##total_warning_waived_viol_count:         0
 ##total_error_waived_viol_count:         0
-##totalGeneratedCount:        14
+##totalGeneratedCount:        38
 ##totalWaivedViolationCount:         0
-##totalReportCount:        14
+##totalReportCount:        38
 ##totalDataSeverityCount:         7
 ##totalSuppressedCount:         0
 ##Active_Rules  BlockHeader BufClock CheckDelayTimescale-ML CombLoop FlopClockConstant FlopEConst LatchFeedback NoAssignX-ML NoXInCase-ML ParamWidthMismatch-ML STARC05-1.2.1.2 STARC05-1.3.1.3 STARC05-2.1.3.1 STARC05-2.1.4.5 STARC05-2.1.5.3 STARC05-2.1.6.5 STARC05-2.10.1.4a STARC05-2.10.1.4b STARC05-2.10.2.3 STARC05-2.10.3.2a STARC05-2.11.3.1 STARC05-2.2.3.3 STARC05-2.3.1.2c STARC05-2.3.1.5b STARC05-2.3.1.6 STARC05-2.3.3.1 STARC05-2.3.4.1v STARC05-2.4.1.5 STARC05-2.5.1.2 STARC05-2.5.1.7 STARC05-2.5.1.9 UndrivenInTerm-ML W110 W110a W116 W122 W123 W156 W19 W215 W216 W218 W224 W240 W263 W287a W287b W289 W292 W293 W317 W336 W337 W339a W352 W362 W392 W398 W414 W415 W415a W416 W421 W422 W424 W426 W442a W442b W442c W442f W450L W467 W480 W481a W481b W486 W496a W496b W499 W502 W505 W528 W66 W71 badimplicitSM1 badimplicitSM2 badimplicitSM4 bothedges mixedsenselist sim_race02

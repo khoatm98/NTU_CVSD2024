@@ -1,8 +1,8 @@
 portcount 36
-netcount 4253
-instcount 3281
-termcount 16682
-pathcount 5
+netcount 3968
+instcount 2871
+termcount 14141
+pathcount 4
 disable_unified_flattening 1
 enable_hier_flattening 0
 flattening_type 7

@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version U-2022.12 for linux64 -- Nov 22, 2022
-#@ # Date:   Sat Oct 12 16:21:26 2024
+#@ # Date:   Sat Oct 12 17:14:37 2024
 #@ # Run by: r2k41036@cad27
 #@ 
 
@@ -9466,3 +9466,34 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/syn.
 #@ uniquify
 #@ set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 #@ compile
+#@ 
+#@ # Report Output
+#@ current_design [get_designs ${DESIGN}]
+#@ report_timing > "./Report/${DESIGN}_syn.timing"
+#@ report_area > "./Report/${DESIGN}_syn.area"
+#@ 
+#@ # Output Design
+#@ current_design [get_designs ${DESIGN}]
+#@ 
+#@ set bus_inference_style {%s[%d]}
+#@ set bus_naming_style {%s[%d]}
+#@ set hdlout_internal_busses true
+#@ change_names -hierarchy -rule verilog
+#@ define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+#@ define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+#@ define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+#@ define_name_rules name_rule -case_insensitive
+#@ change_names -hierarchy -rules name_rule
+#@ 
+#@ remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+#@ set verilogout_higher_designs_first true
+#@ write -format ddc     -hierarchy -output "./Netlist/${DESIGN}_syn.ddc"
+#@ write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
+#@ write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
+#@ write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
+#@ 
+#@ 
+#@ report_timing
+#@ report_area
+#@ check_design
+#@ exit

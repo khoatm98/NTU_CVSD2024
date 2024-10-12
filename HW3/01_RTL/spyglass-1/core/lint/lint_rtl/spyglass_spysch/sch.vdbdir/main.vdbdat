@@ -1,32 +1,168 @@
 #x HLBEGIN S.1
 #x {{COLOR=>1;}}
-#x 115 { @@n 2 a 0 @@p 2 a 0 }
+#x 112 { @@n 2 a 0 @@p 2 a 0 }
 #x HLEND
 #x HLBEGIN S.2
 #x {{COLOR=>1;}}
-#x 115 { @@n 4 a 0 @@p 4 a 0 }
+#x 112 { @@n 4 a 0 @@p 4 a 0 }
 #x HLEND
 #x HLBEGIN S.3
 #x {{COLOR=>1;}}
-#x 115 { @@n 5 a 0 @@p 5 a 0 }
+#x 112 { @@n 5 a 0 @@p 5 a 0 }
 #x HLEND
 #x HLBEGIN S.4
 #x {{COLOR=>1;}}
-#x 115 { @@n 8 a 0 @@p 8 a 0 }
+#x 112 { @@n 8 a 0 @@p 8 a 0 }
 #x HLEND
 #x HLBEGIN S.5
 #x {{COLOR=>1;}}
-#x 115 { @@n 9 a 0 @@p 9 a 0 }
+#x 112 { @@n 9 a 0 @@p 9 a 0 }
 #x HLEND
 #x HLBEGIN S.6
 #x {{COLOR=>1;}}
-#x 115 { @@n 11 a 0 @@p 11 a 0 }
+#x 112 { @@n 11 a 0 @@p 11 a 0 }
 #x HLEND
 #x HLBEGIN S.7
 #x {{COLOR=>1;}}
-#x 115 { @@n 12 a 0 @@p 12 a 0 }
+#x 112 { @@n 12 a 0 @@p 12 a 0 }
 #x HLEND
 #x HLBEGIN S.8
 #x {{COLOR=>1;}}
-#x 115 { @@n 19 a 0 @@p 19 a 0 }
+#x 112 { @@n 19 a 0 @@p 19 a 0 }
+#x HLEND
+#x HLBEGIN S.9
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 2 1 a 0 @@n 79 }
+#x HLEND
+#x HLBEGIN S.10
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 3 1 a 0 @@n 80 }
+#x HLEND
+#x HLBEGIN S.11
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 35 1 a 0 @@n 214 }
+#x HLEND
+#x HLBEGIN S.12
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 36 1 a 0 @@n 215 }
+#x HLEND
+#x HLBEGIN S.13
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 43 1 a 0 @@n 222 }
+#x HLEND
+#x HLBEGIN S.14
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 44 1 a 0 @@n 223 }
+#x HLEND
+#x HLBEGIN S.15
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 51 1 a 0 @@n 230 }
+#x HLEND
+#x HLBEGIN S.16
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 52 1 a 0 @@n 231 }
+#x HLEND
+#x HLBEGIN S.17
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 59 1 a 0 @@n 238 }
+#x HLEND
+#x HLBEGIN S.18
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 60 1 a 0 @@n 239 }
+#x HLEND
+#x HLBEGIN S.19
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 67 1 a 0 @@n 246 }
+#x HLEND
+#x HLBEGIN S.20
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 68 1 a 0 @@n 247 }
+#x HLEND
+#x HLBEGIN S.21
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 75 1 a 0 @@n 254 }
+#x HLEND
+#x HLBEGIN S.22
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 76 1 a 0 @@n 255 }
+#x HLEND
+#x HLBEGIN S.23
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 83 1 a 0 @@n 262 }
+#x HLEND
+#x HLBEGIN S.24
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 84 1 a 0 @@n 263 }
+#x HLEND
+#x HLBEGIN S.25
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 91 1 a 0 @@n 270 }
+#x HLEND
+#x HLBEGIN S.26
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 92 1 a 0 @@n 271 }
+#x HLEND
+#x HLBEGIN S.27
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 99 1 a 0 @@n 278 }
+#x HLEND
+#x HLBEGIN S.28
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 100 1 a 0 @@n 279 }
+#x HLEND
+#x HLBEGIN S.29
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 107 1 a 0 @@n 286 }
+#x HLEND
+#x HLBEGIN S.30
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 108 1 a 0 @@n 287 }
+#x HLEND
+#x HLBEGIN S.31
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 115 1 a 0 @@n 294 }
+#x HLEND
+#x HLBEGIN S.32
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 116 1 a 0 @@n 295 }
+#x HLEND
+#x HLBEGIN S.33
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 123 1 a 0 @@n 302 }
+#x HLEND
+#x HLBEGIN S.34
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 124 1 a 0 @@n 303 }
+#x HLEND
+#x HLBEGIN S.35
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 131 1 a 0 @@n 310 }
+#x HLEND
+#x HLBEGIN S.36
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 132 1 a 0 @@n 311 }
+#x HLEND
+#x HLBEGIN S.37
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 139 1 a 0 @@n 318 }
+#x HLEND
+#x HLBEGIN S.38
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 140 1 a 0 @@n 319 }
+#x HLEND
+#x HLBEGIN S.39
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 147 1 a 0 @@n 326 }
+#x HLEND
+#x HLBEGIN S.40
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 148 1 a 0 @@n 327 }
+#x HLEND
+#x HLBEGIN S.41
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 155 1 a 0 @@n 334 }
+#x HLEND
+#x HLBEGIN S.42
+#x {{COLOR=>2;}}
+#x 112.480 { @@t 156 1 a 0 @@n 335 }
 #x HLEND

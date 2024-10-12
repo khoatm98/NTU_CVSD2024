@@ -445,3 +445,21 @@ gui_select_message -rule UndrivenInTerm-ML -msg {Detected undriven input termina
 run_goal
 # Started at 13:22:22, Completed at 13:22:49 (Elapsed time = 00:00:23.670)
 
+run_goal
+# Started at 17:07:17, Completed at 17:07:41 (Elapsed time = 00:00:21.420)
+
+gui_select_message -rule STX_VE_479 -msg {Syntax error near ( ; ). Please use 'set_option enableSV yes' to support SystemVerilog construct ( Empty statement )}
+# Started at 17:07:53, Completed at 17:07:53 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 17:08:08, Completed at 17:08:36 (Elapsed time = 00:00:23.690)
+
+gui_select_message -rule W123 -msg {Please refer to 'SignalUsageReport.rpt' for details of violating bits}
+# Started at 17:09:37, Completed at 17:09:37 (Elapsed time = 00:00:00.029)
+
+gui_select_message -rule W123 -msg {Variable 'med_e_wait_r'(128 bits) read but never set.[Hierarchy: ':core:median_inst@median']}
+# Started at 17:09:38, Completed at 17:09:38 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule UndrivenInTerm-ML -msg {Detected undriven input terminal core.median_inst.med_e_wait_r[13][7:0]}
+# Started at 17:09:44, Completed at 17:09:44 (Elapsed time = 00:00:00.019)
+

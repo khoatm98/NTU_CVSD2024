@@ -1,1 +1,1 @@
-\SRAM_inst_loop[0].u_sram 	sram_512x8	sram_512x8	core	sram_512x8,Ignore specification applied on design unit using 'ignoredu' option	(null)	(null)	core.v	sram_512x8	BB_NO_MOD_DEF	WORK	sram_512x8	1	167	0	1	131329	1
+\SRAM_inst_loop[0].u_sram 	sram_512x8	sram_512x8	core	sram_512x8,Ignore specification applied on design unit using 'ignoredu' option	(null)	(null)	core.v	sram_512x8	BB_NO_MOD_DEF	WORK	sram_512x8	1	173	0	1	131329	1

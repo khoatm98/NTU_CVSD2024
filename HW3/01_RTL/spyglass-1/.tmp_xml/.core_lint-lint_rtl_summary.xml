@@ -14,7 +14,7 @@
    <technology name="(Not Available)"> 
    </technology> 
 </tech_reports> 
-<statistics fatal="0" error="0" warning="8" info="6" waived_error="0" waived_warning="0" waived_info="0" /> 
+<statistics fatal="0" error="21" warning="10" info="7" waived_error="0" waived_warning="0" waived_info="0" /> 
 <tech_summary> 
 </tech_summary> 
 </goal_summary> 

@@ -22,16 +22,16 @@ localparam DECODE           = 4'd2;
 localparam MAP_LOAD         = 4'd3;
 localparam SHIFT            = 4'd4;
 localparam SCALE            = 4'd5;
-localparam CONV             = 4'd6;
+localparam CONV             = 4'd13;
 localparam CONV_OUT         = 4'd7;
-localparam MED              = 4'd8;
-localparam SOBEL_NMS        = 4'd9;
+localparam MED              = 4'd14;
+localparam SOBEL_NMS        = 4'd15;
 localparam DISPLAY          = 4'd10;
 localparam OUTPUT           = 4'd11;
 localparam RESET            = 4'd12;
-localparam DELAY3           = 4'd13;
-localparam DELAY2           = 4'd14;
-localparam DELAY1           = 4'd15;
+localparam DELAY3           = 4'd6;
+localparam DELAY2           = 4'd8;
+localparam DELAY1           = 4'd9;
 localparam MED_OUT          = 5'd16;
 localparam SOBEL_NMS_OUT    = 5'd17;
 localparam SRAM_NO          = 4;
@@ -104,7 +104,8 @@ reg [13:0] out_data_ready_r;
 reg        out_valid_wait_r;
 reg [13:0] out_data_wait_r;
 
-reg [31:0] input_data_r;
+reg [31:0] conv_input_data_r;
+reg [31:0] med_input_data_r;
 reg [31:0] input_data_wait_r;
 reg 	   conv_isFirst_signal_r;
 reg 	   conv_isFirst_signal_wait_r;
@@ -124,7 +125,7 @@ wire [13:0]  med_result_w;
 conv conv_inst (                       
 				.i_clk(i_clk),
 				.i_rst_n(i_rst_n),
-				.i_data(input_data_r),
+				.i_data(conv_input_data_r),
 				.i_isFirst(conv_isFirst_signal_r),
 				.i_input_done(conv_calc_done_r),
 				.o_out_valid(conv_out_valid_w),
@@ -134,7 +135,7 @@ conv conv_inst (
 median median_inst (                       
 				.i_clk(i_clk),
 				.i_rst_n(i_rst_n),
-				.i_data(input_data_r),
+				.i_data(med_input_data_r),
 				.i_isFirst(med_isFirst_signal_r),
 				.o_out_valid(med_out_valid_w),
 				.o_out_data(med_result_w)
@@ -143,10 +144,10 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	if (~i_rst_n) begin
 		conv_calc_done_r <= 0;
 		med_done_r       <= 0;
-		sram_select_forecase_0_r <= 0;
-		sram_select_forecase_1_r <= 0;
-		sram_select_forecase_2_r <= 0;
-		sram_select_forecase_3_r <= 0;
+		sram_select_forecase_0_r <= SRAM_NO;
+		sram_select_forecase_1_r <= SRAM_NO;
+		sram_select_forecase_2_r <= SRAM_NO;
+		sram_select_forecase_3_r <= SRAM_NO;
 		y_forecase_r             <= 0;
 	end
 	else begin
@@ -280,7 +281,7 @@ always @ (*) begin
 		{MAP_LOAD,4'bzzzz}: begin
 			sram_select_r = cnt%4;
 		end
-		{DISPLAY,4'bzzzz}: begin
+		{DISPLAY,4'bzzzz}: begin 
 			sram_select_r = (x_r)%4;
 
 		end
@@ -294,10 +295,10 @@ always @ (*) begin
 end
 /* input setup to conv module */
 always @ (*) begin
-	if(curr_state == CONV || curr_state == MED) begin
+	if(curr_state >= CONV) begin
 		if( pre_state[1] == DECODE) begin
 			conv_isFirst_signal_wait_r = 1;
-			med_isFirst_signal_wait_r = 0;
+			med_isFirst_signal_wait_r = 1;
 		end
 		else begin
 			conv_isFirst_signal_wait_r = 0;
@@ -378,9 +379,9 @@ for(i = 0; i < SRAM_NO; i = i + 1) begin:SRAM_input
 					sram_wen_wait_r [i] = 1;
 				end
 			end
-			{4'bzzzz,4'bzzzz,CONV}: begin
+			{4'bzzzz,4'bzzzz,4'b11zz}: begin
 				case(i)
-					sram_select_forecase_1_r  : sram_addr_wait_r[i] = (z_r<<4) + (x_r>>2) + (y_m1_w<<1);
+					sram_select_forecase_1_r : sram_addr_wait_r[i] = (z_r<<4) + (x_r>>2)    + (y_m1_w<<1);
 					sram_select_forecase_0_r : sram_addr_wait_r[i] = (z_r<<4) + (x_m1_w>>2) + (y_m1_w<<1);
 					sram_select_forecase_2_r : sram_addr_wait_r[i] = (z_r<<4) + (x_p1_w>>2) + (y_m1_w<<1);
 					sram_select_forecase_3_r : sram_addr_wait_r[i] = (z_r<<4) + (x_p2_w>>2) + (y_m1_w<<1);
@@ -397,7 +398,6 @@ for(i = 0; i < SRAM_NO; i = i + 1) begin:SRAM_input
 					sram_wen_wait_r [i] = 1;
 				end
 			end
-			
 			default : begin
 				sram_addr_wait_r[i] = 0;
 				sram_data_wait_r[i] = 0;
@@ -456,9 +456,8 @@ always @ (*) begin
 		SHIFT      : next_state = FETCH;
 		SCALE      : next_state = FETCH;
 		CONV       : next_state = conv_calc_done_r ? CONV_OUT : CONV;
-		CONV_OUT   : next_state = out_valid_w     ? OUTPUT   : CONV_OUT;
+		CONV_OUT   : next_state = out_valid_w      ? OUTPUT   : CONV_OUT;
 		MED        : next_state = med_done_r       ? DELAY3   : MED;
-		//MED_OUT    : next_state = out_valid_w      ? OUTPUT   : CONV_OUT;
 		SOBEL_NMS  : next_state = sobel_nms_done_w ? DELAY1   : SOBEL_NMS;
 		DISPLAY    : next_state = display_done_w   ? DELAY3   : DISPLAY;
 		OUTPUT     : next_state = output_done_w    ? DELAY3   : OUTPUT;
@@ -493,10 +492,8 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		casez({curr_state, next_state})
 			{DECODE, DISPLAY} : cnt <= cnt + 1;
 			{DISPLAY, 4'bzzzz} : cnt <= cnt + 1;
-			{DECODE, CONV} : cnt <= cnt + 4;
-			{CONV, 4'bzzzz} : cnt <= cnt + 4;
-			{DECODE, MED} : cnt <= cnt + 4;
-			{MED, 4'bzzzz} : cnt <= cnt + 4;
+			{DECODE, 4'b11zz} : cnt <= cnt + 4; // conv med sober
+			{4'b11zz, 4'bzzzz} : cnt <= cnt + 4; // conv med sober
 			{MAP_LOAD, 4'bzzzz} : cnt <= i_in_valid ? cnt + 1 : cnt;
 			default: cnt <= 0;
 		endcase
@@ -570,13 +567,15 @@ end
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if (~i_rst_n) begin
 		conv_isFirst_signal_r  <= 0;
-		input_data_r            <= 0;
-		med_isFirst_signal_r  <= 0;
+		conv_input_data_r      <= 0;
+		med_input_data_r       <= 0;
+		med_isFirst_signal_r   <= 0;
 	end
 	else begin
-		conv_isFirst_signal_r  <= conv_isFirst_signal_wait_r;
-		med_isFirst_signal_r  <= med_isFirst_signal_wait_r;
-		input_data_r			   <= input_data_wait_r;
+		conv_isFirst_signal_r  <= op_mode_r == `OP_CONV ? conv_isFirst_signal_wait_r : 0;
+		med_isFirst_signal_r   <= op_mode_r == `OP_MED_FILTER ? med_isFirst_signal_wait_r : 0;
+		conv_input_data_r  	   <= input_data_wait_r;
+		med_input_data_r   	   <= input_data_wait_r;
 	end
 end
 
@@ -587,20 +586,15 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		z_r <= 0;
 	end
 	else begin
-		case(next_state)
+		casez(next_state)
 			DISPLAY: begin
 				x_r <= x_origin_r + (cnt_next_w)%2;
 				y_r <= y_origin_r + (cnt_next_w%4 > 1);
 				z_r <= cnt_next_w[6:2];
 			end
-			CONV: begin
+			4'b11zz: begin // conv med sober
 				x_r <= x_origin_r;
 				y_r <= y_origin_r + (cnt_next4_mod16_r>>2);
-				z_r <= cnt_next4_w>>4;
-			end
-			MED: begin
-				x_r <= x_origin_r;
-				y_r <= y_origin_r + ((cnt_next4_w%16)>>2);
 				z_r <= cnt_next4_w>>4;
 			end
 			default: begin

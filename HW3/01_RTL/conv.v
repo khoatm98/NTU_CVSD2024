@@ -278,7 +278,7 @@ always @(*) begin
 	
 	
 end
-assign out_data_wait_sat_w = (out_data_s1_3_wait_r >> 4) + out_data_s1_3_wait_r[3];;
+assign out_data_wait_sat_w = (out_data_s1_3_wait_r >> 4) + out_data_s1_3_wait_r[3];
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if(~i_rst_n) begin
 		out_data_s1_0_ready_r <= 0;

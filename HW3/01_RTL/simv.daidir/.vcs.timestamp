@@ -1,7 +1,7 @@
 0 
 36
 +define+CYCLE=5
-+define+tb1
++define+tb2
 +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 +notimingcheck
 +v2k
@@ -109,12 +109,12 @@ ARCH=linux64
 0
 0
 9
-1728721189 ./core.v
-1728721273 ./median.v
-1728720995 ./conv.v
+1728724752 ./core.v
+1728724447 ./median.v
+1728724089 ./conv.v
 1728464623 ./define.v
 1728657258 ../sram_512x8/sram_512x8.v
-1728637689 ../00_TESTBED/testbench.v
+1728724591 ../00_TESTBED/testbench.v
 1728651300 rtl_01.f
 1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/verdi.tab
 1654052745 /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
@@ -123,5 +123,5 @@ ARCH=linux64
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1728721281 simv.daidir
+1728724764 simv.daidir
 -1 partitionlib

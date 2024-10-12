@@ -567,9 +567,6 @@
 	<Opt name="-enable_save_restore">
 		<value>yes</value>
 	</Opt>
-	<Opt name="-force_save">
-		<value>yes</value>
-	</Opt>
 	<Opt name="-inferblackbox">
 		<value>yes</value>
 	</Opt>
@@ -590,19 +587,15 @@
 <CMD_STRING> -batch -project spyglass-1.prj -goal lint/lint_rtl -64bit</CMD_STRING>
 <Module_Perf>
 	<Module name="conv">
-		<Memory>16</Memory>
+		<Memory>24</Memory>
 		<Time>0</Time>
 	</Module>
 	<Module name="core">
-		<Memory>48</Memory>
+		<Memory>296</Memory>
 		<Time>0</Time>
 	</Module>
 	<Module name="median">
-		<Memory>272</Memory>
-		<Time>0</Time>
-	</Module>
-	<Module name="median_filter_submodule">
-		<Memory>-135104</Memory>
+		<Memory>-135112</Memory>
 		<Time>0</Time>
 	</Module>
 	<Module name="small_alu_add">
@@ -611,18 +604,18 @@
 	</Module>
 </Module_Perf>
 <NOM_DESIGN>
-	<Modules>5</Modules>
-	<Instances>3285</Instances>
-	<Nets>4797</Nets>
-	<Terminals>18165</Terminals>
-	<MAX>1331</MAX>
-	<Avg>657</Avg>
+	<Modules>4</Modules>
+	<Instances>2874</Instances>
+	<Nets>4421</Nets>
+	<Terminals>15129</Terminals>
+	<MAX>1378</MAX>
+	<Avg>718</Avg>
 </NOM_DESIGN>
 <FLAT_DESIGN>
-	<Instances>3281</Instances>
-	<Nets>4253</Nets>
-	<Terminals>16682</Terminals>
-	<Paths>5</Paths>
+	<Instances>2871</Instances>
+	<Nets>3968</Nets>
+	<Terminals>14141</Terminals>
+	<Paths>4</Paths>
 	<Ports>36</Ports>
 	<BBOX_Inst>4</BBOX_Inst>
 	<LIB_Inst>0</LIB_Inst>
@@ -642,7 +635,7 @@
 	<Reduntant>0</Reduntant>
 	<Viol_Waived>0</Viol_Waived>
 </WAIVER_COUNT>
-<PEAK_MEMORY>5662008</PEAK_MEMORY>
+<PEAK_MEMORY>5729684</PEAK_MEMORY>
 <Parameters>
 	<Param name="-W416_vhdl_only">
 		<DefaultValue>no</DefaultValue>
@@ -1611,7 +1604,7 @@
 	</Rule>
 	<Rule name="PECHECK04">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="SGDC_power_est29">
@@ -1641,7 +1634,7 @@
 	</Rule>
 	<Rule name="STARC05-1.2.1.2">
 		<Time>0</Time>
-		<Memory>24</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.4.1.5">
@@ -1666,12 +1659,12 @@
 	</Rule>
 	<Rule name="Postreqs_Usage_ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_CheckTimeUnitandPrecision-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="CheckDelayTimescale-ML">
@@ -1681,7 +1674,7 @@
 	</Rule>
 	<Rule name="ParamWidthMismatch-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="NoAssignX-ML">
@@ -1711,7 +1704,7 @@
 	</Rule>
 	<Rule name="ReportPortInfo-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="RegInputOutput-ML">
@@ -1734,8 +1727,8 @@
 		<RULE_PARAM name="-checkRTLCInst" value="yes"/>
 		<RULE_PARAM name="-checkfullbus" value="yes"/>
 		<Time>0</Time>
-		<Memory>2568</Memory>
-		<Count>0</Count>
+		<Memory>72</Memory>
+		<Count>17</Count>
 	</Rule>
 	<Rule name="HangingNetPreReq-ML">
 		<Time>0</Time>
@@ -1749,7 +1742,7 @@
 	</Rule>
 	<Rule name="LatchFeedback">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_RTLSchematic">
@@ -1764,7 +1757,7 @@
 	</Rule>
 	<Rule name="Prereqs_Usage">
 		<Time>0</Time>
-		<Memory>-80</Memory>
+		<Memory>-64</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W415">
@@ -1772,26 +1765,26 @@
 		<RULE_PARAM name="-checkconstassign" value="yes"/>
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W392">
 		<Time>0</Time>
-		<Memory>48</Memory>
+		<Memory>40</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W528">
 		<RULE_PARAM name="-checkfullbus" value="yes"/>
 		<RULE_PARAM name="-checkfullrecord" value="yes"/>
 		<Time>0</Time>
-		<Memory>584</Memory>
+		<Memory>576</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W528">
 		<RULE_PARAM name="-checkfullbus" value="yes"/>
 		<RULE_PARAM name="-checkfullrecord" value="yes"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>16</Memory>
 		<Count>5</Count>
 	</Rule>
 	<Rule name="W505">
@@ -1811,7 +1804,7 @@
 	</Rule>
 	<Rule name="W467">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W424">
@@ -1821,17 +1814,17 @@
 	</Rule>
 	<Rule name="W424">
 		<Time>0</Time>
-		<Memory>16</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W421">
-		<Time>0</Time>
 		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W421">
 		<Time>0</Time>
 		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W421">
+		<Time>0</Time>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W398">
@@ -1853,7 +1846,7 @@
 	</Rule>
 	<Rule name="W293">
 		<Time>0</Time>
-		<Memory>40</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W287b">
@@ -1889,8 +1882,8 @@
 		<RULE_PARAM name="-checkfullbus" value="yes"/>
 		<RULE_PARAM name="-checkfullrecord" value="yes"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
-		<Count>1</Count>
+		<Memory>0</Memory>
+		<Count>4</Count>
 	</Rule>
 	<Rule name="W71">
 		<RULE_PARAM name="-strict" value="W342,W343"/>
@@ -1958,7 +1951,7 @@
 	</Rule>
 	<Rule name="BlockHeader">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>2544</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W422">
@@ -1980,12 +1973,12 @@
 	</Rule>
 	<Rule name="W502">
 		<Time>0</Time>
-		<Memory>-16</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W499">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W486">
@@ -2002,7 +1995,7 @@
 	<Rule name="W481a">
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W480">
@@ -2017,24 +2010,24 @@
 	</Rule>
 	<Rule name="W422">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W415a">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W362">
 		<RULE_PARAM name="-nocheckoverflow" value="yes"/>
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W352">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W416">
@@ -2051,12 +2044,12 @@
 	</Rule>
 	<Rule name="W317">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W289">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W263">
@@ -2078,12 +2071,12 @@
 	</Rule>
 	<Rule name="W216">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W215">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W156">
@@ -2096,8 +2089,8 @@
 		<RULE_PARAM name="-checkfullrecord" value="yes"/>
 		<RULE_PARAM name="-ignoreModuleInstance" value="yes"/>
 		<Time>0</Time>
-		<Memory>104</Memory>
-		<Count>0</Count>
+		<Memory>96</Memory>
+		<Count>4</Count>
 	</Rule>
 	<Rule name="W116">
 		<RULE_PARAM name="-nocheckoverflow" value="yes"/>
@@ -2114,23 +2107,23 @@
 	<Rule name="W19">
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W496b">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W496a">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W122">
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>40</Memory>
+		<Memory>56</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W110">
@@ -2141,7 +2134,7 @@
 	</Rule>
 	<Rule name="bothedges">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="badimplicitSM4">
@@ -2171,7 +2164,7 @@
 	</Rule>
 	<Rule name="W442c">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W442b">
@@ -2196,18 +2189,18 @@
 	</Rule>
 	<Rule name="sim_race02">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="checkPinConnectedToSupply">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="FlopEConst">
 		<RULE_PARAM name="-report_inferred_cell" value="yes"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="FlopSRConst">
@@ -2219,7 +2212,7 @@
 	<Rule name="FlopClockConstant">
 		<RULE_PARAM name="-report_inferred_cell" value="yes"/>
 		<Time>0</Time>
-		<Memory>40</Memory>
+		<Memory>32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.4.1v">
@@ -2229,12 +2222,12 @@
 	</Rule>
 	<Rule name="STARC05-2.10.1.4b">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.10.1.4a">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.1.2c">
@@ -2245,7 +2238,7 @@
 	<Rule name="STARC05-2.1.3.1">
 		<RULE_PARAM name="-nocheckoverflow" value="yes"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-1.4.3.4">
@@ -2283,44 +2276,44 @@
 	<Rule name="STARC05-2.11.3.1">
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>32</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.10.3.2a">
 		<RULE_PARAM name="-nocheckoverflow" value="yes"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.10.2.3">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.3.1">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.1.6">
 		<Time>0</Time>
-		<Memory>-2552</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.1.5b">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.2.3.3">
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>2552</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.1.5.3">
 		<Time>0</Time>
-		<Memory>24</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.1.4.5">
@@ -2332,7 +2325,7 @@
 		<RULE_PARAM name="-enableE2Q" value="yes"/>
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>840</Memory>
+		<Memory>864</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereq_IntClock">
@@ -2343,7 +2336,7 @@
 	<Rule name="BufClock">
 		<RULE_PARAM name="-strict" value="W342,W343"/>
 		<Time>0</Time>
-		<Memory>1584</Memory>
+		<Memory>1576</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="InferLatch">
@@ -2405,9 +2398,9 @@
 </REPORTS>
 <VIOL_SUMMARY>
 	<FATAL>0</FATAL>
-	<ERROR>0</ERROR>
-	<WARNING>8</WARNING>
-	<INFO>6</INFO>
+	<ERROR>21</ERROR>
+	<WARNING>10</WARNING>
+	<INFO>7</INFO>
 </VIOL_SUMMARY>
 <Exit_code>0</Exit_code>
-<Total_time>168610</Total_time>
+<Total_time>182157</Total_time>
