@@ -22,22 +22,40 @@
 12 "W164a" 1
 "SPG_MSGTAG_HIERARCHY"
 ":core:\SRAM_input[0] "
-16 "W164a" 1
+14 "W164a" 1
 "SPG_MSGTAG_HIERARCHY"
 ":core:conv_inst@conv:\conv_e_read[0] "
-17 "W164b" 1
+15 "W164a" 1
 "SPG_MSGTAG_HIERARCHY"
 ":core:conv_inst@conv:u_alu@small_alu_add"
-18 "W164b" 1
+16 "W164a" 1
 "SPG_MSGTAG_HIERARCHY"
 ":core:conv_inst@conv:u_alu@small_alu_add"
-19 "W164b" 1
+17 "W164a" 1
 "SPG_MSGTAG_HIERARCHY"
 ":core:conv_inst@conv:u_alu@small_alu_add"
-27 "W110" 1
+18 "W164a" 1
 "SPG_MSGTAG_HIERARCHY"
-":core:median_inst@median"
-45 "InfoAnalyzeBBox" 2
+":core:conv_inst@conv:u_alu@small_alu_add"
+19 "W164a" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:conv_inst@conv:u_alu@small_alu_add"
+20 "W164b" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:conv_inst@conv:u_alu@small_alu_add"
+21 "W164b" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:conv_inst@conv:u_alu@small_alu_add"
+22 "W164b" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:conv_inst@conv:u_alu@small_alu_add"
+23 "W164b" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:conv_inst@conv:u_alu@small_alu_add"
+24 "W164b" 1
+"SPG_MSGTAG_HIERARCHY"
+":core:conv_inst@conv:u_alu@small_alu_add"
+39 "InfoAnalyzeBBox" 2
 "BBoxEng"
 ["sram_512x8","BB_NO_MOD_DEF"]
 "BBoxEngAuxiInfo"
@@ -53,6 +71,11 @@
 "BUILTIN"
 "1"
 -1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "InferBlackBox" 2
 "RULEGROUP"
 ["Design Read"]
 "BUILTIN"
@@ -81,34 +104,6 @@
 [67]
 "RULEGROUP"
 ["starc/RTL_Description_Technique"]
--1 "UndrivenInTerm-ML" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[70]
-"RULEGROUP"
-["morelint/HangingNet-ML/Undriven-ML"]
--1 "UndrivenNet-ML" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[71]
-"RULEGROUP"
-["morelint/HangingNet-ML/Undriven-ML"]
--1 "UndrivenOutPort-ML" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[72]
-"RULEGROUP"
-["morelint/HangingNet-ML/Undriven-ML"]
--1 "W110" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[74]
-"RULEGROUP"
-["lint/width_rules_lint","lint/Lint_Elab_Rules","lint/Instance"]
 -1 "W164a" 3
 "TEMPLATE"
 ["lint/lint_rtl_enhanced"]
@@ -123,27 +118,6 @@
 [83]
 "RULEGROUP"
 ["lint/width_rules_lint","lint/Lint_Elab_Rules","lint/Assign/W164"]
--1 "W210" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[88]
-"RULEGROUP"
-["lint/Instance"]
--1 "W240" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[94]
-"RULEGROUP"
-["lint/Lint_Elab_Rules","lint/Usage"]
--1 "W287a" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[98]
-"RULEGROUP"
-["lint/Lint_Elab_Rules","lint/Instance"]
 -1 "W486" 3
 "TEMPLATE"
 ["lint/lint_rtl_enhanced"]

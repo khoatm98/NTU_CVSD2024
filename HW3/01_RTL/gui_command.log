@@ -463,3 +463,24 @@ gui_select_message -rule W123 -msg {Variable 'med_e_wait_r'(128 bits) read but n
 gui_select_message -rule UndrivenInTerm-ML -msg {Detected undriven input terminal core.median_inst.med_e_wait_r[13][7:0]}
 # Started at 17:09:44, Completed at 17:09:44 (Elapsed time = 00:00:00.019)
 
+run_goal
+# Started at 21:30:42, Completed at 21:31:09 (Elapsed time = 00:00:23.730)
+
+gui_select_message -rule W287a -msg {Input 'i_input_done' of instance 'median_inst' is unconnected.[Hierarchy: ':core']}
+# Started at 21:31:14, Completed at 21:31:14 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule W528 -msg {Variable 'conv_disp_done_w' set but not read.[Hierarchy: ':core']}
+# Started at 21:31:34, Completed at 21:31:34 (Elapsed time = 00:00:00.009)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 21:32:59, Completed at 21:33:11 (Elapsed time = 00:00:09.060)
+
+run_goal
+# Started at 21:33:11, Completed at 21:33:40 (Elapsed time = 00:00:23.889)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'c2[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']}
+# Started at 21:33:49, Completed at 21:33:49 (Elapsed time = 00:00:00.019)
+
+gui_select_message -rule W164b -msg {LHS: 'out_data_s1_0_wait_r' width 17 is greater than RHS: '((i_data_d << 1) + (i_data_b << 1))' width 15 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']}
+# Started at 21:33:57, Completed at 21:33:57 (Elapsed time = 00:00:00.009)
+

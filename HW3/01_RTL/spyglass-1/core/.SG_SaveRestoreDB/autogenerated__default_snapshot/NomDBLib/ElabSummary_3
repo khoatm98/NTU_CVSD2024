@@ -28,6 +28,13 @@ Elaborated Name: 'median'
 
 ================================================================================
 
+Elaborated Name: 'median_filter_submodule'
+    (RTL Design Unit name: 'median_filter_submodule', median.v:206)
+     Parameters (Total: 0)
+     Instances (Total: 1): core.median_inst.u_median_filter_submodule 
+
+================================================================================
+
 Elaborated Name: 'sram_512x8'
     (RTL Design Unit name: 'sram_512x8', N.A.:0)
      Parameters (Total: 0)

@@ -1,4 +1,5 @@
 Information: Updating design information... (UID-85)
+Warning: Design 'core' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
  
 ****************************************
 Report : timing
@@ -7,14 +8,17 @@ Report : timing
         -max_paths 1
 Design : core
 Version: U-2022.12
-Date   : Sat Oct 12 17:15:47 2024
+Date   : Sat Oct 12 21:39:00 2024
 ****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: x_r_reg[2] (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: sram_addr_ready_r_reg[1][8]
+  Startpoint: SRAM_inst_loop[3].u_sram
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: out_data_ready_r_reg[5]
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -27,35 +31,27 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_clk (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.50       0.50
-  x_r_reg[2]/CK (DFFRX4)                                  0.00       0.50 r
-  x_r_reg[2]/Q (DFFRX4)                                   0.48       0.98 f
-  U1751/Y (BUFX20)                                        0.13       1.11 f
-  U904/Y (AND3X4)                                         0.16       1.27 f
-  U1820/Y (AOI32X2)                                       0.26       1.53 r
-  U1126/Y (AOI21X2)                                       0.14       1.67 f
-  U1760/Y (XOR2X4)                                        0.18       1.85 r
-  U865/Y (INVX8)                                          0.12       1.97 f
-  U1392/Y (AND3X4)                                        0.16       2.13 f
-  U931/Y (CLKAND2X6)                                      0.14       2.27 f
-  U1821/Y (AOI221X2)                                      0.20       2.47 r
-  U623/Y (MX2X4)                                          0.33       2.80 r
-  U1112/Y (NAND2X6)                                       0.10       2.90 f
-  U975/Y (NAND2X1)                                        0.21       3.11 r
-  U1531/Y (NAND4X2)                                       0.16       3.27 f
-  sram_addr_ready_r_reg[1][8]/D (DFFRX2)                  0.00       3.27 f
-  data arrival time                                                  3.27
+  SRAM_inst_loop[3].u_sram/CLK (sram_512x8)               0.00 #     0.50 r
+  SRAM_inst_loop[3].u_sram/Q[5] (sram_512x8)              2.04       2.54 r
+  U655/Y (BUFX20)                                         0.13       2.67 r
+  U650/Y (INVX20)                                         0.04       2.71 f
+  U649/Y (OAI2BB2X4)                                      0.12       2.83 r
+  U654/Y (OR2X8)                                          0.15       2.98 r
+  U658/Y (CLKMX2X4)                                       0.16       3.14 r
+  out_data_ready_r_reg[5]/D (DFFRX4)                      0.00       3.14 r
+  data arrival time                                                  3.14
 
-  clock i_clk (rise edge)                                 3.00       3.00
-  clock network delay (ideal)                             0.50       3.50
-  clock uncertainty                                      -0.10       3.40
-  sram_addr_ready_r_reg[1][8]/CK (DFFRX2)                 0.00       3.40 r
-  library setup time                                     -0.13       3.27
-  data required time                                                 3.27
+  clock i_clk (rise edge)                                 2.87       2.87
+  clock network delay (ideal)                             0.50       3.37
+  clock uncertainty                                      -0.10       3.27
+  out_data_ready_r_reg[5]/CK (DFFRX4)                     0.00       3.27 r
+  library setup time                                     -0.16       3.11
+  data required time                                                 3.11
   --------------------------------------------------------------------------
-  data required time                                                 3.27
-  data arrival time                                                 -3.27
+  data required time                                                 3.11
+  data arrival time                                                 -3.14
   --------------------------------------------------------------------------
-  slack (MET)                                                        0.00
+  slack (VIOLATED)                                                  -0.03
 
 
 1

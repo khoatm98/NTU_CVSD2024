@@ -79,7 +79,6 @@ wire conv_calc_done_w;
 reg conv_calc_done_r;
 
 
-wire conv_disp_done_w;
 wire med_done_w      ;
 reg med_done_r;
 wire sobel_nms_done_w;
@@ -154,7 +153,7 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		y_forecase_r             <= y_forecase_w; //(((cnt[3:2] + 8)%16)>>2);
 		conv_calc_done_r <= conv_calc_done_w;
 		med_done_r       <= med_done_w;
-		if(y_forecase_r < 8 && y_forecase_r >= 1  ) begin
+		if(y_forecase_r <= 8 && y_forecase_r >= 1  ) begin
 		sram_select_forecase_0_r <=  sram_select_forecase_0_w;
 		sram_select_forecase_1_r <=  sram_select_forecase_1_w;
 		sram_select_forecase_2_r <=  sram_select_forecase_2_w;
@@ -193,9 +192,9 @@ assign sram_select_forecase_2_w =  x_p1_w%4;
 assign sram_select_forecase_3_w =  x_r < 6 ? x_p2_w%4 : SRAM_NO;
 assign y_forecase_w = next_state > FETCH && next_state <= DECODE ? y_origin_r + next_state - 1 : y_origin_r +   (((cnt + 8)%16)>>2);
 
-assign result_w = conv_result_w;// | med_result_w;
+assign result_w = conv_result_w | med_result_w;
 
-assign out_valid_w = conv_out_valid_w;// || med_out_valid_w;
+assign out_valid_w = conv_out_valid_w || med_out_valid_w;
 assign o_op_ready = curr_state == FETCH;
 assign o_in_ready = curr_state == MAP_LOAD;
 assign o_out_data  = out_data_ready_r;
@@ -204,8 +203,7 @@ assign o_out_valid = out_valid_ready_r;
 assign map_load_done_w   = cnt == `MAP_VOLUME - 1;
 assign display_done_w    = cnt == (depth_ready_r<<2) - 1;
 assign conv_calc_done_w  = cnt >  (depth_ready_r<<4) - 1;
-assign conv_disp_done_w  = cnt == 1;
-assign med_done_w        = cnt > 16 - 1;
+assign med_done_w        = cnt > 63;
 assign sobel_nms_done_w  = cnt == 1;
 assign output_done_w     = output_cnt == 3;
 assign cnt_next_w = cnt + 1;
@@ -225,7 +223,7 @@ always @ (*) begin
 		SHIFT: begin
 			case(op_mode_r)
 				`OP_R_SHIFT: begin
-					x_origin_wait_r = x_origin_r < 5 ? x_origin_r + 1 : x_origin_r;
+					x_origin_wait_r = x_origin_r < 6 ? x_origin_r + 1 : x_origin_r;
 					y_origin_wait_r = y_origin_r ;
 				end
 			    `OP_L_SHIFT: begin
@@ -234,11 +232,11 @@ always @ (*) begin
 				end
 			    `OP_U_SHIFT: begin
 					x_origin_wait_r = x_origin_r;
-					y_origin_wait_r = y_origin_r >0 ? y_origin_r - 1 : y_origin_r;
+					y_origin_wait_r = y_origin_r > 0 ? y_origin_r - 1 : y_origin_r;
 				end
 			    `OP_D_SHIFT: begin
 					x_origin_wait_r = x_origin_r;
-					y_origin_wait_r = y_origin_r < 5 ? y_origin_r + 1 : y_origin_r;
+					y_origin_wait_r = y_origin_r < 6 ? y_origin_r + 1 : y_origin_r;
 				end
 				default: begin
 					x_origin_wait_r = x_origin_r ;

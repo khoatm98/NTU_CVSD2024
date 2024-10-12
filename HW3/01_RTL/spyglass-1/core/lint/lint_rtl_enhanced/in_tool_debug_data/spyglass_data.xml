@@ -696,7 +696,7 @@
 	<Opt name="-projectwdir">
 		<value>./spyglass-1</value>
 	</Opt>
-	<Opt name="-restoredb">
+	<Opt name="-savedb">
 		<value>./spyglass-1/core/.SG_SaveRestoreDB</value>
 	</Opt>
 	<Opt name="-sortmethod">
@@ -726,6 +726,9 @@
 	<Opt name="-enable_save_restore">
 		<value>yes</value>
 	</Opt>
+	<Opt name="-force_save">
+		<value>yes</value>
+	</Opt>
 	<Opt name="-inferblackbox">
 		<value>yes</value>
 	</Opt>
@@ -744,18 +747,40 @@
 <FILES/>
 <SPG_LOG>./spyglass-1/core/lint/lint_rtl_enhanced/spyglass.log</SPG_LOG>
 <CMD_STRING> -batch -project spyglass-1.prj -goal lint/lint_rtl_enhanced -64bit</CMD_STRING>
+<Module_Perf>
+	<Module name="conv">
+		<Memory>32</Memory>
+		<Time>0</Time>
+	</Module>
+	<Module name="core">
+		<Memory>56</Memory>
+		<Time>0</Time>
+	</Module>
+	<Module name="median">
+		<Memory>8</Memory>
+		<Time>0</Time>
+	</Module>
+	<Module name="median_filter_submodule">
+		<Memory>-135104</Memory>
+		<Time>0</Time>
+	</Module>
+	<Module name="small_alu_add">
+		<Memory>0</Memory>
+		<Time>0</Time>
+	</Module>
+</Module_Perf>
 <NOM_DESIGN>
 	<Modules>5</Modules>
-	<Instances>3345</Instances>
-	<Nets>4731</Nets>
-	<Terminals>17853</Terminals>
-	<MAX>1331</MAX>
-	<Avg>669</Avg>
+	<Instances>3845</Instances>
+	<Nets>5396</Nets>
+	<Terminals>20137</Terminals>
+	<MAX>1378</MAX>
+	<Avg>769</Avg>
 </NOM_DESIGN>
 <FLAT_DESIGN>
-	<Instances>3341</Instances>
-	<Nets>4191</Nets>
-	<Terminals>16394</Terminals>
+	<Instances>3841</Instances>
+	<Nets>4801</Nets>
+	<Terminals>18654</Terminals>
 	<Paths>5</Paths>
 	<Ports>36</Ports>
 	<BBOX_Inst>4</BBOX_Inst>
@@ -776,7 +801,7 @@
 	<Reduntant>0</Reduntant>
 	<Viol_Waived>0</Viol_Waived>
 </WAIVER_COUNT>
-<PEAK_MEMORY>5524960</PEAK_MEMORY>
+<PEAK_MEMORY>5733712</PEAK_MEMORY>
 <Parameters>
 	<Param name="-W416_vhdl_only">
 		<DefaultValue>no</DefaultValue>
@@ -784,6 +809,10 @@
 	</Param>
 	<Param name="-allReserveWords">
 		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-allow_cascaded_cgc">
+		<DefaultValue>UNDEFINED</DefaultValue>
 		<Value>no</Value>
 	</Param>
 	<Param name="-allow_clk_in_condition">
@@ -1442,6 +1471,22 @@
 		<DefaultValue>yes</DefaultValue>
 		<Value>yes</Value>
 	</Param>
+	<Param name="-lp_ignore_SGDC_rules">
+		<DefaultValue>UNDEFINED</DefaultValue>
+		<Value>UNDEFINED</Value>
+	</Param>
+	<Param name="-lp_instr_disable_isolation">
+		<DefaultValue>UNDEFINED</DefaultValue>
+		<Value>UNDEFINED</Value>
+	</Param>
+	<Param name="-lp_instr_disable_level_shift">
+		<DefaultValue>UNDEFINED</DefaultValue>
+		<Value>UNDEFINED</Value>
+	</Param>
+	<Param name="-lp_instr_disable_retention">
+		<DefaultValue>UNDEFINED</DefaultValue>
+		<Value>UNDEFINED</Value>
+	</Param>
 	<Param name="-max_flop_count">
 		<DefaultValue>3</DefaultValue>
 		<Value>3</Value>
@@ -1478,6 +1523,18 @@
 		<DefaultValue>yes</DefaultValue>
 		<Value>yes</Value>
 	</Param>
+	<Param name="-pe_calibration_data_dir">
+		<DefaultValue>UNDEFINED</DefaultValue>
+		<Value>UNDEFINED</Value>
+	</Param>
+	<Param name="-pe_ignore_SGDC_rules">
+		<DefaultValue>UNDEFINED</DefaultValue>
+		<Value>UNDEFINED</Value>
+	</Param>
+	<Param name="-pe_use_calibration_data">
+		<DefaultValue>UNDEFINED</DefaultValue>
+		<Value>UNDEFINED</Value>
+	</Param>
 	<Param name="-populate_comboelements_for_minmax_in_fromto">
 		<DefaultValue>no</DefaultValue>
 		<Value>no</Value>
@@ -1501,6 +1558,10 @@
 	<Param name="-pt">
 		<DefaultValue>yes</DefaultValue>
 		<Value>yes</Value>
+	</Param>
+	<Param name="-qual_prop_beyond_quasi_dest">
+		<DefaultValue>UNDEFINED</DefaultValue>
+		<Value>no</Value>
 	</Param>
 	<Param name="-reportHangingLatch">
 		<DefaultValue>no</DefaultValue>
@@ -1804,6 +1865,121 @@
 	</Param>
 </Parameters>
 <RULES>
+	<Rule name="Ac_svasetup01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="AcOvlRtl">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="AcOvlRtl">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="_meta_delay01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="_vhMeta01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="SGDC_meta_design_hier01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="Ac_multitop01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="_deltaDelay">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="_deltaDelay">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="_syncResetStyleRTL">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="Ac_classify_param01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="Pragma_setupa">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="_cdc_save_license01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="PEMVDD01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="PECHECK56">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="PECHECK43">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="PECHECK18">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="PECHECK09">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="PESVASETUP01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="PECHECK04">
+		<Time>0</Time>
+		<Memory>8</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="SGDC_power_est29">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="TxvVhMeta01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="Txv_SvaSetup01">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
 	<Rule name="STARC05-2.5.1.9">
 		<Time>0</Time>
 		<Memory>0</Memory>
@@ -1862,7 +2038,7 @@
 	</Rule>
 	<Rule name="Postreqs_Usage_ML">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="NoGenLabel-ML">
@@ -1890,12 +2066,12 @@
 	</Rule>
 	<Rule name="AutomaticFuncTask-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="DuplicateCaseLabel-ML">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_CheckTimeUnitandPrecision-ML">
@@ -1905,7 +2081,7 @@
 	</Rule>
 	<Rule name="CheckDelayTimescale-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="ParamWidthMismatch-ML">
@@ -1915,7 +2091,7 @@
 	</Rule>
 	<Rule name="InstPortConnType-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="NoAssignX-ML">
@@ -1925,7 +2101,7 @@
 	</Rule>
 	<Rule name="DisallowCaseX-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="PragmaComments-ML">
@@ -1940,7 +2116,7 @@
 	</Rule>
 	<Rule name="Prereqs_ReportPortInfo-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_ReportPortInfo-ML">
@@ -1975,24 +2151,24 @@
 	</Rule>
 	<Rule name="NoFeedThrus-ML">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="UndrivenNet-ML">
 		<Time>0</Time>
 		<Memory>0</Memory>
-		<Count>1</Count>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="UndrivenInTerm-ML">
 		<RULE_PARAM name="-checkRTLCInst" value="yes"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
-		<Count>1</Count>
+		<Memory>0</Memory>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="UndrivenOutPort-ML">
 		<Time>0</Time>
-		<Memory>24</Memory>
-		<Count>1</Count>
+		<Memory>-16</Memory>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="HangingNetPreReq-ML">
 		<Time>0</Time>
@@ -2037,7 +2213,7 @@
 	</Rule>
 	<Rule name="W401">
 		<Time>0</Time>
-		<Memory>72</Memory>
+		<Memory>160</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W391">
@@ -2056,7 +2232,7 @@
 	</Rule>
 	<Rule name="W392">
 		<Time>0</Time>
-		<Memory>32</Memory>
+		<Memory>40</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W505">
@@ -2066,7 +2242,7 @@
 	</Rule>
 	<Rule name="W505">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W494">
@@ -2078,7 +2254,7 @@
 	<Rule name="W494">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W467">
@@ -2122,7 +2298,7 @@
 	</Rule>
 	<Rule name="W424">
 		<Time>0</Time>
-		<Memory>-16</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W421">
@@ -2164,12 +2340,6 @@
 	</Rule>
 	<Rule name="W287c">
 		<Time>0</Time>
-		<Memory>-16</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287a">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
 		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
@@ -2177,7 +2347,13 @@
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
 		<Memory>0</Memory>
-		<Count>1</Count>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287a">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="W241">
 		<Time>0</Time>
@@ -2195,19 +2371,19 @@
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W240">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>8</Count>
-	</Rule>
-	<Rule name="W210">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W210">
 		<Time>0</Time>
 		<Memory>8</Memory>
-		<Count>1</Count>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W210">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W210">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="W167">
 		<Time>0</Time>
@@ -2230,8 +2406,8 @@
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>16</Memory>
-		<Count>3</Count>
+		<Memory>72</Memory>
+		<Count>5</Count>
 	</Rule>
 	<Rule name="W164a">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
@@ -2244,8 +2420,8 @@
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>16</Memory>
-		<Count>8</Count>
+		<Memory>24</Memory>
+		<Count>13</Count>
 	</Rule>
 	<Rule name="W71">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
@@ -2327,7 +2503,7 @@
 	</Rule>
 	<Rule name="W402b">
 		<Time>0</Time>
-		<Memory>72</Memory>
+		<Memory>128</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W438">
@@ -2349,12 +2525,12 @@
 	</Rule>
 	<Rule name="W576">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W575">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W527">
@@ -2364,7 +2540,7 @@
 	</Rule>
 	<Rule name="W502">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W499">
@@ -2412,19 +2588,19 @@
 	</Rule>
 	<Rule name="W423">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W422">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W362">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W352">
@@ -2441,29 +2617,29 @@
 	<Rule name="W343">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W342">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W337">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>24</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W317">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W316">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W314">
@@ -2473,14 +2649,14 @@
 	</Rule>
 	<Rule name="W289">
 		<Time>0</Time>
-		<Memory>-24</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W263">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W245">
@@ -2490,7 +2666,7 @@
 	</Rule>
 	<Rule name="W238">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W218">
@@ -2500,7 +2676,7 @@
 	</Rule>
 	<Rule name="W216">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W215">
@@ -2521,7 +2697,7 @@
 	<Rule name="W156">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>896</Memory>
+		<Memory>904</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W127">
@@ -2532,14 +2708,14 @@
 	<Rule name="W123">
 		<RULE_PARAM name="-ignoreModuleInstance" value="yes"/>
 		<Time>0</Time>
-		<Memory>88</Memory>
+		<Memory>80</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W116">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W66">
@@ -2560,35 +2736,35 @@
 	</Rule>
 	<Rule name="W496a">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W553">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W552">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W163">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W122">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W110">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>1</Count>
+		<Memory>8</Memory>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="W239">
 		<Time>0</Time>
@@ -2662,7 +2838,7 @@
 	</Rule>
 	<Rule name="sim_race07">
 		<Time>0</Time>
-		<Memory>160</Memory>
+		<Memory>64</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_sim_race07">
@@ -2672,12 +2848,12 @@
 	</Rule>
 	<Rule name="sim_race02">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>256</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="checkPinConnectedToSupply">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="FlopSRConst">
@@ -2687,7 +2863,7 @@
 	</Rule>
 	<Rule name="FlopClockConstant">
 		<Time>0</Time>
-		<Memory>32</Memory>
+		<Memory>56</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.4.1v">
@@ -2702,17 +2878,17 @@
 	</Rule>
 	<Rule name="STARC05-2.10.1.4b">
 		<Time>0</Time>
-		<Memory>-16</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.10.1.4a">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.8.1.3">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.4.1">
@@ -2739,17 +2915,17 @@
 	</Rule>
 	<Rule name="STARC-2.3.4.3">
 		<Time>0</Time>
-		<Memory>-2560</Memory>
+		<Memory>64</Memory>
 		<Count>13</Count>
 	</Rule>
 	<Rule name="STARC05-1.4.3.4">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-1.4.3.2">
 		<Time>0</Time>
-		<Memory>2568</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-1.3.1.3">
@@ -2787,18 +2963,18 @@
 	<Rule name="STARC05-2.11.3.1">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>-32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.10.3.2a">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<Time>0</Time>
-		<Memory>32</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.10.2.3">
 		<Time>0</Time>
-		<Memory>-32</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.9.1.2b">
@@ -2830,7 +3006,7 @@
 	</Rule>
 	<Rule name="STARC05-2.3.1.5b">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.2.3.3">
@@ -2846,12 +3022,12 @@
 	</Rule>
 	<Rule name="STARC05-2.1.4.5">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-1.1.1.1">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="CombLoop">
@@ -2859,7 +3035,7 @@
 		<RULE_PARAM name="-report_flop_reset_loop" value="yes"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>840</Memory>
+		<Memory>864</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereq_IntClock">
@@ -2881,7 +3057,7 @@
 	</Rule>
 	<Rule name="Prereqs_InferLatch">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="ReserveName">
@@ -2911,12 +3087,17 @@
 	</Rule>
 	<Rule name="ReportIgnoreSummary">
 		<Time>0</Time>
-		<Memory>1712</Memory>
+		<Memory>32</Memory>
 		<Count>1</Count>
 	</Rule>
 	<Rule name="InfoAnalyzeBBox">
 		<Time>0</Time>
 		<Memory>16</Memory>
+		<Count>1</Count>
+	</Rule>
+	<Rule name="InferBlackBox">
+		<Time>0</Time>
+		<Memory>0</Memory>
 		<Count>1</Count>
 	</Rule>
 	<Rule name="DetectTopDesignUnits">
@@ -2926,7 +3107,7 @@
 	</Rule>
 </RULES>
 <RUN_MODE>
-	<Restore>1</Restore>
+	<Save>1</Save>
 </RUN_MODE>
 <REPORTS>
 	<Report name="moresimple">
@@ -2942,9 +3123,9 @@
 </REPORTS>
 <VIOL_SUMMARY>
 	<FATAL>0</FATAL>
-	<ERROR>21</ERROR>
-	<WARNING>20</WARNING>
-	<INFO>5</INFO>
+	<ERROR>18</ERROR>
+	<WARNING>16</WARNING>
+	<INFO>6</INFO>
 </VIOL_SUMMARY>
 <Exit_code>0</Exit_code>
-<Total_time>168120</Total_time>
+<Total_time>198061</Total_time>
