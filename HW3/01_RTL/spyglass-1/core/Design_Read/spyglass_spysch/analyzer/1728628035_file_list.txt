@@ -1,4 +1,0 @@
-0 define.v
-1 core.v
-2 ../sram_512x8/sram_512x8.v
-3 conv.v

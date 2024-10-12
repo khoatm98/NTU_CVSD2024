@@ -344,6 +344,7 @@
 		<value>core.v</value>
 		<value>../sram_512x8/sram_512x8.v</value>
 		<value>conv.v</value>
+		<value>median.v</value>
 	</Opt>
 	<Opt name="--stime">
 		<value>02:32:34 PM on Oct 10 2024</value>
@@ -414,7 +415,7 @@
 		<RTLNAME>sram_512x8</RTLNAME>
 	</BBOX>
 </BlackBox>
-<PEAK_MEMORY>4678524</PEAK_MEMORY>
+<PEAK_MEMORY>5268664</PEAK_MEMORY>
 <Parameters>
 	<Param name="-allow_clock_on_output_port">
 		<DefaultValue>no</DefaultValue>
@@ -514,7 +515,7 @@
 	</Rule>
 	<Rule name="ReportIgnoreSummary">
 		<Time>0</Time>
-		<Memory>32</Memory>
+		<Memory>64</Memory>
 		<Count>1</Count>
 	</Rule>
 	<Rule name="InfoAnalyzeBBox">
@@ -545,4 +546,4 @@
 	<INFO>4</INFO>
 </VIOL_SUMMARY>
 <Exit_code>0</Exit_code>
-<Total_time>86083</Total_time>
+<Total_time>167946</Total_time>

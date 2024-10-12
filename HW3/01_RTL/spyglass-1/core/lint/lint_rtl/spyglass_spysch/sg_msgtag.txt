@@ -1,7 +1,7 @@
 4 "W486" 1
 "SPG_MSGTAG_HIERARCHY"
 ":core"
-13 "InfoAnalyzeBBox" 2
+20 "InfoAnalyzeBBox" 2
 "BBoxEng"
 ["sram_512x8","BB_NO_MOD_DEF"]
 "BBoxEngAuxiInfo"
@@ -12,6 +12,11 @@
 "BUILTIN"
 "1"
 -1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "InferBlackBox" 2
 "RULEGROUP"
 ["Design Read"]
 "BUILTIN"
@@ -40,6 +45,20 @@
 [42]
 "RULEGROUP"
 ["morelint"]
+-1 "W240" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[53]
+"RULEGROUP"
+["lint/Lint_Elab_Rules","lint/Usage"]
+-1 "W287a" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[94]
+"RULEGROUP"
+["lint/Lint_Elab_Rules","lint/Instance"]
 -1 "W486" 3
 "TEMPLATE"
 ["lint/lint_rtl"]

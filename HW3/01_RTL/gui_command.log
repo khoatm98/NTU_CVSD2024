@@ -379,3 +379,69 @@ current_goal lint/lint_rtl -top core
 run_goal
 # Started at 19:47:38, Completed at 19:47:54 (Elapsed time = 00:00:12.330)
 
+run_goal
+# Started at 13:08:21, Completed at 13:08:46 (Elapsed time = 00:00:22.410)
+
+gui_select_message -rule ErrorAnalyzeBBox -msg {Design Unit 'median' has no definition; black-box behavior assumed and module interface inferred}
+# Started at 13:08:52, Completed at 13:08:52 (Elapsed time = 00:00:00.009)
+
+current_goal Design_Read -top core
+# Started at 13:09:05, Completed at 13:09:09 (Elapsed time = 00:00:03.000)
+
+read_file -type verilog median.v
+# Started at 13:09:15, Completed at 13:09:15 (Elapsed time = 00:00:00.039)
+
+current_goal lint/lint_rtl -top core
+# Started at 13:09:23, Completed at 13:09:30 (Elapsed time = 00:00:07.349)
+
+run_goal
+# Started at 13:09:30, Completed at 13:09:53 (Elapsed time = 00:00:21.429)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 13:09:53, Completed at 13:10:00 (Elapsed time = 00:00:07.470)
+
+run_goal
+# Started at 13:10:00, Completed at 13:10:13 (Elapsed time = 00:00:11.629)
+
+current_goal lint/lint_rtl -top core
+# Started at 13:10:13, Completed at 13:10:21 (Elapsed time = 00:00:07.450)
+
+gui_select_message -rule W110 -msg {Incompatible width for port 'median'(width 8 in module 'median_filter_submodule') on instance 'u_median_filter_submodule'(actual width 14) [Hierarchy: ':core:median_inst@median']}
+# Started at 13:10:36, Completed at 13:10:36 (Elapsed time = 00:00:00.009)
+
+current_goal Design_Read -top core
+# Started at 13:11:31, Completed at 13:11:35 (Elapsed time = 00:00:02.670)
+
+link_design -force
+# Started at 13:11:35, Completed at 13:11:44 (Elapsed time = 00:00:04.910)
+
+current_goal lint/lint_rtl -top core
+# Started at 13:13:45, Completed at 13:13:52 (Elapsed time = 00:00:07.460)
+
+run_goal
+# Started at 13:13:52, Completed at 13:14:15 (Elapsed time = 00:00:21.759)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 13:14:15, Completed at 13:14:23 (Elapsed time = 00:00:07.789)
+
+run_goal
+# Started at 13:14:23, Completed at 13:14:36 (Elapsed time = 00:00:11.849)
+
+current_goal lint/lint_rtl -top core
+# Started at 13:14:37, Completed at 13:14:44 (Elapsed time = 00:00:07.620)
+
+gui_select_message -rule W110 -msg {Incompatible width for port 'median'(width 8 in module 'median_filter_submodule') on instance 'u_median_filter_submodule'(actual width 14) [Hierarchy: ':core:median_inst@median']}
+# Started at 13:18:20, Completed at 13:18:20 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 13:18:44, Completed at 13:19:09 (Elapsed time = 00:00:22.660)
+
+gui_select_message -rule W123 -msg {Variable 'out_data_w[13:8]' read but never set.[Hierarchy: ':core:median_inst@median']}
+# Started at 13:21:09, Completed at 13:21:09 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule UndrivenInTerm-ML -msg {Detected undriven input terminal core.med_result_w[13:8]}
+# Started at 13:21:22, Completed at 13:21:22 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 13:22:22, Completed at 13:22:49 (Elapsed time = 00:00:23.670)
+

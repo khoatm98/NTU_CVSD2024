@@ -1,10 +1,3 @@
-Information: Building the design 'conv'. (HDL-193)
-Warning: Cannot find the design 'conv' in the library 'WORK'. (LBR-1)
-Information: Building the design 'median'. (HDL-193)
-Warning: Cannot find the design 'median' in the library 'WORK'. (LBR-1)
-Warning: Unable to resolve reference 'conv' in 'core'. (LINK-5)
-Warning: Unable to resolve reference 'median' in 'core'. (LINK-5)
-Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Information: Updating design information... (UID-85)
  
 ****************************************
@@ -14,15 +7,15 @@ Report : timing
         -max_paths 1
 Design : core
 Version: U-2022.12
-Date   : Sat Oct 12 00:12:08 2024
+Date   : Sat Oct 12 16:19:52 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: SRAM_inst_loop[3].u_sram
+  Startpoint: median_inst/cs_reg[1]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: input_data_r_reg[29]
+  Endpoint: median_inst/u_median_filter_submodule/a5_reg[4]
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -35,26 +28,54 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_clk (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.50       0.50
-  SRAM_inst_loop[3].u_sram/CLK (sram_512x8)               0.00       0.50 r
-  SRAM_inst_loop[3].u_sram/Q[5] (sram_512x8)              2.14       2.64 f
-  U1241/Y (NOR2BX2)                                       0.20       2.83 f
-  U1185/Y (OR2X4)                                         0.21       3.04 f
-  U1454/Y (OR2X8)                                         0.14       3.18 f
-  U1111/Y (NOR2BX2)                                       0.16       3.34 f
-  input_data_r_reg[29]/D (DFFRX4)                         0.00       3.34 f
-  data arrival time                                                  3.34
+  median_inst/cs_reg[1]/CK (DFFRX4)                       0.00       0.50 r
+  median_inst/cs_reg[1]/Q (DFFRX4)                        0.48       0.98 f
+  median_inst/U295/Y (NAND2X8)                            0.08       1.06 r
+  median_inst/U207/Y (INVX12)                             0.07       1.13 f
+  median_inst/U206/Y (AND3X8)                             0.15       1.28 f
+  median_inst/U200/Y (INVX20)                             0.07       1.35 r
+  median_inst/U199/Y (INVX20)                             0.06       1.41 f
+  median_inst/U34/Y (INVX20)                              0.06       1.47 r
+  median_inst/U250/Y (OA22X4)                             0.16       1.63 r
+  median_inst/U236/Y (OAI221X2)                           0.19       1.81 f
+  median_inst/u_median_filter_submodule/p5[0] (median_filter_submodule)
+                                                          0.00       1.81 f
+  median_inst/u_median_filter_submodule/U786/Y (AOI211X2)
+                                                          0.25       2.07 r
+  median_inst/u_median_filter_submodule/U772/Y (OAI222X2)
+                                                          0.20       2.27 f
+  median_inst/u_median_filter_submodule/U777/Y (AOI32X2)
+                                                          0.34       2.61 r
+  median_inst/u_median_filter_submodule/U771/Y (OAI2BB2X4)
+                                                          0.16       2.77 f
+  median_inst/u_median_filter_submodule/U132/Y (INVX12)
+                                                          0.09       2.86 r
+  median_inst/u_median_filter_submodule/U436/Y (BUFX20)
+                                                          0.10       2.96 r
+  median_inst/u_median_filter_submodule/U619/Y (OAI21X4)
+                                                          0.09       3.05 f
+  median_inst/u_median_filter_submodule/U500/Y (BUFX20)
+                                                          0.13       3.18 f
+  median_inst/u_median_filter_submodule/U665/Y (AOI32X4)
+                                                          0.41       3.58 r
+  median_inst/u_median_filter_submodule/U664/Y (NAND2X4)
+                                                          0.06       3.64 f
+  median_inst/u_median_filter_submodule/a5_reg[4]/D (DFFHQX8)
+                                                          0.00       3.64 f
+  data arrival time                                                  3.64
 
   clock i_clk (rise edge)                                 3.00       3.00
   clock network delay (ideal)                             0.50       3.50
   clock uncertainty                                      -0.10       3.40
-  input_data_r_reg[29]/CK (DFFRX4)                        0.00       3.40 r
-  library setup time                                     -0.06       3.34
-  data required time                                                 3.34
+  median_inst/u_median_filter_submodule/a5_reg[4]/CK (DFFHQX8)
+                                                          0.00       3.40 r
+  library setup time                                     -0.14       3.26
+  data required time                                                 3.26
   --------------------------------------------------------------------------
-  data required time                                                 3.34
-  data arrival time                                                 -3.34
+  data required time                                                 3.26
+  data arrival time                                                 -3.64
   --------------------------------------------------------------------------
-  slack (MET)                                                        0.00
+  slack (VIOLATED)                                                  -0.38
 
 
 1

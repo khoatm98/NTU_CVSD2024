@@ -1,10 +1,9 @@
-Warning: Design 'core' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
 Design : core
 Version: U-2022.12
-Date   : Sat Oct 12 00:12:08 2024
+Date   : Sat Oct 12 16:19:52 2024
 ****************************************
 
 Library(s) Used:
@@ -12,23 +11,21 @@ Library(s) Used:
     slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
     sram_512x8 (File: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db)
 
-Number of ports:                           69
-Number of nets:                          1670
-Number of cells:                         1507
-Number of combinational cells:           1275
-Number of sequential cells:               220
+Number of ports:                         1497
+Number of nets:                          8133
+Number of cells:                         6499
+Number of combinational cells:           5548
+Number of sequential cells:               844
 Number of macros/black boxes:               4
-Number of buf/inv:                        297
-Number of references:                     201
+Number of buf/inv:                       1426
+Number of references:                     196
 
-Combinational area:              16361.238593
-Buf/Inv area:                     2963.660406
-Noncombinational area:            8391.945499
+Combinational area:              59305.458350
+Buf/Inv area:                    10890.518360
+Noncombinational area:           30806.112068
 Macro/Black Box area:           123791.546875
-Net Interconnect area:          181954.270813
+Net Interconnect area:          737150.428040
 
-Total cell area:                148544.730968
-Total area:                     330499.001781
-
-Information: This design contains black box (unknown) components. (RPT-8)
+Total cell area:                213903.117293
+Total area:                     951053.545332
 1

@@ -60,14 +60,17 @@ reg  [8:0] sram_addr_ready_r[SRAM_NO-1:0];
 reg  [7:0] sram_data_ready_r[SRAM_NO-1:0];
 
 reg [2:0] sram_select_r;
-reg [2:0] sram_select_r1, sram_select_r2, sram_select_r3;
+
 reg [2:0] sram_select_forecase_0_r;
 reg [2:0] sram_select_forecase_1_r;
 reg [2:0] sram_select_forecase_2_r;
 reg [2:0] sram_select_forecase_3_r;
-
-wire [4:0] y_forecase_w;
-
+wire [2:0] sram_select_forecase_0_w;
+wire [2:0] sram_select_forecase_1_w;
+wire [2:0] sram_select_forecase_2_w;
+wire [2:0] sram_select_forecase_3_w;
+wire [4:0] y_forecase_w, y_forecase_w1;
+reg [4:0] y_forecase_r;
 reg  [2:0] sram_select_delay_r[1:0];
 reg  [2:0] sram_select1_delay_r[1:0];
 reg  [2:0] sram_select2_delay_r[1:0];
@@ -144,15 +147,17 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		sram_select_forecase_1_r <= 0;
 		sram_select_forecase_2_r <= 0;
 		sram_select_forecase_3_r <= 0;
+		y_forecase_r             <= 0;
 	end
 	else begin
+		y_forecase_r             <= y_forecase_w; //(((cnt[3:2] + 8)%16)>>2);
 		conv_calc_done_r <= conv_calc_done_w;
 		med_done_r       <= med_done_w;
-		if(y_forecase_w < 8 && y_forecase_w >= 1 ) begin
-		sram_select_forecase_0_r <=  x_r > 0 ?  (x_m1_w)%4 : SRAM_NO;
-		sram_select_forecase_1_r <=  (x_r)%4;
-		sram_select_forecase_2_r <=  x_p1_w%4;
-		sram_select_forecase_3_r <=  x_r < 6 ? x_p2_w%4 : SRAM_NO;
+		if(y_forecase_r < 8 && y_forecase_r >= 1  ) begin
+		sram_select_forecase_0_r <=  sram_select_forecase_0_w;
+		sram_select_forecase_1_r <=  sram_select_forecase_1_w;
+		sram_select_forecase_2_r <=  sram_select_forecase_2_w;
+		sram_select_forecase_3_r <=  sram_select_forecase_3_w;
 		end else begin
 			sram_select_forecase_0_r <= SRAM_NO;
 			sram_select_forecase_1_r <= SRAM_NO;
@@ -180,11 +185,16 @@ generate
 	end
 endgenerate
 
-assign y_forecase_w = (y_origin_r + (cnt_next4_mod16_r>>2));
 
-assign result_w = conv_result_w | med_result_w;
+assign sram_select_forecase_0_w =  x_r > 0 ?  (x_m1_w)%4 : SRAM_NO;
+assign sram_select_forecase_1_w =  (x_r)%4;
+assign sram_select_forecase_2_w =  x_p1_w%4;
+assign sram_select_forecase_3_w =  x_r < 6 ? x_p2_w%4 : SRAM_NO;
+assign y_forecase_w = next_state > FETCH && next_state <= DECODE ? y_origin_r + next_state - 1 : y_origin_r +   (((cnt + 8)%16)>>2);
 
-assign out_valid_w = conv_out_valid_w || med_out_valid_w;
+assign result_w = conv_result_w;// | med_result_w;
+
+assign out_valid_w = conv_out_valid_w;// || med_out_valid_w;
 assign o_op_ready = curr_state == FETCH;
 assign o_in_ready = curr_state == MAP_LOAD;
 assign o_out_data  = out_data_ready_r;
@@ -269,72 +279,11 @@ always @ (*) begin
 	casez({curr_state,next_state}) 
 		{MAP_LOAD,4'bzzzz}: begin
 			sram_select_r = cnt%4;
-			sram_select_r1 = 0;
-			sram_select_r2 = 0;
-			sram_select_r3 = 0;
 		end
 		{DISPLAY,4'bzzzz}: begin
 			sram_select_r = (x_r)%4;
-			sram_select_r1 = 0;
-			sram_select_r2 = 0;
-			sram_select_r3 = 0;
+
 		end
-		{CONV,4'bzzzz}: begin
-			if(y_r < 8 && y_r >= 1) begin
-				sram_select_r = (x_r)%4;
-				sram_select_r1 = x_r > 0 ? x_m1_w%4 : SRAM_NO;
-				sram_select_r2 = x_p1_w%4;
-				sram_select_r3 = x_r < 6 ? x_p2_w%4 : SRAM_NO;
-			end
-			else begin
-				sram_select_r  = SRAM_NO;
-				sram_select_r1 = SRAM_NO;
-				sram_select_r2 = SRAM_NO;
-				sram_select_r3 = SRAM_NO;
-			end
-		end
-		{DECODE,CONV}: begin
-			if(y_r < 8 && y_r >= 1) begin
-				sram_select_r = (x_r)%4;
-				sram_select_r1 = x_r > 0 ? x_m1_w%4 : SRAM_NO;
-				sram_select_r2 = x_p1_w%4;
-				sram_select_r3 = x_r < 6 ? x_p2_w%4 : SRAM_NO;
-			end
-			else begin
-				sram_select_r  = SRAM_NO;
-				sram_select_r1 = SRAM_NO;
-				sram_select_r2 = SRAM_NO;
-				sram_select_r3 = SRAM_NO;
-			end
-		end
-		/* {MED,4'bzzzz}: begin
-			if(y_r < 8 && y_r >= 1) begin
-				sram_select_r = (x_r)%4;
-				sram_select_r1 = x_r > 0 ? x_m1_w%4 : SRAM_NO;
-				sram_select_r2 = x_p1_w%4;
-				sram_select_r3 = x_r < 6 ? x_p2_w%4 : SRAM_NO;
-			end
-			else begin
-				sram_select_r  = SRAM_NO;
-				sram_select_r1 = SRAM_NO;
-				sram_select_r2 = SRAM_NO;
-				sram_select_r3 = SRAM_NO;
-			end
-		end
-		{DECODE,MED}: begin
-			if(y_r < 8 && y_r >= 1) begin
-				sram_select_r = (x_r)%4;
-				sram_select_r1 = x_r > 0 ? x_m1_w%4 : SRAM_NO;
-				sram_select_r2 = x_p1_w%4;
-				sram_select_r3 = x_r < 6 ? x_p2_w%4 : SRAM_NO;
-			end
-			else begin
-				sram_select_r  = SRAM_NO;
-				sram_select_r1 = SRAM_NO;
-				sram_select_r2 = SRAM_NO;
-				sram_select_r3 = SRAM_NO;
-			end
-		end */
 		{DECODE,DISPLAY}: begin
 			sram_select_r = (x_r)%4;
 		end
@@ -596,7 +545,7 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		sram_select3_delay_r[1] <= 0;
 	end
 	else begin
-		sram_select_delay_r[0] <= sram_select_r;
+		sram_select_delay_r[0] <= op_mode_r == `OP_DISPLAY ? sram_select_r : sram_select_forecase_1_r;
 		sram_select_delay_r[1] <= sram_select_delay_r[0];
 		sram_select1_delay_r[0] <= sram_select_forecase_0_r;
 		sram_select1_delay_r[1] <= sram_select1_delay_r[0];
@@ -649,11 +598,11 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 				y_r <= y_origin_r + (cnt_next4_mod16_r>>2);
 				z_r <= cnt_next4_w>>4;
 			end
-			/* MED: begin
+			MED: begin
 				x_r <= x_origin_r;
 				y_r <= y_origin_r + ((cnt_next4_w%16)>>2);
 				z_r <= cnt_next4_w>>4;
-			end */
+			end
 			default: begin
 				x_r <= x_origin_r;
 				y_r <= {1'b0,y_origin_r};

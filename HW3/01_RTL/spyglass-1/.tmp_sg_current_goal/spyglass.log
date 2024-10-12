@@ -41,4 +41,4 @@ Version of Policy 'timing': SpyGlass_vT-2022.06
 Loading Shared library libtiming-Linux4.spyso from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/timing/libtiming-Linux4.spyso 
 Version of Policy 'starc2002': SpyGlass_vT-2022.06
  Reading waiver file "./spyglass-1/core/lint/lint_rtl/spyglass_spysch/waiver/pragma2Waiver.swl" ...
-0 {Rule-checking completed with warnings}
+0 {Rule-checking completed with errors}0 {Rule-checking completed with warnings}

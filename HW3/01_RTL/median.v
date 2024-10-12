@@ -16,7 +16,7 @@ module median (
 reg [7:0] med_e_r[15:0];
 reg [7:0] med_e_wait_r[15:0];
 
-wire [13:0] out_data_w;
+wire [7:0] out_data_w;
 reg [16:0] out_data_wait_r;
 reg [7:0]  cnt;
 reg [2:0] out_cnt;
@@ -49,8 +49,8 @@ genvar i;
 
 assign out_valid_w = cs == OUTPUT;
 assign o_out_valid = out_valid_w;
-assign o_out_data  = out_data_w;
-median_filter_submodule u_median_filter_submodule(
+assign o_out_data  = {6'b000000,out_data_w};
+/* median_filter_submodule u_median_filter_submodule(
 					.clk(i_clk),
 					.p1(data_a_r),
 					.p2(data_b_r),
@@ -62,7 +62,7 @@ median_filter_submodule u_median_filter_submodule(
 					.p8(data_h_r),
 					.p9(data_i_r),
 					.median(out_data_w)
-								);
+								); */
 // ---------------------------------------------------------------------------
 // Combinational Blocks
 // ---------------------------------------------------------------------------
@@ -132,7 +132,7 @@ generate
 	for(i = 0; i < 16; i = i + 1) begin:conv_e_read
 		always @(*) begin
 			if(cnt == i/4)
-				med_e_wait_r[i] = i_data[((i%4)<<3) + 7 -: 8];
+				med_e_wait_r[i] = i_data[{i[1:0],3'b000} + 7 -: 8];
 			else
 				med_e_wait_r[i] = med_e_r[i];
 		end

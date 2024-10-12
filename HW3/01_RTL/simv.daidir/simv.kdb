@@ -9,7 +9,7 @@ UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
 COSIM=FALSE
-TOP=testbed 
+TOP=testbed median_filter_submodule 
 OPTION=-ssv -ssy 
 ELAB_OPTION=-ssv -ssy 
 

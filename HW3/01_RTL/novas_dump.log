@@ -169,7 +169,7 @@ HSP_GCC_VERSION=9.2.0
 QTINC=/usr/lib64/qt-3.3/include
 SSH_TTY=/dev/pts/38
 LC_ALL=C
-SNPS_VCS_INTERNAL_ROOT_PID=76337
+SNPS_VCS_INTERNAL_ROOT_PID=243258
 QT_GRAPHICSSYSTEM_CHECKED=1
 SPAPI_AHDL_INCLUDE=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/include
 USER=r2k41036
@@ -190,7 +190,7 @@ OVA_UUM=0
 VCS_MODE_FLAG=64
 PATH=.:/usr/cad/synopsys/vcs/2022.06//amd64/bin:/usr/cad/synopsys/spyglass/2022.06//SPYGLASS_HOME/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64:/usr/bin:/usr/ucb/bin:/usr/cad/innovus/cur/tools/celtic/bin:/usr/cad/innovus/cur/tools/plato/bin:/usr/cad/innovus/cur/tools/dfII/bin:/usr/cad/innovus/cur/tools/bin:/usr/cad/innovus/cur//tools/tlfUtil/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/mentor/calibre/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/cad/synopsys/astro/cur/bin/AMD.64:/usr/spring_soft/verdi/cur/bin:/usr/spring_soft/verdi/cur/nLint/bin:/usr/cad/synopsys/primetime/2022.12/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/mentor/calibre/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/cadence/SPECTRE/cur/tools/dfII/bin:/usr/cad/cadence/SPECTRE/cur/tools/bin:/usr/cad/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/JASPER/cur/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/RC/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit/bin:bin.linux:/usr/cad/cadence/SPB/cur/tools/specctra/bin:/usr/cad/cadence/SPB/cur/tools/pcb/bin:/usr/cad/cadence/SPB/cur/tools/dfII/bin:/usr/cad/cadence/SPB/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/CCD/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/raid7_4/raid1_1/linux/novas/verdi/cur/bin
 MAIL=/var/spool/mail/r2k41036
-SNPS_VCS_INTERNAL_CURR_PID=76337
+SNPS_VCS_INTERNAL_CURR_PID=243258
 VERDI_HOME=/usr/cad/synopsys/verdi/cur
 PWD=/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL
 OAHOME=/usr/cad/cadence/oa_v22.04.073
@@ -206,7 +206,7 @@ VCS_CC=gcc
 LM_LICENSE_FILE=26585@lstc:5280@lshc:5280@lstc:5280@lstn:1717@lstc:
 CDS_Netlisting_Mode=Analog
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20241011161016_76337
+SNPS_VCS_TMPDIR=/tmp/vcs_20241012082113_243258
 HOME=/home/raid7_2/user12/r2k41036
 SHLVL=3
 HSP_GCC=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin/gcc -m64 
@@ -221,7 +221,7 @@ SNPS_PLATFORM=linux64
 LOGNAME=r2k41036
 MACHTYPE=x86_64
 QTLIB=/usr/lib64/qt-3.3/lib
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1728663016.167370299
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1728721273.728093507
 SSH_CONNECTION=140.112.175.69 64744 140.112.20.70 22
 NEOCKTHOME=/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit
 CDS_LIC_FILE=/usr/cad/cadence/IC/cur/share/license/license.dat
@@ -251,8 +251,8 @@ argv[2]=+notimingcheck
 argv[3]=+define+tb1
 argv[4]=+define+CYCLE=5
 252 profile - 100
-          CPU/Mem usage: 0.110 sys,  0.350 user,  266.77M mem
-253 Elapsed time:    0:00:02    Sat Oct 12 00:10:23 2024
+          CPU/Mem usage: 0.100 sys,  0.340 user,  264.68M mem
+253 Elapsed time:    0:00:00    Sat Oct 12 16:21:20 2024
 254 User CPU time used: 0 seconds
 255 System CPU time used: 0 seconds
 256 pliAppInit
@@ -282,55 +282,55 @@ argv[4]=+define+CYCLE=5
 280 *Verdi* : Enable +mda dumping.
 281 *Verdi* : End of traversing.
 282 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.120 sys,  0.380 user,  367.74M mem
-                   incr: 0.000 sys,  0.020 user,  9.19M mem
-                   accu: 0.000 sys,  0.020 user,  9.19M mem
-              accu incr: 0.000 sys,  0.020 user,  9.19M mem
+          CPU/Mem usage: 0.120 sys,  0.370 user,  365.58M mem
+                   incr: 0.010 sys,  0.020 user,  9.11M mem
+                   accu: 0.010 sys,  0.020 user,  9.11M mem
+              accu incr: 0.010 sys,  0.020 user,  9.11M mem
 
-          Count usage: 7509 var,  7489 idcode,  127 callback
-                 incr: 7509 var,  7489 idcode,  127 callback
-                 accu: 7509 var,  7489 idcode,  127 callback
-            accu incr: 7509 var,  7489 idcode,  127 callback
-283 Elapsed time:    0:00:02    Sat Oct 12 00:10:23 2024
+          Count usage: 7528 var,  7509 idcode,  149 callback
+                 incr: 7528 var,  7509 idcode,  149 callback
+                 accu: 7528 var,  7509 idcode,  149 callback
+            accu incr: 7528 var,  7509 idcode,  149 callback
+283 Elapsed time:    0:00:01    Sat Oct 12 16:21:21 2024
 284 User CPU time used: 0 seconds
 285 System CPU time used: 0 seconds
 286 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.120 sys,  0.380 user,  368.93M mem
+          CPU/Mem usage: 0.120 sys,  0.370 user,  366.77M mem
                    incr: 0.000 sys,  0.000 user,  1.19M mem
-                   accu: 0.000 sys,  0.020 user,  10.38M mem
+                   accu: 0.010 sys,  0.020 user,  10.31M mem
               accu incr: 0.000 sys,  0.000 user,  1.19M mem
 
-          Count usage: 7509 var,  7489 idcode,  127 callback
+          Count usage: 7528 var,  7509 idcode,  149 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 7509 var,  7489 idcode,  127 callback
+                 accu: 7528 var,  7509 idcode,  149 callback
             accu incr: 0 var,  0 idcode,  0 callback
-287 Elapsed time:    0:00:02    Sat Oct 12 00:10:23 2024
+287 Elapsed time:    0:00:01    Sat Oct 12 16:21:21 2024
 288 User CPU time used: 0 seconds
 289 System CPU time used: 0 seconds
-290 End of simulation at 17590000
-291 Memory usage: 445.481 M
+290 End of simulation at 17750000
+291 Memory usage: 443.322 M
 292 Maximum resident set size: 81 MB
 293 Hard page faults: 0
-294 Soft page faults: 31070
-295 Elapsed time:    0:00:02    Sat Oct 12 00:10:23 2024
+294 Soft page faults: 31076
+295 Elapsed time:    0:00:01    Sat Oct 12 16:21:21 2024
 296 User CPU time used: 0 seconds
 297 System CPU time used: 0 seconds
 298 Begin FSDB profile info:
-299 FSDB Writer : bc1(103468) bcn(269441) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.030793) io wait(0.000000) theadpool wait(0.000000)
+299 FSDB Writer : bc1(101911) bcn(269127) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.032882) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 300 End FSDB profile info
-301 FSDB closed. Name: core.fsdb Size: 87913
+301 FSDB closed. Name: core.fsdb Size: 85412
 302 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-303                      - BlockUsed:4 Acquire:378245 BufferUsed:4292588
+303                      - BlockUsed:4 Acquire:376427 BufferUsed:4280904
 304                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:1
-305                      - MainProducerTime:0.642080456 TotalConsumerTime:0.047023026
-306                      - ElapsedTime:0.426786000
-307 Producer   0 profile - BlockUsed:4 Acquire:378245 BufferUsed:4292588
-308 Consumer   0 profile - Affinity:-1 CPUTime:0.047023026 LifeTime:0.061559429 (0.76%)
-309                      - BlockUsed:4 Acquire:378245 BufferUsed:4292588
+305                      - MainProducerTime:0.626927687 TotalConsumerTime:0.047479151
+306                      - ElapsedTime:0.478436000
+307 Producer   0 profile - BlockUsed:4 Acquire:376427 BufferUsed:4280904
+308 Consumer   0 profile - Affinity:-1 CPUTime:0.047479151 LifeTime:0.060262523 (0.79%)
+309                      - BlockUsed:4 Acquire:376427 BufferUsed:4280904
 310 SimExit
-311 Elapsed time:    0:00:02    Sat Oct 12 00:10:23 2024
+311 Elapsed time:    0:00:01    Sat Oct 12 16:21:21 2024
 312 User CPU time used: 0 seconds
 313 System CPU time used: 0 seconds
 314 Sim process exit

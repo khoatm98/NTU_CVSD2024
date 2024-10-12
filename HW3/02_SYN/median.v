@@ -60,7 +60,7 @@ median_filter_submodule u_median_filter_submodule(
 					.p7(data_g_r),
 					.p8(data_h_r),
 					.p9(data_i_r),
-					.median(out_data_w[7:0])
+					.median(out_data_w[7:0]) 
 								);
 // ---------------------------------------------------------------------------
 // Combinational Blocks
