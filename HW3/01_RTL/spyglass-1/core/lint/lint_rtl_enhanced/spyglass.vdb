@@ -1,5 +1,5 @@
 ##spyglass_version: SpyGlass_vT-2022.06
-##date: Sat Oct 12 21:33:28 2024
+##date: Sun Oct 13 17:53:01 2024
 ##user: r2k41036
 ##cwd: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL
 ##lang: verilog+vhdl
@@ -1668,210 +1668,91 @@ ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/lint/lint_rtl_enhanced/spyglas
 ##sde_property: msg_id DEFAULT
 ##files_verilog: core.v conv.v median.v
 ##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/define.v -id 1
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 slc 119 122 1 mlc 123 11 123 0 slc 153 153 1 slc 216 219 1 mlc 220 22 220 0 mlc 254 20 254 0 mlc 294 33 294 0 mlc 410 13 410 0 slc 431 431 1 slc 468 471 1 slc 493 494 1 slc 593 593 1
+##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 slc 125 128 1 mlc 129 11 129 0 slc 169 169 1 slc 214 214 1 slc 228 231 1 mlc 232 22 232 0 mlc 266 20 266 0 mlc 289 7 304 0 mlc 330 33 330 0 mlc 351 33 351 0 mlc 474 13 474 0 slc 491 491 1 slc 528 531 1 slc 555 556 1 slc 679 679 1
 ##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8.v -id 3
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/conv.v -id 4 -inactiveList slc 12 15 1 slc 45 48 1 slc 67 70 1 slc 160 163 1 slc 228 228 1 slc 241 241 1 slc 249 249 1 slc 255 255 1 slc 261 261 1 slc 267 267 1 slc 271 271 1 slc 274 274 1
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/median.v -id 5 -inactiveList slc 11 14 1 slc 45 48 1 slc 67 70 1 slc 152 155 1 slc 213 213 1 slc 224 224 1 slc 303 303 1 slc 308 308 1 slc 313 313 1 slc 318 318 1 slc 323 323 1 slc 328 328 1 slc 341 341 1 slc 346 346 1 slc 351 351 1 slc 356 356 1 slc 361 361 1 slc 366 366 1 slc 378 378 1 slc 383 383 1 slc 388 388 1 slc 393 393 1 slc 398 398 1 slc 403 403 1 slc 416 416 1 slc 442 442 1 slc 445 445 1 slc 448 448 1 slc 451 451 1 slc 454 454 1 slc 457 457 1 slc 466 466 1 slc 469 469 1 slc 472 472 1 slc 475 475 1 slc 478 478 1 slc 481 481 1 slc 490 490 1 slc 493 493 1 slc 496 496 1 slc 499 499 1 slc 502 502 1 slc 505 505 1 slc 514 514 1 slc 527 527 1 slc 530 530 1 slc 533 533 1 slc 536 536 1 slc 539 539 1 slc 542 542 1 slc 554 554 1
-#span core core.v 2 625
+##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/conv.v -id 4 -inactiveList slc 12 15 1 slc 48 51 1 slc 70 73 1 slc 163 166 1 slc 245 245 1 slc 258 258 1 slc 266 266 1 slc 272 272 1 slc 279 279 1 slc 285 285 1 slc 289 289 1 slc 292 292 1
+##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/median.v -id 5 -inactiveList slc 11 14 1 slc 44 47 1 slc 66 69 1 slc 151 154 1 slc 202 202 1 slc 213 213 1 slc 305 305 1 slc 310 310 1 slc 315 315 1 slc 320 320 1 slc 325 325 1 slc 338 338 1 slc 343 343 1 slc 348 348 1 slc 353 353 1 slc 358 358 1 slc 370 370 1 slc 375 375 1 slc 380 380 1 slc 385 385 1 slc 390 390 1 slc 404 404 1 slc 436 436 1 slc 439 439 1 slc 442 442 1 slc 445 445 1 slc 454 454 1 slc 457 457 1 slc 460 460 1 slc 463 463 1 slc 472 472 1 slc 475 475 1 slc 478 478 1 slc 481 481 1 slc 491 491 1 slc 507 507 1 slc 510 510 1 slc 513 513 1 slc 516 516 1 slc 528 528 1
+#span core core.v 2 722
 #rtl_idmap core 1 -lang 1
-#span conv conv.v 2 210
+#span conv conv.v 2 219
 #rtl_idmap conv 2 -lang 1
-#span small_alu_add conv.v 212 315
+#span small_alu_add conv.v 221 357
 #rtl_idmap small_alu_add 3 -lang 1
-#span median median.v 2 204
+#span median median.v 2 193
 #rtl_idmap median 4 -lang 1
-#span median_filter_submodule median.v 206 557
+#span median_filter_submodule median.v 195 531
 #rtl_idmap median_filter_submodule 5 -lang 1
 #greybox core 15
 #greybox conv 15
 #greybox small_alu_add 15
 #greybox median 15
 #greybox median_filter_submodule 15
+#greybox sobel_nms 0
 #greybox sram_512x8 9 -ignore_spec sram_512x8
 DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@core.v@@2@@1@@2@@Module core is a top level design unit
 ##sde_property: violation -duId 1 
 #rtl_top_modules core
 ##file_label: SPG_CHECKSUM_RPT_FILE -file ./spyglass-1/core/lint/lint_rtl_enhanced/spyglass_reports/SpyGlass/checksum.rpt -policy SpyGlass -external
-W486@@@@Warning@@core.v@@596@@1@@10@@Rhs width '8' with shift (Expr: '(cnt_next4_w >> 4)') is more than lhs width '5' (Expr: 'z_r'), this may cause overflow [Hierarchy: ':core']
+W116@@@@Error@@core.v@@212@@1@@10@@For operator (|), left expression: "(conv_result_w | med_result_w)" width 14 should match right expression: "sobel_out_valid_w" width 1. [Hierarchy: ':core']
+##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
+##sde_property: msg_label LINT_W116_WRN
+##sde_property: msg_id LINT_W116_WRN
+W362@@@@Error@@core.v@@221@@1@@10@@For operator (==), left expression: "cnt" width 11 should match right expression: "(depth_ready_r << 2)" width 6 [Hierarchy: ':core']
+##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
+##sde_property: msg_label W362_ve
+##sde_property: msg_id W362_ve
+W486@@@@Warning@@core.v@@682@@1@@10@@Rhs width '8' with shift (Expr: '(cnt_next4_w >> 4)') is more than lhs width '5' (Expr: 'z_r'), this may cause overflow [Hierarchy: ':core']
 ##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
 ##sde_property: msg_label W486_ve
 ##sde_property: msg_id W486_ve
-W164a@@@@Warning@@core.v@@596@@1@@10@@LHS: 'z_r' width 5 is less than RHS: '(cnt_next4_w >> 4)' width 12 in assignment [Hierarchy: ':core']
+W164a@@@@Warning@@core.v@@321@@1@@10@@LHS: 'sram_select_r' width 3 is less than RHS: 'x_origin_r' width 4 in assignment [Hierarchy: ':core']
 ##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
 ##sde_property: msg_label Assign_Width_Mismatch
 ##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@core.v@@356@@1@@10@@LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_r >> 2)) + (y_r << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@core.v@@369@@1@@10@@LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_r >> 2)) + (y_r << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@core.v@@382@@1@@10@@LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_r >> 2)) + (y_m1_w << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@core.v@@383@@1@@10@@LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_m1_w >> 2)) + (y_m1_w << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@core.v@@384@@1@@10@@LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_p1_w >> 2)) + (y_m1_w << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@core.v@@385@@1@@10@@LHS: 'sram_addr_wait_r[i]' width 9 is less than RHS: '(((z_r << 4) + (x_p2_w >> 2)) + (y_m1_w << 1))' width 10 in assignment [Hierarchy: ':core:\SRAM_input[0] ']
+W164a@@@@Warning@@core.v@@682@@1@@10@@LHS: 'z_r' width 5 is less than RHS: '(cnt_next4_w >> 4)' width 12 in assignment [Hierarchy: ':core']
 ##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
 ##sde_property: msg_label Assign_Width_Mismatch
 ##sde_property: msg_id Assign_Width_Mismatch
 ReportPortInfo-ML@@@@Info@@./spyglass-1/core/lint/lint_rtl_enhanced/spyglass_reports/morelint/ReportPortInfo@@1@@1@@2@@Port Information for top design unit has been generated. For details see report ReportPortInfo.rpt
 ##sde_property: violation -elabDuId 1 
-W164a@@@@Warning@@conv.v@@143@@1@@10@@LHS: 'conv_e_wait_r[i]' width 13 is less than RHS: '(conv_e_r[i] + {5'b00000 ,i_data[({i[1:0]  ,3'b000} + 7) -:8] })' width 14 in assignment [Hierarchy: ':core:conv_inst@conv:\conv_e_read[0] ']
+W164a@@@@Warning@@conv.v@@146@@1@@10@@LHS: 'conv_e_wait_r[i]' width 13 is less than RHS: '(conv_e_r[i] + {5'b00000 ,data_r[({i[1:0]  ,3'b000} + 7) -:8] })' width 14 in assignment [Hierarchy: ':core:conv_inst@conv:\conv_e_read[0] ']
 ##sde_property: violation -ruleLang 1 -duId 2 -elabDuId 2 
 ##sde_property: msg_label Assign_Width_Mismatch
 ##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@conv.v@@268@@1@@10@@LHS: 'out_data_s1_1_wait_r' width 17 is less than RHS: '(out_data_s1_0_ready_r + out_data_s2_0_ready_r)' width 18 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
+W164a@@@@Warning@@conv.v@@293@@1@@10@@LHS: 'out_data_s1_3_wait_r' width 17 is less than RHS: '(out_data_s1_2_ready_r + out_data_s2_2_ready_r)' width 18 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
 ##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
 ##sde_property: msg_label Assign_Width_Mismatch
 ##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@conv.v@@269@@1@@10@@LHS: 'out_data_s2_1_wait_r' width 17 is less than RHS: '(out_data_s3_0_ready_r + out_data_s4_0_ready_r)' width 18 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@conv.v@@272@@1@@10@@LHS: 'out_data_s1_2_wait_r' width 17 is less than RHS: '(out_data_s1_1_ready_r + out_data_s2_1_ready_r)' width 18 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@conv.v@@275@@1@@10@@LHS: 'out_data_s1_3_wait_r' width 17 is less than RHS: '(out_data_s1_2_ready_r + out_data_s2_2_ready_r)' width 18 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@conv.v@@314@@1@@10@@LHS: 'o_out_data' width 14 is less than RHS: 'out_data_s1_3_ready_r' width 17 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164b@@@@Error@@conv.v@@262@@1@@10@@LHS: 'out_data_s1_0_wait_r' width 17 is greater than RHS: '((i_data_d << 1) + (i_data_b << 1))' width 15 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164b@@@@Error@@conv.v@@263@@1@@10@@LHS: 'out_data_s2_0_wait_r' width 17 is greater than RHS: '((i_data_h << 1) + (i_data_f << 1))' width 15 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164b@@@@Error@@conv.v@@264@@1@@10@@LHS: 'out_data_s3_0_wait_r' width 17 is greater than RHS: '(i_data_a + i_data_c)' width 14 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164b@@@@Error@@conv.v@@265@@1@@10@@LHS: 'out_data_s4_0_wait_r' width 17 is greater than RHS: '(i_data_g + i_data_i)' width 14 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164b@@@@Error@@conv.v@@266@@1@@10@@LHS: 'out_data_s5_0_wait_r' width 17 is greater than RHS: '(i_data_e << 2)' width 15 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-#childElab sram_512x8 sram_512x8 -elabDuId 6
+#childElab sram_512x8 sram_512x8 -elabDuId 7
+#childElab sobel_nms sobel_nms -elabDuId 6
+#elab_rtl_namemap sobel_nms sobel_nms sobel_nms
 #elab_rtl_namemap sram_512x8 sram_512x8 sram_512x8
 #child median_filter_submodule median_filter_submodule median_filter_submodule -elabDuId 5
 #child median median median -elabDuId 4 u_median_filter_submodule median_filter_submodule
 #child small_alu_add small_alu_add small_alu_add -elabDuId 3
 #child conv conv conv -elabDuId 2 u_alu small_alu_add
-#child core core core -elabDuId 1 \SRAM_inst_loop[0].u_sram  sram_512x8 \SRAM_inst_loop[1].u_sram  sram_512x8 \SRAM_inst_loop[2].u_sram  sram_512x8 \SRAM_inst_loop[3].u_sram  sram_512x8 conv_inst conv median_inst median
+#child core core core -elabDuId 1 \SRAM_inst_loop[0].u_sram  sram_512x8 \SRAM_inst_loop[1].u_sram  sram_512x8 \SRAM_inst_loop[2].u_sram  sram_512x8 \SRAM_inst_loop[3].u_sram  sram_512x8 conv_inst conv median_inst median sobel_nms_inst sobel_nms
 #top_modules core
 #bbox_modules
 InferBlackBox@@inferblackbox@@Info@@N.A.@@0@@1@@10@@Interfaces for blackbox modules have been inferred. Please refer to AnalyzeBBox violations for more details
 ##sde_property: violation -ruleLang 1 
 #precompiled_dulist
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@546@@1@@10@@Flip-flop 'c2[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.25
-##sde_property: container S.25 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 c2 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@509@@1@@10@@Flip-flop 'b9[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.23
-##sde_property: container S.23 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 b9 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@485@@1@@10@@Flip-flop 'b5[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.21
-##sde_property: container S.21 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 b5 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@461@@1@@10@@Flip-flop 'b1[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.19
-##sde_property: container S.19 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 b1 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@411@@1@@10@@Flip-flop 'a9[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.17
-##sde_property: container S.17 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a9 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@410@@1@@10@@Flip-flop 'a6[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.15
-##sde_property: container S.15 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a6 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@409@@1@@10@@Flip-flop 'a3[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.13
-##sde_property: container S.13 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a3 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@374@@1@@10@@Flip-flop 'a8[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.11
-##sde_property: container S.11 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a8 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@373@@1@@10@@Flip-flop 'a5[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.9
-##sde_property: container S.9 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a5 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@372@@1@@10@@Flip-flop 'a2[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.7
-##sde_property: container S.7 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a2 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@336@@1@@10@@Flip-flop 'a7[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.5
-##sde_property: container S.5 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a7 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@335@@1@@10@@Flip-flop 'a4[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.3
-##sde_property: container S.3 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a4 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-STARC-2.3.4.3@@AsyncResetOrSet@@Error@@median.v@@334@@1@@10@@Flip-flop 'a1[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']@@0
-##continue: S.1
-##sde_property: container S.1 -rtlpath 1.4.5 
-##sde_property: violation -duId 5 -type 1WBusMerge -mergeStr1 a1 -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label STARC-2.3.4.3
-##sde_property: msg_id STARC-2.3.4.3
-InfoAnalyzeBBox@@InfoAnalyzeBBox@@Info@@core.v@@172@@1@@10@@Design Unit 'sram_512x8' has empty definition; Ignore specification applied on design unit using 'ignoredu' option
+ErrorAnalyzeBBox@@ErrorAnalyzeBBox@@Error@@core.v@@149@@1@@10@@Design Unit 'sobel_nms' has no definition; black-box behavior assumed and module interface inferred
+##sde_property: violation -duId 1 -elabDuId 1 
+##sde_property: msg_label Label_5
+##sde_property: msg_id Label_5
+InfoAnalyzeBBox@@InfoAnalyzeBBox@@Info@@core.v@@189@@1@@10@@Design Unit 'sram_512x8' has empty definition; Ignore specification applied on design unit using 'ignoredu' option
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label Label_1
 ##sde_property: msg_id Label_1
 ##warning_total_suppressed_count:         0
 ##error_total_suppressed_count:         0
-##warning_total_reported_count:        22
-##error_total_reported_count:        18
+##warning_total_reported_count:        13
+##error_total_reported_count:         3
 ##total_warning_waived_viol_count:         0
 ##total_error_waived_viol_count:         0
-##totalGeneratedCount:        40
+##totalGeneratedCount:        16
 ##totalWaivedViolationCount:         0
-##totalReportCount:        40
+##totalReportCount:        16
 ##totalSuppressedCount:         0
 ##Active_Rules  AutomaticFuncTask-ML BlockHeader BufClock CheckDelayTimescale-ML CombLoop DisallowCaseX-ML DuplicateCaseLabel-ML FlopClockConstant HdlLibDuCheck_03 ImproperRangeIndex-ML InstPortConnType-ML LatchFeedback NoAssignX-ML NoFeedThrus-ML NoGenLabel-ML NoXInCase-ML ParamWidthMismatch-ML PragmaComments-ML ReportPortInfo-ML ReserveName ReserveNameSystemVerilog-ML STARC-2.3.4.3 STARC05-1.1.1.1 STARC05-1.2.1.2 STARC05-1.3.1.3 STARC05-1.4.3.2 STARC05-2.1.1.2 STARC05-2.1.3.1 STARC05-2.1.4.5 STARC05-2.1.5.3 STARC05-2.1.6.5 STARC05-2.10.1.4a STARC05-2.10.1.4b STARC05-2.10.2.3 STARC05-2.10.3.2a STARC05-2.11.3.1 STARC05-2.2.3.1 STARC05-2.2.3.3 STARC05-2.3.1.2c STARC05-2.3.1.5b STARC05-2.3.1.6 STARC05-2.3.4.1 STARC05-2.3.4.1v STARC05-2.4.1.5 STARC05-2.5.1.2 STARC05-2.5.1.7 STARC05-2.5.1.9 STARC05-2.8.1.3 STARC05-2.8.1.5 STARC05-2.8.5.1 STARC05-2.9.1.2a STARC05-2.9.1.2b SameControlNDataNet-ML SetBeforeRead-ML SigAssignZ-ML TristatePort-ML TristateSig-ML UndrivenInTerm-ML UndrivenNet-ML UndrivenOutPort-ML UnrecSynthDir-ML W110 W110a W116 W122 W123 W127 W156 W163 W164a W164b W167 W188 W19 W193 W210 W215 W216 W218 W238 W239 W240 W241 W245 W263 W287a W287c W289 W292 W293 W314 W316 W317 W336 W337 W339 W342 W343 W352 W362 W391 W392 W398 W401 W402b W414 W415 W416 W421 W422 W423 W424 W426 W438 W442a W442b W442c W442f W443 W444 W450L W464 W467 W479 W480 W481a W481b W486 W494 W496a W496b W499 W502 W505 W527 W552 W553 W561 W575 W576 W66 W71 badimplicitSM1 badimplicitSM2 badimplicitSM4 bothedges infiniteloop mixedsenselist sim_race02 sim_race07

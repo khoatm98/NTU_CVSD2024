@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1728799276.259949629, "rt":2.03, "ut":0.74, "st":0.35}}
+{"vcselab":{"timestamp_begin":1728799278.453412196, "rt":1.23, "ut":0.38, "st":0.29}}
+{"link":{"timestamp_begin":1728799279.808029157, "rt":0.66, "ut":0.25, "st":0.27}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1728799275.243777749}
+{"VCS_COMP_START_TIME": 1728799275.243777749}
+{"VCS_COMP_END_TIME": 1728799283.183306850}
+{"VCS_USER_OPTIONS": "-f rtl_01.f -full64 -R -debug_access+all +v2k +notimingcheck -sverilog +define+tb1 +define+CYCLE=5"}
+{"vcs1": {"peak_mem": 332704}}
+{"stitch_vcselab": {"peak_mem": 223256}}

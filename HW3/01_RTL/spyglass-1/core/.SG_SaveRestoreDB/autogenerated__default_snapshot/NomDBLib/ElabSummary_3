@@ -11,7 +11,7 @@ Elaborated Name: 'conv'
 ================================================================================
 
 Elaborated Name: 'small_alu_add'
-    (RTL Design Unit name: 'small_alu_add', conv.v:212)
+    (RTL Design Unit name: 'small_alu_add', conv.v:221)
      Parameters (Total: 0)
      Instances (Total: 1): core.conv_inst.u_alu 
 
@@ -29,9 +29,16 @@ Elaborated Name: 'median'
 ================================================================================
 
 Elaborated Name: 'median_filter_submodule'
-    (RTL Design Unit name: 'median_filter_submodule', median.v:206)
+    (RTL Design Unit name: 'median_filter_submodule', median.v:195)
      Parameters (Total: 0)
      Instances (Total: 1): core.median_inst.u_median_filter_submodule 
+
+================================================================================
+
+Elaborated Name: 'sobel_nms'
+    (RTL Design Unit name: 'sobel_nms', N.A.:0)
+     Parameters (Total: 0)
+     Instances (Total: 1): core.sobel_nms_inst 
 
 ================================================================================
 

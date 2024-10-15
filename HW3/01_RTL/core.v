@@ -39,12 +39,13 @@ localparam SRAM_NO          = 4;
 
 
 
-reg [3:0]  curr_state, next_state, pre_state[1:0];
+reg [3:0]  curr_state, next_state, pre_state[2:0];
 reg [10:0] cnt;
 reg [2:0]  output_cnt;
 wire [11:0] cnt_next_w, cnt_next4_w;
 reg  [3:0] cnt_next4_mod16_r;
 wire [7:0] sram_data_out_w[SRAM_NO-1:0];
+reg  [7:0] sram_data_out_r[SRAM_NO-1:0];
 wire       sram_cen_w[SRAM_NO-1:0];
 wire       sram_wen_w[SRAM_NO-1:0];
 reg        sram_cen_wait_r[SRAM_NO-1:0];
@@ -59,7 +60,7 @@ reg  [7:0] sram_data_wait_r[SRAM_NO-1:0];
 reg  [8:0] sram_addr_ready_r[SRAM_NO-1:0];
 reg  [7:0] sram_data_ready_r[SRAM_NO-1:0];
 
-reg [2:0] sram_select_r;
+reg [2:0] sram_select_r, sram_select_rr;
 
 reg [2:0] sram_select_forecase_0_r;
 reg [2:0] sram_select_forecase_1_r;
@@ -71,16 +72,17 @@ wire [2:0] sram_select_forecase_2_w;
 wire [2:0] sram_select_forecase_3_w;
 wire [4:0] y_forecase_w, y_forecase_w1;
 reg [4:0] y_forecase_r;
-reg  [2:0] sram_select_delay_r[1:0];
-reg  [2:0] sram_select1_delay_r[1:0];
-reg  [2:0] sram_select2_delay_r[1:0];
-reg  [2:0] sram_select3_delay_r[1:0];
+reg  [2:0] sram_select_delay_r [2:0];
+reg  [2:0] sram_select1_delay_r[2:0];
+reg  [2:0] sram_select2_delay_r[2:0];
+reg  [2:0] sram_select3_delay_r[2:0];
 wire conv_calc_done_w;
 reg conv_calc_done_r;
 
 
 wire med_done_w      ;
 reg med_done_r;
+reg sobel_nms_done_r;
 wire sobel_nms_done_w;
 wire display_done_w  ;
 wire output_done_w   ;
@@ -91,9 +93,8 @@ reg [3:0]  op_mode_r;
 reg [3:0]  x_r, x_origin_r, x_origin_wait_r; 
 reg [3:0]  y_origin_r, y_origin_wait_r;
 reg signed [4:0]  y_r;
-wire signed [4:0]  y_m1_w;
-wire signed [5:0] x_m1_w, x_p1_w, x_p2_w;
-
+reg  signed [5:0] x_m1_r, x_p1_r, x_p2_r;
+reg signed [4:0]  y_m1_r;
 reg [4:0]  z_r;
 reg [5:0]  depth_wait_r;
 reg [5:0]  depth_ready_r;
@@ -105,17 +106,22 @@ reg [13:0] out_data_wait_r;
 
 reg [31:0] conv_input_data_r;
 reg [31:0] med_input_data_r;
+reg [31:0] sobel_input_data_r;
 reg [31:0] input_data_wait_r;
 reg 	   conv_isFirst_signal_r;
 reg 	   conv_isFirst_signal_wait_r;
 reg 	   med_isFirst_signal_r;
 reg 	   med_isFirst_signal_wait_r;
+reg 	   sobel_isFirst_signal_r;
+reg 	   sobel_isFirst_signal_wait_r;
 wire 	    out_valid_w;
 wire [13:0] conv_result_w;
 wire [13:0] result_w; 
 wire 	    conv_out_valid_w;
 wire 	    med_out_valid_w;
+wire 	    sobel_out_valid_w;
 wire [13:0]  med_result_w;
+wire [13:0]  sobel_result_w;
 // ---------------------------------------------------------------------------
 // Continuous Assignment
 // ---------------------------------------------------------------------------
@@ -139,6 +145,15 @@ median median_inst (
 				.o_out_valid(med_out_valid_w),
 				.o_out_data(med_result_w)
 				);
+				
+sobel_nms sobel_nms_inst (                       
+				.i_clk(i_clk),
+				.i_rst_n(i_rst_n),
+				.i_data(sobel_input_data_r),
+				.i_isFirst(sobel_isFirst_signal_r),
+				.o_out_valid(sobel_out_valid_w),
+				.o_out_data(sobel_result_w)
+				);
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if (~i_rst_n) begin
 		conv_calc_done_r <= 0;
@@ -148,11 +163,13 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		sram_select_forecase_2_r <= SRAM_NO;
 		sram_select_forecase_3_r <= SRAM_NO;
 		y_forecase_r             <= 0;
+		sobel_nms_done_r       <= 0;
 	end
 	else begin
 		y_forecase_r             <= y_forecase_w; //(((cnt[3:2] + 8)%16)>>2);
 		conv_calc_done_r <= conv_calc_done_w;
 		med_done_r       <= med_done_w;
+		sobel_nms_done_r       <= sobel_nms_done_w;
 		if(y_forecase_r <= 8 && y_forecase_r >= 1  ) begin
 		sram_select_forecase_0_r <=  sram_select_forecase_0_w;
 		sram_select_forecase_1_r <=  sram_select_forecase_1_w;
@@ -186,33 +203,28 @@ generate
 endgenerate
 
 
-assign sram_select_forecase_0_w =  x_r > 0 ?  (x_m1_w)%4 : SRAM_NO;
+assign sram_select_forecase_0_w =  x_r > 0 ?  (x_m1_r)%4 : SRAM_NO;
 assign sram_select_forecase_1_w =  (x_r)%4;
-assign sram_select_forecase_2_w =  x_p1_w%4;
-assign sram_select_forecase_3_w =  x_r < 6 ? x_p2_w%4 : SRAM_NO;
+assign sram_select_forecase_2_w =  x_p1_r%4;
+assign sram_select_forecase_3_w =  x_r < 6 ? x_p2_r%4 : SRAM_NO;
 assign y_forecase_w = next_state > FETCH && next_state <= DECODE ? y_origin_r + next_state - 1 : y_origin_r +   (((cnt + 8)%16)>>2);
 
-assign result_w = conv_result_w | med_result_w;
+assign result_w = conv_result_w | med_result_w | sobel_out_valid_w;
 
-assign out_valid_w = conv_out_valid_w || med_out_valid_w;
+assign out_valid_w = conv_out_valid_w || med_out_valid_w;// || sobel_result_w;
 assign o_op_ready = curr_state == FETCH;
 assign o_in_ready = curr_state == MAP_LOAD;
 assign o_out_data  = out_data_ready_r;
 assign o_out_valid = out_valid_ready_r;
 
 assign map_load_done_w   = cnt == `MAP_VOLUME - 1;
-assign display_done_w    = cnt == (depth_ready_r<<2) - 1;
-assign conv_calc_done_w  = cnt >  (depth_ready_r<<4) - 1;
-assign med_done_w        = cnt > 63;
-assign sobel_nms_done_w  = cnt == 1;
+assign display_done_w    = cnt == (depth_ready_r<<2);
+assign conv_calc_done_w  = cnt ==  (depth_ready_r<<4) + 8;
+assign med_done_w        = cnt[6:5] == 2'b11;
+assign sobel_nms_done_w  = cnt[6:5] == 2'b11;
 assign output_done_w     = output_cnt == 3;
 assign cnt_next_w = cnt + 1;
 assign cnt_next4_w = cnt + 4;
-assign x_m1_w = x_r - 1;
-assign x_p1_w = x_r + 1;
-assign x_p2_w = x_r + 2; 
-
-assign y_m1_w = y_r - 1;
 // ---------------------------------------------------------------------------
 // Combinational Blocks
 // ---------------------------------------------------------------------------
@@ -274,51 +286,76 @@ always @ (*) begin
 end
 
 
-always @ (*) begin
+/* always @ (*) begin
 	casez({curr_state,next_state}) 
 		{MAP_LOAD,4'bzzzz}: begin
-			sram_select_r = cnt%4;
+			sram_select_rr = cnt%4;
 		end
 		{DISPLAY,4'bzzzz}: begin 
-			sram_select_r = (x_r)%4;
-
+			sram_select_rr = (x_r)%4;
 		end
 		{DECODE,DISPLAY}: begin
-			sram_select_r = (x_r)%4;
+			sram_select_rr = (x_r)%4;
 		end
 		default: begin
-			sram_select_r  = SRAM_NO;
+			sram_select_rr  = SRAM_NO;
 		end
 	endcase
+end */
+
+always @ (posedge i_clk or negedge i_rst_n) begin
+	if(~i_rst_n) begin
+		sram_select_r <= SRAM_NO;
+	end else begin
+		casez({curr_state,next_state}) 
+			{DECODE,MAP_LOAD}: begin
+				sram_select_r <= 0;
+			end
+			{MAP_LOAD,MAP_LOAD}: begin
+				sram_select_r <= (cnt_next_w)%4;
+			end
+			{4'bzzzz,DISPLAY}: begin 
+				sram_select_r <= (x_origin_r + (cnt_next_w)%2)%4;
+			end
+			{4'bzzzz,DECODE}: begin
+				sram_select_r <= x_origin_r;
+			end
+			default: begin  
+				sram_select_r <= SRAM_NO;
+			end
+		endcase
+	end
+	
 end
 /* input setup to conv module */
 always @ (*) begin
 	if(curr_state >= CONV) begin
-		if( pre_state[1] == DECODE) begin
+		if( pre_state[2] == DECODE) begin
 			conv_isFirst_signal_wait_r = 1;
 			med_isFirst_signal_wait_r = 1;
+		 	sobel_isFirst_signal_wait_r = 1;
 		end
 		else begin
 			conv_isFirst_signal_wait_r = 0;
 			med_isFirst_signal_wait_r = 0;
-		end
-			
-		if(sram_select_delay_r[1] == SRAM_NO)
-			input_data_wait_r = 0;
-		else begin
-			if(sram_select1_delay_r[1] == SRAM_NO)
-				input_data_wait_r = {sram_data_out_w[sram_select3_delay_r[1][1:0]], sram_data_out_w[sram_select2_delay_r[1][1:0]], sram_data_out_w[sram_select_delay_r[1][1:0]], 8'd0};
-			else if(sram_select3_delay_r[1] == SRAM_NO)
-				input_data_wait_r = {8'd0, sram_data_out_w[sram_select2_delay_r[1][1:0]], sram_data_out_w[sram_select_delay_r[1][1:0]], sram_data_out_w[sram_select1_delay_r[1][1:0]]};
-			else
-				input_data_wait_r = {sram_data_out_w[sram_select3_delay_r[1][1:0]], sram_data_out_w[sram_select2_delay_r[1][1:0]], sram_data_out_w[sram_select_delay_r[1][1:0]], sram_data_out_w[sram_select1_delay_r[1][1:0]]};
+		    sobel_isFirst_signal_wait_r = 0;
 		end
 	end
 	else begin
 		conv_isFirst_signal_wait_r = 0;
 		med_isFirst_signal_wait_r = 0;
-		input_data_wait_r = 0;
+		sobel_isFirst_signal_wait_r = 0;
 	end
+end
+
+/* input setup to conv module */
+always @ (*) begin
+	case({sram_select1_delay_r[2][2],sram_select_delay_r[2][2],sram_select3_delay_r[2][2]})
+		{1'b1,1'b1,1'b1} : input_data_wait_r = 0;
+		{1'b1,1'b0,1'b0} : input_data_wait_r ={sram_data_out_r[sram_select3_delay_r[2][1:0]], sram_data_out_r[sram_select2_delay_r[2][1:0]], sram_data_out_r[sram_select_delay_r[2][1:0]], 8'd0};
+		{1'b0,1'b0,1'b1} : input_data_wait_r = {8'd0, sram_data_out_r[sram_select2_delay_r[2][1:0]], sram_data_out_r[sram_select_delay_r[2][1:0]], sram_data_out_r[sram_select1_delay_r[2][1:0]]};
+		default   	     : input_data_wait_r = {sram_data_out_r[sram_select3_delay_r[2][1:0]], sram_data_out_r[sram_select2_delay_r[2][1:0]], sram_data_out_r[sram_select_delay_r[2][1:0]], sram_data_out_r[sram_select1_delay_r[2][1:0]]};
+	endcase
 end
 generate
 for(i = 0; i < SRAM_NO; i = i + 1) begin:SRAM_input
@@ -353,7 +390,9 @@ for(i = 0; i < SRAM_NO; i = i + 1) begin:SRAM_input
 			end
 			{4'bzzzz,4'bzzzz,DISPLAY}: begin
 				if (i == sram_select_r) begin
-					sram_addr_wait_r[i] = (z_r<<4) + (x_r>>2) + (y_r<<1);
+					sram_addr_wait_r[i][8:4] = z_r;
+					sram_addr_wait_r[i][3:1] = y_r[2:0];
+					sram_addr_wait_r[i][0]   = x_r[2];
 					sram_data_wait_r[i] = 0;
 					sram_cen_wait_r [i] = 0;
 					sram_wen_wait_r [i] = 1;
@@ -366,7 +405,9 @@ for(i = 0; i < SRAM_NO; i = i + 1) begin:SRAM_input
 			end
 			{DISPLAY,4'bzzzz,DELAY3}: begin
 				if (i == sram_select_r) begin
-					sram_addr_wait_r[i] = (z_r<<4) + (x_r>>2) + (y_r<<1);
+					sram_addr_wait_r[i][8:4] = z_r;
+					sram_addr_wait_r[i][3:1] = y_r[2:0];
+					sram_addr_wait_r[i][0]   = x_r[2];
 					sram_data_wait_r[i] = 0;
 					sram_cen_wait_r [i] = 0;
 					sram_wen_wait_r [i] = 1;
@@ -379,22 +420,45 @@ for(i = 0; i < SRAM_NO; i = i + 1) begin:SRAM_input
 			end
 			{4'bzzzz,4'bzzzz,4'b11zz}: begin
 				case(i)
-					sram_select_forecase_1_r : sram_addr_wait_r[i] = (z_r<<4) + (x_r>>2)    + (y_m1_w<<1);
-					sram_select_forecase_0_r : sram_addr_wait_r[i] = (z_r<<4) + (x_m1_w>>2) + (y_m1_w<<1);
-					sram_select_forecase_2_r : sram_addr_wait_r[i] = (z_r<<4) + (x_p1_w>>2) + (y_m1_w<<1);
-					sram_select_forecase_3_r : sram_addr_wait_r[i] = (z_r<<4) + (x_p2_w>>2) + (y_m1_w<<1);
-					default        : sram_addr_wait_r[i] = 0;
+					sram_select_forecase_1_r : begin
+						sram_addr_wait_r[i][8:4] = z_r;
+						sram_addr_wait_r[i][3:1] = y_m1_r[2:0];
+						sram_addr_wait_r[i][0]   = x_r[2];
+						sram_data_wait_r[i] = 0;
+						sram_cen_wait_r [i] = 0;
+						sram_wen_wait_r [i] = 1;
+					end
+					sram_select_forecase_0_r : begin
+						sram_addr_wait_r[i][8:4] = z_r;
+						sram_addr_wait_r[i][3:1] = y_m1_r[2:0];
+						sram_addr_wait_r[i][0]   = x_m1_r[2];
+						sram_data_wait_r[i] = 0;
+						sram_cen_wait_r [i] = 0;
+						sram_wen_wait_r [i] = 1;
+					end
+					sram_select_forecase_2_r : begin
+						sram_addr_wait_r[i][8:4] = z_r;
+						sram_addr_wait_r[i][3:1] = y_m1_r[2:0];
+						sram_addr_wait_r[i][0]   = x_p1_r[2];
+						sram_data_wait_r[i] = 0;
+						sram_cen_wait_r [i] = 0;
+						sram_wen_wait_r [i] = 1;
+					end
+					sram_select_forecase_3_r : begin
+						sram_addr_wait_r[i][8:4] = z_r;
+						sram_addr_wait_r[i][3:1] = y_m1_r[2:0];
+						sram_addr_wait_r[i][0]   = x_p2_r[2];
+						sram_data_wait_r[i] = 0;
+						sram_cen_wait_r [i] = 0;
+						sram_wen_wait_r [i] = 1;
+					end
+					default        : begin
+						sram_addr_wait_r[i] = 0;
+						sram_data_wait_r[i] = 0;
+						sram_cen_wait_r [i] = 1;
+						sram_wen_wait_r [i] = 1;
+					end
 				endcase
-				if (i == (sram_select_forecase_1_r) || i == (sram_select_forecase_0_r) || i == (sram_select_forecase_2_r) || i == (sram_select_forecase_3_r) ) begin
-					sram_data_wait_r[i] = 0;
-					sram_cen_wait_r [i] = 0;
-					sram_wen_wait_r [i] = 1;
-				end else begin
-					sram_addr_wait_r[i] = 0;
-					sram_data_wait_r[i] = 0;
-					sram_cen_wait_r [i] = 1;
-					sram_wen_wait_r [i] = 1;
-				end
 			end
 			default : begin
 				sram_addr_wait_r[i] = 0;
@@ -409,17 +473,13 @@ endgenerate
 
 /* Output */
 always @ (*) begin
-	casez({pre_state[1],pre_state[0],curr_state,next_state})
-		{4'bzzzz,DISPLAY,DISPLAY,4'bzzzz}: begin
-			out_data_wait_r = {6'b0, sram_data_out_w[sram_select_delay_r[1][1:0]]};
+	casez({pre_state[1],pre_state[0]})
+		{DISPLAY,DISPLAY}: begin
+			out_data_wait_r = {6'b0, sram_data_out_r[sram_select_delay_r[2][1:0]]};
 			out_valid_wait_r = 1;
 		end
-		{DISPLAY,DISPLAY,DELAY3,4'bzzzz}: begin
-			out_data_wait_r = {6'b0, sram_data_out_w[sram_select_delay_r[1][1:0]]};
-			out_valid_wait_r = 1;
-		end
-		{DISPLAY,DELAY3,DELAY2,4'bzzzz}: begin
-			out_data_wait_r = {6'b0, sram_data_out_w[sram_select_delay_r[1][1:0]]};
+		{DISPLAY,DELAY3}: begin
+			out_data_wait_r = {6'b0, sram_data_out_r[sram_select_delay_r[2][1:0]]};
 			out_valid_wait_r = 1;
 		end
 		default : begin
@@ -456,7 +516,7 @@ always @ (*) begin
 		CONV       : next_state = conv_calc_done_r ? CONV_OUT : CONV;
 		CONV_OUT   : next_state = out_valid_w      ? OUTPUT   : CONV_OUT;
 		MED        : next_state = med_done_r       ? DELAY3   : MED;
-		SOBEL_NMS  : next_state = sobel_nms_done_w ? DELAY1   : SOBEL_NMS;
+		SOBEL_NMS  : next_state = sobel_nms_done_r ? DELAY3   : SOBEL_NMS;
 		DISPLAY    : next_state = display_done_w   ? DELAY3   : DISPLAY;
 		OUTPUT     : next_state = output_done_w    ? DELAY3   : OUTPUT;
 		DELAY3     : next_state = DELAY2;
@@ -475,11 +535,13 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		curr_state <= RESET;
 		pre_state[0]  <= RESET;
 		pre_state[1]  <= RESET;
+		pre_state[2]  <= RESET;
 	end
 	else begin
 		curr_state    <= next_state;
 		pre_state[0]  <= curr_state;
 		pre_state[1]  <= pre_state[0];
+		pre_state[2]  <= pre_state[1];
 	end
 end
 
@@ -490,8 +552,8 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		casez({curr_state, next_state})
 			{DECODE, DISPLAY} : cnt <= cnt + 1;
 			{DISPLAY, 4'bzzzz} : cnt <= cnt + 1;
-			{DECODE, 4'b11zz} : cnt <= cnt + 4; // conv med sober
-			{4'b11zz, 4'bzzzz} : cnt <= cnt + 4; // conv med sober
+			{DECODE, 4'b11zz} : cnt <= cnt + 4; // conv med sobel
+			{4'b11zz, 4'bzzzz} : cnt <= cnt + 4; // conv med sobel
 			{MAP_LOAD, 4'bzzzz} : cnt <= i_in_valid ? cnt + 1 : cnt;
 			default: cnt <= 0;
 		endcase
@@ -530,24 +592,35 @@ end
 
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if (~i_rst_n) begin
-		sram_select_delay_r[0] <= 0;
-		sram_select_delay_r[1] <= 0;
-		sram_select1_delay_r[0] <= 0;
-		sram_select1_delay_r[1] <= 0;
-		sram_select2_delay_r[0] <= 0;
-		sram_select2_delay_r[1] <= 0;
-		sram_select3_delay_r[0] <= 0;
-		sram_select3_delay_r[1] <= 0;
+		sram_select_delay_r[0]  <= SRAM_NO;
+		sram_select_delay_r[1]  <= SRAM_NO;
+		sram_select1_delay_r[0] <= SRAM_NO;
+		sram_select1_delay_r[1] <= SRAM_NO;
+		sram_select2_delay_r[0] <= SRAM_NO;
+		sram_select2_delay_r[1] <= SRAM_NO;
+		sram_select3_delay_r[0] <= SRAM_NO;
+		sram_select3_delay_r[1] <= SRAM_NO;
+		sram_select1_delay_r[2] <= SRAM_NO;
+		sram_select2_delay_r[2] <= SRAM_NO;
+		sram_select3_delay_r[2] <= SRAM_NO;
+		sram_select_delay_r [2] <= SRAM_NO;
 	end
 	else begin
 		sram_select_delay_r[0] <= op_mode_r == `OP_DISPLAY ? sram_select_r : sram_select_forecase_1_r;
 		sram_select_delay_r[1] <= sram_select_delay_r[0];
+		sram_select_delay_r[2] <= sram_select_delay_r[1];
+		
 		sram_select1_delay_r[0] <= sram_select_forecase_0_r;
 		sram_select1_delay_r[1] <= sram_select1_delay_r[0];
+		sram_select1_delay_r[2] <= sram_select1_delay_r[1];
+		
 		sram_select2_delay_r[0] <= sram_select_forecase_2_r;
 		sram_select2_delay_r[1] <= sram_select2_delay_r[0];
+		sram_select2_delay_r[2] <= sram_select2_delay_r[1];
+		
 		sram_select3_delay_r[0] <= sram_select_forecase_3_r;
 		sram_select3_delay_r[1] <= sram_select3_delay_r[0];
+		sram_select3_delay_r[2] <= sram_select3_delay_r[1];
 	end
 end
 
@@ -564,16 +637,20 @@ end
 
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if (~i_rst_n) begin
-		conv_isFirst_signal_r  <= 0;
-		conv_input_data_r      <= 0;
-		med_input_data_r       <= 0;
-		med_isFirst_signal_r   <= 0;
+		conv_isFirst_signal_r    <= 0;
+		conv_input_data_r        <= 0;
+		med_input_data_r         <= 0;
+		med_isFirst_signal_r     <= 0;
+		sobel_isFirst_signal_r   <= 0;
+		sobel_input_data_r   <= 0;
 	end
 	else begin
-		conv_isFirst_signal_r  <= op_mode_r == `OP_CONV ? conv_isFirst_signal_wait_r : 0;
-		med_isFirst_signal_r   <= op_mode_r == `OP_MED_FILTER ? med_isFirst_signal_wait_r : 0;
+		conv_isFirst_signal_r  <= op_mode_r == `OP_CONV        ? conv_isFirst_signal_wait_r : 0;
 		conv_input_data_r  	   <= input_data_wait_r;
+		med_isFirst_signal_r   <= op_mode_r == `OP_MED_FILTER  ? med_isFirst_signal_wait_r : 0;
 		med_input_data_r   	   <= input_data_wait_r;
+		sobel_input_data_r     <= input_data_wait_r;
+		sobel_isFirst_signal_r <= op_mode_r == `OP_SOBEL_NMS ? sobel_isFirst_signal_wait_r : 0;
 	end
 end
 
@@ -582,6 +659,10 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		x_r <= 0;
 		y_r <= 0;
 		z_r <= 0;
+		x_p1_r <= 0;
+		x_m1_r <= 0;
+		x_p2_r <= 0;
+		y_m1_r <= 0;
 	end
 	else begin
 		casez(next_state)
@@ -589,16 +670,30 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 				x_r <= x_origin_r + (cnt_next_w)%2;
 				y_r <= y_origin_r + (cnt_next_w%4 > 1);
 				z_r <= cnt_next_w[6:2];
+				
+				x_p1_r <= x_origin_r + 1 + (cnt_next_w)%2;
+				x_m1_r <= x_origin_r - 1 + (cnt_next_w)%2;
+				x_p2_r <= x_origin_r + 2 + (cnt_next_w)%2;
+				y_m1_r <= y_origin_r - 1 + (cnt_next_w%4 > 1);
 			end
-			4'b11zz: begin // conv med sober
+			4'b11zz: begin // conv med sobel
 				x_r <= x_origin_r;
 				y_r <= y_origin_r + (cnt_next4_mod16_r>>2);
 				z_r <= cnt_next4_w>>4;
+				
+				x_p1_r <= x_origin_r + 1;
+				x_m1_r <= x_origin_r - 1;
+				x_p2_r <= x_origin_r + 2;
+				y_m1_r <= y_origin_r - 1 + (cnt_next4_mod16_r>>2);
 			end
 			default: begin
 				x_r <= x_origin_r;
 				y_r <= {1'b0,y_origin_r};
 				z_r <= 0;
+				x_p1_r <= x_origin_r + 1;
+				x_m1_r <= x_origin_r - 1;
+				x_p2_r <= x_origin_r + 2;
+				y_m1_r <= y_origin_r - 1;
 			end
 		endcase
 	end
@@ -612,12 +707,14 @@ for(i = 0; i < SRAM_NO; i = i + 1) begin:SRAM_input_seq
 			sram_data_ready_r[i] <= 0;
 			sram_cen_ready_r [i] <= 1;
 			sram_wen_ready_r [i] <= 0;
+			sram_data_out_r[i]   <= 0;
 		end
 		else begin
 			sram_addr_ready_r[i] <= sram_addr_wait_r[i];
 			sram_data_ready_r[i] <= sram_data_wait_r[i];
 			sram_cen_ready_r [i] <= sram_cen_wait_r [i];
 			sram_wen_ready_r [i] <= sram_wen_wait_r [i];
+			sram_data_out_r[i]   <= sram_data_out_w[i];
 		end
 	end
 end

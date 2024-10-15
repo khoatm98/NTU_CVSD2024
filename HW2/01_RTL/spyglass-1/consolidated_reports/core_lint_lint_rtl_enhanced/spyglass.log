@@ -1,4 +1,4 @@
-SpyGlass run started at 12:00:54 PM on Oct 04 2024 
+SpyGlass run started at 12:21:40 AM on Oct 14 2024 
 
 SpyGlass Predictive Analyzer(R) - Version SpyGlass_vT-2022.06
 Synopsys TestMAX(TM)
@@ -2243,8 +2243,7 @@ Version of Policy 'starc2002': SpyGlass_vT-2022.06
 
 INFO [326]    SpyGlass Design Database './spyglass-1/core/.SG_SaveRestoreDB' can not be restored because:
               Following design files/directories have been modified since design save
-    ./alu.v
-    ./core.v
+    alu.v
 
               Saving Database again
 Loading perl file for 'Audits' policy from path: /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/Audits/Audits-policy.pl
@@ -2355,9 +2354,9 @@ Total Rules Enabled Only For Save : 29
              -treat_latch_as_combinational=yes \
              -64bit  \
              ../00_TB/define.v \
-             ./reg_file.v \
-             ./alu.v \
-             ./core.v
+             alu.v \
+             reg_file.v \
+             core.v
 
 ##verbosity level   : 2
 ##exact cmdline arg : -batch -project spyglass-1.prj -goal lint/lint_rtl_enhanced -64bit
@@ -2369,66 +2368,66 @@ Total Rules Enabled Only For Save : 29
 ;	/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin/spyglass  -batch -project spyglass-1.prj -goal lint/lint_rtl_enhanced -64bit
 ##spyglass_run.csh ends
 ##files    : ../00_TB/define.v \
-             ./reg_file.v \
-             ./alu.v \
-             ./core.v
+             alu.v \
+             reg_file.v \
+             core.v
 
 
 INFO [76]    Using './spyglass-1/core/WORK/64' as the Work Directory for 64bit precompiled dump.
-Checking Rule SGDC_power_est29 (Rule 1 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
-Checking Rule PECHECK04 (Rule 2 of total 360) .... done (Time = 0.02s, Memory = 8.0K)
+Checking Rule SGDC_power_est29 (Rule 1 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PECHECK04 (Rule 2 of total 360) .... done (Time = 0.03s, Memory = 16.0K)
 Checking Rule PECHECK18 (Rule 3 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PEMVDD01 (Rule 4 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PrecompileLibCheck01 (Rule 5 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule PrecompileLibCheck02 (Rule 6 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule PrecompileLibCheck02 (Rule 6 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PrecompileLibCheck03 (Rule 7 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PrecompileLibCheck04 (Rule 8 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule AbstractInterface (Rule 9 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_assume_path01 (Rule 10 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_sdcschema02 (Rule 11 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule SGDC_sdcschema02 (Rule 11 of total 360) .... done (Time = 0.02s, Memory = 40.0K)
 Checking Rule SGDC_clock05 (Rule 12 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_clock09 (Rule 13 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_force_ta05 (Rule 14 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_require_path03 (Rule 15 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-Checking Rule SGDC_require_value03 (Rule 16 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_voltagedomain05 (Rule 17 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_voltagedomain06 (Rule 18 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-Checking Rule SGDC_voltagedomain07 (Rule 19 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_powerdomainoutputs02 (Rule 20 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-Checking Rule SGDC_supply01 (Rule 21 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_require_path03 (Rule 15 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_require_value03 (Rule 16 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_voltagedomain05 (Rule 17 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_voltagedomain06 (Rule 18 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_voltagedomain07 (Rule 19 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_powerdomainoutputs02 (Rule 20 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_supply01 (Rule 21 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_waive01 (Rule 22 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive02 (Rule 23 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive03 (Rule 24 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive04 (Rule 25 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive05 (Rule 26 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive06 (Rule 27 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_waive05 (Rule 26 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
+Checking Rule SGDC_waive06 (Rule 27 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive07 (Rule 28 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive08 (Rule 29 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive09 (Rule 30 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive10 (Rule 31 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive11 (Rule 32 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive12 (Rule 33 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive12 (Rule 33 of total 360) .... done (Time = 0.00s, Memory = 16.0K)
 Checking Rule SGDC_waive13 (Rule 34 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive21 (Rule 35 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive22 (Rule 36 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive30 (Rule 37 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive32 (Rule 38 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive33 (Rule 39 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_waive33 (Rule 39 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive36 (Rule 40 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive38 (Rule 41 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_fifo01 (Rule 42 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_fifo01 (Rule 42 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_libgroup01 (Rule 43 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_libgroup02 (Rule 44 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_libgroup04 (Rule 45 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_libgroup04 (Rule 45 of total 360) .... done (Time = 0.00s, Memory = -16.0K)
 Checking Rule SGDC_power_data01 (Rule 46 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_ungroup01 (Rule 47 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_ungroup01 (Rule 47 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_abstract_port06 (Rule 48 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port14 (Rule 49 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port15 (Rule 50 of total 360) .... done (Time = 0.00s, Memory = 24.0K)
-Checking Rule SGDC_abstract_port18 (Rule 51 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port14 (Rule 49 of total 360) .... done (Time = 0.00s, Memory = 16.0K)
+Checking Rule SGDC_abstract_port15 (Rule 50 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port18 (Rule 51 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule sdc_init_rule (Rule 52 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule CMD_ignorelibs01 (Rule 53 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportRuleNotRun (Rule 54 of total 360) .... done (Time = 0.07s, Memory = 8.0K)
+Checking Rule ReportRuleNotRun (Rule 54 of total 360) .... done (Time = 0.04s, Memory = 0.0K)
 Checking Rule ReserveName (Rule 55 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReserveName (Rule 56 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-2.3.1.2c (Rule 57 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2440,9 +2439,9 @@ Checking Rule W561 (Rule 62 of total 360) .... done (Time = 0.00s, Memory = 0.0K
 Checking Rule mixedsenselist (Rule 63 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule badimplicitSM1 (Rule 64 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule badimplicitSM2 (Rule 65 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule badimplicitSM4 (Rule 66 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule badimplicitSM4 (Rule 66 of total 360) .... done (Time = 0.00s, Memory = 24.0K)
 Checking Rule bothedges (Rule 67 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule infiniteloop (Rule 68 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule infiniteloop (Rule 68 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
 Checking Rule BlockHeader (Rule 69 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W421 (Rule 70 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReserveNameSystemVerilog-ML (Rule 71 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2450,22 +2449,22 @@ Checking Rule ReserveNameSystemVerilog-ML (Rule 72 of total 360) .... done (Time
 Checking Rule STARC05-2.1.6.5 (Rule 73 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportStopSummary (Rule 74 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportIgnoreSummary (Rule 75 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 15 sec, 14.17 sec, 1623688 KB, 4068668 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis started: 15 sec, 14.17 sec, 1623688 KB, 4068668 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 15 sec, 20.88 sec, 1281668 KB, 3849856 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis started: 15 sec, 20.88 sec, 1281668 KB, 3849856 KB
  Analyzing source file "../00_TB/define.v" ....
- Analyzing source file "./reg_file.v" ....
- Analyzing source file "./alu.v" ....
- Analyzing source file "./core.v" ....
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 15 sec, 14.19 sec, 1689296 KB, 4068668 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.02 sec, 65608 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 15 sec, 14.19 sec, 1689296 KB, 4068668 KB
+ Analyzing source file "alu.v" ....
+ Analyzing source file "reg_file.v" ....
+ Analyzing source file "core.v" ....
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 15 sec, 21.68 sec, 1347284 KB, 3849856 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.81 sec, 65616 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 15 sec, 21.69 sec, 1347284 KB, 3849856 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elaboration started: 0 sec, 0.00 sec, 0 KB, 0 KB
  Elaborating Top Verilog Design Unit 'core' ..... done
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 15 sec, 14.19 sec, 1755000 KB, 4134220 KB
-##SGDEBUG [BENCHMARK_INCR]: Elaboration finished: 0 sec, 0.00 sec, 65704 KB, 65552 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 15 sec, 14.19 sec, 1755000 KB, 4134220 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 15 sec, 21.69 sec, 1412980 KB, 3849856 KB
+##SGDEBUG [BENCHMARK_INCR]: Elaboration finished: 0 sec, 0.00 sec, 65696 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 15 sec, 21.69 sec, 1412980 KB, 3849856 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker started: 0 sec, 0.00 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 15 sec, 14.19 sec, 1755000 KB, 4134220 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 15 sec, 21.69 sec, 1412980 KB, 3849856 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker finished: 0 sec, 0.00 sec, 0 KB, 0 KB
 Checking Rule ElabSummary (Rule 76 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
 Checking Rule ReportCheckDataSummary (Rule 77 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2474,63 +2473,63 @@ Checking Rule ReportCheckDataSummary (Rule 77 of total 360) .... done (Time = 0.
  Generating WAIVER file "./spyglass-1/core/lint/lint_rtl_enhanced/spyglass_spysch/waiver/pragma2Waiver.swl" from pragmas in HDL source files ....
 Checking Rule DetectTopDesignUnits (Rule 78 of total 360) Detected 1 top level design units: 
      core
- .... done (Time = 0.00s, Memory = 0.0K)
+ .... done (Time = 0.01s, Memory = 0.0K)
 Performing semantic checks on SGDC contents
 ..... SGDC semantic checks completed. (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_testmode03 (Rule 79 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PECHECK09 (Rule 80 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Ac_multitop01 (Rule 81 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportObsoletePragmas (Rule 82 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportCksum (Rule 83 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportCksum (Rule 83 of total 360) .... done (Time = 0.01s, Memory = 2568.0K)
 Checking Rule checkSGDC_01 (Rule 84 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule checkSGDC_03 (Rule 85 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule checkSGDC_08 (Rule 86 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule GenerateConfMap (Rule 87 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_memorywritepin04 (Rule 88 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_reset02 (Rule 89 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_reset03 (Rule 90 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_reset03 (Rule 90 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_libgroup03 (Rule 91 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_ungroup02 (Rule 92 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule HdlLibDuCheck (Rule 93 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule HdlLibDuCheck (Rule 93 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
 Checking Rule RtlDesignInfo (Rule 94 of total 360)
 ##SGDEBUG [BENCHMARK_DATA]: Number of RTL Design Units = 3
 ##SGDEBUG: RTL statistics for Verilog design units:
-##SGDEBUG[BENCHMARK_DATA]: RTL Ports = 29 349 15
-##SGDEBUG[BENCHMARK_DATA]: RTL Insts = 40
-##SGDEBUG[BENCHMARK_DATA]: RTL Nets = 62 646 32
-##SGDEBUG[BENCHMARK_DATA]: RTL Terms = 104 360 17
+##SGDEBUG[BENCHMARK_DATA]: RTL Ports = 27 347 15
+##SGDEBUG[BENCHMARK_DATA]: RTL Insts = 41
+##SGDEBUG[BENCHMARK_DATA]: RTL Nets = 63 668 35
+##SGDEBUG[BENCHMARK_DATA]: RTL Terms = 104 358 17
 
 ##SGDEBUG: NOTE: Following estimated data is applicable for structural designs only.
 ##SGDEBUG:     In case of RTL designs, this data may differ significantly from the actual figure.
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Insts = 3
-##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 571
-##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Terms = 360
+##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 568
+##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Terms = 358
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Paths = 1
- .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule W339a (Rule 95 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+ .... done (Time = 0.00s, Memory = 2544.0K)
+Checking Rule W339a (Rule 95 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W416 (Rule 96 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule mixedsenselist (Rule 97 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W110a (Rule 98 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule Pragma_setupa (Rule 99 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule Pragma_setupa (Rule 99 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule _deltaDelay (Rule 100 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule _deltaDelay (Rule 101 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule preReq_ConsCase (Rule 102 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule CheckCelldefine (Rule 103 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive23 (Rule 104 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive26 (Rule 105 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_waive26 (Rule 105 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive27 (Rule 106 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive29 (Rule 107 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive29 (Rule 107 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule STARC05-1.1.1.1 (Rule 108 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule STARC05-2.3.1.5b (Rule 109 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule STARC05-2.8.1.5 (Rule 110 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule STARC05-2.8.1.5 (Rule 110 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
 Checking Rule STARC05-2.8.5.1 (Rule 111 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule STARC05-2.9.1.2a (Rule 112 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule STARC05-2.9.1.2a (Rule 112 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
 Checking Rule STARC05-2.9.1.2b (Rule 113 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-2.11.3.1 (Rule 114 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-1.1.1.1 (Rule 115 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Prereqs_STARC05-1.6.2.1 (Rule 116 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Prereqs_STARC-1.6.2.1 (Rule 117 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule STARC05-2.3.4.1 (Rule 118 of total 360) .... done (Time = 0.00s, Memory = 16.0K)
+Checking Rule STARC05-2.3.4.1 (Rule 118 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W127 (Rule 119 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W193 (Rule 120 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W317 (Rule 121 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2555,7 +2554,7 @@ Checking Rule W424 (Rule 139 of total 360) .... done (Time = 0.00s, Memory = 0.0
 Checking Rule W443 (Rule 140 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W444 (Rule 141 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule W467 (Rule 142 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule UnrecSynthDir-ML (Rule 143 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule UnrecSynthDir-ML (Rule 143 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule UnrecSynthDir-ML (Rule 144 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PragmaComments-ML (Rule 145 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PragmaComments-ML (Rule 146 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2567,7 +2566,7 @@ Checking ELABDU Rules for designUnit core
     Checking Rule Ac_classify_param01 (Rule 151 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule AcOvlRtl (Rule 152 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule AcOvlRtl (Rule 153 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
-    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 154 of total 360) .... done (Time = 0.01s, Memory = 8.0K)
+    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 154 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule Prereqs_InferLatch (Rule 155 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.4.5 (Rule 156 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.5.3 (Rule 157 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2575,35 +2574,35 @@ Checking ELABDU Rules for designUnit core
     Checking Rule STARC05-2.3.1.6 (Rule 159 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.2.3 (Rule 160 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.3.2a (Rule 161 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.11.3.1 (Rule 162 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule STARC05-2.11.3.1 (Rule 162 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.1.2 (Rule 163 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.3.1 (Rule 164 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.8.1.3 (Rule 165 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.10.1.4a (Rule 166 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.10.1.4b (Rule 167 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule STARC05-2.8.1.3 (Rule 165 of total 360) .... done (Time = 0.00s, Memory = 24.0K)
+    Checking Rule STARC05-2.10.1.4a (Rule 166 of total 360) .... done (Time = 0.00s, Memory = 80.0K)
+    Checking Rule STARC05-2.10.1.4b (Rule 167 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.8.1.3 (Rule 168 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule sim_race02 (Rule 169 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W239 (Rule 170 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W110 (Rule 171 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W239 (Rule 170 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W110 (Rule 171 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
     Checking Rule W122 (Rule 172 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W163 (Rule 173 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W552 (Rule 174 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W553 (Rule 175 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W496a (Rule 176 of total 360) .... done (Time = 0.01s, Memory = 2048.0K)
+    Checking Rule W552 (Rule 174 of total 360) .... done (Time = 0.01s, Memory = 8.0K)
+    Checking Rule W553 (Rule 175 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W496a (Rule 176 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W496b (Rule 177 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W19 (Rule 178 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W66 (Rule 179 of total 360) .... done (Time = 0.00s, Memory = 1712.0K)
+    Checking Rule W66 (Rule 179 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
     Checking Rule W116 (Rule 180 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W123 (Rule 181 of total 360) .... done (Time = 0.01s, Memory = -1992.0K)
-    Checking Rule W156 (Rule 182 of total 360) .... done (Time = 0.00s, Memory = -1712.0K)
-    Checking Rule W188 (Rule 183 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-    Checking Rule W215 (Rule 184 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W123 (Rule 181 of total 360) .... done (Time = 0.00s, Memory = 24.0K)
+    Checking Rule W156 (Rule 182 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W188 (Rule 183 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W215 (Rule 184 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule W216 (Rule 185 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W218 (Rule 186 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W218 (Rule 186 of total 360) .... done (Time = 0.00s, Memory = -32.0K)
     Checking Rule W238 (Rule 187 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W245 (Rule 188 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W263 (Rule 189 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W289 (Rule 190 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W263 (Rule 189 of total 360) .... done (Time = 0.00s, Memory = -32.0K)
+    Checking Rule W289 (Rule 190 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
     Checking Rule W314 (Rule 191 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W316 (Rule 192 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W337 (Rule 193 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2611,7 +2610,7 @@ Checking ELABDU Rules for designUnit core
     Checking Rule W343 (Rule 195 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W416 (Rule 196 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W352 (Rule 197 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W362 (Rule 198 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W362 (Rule 198 of total 360) .... done (Time = 0.01s, Memory = 8.0K)
     Checking Rule W423 (Rule 199 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W486 (Rule 200 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W499 (Rule 201 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2633,9 +2632,9 @@ Checking ELABDU Rules for designUnit core
     Checking Rule W240 (Rule 217 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W241 (Rule 218 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W241 (Rule 219 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W287a (Rule 220 of total 360) .... done (Time = 0.01s, Memory = 16.0K)
+    Checking Rule W287a (Rule 220 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
     Checking Rule W287c (Rule 221 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W293 (Rule 222 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W293 (Rule 222 of total 360) .... done (Time = 0.00s, Memory = 2544.0K)
     Checking Rule W398 (Rule 223 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W424 (Rule 224 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W443 (Rule 225 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2656,7 +2655,7 @@ Checking ELABDU Rules for designUnit core
     Checking Rule ParamWidthMismatch-ML (Rule 240 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule DuplicateCaseLabel-ML (Rule 241 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule AutomaticFuncTask-ML (Rule 242 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule SetBeforeRead-ML (Rule 243 of total 360) .... done (Time = 0.00s, Memory = 16.0K)
+    Checking Rule SetBeforeRead-ML (Rule 243 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule SigAssignZ-ML (Rule 244 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Postreqs_Usage_ML (Rule 245 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule ImproperRangeIndex-ML (Rule 246 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2666,25 +2665,25 @@ Checking ELABDU Rules for designUnit reg_file
     Checking Rule Ac_classify_param01 (Rule 151 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule AcOvlRtl (Rule 152 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule AcOvlRtl (Rule 153 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
-    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 154 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_InferLatch (Rule 155 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.1.4.5 (Rule 156 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 154 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule Prereqs_InferLatch (Rule 155 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule STARC05-2.1.4.5 (Rule 156 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.5.3 (Rule 157 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.2.3.3 (Rule 158 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-    Checking Rule STARC05-2.3.1.6 (Rule 159 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.2.3.3 (Rule 158 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.3.1.6 (Rule 159 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule STARC05-2.10.2.3 (Rule 160 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.3.2a (Rule 161 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.11.3.1 (Rule 162 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.1.1.2 (Rule 163 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.1.3.1 (Rule 164 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.1.3.1 (Rule 164 of total 360) .... done (Time = 0.00s, Memory = 16.0K)
     Checking Rule STARC05-2.8.1.3 (Rule 165 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4a (Rule 166 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.10.1.4b (Rule 167 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule STARC05-2.8.1.3 (Rule 168 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule sim_race02 (Rule 169 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W239 (Rule 170 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W110 (Rule 171 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-    Checking Rule W122 (Rule 172 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule sim_race02 (Rule 169 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W239 (Rule 170 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
+    Checking Rule W110 (Rule 171 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W122 (Rule 172 of total 360) .... done (Time = 0.00s, Memory = -32.0K)
     Checking Rule W163 (Rule 173 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W552 (Rule 174 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W553 (Rule 175 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2697,11 +2696,11 @@ Checking ELABDU Rules for designUnit reg_file
     Checking Rule W156 (Rule 182 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W188 (Rule 183 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W215 (Rule 184 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W216 (Rule 185 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W216 (Rule 185 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
     Checking Rule W218 (Rule 186 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W238 (Rule 187 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W245 (Rule 188 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W263 (Rule 189 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W238 (Rule 187 of total 360) .... done (Time = 0.00s, Memory = -32.0K)
+    Checking Rule W245 (Rule 188 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
+    Checking Rule W263 (Rule 189 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
     Checking Rule W289 (Rule 190 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W314 (Rule 191 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W316 (Rule 192 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2714,7 +2713,7 @@ Checking ELABDU Rules for designUnit reg_file
     Checking Rule W423 (Rule 199 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W486 (Rule 200 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W499 (Rule 201 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W502 (Rule 202 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W502 (Rule 202 of total 360) .... done (Time = 0.00s, Memory = -32.0K)
     Checking Rule W575 (Rule 203 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W576 (Rule 204 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W116 (Rule 205 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2724,7 +2723,7 @@ Checking ELABDU Rules for designUnit reg_file
     Checking Rule W71 (Rule 209 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W164a (Rule 210 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W164a (Rule 211 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W164b (Rule 212 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W164b (Rule 212 of total 360) .... done (Time = 0.00s, Memory = 64.0K)
     Checking Rule W164b (Rule 213 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W210 (Rule 214 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W210 (Rule 215 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2738,6 +2737,105 @@ Checking ELABDU Rules for designUnit reg_file
     Checking Rule W398 (Rule 223 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W424 (Rule 224 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W443 (Rule 225 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W444 (Rule 226 of total 360) .... done (Time = 0.00s, Memory = -32.0K)
+    Checking Rule W467 (Rule 227 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W494 (Rule 228 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W494 (Rule 229 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W505 (Rule 230 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W505 (Rule 231 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule Prereqs_Usage (Rule 232 of total 360) .... done (Time = 0.00s, Memory = -16.0K)
+    Checking Rule Prereqs_ConstantInput-ML (Rule 233 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
+    Checking Rule ReportPortInfo-ML (Rule 234 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule Prereqs_ReportPortInfo-ML (Rule 235 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule Prereqs_ReportPortInfo-ML (Rule 236 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule DisallowCaseX-ML (Rule 237 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
+    Checking Rule NoAssignX-ML (Rule 238 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule InstPortConnType-ML (Rule 239 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule ParamWidthMismatch-ML (Rule 240 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule DuplicateCaseLabel-ML (Rule 241 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule AutomaticFuncTask-ML (Rule 242 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule SetBeforeRead-ML (Rule 243 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule SigAssignZ-ML (Rule 244 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule Postreqs_Usage_ML (Rule 245 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule ImproperRangeIndex-ML (Rule 246 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule NoXInCase-ML (Rule 247 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule SigAssignZ-ML (Rule 248 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking ELABDU Rules for designUnit alu
+    Checking Rule Ac_classify_param01 (Rule 151 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule AcOvlRtl (Rule 152 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule AcOvlRtl (Rule 153 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
+    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 154 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule Prereqs_InferLatch (Rule 155 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.1.4.5 (Rule 156 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.1.5.3 (Rule 157 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.2.3.3 (Rule 158 of total 360) .... done (Time = 0.00s, Memory = -16.0K)
+    Checking Rule STARC05-2.3.1.6 (Rule 159 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.10.2.3 (Rule 160 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.10.3.2a (Rule 161 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.11.3.1 (Rule 162 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.1.1.2 (Rule 163 of total 360) .... done (Time = 0.09s, Memory = -2576.0K)
+    Checking Rule STARC05-2.1.3.1 (Rule 164 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.8.1.3 (Rule 165 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.10.1.4a (Rule 166 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.10.1.4b (Rule 167 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule STARC05-2.8.1.3 (Rule 168 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule sim_race02 (Rule 169 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W239 (Rule 170 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W110 (Rule 171 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
+    Checking Rule W122 (Rule 172 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W163 (Rule 173 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W552 (Rule 174 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W553 (Rule 175 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W496a (Rule 176 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W496b (Rule 177 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W19 (Rule 178 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W66 (Rule 179 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W116 (Rule 180 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W123 (Rule 181 of total 360) .... done (Time = 0.01s, Memory = 24.0K)
+    Checking Rule W156 (Rule 182 of total 360) .... done (Time = 0.00s, Memory = 24.0K)
+    Checking Rule W188 (Rule 183 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
+    Checking Rule W215 (Rule 184 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W216 (Rule 185 of total 360) .... done (Time = 0.00s, Memory = 2544.0K)
+    Checking Rule W218 (Rule 186 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W238 (Rule 187 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W245 (Rule 188 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W263 (Rule 189 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W289 (Rule 190 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W314 (Rule 191 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
+    Checking Rule W316 (Rule 192 of total 360) .... done (Time = 0.01s, Memory = -8.0K)
+    Checking Rule W337 (Rule 193 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W342 (Rule 194 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W343 (Rule 195 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W416 (Rule 196 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W352 (Rule 197 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W362 (Rule 198 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule W423 (Rule 199 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W486 (Rule 200 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W499 (Rule 201 of total 360) .... done (Time = 0.00s, Memory = -2560.0K)
+    Checking Rule W502 (Rule 202 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W575 (Rule 203 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W576 (Rule 204 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+    Checking Rule W116 (Rule 205 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W122 (Rule 206 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W123 (Rule 207 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W156 (Rule 208 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W71 (Rule 209 of total 360) .... done (Time = 0.00s, Memory = 24.0K)
+    Checking Rule W164a (Rule 210 of total 360) .... done (Time = 0.00s, Memory = 2536.0K)
+    Checking Rule W164a (Rule 211 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W164b (Rule 212 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
+    Checking Rule W164b (Rule 213 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W210 (Rule 214 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W210 (Rule 215 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W240 (Rule 216 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W240 (Rule 217 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W241 (Rule 218 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W241 (Rule 219 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W287a (Rule 220 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W287c (Rule 221 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W293 (Rule 222 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W398 (Rule 223 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
+    Checking Rule W424 (Rule 224 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule W443 (Rule 225 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
     Checking Rule W444 (Rule 226 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W467 (Rule 227 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule W494 (Rule 228 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2749,112 +2847,13 @@ Checking ELABDU Rules for designUnit reg_file
     Checking Rule ReportPortInfo-ML (Rule 234 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Prereqs_ReportPortInfo-ML (Rule 235 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Prereqs_ReportPortInfo-ML (Rule 236 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule DisallowCaseX-ML (Rule 237 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
-    Checking Rule NoAssignX-ML (Rule 238 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule InstPortConnType-ML (Rule 239 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule ParamWidthMismatch-ML (Rule 240 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule DuplicateCaseLabel-ML (Rule 241 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule AutomaticFuncTask-ML (Rule 242 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule SetBeforeRead-ML (Rule 243 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule SigAssignZ-ML (Rule 244 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Postreqs_Usage_ML (Rule 245 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule ImproperRangeIndex-ML (Rule 246 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-    Checking Rule NoXInCase-ML (Rule 247 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule SigAssignZ-ML (Rule 248 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking ELABDU Rules for designUnit alu
-    Checking Rule Ac_classify_param01 (Rule 151 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule AcOvlRtl (Rule 152 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule AcOvlRtl (Rule 153 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
-    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 154 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_InferLatch (Rule 155 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.1.4.5 (Rule 156 of total 360) .... done (Time = 0.00s, Memory = -32.0K)
-    Checking Rule STARC05-2.1.5.3 (Rule 157 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.2.3.3 (Rule 158 of total 360) .... done (Time = 0.00s, Memory = -16.0K)
-    Checking Rule STARC05-2.3.1.6 (Rule 159 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-    Checking Rule STARC05-2.10.2.3 (Rule 160 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.10.3.2a (Rule 161 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.11.3.1 (Rule 162 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.1.1.2 (Rule 163 of total 360) .... done (Time = 0.08s, Memory = -64.0K)
-    Checking Rule STARC05-2.1.3.1 (Rule 164 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.8.1.3 (Rule 165 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.10.1.4a (Rule 166 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.10.1.4b (Rule 167 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule STARC05-2.8.1.3 (Rule 168 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule sim_race02 (Rule 169 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W239 (Rule 170 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W110 (Rule 171 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W122 (Rule 172 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W163 (Rule 173 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W552 (Rule 174 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W553 (Rule 175 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W496a (Rule 176 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W496b (Rule 177 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W19 (Rule 178 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W66 (Rule 179 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W116 (Rule 180 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W123 (Rule 181 of total 360) .... done (Time = 0.00s, Memory = 24.0K)
-    Checking Rule W156 (Rule 182 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W188 (Rule 183 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W215 (Rule 184 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W216 (Rule 185 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W218 (Rule 186 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-    Checking Rule W238 (Rule 187 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W245 (Rule 188 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W263 (Rule 189 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W289 (Rule 190 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
-    Checking Rule W314 (Rule 191 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
-    Checking Rule W316 (Rule 192 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
-    Checking Rule W337 (Rule 193 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W342 (Rule 194 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W343 (Rule 195 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W416 (Rule 196 of total 360) .... done (Time = 0.00s, Memory = 16.0K)
-    Checking Rule W352 (Rule 197 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
-    Checking Rule W362 (Rule 198 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W423 (Rule 199 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W486 (Rule 200 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W499 (Rule 201 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
-    Checking Rule W502 (Rule 202 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W575 (Rule 203 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W576 (Rule 204 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W116 (Rule 205 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W122 (Rule 206 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W123 (Rule 207 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W156 (Rule 208 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W71 (Rule 209 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
-    Checking Rule W164a (Rule 210 of total 360) .... done (Time = 0.00s, Memory = -8.0K)
-    Checking Rule W164a (Rule 211 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W164b (Rule 212 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
-    Checking Rule W164b (Rule 213 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W210 (Rule 214 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W210 (Rule 215 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W240 (Rule 216 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W240 (Rule 217 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W241 (Rule 218 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-    Checking Rule W241 (Rule 219 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W287a (Rule 220 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W287c (Rule 221 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W293 (Rule 222 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W398 (Rule 223 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W424 (Rule 224 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W443 (Rule 225 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W444 (Rule 226 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W467 (Rule 227 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W494 (Rule 228 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W494 (Rule 229 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W505 (Rule 230 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule W505 (Rule 231 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_Usage (Rule 232 of total 360) .... done (Time = 0.00s, Memory = -24.0K)
-    Checking Rule Prereqs_ConstantInput-ML (Rule 233 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
-    Checking Rule ReportPortInfo-ML (Rule 234 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_ReportPortInfo-ML (Rule 235 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_ReportPortInfo-ML (Rule 236 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule DisallowCaseX-ML (Rule 237 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule NoAssignX-ML (Rule 238 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule InstPortConnType-ML (Rule 239 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule ParamWidthMismatch-ML (Rule 240 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule DuplicateCaseLabel-ML (Rule 241 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule AutomaticFuncTask-ML (Rule 242 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule SetBeforeRead-ML (Rule 243 of total 360) .... done (Time = 0.02s, Memory = 96.0K)
+    Checking Rule SetBeforeRead-ML (Rule 243 of total 360) .... done (Time = 0.01s, Memory = 80.0K)
     Checking Rule SigAssignZ-ML (Rule 244 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Postreqs_Usage_ML (Rule 245 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule ImproperRangeIndex-ML (Rule 246 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2868,34 +2867,34 @@ Checking Rule SGDC_meta_design_hier01 (Rule 250 of total 360) .... done (Time = 
 Checking Rule SGDC_waive24 (Rule 251 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive25 (Rule 252 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive31 (Rule 253 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive35 (Rule 254 of total 360) .... done (Time = 0.00s, Memory = -2304.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis started: 17 sec, 15.76 sec, 1757200 KB, 4134220 KB
-##SGDEBUG [BENCHMARK_INCR]: Synthesis started: 2 sec, 1.57 sec, 2200 KB, 0 KB
+Checking Rule SGDC_waive35 (Rule 254 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis started: 16 sec, 24.33 sec, 1417796 KB, 3849856 KB
+##SGDEBUG [BENCHMARK_INCR]: Synthesis started: 1 sec, 2.63 sec, 4816 KB, 0 KB
  Synthesizing module: alu (elaborated name: alu) ... (Module 1 of total 3)  done 
-     (Memory Used = -134976.0K(incr), 1691960.0K(tot), Cpu Time = 0.28s(incr))
+     (Memory Used = -137712.0K(incr), 1349796.0K(tot), Cpu Time = 0.26s(incr))
  Synthesizing module: reg_file (elaborated name: reg_file) ... (Module 2 of total 3)  done 
-     (Memory Used = 24.0K(incr), 1692152.0K(tot), Cpu Time = 0.12s(incr))
+     (Memory Used = 40.0K(incr), 1350036.0K(tot), Cpu Time = 0.15s(incr))
  Synthesizing module: core (elaborated name: core) ... (Module 3 of total 3)  done 
-     (Memory Used = 24.0K(incr), 1692176.0K(tot), Cpu Time = 0.05s(incr))
+     (Memory Used = 24.0K(incr), 1350060.0K(tot), Cpu Time = 0.07s(incr))
  Synthesis completed.
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis completed: 17 sec, 16.23 sec, 1692680 KB, 4265324 KB
-##SGDEBUG [BENCHMARK_INCR]: Synthesis completed: 0 sec, 0.47 sec, -64520 KB, 131104 KB
-Checking Rule InferBlackBox (Rule 255 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis completed: 17 sec, 24.85 sec, 1350564 KB, 3855528 KB
+##SGDEBUG [BENCHMARK_INCR]: Synthesis completed: 1 sec, 0.52 sec, -67232 KB, 5672 KB
+Checking Rule InferBlackBox (Rule 255 of total 360) .... done (Time = 0.02s, Memory = 2544.0K)
 ##SGDEBUG [BENCHMARK_DATA]: Number of NOM Modules = 3
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances = 3382
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Nets = 4922
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Terminals = 24562
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances per Module (max and avg) = 1471, 1127
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances = 3484
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Nets = 5394
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Terminals = 23735
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances per Module (max and avg) = 1527, 1161
 Checking Rule checkCMD_mthresh (Rule 256 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM started: 17 sec, 16.26 sec, 1692680 KB, 4265324 KB
-##SGDEBUG [BENCHMARK_INCR]: Saving NOM started: 0 sec, 0.03 sec, 0 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM started: 17 sec, 24.87 sec, 1353132 KB, 3855528 KB
+##SGDEBUG [BENCHMARK_INCR]: Saving NOM started: 0 sec, 0.03 sec, 2568 KB, 0 KB
 
 INFO [234]    Saving design database in directory './spyglass-1/core/.SG_SaveRestoreDB/autogenerated__default_snapshot' ...
               done
 
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM completed: 17 sec, 16.30 sec, 1754128 KB, 4265340 KB
-##SGDEBUG [BENCHMARK_INCR]: Saving NOM completed: 0 sec, 0.04 sec, 61448 KB, 16 KB
-     (Memory Used = 61448.0K(incr), 1754128.0K(tot), Cpu Time = 0.07s(incr))
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM completed: 17 sec, 24.93 sec, 1410484 KB, 3855544 KB
+##SGDEBUG [BENCHMARK_INCR]: Saving NOM completed: 0 sec, 0.05 sec, 57352 KB, 16 KB
+     (Memory Used = 57352.0K(incr), 1410484.0K(tot), Cpu Time = 0.07s(incr))
 Checking Rule SGDC_waive37 (Rule 257 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Txv_SvaSetup01 for module alu (Rule 258 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PESVASETUP01 for module alu (Rule 259 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2952,7 +2951,7 @@ Checking Rule HangingNetPreReq-ML for module core (Rule 273 of total 360) .... d
 Checking Rule STARC05-2.5.1.7 for module core (Rule 274 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule STARC05-2.5.1.9 for module core (Rule 275 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Performing semantic checks on SGDC contents
-..... SGDC semantic checks completed. (Time = 0.00s, Memory = 0.0K)
+..... SGDC semantic checks completed. (Time = 0.00s, Memory = 2536.0K)
 Checking Rule SGDC_testmode03 (Rule 79 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule _abstractPortSGDC (Rule 276 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port03 (Rule 277 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
@@ -2963,70 +2962,70 @@ Checking Rule SGDC_abstract_port08 (Rule 281 of total 360) .... done (Time = 0.0
 Checking Rule SGDC_abstract_port10 (Rule 282 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port11 (Rule 283 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port12 (Rule 284 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port13 (Rule 285 of total 360) .... done (Time = 0.00s, Memory = -16.0K)
+Checking Rule SGDC_abstract_port13 (Rule 285 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportUngroup (Rule 286 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule LINT_portReten (Rule 287 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port21 (Rule 288 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule InferLatch (Rule 289 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
-Checking Rule UndrivenOutPort-ML (Rule 290 of total 360) .... done (Time = 0.02s, Memory = 0.0K)
-Checking Rule UndrivenInTerm-ML (Rule 291 of total 360) .... done (Time = 0.09s, Memory = 0.0K)
-Checking Rule UndrivenNet-ML (Rule 292 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule UndrivenOutPort-ML (Rule 290 of total 360) .... done (Time = 0.01s, Memory = 2560.0K)
+Checking Rule UndrivenInTerm-ML (Rule 291 of total 360) .... done (Time = 0.10s, Memory = -2568.0K)
+Checking Rule UndrivenNet-ML (Rule 292 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule NoFeedThrus-ML (Rule 293 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: VS rule checking finished...: 18 sec, 17.44 sec, 1695680 KB, 4265324 KB
-##SGDEBUG [BENCHMARK_INCR]: VS rule checking finished...: 1 sec, 1.14 sec, -58448 KB, -16 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elab View Deletion Finished: 18 sec, 17.46 sec, 1629984 KB, 4265324 KB
-##SGDEBUG [BENCHMARK_INCR]: Elab View Deletion Finished: 0 sec, 0.02 sec, -65696 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: After deleting RTL view: 18 sec, 17.46 sec, 1562664 KB, 4265324 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: VS rule checking finished...: 17 sec, 25.90 sec, 1353636 KB, 3855528 KB
+##SGDEBUG [BENCHMARK_INCR]: VS rule checking finished...: 0 sec, 0.98 sec, -56848 KB, -16 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elab View Deletion Finished: 17 sec, 25.92 sec, 1290508 KB, 3855528 KB
+##SGDEBUG [BENCHMARK_INCR]: Elab View Deletion Finished: 0 sec, 0.01 sec, -63128 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: After deleting RTL view: 17 sec, 25.92 sec, 1223188 KB, 3855528 KB
 ##SGDEBUG [BENCHMARK_INCR]: After deleting RTL view: 0 sec, 0.00 sec, -67320 KB, 0 KB
 Checking Rule SGDC_assume_path05 (Rule 294 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening started: 18 sec, 17.46 sec, 1564072 KB, 4265324 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening started: 17 sec, 25.92 sec, 1224596 KB, 3855528 KB
 ##SGDEBUG [BENCHMARK_INCR]: Flattening started: 0 sec, 0.00 sec, 1408 KB, 0 KB
  Flattening core (.lib instances separately flattened) ....
-     (Memory Used = 3992.0K(incr), 1568064.0K(tot), Cpu Time = 0.07s(incr))
+     (Memory Used = 1416.0K(incr), 1226012.0K(tot), Cpu Time = 0.08s(incr))
  Flattening completed
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Instances = 4565
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Nets = 5739
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Terms = 31455
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Instances = 4667
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Nets = 6184
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Terms = 30649
 ##SGDEBUG [BENCHMARK_DATA]: Number of Flat Paths = 4
 ##SGDEBUG [BENCHMARK_DATA]: Number of Flat Ports = 107
 ##SGDEBUG [BENCHMARK_DATA]: Number of Black-Box Instances = 0
 ##SGDEBUG [BENCHMARK_DATA]: Number of Lib Instances = 0
 ##SGDEBUG [BENCHMARK_DATA]: Number of ILM Instances = 0
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening finished: 18 sec, 17.52 sec, 1568064 KB, 4265324 KB
-##SGDEBUG [BENCHMARK_INCR]: Flattening finished: 0 sec, 0.06 sec, 3992 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening finished: 18 sec, 25.99 sec, 1226012 KB, 3855528 KB
+##SGDEBUG [BENCHMARK_INCR]: Flattening finished: 1 sec, 0.07 sec, 1416 KB, 0 KB
 Checking Rule SGDC_set_case_analysis_LC (Rule 295 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule BufClock (Rule 296 of total 360) .... done (Time = 0.07s, Memory = 1608.0K)
-Checking Rule CombLoop (Rule 297 of total 360) .... done (Time = 0.04s, Memory = 1056.0K)
+Checking Rule BufClock (Rule 296 of total 360) .... done (Time = 0.06s, Memory = 4192.0K)
+Checking Rule CombLoop (Rule 297 of total 360) .... done (Time = 0.06s, Memory = 1208.0K)
 Checking Rule STARC05-2.5.1.2 (Rule 298 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule STARC05-1.3.1.3 (Rule 299 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule STARC05-1.3.1.3 (Rule 299 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule STARC05-1.4.3.2 (Rule 300 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
-Checking Rule STARC05-1.4.3.4 (Rule 301 of total 360) .... done (Time = 0.00s, Memory = 16.0K)
+Checking Rule STARC05-1.4.3.4 (Rule 301 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule STARC-2.3.4.3 (Rule 302 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule FlopClockConstant (Rule 303 of total 360) .... done (Time = 0.04s, Memory = 272.0K)
-Checking Rule FlopSRConst (Rule 304 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule FlopClockConstant (Rule 303 of total 360) .... done (Time = 0.04s, Memory = 280.0K)
+Checking Rule FlopSRConst (Rule 304 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule checkPinConnectedToSupply (Rule 305 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule sim_race07 (Rule 306 of total 360) .... done (Time = 0.04s, Memory = 208.0K)
-Checking Rule W402b (Rule 307 of total 360) .... done (Time = 0.03s, Memory = 240.0K)
+Checking Rule sim_race07 (Rule 306 of total 360) .... done (Time = 0.03s, Memory = -2328.0K)
+Checking Rule W402b (Rule 307 of total 360) .... done (Time = 0.01s, Memory = 2816.0K)
 Checking Rule W392 (Rule 308 of total 360) .... done (Time = 0.00s, Memory = 64.0K)
-Checking Rule W415 (Rule 309 of total 360) .... done (Time = 0.02s, Memory = 0.0K)
-Checking Rule W391 (Rule 310 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule W401 (Rule 311 of total 360) .... done (Time = 0.03s, Memory = 288.0K)
-Checking Rule LatchFeedback (Rule 312 of total 360) .... done (Time = 0.03s, Memory = 8.0K)
-Checking Rule SameControlNDataNet-ML (Rule 313 of total 360) .... done (Time = 0.03s, Memory = 0.0K)
-Checking Rule STARC05-2.4.1.5 (Rule 314 of total 360) .... done (Time = 0.00s, Memory = 8.0K)
-Checking Rule STARC05-1.2.1.2 (Rule 315 of total 360) .... done (Time = 0.00s, Memory = 48.0K)
+Checking Rule W415 (Rule 309 of total 360) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule W391 (Rule 310 of total 360) .... done (Time = 0.01s, Memory = -2568.0K)
+Checking Rule W401 (Rule 311 of total 360) .... done (Time = 0.03s, Memory = 2864.0K)
+Checking Rule LatchFeedback (Rule 312 of total 360) .... done (Time = 0.02s, Memory = -2568.0K)
+Checking Rule SameControlNDataNet-ML (Rule 313 of total 360) .... done (Time = 0.03s, Memory = 2568.0K)
+Checking Rule STARC05-2.4.1.5 (Rule 314 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule STARC05-1.2.1.2 (Rule 315 of total 360) .... done (Time = 0.00s, Memory = 32.0K)
 Checking Rule AnalyzeBBox (Rule 316 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportCheckDataSummary (Rule 77 of total 360) .... done (Time = 0.00s, Memory = 0.0K)
 
 Applying user specified and internally generated waivers on violation database .... done (Time = 0.01s)
 
 Generating data for Console...
-##SGDEBUG [PEAK_VMSIZE_END_RULE]: 4265340 KB for entire run at 'Saving NOM completed' stage
+##SGDEBUG [PEAK_VMSIZE_END_RULE]: 3855544 KB for entire run at 'Saving NOM completed' stage
 ##SGDEBUG [PEAK_SWAP_MEMORY_END_RULE]: 0 KB for entire run
-##SGDEBUG [VMPEAK_MEMORY]: 4265348 KB for entire run
-##SGDEBUG [PEAK_RSS_MEMORY]: 1531224 KB for entire run
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 19 sec, 18.12 sec, 1569208 KB, 4265316 KB
-##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 1 sec, 0.60 sec, 1144 KB, -8 KB
+##SGDEBUG [VMPEAK_MEMORY]: 3855552 KB for entire run
+##SGDEBUG [PEAK_RSS_MEMORY]: 1239564 KB for entire run
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 18 sec, 26.69 sec, 1227236 KB, 3855520 KB
+##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 0 sec, 0.69 sec, 1224 KB, -8 KB
 
 
 =====================================================================================
@@ -6913,7 +6912,7 @@ Generating data for Console...
  W164b                (VHDL   ) lint            Yes            0 ELABDU         -               
  W164b                (Verilog) lint            Yes            0 ELABDU         -               
  W164a                (VHDL   ) lint            Yes            0 ELABDU         -               
- W164a                (Verilog) lint            Yes           18 ELABDU         -               
+ W164a                (Verilog) lint            Yes            0 ELABDU         -               
  W71                  (VHDL   ) lint            Yes            0 RTLDULIST      -               
  W71                  (Verilog) lint            Yes            0 ELABDU         -               
  preReq_functional_lint(Verilog) lint            Yes            0 SETUP          -               
@@ -7052,17 +7051,16 @@ Results Summary:
    Command-line read  :      0 error,      1 warning,      0 information message 
    Design Read        :      0 error,      0 warning,      2 information messages
       Found 1 top module:
-         core   (file: ./core.v)
+         core   (file: core.v)
 
    Blackbox Resolution:      0 error,      0 warning,      0 information message 
    SGDC Checks        :      0 error,      0 warning,      0 information message 
-   Policy lint        :      0 error,     18 warnings,     0 information message 
    Policy morelint    :      0 error,      0 warning,      1 information message 
    -------------------------------------------------------------------------------------
-   Total              :      0 error,     19 warnings,     3 information messages
+   Total              :      0 error,      1 warning,      3 information messages
 
-  Total Number of Generated Messages     :        22 (0 error, 19 warnings, 3 Infos)
-  Number of Reported Messages            :        22 (0 error, 19 warnings, 3 Infos)
+  Total Number of Generated Messages     :         4 (0 error, 1 warning, 3 Infos)
+  Number of Reported Messages            :         4 (0 error, 1 warning, 3 Infos)
 
 ---------------------------------------------------------------------------------------------
 
@@ -7109,13 +7107,13 @@ Results Summary:
 ---------------------------------------------------------------------------------------------------
    Goal Violation Summary:
        Waived   Messages:                      0 Errors,      0 Warnings,      0 Infos
-       Reported Messages:         0 Fatals,    0 Errors,     19 Warnings,      3 Infos
+       Reported Messages:         0 Fatals,    0 Errors,      1 Warnings,      3 Infos
 ---------------------------------------------------------------------------------------------------
    
 ---------------------------------------------------------------------------------------------------
  
 SpyGlass Exit Code 0 (Rule-checking completed with warnings)
-SpyGlass total run-time is 02:44:15 (9855 secs)
-SpyGlass total goal run-time is 00:00:19 (19 secs)
+SpyGlass total run-time is 00:22:59 (1379 secs)
+SpyGlass total goal run-time is 00:00:27 (27 secs)
 SpyGlass total cpu-time is 19 secs
-SpyGlass run completed at 02:45:09 PM on Oct 04 2024
+SpyGlass run completed at 00:44:39 AM on Oct 14 2024

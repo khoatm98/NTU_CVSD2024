@@ -1,7 +1,7 @@
 0 
 36
-+define+CYCLE=3
-+define+tb2
++define+CYCLE=5
++define+tb1
 +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 +notimingcheck
 +v2k
@@ -108,14 +108,15 @@ ASSURAHOME=/usr/cad/cadence/ASSURA/cur
 ARCH=linux64
 0
 0
-9
-1728739927 ./core.v
-1728739889 ./median.v
-1728724089 ./conv.v
+10
+1728812727 ./core.v
+1728815084 ./sobel.v
+1728812960 ./median.v
+1728979164 ./conv.v
 1728464623 ./define.v
 1728657258 ../sram_512x8/sram_512x8.v
 1728738905 ../00_TESTBED/testbench.v
-1728651300 rtl_01.f
+1728792424 rtl_01.f
 1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/verdi.tab
 1654052745 /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 4
@@ -123,5 +124,5 @@ ARCH=linux64
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1728740016 simv.daidir
+1728979171 simv.daidir
 -1 partitionlib

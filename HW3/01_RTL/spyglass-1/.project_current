@@ -1,0 +1,27 @@
+##Data Import Section
+
+read_file -type verilog define.v
+#BackRefFile:N.A. #LineNumber:1
+read_file -type verilog core.v
+#BackRefFile:N.A. #LineNumber:1
+read_file -type verilog ../sram_512x8/sram_512x8.v
+#BackRefFile:N.A. #LineNumber:1
+read_file -type verilog conv.v
+#BackRefFile:N.A. #LineNumber:1
+read_file -type verilog median.v
+#BackRefFile:N.A. #LineNumber:1
+
+##Common Options Section
+
+set_option projectwdir .
+set_option language_mode mixed
+set_option designread_enable_synthesis no
+set_option designread_disable_flatten no
+set_option top core
+set_option ignoredu { sram_512x8 }
+
+
+##Goal Setup Section
+
+current_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+

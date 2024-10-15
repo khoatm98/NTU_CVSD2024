@@ -1,7 +1,7 @@
 <CWD>/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL</CWD>
 <ENVVAR>
 	<env name="SPYGLASS_SPYAUTH_FILE">
-		<value>/tmp/spyAuthFileList512121728014455</value>
+		<value>/tmp/spyAuthFileList870761728836500</value>
 	</env>
 	<env name="LD_LIBRARY_PATH">
 		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/Audits:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/adv_lowpower:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/area:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/auto-verify:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/clock:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/constraints:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/cubic_netlist:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft_dsm:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/erc:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/latch:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lint:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lowpower:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/mbist-dft:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/miscellaneous:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/morelint:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/openmore:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/power_est:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/prof:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/rtl2netlist:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/sec:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/simulation:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/spyglass:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc2002:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc2005:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starcad-21:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/timing:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/txv:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme/Parser:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme/Parser/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-perl/lib/5.8.3:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-perl/lib/site_perl/5.8.3:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/lib64/tls:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-tcl/lib/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/python/Linux4/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-tcl/lib/Linux4::/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-qt/lib/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-nlview/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-boost/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-thirdparty/Linux4:/depot/gcc-4.8.3-patch/lib64:/usr/lib64:/usr/X11R6/lib64:/usr/local/lib64:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-vcst/vcs-mx/linux64/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/oa/Linux4:::/home/raid7_4/raid1_1/linux/novas/verdi/cur/share/PLI/IUS/LINUX/:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/oa/Linux4:/lib64:/usr/cad/cadence/ASSURA/cur/tools/assura/lib:/usr/cad/cadence/ASSURA/cur/tools/dsm/lib:/usr/cad/cadence/ASSURA/cur/tools/lib:/usr/cad/cadence/CONFRML/cur/tools/lib:/usr/cad/cadence/IC/cur/tools/lib:/usr/cad/innovus/cur//tools/tlfUtil/lib:/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64:/usr/lib64:/usr/local/lib64:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared::/usr/lib:/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/zebulib</value>
@@ -16,7 +16,7 @@
 		<value>/usr/cad/synopsys/synthesis/cur</value>
 	</env>
 	<env name="XDG_SESSION_ID">
-		<value>49611</value>
+		<value>72183</value>
 	</env>
 	<env name="TMIARCH">
 		<value>RH_64</value>
@@ -52,7 +52,7 @@
 		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/dw_support</value>
 	</env>
 	<env name="SSH_CLIENT">
-		<value>140.112.175.69 62062 22</value>
+		<value>140.112.175.69 64744 22</value>
 	</env>
 	<env name="TMPDIR">
 		<value/>
@@ -67,7 +67,7 @@
 		<value>CSF</value>
 	</env>
 	<env name="SPYGLASS_IPC_SERVER_APP_INFO">
-		<value>/tmp/.SPYGLASS_IPC_SERVER_APP_INFO@@455</value>
+		<value>/tmp/.SPYGLASS_IPC_SERVER_APP_INFO@@500</value>
 	</env>
 	<env name="QTDIR">
 		<value>/usr/lib64/qt-3.3</value>
@@ -82,7 +82,7 @@
 		<value>/usr/lib64/qt-3.3/include</value>
 	</env>
 	<env name="SSH_TTY">
-		<value>/dev/pts/32</value>
+		<value>/dev/pts/38</value>
 	</env>
 	<env name="LC_ALL">
 		<value/>
@@ -151,7 +151,7 @@
 		<value>/usr/cad/cadence/oa_v22.04.073</value>
 	</env>
 	<env name="CMD_FILE_PATH">
-		<value>/tmp/cmdfile_51212</value>
+		<value>/tmp/cmdfile_87076</value>
 	</env>
 	<env name="VCS_HOME">
 		<value>/usr/cad/synopsys/vcs/2022.06/</value>
@@ -172,7 +172,7 @@
 		<value>/usr/cad/synopsys/synthesis/cur</value>
 	</env>
 	<env name="SPYGLASS_IPC_SERVER_APP_PID">
-		<value>51431</value>
+		<value>87297</value>
 	</env>
 	<env name="SELINUX_LEVEL_REQUESTED">
 		<value/>
@@ -241,7 +241,7 @@
 		<value>ok</value>
 	</env>
 	<env name="SSH_CONNECTION">
-		<value>140.112.175.69 62062 140.112.20.70 22</value>
+		<value>140.112.175.69 64744 140.112.20.70 22</value>
 	</env>
 	<env name="NEOCKTHOME">
 		<value>/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit</value>
@@ -271,13 +271,13 @@
 		<value>/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/cdpl</value>
 	</env>
 	<env name="DISPLAY">
-		<value>localhost:27.0</value>
+		<value>localhost:33.0</value>
 	</env>
 	<env name="XDG_RUNTIME_DIR">
 		<value>/run/user/1340</value>
 	</env>
 	<env name="SPG_RANDOM">
-		<value>51063</value>
+		<value>86914</value>
 	</env>
 	<env name="SYN_MAN_DIR">
 		<value>/usr/cad/synopsys/vcs/2022.06//doc/man</value>
@@ -289,7 +289,7 @@
 		<value>/usr/cad/cadence/ASSURA/cur</value>
 	</env>
 	<env name="SPYGLASS_CHECKER_PID_FILE_VAR">
-		<value>/tmp/.SPYGLASS_CHECKER_PID_FILE@@51212455</value>
+		<value>/tmp/.SPYGLASS_CHECKER_PID_FILE@@87076500</value>
 	</env>
 	<env name="SAVE_PATH">
 		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/usr/cad/synopsys/vcs/2022.06//amd64/bin:/usr/cad/synopsys/spyglass/2022.06//SPYGLASS_HOME/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64:/usr/bin:/usr/ucb/bin:/usr/cad/innovus/cur/tools/celtic/bin:/usr/cad/innovus/cur/tools/plato/bin:/usr/cad/innovus/cur/tools/dfII/bin:/usr/cad/innovus/cur/tools/bin:/usr/cad/innovus/cur//tools/tlfUtil/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/mentor/calibre/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/cad/synopsys/astro/cur/bin/AMD.64:/usr/spring_soft/verdi/cur/bin:/usr/spring_soft/verdi/cur/nLint/bin:/usr/cad/synopsys/primetime/2022.12/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/mentor/calibre/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/cadence/SPECTRE/cur/tools/dfII/bin:/usr/cad/cadence/SPECTRE/cur/tools/bin:/usr/cad/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/JASPER/cur/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/RC/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit/bin:bin.linux:/usr/cad/cadence/SPB/cur/tools/specctra/bin:/usr/cad/cadence/SPB/cur/tools/pcb/bin:/usr/cad/cadence/SPB/cur/tools/dfII/bin:/usr/cad/cadence/SPB/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/CCD/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/raid7_4/raid1_1/linux/novas/verdi/cur/bin</value>
@@ -658,15 +658,15 @@
 	</Opt>
 	<Opt name="-verilog_files">
 		<value>../00_TB/define.v</value>
-		<value>./reg_file.v</value>
-		<value>./alu.v</value>
-		<value>./core.v</value>
+		<value>alu.v</value>
+		<value>reg_file.v</value>
+		<value>core.v</value>
 	</Opt>
 	<Opt name="+vlogarg">
 		<value>+suppress+36</value>
 	</Opt>
 	<Opt name="--stime">
-		<value>12:00:54 PM on Oct 04 2024</value>
+		<value>12:21:40 AM on Oct 14 2024</value>
 	</Opt>
 	<Opt name="-blackboxdir">
 		<value>inout</value>
@@ -745,7 +745,7 @@
 <CMD_STRING> -batch -project spyglass-1.prj -goal lint/lint_rtl_enhanced -64bit</CMD_STRING>
 <Module_Perf>
 	<Module name="alu">
-		<Memory>-134976</Memory>
+		<Memory>-137712</Memory>
 		<Time>0</Time>
 	</Module>
 	<Module name="core">
@@ -753,22 +753,22 @@
 		<Time>0</Time>
 	</Module>
 	<Module name="reg_file">
-		<Memory>24</Memory>
+		<Memory>40</Memory>
 		<Time>0</Time>
 	</Module>
 </Module_Perf>
 <NOM_DESIGN>
 	<Modules>3</Modules>
-	<Instances>3382</Instances>
-	<Nets>4922</Nets>
-	<Terminals>24562</Terminals>
-	<MAX>1471</MAX>
-	<Avg>1127</Avg>
+	<Instances>3484</Instances>
+	<Nets>5394</Nets>
+	<Terminals>23735</Terminals>
+	<MAX>1527</MAX>
+	<Avg>1161</Avg>
 </NOM_DESIGN>
 <FLAT_DESIGN>
-	<Instances>4565</Instances>
-	<Nets>5739</Nets>
-	<Terminals>31455</Terminals>
+	<Instances>4667</Instances>
+	<Nets>6184</Nets>
+	<Terminals>30649</Terminals>
 	<Paths>4</Paths>
 	<Ports>107</Ports>
 	<BBOX_Inst>0</BBOX_Inst>
@@ -781,7 +781,7 @@
 	<Reduntant>0</Reduntant>
 	<Viol_Waived>0</Viol_Waived>
 </WAIVER_COUNT>
-<PEAK_MEMORY>4265348</PEAK_MEMORY>
+<PEAK_MEMORY>3855552</PEAK_MEMORY>
 <Parameters>
 	<Param name="-W416_vhdl_only">
 		<DefaultValue>no</DefaultValue>
@@ -1902,7 +1902,7 @@
 	</Rule>
 	<Rule name="Pragma_setupa">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="_cdc_save_license01">
@@ -1942,7 +1942,7 @@
 	</Rule>
 	<Rule name="PECHECK04">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="SGDC_power_est29">
@@ -1972,12 +1972,12 @@
 	</Rule>
 	<Rule name="STARC05-1.2.1.2">
 		<Time>0</Time>
-		<Memory>48</Memory>
+		<Memory>32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.4.1.5">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.5.1.7">
@@ -2013,7 +2013,7 @@
 	<Rule name="ImproperRangeIndex-ML">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Postreqs_Usage_ML">
@@ -2036,7 +2036,7 @@
 	</Rule>
 	<Rule name="SetBeforeRead-ML">
 		<Time>0</Time>
-		<Memory>112</Memory>
+		<Memory>80</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="ReserveNameSystemVerilog-ML">
@@ -2076,12 +2076,12 @@
 	</Rule>
 	<Rule name="NoAssignX-ML">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="DisallowCaseX-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="PragmaComments-ML">
@@ -2111,7 +2111,7 @@
 	</Rule>
 	<Rule name="SameControlNDataNet-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>2568</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="UnrecSynthDir-ML">
@@ -2121,7 +2121,7 @@
 	</Rule>
 	<Rule name="UnrecSynthDir-ML">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_ConstantInput-ML">
@@ -2142,12 +2142,12 @@
 	<Rule name="UndrivenInTerm-ML">
 		<RULE_PARAM name="-checkRTLCInst" value="yes"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-2568</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="UndrivenOutPort-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>2560</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="HangingNetPreReq-ML">
@@ -2173,7 +2173,7 @@
 	</Rule>
 	<Rule name="LatchFeedback">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-2568</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_RTLSchematic">
@@ -2188,17 +2188,17 @@
 	</Rule>
 	<Rule name="Prereqs_Usage">
 		<Time>0</Time>
-		<Memory>-56</Memory>
+		<Memory>-48</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W401">
 		<Time>0</Time>
-		<Memory>288</Memory>
+		<Memory>2864</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W391">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-2568</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W415">
@@ -2207,7 +2207,7 @@
 		<RULE_PARAM name="-handle_equivalent_drivers" value="yes"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W392">
@@ -2256,7 +2256,7 @@
 	<Rule name="W444">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W443">
@@ -2299,53 +2299,48 @@
 	</Rule>
 	<Rule name="W398">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W293">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W293">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287c">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287c">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287a">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287a">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>16</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W241">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W241">
 		<Time>0</Time>
 		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
-	<Rule name="W240">
+	<Rule name="W293">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W293">
+		<Time>0</Time>
+		<Memory>2544</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287c">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287c">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287a">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287a">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>32</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W241">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W241">
 		<Time>0</Time>
 		<Memory>0</Memory>
 		<Count>0</Count>
@@ -2353,6 +2348,11 @@
 	<Rule name="W240">
 		<Time>0</Time>
 		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W240">
+		<Time>0</Time>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W210">
@@ -2386,7 +2386,7 @@
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>72</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W164a">
@@ -2400,8 +2400,8 @@
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>18</Count>
+		<Memory>2544</Memory>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="W71">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
@@ -2412,7 +2412,7 @@
 	<Rule name="W71">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>24</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="preReq_functional_lint">
@@ -2483,7 +2483,7 @@
 	</Rule>
 	<Rule name="W402b">
 		<Time>0</Time>
-		<Memory>240</Memory>
+		<Memory>2816</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W438">
@@ -2505,7 +2505,7 @@
 	</Rule>
 	<Rule name="W576">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W575">
@@ -2520,12 +2520,12 @@
 	</Rule>
 	<Rule name="W502">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W499">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-2560</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W486">
@@ -2580,18 +2580,18 @@
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W352">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W416">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W343">
@@ -2629,7 +2629,7 @@
 	</Rule>
 	<Rule name="W289">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W263">
@@ -2641,22 +2641,22 @@
 	</Rule>
 	<Rule name="W245">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>40</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W238">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W218">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>-32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W216">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>2568</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W215">
@@ -2671,13 +2671,13 @@
 	</Rule>
 	<Rule name="W188">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W156">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>-1712</Memory>
+		<Memory>24</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W127">
@@ -2688,7 +2688,7 @@
 	<Rule name="W123">
 		<RULE_PARAM name="-ignoreModuleInstance" value="yes"/>
 		<Time>0</Time>
-		<Memory>-1944</Memory>
+		<Memory>72</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W116">
@@ -2700,7 +2700,7 @@
 	</Rule>
 	<Rule name="W66">
 		<Time>0</Time>
-		<Memory>1712</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W19">
@@ -2716,17 +2716,17 @@
 	</Rule>
 	<Rule name="W496a">
 		<Time>0</Time>
-		<Memory>2040</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W553">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W552">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W163">
@@ -2737,23 +2737,23 @@
 	<Rule name="W122">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W110">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W239">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="infiniteloop">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="bothedges">
@@ -2763,7 +2763,7 @@
 	</Rule>
 	<Rule name="badimplicitSM4">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>24</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="badimplicitSM2">
@@ -2808,7 +2808,7 @@
 	</Rule>
 	<Rule name="W339a">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="PrereqRCAUsage">
@@ -2818,7 +2818,7 @@
 	</Rule>
 	<Rule name="sim_race07">
 		<Time>0</Time>
-		<Memory>144</Memory>
+		<Memory>-2408</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_sim_race07">
@@ -2828,12 +2828,12 @@
 	</Rule>
 	<Rule name="sim_race02">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="checkPinConnectedToSupply">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="FlopSRConst">
@@ -2843,7 +2843,7 @@
 	</Rule>
 	<Rule name="FlopClockConstant">
 		<Time>0</Time>
-		<Memory>176</Memory>
+		<Memory>184</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.4.1v">
@@ -2858,22 +2858,22 @@
 	</Rule>
 	<Rule name="STARC05-2.10.1.4b">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.10.1.4a">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>80</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.8.1.3">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>24</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.4.1">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.1.2c">
@@ -2884,13 +2884,13 @@
 	<Rule name="STARC05-2.1.3.1">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.1.1.2">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>-64</Memory>
+		<Memory>-2576</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC-2.3.4.3">
@@ -2900,7 +2900,7 @@
 	</Rule>
 	<Rule name="STARC05-1.4.3.4">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-1.4.3.2">
@@ -2910,7 +2910,7 @@
 	</Rule>
 	<Rule name="STARC05-1.3.1.3">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.5.1.2">
@@ -2943,7 +2943,7 @@
 	<Rule name="STARC05-2.11.3.1">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.10.3.2a">
@@ -2966,7 +2966,7 @@
 	<Rule name="STARC05-2.9.1.2a">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.8.5.1">
@@ -2981,7 +2981,7 @@
 	</Rule>
 	<Rule name="STARC05-2.3.1.6">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.1.5b">
@@ -2992,7 +2992,7 @@
 	<Rule name="STARC05-2.2.3.3">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.1.5.3">
@@ -3002,7 +3002,7 @@
 	</Rule>
 	<Rule name="STARC05-2.1.4.5">
 		<Time>0</Time>
-		<Memory>-24</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-1.1.1.1">
@@ -3015,7 +3015,7 @@
 		<RULE_PARAM name="-report_flop_reset_loop" value="yes"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>1024</Memory>
+		<Memory>1216</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereq_IntClock">
@@ -3026,7 +3026,7 @@
 	<Rule name="BufClock">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>1608</Memory>
+		<Memory>4192</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="InferLatch">
@@ -3057,7 +3057,7 @@
 	</Rule>
 	<Rule name="ElabSummary">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-2568</Memory>
 		<Count>1</Count>
 	</Rule>
 	<Rule name="DetectTopDesignUnits">
@@ -3084,8 +3084,8 @@
 <VIOL_SUMMARY>
 	<FATAL>0</FATAL>
 	<ERROR>0</ERROR>
-	<WARNING>19</WARNING>
+	<WARNING>1</WARNING>
 	<INFO>3</INFO>
 </VIOL_SUMMARY>
 <Exit_code>0</Exit_code>
-<Total_time>9855</Total_time>
+<Total_time>1379</Total_time>

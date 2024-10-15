@@ -18,4 +18,5 @@
 ./define.v
 ./conv.v
 ./median.v
+./sobel.v
 ./core.v

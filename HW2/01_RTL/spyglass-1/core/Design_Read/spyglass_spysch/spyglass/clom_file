@@ -22,9 +22,9 @@ Option          Value             Origin  File                           LineNo
 -top            core              CmdLine -                              -
 -wdir           ./spyglass-1/core/Design_Read CmdLine -                              -
 <design_files>  ../00_TB/define.v APICall -                              -
-                ./alu.v           APICall -                              -
-                ./core.v          APICall -                              -
-                ./reg_file.v      APICall -                              -
+                alu.v             APICall -                              -
+                core.v            APICall -                              -
+                reg_file.v        APICall -                              -
 
 
 Rules Parameter

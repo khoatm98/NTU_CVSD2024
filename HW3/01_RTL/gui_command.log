@@ -484,3 +484,21 @@ gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'c2[7:0]' has neither asy
 gui_select_message -rule W164b -msg {LHS: 'out_data_s1_0_wait_r' width 17 is greater than RHS: '((i_data_d << 1) + (i_data_b << 1))' width 15 in assignment [Hierarchy: ':core:conv_inst@conv:u_alu@small_alu_add']}
 # Started at 21:33:57, Completed at 21:33:57 (Elapsed time = 00:00:00.009)
 
+run_goal
+# Started at 17:44:17, Completed at 17:44:45 (Elapsed time = 00:00:24.980)
+
+gui_select_message -rule STARC05-2.8.1.3 -msg {Case label '{1'bz ,1'b0 ,1'b1}' overlaps with another case label {1'b1 ,1'b0 ,1'bz}}
+# Started at 17:44:54, Completed at 17:44:54 (Elapsed time = 00:00:00.019)
+
+gui_select_message -rule STARC-2.3.4.3 -msg {Flip-flop 'c2[7:0]' has neither asynchronous set nor asynchronous reset. [Hierarchy: 'core.median_inst.u_median_filter_submodule']}
+# Started at 17:45:35, Completed at 17:45:35 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 17:52:43, Completed at 17:53:11 (Elapsed time = 00:00:25.079)
+
+gui_select_message -rule W116 -msg For\ operator\ (|),\ left\ expression:\ \"(conv_result_w\ |\ med_result_w)\"\ width\ 14\ should\ match\ right\ expression:\ \"sobel_out_valid_w\"\ width\ 1.\ [Hierarchy:\ ':core']
+# Started at 18:23:07, Completed at 18:23:07 (Elapsed time = 00:00:00.019)
+
+gui_select_message -rule W362 -msg For\ operator\ (==),\ left\ expression:\ \"cnt\"\ width\ 11\ should\ match\ right\ expression:\ \"(depth_ready_r\ <<\ 2)\"\ width\ 6\ [Hierarchy:\ ':core']
+# Started at 18:23:24, Completed at 18:23:24 (Elapsed time = 00:00:00.029)
+

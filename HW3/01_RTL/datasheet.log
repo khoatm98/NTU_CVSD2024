@@ -6,14 +6,14 @@ Technical support: email spyglass_support@synopsys.com
 Creating 'datasheet' reports using config file '/tmp/config_86318'
 ##cwd         : /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL
 ##system      : Linux cad27 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-##Date & Time : Sat Oct 12 21:33:43 2024
-Checkout 'datasheet' license at Sat Oct 12 21:33:43 2024 
-Checkout 'datasheet' license completed at Sat Oct 12 21:33:43 2024 
-Starting Generating DataSheet report at Sat Oct 12 21:33:43 2024 
+##Date & Time : Sun Oct 13 17:53:14 2024
+Checkout 'datasheet' license at Sun Oct 13 17:53:14 2024 
+Checkout 'datasheet' license completed at Sun Oct 13 17:53:14 2024 
+Starting Generating DataSheet report at Sun Oct 13 17:53:14 2024 
 Project File /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/spyglass-1.prj does not exist 
 INFO: No data found to create DataSheet report. 
-Checking in 'datasheet' license at Sat Oct 12 21:33:43 2024 
-Checking in 'datasheet' license completed at Sat Oct 12 21:33:43 2024 
+Checking in 'datasheet' license at Sun Oct 13 17:53:14 2024 
+Checking in 'datasheet' license completed at Sun Oct 13 17:53:14 2024 
 ----------------------------------------------------------------
 Report 'datasheet' creation failed.
 ----------------------------------------------------------------

@@ -1,0 +1,53 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : median
+Version: U-2022.12
+Date   : Sun Oct 13 17:25:09 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: u_median_filter_submodule/a36_r_reg
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: u_median_filter_submodule/a6_reg[3]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  median             tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  u_median_filter_submodule/a36_r_reg/CK (DFFSRX2)        0.00       0.50 r
+  u_median_filter_submodule/a36_r_reg/QN (DFFSRX2)        0.55       1.05 f
+  u_median_filter_submodule/U513/Y (NAND2X2)              0.30       1.35 r
+  u_median_filter_submodule/U538/Y (OA21X4)               0.40       1.75 r
+  u_median_filter_submodule/U208/Y (NAND2BX2)             0.37       2.12 f
+  u_median_filter_submodule/U590/Y (OAI222XL)             0.64       2.76 r
+  u_median_filter_submodule/a6_reg[3]/D (DFFHQX4)         0.00       2.76 r
+  data arrival time                                                  2.76
+
+  clock i_clk (rise edge)                                 2.58       2.58
+  clock network delay (ideal)                             0.50       3.08
+  clock uncertainty                                      -0.10       2.98
+  u_median_filter_submodule/a6_reg[3]/CK (DFFHQX4)        0.00       2.98 r
+  library setup time                                     -0.22       2.76
+  data required time                                                 2.76
+  --------------------------------------------------------------------------
+  data required time                                                 2.76
+  data arrival time                                                 -2.76
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

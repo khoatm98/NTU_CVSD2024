@@ -180,9 +180,9 @@ Option          Value             Origin  File                           LineNo
 -top            core              CmdLine -                              -
 -wdir           ./spyglass-1/core/lint/lint_rtl CmdLine -                              -
 <design_files>  ../00_TB/define.v APICall -                              -
-                ./alu.v           APICall -                              -
-                ./core.v          APICall -                              -
-                ./reg_file.v      APICall -                              -
+                alu.v             APICall -                              -
+                core.v            APICall -                              -
+                reg_file.v        APICall -                              -
 
 
 Rules Parameter
@@ -256,5 +256,17 @@ latch           SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/latch
 morelint        SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/morelint
 timing          SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/timing
 starc2002       SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/starc2002
+Audits          SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/Audits
+area            SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/area
+miscellaneous   SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/miscellaneous
+starcad-21      SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/starcad-21
+txv             SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/txv
+power_est       SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/power_est
+lowpower        5.6.1           $SPYGLASS_HOME/policies/lowpower
+dft_dsm         SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/dft_dsm
+dft             SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/dft
+constraints     SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/constraints
+const_intern1   SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/constraints
+clock-reset     SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/clock
 
 

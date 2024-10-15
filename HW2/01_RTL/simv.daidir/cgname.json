@@ -5,11 +5,17 @@
         "module",
         1
     ],
-    "testbench": [
-        "testbench",
-        "iAVhC",
+    "testbed": [
+        "testbed",
+        "yIsE3",
         "module",
-        2
+        4
+    ],
+    "reg_file": [
+        "reg_file",
+        "h6AbR",
+        "module",
+        5
     ],
     "...MASTER...": [
         "SIM",

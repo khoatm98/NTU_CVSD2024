@@ -1,5 +1,5 @@
 ##spyglass_version: SpyGlass_vT-2022.06
-##date: Fri Oct  4 12:07:41 2024
+##date: Mon Oct 14 00:45:22 2024
 ##user: r2k41036
 ##cwd: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL
 ##lang: verilog+vhdl
@@ -926,21 +926,21 @@
 ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/Design_Read/spyglass_reports/SpyGlass/elab_summary.rpt@@0@@1@@2@@Please refer file './spyglass-1/core/Design_Read/spyglass_reports/SpyGlass/elab_summary.rpt' for elab summary report
 ##sde_property: msg_label DEFAULT
 ##sde_property: msg_id DEFAULT
-##files_verilog: ./core.v ./reg_file.v ./alu.v
+##files_verilog: core.v reg_file.v alu.v
 ##sde_property: file ../00_TB/define.v -id 1
-##sde_property: file ./reg_file.v -id 2 -inactiveList slc 8 8 1
-##sde_property: file ./alu.v -id 3 -inactiveList slc 23 23 1 slc 30 33 1 slc 35 35 1 slc 57 58 1 slc 62 62 1 slc 83 83 1 slc 118 118 1 slc 123 123 1 slc 142 142 1 slc 159 159 1 slc 163 163 1 slc 167 167 1 slc 188 190 1 slc 216 216 1 slc 221 221 1 slc 226 226 1 slc 235 235 1 slc 298 298 1 slc 355 355 1 slc 381 381 1 slc 396 396 1 slc 400 400 1 slc 405 405 1 slc 408 408 1 slc 413 413 1
-##sde_property: file ./core.v -id 4 -inactiveList slc 1 1 1 slc 8 8 1 slc 12 12 1 slc 26 29 1 slc 32 32 1 slc 39 39 1 slc 50 50 1 slc 95 98 1 mlc 136 52 136 0 mlc 137 52 137 0 mlc 138 52 138 0 slc 142 142 1 slc 148 148 1 slc 154 154 1 slc 160 160 1 slc 166 166 1 mlc 207 52 207 0 mlc 208 52 208 0 mlc 209 52 209 0 slc 243 246 1 slc 275 275 1 slc 305 308 1 slc 345 345 1 slc 352 352 1
-#span core ./core.v 1 362
+##sde_property: file alu.v -id 2 -inactiveList slc 11 11 1 slc 16 16 1 slc 23 24 1 slc 42 42 1 slc 47 47 1 slc 49 49 1 slc 71 71 1 slc 109 109 1 slc 114 114 1 slc 136 136 1 slc 161 161 1 slc 220 220 1 slc 243 243 1 slc 250 250 1 slc 254 254 1 slc 262 262 1 slc 329 329 1 slc 347 347 1 slc 373 373 1 slc 392 392 1 slc 396 396 1 slc 401 401 1 slc 404 404 1 slc 414 414 1 slc 457 458 1
+##sde_property: file reg_file.v -id 3 -inactiveList slc 8 8 1
+##sde_property: file core.v -id 4 -inactiveList slc 1 1 1 slc 8 8 1 slc 12 12 1 slc 28 31 1 slc 34 34 1 slc 41 41 1 slc 51 51 1 slc 94 97 1 slc 154 154 1 mlc 160 52 160 0 mlc 161 52 161 0 mlc 162 52 162 0 slc 166 166 1 slc 172 172 1 slc 178 178 1 slc 184 184 1 slc 190 190 1 mlc 231 52 231 0 mlc 232 52 232 0 mlc 233 52 233 0 slc 244 244 1 slc 249 249 1 slc 254 257 1 slc 287 287 1 slc 319 322 1 slc 353 353 1
+#span core core.v 1 363
 #rtl_idmap core 1 -lang 1
-#span reg_file ./reg_file.v 1 34
+#span reg_file reg_file.v 1 34
 #rtl_idmap reg_file 2 -lang 1
-#span alu ./alu.v 1 461
+#span alu alu.v 1 462
 #rtl_idmap alu 3 -lang 1
 #greybox core 15
 #greybox reg_file 15
 #greybox alu 15
-DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@./core.v@@1@@1@@2@@Module core is a top level design unit
+DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@core.v@@1@@1@@2@@Module core is a top level design unit
 ##sde_property: violation -duId 1 
 #rtl_top_modules core
 #childElab core core -elabDuId 1 u_int_reg_file reg_file u_float_reg_file reg_file u_alu alu

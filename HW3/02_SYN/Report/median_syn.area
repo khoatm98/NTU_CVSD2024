@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : median
+Version: U-2022.12
+Date   : Sun Oct 13 17:25:09 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
+
+Number of ports:                          148
+Number of nets:                          2035
+Number of cells:                         1826
+Number of combinational cells:           1369
+Number of sequential cells:               443
+Number of macros/black boxes:               0
+Number of buf/inv:                        409
+Number of references:                      82
+
+Combinational area:              16352.751602
+Buf/Inv area:                     3466.090792
+Noncombinational area:           14996.528728
+Macro/Black Box area:                0.000000
+Net Interconnect area:          235387.876892
+
+Total cell area:                 31349.280330
+Total area:                     266737.157222
+1

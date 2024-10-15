@@ -1,14 +1,12 @@
 ##Data Import Section
 
-read_file -type sourcelist rtl.f
+read_file -type verilog ../00_TB/define.v
 #BackRefFile:N.A. #LineNumber:1
-read_file -type hdl ../00_TB/define.v
+read_file -type verilog alu.v
 #BackRefFile:N.A. #LineNumber:1
-read_file -type hdl ./reg_file.v
+read_file -type verilog reg_file.v
 #BackRefFile:N.A. #LineNumber:1
-read_file -type hdl ./alu.v
-#BackRefFile:N.A. #LineNumber:1
-read_file -type hdl ./core.v
+read_file -type verilog core.v
 #BackRefFile:N.A. #LineNumber:1
 
 ##Common Options Section

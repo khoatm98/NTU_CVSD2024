@@ -9,6 +9,12 @@ core,Top_Level,i_in_data,INPUT,8,[7:0],-,-
 core,Top_Level,o_in_ready,OUTPUT,1,-,-,-
 core,Top_Level,o_out_valid,OUTPUT,1,-,-,-
 core,Top_Level,o_out_data,OUTPUT,14,[13:0],-,-
+sobel_nms,Black Box,i_clk,INPUT,1,-,-,-
+sobel_nms,Black Box,i_rst_n,INPUT,1,-,-,-
+sobel_nms,Black Box,i_data,INPUT,32,-,-,-
+sobel_nms,Black Box,i_isFirst,INPUT,1,-,-,-
+sobel_nms,Black Box,o_out_valid,INPUT,1,-,-,-
+sobel_nms,Black Box,o_out_data,INPUT,14,-,-,-
 sram_512x8,Black Box,Q,INPUT,8,-,-,-
 sram_512x8,Black Box,CLK,INPUT,1,-,-,-
 sram_512x8,Black Box,CEN,INPUT,1,-,-,-

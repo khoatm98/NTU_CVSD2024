@@ -1,5 +1,5 @@
 ##spyglass_version: SpyGlass_vT-2022.06
-##date: Fri Oct  4 14:45:04 2024
+##date: Mon Oct 14 00:44:25 2024
 ##user: r2k41036
 ##cwd: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL
 ##lang: verilog+vhdl
@@ -1662,98 +1662,26 @@ CMD_overloadrule01@@OverloadRuleUnused@@Warning@@/home/raid7_4/raid1_1/linux/syn
 ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/lint/lint_rtl_enhanced/spyglass_reports/SpyGlass/elab_summary.rpt@@0@@1@@2@@Please refer file './spyglass-1/core/lint/lint_rtl_enhanced/spyglass_reports/SpyGlass/elab_summary.rpt' for elab summary report
 ##sde_property: msg_label DEFAULT
 ##sde_property: msg_id DEFAULT
-##files_verilog: ./core.v ./reg_file.v ./alu.v
+##files_verilog: core.v reg_file.v alu.v
 ##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/00_TB/define.v -id 1
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/reg_file.v -id 2 -inactiveList slc 8 8 1
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/alu.v -id 3 -inactiveList slc 23 23 1 slc 30 33 1 slc 35 35 1 slc 50 51 1 slc 53 53 1 slc 74 74 1 slc 109 109 1 slc 114 114 1 slc 133 133 1 slc 150 150 1 slc 154 154 1 slc 158 158 1 mlc 168 6 185 0 slc 232 232 1 slc 255 255 1 slc 259 259 1 slc 263 263 1 slc 271 271 1 slc 334 334 1 slc 390 390 1 slc 414 414 1 slc 429 429 1 slc 433 433 1 slc 438 438 1 slc 441 441 1 slc 446 446 1
-##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/core.v -id 4 -inactiveList slc 1 1 1 slc 8 8 1 slc 12 12 1 slc 27 30 1 slc 33 33 1 slc 40 40 1 slc 50 50 1 slc 95 98 1 mlc 136 52 136 0 mlc 137 52 137 0 mlc 138 52 138 0 slc 142 142 1 slc 148 148 1 slc 154 154 1 slc 160 160 1 slc 166 166 1 mlc 207 52 207 0 mlc 208 52 208 0 mlc 209 52 209 0 slc 243 246 1 slc 272 272 1 slc 304 307 1 slc 344 344 1 slc 351 351 1
-#span core ./core.v 1 361
+##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/alu.v -id 2 -inactiveList slc 11 11 1 slc 16 16 1 slc 23 24 1 slc 42 42 1 slc 47 47 1 slc 49 49 1 slc 71 71 1 slc 109 109 1 slc 114 114 1 slc 136 136 1 slc 161 161 1 slc 220 220 1 slc 243 243 1 slc 250 250 1 slc 254 254 1 slc 262 262 1 slc 329 329 1 slc 347 347 1 slc 373 373 1 slc 392 392 1 slc 396 396 1 slc 401 401 1 slc 404 404 1 slc 414 414 1 slc 457 458 1
+##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/reg_file.v -id 3 -inactiveList slc 8 8 1
+##sde_property: file /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW2/01_RTL/core.v -id 4 -inactiveList slc 1 1 1 slc 8 8 1 slc 12 12 1 slc 28 31 1 slc 34 34 1 slc 41 41 1 slc 51 51 1 slc 94 97 1 slc 154 154 1 mlc 160 52 160 0 mlc 161 52 161 0 mlc 162 52 162 0 slc 166 166 1 slc 172 172 1 slc 178 178 1 slc 184 184 1 slc 190 190 1 mlc 231 52 231 0 mlc 232 52 232 0 mlc 233 52 233 0 slc 244 244 1 slc 249 249 1 slc 254 257 1 slc 287 287 1 slc 319 322 1 slc 353 353 1
+#span core core.v 1 363
 #rtl_idmap core 1 -lang 1
-#span reg_file ./reg_file.v 1 34
+#span reg_file reg_file.v 1 34
 #rtl_idmap reg_file 2 -lang 1
-#span alu ./alu.v 1 494
+#span alu alu.v 1 462
 #rtl_idmap alu 3 -lang 1
 #greybox core 15
 #greybox reg_file 15
 #greybox alu 15
-DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@./core.v@@1@@1@@2@@Module core is a top level design unit
+DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@core.v@@1@@1@@2@@Module core is a top level design unit
 ##sde_property: violation -duId 1 
 #rtl_top_modules core
 ##file_label: SPG_CHECKSUM_RPT_FILE -file ./spyglass-1/core/lint/lint_rtl_enhanced/spyglass_reports/SpyGlass/checksum.rpt -policy SpyGlass -external
-W164a@@@@Warning@@./core.v@@132@@1@@10@@LHS: 'ALUPCRes_i_w' width 32 is less than RHS: '(curr_pc + (imm_r << 1))' width 33 in assignment [Hierarchy: ':core']
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
 ReportPortInfo-ML@@@@Info@@./spyglass-1/core/lint/lint_rtl_enhanced/spyglass_reports/morelint/ReportPortInfo@@1@@1@@2@@Port Information for top design unit has been generated. For details see report ReportPortInfo.rpt
 ##sde_property: violation -elabDuId 1 
-W164a@@@@Warning@@./alu.v@@59@@1@@10@@LHS: 'result_wait_r' width 32 is less than RHS: '(i_data_a + i_data_b)' width 33 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@66@@1@@10@@LHS: 'result_wait_r' width 32 is less than RHS: '(i_data_a - i_data_b)' width 33 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@73@@1@@10@@LHS: 'result_wait_r' width 32 is less than RHS: '(i_data_a + {{ 20{ i_imm[11]} }  ,i_imm})' width 33 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@81@@1@@10@@LHS: 'result_wait_r' width 32 is less than RHS: '(i_data_a + {{ 20{ i_imm[11]} }  ,i_imm})' width 33 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@88@@1@@10@@LHS: 'result_wait_r' width 32 is less than RHS: '(i_data_a + {{ 20{ i_imm[11]} }  ,i_imm})' width 33 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@120@@1@@10@@LHS: 'result_wait_r' width 32 is less than RHS: '(i_data_a + {{ 20{ i_imm[11]} }  ,i_imm})' width 33 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@127@@1@@10@@LHS: 'result_wait_r' width 32 is less than RHS: '(i_data_a + {{ 20{ i_imm[11]} }  ,i_imm})' width 33 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@342@@1@@10@@LHS: 'mantissa_greater' width 48 is less than RHS: '(mantissa_a - (mantissa_b >> (exp_a - exp_b)))' width 49 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@347@@1@@10@@LHS: 'mantissa_greater' width 48 is less than RHS: '(mantissa_b - (mantissa_a >> (exp_b - exp_a)))' width 49 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@353@@1@@10@@LHS: 'mantissa_greater' width 48 is less than RHS: '(mantissa_a - mantissa_b)' width 49 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@358@@1@@10@@LHS: 'mantissa_greater' width 48 is less than RHS: '(mantissa_b - mantissa_a)' width 49 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@367@@1@@10@@LHS: 'leading_zeros' width 5 is less than RHS: 'count_leading_zeros48' width 6 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@374@@1@@10@@LHS: 'exp_greater' width 8 is less than RHS: '(exp_greater + mantissa_greater[((FRAC_W * 2) + 1)])' width 9 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@398@@1@@10@@LHS: 'mantissa_greater' width 48 is less than RHS: '(mantissa_a + (mantissa_b >> (exp_a - exp_b)))' width 49 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@403@@1@@10@@LHS: 'mantissa_greater' width 48 is less than RHS: '(mantissa_b + (mantissa_a >> (exp_b - exp_a)))' width 49 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@410@@1@@10@@LHS: 'leading_zeros' width 5 is less than RHS: 'count_leading_zeros48' width 6 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
-W164a@@@@Warning@@./alu.v@@411@@1@@10@@LHS: 'exp_greater' width 8 is less than RHS: '(exp_greater + mantissa_greater[((FRAC_W * 2) + 1)])' width 9 in assignment [Hierarchy: ':core:u_alu@alu']
-##sde_property: violation -ruleLang 1 -duId 3 -elabDuId 3 
-##sde_property: msg_label Assign_Width_Mismatch
-##sde_property: msg_id Assign_Width_Mismatch
 #child alu alu alu -elabDuId 3
 #child reg_file reg_file reg_file -elabDuId 2
 #child core core core -elabDuId 1 u_int_reg_file reg_file u_float_reg_file reg_file u_alu alu
@@ -1762,12 +1690,12 @@ W164a@@@@Warning@@./alu.v@@411@@1@@10@@LHS: 'exp_greater' width 8 is less than R
 #precompiled_dulist
 ##warning_total_suppressed_count:         0
 ##error_total_suppressed_count:         0
-##warning_total_reported_count:        22
+##warning_total_reported_count:         4
 ##error_total_reported_count:         0
 ##total_warning_waived_viol_count:         0
 ##total_error_waived_viol_count:         0
-##totalGeneratedCount:        22
+##totalGeneratedCount:         4
 ##totalWaivedViolationCount:         0
-##totalReportCount:        22
+##totalReportCount:         4
 ##totalSuppressedCount:         0
 ##Active_Rules  AutomaticFuncTask-ML BlockHeader BufClock CheckDelayTimescale-ML CombLoop DisallowCaseX-ML DuplicateCaseLabel-ML FlopClockConstant HdlLibDuCheck_03 ImproperRangeIndex-ML InstPortConnType-ML LatchFeedback NoAssignX-ML NoFeedThrus-ML NoGenLabel-ML NoXInCase-ML ParamWidthMismatch-ML PragmaComments-ML ReportPortInfo-ML ReserveName ReserveNameSystemVerilog-ML STARC-2.3.4.3 STARC05-1.1.1.1 STARC05-1.2.1.2 STARC05-1.3.1.3 STARC05-1.4.3.2 STARC05-2.1.1.2 STARC05-2.1.3.1 STARC05-2.1.4.5 STARC05-2.1.5.3 STARC05-2.1.6.5 STARC05-2.10.1.4a STARC05-2.10.1.4b STARC05-2.10.2.3 STARC05-2.10.3.2a STARC05-2.11.3.1 STARC05-2.2.3.1 STARC05-2.2.3.3 STARC05-2.3.1.2c STARC05-2.3.1.5b STARC05-2.3.1.6 STARC05-2.3.4.1 STARC05-2.3.4.1v STARC05-2.4.1.5 STARC05-2.5.1.2 STARC05-2.5.1.7 STARC05-2.5.1.9 STARC05-2.8.1.3 STARC05-2.8.1.5 STARC05-2.8.5.1 STARC05-2.9.1.2a STARC05-2.9.1.2b SameControlNDataNet-ML SetBeforeRead-ML SigAssignZ-ML TristatePort-ML TristateSig-ML UndrivenInTerm-ML UndrivenNet-ML UndrivenOutPort-ML UnrecSynthDir-ML W110 W110a W116 W122 W123 W127 W156 W163 W164a W164b W167 W188 W19 W193 W210 W215 W216 W218 W238 W239 W240 W241 W245 W263 W287a W287c W289 W292 W293 W314 W316 W317 W336 W337 W339 W342 W343 W352 W362 W391 W392 W398 W401 W402b W414 W415 W416 W421 W422 W423 W424 W426 W438 W442a W442b W442c W442f W443 W444 W450L W464 W467 W479 W480 W481a W481b W486 W494 W496a W496b W499 W502 W505 W527 W552 W553 W561 W575 W576 W66 W71 badimplicitSM1 badimplicitSM2 badimplicitSM4 bothedges infiniteloop mixedsenselist sim_race02 sim_race07

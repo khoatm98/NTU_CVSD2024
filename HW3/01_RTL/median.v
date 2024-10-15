@@ -19,7 +19,6 @@ reg [7:0] med_e_wait_r[15:0];
 wire [7:0] out_data_w;
 reg [16:0] out_data_wait_r;
 reg [7:0]  cnt;
-reg [2:0] out_cnt;
 reg [1:0] cs, ns;
 
 reg [7:0] data_a_r;
@@ -132,7 +131,7 @@ end
 generate
 	for(i = 0; i < 16; i = i + 1) begin:conv_e_read
 		always @(*) begin
-			if(cnt[1:0] == i>>2 && cs <= CALC)
+			if(cnt[1:0] == i[3:2] && cs <= CALC)
 				med_e_wait_r[i] = i_data[{i[1:0],3'b000} + 7 -: 8];
 			else
 				med_e_wait_r[i] = med_e_r[i];
@@ -173,16 +172,6 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	end
 	else begin
 		cnt <= cnt + 1;
-	end
-
-end
-
-always @ (posedge i_clk or negedge i_rst_n) begin
-	if(~i_rst_n) begin
-		out_cnt <= 0;
-	end
-	else begin
-		out_cnt <= cs == OUTPUT ? out_cnt + 1 : 0;
 	end
 
 end
@@ -298,123 +287,122 @@ module median_filter_submodule(
 		end
 	end
 	
-	always @(posedge clk) begin
-		case({a14_r,a17_r,a47_r})
-			3'b000: begin //3 2 1
-				a1 <= p1_r;
-				a4 <= p4_r;
-				a7 <= p7_r;
-			end
-			3'b001: begin //3 1 2
-				a1 <= p1_r;
-				a4 <= p7_r;
-				a7 <= p4_r;
-			end
-			3'b011:  begin //2 1 3
-				a1 <= p7_r;
-				a4 <= p1_r;
-				a7 <= p4_r;
-			end
-			3'b100:  begin //2 3 1
-				a1 <= p4_r;
-				a4 <= p1_r;
-				a7 <= p7_r;
-			end
-			3'b110: begin //1 3 2
-				a1 <= p4_r;
-				a4 <= p7_r;
-				a7 <= p1_r;
-			end
-			3'b111: begin //1 2 3
-				a1 <= p7_r;
-				a4 <= p4_r;
-				a7 <= p1_r;
-			end
-			default: begin
-				a1 <= p1_r;
-				a4 <= p4_r;
-				a7 <= p7_r;
-			end
-		endcase
-		
-		case({a25_r,a28_r,a58_r})
-			3'b000: begin //3 2 1
-				a2 <= p2_r;
-				a5 <= p5_r;
-				a8 <= p8_r;
-			end
-			3'b001: begin //3 1 2
-				a2 <= p2_r;
-				a5 <= p8_r;
-				a8 <= p5_r;
-			end
-			3'b011:  begin //2 1 3
-				a2 <= p8_r;
-				a5 <= p2_r;
-				a8 <= p5_r;
-			end
-			3'b100:  begin //2 3 1
-				a2 <= p5_r;
-				a5 <= p2_r;
-				a8 <= p8_r;
-			end
-			3'b110: begin //1 3 2
-				a2 <= p5_r;
-				a5 <= p8_r;
-				a8 <= p2_r;
-			end
-			3'b111: begin //1 2 3
-				a2 <= p8_r;
-				a5 <= p5_r;
-				a8 <= p2_r;
-			end
-			default: begin
-				a2 <= p2_r;
-				a5 <= p5_r;
-				a8 <= p8_r;
-			end
-		endcase
-		case({a36_r,a39_r,a69_r})
-			3'b000: begin //3 2 1
-				a3 <= p3_r;
-				a6 <= p6_r;
-				a9 <= p9_r;
-			end
-			3'b001: begin //3 1 2
-				a3 <= p3_r;
-				a6 <= p9_r;
-				a9 <= p6_r;
-			end
-			3'b011:  begin //2 1 3
-				a3 <= p9_r;
-				a6 <= p3_r;
-				a9 <= p6_r;
-			end
-			3'b100:  begin //2 3 1
-				a3 <= p6_r;
-				a6 <= p3_r;
-				a9 <= p9_r;
-			end
-			3'b110: begin //1 3 2
-				a3 <= p6_r;
-				a6 <= p9_r;
-				a9 <= p3_r;
-			end
-			3'b111: begin //1 2 3
-				a3 <= p9_r;
-				a6 <= p6_r;
-				a9 <= p3_r;
-			end
-			default: begin
-				a3 <= p3_r;
-				a6 <= p6_r;
-				a9 <= p9_r;
-			end
-		endcase
+	always @(posedge clk or negedge rst) begin
+		if(~rst) begin
+			a1 <= 0;
+			a2 <= 0;
+			a3 <= 0;
+			a4 <= 0;
+			a5 <= 0;
+			a6 <= 0;
+			a7 <= 0;
+			a8 <= 0;
+			a9 <= 0;
+			
+		end
+		else begin
+			case({a14_r,a17_r,a47_r})
+				3'b001: begin //3 1 2
+					a1 <= p1_r;
+					a4 <= p7_r;
+					a7 <= p4_r;
+				end
+				3'b011:  begin //2 1 3
+					a1 <= p7_r;
+					a4 <= p1_r;
+					a7 <= p4_r;
+				end
+				3'b100:  begin //2 3 1
+					a1 <= p4_r;
+					a4 <= p1_r;
+					a7 <= p7_r;
+				end
+				3'b110: begin //1 3 2
+					a1 <= p4_r;
+					a4 <= p7_r;
+					a7 <= p1_r;
+				end
+				3'b111: begin //1 2 3
+					a1 <= p7_r;
+					a4 <= p4_r;
+					a7 <= p1_r;
+				end
+				default: begin
+					a1 <= p1_r;
+					a4 <= p4_r;
+					a7 <= p7_r;
+				end
+			endcase
+			
+			case({a25_r,a28_r,a58_r})
+				3'b001: begin //3 1 2
+					a2 <= p2_r;
+					a5 <= p8_r;
+					a8 <= p5_r;
+				end
+				3'b011:  begin //2 1 3
+					a2 <= p8_r;
+					a5 <= p2_r;
+					a8 <= p5_r;
+				end
+				3'b100:  begin //2 3 1
+					a2 <= p5_r;
+					a5 <= p2_r;
+					a8 <= p8_r;
+				end
+				3'b110: begin //1 3 2
+					a2 <= p5_r;
+					a5 <= p8_r;
+					a8 <= p2_r;
+				end
+				3'b111: begin //1 2 3
+					a2 <= p8_r;
+					a5 <= p5_r;
+					a8 <= p2_r;
+				end
+				default: begin
+					a2 <= p2_r;
+					a5 <= p5_r;
+					a8 <= p8_r;
+				end
+			endcase
+			case({a36_r,a39_r,a69_r})
+				3'b001: begin //3 1 2
+					a3 <= p3_r;
+					a6 <= p9_r;
+					a9 <= p6_r;
+				end
+				3'b011:  begin //2 1 3
+					a3 <= p9_r;
+					a6 <= p3_r;
+					a9 <= p6_r;
+				end
+				3'b100:  begin //2 3 1
+					a3 <= p6_r;
+					a6 <= p3_r;
+					a9 <= p9_r;
+				end
+				3'b110: begin //1 3 2
+					a3 <= p6_r;
+					a6 <= p9_r;
+					a9 <= p3_r;
+				end
+				3'b111: begin //1 2 3
+					a3 <= p9_r;
+					a6 <= p6_r;
+					a9 <= p3_r;
+				end
+				default: begin
+					a3 <= p3_r;
+					a6 <= p6_r;
+					a9 <= p9_r;
+				end
+			endcase
+		end
 	end
 	
 	// sorted vertically
-	reg [7:0] b1, b2, b3, b4, b5, b6, b7, b8, b9;
+	reg [7:0] b1, b5, b9;
 	wire b13;
 	wire b12;
 	wire b23;
@@ -437,82 +425,71 @@ module median_filter_submodule(
 	assign b89 = (a8 < a9);
 	
 
-	always @(posedge clk) begin
-		case({b12,b13,b23})
-			3'b000: begin //3 2 1
-				b1 <= a3;
-			end
-			3'b001: begin //3 1 2
-				b1 <= a2;
-			end
-			3'b011:  begin //2 1 3
-				b1 <= a2;
-			end
-			3'b100:  begin //2 3 1
-				b1 <= a3;
-			end
-			3'b110: begin //1 3 2
-				b1 <= a1;
-			end
-			3'b111: begin //1 2 3
-				b1 <= a1;
-			end
-			default: begin
-				b1 <= a1;
-			end
-		endcase
-		
-		case({b45,b46,b56})
-			3'b000: begin //3 2 1
-				b5 <= a5;
-			end
-			3'b001: begin //3 1 2
-				b5 <= a6;
-			end
-			3'b011:  begin //2 1 3
-				b5 <= a4;
-			end
-			3'b100:  begin //2 3 1
-				b5 <= a4;
-			end
-			3'b110: begin //1 3 2
-				b5 <= a6;
-			end
-			3'b111: begin //1 2 3
-				b5 <= a5;
-			end
-			default: begin
-				b5 <= a5;
-			end
-		endcase
-		
-		case({b78,b79,b89})
-			3'b000: begin //3 2 1
-				b9 <= a7;
-			end
-			3'b001: begin //3 1 2
-				b9 <= a7;
-			end
-			3'b011:  begin //2 1 3
-				b9 <= a9;
-			end
-			3'b100:  begin //2 3 1
-				b9 <= a8;
-			end
-			3'b110: begin //1 3 2
-				b9 <= a8;
-			end
-			3'b111: begin //1 2 3
-				b9 <= a9;
-			end
-			default: begin
-				b9 <= a7;
-			end
-		endcase
+	always @(posedge clk or negedge rst) begin
+		if(~rst) begin
+			b1 <= 0;
+			b5 <= 0;
+			b9 <= 0;
+			
+		end else begin
+			casez({b12,b13,b23})
+				3'b000: begin //3 2 1
+					b1 <= a3;
+				end
+				3'b0z1: begin //3 1 2
+					b1 <= a2;
+				end
+				3'b011:  begin //2 1 3
+					b1 <= a2;
+				end
+				3'b100:  begin //2 3 1
+					b1 <= a3;
+				end
+				default: begin
+					b1 <= a1;
+				end
+			endcase
+			
+			case({b45,b46,b56})
+				3'b001: begin //3 1 2
+					b5 <= a6;
+				end
+				3'b011:  begin //2 1 3
+					b5 <= a4;
+				end
+				3'b100:  begin //2 3 1
+					b5 <= a4;
+				end
+				3'b110: begin //1 3 2
+					b5 <= a6;
+				end
+				default: begin
+					b5 <= a5;
+				end
+			endcase
+			
+			case({b78,b79,b89})
+				3'b011:  begin //2 1 3
+					b9 <= a9;
+				end
+				3'b100:  begin //2 3 1
+					b9 <= a8;
+				end
+				3'b110: begin //1 3 2
+					b9 <= a8;
+				end
+				3'b111: begin //1 2 3
+					b9 <= a9;
+				end
+				default: begin
+					b9 <= a7;
+				end
+			endcase
+		end
 	end
 
 	// sorted diagonally
-	reg [7:0] c1, c2, c3;
+	reg [7:0] c2;
 	wire c13;
 	wire c12;
 	wire c23;
@@ -522,31 +499,28 @@ module median_filter_submodule(
 	assign c23 = (b5 < b9);
 
 
-	always @(posedge clk) begin
-		case({c12,c13,c23})
-			3'b000: begin //3 2 1
-				c2 <= b5;
-			end
-			3'b001: begin //3 1 2
-				c2 <= b9;
-			end
-			3'b011:  begin //2 1 3
-				c2 <= b1;
-			end
-			3'b100:  begin //2 3 1
-				c2 <= b1;
-			end
-			3'b110: begin //1 3 2
-				c2 <= b9;
-			end
-			3'b111: begin //1 2 3
-				c2 <= b5;
-			end
-			default: begin
-				c2 <= b5;
-			end
-		endcase
-		
+	always @(posedge clk or negedge rst) begin
+		if(~rst) begin
+			c2 <= 0;
+		end else begin
+			case({c12,c13,c23})
+				3'b001: begin //3 1 2
+					c2 <= b9;
+				end
+				3'b011:  begin //2 1 3
+					c2 <= b1;
+				end
+				3'b100:  begin //2 3 1
+					c2 <= b1;
+				end
+				3'b110: begin //1 3 2
+					c2 <= b9;
+				end
+				default: begin
+					c2 <= b5;
+				end
+			endcase
+		end
 		
 	end
 	

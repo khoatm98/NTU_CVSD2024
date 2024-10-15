@@ -79,6 +79,8 @@ Compiling source file ./flist.sv
 Opening include file ../01_RTL/define.v
 Opening include file ../01_RTL/conv.v
 Opening include file ../01_RTL/median.v
+Opening include file ../01_RTL/sobel.v
+Warning:  ../01_RTL/sobel.v:66: the undeclared symbol 'sobel_result' assumed to have the default net type, which is 'wire'. (VER-936)
 Opening include file ../01_RTL/core.v
 Presto compilation completed successfully.
 Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
@@ -96,99 +98,116 @@ Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
   Loading link library 'sram_4096x8'
   Loading link library 'gtech'
 Running PRESTO HDLC
-Warning:  ../01_RTL/core.v:189: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:191: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:192: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:203: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:211: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:212: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:213: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:356: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:369: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:382: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:383: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:384: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:385: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/core.v:590: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:595: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:600: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../01_RTL/core.v:465: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ../01_RTL/core.v:206: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:208: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:209: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:220: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../01_RTL/core.v:394: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/core.v:409: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/core.v:425: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/core.v:433: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/core.v:441: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/core.v:449: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/core.v:671: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:674: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:675: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:676: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:677: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:681: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:684: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:685: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:686: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:687: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:691: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:693: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:694: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:695: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:696: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:525: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
 
-Statistics for case statements in always block at line 221 in file
+Statistics for case statements in always block at line 233 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           222            |    auto/auto     |
-|           224            |    auto/auto     |
+|           234            |    auto/auto     |
+|           236            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 255 in file
+Statistics for case statements in always block at line 267 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           256            |    auto/auto     |
-|           258            |    auto/auto     |
+|           268            |    auto/auto     |
+|           270            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 277 in file
+Statistics for case statements in always block at line 306 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           278            |    auto/auto     |
+|           310            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 325 in file
+Statistics for case statements in always block at line 352 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           327            |    auto/auto     |
-|           381            |     auto/no      |
+|           353            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 411 in file
+Statistics for case statements in always block at line 362 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           412            |    auto/auto     |
+|           364            |    auto/auto     |
+|           422            |     auto/no      |
 ===============================================
 
-Statistics for case statements in always block at line 432 in file
+Statistics for case statements in always block at line 475 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           433            |    auto/auto     |
-|           438            |    auto/auto     |
+|           476            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 486 in file
+Statistics for case statements in always block at line 492 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           490            |    auto/auto     |
+|           493            |    auto/auto     |
+|           498            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 580 in file
+Statistics for case statements in always block at line 548 in file
 	'../01_RTL/core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           587            |    auto/auto     |
+|           552            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 657 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           668            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine core line 142 in file
+	in routine core line 157 in file
 		'../01_RTL/core.v'.
 ========================================================================================
 |        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ========================================================================================
-|       y_forecase_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     sobel_nms_done_r_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |     conv_calc_done_r_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |        med_done_r_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 | sram_select_forecase_0_r_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
@@ -199,22 +218,33 @@ Inferred memory devices in process
 | sram_select_forecase_2_r_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
 | sram_select_forecase_3_r_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
 | sram_select_forecase_3_r_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       y_forecase_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
 ========================================================================================
 
 Inferred memory devices in process
-	in routine core line 473 in file
+	in routine core line 306 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|    pre_state_reg    | Flip-flop |   4   |  Y  | N  | N  | Y  | N  | N  | N  |
-|    pre_state_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  sram_select_r_reg  | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|  sram_select_r_reg  | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 533 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pre_state_reg    | Flip-flop |   6   |  Y  | N  | N  | Y  | N  | N  | N  |
+|    pre_state_reg    | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
 |   curr_state_reg    | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
 |   curr_state_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 486 in file
+	in routine core line 548 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -223,7 +253,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 501 in file
+	in routine core line 563 in file
 		'../01_RTL/core.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -233,7 +263,7 @@ Inferred memory devices in process
 =================================================================================
 
 Inferred memory devices in process
-	in routine core line 511 in file
+	in routine core line 573 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -242,7 +272,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 518 in file
+	in routine core line 580 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -254,19 +284,22 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 531 in file
+	in routine core line 593 in file
 		'../01_RTL/core.v'.
 ====================================================================================
 |      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ====================================================================================
+| sram_select3_delay_r_reg | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
 | sram_select3_delay_r_reg | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select_delay_r_reg  | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
 | sram_select_delay_r_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select1_delay_r_reg | Flip-flop |   3   |  Y  | N  | N  | Y  | N  | N  | N  |
 | sram_select1_delay_r_reg | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
-| sram_select2_delay_r_reg | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_select2_delay_r_reg | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
 ====================================================================================
 
 Inferred memory devices in process
-	in routine core line 554 in file
+	in routine core line 627 in file
 		'../01_RTL/core.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -276,73 +309,79 @@ Inferred memory devices in process
 =================================================================================
 
 Inferred memory devices in process
-	in routine core line 565 in file
+	in routine core line 638 in file
 		'../01_RTL/core.v'.
-=====================================================================================
-|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-=====================================================================================
-| med_isFirst_signal_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-| conv_isFirst_signal_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|   conv_input_data_r_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
-|   med_input_data_r_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
-=====================================================================================
+======================================================================================
+|       Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+======================================================================================
+|   sobel_input_data_r_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| conv_isFirst_signal_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   conv_input_data_r_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    med_input_data_r_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  med_isFirst_signal_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| sobel_isFirst_signal_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+======================================================================================
 
 Inferred memory devices in process
-	in routine core line 580 in file
+	in routine core line 657 in file
 		'../01_RTL/core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|       z_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     y_m1_r_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
 |       x_r_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
-|       y_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       y_r_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       z_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     x_p1_r_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     x_m1_r_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     x_p2_r_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine core line 609 in file
+	in routine core line 704 in file
 		'../01_RTL/core.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =================================================================================
-| sram_wen_ready_r_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  sram_data_out_r_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 | sram_addr_ready_r_reg | Flip-flop |  36   |  Y  | N  | Y  | N  | N  | N  | N  |
 | sram_data_ready_r_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 | sram_cen_ready_r_reg  | Flip-flop |   4   |  Y  | N  | N  | Y  | N  | N  | N  |
+| sram_wen_ready_r_reg  | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
 =================================================================================
 Statistics for MUX_OPs
 ======================================================
 | block name/line  | Inputs | Outputs | # sel inputs |
 ======================================================
-|     core/310     |   4    |    8    |      2       |
-|     core/310     |   4    |    8    |      2       |
-|     core/310     |   4    |    8    |      2       |
-|     core/312     |   4    |    8    |      2       |
+|     core/355     |   4    |    8    |      2       |
+|     core/355     |   4    |    8    |      2       |
+|     core/355     |   4    |    8    |      2       |
+|     core/356     |   4    |    8    |      2       |
 ======================================================
 Presto compilation completed successfully. (core)
 Elaborated 1 design.
 Current design is now 'core'.
 Information: Building the design 'conv'. (HDL-193)
-Warning:  ../01_RTL/conv.v:142: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/conv.v:157: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ../01_RTL/conv.v:147: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
 
-Statistics for case statements in always block at line 72 in file
+Statistics for case statements in always block at line 70 in file
 	'../01_RTL/conv.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            73            |    auto/auto     |
+|            71            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 151 in file
+Statistics for case statements in always block at line 141 in file
 	'../01_RTL/conv.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           152            |    auto/auto     |
+|           142            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine conv line 165 in file
+	in routine conv line 155 in file
 		'../01_RTL/conv.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -351,25 +390,28 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine conv line 175 in file
+	in routine conv line 165 in file
 		'../01_RTL/conv.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|       cnt_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       cnt_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine conv line 188 in file
+	in routine conv line 178 in file
 		'../01_RTL/conv.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|     out_cnt_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+| i_input_done_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     out_cnt_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   i_isFirst_r_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     data_r_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine conv line 200 in file
+	in routine conv line 196 in file
 		'../01_RTL/conv.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -378,28 +420,27 @@ Inferred memory devices in process
 ===============================================================================
 Presto compilation completed successfully. (conv)
 Information: Building the design 'median'. (HDL-193)
-Warning:  ../01_RTL/median.v:135: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../01_RTL/median.v:118: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
-Warning:  ../01_RTL/median.v:149: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ../01_RTL/median.v:117: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ../01_RTL/median.v:148: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
 
-Statistics for case statements in always block at line 72 in file
+Statistics for case statements in always block at line 71 in file
 	'../01_RTL/median.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            73            |    auto/auto     |
+|            72            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 143 in file
+Statistics for case statements in always block at line 142 in file
 	'../01_RTL/median.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           144            |    auto/auto     |
+|           143            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine median line 157 in file
+	in routine median line 156 in file
 		'../01_RTL/median.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -408,7 +449,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine median line 167 in file
+	in routine median line 166 in file
 		'../01_RTL/median.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -417,7 +458,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine median line 192 in file
+	in routine median line 181 in file
 		'../01_RTL/median.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -426,59 +467,118 @@ Inferred memory devices in process
 |  med_e_delay_r_reg  | Flip-flop |  120  |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (median)
+Information: Building the design 'sobel_nms'. (HDL-193)
+Warning:  ../01_RTL/sobel.v:123: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  ../01_RTL/sobel.v:155: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 73 in file
+	'../01_RTL/sobel.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            74            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 149 in file
+	'../01_RTL/sobel.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           150            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine sobel_nms line 163 in file
+		'../01_RTL/sobel.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cs_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_nms line 173 in file
+		'../01_RTL/sobel.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_nms line 198 in file
+		'../01_RTL/sobel.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    sobel_e_r_reg    | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+| sobel_e_delay_r_reg | Flip-flop |  120  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (sobel_nms)
 Information: Building the design 'small_alu_add'. (HDL-193)
 
 Inferred memory devices in process
-	in routine small_alu_add line 282 in file
+	in routine small_alu_add line 284 in file
 		'../01_RTL/conv.v'.
 =====================================================================================
 |       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =====================================================================================
+|      i_data_i_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s1_0_ready_r_reg | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s2_0_ready_r_reg | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s3_0_ready_r_reg | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s4_0_ready_r_reg | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s5_0_ready_r_reg | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s1_1_ready_r_reg | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s2_1_ready_r_reg | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s3_1_ready_r_reg | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s1_2_ready_r_reg | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_s2_2_ready_r_reg | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
 | out_data_s1_3_ready_r_reg | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s1_0_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s2_0_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s3_0_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s4_0_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s5_0_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s1_1_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s2_1_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s3_1_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s1_2_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
-| out_data_s2_2_ready_r_reg | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
+| out_data_ready_sat_r_reg  | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      i_data_a_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      i_data_b_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      i_data_c_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      i_data_d_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      i_data_e_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      i_data_f_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      i_data_g_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      i_data_h_r_reg       | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
 =====================================================================================
 Presto compilation completed successfully. (small_alu_add)
 Information: Building the design 'median_filter_submodule'. (HDL-193)
 
-Statistics for case statements in always block at line 301 in file
+Statistics for case statements in always block at line 290 in file
 	'../01_RTL/median.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           302            |    auto/auto     |
-|           340            |    auto/auto     |
-|           377            |    auto/auto     |
+|           304            |    auto/auto     |
+|           337            |    auto/auto     |
+|           369            |    auto/auto     |
+===============================================
+Warning:  ../01_RTL/median.v:443: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 428 in file
+	'../01_RTL/median.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           435            |    auto/auto     |
+|           453            |    auto/auto     |
+|           471            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 440 in file
+Statistics for case statements in always block at line 502 in file
 	'../01_RTL/median.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           441            |    auto/auto     |
-|           465            |    auto/auto     |
-|           489            |    auto/auto     |
-===============================================
-
-Statistics for case statements in always block at line 525 in file
-	'../01_RTL/median.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           526            |    auto/auto     |
+|           506            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine median_filter_submodule line 256 in file
+	in routine median_filter_submodule line 245 in file
 		'../01_RTL/median.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -504,42 +604,51 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine median_filter_submodule line 301 in file
+	in routine median_filter_submodule line 290 in file
 		'../01_RTL/median.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|       a4_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       a7_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       a1_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       a5_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       a8_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       a2_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       a6_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       a9_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       a3_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       a9_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       a1_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       a2_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       a3_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       a4_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       a5_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       a6_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       a7_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       a8_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine median_filter_submodule line 440 in file
+	in routine median_filter_submodule line 428 in file
 		'../01_RTL/median.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|       b1_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       b5_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
-|       b9_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       b9_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       b1_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       b5_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine median_filter_submodule line 525 in file
+	in routine median_filter_submodule line 502 in file
 		'../01_RTL/median.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|       c2_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|       c2_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (median_filter_submodule)
+Information: Building the design 'sobel_submodule'. (HDL-193)
+Warning:  ../01_RTL/sobel.v:270: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/sobel.v:271: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/sobel.v:280: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/sobel.v:281: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/sobel.v:283: Netlist for always block is empty. (ELAB-985)
+Warning:  ../01_RTL/sobel.v:292: Netlist for always block is empty. (ELAB-985)
+Presto compilation completed successfully. (sobel_submodule)
+Error: Width mismatch on port 'sobel_result' of reference to 'sobel_submodule' in 'sobel_nms'. (LINK-3)
 1
 current_design [get_designs $DESIGN]
 Current design is 'core'.
@@ -549,18 +658,20 @@ link
   Linking design 'core'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (5 designs)               /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/core.db, etc
+  * (7 designs)               /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/core.db, etc
   slow (library)              /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db
   sram_256x8 (library)        /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db
   sram_512x8 (library)        /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db
   sram_4096x8 (library)       /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db
   dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
 
-1
+Error: Width mismatch on port 'sobel_result' of reference to 'sobel_submodule' in 'sobel_nms'. (LINK-3)
+Warning: Unable to resolve reference 'sobel_submodule' in 'sobel_nms'. (LINK-5)
+0
 source -echo -verbose ./core_dc.sdc
 # operating conditions and boundary conditions #
-set cycle  2.88;  # modify your clock cycle here #
-2.88
+set cycle  2.51;  # modify your clock cycle here #
+2.51
 create_clock -period $cycle [get_ports  i_clk]
 1
 set_dont_touch_network      [get_clocks i_clk]
@@ -616,17 +727,17 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 3060                                   |
-| Number of User Hierarchies                              | 4                                      |
-| Sequential Cell Count                                   | 1110                                   |
+| Leaf Cell Count                                         | 3437                                   |
+| Number of User Hierarchies                              | 5                                      |
+| Sequential Cell Count                                   | 1595                                   |
 | Macro Count                                             | 0                                      |
 | Number of Power Domains                                 | 0                                      |
 | Number of Path Groups                                   | 2                                      |
 | Number of VT Class                                      | 0                                      |
 | Number of Clocks                                        | 1                                      |
-| Number of Dont Touch Cells                              | 762                                    |
-| Number of Dont Touch Nets                               | 5                                      |
-| Number of Size Only Cells                               | 0                                      |
+| Number of Dont Touch Cells                              | 648                                    |
+| Number of Dont Touch Nets                               | 6                                      |
+| Number of Size Only Cells                               | 11                                     |
 | Design with UPF Data                                    | false                                  |
 ----------------------------------------------------------------------------------------------------
 | Variables                                               | Value                                  |
@@ -634,67 +745,53 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | set_fix_multiple_port_nets                              | -all -buffer_constants                 |
 ====================================================================================================
 
-Information: There are 85 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 191 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
   Beginning Pass 1 Mapping
   ------------------------
+  Processing 'sobel_nms'
+Information: Added key list 'DesignWare' to design 'sobel_nms'. (DDB-72)
+Information: Cell 'U10/U1' (*GEN*37) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
+Information: Cell 'U11/U1' (*GEN*36) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
+Information: Cell 'U12/U1' (*GEN*35) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
+Information: Cell 'U13/U1' (*GEN*34) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
+Information: Cell 'U14/U1' (*GEN*33) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
+Information: Cell 'U15/U1' (*GEN*32) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
+Information: Cell 'U16/U1' (*GEN*31) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
+Information: Cell 'U17/U1' (*GEN*30) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
+Information: Cell 'U18/U1' (*GEN*29) cannot be exactly translated 1 for 1 into target library. (TRANS-9)
   Processing 'median_filter_submodule'
   Processing 'median'
 Information: Added key list 'DesignWare' to design 'median'. (DDB-72)
   Processing 'small_alu_add'
-Information: The register 'out_data_s1_0_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s1_0_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s2_0_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s2_0_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s3_0_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s3_0_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s3_0_ready_r_reg[14]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s4_0_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s4_0_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s4_0_ready_r_reg[14]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s5_0_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s5_0_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s5_0_ready_r_reg[1]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s5_0_ready_r_reg[0]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s3_1_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s3_1_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s3_1_ready_r_reg[1]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s3_1_ready_r_reg[0]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s2_2_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s2_2_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s2_2_ready_r_reg[1]' is a constant and will be removed. (OPT-1206)
-Information: The register 'out_data_s2_2_ready_r_reg[0]' is a constant and will be removed. (OPT-1206)
   Processing 'conv'
   Processing 'core'
 Information: Added key list 'DesignWare' to design 'core'. (DDB-72)
 Information: The register 'x_origin_r_reg[3]' is a constant and will be removed. (OPT-1206)
 Information: The register 'y_origin_r_reg[3]' is a constant and will be removed. (OPT-1206)
+Error: Width mismatch on port 'sobel_result' of reference to 'sobel_submodule' in 'sobel_nms'. (LINK-3)
+Warning: Unable to resolve reference 'sobel_submodule' in 'sobel_nms'. (LINK-5)
 
   Updating timing information
 Information: Updating design information... (UID-85)
 
   Beginning Implementation Selection
   ----------------------------------
-  Processing 'core_DW01_add_0_DW01_add_3'
-  Processing 'core_DW01_add_1_DW01_add_4'
-  Processing 'core_DW01_add_2_DW01_add_5'
-  Processing 'core_DW01_inc_0_DW01_inc_4'
+  Processing 'core_DW01_add_0_DW01_add_7'
+  Processing 'core_DW01_add_1_DW01_add_8'
+  Processing 'core_DW01_add_2_DW01_add_9'
+  Processing 'core_DW01_add_3_DW01_add_10'
+  Processing 'core_DW01_add_4_DW01_add_11'
+  Processing 'core_DW01_add_5_DW01_add_12'
   Mapping 'core_DW_cmp_0'
-  Mapping 'core_DW_cmp_1'
-  Processing 'core_DW01_dec_0'
-  Processing 'core_DW01_add_3_DW01_add_6'
-  Mapping 'core_DW_cmp_2'
-  Processing 'core_DW01_add_4_DW01_add_7'
-  Processing 'core_DW01_inc_1_DW01_inc_5'
-  Processing 'core_DW01_dec_1'
-  Processing 'core_DW01_add_5_DW01_add_8'
-  Processing 'core_DW01_dec_2'
-  Processing 'core_DW01_add_6_DW01_add_9'
-  Processing 'core_DW01_add_7_DW01_add_10'
-  Processing 'core_DW01_dec_3'
-  Processing 'median_DW01_inc_0_DW01_inc_6'
+  Processing 'core_DW01_dec_0_DW01_dec_3'
+  Processing 'core_DW01_inc_0_DW01_inc_6'
+  Processing 'core_DW01_add_6_DW01_add_13'
+  Processing 'core_DW01_inc_1_DW01_inc_7'
+  Processing 'sobel_nms_DW01_inc_0_DW01_inc_8'
+  Processing 'median_DW01_inc_0_DW01_inc_9'
   Mapping 'median_filter_submodule_DW_cmp_0'
   Mapping 'median_filter_submodule_DW_cmp_1'
   Mapping 'median_filter_submodule_DW_cmp_2'
@@ -716,56 +813,62 @@ Information: Updating design information... (UID-85)
   Mapping 'median_filter_submodule_DW_cmp_18'
   Mapping 'median_filter_submodule_DW_cmp_19'
   Mapping 'median_filter_submodule_DW_cmp_20'
-  Processing 'conv_DW01_inc_0_DW01_inc_7'
-  Processing 'conv_DW01_add_0_DW01_add_11'
-  Processing 'conv_DW01_add_1_DW01_add_12'
-  Processing 'conv_DW01_add_2_DW01_add_13'
-  Processing 'conv_DW01_add_3_DW01_add_14'
-  Processing 'conv_DW01_add_4_DW01_add_15'
-  Processing 'conv_DW01_add_5_DW01_add_16'
-  Processing 'conv_DW01_add_6_DW01_add_17'
-  Processing 'conv_DW01_add_7_DW01_add_18'
-  Processing 'conv_DW01_add_8_DW01_add_19'
-  Processing 'conv_DW01_add_9_DW01_add_20'
-  Processing 'conv_DW01_add_10_DW01_add_21'
-  Processing 'conv_DW01_add_11_DW01_add_22'
-  Processing 'conv_DW01_add_12_DW01_add_23'
-  Processing 'conv_DW01_add_13_DW01_add_24'
-  Processing 'conv_DW01_add_14_DW01_add_25'
-  Processing 'conv_DW01_add_15_DW01_add_26'
-  Processing 'small_alu_add_DW01_inc_0_DW01_inc_8'
-  Processing 'small_alu_add_DW01_add_0_DW01_add_27'
-  Processing 'small_alu_add_DW01_add_1_DW01_add_28'
-  Processing 'small_alu_add_DW01_add_2_DW01_add_29'
-  Processing 'small_alu_add_DW01_add_3_DW01_add_30'
-  Processing 'small_alu_add_DW01_add_4_DW01_add_31'
-  Processing 'small_alu_add_DW01_add_5_DW01_add_32'
-  Processing 'small_alu_add_DW01_add_6_DW01_add_33'
-  Processing 'small_alu_add_DW01_add_7_DW01_add_34'
+  Processing 'small_alu_add_DW01_inc_0_DW01_inc_10'
+  Processing 'small_alu_add_DW01_add_0_DW01_add_14'
+  Processing 'small_alu_add_DW01_add_1_DW01_add_15'
+  Processing 'small_alu_add_DW01_add_2_DW01_add_16'
+  Processing 'small_alu_add_DW01_add_3_DW01_add_17'
+  Processing 'small_alu_add_DW01_add_4_DW01_add_18'
+  Processing 'small_alu_add_DW01_add_5_DW01_add_19'
+  Processing 'small_alu_add_DW01_add_6_DW01_add_20'
+  Processing 'small_alu_add_DW01_add_7_DW01_add_21'
   Building model 'DW01_NAND2'
   Processing 'DW01_NAND2'
+  Building model 'DW01_add_width13' (rpl)
+  Processing 'DW01_add_width13'
   Building model 'DW01_add_width5' (rpl)
   Processing 'DW01_add_width5'
-  Building model 'DW01_add_width9' (rpl)
-  Processing 'DW01_add_width9'
-  Building model 'DW01_inc_width5' (rpl)
-  Processing 'DW01_inc_width5'
   Building model 'DW01_dec_width5' (rpl)
   Processing 'DW01_dec_width5'
-  Processing 'core_DW01_add_8_DW01_add_35'
-  Processing 'core_DW01_add_9_DW01_add_36'
-  Processing 'core_DW01_add_10_DW01_add_37'
-  Processing 'core_DW01_add_11_DW01_add_38'
-  Processing 'core_DW01_add_12_DW01_add_39'
-  Processing 'core_DW01_inc_2_DW01_inc_9'
-  Processing 'core_DW01_add_13_DW01_add_40'
-  Processing 'core_DW01_add_14_DW01_add_41'
-  Processing 'core_DW01_add_15_DW01_add_42'
-  Processing 'core_DW01_dec_4'
+  Processing 'conv_DW01_add_0_DW01_add_22'
+  Mapping 'conv_DW_mult_uns_0'
+  Processing 'conv_DW01_add_1_DW01_add_23'
+  Mapping 'conv_DW_mult_uns_1'
+  Processing 'conv_DW01_add_2_DW01_add_24'
+  Mapping 'conv_DW_mult_uns_2'
+  Processing 'conv_DW01_add_3_DW01_add_25'
+  Mapping 'conv_DW_mult_uns_3'
+  Processing 'conv_DW01_add_4_DW01_add_26'
+  Mapping 'conv_DW_mult_uns_4'
+  Processing 'conv_DW01_add_5_DW01_add_27'
+  Mapping 'conv_DW_mult_uns_5'
+  Processing 'conv_DW01_add_6_DW01_add_28'
+  Mapping 'conv_DW_mult_uns_6'
+  Processing 'conv_DW01_add_7_DW01_add_29'
+  Mapping 'conv_DW_mult_uns_7'
+  Processing 'conv_DW01_add_8_DW01_add_30'
+  Mapping 'conv_DW_mult_uns_8'
+  Processing 'conv_DW01_add_9_DW01_add_31'
+  Mapping 'conv_DW_mult_uns_9'
+  Processing 'conv_DW01_add_10_DW01_add_32'
+  Mapping 'conv_DW_mult_uns_10'
+  Processing 'conv_DW01_add_11_DW01_add_33'
+  Mapping 'conv_DW_mult_uns_11'
+  Processing 'conv_DW01_add_12_DW01_add_34'
+  Mapping 'conv_DW_mult_uns_12'
+  Processing 'conv_DW01_add_13_DW01_add_35'
+  Mapping 'conv_DW_mult_uns_13'
+  Processing 'conv_DW01_add_14_DW01_add_36'
+  Mapping 'conv_DW_mult_uns_14'
+  Processing 'conv_DW01_add_15_DW01_add_37'
+  Mapping 'conv_DW_mult_uns_15'
+  Processing 'core_DW01_add_7_DW01_add_38'
+  Processing 'core_DW01_dec_1_DW01_dec_4'
 
   Beginning Mapping Optimizations  (Medium effort)
   -------------------------------
 Information: Added key list 'DesignWare' to design 'median_filter_submodule'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'conv'. (DDB-72)
   Mapping Optimization (Phase 1)
   Mapping Optimization (Phase 2)
   Mapping Optimization (Phase 3)
@@ -779,87 +882,83 @@ Information: Added key list 'DesignWare' to design 'median_filter_submodule'. (D
   Mapping Optimization (Phase 11)
   Mapping Optimization (Phase 12)
   Mapping Optimization (Phase 13)
-Information: The register 'conv_inst/u_alu/out_data_s2_1_ready_r_reg[15]' is a constant and will be removed. (OPT-1206)
-Information: The register 'conv_inst/u_alu/out_data_s2_1_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'conv_inst/u_alu/out_data_s1_1_ready_r_reg[16]' is a constant and will be removed. (OPT-1206)
-Information: The register 'conv_inst/u_alu/out_data_s2_0_ready_r_reg[0]' is a constant and will be removed. (OPT-1206)
-Information: The register 'conv_inst/u_alu/out_data_s1_0_ready_r_reg[0]' is a constant and will be removed. (OPT-1206)
-Information: The register 'y_r_reg[4]' is a constant and will be removed. (OPT-1206)
+  Mapping Optimization (Phase 14)
+  Mapping Optimization (Phase 15)
+  Mapping Optimization (Phase 16)
+  Mapping Optimization (Phase 17)
+  Mapping Optimization (Phase 18)
+  Mapping Optimization (Phase 19)
+  Mapping Optimization (Phase 20)
 Information: The register 'y_forecase_r_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'x_p1_r_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'x_p2_r_reg[5]' is a constant and will be removed. (OPT-1206)
 
                                   TOTAL                                                  
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:32  274851.7      0.35      54.9     292.6                                0.00  
-    0:00:33  274744.7      0.59      82.8     292.6                                0.00  
-    0:00:33  274744.7      0.59      82.8     292.6                                0.00  
-    0:00:33  274744.7      0.59      82.8     292.6                                0.00  
-    0:00:33  274744.7      0.59      82.8     292.6                                0.00  
-    0:00:37  207663.5      2.59     665.8     238.2                                0.00  
-    0:00:39  207483.5      2.44     744.6     236.8                                0.00  
-    0:00:40  207361.3      2.56     759.5     236.8                                0.00  
-    0:00:40  207425.8      2.12     731.2     236.8                                0.00  
-    0:00:41  207539.6      2.38     748.4     236.8                                0.00  
-    0:00:41  207554.8      2.28     715.3     236.8                                0.00  
-    0:00:41  207509.0      2.48     735.9     236.8                                0.00  
-    0:00:42  207495.4      2.23     731.3     236.8                                0.00  
-    0:00:42  207514.1      2.52     734.5     236.8                                0.00  
-    0:00:42  207486.9      2.61     720.7     236.8                                0.00  
-    0:00:42  207526.0      2.00     673.7     236.8                                0.00  
-    0:00:43  207648.2      1.95     671.0     236.8                                0.00  
-    0:00:43  207801.0      1.95     669.8     236.8                                0.00  
-    0:00:43  207946.9      1.88     666.9     236.8                                0.00  
-    0:00:43  208043.7      1.84     656.7     236.8                                0.00  
-    0:00:43  208064.1      1.84     650.2     236.8                                0.00  
-    0:00:43  208091.2      1.80     648.8     236.8                                0.00  
-    0:00:43  208132.0      1.82     648.6     236.8                                0.00  
-    0:00:43  208252.5      1.78     640.6     236.8                                0.00  
-    0:00:44  208252.5      1.78     640.6     236.8                                0.00  
-    0:00:44  208252.5      1.78     640.6     236.8                                0.00  
-    0:00:44  208362.8      1.78     636.9     142.5                                0.00  
-    0:00:44  208391.7      1.78     631.9      53.9                                0.00  
-    0:00:44  208383.2      1.78     632.2      21.0                                0.00  
-    0:00:44  208390.0      1.78     632.2       0.0                                0.00  
-    0:00:44  208390.0      1.78     632.2       0.0                                0.00  
-    0:00:44  208390.0      1.78     632.2       0.0                                0.00  
-    0:00:44  208390.0      1.78     632.2       0.0                                0.00  
-    0:00:45  208863.5      1.53     614.6       0.0 median_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
-    0:00:45  209253.9      1.42     587.8       0.0 cnt_reg[0]/D                   0.00  
-    0:00:46  209761.5      1.32     566.7       0.0 conv_inst/u_alu/out_data_s3_0_ready_r_reg[13]/D      0.00  
-    0:00:46  210058.5      1.24     547.6       0.0 conv_inst/u_alu/out_data_s2_0_ready_r_reg[7]/D      0.00  
-    0:00:47  210316.5      1.16     524.7       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[12]/D      0.00  
-    0:00:47  212041.1      1.08     506.7       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[12]/D      0.00  
-    0:00:47  212711.5      1.02     488.9       0.0 sram_addr_ready_r_reg[1][8]/D      0.00  
-    0:00:48  213448.2      0.94     431.8      15.2 conv_inst/u_alu/out_data_s4_0_ready_r_reg[6]/D      0.00  
-    0:00:48  213952.3      0.90     411.0      32.5 median_inst/u_median_filter_submodule/b1_reg[2]/D      0.00  
-    0:00:48  214456.5      0.83     392.1      17.4 median_inst/u_median_filter_submodule/c2_reg[3]/D      0.00  
-    0:00:48  214670.3      0.81     381.9       0.0 median_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
-    0:00:49  215162.6      0.77     350.3       0.0 conv_inst/u_alu/out_data_s3_0_ready_r_reg[5]/D      0.00  
-    0:00:49  215520.7      0.70     339.0       1.5 median_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
-    0:00:49  215868.7      0.69     321.0       1.8 med_input_data_r_reg[14]/D      0.00  
-    0:00:49  216126.7      0.67     310.0       1.8 conv_inst/u_alu/out_data_s1_0_ready_r_reg[12]/D      0.00  
-    0:00:49  216478.1      0.65     296.9       1.8 med_input_data_r_reg[18]/D      0.00  
-    0:00:50  216544.3      0.65     294.3       1.8 med_input_data_r_reg[16]/D      0.00  
-    0:00:50  216737.8      0.64     289.2       1.8 med_input_data_r_reg[26]/D      0.00  
-    0:00:50  216885.4      0.63     285.7       1.8 conv_inst/conv_e_r_reg[9][12]/D      0.00  
-    0:00:50  217252.1      0.60     273.0       1.8 conv_calc_done_r_reg/D         0.00  
-    0:00:50  217491.4      0.58     263.3       1.8                                0.00  
-    0:00:50  217836.0      0.55     253.0       1.8                                0.00  
-    0:00:50  218167.0      0.53     244.7       1.8                                0.00  
-    0:00:51  218411.4      0.52     238.8       1.8                                0.00  
-    0:00:51  218688.1      0.51     232.9       1.8                                0.00  
-    0:00:51  218995.3      0.50     224.4       0.3                                0.00  
-    0:00:51  219275.4      0.50     216.6       2.3                                0.00  
-    0:00:51  219384.0      0.49     214.4       2.3                                0.00  
-    0:00:51  219467.2      0.48     213.6       2.3                                0.00  
-    0:00:51  219511.3      0.48     213.4       2.3                                0.00  
-    0:00:52  219531.7      0.48     212.3       2.3                                0.00  
-    0:00:52  219620.0      0.48     211.1       2.3                                0.00  
-    0:00:52  219905.1      0.46     205.2      10.4                                0.00  
-    0:00:52  220173.3      0.45     195.9      10.4                                0.00  
-    0:00:52  220249.7      0.45     194.4      10.4                                0.00  
-    0:00:52  220519.6      0.45     189.3      10.4                                0.00  
+    0:00:34  303912.8      0.44     157.8    2036.8                                0.00  
+    0:00:35  304659.7      0.52     174.3    2036.8                                0.00  
+    0:00:35  304659.7      0.52     174.3    2036.8                                0.00  
+    0:00:35  304659.7      0.52     174.3    2036.8                                0.00  
+    0:00:35  304659.7      0.52     174.3    2036.8                                0.00  
+    0:00:41  227173.4      2.46    1477.3    2035.9                                0.00  
+    0:00:44  227460.2      2.36    1412.1    2035.9                                0.00  
+    0:00:45  227236.2      2.32    1278.5    2035.9                                0.00  
+    0:00:46  227263.4      2.39    1268.2    2035.9                                0.00  
+    0:00:47  227243.0      2.17    1238.4    2035.9                                0.00  
+    0:00:47  227285.4      2.22    1190.5    2035.9                                0.00  
+    0:00:48  227243.0      2.25    1211.2    2035.9                                0.00  
+    0:00:48  227305.8      2.26    1204.4    2035.9                                0.00  
+    0:00:49  227263.4      2.48    1207.3    2035.9                                0.00  
+    0:00:49  227361.8      2.00    1184.7    2035.9                                0.00  
+    0:00:50  227370.3      1.98    1171.5    2035.9                                0.00  
+    0:00:50  227412.7      1.96    1168.4    2035.9                                0.00  
+    0:00:50  227445.0      1.92    1167.1    2035.9                                0.00  
+    0:00:50  227480.6      1.87    1159.4    2035.9                                0.00  
+    0:00:50  227660.5      1.84    1157.7    2035.9                                0.00  
+    0:00:50  227703.0      1.82    1156.6    2035.9                                0.00  
+    0:00:50  227723.3      1.80    1154.7    2035.9                                0.00  
+    0:00:50  227864.2      1.79    1151.8    2035.9                                0.00  
+    0:00:50  228037.4      1.74    1134.5    2035.9                                0.00  
+    0:00:51  227358.4      1.74    1134.5    2035.9                                0.00  
+    0:00:51  227358.4      1.74    1134.5    2035.9                                0.00  
+    0:00:51  227543.4      1.74    1118.7    1854.3                                0.00  
+    0:00:51  227541.7      1.74    1116.2    1683.3                                0.00  
+    0:00:51  227597.7      1.74    1108.1    1600.3                                0.00  
+    0:00:51  227604.5      1.74    1097.8    1566.0                                0.00  
+    0:00:51  227604.5      1.74    1097.8    1566.0                                0.00  
+    0:00:51  227604.5      1.74    1097.8    1566.0                                0.00  
+    0:00:51  227604.5      1.74    1097.8    1566.0                                0.00  
+    0:00:51  228142.6      1.55    1058.8    1566.0 conv_inst/conv_e_r_reg[6][9]/D      0.00  
+    0:00:51  229225.5      1.45    1039.9    1755.6 conv_inst/u_alu/i_data_i_r_reg[10]/D      0.00  
+    0:00:52  229712.7      1.37     996.5    1755.6 conv_inst/conv_e_r_reg[1][9]/D      0.00  
+    0:00:52  230283.0      1.31     962.3    1832.5 conv_inst/conv_e_r_reg[6][9]/D      0.00  
+    0:00:52  230787.2      1.23     919.8    1832.5 median_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:00:53  233087.1      1.12     772.4    1738.5 median_inst/u_median_filter_submodule/c2_reg[2]/D      0.00  
+    0:00:53  233749.1      1.05     745.5    1738.5 conv_inst/conv_e_r_reg[15][10]/D      0.00  
+    0:00:54  234260.0      1.01     710.6    1738.5 sram_addr_ready_r_reg[3][3]/D      0.00  
+    0:00:54  234916.9      0.97     686.0    1738.5 conv_inst/conv_e_r_reg[0][9]/D      0.00  
+    0:00:54  235767.3      0.91     645.9    1738.5 conv_inst/conv_e_r_reg[5][5]/D      0.00  
+    0:00:54  236495.5      0.87     635.0    1738.5 conv_inst/conv_e_r_reg[6][11]/D      0.00  
+    0:00:55  236672.0      0.85     611.5    1738.5 conv_inst/u_alu/i_data_h_r_reg[8]/D      0.00  
+    0:00:55  237157.5      0.82     601.7    1738.5 conv_inst/u_alu/out_data_s2_1_ready_r_reg[13]/D      0.00  
+    0:00:55  237483.4      0.79     574.9    1738.5 median_inst/u_median_filter_submodule/b9_reg[7]/D      0.00  
+    0:00:55  237712.5      0.77     562.2    1738.5 median_inst/u_median_filter_submodule/c2_reg[3]/D      0.00  
+    0:00:56  238147.1      0.75     555.1    1738.5 median_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:00:56  238413.6      0.73     544.5    1738.5 cnt_reg[9]/D                   0.00  
+    0:00:56  238926.2      0.72     525.7    1738.5 cnt_reg[9]/D                   0.00  
+    0:00:56  239374.3      0.70     501.8    1738.5 median_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:00:57  240421.6      0.65     456.1    1738.9                                0.00  
+    0:00:57  240581.2      0.63     447.8    1738.9                                0.00  
+    0:00:57  240805.2      0.62     444.6    1742.0                                0.00  
+    0:00:57  241234.7      0.59     447.5    1658.7                                0.00  
+    0:00:58  241679.4      0.57     443.3    1660.1                                0.00  
+    0:00:58  241842.3      0.55     430.8    1660.1                                0.00  
+    0:00:58  242068.1      0.54     419.9    1575.5                                0.00  
+    0:00:58  242317.6      0.53     415.2    1575.5                                0.00  
+    0:00:58  242694.4      0.52     386.5    1575.5                                0.00  
+    0:00:59  242769.1      0.50     362.3    1575.5                                0.00  
 
 
 
@@ -870,32 +969,742 @@ Information: The register 'y_forecase_r_reg[4]' is a constant and will be remove
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:52  220519.6      0.45     189.3      10.4                                0.00  
-    0:00:52  220612.9      0.42     185.6      10.4 conv_inst/u_alu/out_data_s2_0_ready_r_reg[7]/D      0.00  
-    0:00:53  220709.7      0.41     180.5      10.4 cnt_reg[3]/D                   0.00  
-    0:00:53  220835.3      0.41     178.5      13.7 med_input_data_r_reg[9]/D      0.00  
-    0:00:53  221039.0      0.40     176.5      14.0 sram_cen_ready_r_reg[0]/D      0.00  
-    0:00:53  221218.9      0.39     173.1      14.0 median_inst/med_e_r_reg[2][3]/D      0.00  
-    0:00:53  221356.4      0.38     170.4      14.0 conv_inst/u_alu/out_data_s2_1_ready_r_reg[11]/D      0.00  
-    0:00:53  221482.0      0.37     167.0      14.0 conv_inst/u_alu/out_data_s1_0_ready_r_reg[13]/D      0.00  
-    0:00:54  221599.1      0.37     166.7      13.4 conv_inst/u_alu/out_data_s1_0_ready_r_reg[13]/D      0.00  
-    0:00:54  221772.3      0.36     154.9      13.4 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
-    0:00:54  221796.0      0.36     151.4      13.4 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
-    0:00:54  221906.4      0.35     146.5      13.4 median_inst/u_median_filter_submodule/b9_reg[5]/D      0.00  
-    0:00:54  221992.9      0.34     142.6      13.4 med_input_data_r_reg[16]/D      0.00  
-    0:00:55  222237.4      0.33     137.6      13.4 conv_inst/u_alu/out_data_s3_0_ready_r_reg[11]/D      0.00  
-    0:00:55  222322.2      0.33     136.6      13.4 median_inst/med_e_r_reg[1][3]/D      0.00  
-    0:00:55  222424.1      0.32     135.8      13.4 conv_inst/u_alu/out_data_s1_0_ready_r_reg[12]/D      0.00  
-    0:00:55  222439.3      0.32     134.9      13.4 conv_inst/u_alu/out_data_s1_0_ready_r_reg[12]/D      0.00  
-    0:00:55  222556.5      0.32     132.9      13.4 sram_addr_ready_r_reg[1][7]/D      0.00  
-    0:00:55  222651.5      0.32     129.2      11.4 conv_inst/u_alu/out_data_s1_0_ready_r_reg[13]/D      0.00  
-    0:00:56  222797.5      0.31     126.7      11.7 median_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
-    0:00:56  222890.8      0.31     125.6      18.2 out_data_ready_r_reg[3]/D      0.00  
-    0:00:56  222955.4      0.30     124.5      18.2 median_inst/u_median_filter_submodule/b1_reg[2]/D      0.00  
-    0:00:56  223077.6      0.30     122.6      18.2 depth_ready_r_reg[0]/D         0.00  
-    0:00:56  223131.9      0.30     121.6      21.8 med_input_data_r_reg[19]/D      0.00  
-    0:00:56  223296.5      0.30     119.0      22.1 y_r_reg[0]/D                   0.00  
-    0:00:56  223284.6      0.30     117.5      22.1 med_input_data_r_reg[26]/D      0.00  
-    0:00:57  223311.8      0.29     115.0      22.1 med_input_data_r_reg[2]/D      0.00  
-    0:00:58  223425.5      0.29     113.8      22.1                                0.00  
-    0:00:58  223104.7      0.29     115.6      21.8                                0.00  
+    0:00:59  242769.1      0.50     362.3    1575.5                                0.00  
+    0:00:59  242894.7      0.49     362.9    1575.5 x_r_reg[0]/D                   0.00  
+    0:00:59  243022.0      0.49     360.4    1575.5 median_inst/u_median_filter_submodule/b9_reg[0]/D      0.00  
+    0:00:59  243247.8      0.48     356.3    1575.5 sram_addr_ready_r_reg[3][0]/D      0.00  
+    0:00:59  243344.5      0.47     348.7    1575.5 median_inst/u_median_filter_submodule/b5_reg[4]/D      0.00  
+    0:00:59  243611.0      0.45     320.4    1575.5 sram_cen_ready_r_reg[2]/D      0.00  
+    0:01:00  243711.2      0.45     312.9    1575.5 median_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:00  243886.0      0.44     310.5    1575.5 sram_addr_ready_r_reg[2][1]/D      0.00  
+    0:01:00  243972.6      0.44     305.5    1575.5 cnt_reg[5]/D                   0.00  
+    0:01:00  244099.9      0.43     303.2    1575.5 sram_cen_ready_r_reg[2]/D      0.00  
+    0:01:00  244252.6      0.43     297.8    1575.5 conv_inst/u_alu/out_data_s2_1_ready_r_reg[7]/D      0.00  
+    0:01:00  244422.4      0.42     295.7    1575.5 conv_inst/conv_e_r_reg[13][8]/D      0.00  
+    0:01:00  244556.5      0.42     296.7    1575.5 median_inst/u_median_filter_submodule/b5_reg[7]/D      0.00  
+    0:01:01  244668.5      0.41     288.3    1575.5 conv_inst/u_alu/out_data_s1_2_ready_r_reg[14]/D      0.00  
+    0:01:01  244872.2      0.40     286.4    1590.4 conv_inst/conv_e_r_reg[11][10]/D      0.00  
+    0:01:01  244989.3      0.40     281.6    1590.4 conv_inst/conv_e_r_reg[7][7]/D      0.00  
+    0:01:01  245255.8      0.38     263.4    1575.5 median_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:01  245367.8      0.38     216.2    1575.5 median_inst/med_e_r_reg[14][3]/D      0.00  
+    0:01:01  245462.9      0.36     213.1    1575.5 conv_inst/conv_e_r_reg[13][12]/D      0.00  
+    0:01:02  245703.9      0.36     210.4    1575.5 median_inst/u_median_filter_submodule/b1_reg[1]/D      0.00  
+    0:01:02  245758.2      0.35     209.0    1575.5 o_op_ready                     0.00  
+    0:01:02  245931.4      0.35     194.5    1575.5 median_inst/u_median_filter_submodule/b1_reg[0]/D      0.00  
+    0:01:02  245980.6      0.34     193.9    1575.5 cnt_reg[5]/D                   0.00  
+    0:01:02  246145.2      0.34     191.6    1575.5 median_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:02  246247.1      0.33     188.8    1575.5 conv_inst/conv_e_r_reg[11][12]/D      0.00  
+    0:01:02  246360.8      0.33     186.8    1575.5 conv_inst/conv_e_r_reg[8][10]/D      0.00  
+    0:01:02  246450.8      0.32     186.0    1575.5 median_inst/u_median_filter_submodule/b1_reg[0]/D      0.00  
+    0:01:02  246515.3      0.32     180.1    1575.5 conv_inst/conv_e_r_reg[15][7]/D      0.00  
+    0:01:02  246613.7      0.32     179.0    1577.0 median_inst/u_median_filter_submodule/c2_reg[0]/D      0.00  
+    0:01:03  246627.3      0.31     177.4    1577.0 median_inst/u_median_filter_submodule/c2_reg[3]/D      0.00  
+    0:01:03  246720.6      0.31     176.4    1577.0 conv_inst/conv_e_r_reg[3][8]/D      0.00  
+    0:01:03  246803.8      0.31     172.9    1604.3 conv_inst/u_alu/out_data_s2_1_ready_r_reg[9]/D      0.00  
+    0:01:03  246885.3      0.30     170.5    1604.3 sram_cen_ready_r_reg[2]/D      0.00  
+    0:01:03  246880.2      0.30     169.2    1610.4 sram_select_r_reg[1]/D         0.00  
+    0:01:03  247075.4      0.30     166.1    1610.4 sram_select_r_reg[1]/D         0.00  
+    0:01:03  247129.7      0.29     164.7    1610.4 median_inst/u_median_filter_submodule/a5_reg[5]/D      0.00  
+    0:01:03  247280.8      0.29     155.8    1610.4 sram_addr_ready_r_reg[0][0]/D      0.00  
+    0:01:03  247387.7      0.28     150.0    1610.4 median_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:04  247520.1      0.28     147.1    1610.4 y_m1_r_reg[1]/D                0.00  
+    0:01:04  247526.9      0.27     145.9    1609.0 conv_inst/conv_e_r_reg[14][9]/D      0.00  
+    0:01:04  247757.8      0.27     142.7    1609.0 sram_select_r_reg[1]/D         0.00  
+    0:01:04  247864.7      0.27     141.3    1602.8 median_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:04  247976.7      0.26     140.5    1602.8 conv_inst/conv_e_r_reg[3][7]/D      0.00  
+    0:01:04  248046.3      0.26     136.2    1602.8 sram_addr_ready_r_reg[0][4]/D      0.00  
+    0:01:04  248129.5      0.25     134.8    1602.8 sram_select_r_reg[1]/D         0.00  
+    0:01:04  248212.7      0.25     133.9    1602.8 sram_addr_ready_r_reg[3][7]/D      0.00  
+    0:01:04  248358.6      0.25     130.7    1602.9 sram_select_r_reg[1]/D         0.00  
+    0:01:05  248402.8      0.25     129.2    1608.9 sram_wen_ready_r_reg[0]/D      0.00  
+    0:01:05  248521.6      0.24     126.9    1608.9 median_inst/u_median_filter_submodule/b9_reg[6]/D      0.00  
+    0:01:05  248555.5      0.24     126.1    1608.9 median_inst/u_median_filter_submodule/b9_reg[6]/D      0.00  
+    0:01:05  248754.1      0.24     124.5    1608.9 median_inst/u_median_filter_submodule/b9_reg[6]/D      0.00  
+    0:01:05  248876.3      0.23     123.1    1608.9 conv_inst/u_alu/out_data_s3_0_ready_r_reg[9]/D      0.00  
+    0:01:05  248973.1      0.23     122.1    1608.9 median_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:05  249134.4      0.22     118.1    1608.9 sram_select_r_reg[1]/D         0.00  
+    0:01:05  249243.0      0.22     113.5    1608.9 sram_addr_ready_r_reg[1][6]/D      0.00  
+    0:01:06  249344.8      0.21     110.4    1608.9 median_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:06  249417.8      0.21     109.6    1608.9 median_inst/u_median_filter_submodule/c2_reg[0]/D      0.00  
+    0:01:06  249470.4      0.21     108.8    1608.9 conv_inst/conv_e_r_reg[5][7]/D      0.00  
+    0:01:06  249550.2      0.21     100.9    1608.9 sram_addr_ready_r_reg[1][5]/D      0.00  
+    0:01:06  249689.4      0.20      98.2    1610.0 conv_inst/conv_e_r_reg[12][12]/D      0.00  
+    0:01:06  249730.1      0.20      98.2    1610.0 conv_inst/conv_e_r_reg[14][9]/D      0.00  
+    0:01:06  249770.9      0.20      93.5    1661.9 sobel_nms_inst/sobel_e_delay_r_reg[3][6]/D      0.00  
+    0:01:07  249801.4      0.19      86.1    1665.1 sobel_nms_inst/sobel_e_delay_r_reg[9][0]/D      0.00  
+    0:01:07  249901.6      0.19      84.0    1665.1 sram_select_r_reg[1]/D         0.00  
+    0:01:07  249974.6      0.18      79.1    1665.1 conv_inst/conv_e_r_reg[13][9]/D      0.00  
+    0:01:07  250005.1      0.18      76.6    1665.1 sobel_nms_inst/cnt_reg[7]/D      0.00  
+    0:01:07  250049.2      0.18      74.8    1665.1 sram_addr_ready_r_reg[0][4]/D      0.00  
+    0:01:07  250147.7      0.17      73.6    1665.1 conv_inst/conv_e_r_reg[14][12]/D      0.00  
+    0:01:07  250263.1      0.17      69.5    1665.1 sram_addr_ready_r_reg[3][0]/D      0.00  
+    0:01:07  250332.7      0.17      69.0    1665.1 sram_addr_ready_r_reg[1][5]/D      0.00  
+    0:01:08  250407.4      0.16      67.5    1665.1 sobel_nms_inst/sobel_e_r_reg[10][5]/D      0.00  
+    0:01:08  250409.1      0.16      67.1    1665.1 cnt_reg[4]/D                   0.00  
+    0:01:08  250431.2      0.16      66.5    1665.1 median_inst/u_median_filter_submodule/c2_reg[1]/D      0.00  
+    0:01:08  250400.6      0.16      65.9    1665.1 median_inst/u_median_filter_submodule/b1_reg[1]/D      0.00  
+    0:01:08  250470.2      0.15      65.3    1665.1 median_inst/u_median_filter_submodule/b9_reg[6]/D      0.00  
+    0:01:08  250531.3      0.15      63.9    1665.1 conv_inst/u_alu/out_data_s2_0_ready_r_reg[12]/D      0.00  
+    0:01:08  250582.2      0.15      63.3    1679.8 conv_input_data_r_reg[4]/D      0.00  
+    0:01:08  250641.6      0.15      63.1    1679.8 x_p1_r_reg[1]/D                0.00  
+    0:01:09  250687.5      0.15      62.8    1679.8 sram_addr_ready_r_reg[1][8]/D      0.00  
+    0:01:09  250785.9      0.14      61.9    1679.8 conv_inst/conv_e_r_reg[15][8]/D      0.00  
+    0:01:09  250864.0      0.14      61.4    1679.8 sram_addr_ready_r_reg[1][6]/D      0.00  
+    0:01:09  250999.8      0.14      60.4    1679.8 conv_inst/conv_e_r_reg[12][10]/D      0.00  
+    0:01:09  251089.8      0.14      58.5    1679.8 median_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:09  251167.8      0.14      56.4    1679.8 cnt_reg[2]/D                   0.00  
+    0:01:09  251234.0      0.14      55.0    1679.8 conv_inst/conv_e_r_reg[4][9]/D      0.00  
+    0:01:09  251307.0      0.13      54.4    1679.7 median_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:09  251425.8      0.13      53.2    1652.8 conv_inst/conv_e_r_reg[12][5]/D      0.00  
+    0:01:09  251459.8      0.13      48.6    1652.8 out_data_ready_r_reg[6]/D      0.00  
+    0:01:10  251576.9      0.12      47.7    1652.8 sram_addr_ready_r_reg[1][7]/D      0.00  
+    0:01:10  251670.3      0.12      43.4    1652.8 median_inst/u_median_filter_submodule/b9_reg[6]/D      0.00  
+    0:01:10  251739.9      0.12      42.0    1652.8 conv_inst/conv_e_r_reg[12][5]/D      0.00  
+    0:01:10  251851.9      0.12      40.8    1652.8 cnt_reg[9]/D                   0.00  
+    0:01:10  251986.0      0.12      39.8    1652.8 conv_inst/conv_e_r_reg[14][9]/D      0.00  
+    0:01:10  252137.1      0.11      38.7    1652.8 conv_inst/u_alu/out_data_s1_3_ready_r_reg[10]/D      0.00  
+    0:01:10  252240.6      0.11      37.9    1667.5 conv_inst/conv_e_r_reg[5][9]/D      0.00  
+    0:01:10  252318.7      0.11      37.5    1667.5 sram_addr_ready_r_reg[0][4]/D      0.00  
+    0:01:10  252481.6      0.11      35.9    1667.5 cnt_reg[2]/D                   0.00  
+    0:01:10  252525.8      0.10      34.0    1667.5 cnt_reg[2]/D                   0.00  
+    0:01:11  252642.9      0.10      32.9    1667.5 conv_inst/conv_e_r_reg[14][9]/D      0.00  
+    0:01:11  252678.5      0.10      32.3    1667.5 conv_inst/conv_e_r_reg[15][8]/D      0.00  
+    0:01:11  252712.5      0.10      32.0    1667.5 conv_inst/conv_e_r_reg[14][9]/D      0.00  
+    0:01:11  252785.5      0.09      31.1    1667.5 sram_addr_ready_r_reg[0][0]/D      0.00  
+    0:01:11  252785.5      0.09      30.5    1667.5 median_inst/u_median_filter_submodule/b9_reg[6]/D      0.00  
+    0:01:11  252834.7      0.09      29.6    1667.5 conv_inst/conv_e_r_reg[15][8]/D      0.00  
+    0:01:11  252883.9      0.09      29.2    1667.5 conv_inst/conv_e_r_reg[7][11]/D      0.00  
+    0:01:11  252907.7      0.09      29.2    1667.5 sram_addr_ready_r_reg[2][1]/D      0.00  
+    0:01:11  252924.6      0.08      27.9    1667.5 sram_addr_ready_r_reg[2][1]/D      0.00  
+    0:01:11  253012.9      0.08      27.6    1667.5 cnt_reg[5]/D                   0.00  
+    0:01:11  253130.0      0.08      26.6    1667.5 conv_inst/conv_e_r_reg[7][11]/D      0.00  
+    0:01:12  253128.3      0.08      25.5    1667.5 conv_inst/conv_e_r_reg[7][11]/D      0.00  
+    0:01:12  253201.3      0.08      24.4    1667.5 cnt_reg[2]/D                   0.00  
+    0:01:12  253237.0      0.07      24.2    1667.5 conv_inst/conv_e_r_reg[5][9]/D      0.00  
+    0:01:12  253248.8      0.07      23.4    1667.5 median_inst/u_median_filter_submodule/b5_reg[3]/D      0.00  
+    0:01:12  253291.3      0.07      23.1    1667.5 median_inst/u_median_filter_submodule/b9_reg[1]/D      0.00  
+    0:01:12  253243.8      0.07      22.7    1667.5 sram_addr_ready_r_reg[2][1]/D      0.00  
+    0:01:12  253321.8      0.07      21.9    1674.3 sram_addr_ready_r_reg[2][3]/D      0.00  
+    0:01:12  253374.5      0.06      20.6    1674.3 cnt_reg[5]/D                   0.00  
+    0:01:12  253517.0      0.06      20.0    1674.3 sram_addr_ready_r_reg[3][6]/D      0.00  
+    0:01:13  253569.7      0.06      19.1    1674.3 sobel_nms_inst/cnt_reg[2]/D      0.00  
+    0:01:13  253574.7      0.06      18.1    1674.3 median_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:13  253634.2      0.06      17.4    1674.3 y_origin_r_reg[1]/D            0.00  
+    0:01:13  253615.5      0.05      16.9    1674.3 median_inst/u_median_filter_submodule/b9_reg[6]/D      0.00  
+    0:01:13  253586.6      0.05      16.0    1674.3 median_inst/u_median_filter_submodule/c2_reg[0]/D      0.00  
+    0:01:13  253644.3      0.05      15.7    1674.3 median_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:13  253685.1      0.05      14.2    1674.3 sram_cen_ready_r_reg[2]/D      0.00  
+    0:01:13  253688.5      0.05      12.0    1674.3 sobel_nms_inst/sobel_e_delay_r_reg[14][0]/D      0.00  
+    0:01:13  253786.9      0.05      11.9    1674.3 median_inst/u_median_filter_submodule/b1_reg[6]/D      0.00  
+    0:01:13  253809.0      0.05      11.8    1674.3 sram_addr_ready_r_reg[2][6]/D      0.00  
+    0:01:14  253819.2      0.05      11.7    1674.3 sram_addr_ready_r_reg[2][6]/D      0.00  
+    0:01:14  253814.1      0.05      11.6    1674.3 sram_addr_ready_r_reg[2][3]/D      0.00  
+    0:01:14  253871.8      0.05      11.3    1674.3 median_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:14  253824.3      0.04      10.1    1674.3 sobel_nms_inst/sobel_e_delay_r_reg[5][0]/D      0.00  
+    0:01:14  253846.3      0.04       9.7    1674.3 sram_addr_ready_r_reg[2][3]/D      0.00  
+    0:01:14  253905.7      0.04       8.2    1674.3 conv_inst/conv_e_r_reg[2][10]/D      0.00  
+    0:01:14  253890.5      0.04       8.0    1674.3 conv_inst/conv_e_r_reg[15][8]/D      0.00  
+    0:01:14  253988.9      0.04       7.8    1688.9 median_inst/u_median_filter_submodule/c2_reg[0]/D      0.00  
+    0:01:15  254019.5      0.04       7.8    1688.9 sobel_nms_inst/cs_reg[0]/D      0.00  
+    0:01:15  254014.4      0.04       7.5    1688.9 cnt_reg[5]/D                   0.00  
+    0:01:15  254041.5      0.04       7.4    1688.9 conv_inst/conv_e_r_reg[11][11]/D      0.00  
+    0:01:15  254036.4      0.04       7.1    1688.9 cnt_reg[5]/D                   0.00  
+    0:01:15  254067.0      0.03       6.6    1688.9 conv_inst/conv_e_r_reg[0][9]/D      0.00  
+    0:01:15  254077.2      0.03       6.5    1674.3 sram_cen_ready_r_reg[2]/D      0.00  
+    0:01:15  254116.2      0.03       6.3    1674.3 median_inst/u_median_filter_submodule/c2_reg[0]/D      0.00  
+    0:01:15  254126.4      0.03       5.6    1674.3 sram_cen_ready_r_reg[3]/D      0.00  
+    0:01:15  254199.4      0.03       4.4    1674.3 median_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:15  254255.4      0.03       4.1    1674.3 median_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:16  254260.5      0.03       3.5    1674.3 conv_inst/conv_e_r_reg[7][10]/D      0.00  
+    0:01:16  254318.2      0.03       3.0    1674.3 conv_inst/conv_e_r_reg[5][6]/D      0.00  
+    0:01:16  254420.1      0.02       2.8    1674.3 conv_inst/conv_e_r_reg[0][12]/D      0.00  
+    0:01:16  254447.2      0.02       2.7    1674.3 conv_inst/u_alu/out_data_s2_1_ready_r_reg[12]/D      0.00  
+    0:01:16  254442.1      0.02       2.5    1674.3 median_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:16  254431.9      0.02       2.3    1669.6 sram_addr_ready_r_reg[2][3]/D      0.00  
+    0:01:16  254455.7      0.02       2.2    1669.6 sram_addr_ready_r_reg[2][3]/D      0.00  
+    0:01:16  254455.7      0.02       1.9    1669.6 sram_addr_ready_r_reg[0][4]/D      0.00  
+    0:01:16  254464.2      0.02       1.9    1669.6 sram_addr_ready_r_reg[2][2]/D      0.00  
+    0:01:16  254499.8      0.02       1.8    1669.6 sram_addr_ready_r_reg[2][6]/D      0.00  
+    0:01:16  254528.7      0.02       1.6    1669.6 median_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:17  254538.9      0.02       1.2    1669.6 median_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:17  254583.0      0.01       1.2    1669.6 sram_addr_ready_r_reg[1][8]/D      0.00  
+    0:01:17  254550.8      0.01       0.8    1668.1 conv_inst/conv_e_r_reg[6][11]/D      0.00  
+    0:01:17  254557.5      0.01       0.8    1668.1 median_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:17  254486.3      0.01       0.7    1668.1 conv_inst/conv_e_r_reg[6][11]/D      0.00  
+    0:01:17  254479.5      0.01       0.7    1668.1 sram_addr_ready_r_reg[2][2]/D      0.00  
+    0:01:17  254471.0      0.01       0.7    1668.1 sram_addr_ready_r_reg[2][2]/D      0.00  
+    0:01:18  254435.3      0.01       0.6    1668.1 sram_addr_ready_r_reg[2][2]/D      0.00  
+    0:01:18  254438.7      0.01       0.5    1668.1 conv_inst/conv_e_r_reg[5][11]/D      0.00  
+    0:01:18  254421.8      0.01       0.4    1668.1 median_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:18  254409.9      0.01       0.3    1668.1 conv_inst/conv_e_r_reg[14][10]/D      0.00  
+    0:01:18  254399.7      0.00       0.2    1668.1 med_input_data_r_reg[16]/D      0.00  
+    0:01:18  254415.0      0.00       0.1    1668.1 conv_inst/u_alu/out_data_s3_0_ready_r_reg[9]/D      0.00  
+    0:01:18  254401.4      0.00       0.1    1668.1 conv_inst/conv_e_r_reg[4][9]/D      0.00  
+    0:01:19  254392.9      0.00       0.1    1668.1 median_inst/u_median_filter_submodule/b1_reg[7]/D      0.00  
+    0:01:19  254396.3      0.00       0.0    1616.3 sobel_nms_inst/sobel_e_delay_r_reg[1][7]/D      0.00  
+    0:01:19  254262.2      0.00       0.0    1616.3 median_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:19  254262.2      0.00       0.0    1616.3                                0.00  
+    0:01:21  253810.7      0.00       0.0    1604.3                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:21  253810.7      0.00       0.0    1604.3                                0.00  
+    0:01:22  253905.7      0.00       0.0     934.4 conv_inst/u_alu/i_rst_n        0.00  
+    0:01:22  254150.2      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:22  254150.2      0.00       0.0       0.0                                0.00  
+    0:01:22  254150.2      0.00       0.0       0.0                                0.00  
+    0:01:23  250422.7      0.04       1.1       0.0                                0.00  
+    0:01:23  249431.4      0.04       1.2       0.0                                0.00  
+    0:01:23  249056.3      0.08       1.3       0.0                                0.00  
+    0:01:24  248815.2      0.08       1.7       0.0                                0.00  
+    0:01:24  248659.1      0.08       1.7       0.0                                0.00  
+    0:01:24  248582.7      0.08       1.7       0.0                                0.00  
+    0:01:24  248582.7      0.08       1.7       0.0                                0.00  
+    0:01:24  248625.1      0.02       0.4       0.0                                0.00  
+    0:01:25  242657.1      1.28     123.2       0.0                                0.00  
+    0:01:26  241054.7      1.28     162.5       0.0                                0.00  
+    0:01:26  240896.9      1.28     163.0       0.0                                0.00  
+    0:01:26  240888.4      1.28     163.0       0.0                                0.00  
+    0:01:26  240888.4      1.28     163.0       0.0                                0.00  
+    0:01:26  240888.4      1.28     163.0       0.0                                0.00  
+    0:01:26  240888.4      1.28     163.0       0.0                                0.00  
+    0:01:26  240888.4      1.28     163.0       0.0                                0.00  
+    0:01:26  241642.0      0.39      82.8       0.0 conv_inst/conv_e_r_reg[12][7]/D      0.00  
+    0:01:27  242168.2      0.29      56.9       0.0 conv_inst/conv_e_r_reg[7][12]/D      0.00  
+    0:01:27  242538.3      0.23      42.7       0.0 conv_inst/conv_e_r_reg[4][12]/D      0.00  
+    0:01:27  242862.5      0.17      33.5       0.0 conv_inst/conv_e_r_reg[0][10]/D      0.00  
+    0:01:27  243134.0      0.13      25.8       0.0 conv_inst/conv_e_r_reg[4][9]/D      0.00  
+    0:01:28  243380.2      0.11      19.9       0.0 median_inst/u_median_filter_submodule/c2_reg[3]/D      0.00  
+    0:01:28  243514.3      0.10      18.4       0.0 median_inst/u_median_filter_submodule/b1_reg[5]/D      0.00  
+    0:01:28  243587.2      0.08      14.9       0.0 conv_inst/conv_e_r_reg[0][6]/D      0.00  
+    0:01:29  243694.2      0.07      13.7       0.0 conv_inst/u_alu/out_data_s4_0_ready_r_reg[9]/D      0.00  
+    0:01:29  243689.1      0.06      11.8       0.0 y_r_reg[1]/D                   0.00  
+    0:01:29  243772.3      0.06      10.4       0.0 sram_addr_ready_r_reg[2][1]/D      0.00  
+    0:01:29  243882.6      0.05       9.4       0.0 conv_inst/u_alu/out_data_ready_sat_r_reg[12]/D      0.00  
+    0:01:29  243850.3      0.05       8.0       0.0 conv_inst/u_alu/out_data_s1_1_ready_r_reg[13]/D      0.00  
+    0:01:30  243863.9      0.04       7.6       0.0 median_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:30  243899.6      0.04       7.1       0.0 conv_inst/conv_e_r_reg[12][6]/D      0.00  
+    0:01:30  244006.5      0.04       6.2       0.0 x_p1_r_reg[2]/D                0.00  
+    0:01:30  244026.9      0.04       5.5       0.0 conv_inst/conv_e_r_reg[4][9]/D      0.00  
+    0:01:30  244060.8      0.03       4.1       0.0 conv_inst/u_alu/out_data_s1_1_ready_r_reg[13]/D      0.00  
+    0:01:30  244106.7      0.03       3.7       0.0 median_inst/u_median_filter_submodule/b5_reg[6]/D      0.00  
+    0:01:31  244200.0      0.02       3.5       0.0 sram_addr_ready_r_reg[3][4]/D      0.00  
+    0:01:31  244242.4      0.02       3.1       0.0 sobel_input_data_r_reg[14]/D      0.00  
+    0:01:31  244330.7      0.02       2.6       0.0 out_data_ready_r_reg[0]/D      0.00  
+    0:01:31  244400.3      0.02       2.4       0.0 y_m1_r_reg[0]/D                0.00  
+    0:01:31  244412.2      0.02       2.3       0.0 sram_addr_ready_r_reg[0][4]/D      0.00  
+    0:01:31  244439.3      0.02       2.0       0.0 sram_addr_ready_r_reg[0][5]/D      0.00  
+    0:01:31  244419.0      0.01       1.7       0.0                                0.00  
+    0:01:32  244488.6      0.01       0.9       0.0                                0.00  
+    0:01:32  244541.2      0.01       0.6       0.0                                0.00  
+    0:01:32  244568.3      0.01       0.4       0.0                                0.00  
+    0:01:32  244600.6      0.00       0.3       0.0                                0.00  
+    0:01:32  244592.1      0.00       0.0       0.0 median_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:32  244587.0      0.00       0.0       0.0 conv_inst/conv_e_r_reg[11][11]/D      0.00  
+    0:01:32  244587.0      0.00       0.0       0.0 conv_inst/conv_e_r_reg[7][12]/D      0.00  
+    0:01:33  244641.3      0.00       0.0       0.0                                0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'core' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'median_inst/u_median_filter_submodule/clk': 1590 load(s), 1 driver(s), 1 inout(s)
+1
+# Report Output
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+report_timing > "./Report/${DESIGN}_syn.timing"
+report_area > "./Report/${DESIGN}_syn.area"
+# Output Design
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+Removing port 'B[12]' from design 'conv_DW01_add_31'
+Removing port 'B[11]' from design 'conv_DW01_add_31'
+Removing port 'B[10]' from design 'conv_DW01_add_31'
+Removing port 'B[9]' from design 'conv_DW01_add_31'
+Removing port 'B[8]' from design 'conv_DW01_add_31'
+Removing port 'CI' from design 'conv_DW01_add_31'
+Removing port 'CO' from design 'conv_DW01_add_31'
+Removing port 'B[12]' from design 'conv_DW01_add_30'
+Removing port 'B[11]' from design 'conv_DW01_add_30'
+Removing port 'B[10]' from design 'conv_DW01_add_30'
+Removing port 'B[9]' from design 'conv_DW01_add_30'
+Removing port 'B[8]' from design 'conv_DW01_add_30'
+Removing port 'CI' from design 'conv_DW01_add_30'
+Removing port 'CO' from design 'conv_DW01_add_30'
+Removing port 'B[12]' from design 'conv_DW01_add_29'
+Removing port 'B[11]' from design 'conv_DW01_add_29'
+Removing port 'B[10]' from design 'conv_DW01_add_29'
+Removing port 'B[9]' from design 'conv_DW01_add_29'
+Removing port 'B[8]' from design 'conv_DW01_add_29'
+Removing port 'CI' from design 'conv_DW01_add_29'
+Removing port 'CO' from design 'conv_DW01_add_29'
+Removing port 'B[12]' from design 'conv_DW01_add_28'
+Removing port 'B[11]' from design 'conv_DW01_add_28'
+Removing port 'B[10]' from design 'conv_DW01_add_28'
+Removing port 'B[9]' from design 'conv_DW01_add_28'
+Removing port 'B[8]' from design 'conv_DW01_add_28'
+Removing port 'CI' from design 'conv_DW01_add_28'
+Removing port 'CO' from design 'conv_DW01_add_28'
+Removing port 'B[12]' from design 'conv_DW01_add_27'
+Removing port 'B[11]' from design 'conv_DW01_add_27'
+Removing port 'B[10]' from design 'conv_DW01_add_27'
+Removing port 'B[9]' from design 'conv_DW01_add_27'
+Removing port 'B[8]' from design 'conv_DW01_add_27'
+Removing port 'CI' from design 'conv_DW01_add_27'
+Removing port 'CO' from design 'conv_DW01_add_27'
+Removing port 'B[12]' from design 'conv_DW01_add_26'
+Removing port 'B[11]' from design 'conv_DW01_add_26'
+Removing port 'B[10]' from design 'conv_DW01_add_26'
+Removing port 'B[9]' from design 'conv_DW01_add_26'
+Removing port 'B[8]' from design 'conv_DW01_add_26'
+Removing port 'CI' from design 'conv_DW01_add_26'
+Removing port 'CO' from design 'conv_DW01_add_26'
+Removing port 'B[12]' from design 'conv_DW01_add_25'
+Removing port 'B[11]' from design 'conv_DW01_add_25'
+Removing port 'B[10]' from design 'conv_DW01_add_25'
+Removing port 'B[9]' from design 'conv_DW01_add_25'
+Removing port 'B[8]' from design 'conv_DW01_add_25'
+Removing port 'CI' from design 'conv_DW01_add_25'
+Removing port 'CO' from design 'conv_DW01_add_25'
+Removing port 'B[12]' from design 'conv_DW01_add_24'
+Removing port 'B[11]' from design 'conv_DW01_add_24'
+Removing port 'B[10]' from design 'conv_DW01_add_24'
+Removing port 'B[9]' from design 'conv_DW01_add_24'
+Removing port 'B[8]' from design 'conv_DW01_add_24'
+Removing port 'CI' from design 'conv_DW01_add_24'
+Removing port 'CO' from design 'conv_DW01_add_24'
+Removing port 'B[12]' from design 'conv_DW01_add_23'
+Removing port 'B[11]' from design 'conv_DW01_add_23'
+Removing port 'B[10]' from design 'conv_DW01_add_23'
+Removing port 'B[9]' from design 'conv_DW01_add_23'
+Removing port 'B[8]' from design 'conv_DW01_add_23'
+Removing port 'CI' from design 'conv_DW01_add_23'
+Removing port 'CO' from design 'conv_DW01_add_23'
+Removing port 'B[12]' from design 'conv_DW01_add_22'
+Removing port 'B[11]' from design 'conv_DW01_add_22'
+Removing port 'B[10]' from design 'conv_DW01_add_22'
+Removing port 'B[9]' from design 'conv_DW01_add_22'
+Removing port 'B[8]' from design 'conv_DW01_add_22'
+Removing port 'CI' from design 'conv_DW01_add_22'
+Removing port 'CO' from design 'conv_DW01_add_22'
+Removing port 'B[12]' from design 'conv_DW01_add_21'
+Removing port 'B[11]' from design 'conv_DW01_add_21'
+Removing port 'B[10]' from design 'conv_DW01_add_21'
+Removing port 'B[9]' from design 'conv_DW01_add_21'
+Removing port 'B[8]' from design 'conv_DW01_add_21'
+Removing port 'CI' from design 'conv_DW01_add_21'
+Removing port 'CO' from design 'conv_DW01_add_21'
+Removing port 'B[12]' from design 'conv_DW01_add_20'
+Removing port 'B[11]' from design 'conv_DW01_add_20'
+Removing port 'B[10]' from design 'conv_DW01_add_20'
+Removing port 'B[9]' from design 'conv_DW01_add_20'
+Removing port 'B[8]' from design 'conv_DW01_add_20'
+Removing port 'CI' from design 'conv_DW01_add_20'
+Removing port 'CO' from design 'conv_DW01_add_20'
+Removing port 'B[12]' from design 'conv_DW01_add_19'
+Removing port 'B[11]' from design 'conv_DW01_add_19'
+Removing port 'B[10]' from design 'conv_DW01_add_19'
+Removing port 'B[9]' from design 'conv_DW01_add_19'
+Removing port 'B[8]' from design 'conv_DW01_add_19'
+Removing port 'CI' from design 'conv_DW01_add_19'
+Removing port 'CO' from design 'conv_DW01_add_19'
+Removing port 'B[12]' from design 'conv_DW01_add_18'
+Removing port 'B[11]' from design 'conv_DW01_add_18'
+Removing port 'B[10]' from design 'conv_DW01_add_18'
+Removing port 'B[9]' from design 'conv_DW01_add_18'
+Removing port 'B[8]' from design 'conv_DW01_add_18'
+Removing port 'CI' from design 'conv_DW01_add_18'
+Removing port 'CO' from design 'conv_DW01_add_18'
+Removing port 'B[12]' from design 'conv_DW01_add_17'
+Removing port 'B[11]' from design 'conv_DW01_add_17'
+Removing port 'B[10]' from design 'conv_DW01_add_17'
+Removing port 'B[9]' from design 'conv_DW01_add_17'
+Removing port 'B[8]' from design 'conv_DW01_add_17'
+Removing port 'CI' from design 'conv_DW01_add_17'
+Removing port 'CO' from design 'conv_DW01_add_17'
+Removing port 'B[12]' from design 'conv_DW01_add_16'
+Removing port 'B[11]' from design 'conv_DW01_add_16'
+Removing port 'B[10]' from design 'conv_DW01_add_16'
+Removing port 'B[9]' from design 'conv_DW01_add_16'
+Removing port 'B[8]' from design 'conv_DW01_add_16'
+Removing port 'CI' from design 'conv_DW01_add_16'
+Removing port 'CO' from design 'conv_DW01_add_16'
+Removing port 'A[14]' from design 'small_alu_add_DW01_inc_1'
+Removing port 'SUM[0]' from design 'small_alu_add_DW01_inc_1'
+Removing port 'A[13]' from design 'small_alu_add_DW01_add_15'
+Removing port 'B[13]' from design 'small_alu_add_DW01_add_15'
+Removing port 'CI' from design 'small_alu_add_DW01_add_15'
+Removing port 'CO' from design 'small_alu_add_DW01_add_15'
+Removing port 'A[13]' from design 'small_alu_add_DW01_add_14'
+Removing port 'B[13]' from design 'small_alu_add_DW01_add_14'
+Removing port 'CI' from design 'small_alu_add_DW01_add_14'
+Removing port 'CO' from design 'small_alu_add_DW01_add_14'
+Removing port 'A[13]' from design 'small_alu_add_DW01_add_13'
+Removing port 'B[13]' from design 'small_alu_add_DW01_add_13'
+Removing port 'CI' from design 'small_alu_add_DW01_add_13'
+Removing port 'CO' from design 'small_alu_add_DW01_add_13'
+Removing port 'A[13]' from design 'small_alu_add_DW01_add_12'
+Removing port 'B[13]' from design 'small_alu_add_DW01_add_12'
+Removing port 'CI' from design 'small_alu_add_DW01_add_12'
+Removing port 'CO' from design 'small_alu_add_DW01_add_12'
+Removing port 'A[14]' from design 'small_alu_add_DW01_add_11'
+Removing port 'B[14]' from design 'small_alu_add_DW01_add_11'
+Removing port 'CI' from design 'small_alu_add_DW01_add_11'
+Removing port 'CO' from design 'small_alu_add_DW01_add_11'
+Removing port 'A[14]' from design 'small_alu_add_DW01_add_10'
+Removing port 'B[14]' from design 'small_alu_add_DW01_add_10'
+Removing port 'CI' from design 'small_alu_add_DW01_add_10'
+Removing port 'CO' from design 'small_alu_add_DW01_add_10'
+Removing port 'A[16]' from design 'small_alu_add_DW01_add_9'
+Removing port 'A[0]' from design 'small_alu_add_DW01_add_9'
+Removing port 'B[16]' from design 'small_alu_add_DW01_add_9'
+Removing port 'B[15]' from design 'small_alu_add_DW01_add_9'
+Removing port 'B[0]' from design 'small_alu_add_DW01_add_9'
+Removing port 'CI' from design 'small_alu_add_DW01_add_9'
+Removing port 'SUM[1]' from design 'small_alu_add_DW01_add_9'
+Removing port 'SUM[0]' from design 'small_alu_add_DW01_add_9'
+Removing port 'CO' from design 'small_alu_add_DW01_add_9'
+Removing port 'B[14]' from design 'small_alu_add_DW01_add_8'
+Removing port 'B[13]' from design 'small_alu_add_DW01_add_8'
+Removing port 'CI' from design 'small_alu_add_DW01_add_8'
+Removing port 'SUM[0]' from design 'small_alu_add_DW01_add_8'
+Removing port 'CO' from design 'small_alu_add_DW01_add_8'
+1
+set verilogout_higher_designs_first true
+true
+write -format ddc     -hierarchy -output "./Netlist/${DESIGN}_syn.ddc"
+Writing ddc file './Netlist/core_syn.ddc'.
+1
+write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
+Writing verilog file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/Netlist/core_syn.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
+Information: Writing timing information to file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/Netlist/core_syn.sdf'. (WT-3)
+Warning: Design contains black-box components.  These cells will have no timing information. (WT-7)
+1
+write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : core
+Version: U-2022.12
+Date   : Tue Oct 15 16:35:27 2024
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: conv_inst/cnt_reg_0_
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: conv_inst/conv_e_r_reg_7__9_
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  conv_inst/cnt_reg_0_/CK (DFFRX4)                        0.00 #     0.50 r
+  conv_inst/cnt_reg_0_/Q (DFFRX4)                         0.52       1.02 f
+  conv_inst/U118/Y (NAND2X8)                              0.11       1.13 r
+  conv_inst/U116/Y (INVX20)                               0.15       1.28 f
+  conv_inst/U45/Y (AND2X4)                                0.21       1.49 f
+  conv_inst/add_134_2_G8_aco/B[1] (conv_DW01_add_27)      0.00       1.49 f
+  conv_inst/add_134_2_G8_aco/U119/Y (NOR2X6)              0.14       1.64 r
+  conv_inst/add_134_2_G8_aco/U175/Y (OAI21X4)             0.12       1.76 f
+  conv_inst/add_134_2_G8_aco/U151/Y (AO21X4)              0.22       1.98 f
+  conv_inst/add_134_2_G8_aco/U100/Y (NAND2X8)             0.07       2.06 r
+  conv_inst/add_134_2_G8_aco/U168/Y (NAND2X8)             0.13       2.19 f
+  conv_inst/add_134_2_G8_aco/U122/Y (NAND2X4)             0.15       2.34 r
+  conv_inst/add_134_2_G8_aco/U121/Y (INVX4)               0.08       2.42 f
+  conv_inst/add_134_2_G8_aco/U125/Y (NAND2X6)             0.06       2.48 r
+  conv_inst/add_134_2_G8_aco/U124/Y (NAND2X4)             0.07       2.55 f
+  conv_inst/add_134_2_G8_aco/SUM[9] (conv_DW01_add_27)
+                                                          0.00       2.55 f
+  conv_inst/U293/Y (AND2X2)                               0.18       2.73 f
+  conv_inst/conv_e_r_reg_7__9_/D (DFFSRHQX2)              0.00       2.73 f
+  data arrival time                                                  2.73
+
+  clock i_clk (rise edge)                                 2.51       2.51
+  clock network delay (ideal)                             0.50       3.01
+  clock uncertainty                                      -0.10       2.91
+  conv_inst/conv_e_r_reg_7__9_/CK (DFFSRHQX2)             0.00       2.91 r
+  library setup time                                     -0.18       2.73
+  data required time                                                 2.73
+  --------------------------------------------------------------------------
+  data required time                                                 2.73
+  data arrival time                                                 -2.73
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+report_area
+ 
+****************************************
+Report : area
+Design : core
+Version: U-2022.12
+Date   : Tue Oct 15 16:35:27 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
+    sram_512x8 (File: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db)
+
+Number of ports:                         1371
+Number of nets:                          9535
+Number of cells:                         7737
+Number of combinational cells:           6010
+Number of sequential cells:              1587
+Number of macros/black boxes:               4
+Number of buf/inv:                       1270
+Number of references:                     186
+
+Combinational area:              64857.653687
+Buf/Inv area:                     9900.934180
+Noncombinational area:           55992.132774
+Macro/Black Box area:           123791.546875
+Net Interconnect area:          904638.051025
+
+Total cell area:                244641.333337
+Total area:                    1149279.384362
+
+Information: This design contains black box (unknown) components. (RPT-8)
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Tue Oct 15 16:35:27 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Multiply driven inputs (LINT-6)                                 2
+
+Nets                                                               71
+    Unloaded nets (LINT-2)                                         67
+    Undriven nets (LINT-3)                                          4
+
+Tristate                                                           74
+    A tristate bus has a non tri-state driver (LINT-34)            74
+--------------------------------------------------------------------------------
+
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_20' driven by pin 'sobel_nms_inst/o_out_data[0]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_19' driven by pin 'sobel_nms_inst/o_out_data[1]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_18' driven by pin 'sobel_nms_inst/o_out_data[2]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_17' driven by pin 'sobel_nms_inst/o_out_data[3]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_16' driven by pin 'sobel_nms_inst/o_out_data[4]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_15' driven by pin 'sobel_nms_inst/o_out_data[5]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_14' driven by pin 'sobel_nms_inst/o_out_data[6]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_13' driven by pin 'sobel_nms_inst/o_out_data[7]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_12' driven by pin 'sobel_nms_inst/o_out_data[8]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_11' driven by pin 'sobel_nms_inst/o_out_data[9]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_10' driven by pin 'sobel_nms_inst/o_out_data[10]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_9' driven by pin 'sobel_nms_inst/o_out_data[11]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_8' driven by pin 'sobel_nms_inst/o_out_data[12]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_7' driven by pin 'sobel_nms_inst/o_out_data[13]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_6' driven by pin 'median_inst/o_out_data[8]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_5' driven by pin 'median_inst/o_out_data[9]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_4' driven by pin 'median_inst/o_out_data[10]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_3' driven by pin 'median_inst/o_out_data[11]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_2' driven by pin 'median_inst/o_out_data[12]' has no loads. (LINT-2)
+Warning: In design 'core', net 'SYNOPSYS_UNCONNECTED_1' driven by pin 'median_inst/o_out_data[13]' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4840' driven by pin 'conv_inst/U821/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4830' driven by pin 'conv_inst/U820/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4820' driven by pin 'conv_inst/U819/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4810' driven by pin 'conv_inst/U818/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4800' driven by pin 'conv_inst/U817/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4790' driven by pin 'conv_inst/U816/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4780' driven by pin 'conv_inst/U815/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4770' driven by pin 'conv_inst/U814/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4760' driven by pin 'conv_inst/U813/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4750' driven by pin 'conv_inst/U812/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n474' driven by pin 'conv_inst/U811/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n473' driven by pin 'conv_inst/U810/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n472' driven by pin 'conv_inst/U809/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4710' driven by pin 'conv_inst/U808/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4700' driven by pin 'conv_inst/U807/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4690' driven by pin 'conv_inst/U806/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4680' driven by pin 'conv_inst/U805/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4670' driven by pin 'conv_inst/U804/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4660' driven by pin 'conv_inst/U803/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4650' driven by pin 'conv_inst/U802/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4640' driven by pin 'conv_inst/U801/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4630' driven by pin 'conv_inst/U800/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4620' driven by pin 'conv_inst/U799/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4610' driven by pin 'conv_inst/U798/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4600' driven by pin 'conv_inst/U797/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4590' driven by pin 'conv_inst/U796/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n458' driven by pin 'conv_inst/U795/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n457' driven by pin 'conv_inst/U794/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n456' driven by pin 'conv_inst/U793/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4550' driven by pin 'conv_inst/U792/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4540' driven by pin 'conv_inst/U791/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/n4530' driven by pin 'conv_inst/U790/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_4' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_3' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_2' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_1' driven by pin ' (no pin) ' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n9' driven by pin 'conv_inst/u_alu/U11/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n8' driven by pin 'conv_inst/u_alu/U10/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n7' driven by pin 'conv_inst/u_alu/U9/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n6' driven by pin 'conv_inst/u_alu/U8/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n5' driven by pin 'conv_inst/u_alu/U7/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n4' driven by pin 'conv_inst/u_alu/U6/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n3' driven by pin 'conv_inst/u_alu/U5/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n2' driven by pin 'conv_inst/u_alu/U4/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n1' driven by pin 'conv_inst/u_alu/U3/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/out_data_s2_1_ready_r[0]' driven by pin 'conv_inst/u_alu/out_data_s2_1_ready_r_reg_0_/Q' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/n_Logic0_' driven by pin 'conv_inst/u_alu/U2/**logic_0**' has no loads. (LINT-2)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_4' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_3' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_2' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'core', net 'conv_inst/u_alu/SYNOPSYS_UNCONNECTED_1' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'sobel_nms', input port 'i_clk' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'sobel_nms', input port 'i_rst_n' drives wired logic; the port direction may have been specified incorrectly. (LINT-6)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/index_r[0]' has non three-state driver 'sobel_nms_inst/cnt_reg_0_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/index_r[1]' has non three-state driver 'sobel_nms_inst/cnt_reg_1_/Q'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_i_r[0]' has non three-state driver 'sobel_nms_inst/U612/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_i_r[1]' has non three-state driver 'sobel_nms_inst/U611/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_i_r[2]' has non three-state driver 'sobel_nms_inst/U610/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_i_r[3]' has non three-state driver 'sobel_nms_inst/U609/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_i_r[4]' has non three-state driver 'sobel_nms_inst/U608/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_i_r[5]' has non three-state driver 'sobel_nms_inst/U607/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_i_r[6]' has non three-state driver 'sobel_nms_inst/U606/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_i_r[7]' has non three-state driver 'sobel_nms_inst/U605/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_h_r[0]' has non three-state driver 'sobel_nms_inst/U604/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_h_r[1]' has non three-state driver 'sobel_nms_inst/U603/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_h_r[2]' has non three-state driver 'sobel_nms_inst/U602/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_h_r[3]' has non three-state driver 'sobel_nms_inst/U601/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_h_r[4]' has non three-state driver 'sobel_nms_inst/U600/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_h_r[5]' has non three-state driver 'sobel_nms_inst/U599/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_h_r[6]' has non three-state driver 'sobel_nms_inst/U598/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_h_r[7]' has non three-state driver 'sobel_nms_inst/U597/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_g_r[0]' has non three-state driver 'sobel_nms_inst/U596/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_g_r[1]' has non three-state driver 'sobel_nms_inst/U595/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_g_r[2]' has non three-state driver 'sobel_nms_inst/U594/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_g_r[3]' has non three-state driver 'sobel_nms_inst/U593/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_g_r[4]' has non three-state driver 'sobel_nms_inst/U592/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_g_r[5]' has non three-state driver 'sobel_nms_inst/U591/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_g_r[6]' has non three-state driver 'sobel_nms_inst/U590/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_g_r[7]' has non three-state driver 'sobel_nms_inst/U589/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_f_r[0]' has non three-state driver 'sobel_nms_inst/U588/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_f_r[1]' has non three-state driver 'sobel_nms_inst/U587/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_f_r[2]' has non three-state driver 'sobel_nms_inst/U586/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_f_r[3]' has non three-state driver 'sobel_nms_inst/U585/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_f_r[4]' has non three-state driver 'sobel_nms_inst/U584/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_f_r[5]' has non three-state driver 'sobel_nms_inst/U583/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_f_r[6]' has non three-state driver 'sobel_nms_inst/U582/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_f_r[7]' has non three-state driver 'sobel_nms_inst/U581/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_e_r[0]' has non three-state driver 'sobel_nms_inst/U580/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_e_r[1]' has non three-state driver 'sobel_nms_inst/U579/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_e_r[2]' has non three-state driver 'sobel_nms_inst/U578/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_e_r[3]' has non three-state driver 'sobel_nms_inst/U577/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_e_r[4]' has non three-state driver 'sobel_nms_inst/U576/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_e_r[5]' has non three-state driver 'sobel_nms_inst/U575/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_e_r[6]' has non three-state driver 'sobel_nms_inst/U574/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_e_r[7]' has non three-state driver 'sobel_nms_inst/U573/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_d_r[0]' has non three-state driver 'sobel_nms_inst/U572/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_d_r[1]' has non three-state driver 'sobel_nms_inst/U571/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_d_r[2]' has non three-state driver 'sobel_nms_inst/U570/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_d_r[3]' has non three-state driver 'sobel_nms_inst/U569/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_d_r[4]' has non three-state driver 'sobel_nms_inst/U568/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_d_r[5]' has non three-state driver 'sobel_nms_inst/U567/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_d_r[6]' has non three-state driver 'sobel_nms_inst/U566/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_d_r[7]' has non three-state driver 'sobel_nms_inst/U565/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_c_r[0]' has non three-state driver 'sobel_nms_inst/U564/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_c_r[1]' has non three-state driver 'sobel_nms_inst/U563/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_c_r[2]' has non three-state driver 'sobel_nms_inst/U562/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_c_r[3]' has non three-state driver 'sobel_nms_inst/U561/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_c_r[4]' has non three-state driver 'sobel_nms_inst/U560/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_c_r[5]' has non three-state driver 'sobel_nms_inst/U559/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_c_r[6]' has non three-state driver 'sobel_nms_inst/U558/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_c_r[7]' has non three-state driver 'sobel_nms_inst/U557/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_b_r[0]' has non three-state driver 'sobel_nms_inst/U556/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_b_r[1]' has non three-state driver 'sobel_nms_inst/U555/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_b_r[2]' has non three-state driver 'sobel_nms_inst/U554/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_b_r[3]' has non three-state driver 'sobel_nms_inst/U553/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_b_r[4]' has non three-state driver 'sobel_nms_inst/U552/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_b_r[5]' has non three-state driver 'sobel_nms_inst/U551/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_b_r[6]' has non three-state driver 'sobel_nms_inst/U550/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_b_r[7]' has non three-state driver 'sobel_nms_inst/U549/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_a_r[0]' has non three-state driver 'sobel_nms_inst/U548/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_a_r[1]' has non three-state driver 'sobel_nms_inst/U547/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_a_r[2]' has non three-state driver 'sobel_nms_inst/U546/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_a_r[3]' has non three-state driver 'sobel_nms_inst/U545/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_a_r[4]' has non three-state driver 'sobel_nms_inst/U544/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_a_r[5]' has non three-state driver 'sobel_nms_inst/U543/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_a_r[6]' has non three-state driver 'sobel_nms_inst/U542/Y'. (LINT-34)
+Warning: In design 'core', three-state bus 'sobel_nms_inst/data_a_r[7]' has non three-state driver 'sobel_nms_inst/U541/Y'. (LINT-34)
+1
+exit
+
+Memory usage for this session 206 Mbytes.
+Memory usage for this session including child processes 206 Mbytes.
+CPU usage for this session 100 seconds ( 0.03 hours ).
+Elapsed time for this session 105 seconds ( 0.03 hours ).
+
+Thank you...

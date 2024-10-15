@@ -321,8 +321,8 @@ FileName = test.ps
 PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
 [QtDialog]
-QwWarnMsgDlg = 330,195,600,250
 openFileDlg = 659,286,602,483
+QwWarnMsgDlg = 330,195,600,250
 qWaveSignalDialog = 474,288,972,479
 [Session Cache]
 1 = string (session file name)
@@ -602,7 +602,7 @@ scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
 getSignalForm = 474 288 972 479 279 381 447 89
-viewPort = 0 23 1920 1009 125 65
+viewPort = 0 23 1920 1009 194 143
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
