@@ -7,15 +7,15 @@ Report : timing
         -max_paths 1
 Design : conv
 Version: U-2022.12
-Date   : Sun Oct 13 17:24:04 2024
+Date   : Sat Oct 26 22:06:29 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: data_r_reg[20]
+  Startpoint: data_abc_3_r_reg[10]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: conv_e_r_reg[10][8]
+  Endpoint: conv_3_r_reg[16]
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -24,38 +24,36 @@ Wire Load Model Mode: top
   ------------------------------------------------
   conv               tsmc13_wl10           slow
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  data_r_reg[20]/CK (DFFRX4)                              0.00       0.50 r
-  data_r_reg[20]/Q (DFFRX4)                               0.60       1.10 f
-  add_146_2_G11/B[4] (conv_DW01_add_21)                   0.00       1.10 f
-  add_146_2_G11/U145/Y (OR2X2)                            0.35       1.45 f
-  add_146_2_G11/U133/Y (INVX3)                            0.13       1.58 r
-  add_146_2_G11/U121/Y (NOR2X6)                           0.08       1.66 f
-  add_146_2_G11/U100/Y (NAND2X1)                          0.18       1.84 r
-  add_146_2_G11/U106/Y (OA21X4)                           0.23       2.07 r
-  add_146_2_G11/U136/Y (INVX12)                           0.08       2.15 f
-  add_146_2_G11/U147/Y (INVX1)                            0.16       2.31 r
-  add_146_2_G11/U150/Y (NAND2X2)                          0.12       2.42 f
-  add_146_2_G11/U146/Y (NAND2X2)                          0.10       2.53 r
-  add_146_2_G11/SUM[8] (conv_DW01_add_21)                 0.00       2.53 r
-  U980/Y (AO22X1)                                         0.26       2.79 r
-  conv_e_r_reg[10][8]/D (DFFRX4)                          0.00       2.79 r
-  data arrival time                                                  2.79
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  data_abc_3_r_reg[10]/CK (DFFRX1)         0.00       0.50 r
+  data_abc_3_r_reg[10]/Q (DFFRX1)          0.49       0.99 r
+  add_78/B[10] (conv_DW01_add_9)           0.00       0.99 r
+  add_78/U168/Y (BUFX4)                    0.18       1.18 r
+  add_78/U172/Y (NAND2X2)                  0.18       1.36 f
+  add_78/U170/Y (NOR2X1)                   0.33       1.69 r
+  add_78/U205/Y (AOI21X4)                  0.19       1.89 f
+  add_78/U257/Y (NOR2X1)                   0.24       2.13 r
+  add_78/U190/Y (AO21X4)                   0.18       2.31 r
+  add_78/U184/Y (XOR2X2)                   0.15       2.46 f
+  add_78/SUM[16] (conv_DW01_add_9)         0.00       2.46 f
+  U256/Y (AND2X2)                          0.21       2.67 f
+  conv_3_r_reg[16]/D (DFFRX1)              0.00       2.67 f
+  data arrival time                                   2.67
 
-  clock i_clk (rise edge)                                 2.58       2.58
-  clock network delay (ideal)                             0.50       3.08
-  clock uncertainty                                      -0.10       2.98
-  conv_e_r_reg[10][8]/CK (DFFRX4)                         0.00       2.98 r
-  library setup time                                     -0.19       2.79
-  data required time                                                 2.79
-  --------------------------------------------------------------------------
-  data required time                                                 2.79
-  data arrival time                                                 -2.79
-  --------------------------------------------------------------------------
-  slack (MET)                                                        0.00
+  clock i_clk (rise edge)                  2.48       2.48
+  clock network delay (ideal)              0.50       2.98
+  clock uncertainty                       -0.10       2.88
+  conv_3_r_reg[16]/CK (DFFRX1)             0.00       2.88 r
+  library setup time                      -0.21       2.67
+  data required time                                  2.67
+  -----------------------------------------------------------
+  data required time                                  2.67
+  data arrival time                                  -2.67
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
 
 
 1

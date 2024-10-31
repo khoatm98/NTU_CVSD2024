@@ -1,9 +1,9 @@
 ##spyglass_version: SpyGlass_vT-2022.06
-##date: Sat Oct 12 13:11:38 2024
+##date: Sun Oct 20 19:37:53 2024
 ##user: r2k41036
 ##cwd: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL
 ##lang: verilog+vhdl
-##args: -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -nl -batch -top 'core' -lib WORK ./spyglass-1/core/WORK -wdir './spyglass-1/core/Design_Read' -mixed -policy='none' -ignoredu 'sram_512x8' --goal_info 'Design_Read@' -projectwdir './spyglass-1' -templatedir '/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read' --template_info 'Design_Read' -64bit 
+##args: -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -nl -batch -top 'core' -lib WORK ./spyglass-1/core/WORK -wdir './spyglass-1/core/Design_Read' -mixed -policy='none' -ignoredu 'srasram_256x8' --goal_info 'Design_Read@' -projectwdir './spyglass-1' -templatedir '/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read' --template_info 'Design_Read' -64bit 
 ##verbosity level: 2
 ##spysch_dirname: ./spyglass-1/core/Design_Read/spyglass_spysch
 ##vdb_delimiter: @@
@@ -924,55 +924,37 @@
 
 ##file_label: SPG_IGNORE_SUMMARY_FILE -file ./spyglass-1/core/Design_Read/spyglass_reports/SpyGlass/ignore_summary.rpt -policy SpyGlass -external
 ReportIgnoreSummary@@ReportIgnoreSummary@@Info@@./spyglass-1/core/Design_Read/spyglass_reports/SpyGlass/ignore_summary.rpt@@0@@1@@10@@Design option(s) ignorefile/ignoredu specified. Please see ./spyglass-1/core/Design_Read/spyglass_reports/SpyGlass/ignore_summary.rpt to know the design files/design units which have been ignored
-WRN_69@@WRN_69@@Warning@@conv.v@@2@@1@@1000@@Compiler directive `timescale found for module 'conv' (in the file ../sram_512x8/sram_512x8.v at line 53) while previous modules do not
-##sde_property: violation -ruleLang 1 
 ##file_label: SPG_ELAB_SUMMARY_FILE -file ./spyglass-1/core/Design_Read/spyglass_reports/SpyGlass/elab_summary.rpt -policy SpyGlass -external
 ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/Design_Read/spyglass_reports/SpyGlass/elab_summary.rpt@@0@@1@@2@@Please refer file './spyglass-1/core/Design_Read/spyglass_reports/SpyGlass/elab_summary.rpt' for elab summary report
 ##sde_property: msg_label DEFAULT
 ##sde_property: msg_id DEFAULT
-##files_verilog: core.v conv.v median.v
+##files_verilog: core.v conv.v ../sram_256x8/sram_256x8.v
 ##sde_property: file define.v -id 1
-##sde_property: file core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 slc 116 119 1 mlc 120 11 120 0 slc 207 210 1 mlc 211 22 211 0 mlc 245 20 245 0 mlc 310 9 337 0 mlc 346 33 346 0 mlc 463 13 463 0 slc 484 484 1 slc 512 512 1 slc 522 525 1 mlc 652 10 656 0
-##sde_property: file ../sram_512x8/sram_512x8.v -id 3
-##sde_property: file conv.v -id 4 -inactiveList slc 12 15 1 slc 45 48 1 slc 67 70 1 slc 160 163 1
-##sde_property: file median.v -id 5 -inactiveList slc 12 15 1 slc 45 48 1 slc 66 69 1 slc 151 154 1 slc 209 209 1 slc 212 212 1 slc 237 237 1 slc 242 242 1 slc 247 247 1 slc 252 252 1 slc 257 257 1 slc 262 262 1 slc 275 275 1 slc 280 280 1 slc 285 285 1 slc 290 290 1 slc 295 295 1 slc 300 300 1 slc 312 312 1 slc 317 317 1 slc 322 322 1 slc 327 327 1 slc 332 332 1 slc 337 337 1 slc 350 350 1 slc 376 376 1 slc 379 379 1 slc 382 382 1 slc 385 385 1 slc 388 388 1 slc 391 391 1 slc 400 400 1 slc 403 403 1 slc 406 406 1 slc 409 409 1 slc 412 412 1 slc 415 415 1 slc 424 424 1 slc 427 427 1 slc 430 430 1 slc 433 433 1 slc 436 436 1 slc 439 439 1 slc 448 448 1 slc 461 461 1 slc 464 464 1 slc 467 467 1 slc 470 470 1 slc 473 473 1 slc 476 476 1 slc 488 488 1
-#span core core.v 2 684
+##sde_property: file core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 mlc 19 13 19 0 mlc 36 18 36 0 slc 112 115 1 slc 136 136 1 slc 138 138 1 slc 145 145 1 slc 153 156 1 mlc 169 22 169 0 mlc 199 20 199 0 mlc 217 31 217 0 mlc 251 26 251 0 mlc 256 13 256 0 slc 269 269 1 slc 306 309 1 slc 450 450 1 slc 453 453 1 slc 456 456 1
+##sde_property: file ../sram_256x8/sram_256x8.v -id 3 -inactiveList slc 1 52 1
+##sde_property: file conv.v -id 4 -inactiveList slc 12 15 1 slc 18 18 1 slc 44 47 1 mlc 51 14 64 0 slc 65 68 1 slc 157 160 1 slc 239 239 1 slc 252 252 1 slc 260 260 1 slc 266 266 1 slc 273 277 1 slc 279 281 1 slc 283 284 1 slc 286 287 1 slc 290 290 1
+#span core core.v 2 502
 #rtl_idmap core 1 -lang 1
-#span conv conv.v 2 210
+#span conv conv.v 2 213
 #rtl_idmap conv 2 -lang 1
-#span small_alu_add conv.v 212 259
-#rtl_idmap small_alu_add 3 -lang 1
-#span median median.v 2 201
-#rtl_idmap median 4 -lang 1
-#span median_filter_submodule median.v 203 491
-#rtl_idmap median_filter_submodule 5 -lang 1
+#span sram_256x8 ../sram_256x8/sram_256x8.v 55 475 ../sram_256x8/sram_256x8.v 1 475
+#rtl_idmap sram_256x8 3 -lang 1
 #greybox core 15
 #greybox conv 15
-#greybox small_alu_add 15
-#greybox median 15
-#greybox median_filter_submodule 15
-#greybox sram_512x8 9 -ignore_spec sram_512x8
+#greybox sram_256x8 15
 DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@core.v@@2@@1@@2@@Module core is a top level design unit
 ##sde_property: violation -duId 1 
 #rtl_top_modules core
-InfoAnalyzeBBox@@InfoAnalyzeBBox@@Info@@core.v@@167@@1@@10@@Design Unit 'sram_512x8' has empty definition; Ignore specification applied on design unit using 'ignoredu' option
-##sde_property: violation -duId 1 -elabDuId 1 
-##sde_property: msg_label Label_1
-##sde_property: msg_id Label_1
-#childElab core core -elabDuId 1 conv_inst conv median_inst median \SRAM_inst_loop[0].u_sram  sram_512x8 \SRAM_inst_loop[1].u_sram  sram_512x8 \SRAM_inst_loop[2].u_sram  sram_512x8 \SRAM_inst_loop[3].u_sram  sram_512x8
-#childElab conv conv -elabDuId 2 u_alu small_alu_add
-#childElab small_alu_add small_alu_add -elabDuId 3
-#childElab median median -elabDuId 4 u_median_filter_submodule median_filter_submodule
-#childElab median_filter_submodule median_filter_submodule -elabDuId 5
-#childElab sram_512x8 sram_512x8 -elabDuId 6
+CheckCelldefine@@CheckCelldefine@@Info@@N.A.@@0@@1@@10@@Rule-checking skipped on verilog celldefine modules present in the current run. If you want to check these modules, please specify 'check_celldefine' option
+##sde_property: violation -ruleLang 1 
 ##warning_total_suppressed_count:         0
 ##error_total_suppressed_count:         0
-##warning_total_reported_count:         5
+##warning_total_reported_count:         4
 ##error_total_reported_count:         0
 ##total_warning_waived_viol_count:         0
 ##total_error_waived_viol_count:         0
-##totalGeneratedCount:         5
+##totalGeneratedCount:         4
 ##totalWaivedViolationCount:         0
-##totalReportCount:         5
+##totalReportCount:         4
 ##totalSuppressedCount:         0
 ##Active_Rules  ReportDeprecatedRules ReportObsoleteRules ZeroSizeFile

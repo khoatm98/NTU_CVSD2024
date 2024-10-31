@@ -1,7 +1,7 @@
 <CWD>/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL</CWD>
 <ENVVAR>
 	<env name="SPYGLASS_SPYAUTH_FILE">
-		<value>/tmp/spyAuthFileList860741728541955</value>
+		<value>/tmp/spyAuthFileList685921729315367</value>
 	</env>
 	<env name="LD_LIBRARY_PATH">
 		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/Audits:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/adv_lowpower:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/area:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/auto-verify:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/clock:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/constraints:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/cubic_netlist:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft_dsm:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/erc:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/latch:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lint:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lowpower:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/mbist-dft:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/miscellaneous:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/morelint:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/openmore:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/power_est:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/prof:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/rtl2netlist:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/sec:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/simulation:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/spyglass:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc2002:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc2005:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starcad-21:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/timing:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/txv:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme/Parser:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme/Parser/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-perl/lib/5.8.3:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-perl/lib/site_perl/5.8.3:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/lib64/tls:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-tcl/lib/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/python/Linux4/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-tcl/lib/Linux4::/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-qt/lib/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-nlview/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-boost/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-thirdparty/Linux4:/depot/gcc-4.8.3-patch/lib64:/usr/lib64:/usr/X11R6/lib64:/usr/local/lib64:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-vcst/vcs-mx/linux64/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/oa/Linux4:::/home/raid7_4/raid1_1/linux/novas/verdi/cur/share/PLI/IUS/LINUX/:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/oa/Linux4:/lib64:/usr/cad/cadence/ASSURA/cur/tools/assura/lib:/usr/cad/cadence/ASSURA/cur/tools/dsm/lib:/usr/cad/cadence/ASSURA/cur/tools/lib:/usr/cad/cadence/CONFRML/cur/tools/lib:/usr/cad/cadence/IC/cur/tools/lib:/usr/cad/innovus/cur//tools/tlfUtil/lib:/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64:/usr/lib64:/usr/local/lib64:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared::/usr/lib:/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/zebulib</value>
@@ -67,7 +67,7 @@
 		<value>CSF</value>
 	</env>
 	<env name="SPYGLASS_IPC_SERVER_APP_INFO">
-		<value>/tmp/.SPYGLASS_IPC_SERVER_APP_INFO@@955</value>
+		<value>/tmp/.SPYGLASS_IPC_SERVER_APP_INFO@@367</value>
 	</env>
 	<env name="QTDIR">
 		<value>/usr/lib64/qt-3.3</value>
@@ -151,7 +151,7 @@
 		<value>/usr/cad/cadence/oa_v22.04.073</value>
 	</env>
 	<env name="CMD_FILE_PATH">
-		<value>/tmp/cmdfile_86074</value>
+		<value>/tmp/cmdfile_68592</value>
 	</env>
 	<env name="VCS_HOME">
 		<value>/usr/cad/synopsys/vcs/2022.06/</value>
@@ -172,7 +172,7 @@
 		<value>/usr/cad/synopsys/synthesis/cur</value>
 	</env>
 	<env name="SPYGLASS_IPC_SERVER_APP_PID">
-		<value>86317</value>
+		<value>68861</value>
 	</env>
 	<env name="SELINUX_LEVEL_REQUESTED">
 		<value/>
@@ -277,7 +277,7 @@
 		<value>/run/user/1340</value>
 	</env>
 	<env name="SPG_RANDOM">
-		<value>85916</value>
+		<value>68443</value>
 	</env>
 	<env name="SYN_MAN_DIR">
 		<value>/usr/cad/synopsys/vcs/2022.06//doc/man</value>
@@ -289,7 +289,7 @@
 		<value>/usr/cad/cadence/ASSURA/cur</value>
 	</env>
 	<env name="SPYGLASS_CHECKER_PID_FILE_VAR">
-		<value>/tmp/.SPYGLASS_CHECKER_PID_FILE@@86074955</value>
+		<value>/tmp/.SPYGLASS_CHECKER_PID_FILE@@68592367</value>
 	</env>
 	<env name="SAVE_PATH">
 		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/usr/cad/synopsys/vcs/2022.06//amd64/bin:/usr/cad/synopsys/spyglass/2022.06//SPYGLASS_HOME/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64:/usr/bin:/usr/ucb/bin:/usr/cad/innovus/cur/tools/celtic/bin:/usr/cad/innovus/cur/tools/plato/bin:/usr/cad/innovus/cur/tools/dfII/bin:/usr/cad/innovus/cur/tools/bin:/usr/cad/innovus/cur//tools/tlfUtil/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/mentor/calibre/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/cad/synopsys/astro/cur/bin/AMD.64:/usr/spring_soft/verdi/cur/bin:/usr/spring_soft/verdi/cur/nLint/bin:/usr/cad/synopsys/primetime/2022.12/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/mentor/calibre/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/cadence/SPECTRE/cur/tools/dfII/bin:/usr/cad/cadence/SPECTRE/cur/tools/bin:/usr/cad/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/JASPER/cur/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/RC/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit/bin:bin.linux:/usr/cad/cadence/SPB/cur/tools/specctra/bin:/usr/cad/cadence/SPB/cur/tools/pcb/bin:/usr/cad/cadence/SPB/cur/tools/dfII/bin:/usr/cad/cadence/SPB/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/CCD/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/raid7_4/raid1_1/linux/novas/verdi/cur/bin</value>
@@ -315,7 +315,7 @@
 		<value>lint/lint_rtl_enhanced</value>
 	</Opt>
 	<Opt name="-ignoredu">
-		<value>sram_512x8</value>
+		<value>srasram_256x8</value>
 	</Opt>
 	<Opt name="-lib">
 		<value>WORK=&gt;./spyglass-1/core/WORK</value>
@@ -662,15 +662,14 @@
 	<Opt name="-verilog_files">
 		<value>define.v</value>
 		<value>core.v</value>
-		<value>../sram_512x8/sram_512x8.v</value>
+		<value>../sram_256x8/sram_256x8.v</value>
 		<value>conv.v</value>
-		<value>median.v</value>
 	</Opt>
 	<Opt name="+vlogarg">
 		<value>+suppress+36</value>
 	</Opt>
 	<Opt name="--stime">
-		<value>02:32:34 PM on Oct 10 2024</value>
+		<value>01:22:47 PM on Oct 19 2024</value>
 	</Opt>
 	<Opt name="-blackboxdir">
 		<value>inout</value>
@@ -696,7 +695,7 @@
 	<Opt name="-projectwdir">
 		<value>./spyglass-1</value>
 	</Opt>
-	<Opt name="-savedb">
+	<Opt name="-restoredb">
 		<value>./spyglass-1/core/.SG_SaveRestoreDB</value>
 	</Opt>
 	<Opt name="-sortmethod">
@@ -726,9 +725,6 @@
 	<Opt name="-enable_save_restore">
 		<value>yes</value>
 	</Opt>
-	<Opt name="-force_save">
-		<value>yes</value>
-	</Opt>
 	<Opt name="-inferblackbox">
 		<value>yes</value>
 	</Opt>
@@ -747,68 +743,31 @@
 <FILES/>
 <SPG_LOG>./spyglass-1/core/lint/lint_rtl_enhanced/spyglass.log</SPG_LOG>
 <CMD_STRING> -batch -project spyglass-1.prj -goal lint/lint_rtl_enhanced -64bit</CMD_STRING>
-<Module_Perf>
-	<Module name="conv">
-		<Memory>-24</Memory>
-		<Time>0</Time>
-	</Module>
-	<Module name="core">
-		<Memory>320</Memory>
-		<Time>0</Time>
-	</Module>
-	<Module name="median">
-		<Memory>16</Memory>
-		<Time>0</Time>
-	</Module>
-	<Module name="median_filter_submodule">
-		<Memory>-135112</Memory>
-		<Time>0</Time>
-	</Module>
-	<Module name="small_alu_add">
-		<Memory>8</Memory>
-		<Time>0</Time>
-	</Module>
-</Module_Perf>
 <NOM_DESIGN>
-	<Modules>5</Modules>
-	<Instances>4003</Instances>
-	<Nets>5567</Nets>
-	<Terminals>21137</Terminals>
-	<MAX>1375</MAX>
-	<Avg>800</Avg>
+	<Modules>3</Modules>
+	<Instances>11716</Instances>
+	<Nets>10751</Nets>
+	<Terminals>58567</Terminals>
+	<MAX>9524</MAX>
+	<Avg>3905</Avg>
 </NOM_DESIGN>
 <FLAT_DESIGN>
-	<Instances>3999</Instances>
-	<Nets>4963</Nets>
-	<Terminals>19561</Terminals>
-	<Paths>5</Paths>
+	<Instances>78375</Instances>
+	<Nets>66327</Nets>
+	<Terminals>327993</Terminals>
+	<Paths>10</Paths>
 	<Ports>36</Ports>
-	<BBOX_Inst>5</BBOX_Inst>
+	<BBOX_Inst>0</BBOX_Inst>
 	<LIB_Inst>0</LIB_Inst>
 	<ILM_Inst>0</ILM_Inst>
 </FLAT_DESIGN>
-<BlackBox>
-	<BBOX>
-		<SEVERITY>ERROR</SEVERITY>
-		<SEV_CODE>14</SEV_CODE>
-		<CAUSE>sobel_nms</CAUSE>
-		<ELABNAME>sobel_nms</ELABNAME>
-		<RTLNAME>sobel_nms</RTLNAME>
-	</BBOX>
-	<BBOX>
-		<SEVERITY>INFO</SEVERITY>
-		<SEV_CODE>0</SEV_CODE>
-		<CAUSE>sram_512x8,Ignore specification applied on design unit using &apos;ignoredu&apos; option</CAUSE>
-		<ELABNAME>sram_512x8</ELABNAME>
-		<RTLNAME>sram_512x8</RTLNAME>
-	</BBOX>
-</BlackBox>
+<BlackBox/>
 <WAIVER_COUNT>
 	<Applied>0</Applied>
 	<Reduntant>0</Reduntant>
 	<Viol_Waived>0</Viol_Waived>
 </WAIVER_COUNT>
-<PEAK_MEMORY>5864820</PEAK_MEMORY>
+<PEAK_MEMORY>5117500</PEAK_MEMORY>
 <Parameters>
 	<Param name="-W416_vhdl_only">
 		<DefaultValue>no</DefaultValue>
@@ -816,10 +775,6 @@
 	</Param>
 	<Param name="-allReserveWords">
 		<DefaultValue>no</DefaultValue>
-		<Value>no</Value>
-	</Param>
-	<Param name="-allow_cascaded_cgc">
-		<DefaultValue>UNDEFINED</DefaultValue>
 		<Value>no</Value>
 	</Param>
 	<Param name="-allow_clk_in_condition">
@@ -1478,22 +1433,6 @@
 		<DefaultValue>yes</DefaultValue>
 		<Value>yes</Value>
 	</Param>
-	<Param name="-lp_ignore_SGDC_rules">
-		<DefaultValue>UNDEFINED</DefaultValue>
-		<Value>UNDEFINED</Value>
-	</Param>
-	<Param name="-lp_instr_disable_isolation">
-		<DefaultValue>UNDEFINED</DefaultValue>
-		<Value>UNDEFINED</Value>
-	</Param>
-	<Param name="-lp_instr_disable_level_shift">
-		<DefaultValue>UNDEFINED</DefaultValue>
-		<Value>UNDEFINED</Value>
-	</Param>
-	<Param name="-lp_instr_disable_retention">
-		<DefaultValue>UNDEFINED</DefaultValue>
-		<Value>UNDEFINED</Value>
-	</Param>
 	<Param name="-max_flop_count">
 		<DefaultValue>3</DefaultValue>
 		<Value>3</Value>
@@ -1530,18 +1469,6 @@
 		<DefaultValue>yes</DefaultValue>
 		<Value>yes</Value>
 	</Param>
-	<Param name="-pe_calibration_data_dir">
-		<DefaultValue>UNDEFINED</DefaultValue>
-		<Value>UNDEFINED</Value>
-	</Param>
-	<Param name="-pe_ignore_SGDC_rules">
-		<DefaultValue>UNDEFINED</DefaultValue>
-		<Value>UNDEFINED</Value>
-	</Param>
-	<Param name="-pe_use_calibration_data">
-		<DefaultValue>UNDEFINED</DefaultValue>
-		<Value>UNDEFINED</Value>
-	</Param>
 	<Param name="-populate_comboelements_for_minmax_in_fromto">
 		<DefaultValue>no</DefaultValue>
 		<Value>no</Value>
@@ -1565,10 +1492,6 @@
 	<Param name="-pt">
 		<DefaultValue>yes</DefaultValue>
 		<Value>yes</Value>
-	</Param>
-	<Param name="-qual_prop_beyond_quasi_dest">
-		<DefaultValue>UNDEFINED</DefaultValue>
-		<Value>no</Value>
 	</Param>
 	<Param name="-reportHangingLatch">
 		<DefaultValue>no</DefaultValue>
@@ -1872,121 +1795,6 @@
 	</Param>
 </Parameters>
 <RULES>
-	<Rule name="Ac_svasetup01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="AcOvlRtl">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="AcOvlRtl">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="_meta_delay01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="_vhMeta01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="SGDC_meta_design_hier01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="Ac_multitop01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="_deltaDelay">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="_deltaDelay">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="_syncResetStyleRTL">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="Ac_classify_param01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="Pragma_setupa">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="_cdc_save_license01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="PEMVDD01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="PECHECK56">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="PECHECK43">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="PECHECK18">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="PECHECK09">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="PESVASETUP01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="PECHECK04">
-		<Time>0</Time>
-		<Memory>8</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="SGDC_power_est29">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="TxvVhMeta01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="Txv_SvaSetup01">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
 	<Rule name="STARC05-2.5.1.9">
 		<Time>0</Time>
 		<Memory>0</Memory>
@@ -1999,7 +1807,7 @@
 	</Rule>
 	<Rule name="STARC05-1.2.1.2">
 		<Time>0</Time>
-		<Memory>24</Memory>
+		<Memory>264</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.4.1.5">
@@ -2063,12 +1871,12 @@
 	</Rule>
 	<Rule name="SetBeforeRead-ML">
 		<Time>0</Time>
-		<Memory>24</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="ReserveNameSystemVerilog-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="AutomaticFuncTask-ML">
@@ -2078,7 +1886,7 @@
 	</Rule>
 	<Rule name="DuplicateCaseLabel-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>56</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_CheckTimeUnitandPrecision-ML">
@@ -2093,7 +1901,7 @@
 	</Rule>
 	<Rule name="ParamWidthMismatch-ML">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="InstPortConnType-ML">
@@ -2108,7 +1916,7 @@
 	</Rule>
 	<Rule name="DisallowCaseX-ML">
 		<Time>0</Time>
-		<Memory>-16</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="PragmaComments-ML">
@@ -2123,7 +1931,7 @@
 	</Rule>
 	<Rule name="Prereqs_ReportPortInfo-ML">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_ReportPortInfo-ML">
@@ -2164,18 +1972,18 @@
 	<Rule name="UndrivenNet-ML">
 		<Time>0</Time>
 		<Memory>0</Memory>
-		<Count>0</Count>
+		<Count>1</Count>
 	</Rule>
 	<Rule name="UndrivenInTerm-ML">
 		<RULE_PARAM name="-checkRTLCInst" value="yes"/>
 		<Time>0</Time>
 		<Memory>8</Memory>
-		<Count>0</Count>
+		<Count>1</Count>
 	</Rule>
 	<Rule name="UndrivenOutPort-ML">
 		<Time>0</Time>
 		<Memory>0</Memory>
-		<Count>0</Count>
+		<Count>1</Count>
 	</Rule>
 	<Rule name="HangingNetPreReq-ML">
 		<Time>0</Time>
@@ -2200,7 +2008,7 @@
 	</Rule>
 	<Rule name="LatchFeedback">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_RTLSchematic">
@@ -2210,17 +2018,17 @@
 	</Rule>
 	<Rule name="LINT_portReten">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_Usage">
 		<Time>0</Time>
-		<Memory>-80</Memory>
+		<Memory>-32</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W401">
 		<Time>0</Time>
-		<Memory>184</Memory>
+		<Memory>296</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W391">
@@ -2234,12 +2042,12 @@
 		<RULE_PARAM name="-handle_equivalent_drivers" value="yes"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
+		<Memory>5232</Memory>
+		<Count>1</Count>
 	</Rule>
 	<Rule name="W392">
 		<Time>0</Time>
-		<Memory>48</Memory>
+		<Memory>24</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W505">
@@ -2261,7 +2069,7 @@
 	<Rule name="W494">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W467">
@@ -2270,98 +2078,98 @@
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W467">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W444">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W444">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W443">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W443">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>16</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W424">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W424">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W421">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W421">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W398">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W398">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W293">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W293">
-		<Time>0</Time>
-		<Memory>16</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287c">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287c">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287a">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="W287a">
-		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
 		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
+	<Rule name="W444">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W444">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>24</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W443">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W443">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W424">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W424">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W421">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W421">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W398">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W398">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W293">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W293">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287c">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287c">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287a">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="W287a">
+		<RULE_PARAM name="-strict" value="CombLoop"/>
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
 	<Rule name="W241">
 		<Time>0</Time>
 		<Memory>0</Memory>
@@ -2379,7 +2187,7 @@
 	</Rule>
 	<Rule name="W240">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W210">
@@ -2413,7 +2221,7 @@
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>88</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W164a">
@@ -2427,7 +2235,7 @@
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>16</Memory>
 		<Count>4</Count>
 	</Rule>
 	<Rule name="W71">
@@ -2510,7 +2318,7 @@
 	</Rule>
 	<Rule name="W402b">
 		<Time>0</Time>
-		<Memory>176</Memory>
+		<Memory>312</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W438">
@@ -2532,12 +2340,12 @@
 	</Rule>
 	<Rule name="W576">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W575">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W527">
@@ -2552,14 +2360,14 @@
 	</Rule>
 	<Rule name="W499">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W486">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<Time>0</Time>
 		<Memory>0</Memory>
-		<Count>1</Count>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="W481b">
 		<Time>0</Time>
@@ -2585,7 +2393,7 @@
 	</Rule>
 	<Rule name="W464">
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W426">
@@ -2595,7 +2403,7 @@
 	</Rule>
 	<Rule name="W423">
 		<Time>0</Time>
-		<Memory>32</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W422">
@@ -2608,11 +2416,11 @@
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
 		<Memory>0</Memory>
-		<Count>1</Count>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="W352">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W416">
@@ -2641,7 +2449,7 @@
 	</Rule>
 	<Rule name="W317">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W316">
@@ -2656,19 +2464,19 @@
 	</Rule>
 	<Rule name="W289">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W263">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W245">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W238">
@@ -2683,12 +2491,12 @@
 	</Rule>
 	<Rule name="W216">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W215">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W193">
@@ -2704,26 +2512,26 @@
 	<Rule name="W156">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>904</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W127">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W123">
 		<RULE_PARAM name="-ignoreModuleInstance" value="yes"/>
 		<Time>0</Time>
-		<Memory>88</Memory>
-		<Count>0</Count>
+		<Memory>24</Memory>
+		<Count>2</Count>
 	</Rule>
 	<Rule name="W116">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>1</Count>
+		<Memory>-8</Memory>
+		<Count>0</Count>
 	</Rule>
 	<Rule name="W66">
 		<Time>0</Time>
@@ -2733,27 +2541,27 @@
 	<Rule name="W19">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>16</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W496b">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W496a">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>-8</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W553">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W552">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W163">
@@ -2764,13 +2572,13 @@
 	<Rule name="W122">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W110">
 		<RULE_PARAM name="-nocheckoverflow" value="W362"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="W239">
@@ -2835,7 +2643,7 @@
 	</Rule>
 	<Rule name="W339a">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="PrereqRCAUsage">
@@ -2845,7 +2653,7 @@
 	</Rule>
 	<Rule name="sim_race07">
 		<Time>0</Time>
-		<Memory>80</Memory>
+		<Memory>3960</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_sim_race07">
@@ -2855,12 +2663,12 @@
 	</Rule>
 	<Rule name="sim_race02">
 		<Time>0</Time>
-		<Memory>264</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="checkPinConnectedToSupply">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="FlopSRConst">
@@ -2870,7 +2678,7 @@
 	</Rule>
 	<Rule name="FlopClockConstant">
 		<Time>0</Time>
-		<Memory>64</Memory>
+		<Memory>4360</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.4.1v">
@@ -2917,7 +2725,7 @@
 	<Rule name="STARC05-2.1.1.2">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC-2.3.4.3">
@@ -2927,8 +2735,8 @@
 	</Rule>
 	<Rule name="STARC05-1.4.3.4">
 		<Time>0</Time>
-		<Memory>16</Memory>
-		<Count>0</Count>
+		<Memory>8</Memory>
+		<Count>1</Count>
 	</Rule>
 	<Rule name="STARC05-1.4.3.2">
 		<Time>0</Time>
@@ -2981,7 +2789,7 @@
 	</Rule>
 	<Rule name="STARC05-2.10.2.3">
 		<Time>0</Time>
-		<Memory>16</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.9.1.2b">
@@ -3008,7 +2816,7 @@
 	</Rule>
 	<Rule name="STARC05-2.3.1.6">
 		<Time>0</Time>
-		<Memory>-8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.3.1.5b">
@@ -3024,17 +2832,17 @@
 	</Rule>
 	<Rule name="STARC05-2.1.5.3">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-2.1.4.5">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="STARC05-1.1.1.1">
 		<Time>0</Time>
-		<Memory>8</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="CombLoop">
@@ -3042,7 +2850,7 @@
 		<RULE_PARAM name="-report_flop_reset_loop" value="yes"/>
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>864</Memory>
+		<Memory>800</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereq_IntClock">
@@ -3053,28 +2861,28 @@
 	<Rule name="BufClock">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>1592</Memory>
+		<Memory>2088</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="InferLatch">
 		<RULE_PARAM name="-strict" value="CombLoop"/>
 		<Time>0</Time>
-		<Memory>0</Memory>
+		<Memory>144</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_InferLatch">
 		<Time>0</Time>
-		<Memory>40</Memory>
-		<Count>0</Count>
-	</Rule>
-	<Rule name="ReserveName">
-		<Time>0</Time>
 		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="ReserveName">
 		<Time>0</Time>
 		<Memory>0</Memory>
+		<Count>0</Count>
+	</Rule>
+	<Rule name="ReserveName">
+		<Time>0</Time>
+		<Memory>-2568</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="CMD_overloadrule01">
@@ -3082,34 +2890,19 @@
 		<Memory>0</Memory>
 		<Count>1</Count>
 	</Rule>
-	<Rule name="WRN_69">
+	<Rule name="CheckCelldefine">
 		<Time>0</Time>
 		<Memory>0</Memory>
 		<Count>1</Count>
 	</Rule>
 	<Rule name="ElabSummary">
 		<Time>0</Time>
-		<Memory>24</Memory>
+		<Memory>0</Memory>
 		<Count>1</Count>
 	</Rule>
 	<Rule name="ReportIgnoreSummary">
 		<Time>0</Time>
 		<Memory>32</Memory>
-		<Count>1</Count>
-	</Rule>
-	<Rule name="ErrorAnalyzeBBox">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>1</Count>
-	</Rule>
-	<Rule name="InfoAnalyzeBBox">
-		<Time>0</Time>
-		<Memory>16</Memory>
-		<Count>1</Count>
-	</Rule>
-	<Rule name="InferBlackBox">
-		<Time>0</Time>
-		<Memory>0</Memory>
 		<Count>1</Count>
 	</Rule>
 	<Rule name="DetectTopDesignUnits">
@@ -3119,7 +2912,7 @@
 	</Rule>
 </RULES>
 <RUN_MODE>
-	<Save>1</Save>
+	<Restore>1</Restore>
 </RUN_MODE>
 <REPORTS>
 	<Report name="moresimple">
@@ -3135,9 +2928,9 @@
 </REPORTS>
 <VIOL_SUMMARY>
 	<FATAL>0</FATAL>
-	<ERROR>3</ERROR>
-	<WARNING>7</WARNING>
-	<INFO>6</INFO>
+	<ERROR>6</ERROR>
+	<WARNING>6</WARNING>
+	<INFO>5</INFO>
 </VIOL_SUMMARY>
 <Exit_code>0</Exit_code>
-<Total_time>271233</Total_time>
+<Total_time>108978</Total_time>

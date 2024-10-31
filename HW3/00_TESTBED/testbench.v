@@ -21,6 +21,10 @@
     `define INFILE "../00_TESTBED/PATTERN/indata4.dat"
     `define OPFILE "../00_TESTBED/PATTERN/opmode4.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/golden4.dat"
+`elsif tbh
+    `define INFILE "../00_TESTBED/PATTERN/indatah.dat"
+    `define OPFILE "../00_TESTBED/PATTERN/opmodeh.dat"
+    `define GOLDEN "../00_TESTBED/PATTERN/goldenh.dat"
 `else
     `define INFILE "../00_TESTBED/PATTERN/indata0.dat"
     `define OPFILE "../00_TESTBED/PATTERN/opmode0.dat"
@@ -103,6 +107,7 @@ initial begin
     rst_n = 0; # ((`RST_DELAY - 0.25) * `CYCLE);
     rst_n = 1; # (         `MAX_CYCLE * `CYCLE);
     $display("Error! Runtime exceeded!");
+	$display("j %d", j);
     $finish;
 end
 
@@ -153,7 +158,7 @@ initial begin
         if (out_valid) begin
             if (out_data !== golden_mem[k][13:0]) begin
                 $display ("Test[%4d]: Error! GOLDEN=(%d), yours=(%d)", k, golden_mem[k][13:0], out_data);
-                //$finish;
+                $finish; 
                 error = error+1;
             end
 			else begin

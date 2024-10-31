@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version T-2022.06_Full64 -- Tue Oct  1 16:47:08 2024
+         Version T-2022.06_Full64 -- Fri Oct 25 12:35:45 2024
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -31,66 +31,18 @@ rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
 rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _257657_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _170843_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 Chronologic VCS simulator copyright 1991-2022
 Contains Synopsys proprietary information.
-Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Oct  1 16:47 2024
-*Verdi* Loading libsscore_vcs202206.so
-FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
-(C) 1996 - 2022 by Synopsys, Inc.
-*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-*Verdi* : Create FSDB file 'alu.fsdb'
-*Verdi* : Begin traversing the scope (testbench), layer (0).
-*Verdi* : Enable +mda dumping.
-*Verdi* : End of traversing.
-Test[          0]: Correct! Inst=0001, A=0100101011001000, B=0101111111001100, Golden=1110101011111100, Yours=1110101011111100
-Test[          1]: Correct! Inst=0001, A=0001111100001101, B=1010101000110001, Golden=0111010011011100, Yours=0111010011011100
-Test[          2]: Correct! Inst=0001, A=0001110111100010, B=1001000011011101, Golden=0111111111111111, Yours=0111111111111111
-Test[          3]: Correct! Inst=0001, A=1110000001111101, B=1010011000011110, Golden=0011101001011111, Yours=0011101001011111
-Test[          4]: Correct! Inst=0001, A=1001100101101100, B=1110100010000100, Golden=1011000011101000, Yours=1011000011101000
-Test[          5]: Correct! Inst=0001, A=1111110100000001, B=0001010100100111, Golden=1110011111011010, Yours=1110011111011010
-Test[          6]: Correct! Inst=0001, A=0000011010101110, B=1110111111010101, Golden=0001011011011001, Yours=0001011011011001
-Test[          7]: Correct! Inst=0001, A=1100010001110110, B=1000100100100100, Golden=0011101101010010, Yours=0011101101010010
-Test[          8]: Correct! Inst=0001, A=1111011100000110, B=0110000011001101, Golden=1001011000111001, Yours=1001011000111001
-Test[          9]: Correct! Inst=0001, A=1010100101110001, B=0110011110011000, Golden=1000000000000000, Yours=1000000000000000
-Test[         10]: Correct! Inst=0001, A=0011101011110011, B=1100101111011101, Golden=0110111100010110, Yours=0110111100010110
-Test[         11]: Correct! Inst=0001, A=1110100010010101, B=1101010000110001, Golden=0001010001100100, Yours=0001010001100100
-Test[         12]: Correct! Inst=0001, A=1110100001110101, B=0100111001010011, Golden=1001101000100010, Yours=1001101000100010
-Test[         13]: Correct! Inst=0001, A=1100010110011001, B=0001100011101111, Golden=1010110010101010, Yours=1010110010101010
-Test[         14]: Correct! Inst=0001, A=0001010111011010, B=0010010010000111, Golden=1111000101010011, Yours=1111000101010011
-Test[         15]: Correct! Inst=0001, A=0100101000100100, B=1010001110010010, Golden=0111111111111111, Yours=0111111111111111
-Test[         16]: Correct! Inst=0001, A=1001111011010101, B=1101001011010110, Golden=1100101111111111, Yours=1100101111111111
-Test[         17]: Correct! Inst=0001, A=0110011101110001, B=0100010010111111, Golden=0010001010110010, Yours=0010001010110010
-Test[         18]: Correct! Inst=0001, A=0011101011111111, B=0111100001101110, Golden=1100001010010001, Yours=1100001010010001
-Test[         19]: Correct! Inst=0001, A=1110101111101110, B=1011110111001001, Golden=0010111000100101, Yours=0010111000100101
-Test[         20]: Correct! Inst=0001, A=0010000101011101, B=1110100011011011, Golden=0011100010000010, Yours=0011100010000010
-Test[         21]: Correct! Inst=0001, A=0011000110011100, B=1011100000000100, Golden=0111100110011000, Yours=0111100110011000
-Test[         22]: Correct! Inst=0001, A=0111001101010111, B=1000110011110011, Golden=0111111111111111, Yours=0111111111111111
-Test[         23]: Correct! Inst=0001, A=1110111110111010, B=0010100110101100, Golden=1100011000001110, Yours=1100011000001110
-Test[         24]: Correct! Inst=0001, A=1110100000000110, B=1001000010001001, Golden=0101011101111101, Yours=0101011101111101
-Test[         25]: Correct! Inst=0001, A=1010110101000111, B=1011001001101110, Golden=1111101011011001, Yours=1111101011011001
-Test[         26]: Correct! Inst=0001, A=0100101010000000, B=1111110000111101, Golden=0100111001000011, Yours=0100111001000011
-Test[         27]: Correct! Inst=0001, A=0000101000110010, B=1110111100001111, Golden=0001101100100011, Yours=0001101100100011
-Test[         28]: Correct! Inst=0001, A=1101000011111010, B=0110100010010011, Golden=1000000000000000, Yours=1000000000000000
-Test[         29]: Correct! Inst=0001, A=0100000000011010, B=1011001111110011, Golden=0111111111111111, Yours=0111111111111111
-Test[         30]: Correct! Inst=0001, A=0101111011010100, B=0000011110100000, Golden=0101011100110100, Yours=0101011100110100
-Test[         31]: Correct! Inst=0001, A=0100111100101100, B=0110000110100000, Golden=1110110110001100, Yours=1110110110001100
-Test[         32]: Correct! Inst=0001, A=0011010001001010, B=0111011010010001, Golden=1011110110111001, Yours=1011110110111001
-Test[         33]: Correct! Inst=0001, A=1101001000101011, B=0001011000111010, Golden=1011101111110001, Yours=1011101111110001
-Test[         34]: Correct! Inst=0001, A=1100011010000100, B=0001000011001000, Golden=1011010110111100, Yours=1011010110111100
-Test[         35]: Correct! Inst=0001, A=0111010010110001, B=0011110111000110, Golden=0011011011101011, Yours=0011011011101011
-Test[         36]: Correct! Inst=0001, A=0100110101000110, B=1100100111010000, Golden=0111111111111111, Yours=0111111111111111
-Test[         37]: Correct! Inst=0001, A=0101100111101001, B=1100100111100111, Golden=0111111111111111, Yours=0111111111111111
-Test[         38]: Correct! Inst=0001, A=0001110110000101, B=0011101011001001, Golden=1110001010111100, Yours=1110001010111100
-Test[         39]: Correct! Inst=0001, A=0101001001101001, B=0011110001010110, Golden=0001011000010011, Yours=0001011000010011
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Oct 25 12:35 2024
 ----------------------------------------------
 -                 ALL PASS!                  -
 ----------------------------------------------
-$finish called from file "../00_TESTBED/testbench.v", line 249.
-$finish at simulation time               126500
+$finish called from file "../00_TESTBED/testbench.v", line 299.
+$finish at simulation time               607500
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 1265000 ps
-CPU Time:      0.500 seconds;       Data structure size:   0.0Mb
-Tue Oct  1 16:47:16 2024
-CPU time: .835 seconds to compile + .673 seconds to elab + .678 seconds to link + .570 seconds in simulation
+Time: 6075000 ps
+CPU Time:      0.410 seconds;       Data structure size:   0.0Mb
+Fri Oct 25 12:35:52 2024
+CPU time: .766 seconds to compile + .646 seconds to elab + .661 seconds to link + .467 seconds in simulation

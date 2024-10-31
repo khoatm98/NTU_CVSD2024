@@ -17,51 +17,102 @@
 `define MAX_CYCLE 100000
 `define RST_DELAY 2.0
 
-`define SEQ_LEN 60
 `ifdef I0
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST0_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST0_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I1
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST1_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST1_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I2
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST2_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST2_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I3
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST3_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST3_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I4
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST4_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST4_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I5
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST5_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST5_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I6
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST6_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST6_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I7
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST7_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST7_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I8
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST8_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST8_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
 `elsif I9
+    `define VDATA  "../00_TESTBED/pattern/VALID.dat"
     `define IDATA  "../00_TESTBED/pattern/INST9_I.dat"
     `define ODATA  "../00_TESTBED/pattern/INST9_O.dat"
+    `define SEQ_LEN 60
     `define PAT_LEN 40
+`elsif H0
+    `define VDATA  "../00_TESTBED/pattern/VALID_H.dat"
+    `define IDATA  "../00_TESTBED/pattern/INST_H0_I.dat"
+    `define ODATA  "../00_TESTBED/pattern/INST_H0_O.dat"
+    `define SEQ_LEN 250
+    `define PAT_LEN 200
+`elsif H1
+    `define VDATA  "../00_TESTBED/pattern/VALID_H.dat"
+    `define IDATA  "../00_TESTBED/pattern/INST_H1_I.dat"
+    `define ODATA  "../00_TESTBED/pattern/INST_H1_O.dat"
+    `define SEQ_LEN 250
+    `define PAT_LEN 200
+`elsif H2
+    `define VDATA  "../00_TESTBED/pattern/VALID_H.dat"
+    `define IDATA  "../00_TESTBED/pattern/INST_H2_I.dat"
+    `define ODATA  "../00_TESTBED/pattern/INST_H2_O.dat"
+    `define SEQ_LEN 250
+    `define PAT_LEN 200
+`elsif H3
+    `define VDATA  "../00_TESTBED/pattern/VALID_H.dat"
+    `define IDATA  "../00_TESTBED/pattern/INST_H3_I.dat"
+    `define ODATA  "../00_TESTBED/pattern/INST_H3_O.dat"
+    `define SEQ_LEN 250
+    `define PAT_LEN 200
+`elsif H4
+    `define VDATA  "../00_TESTBED/pattern/VALID_H.dat"
+    `define IDATA  "../00_TESTBED/pattern/INST_H4_I.dat"
+    `define ODATA  "../00_TESTBED/pattern/INST_H4_O.dat"
+    `define SEQ_LEN 250
+    `define PAT_LEN 200
 `else
-    `define IDATA  "../00_TESTBED/pattern/INST0_I.dat"
-    `define ODATA  "../00_TESTBED/pattern/INST0_O.dat"
-    `define PAT_LEN 40
+    `define VDATA  "../00_TESTBED/pattern/VALID_H.dat"
+    `define IDATA  "../00_TESTBED/pattern/INST_H0_I.dat"
+    `define ODATA  "../00_TESTBED/pattern/INST_H0_O.dat"
+    `define SEQ_LEN 250
+    `define PAT_LEN 200
 `endif
 
 
@@ -94,7 +145,7 @@ module testbench #(
     integer correct, error;
 
     initial begin
-        $readmemb("../00_TESTBED/pattern/VALID.dat", valid_seq);
+        $readmemb(`VDATA, valid_seq);
         $readmemb(`IDATA, input_data);
         $readmemb(`ODATA, golden_data);
     end
@@ -117,10 +168,10 @@ module testbench #(
         .o_data      (odata    )
     );
 
-    initial begin
-       $fsdbDumpfile("alu.fsdb");
-       $fsdbDumpvars(0, testbench, "+mda");
-    end
+    // initial begin
+    //    $fsdbDumpfile("alu.fsdb");
+    //    $fsdbDumpvars(0, testbench, "+mda");
+    // end
 
     // Input
     initial begin
@@ -187,6 +238,14 @@ module testbench #(
 
         // reset
         wait (rst_n === 1'b0);
+        #(0.1 * `PERIOD);
+        if (
+            (busy      !== 1'b0           && busy      !== 1'b1          ) ||
+            (out_valid !== 1'b0           && out_valid !== 1'b1          ) ||
+            (odata     !== {DATA_W{1'b0}} && odata     !== {DATA_W{1'b1}})
+        ) begin
+            $display("Reset: Error! Output not reset to 0 or 1");
+        end
         wait (rst_n === 1'b1);
 
         // start
@@ -199,15 +258,6 @@ module testbench #(
             if (out_valid) begin
                 if (odata === golden_data[k]) begin
                     correct = correct + 1;
-					$display(
-                        "Test[%d]: Correct! Inst=%b, A=%b, B=%b, Golden=%b, Yours=%b",
-                        k,
-                        input_data[k][2*DATA_W +: INST_W],
-                        input_data[k][  DATA_W +: DATA_W],
-                        input_data[k][       0 +: DATA_W],
-                        golden_data[k],
-                        odata
-                    );
                 end
                 else begin
                     error = error + 1;
@@ -241,7 +291,7 @@ module testbench #(
         end
         else begin
             $display("----------------------------------------------");
-            $display("  Wrong! Total Error: %d                      ", error);
+            $display("  Wrong! Total error: %d                      ", error);
             $display("----------------------------------------------");
         end
 
@@ -265,7 +315,7 @@ module clk_gen (
         rst = 1'b0; rst_n = 1'b1; #(              0.25  * `PERIOD);
         rst = 1'b1; rst_n = 1'b0; #((`RST_DELAY - 0.25) * `PERIOD);
         rst = 1'b0; rst_n = 1'b1; #(         `MAX_CYCLE * `PERIOD);
-        $display("Error! Runtime exceeded!");
+        $display("Error! Time limit exceeded!");
         $finish;
     end
 

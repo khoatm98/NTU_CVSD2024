@@ -17,28 +17,28 @@
         "module",
         3
     ],
-    "conv_0000": [
-        "conv_0000",
-        "wcwgY",
+    "sobel_gradient": [
+        "sobel_gradient",
+        "HsSTm",
         "module",
-        6
+        4
     ],
-    "median_0000": [
-        "median_0000",
-        "Cufcg",
+    "sober_compare": [
+        "sober_compare",
+        "BjQxQ",
         "module",
         5
     ],
-    "sobel_nms_0000": [
-        "sobel_nms_0000",
-        "mTw9U",
+    "sobel": [
+        "sobel",
+        "Ta5wp",
         "module",
-        8
+        6
     ],
     "...MASTER...": [
         "SIM",
         "amcQw",
         "module",
-        4
+        7
     ]
 }

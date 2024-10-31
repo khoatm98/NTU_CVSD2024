@@ -1,2 +1,9 @@
 conv@@@@core.conv_inst
-median@@@@core.median_inst
+sram_256x8@@@@core.\SRAM_inst_loop[0].u_sram 
+sram_256x8@@@@core.\SRAM_inst_loop[1].u_sram 
+sram_256x8@@@@core.\SRAM_inst_loop[2].u_sram 
+sram_256x8@@@@core.\SRAM_inst_loop[3].u_sram 
+sram_256x8@@@@core.\SRAM_inst_loop[4].u_sram 
+sram_256x8@@@@core.\SRAM_inst_loop[5].u_sram 
+sram_256x8@@@@core.\SRAM_inst_loop[6].u_sram 
+sram_256x8@@@@core.\SRAM_inst_loop[7].u_sram 

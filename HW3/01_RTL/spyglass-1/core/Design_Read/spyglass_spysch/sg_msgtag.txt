@@ -1,8 +1,8 @@
-4 "InfoAnalyzeBBox" 2
-"BBoxEng"
-["sram_512x8","BB_NO_MOD_DEF"]
-"BBoxEngAuxiInfo"
-["WORK","sram_512x8","1"]
+-1 "CheckCelldefine" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
 -1 "DetectTopDesignUnits" 2
 "RULEGROUP"
 ["Design Read"]
@@ -13,12 +13,12 @@
 ["Design Read"]
 "BUILTIN"
 "1"
--1 "InfoAnalyzeBBox" 2
+-1 "ReportIgnoreSummary" 2
 "RULEGROUP"
-["Blackbox Resolution"]
+["Design Read"]
 "BUILTIN"
 "1"
--1 "ReportIgnoreSummary" 2
+-1 "SYNTH_92" 2
 "RULEGROUP"
 ["Design Read"]
 "BUILTIN"

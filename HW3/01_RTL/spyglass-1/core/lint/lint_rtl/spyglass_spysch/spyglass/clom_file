@@ -12,7 +12,7 @@ Option          Value             Origin  File                           LineNo
 -enable_fast_traversal <ON>              CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/lint/lint_rtl.spq 82
 -enable_save_restore <ON>              CmdLine -                              -
 -enable_save_restore_builtin true              CmdLine -                              -
--ignoredu       sram_512x8        CmdLine -                              -
+-ignoredu       srasram_256x8     CmdLine -                              -
 -inferblackbox  <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 30
 -lib            WORK=>./spyglass-1/core/WORK CmdLine -                              -
                 SYNOPSYS=>$SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS Config  $SPYGLASS_HOME/.spyglass.setup 25
@@ -180,11 +180,10 @@ Option          Value             Origin  File                           LineNo
 -templatedir    /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff CmdLine -                              -
 -top            core              CmdLine -                              -
 -wdir           ./spyglass-1/core/lint/lint_rtl CmdLine -                              -
-<design_files>  ../sram_512x8/sram_512x8.v APICall -                              -
+<design_files>  ../sram_256x8/sram_256x8.v APICall -                              -
                 conv.v            APICall -                              -
                 core.v            APICall -                              -
                 define.v          APICall -                              -
-                median.v          APICall -                              -
 
 
 Rules Parameter

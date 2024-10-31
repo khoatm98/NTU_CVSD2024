@@ -1,1 +1,0 @@
-sobel_nms_inst	sobel_nms	sobel_nms	core	sobel_nms	(null)	(null)	core.v	sobel_nms	BB_NO_MOD_DEF	WORK	sobel_nms	1	149	14	1	131329	1\SRAM_inst_loop[0].u_sram 	sram_512x8	sram_512x8	core	sram_512x8,Ignore specification applied on design unit using 'ignoredu' option	(null)	(null)	core.v	sram_512x8	BB_NO_MOD_DEF	WORK	sram_512x8	1	189	0	1	131329	1

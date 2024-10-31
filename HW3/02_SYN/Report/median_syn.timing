@@ -7,15 +7,14 @@ Report : timing
         -max_paths 1
 Design : median
 Version: U-2022.12
-Date   : Sun Oct 13 17:25:09 2024
+Date   : Sun Oct 27 01:40:42 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: u_median_filter_submodule/a36_r_reg
-              (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: u_median_filter_submodule/a6_reg[3]
+  Startpoint: cnt_reg[1] (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: u_median_filter_submodule/a28_r_reg
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -28,24 +27,35 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_clk (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.50       0.50
-  u_median_filter_submodule/a36_r_reg/CK (DFFSRX2)        0.00       0.50 r
-  u_median_filter_submodule/a36_r_reg/QN (DFFSRX2)        0.55       1.05 f
-  u_median_filter_submodule/U513/Y (NAND2X2)              0.30       1.35 r
-  u_median_filter_submodule/U538/Y (OA21X4)               0.40       1.75 r
-  u_median_filter_submodule/U208/Y (NAND2BX2)             0.37       2.12 f
-  u_median_filter_submodule/U590/Y (OAI222XL)             0.64       2.76 r
-  u_median_filter_submodule/a6_reg[3]/D (DFFHQX4)         0.00       2.76 r
-  data arrival time                                                  2.76
+  cnt_reg[1]/CK (DFFRHQX8)                                0.00       0.50 r
+  cnt_reg[1]/Q (DFFRHQX8)                                 0.29       0.79 r
+  U818/Y (CLKINVX12)                                      0.08       0.87 f
+  U813/Y (NAND2X6)                                        0.07       0.94 r
+  U841/Y (BUFX20)                                         0.14       1.08 r
+  U511/Y (BUFX4)                                          0.28       1.36 r
+  U1089/Y (OA22X4)                                        0.24       1.61 r
+  U831/Y (OAI221X2)                                       0.14       1.75 f
+  u_median_filter_submodule/p8[5] (median_filter_submodule)
+                                                          0.00       1.75 f
+  u_median_filter_submodule/U126/Y (BUFX8)                0.18       1.93 f
+  u_median_filter_submodule/U233/Y (AO22X4)               0.24       2.17 f
+  u_median_filter_submodule/U221/Y (AND2X8)               0.15       2.32 f
+  u_median_filter_submodule/U160/Y (NOR2X4)               0.11       2.43 r
+  u_median_filter_submodule/U22/Y (OR3X8)                 0.13       2.56 r
+  u_median_filter_submodule/U141/Y (CLKAND2X8)            0.17       2.73 r
+  u_median_filter_submodule/U209/Y (NAND2X6)              0.05       2.78 f
+  u_median_filter_submodule/a28_r_reg/D (DFFRX2)          0.00       2.78 f
+  data arrival time                                                  2.78
 
-  clock i_clk (rise edge)                                 2.58       2.58
-  clock network delay (ideal)                             0.50       3.08
-  clock uncertainty                                      -0.10       2.98
-  u_median_filter_submodule/a6_reg[3]/CK (DFFHQX4)        0.00       2.98 r
-  library setup time                                     -0.22       2.76
-  data required time                                                 2.76
+  clock i_clk (rise edge)                                 2.48       2.48
+  clock network delay (ideal)                             0.50       2.98
+  clock uncertainty                                      -0.10       2.88
+  u_median_filter_submodule/a28_r_reg/CK (DFFRX2)         0.00       2.88 r
+  library setup time                                     -0.10       2.78
+  data required time                                                 2.78
   --------------------------------------------------------------------------
-  data required time                                                 2.76
-  data arrival time                                                 -2.76
+  data required time                                                 2.78
+  data arrival time                                                 -2.78
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 

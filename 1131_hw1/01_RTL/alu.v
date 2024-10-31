@@ -124,9 +124,9 @@ module alu #(
 	reg round;
     begin
         direct_mult = i_data_a*i_data_b;
-        if (direct_mult < $signed(32'b11111110000000000000000000000000) ) begin
+        if (direct_mult <= $signed(32'b11111110000000000000000000000000) ) begin
             fx_mul = 16'b1000000000000000;
-        end else if (direct_mult > $signed(32'b00000001111111111111111111111111) ) begin
+        end else if (direct_mult >= $signed(32'b000000011111_1111111111_0000000000) ) begin
             fx_mul = 16'b0111111111111111;
         end
         else begin
@@ -147,7 +147,7 @@ module alu #(
         if(tmp < $signed(21'b1_1000_0000_0000_0000_0000) ) begin
             fx_add_20bit = 20'b1000_0000_0000_0000_0000; 
         end
-        else  if(tmp > $signed(21'b0_0111_1111_1111_1111_1111) ) begin
+        else  if(tmp > $signed(21'b0_0111_1111_1111_1111_0000) ) begin
             fx_add_20bit = 20'b0111_1111_1111_1111_1111;
         end 
         else begin

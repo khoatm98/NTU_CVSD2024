@@ -9,10 +9,3 @@ VALUE@@i_in_data@@INPUT@@7@@0@@-@@core@@No
 VALUE@@o_in_ready@@OUTPUT@@0@@0@@-@@core@@No
 VALUE@@o_out_valid@@OUTPUT@@0@@0@@-@@core@@No
 VALUE@@o_out_data@@OUTPUT@@13@@0@@-@@core@@No
-SCHEMA@@PName@@Dir@@Msb@@Lsb@@Desc@@DU@@DU_BBOX
-VALUE@@Q@@INPUT@@7@@0@@-@@sram_512x8@@Yes
-VALUE@@CLK@@INPUT@@0@@0@@-@@sram_512x8@@Yes
-VALUE@@CEN@@INPUT@@0@@0@@-@@sram_512x8@@Yes
-VALUE@@WEN@@INPUT@@0@@0@@-@@sram_512x8@@Yes
-VALUE@@A@@INPUT@@8@@0@@-@@sram_512x8@@Yes
-VALUE@@D@@INPUT@@7@@0@@-@@sram_512x8@@Yes

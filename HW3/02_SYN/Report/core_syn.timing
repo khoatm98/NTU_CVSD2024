@@ -1,5 +1,3 @@
-Error: Width mismatch on port 'sobel_result' of reference to 'sobel_submodule' in 'sobel_nms'. (LINK-3)
-Warning: Unable to resolve reference 'sobel_submodule' in 'sobel_nms'. (LINK-5)
 Information: Updating design information... (UID-85)
 Warning: Design 'core' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
  
@@ -10,7 +8,7 @@ Report : timing
         -max_paths 1
 Design : core
 Version: U-2022.12
-Date   : Tue Oct 15 16:35:26 2024
+Date   : Thu Oct 31 14:51:58 2024
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -18,9 +16,9 @@ Date   : Tue Oct 15 16:35:26 2024
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: conv_inst/cnt_reg[0]
+  Startpoint: median_inst/cnt_reg[0]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: conv_inst/conv_e_r_reg[7][9]
+  Endpoint: median_inst/u_median_filter_submodule/a47_r_reg
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -33,36 +31,41 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_clk (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.50       0.50
-  conv_inst/cnt_reg[0]/CK (DFFRX4)                        0.00 #     0.50 r
-  conv_inst/cnt_reg[0]/Q (DFFRX4)                         0.52       1.02 f
-  conv_inst/U118/Y (NAND2X8)                              0.11       1.13 r
-  conv_inst/U116/Y (INVX20)                               0.15       1.28 f
-  conv_inst/U45/Y (AND2X4)                                0.21       1.49 f
-  conv_inst/add_134_2_G8_aco/B[1] (conv_DW01_add_27)      0.00       1.49 f
-  conv_inst/add_134_2_G8_aco/U119/Y (NOR2X6)              0.14       1.64 r
-  conv_inst/add_134_2_G8_aco/U175/Y (OAI21X4)             0.12       1.76 f
-  conv_inst/add_134_2_G8_aco/U151/Y (AO21X4)              0.22       1.98 f
-  conv_inst/add_134_2_G8_aco/U100/Y (NAND2X8)             0.07       2.06 r
-  conv_inst/add_134_2_G8_aco/U168/Y (NAND2X8)             0.13       2.19 f
-  conv_inst/add_134_2_G8_aco/U122/Y (NAND2X4)             0.15       2.34 r
-  conv_inst/add_134_2_G8_aco/U121/Y (INVX4)               0.08       2.42 f
-  conv_inst/add_134_2_G8_aco/U125/Y (NAND2X6)             0.06       2.48 r
-  conv_inst/add_134_2_G8_aco/U124/Y (NAND2X4)             0.07       2.55 f
-  conv_inst/add_134_2_G8_aco/SUM[9] (conv_DW01_add_27)
-                                                          0.00       2.55 f
-  conv_inst/U293/Y (AND2X2)                               0.18       2.73 f
-  conv_inst/conv_e_r_reg[7][9]/D (DFFSRHQX2)              0.00       2.73 f
-  data arrival time                                                  2.73
+  median_inst/cnt_reg[0]/CK (DFFRHQX8)                    0.00 #     0.50 r
+  median_inst/cnt_reg[0]/Q (DFFRHQX8)                     0.29       0.79 r
+  median_inst/U234/Y (INVX16)                             0.08       0.87 f
+  median_inst/U37/Y (INVX20)                              0.06       0.93 r
+  median_inst/U281/Y (NAND2X8)                            0.11       1.04 f
+  median_inst/U295/Y (BUFX20)                             0.18       1.22 f
+  median_inst/U147/Y (BUFX16)                             0.13       1.35 f
+  median_inst/U722/Y (OA22X4)                             0.25       1.60 f
+  median_inst/U704/Y (OAI221X4)                           0.33       1.94 r
+  median_inst/u_median_filter_submodule/p7[5] (median_filter_submodule)
+                                                          0.00       1.94 r
+  median_inst/u_median_filter_submodule/U76/Y (INVX6)     0.11       2.05 f
+  median_inst/u_median_filter_submodule/U161/Y (OAI2BB2X4)
+                                                          0.13       2.18 r
+  median_inst/u_median_filter_submodule/U413/Y (AND2X8)
+                                                          0.15       2.33 r
+  median_inst/u_median_filter_submodule/U5/Y (OA22X4)     0.18       2.50 r
+  median_inst/u_median_filter_submodule/U4/Y (NAND2X2)
+                                                          0.08       2.59 f
+  median_inst/u_median_filter_submodule/U478/Y (NAND3X2)
+                                                          0.12       2.70 r
+  median_inst/u_median_filter_submodule/a47_r_reg/D (DFFRX4)
+                                                          0.00       2.70 r
+  data arrival time                                                  2.70
 
-  clock i_clk (rise edge)                                 2.51       2.51
-  clock network delay (ideal)                             0.50       3.01
-  clock uncertainty                                      -0.10       2.91
-  conv_inst/conv_e_r_reg[7][9]/CK (DFFSRHQX2)             0.00       2.91 r
-  library setup time                                     -0.18       2.73
-  data required time                                                 2.73
+  clock i_clk (rise edge)                                 2.48       2.48
+  clock network delay (ideal)                             0.50       2.98
+  clock uncertainty                                      -0.10       2.88
+  median_inst/u_median_filter_submodule/a47_r_reg/CK (DFFRX4)
+                                                          0.00       2.88 r
+  library setup time                                     -0.18       2.70
+  data required time                                                 2.70
   --------------------------------------------------------------------------
-  data required time                                                 2.73
-  data arrival time                                                 -2.73
+  data required time                                                 2.70
+  data arrival time                                                 -2.70
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 

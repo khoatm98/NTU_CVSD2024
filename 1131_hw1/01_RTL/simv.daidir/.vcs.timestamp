@@ -1,6 +1,6 @@
 0 
 34
-+define+I1
++define+H4
 +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 +v2k
 +vcsd1
@@ -39,7 +39,7 @@ mraarch=linux_64
 installdir=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice
 XLOCALEDIR=/usr/cad/synopsys/astro/cur/etc/locale
 XKEYSYMDB=/usr/cad/synopsys/astro/cur/etc/XKeysymDB
-XDG_SESSION_ID=43391
+XDG_SESSION_ID=1955
 XDG_RUNTIME_DIR=/run/user/1340
 VMR_MODE_FLAG=64
 VERPLEX_HOME=/usr/cad/cadence/CONFRML/cur
@@ -61,9 +61,9 @@ SYN_MAN_DIR=/usr/cad/synopsys/vcs/2022.06//doc/man
 SYNTHESIS=/usr/cad/synopsys/synthesis/cur
 SYNOPSYS_TMAX=/usr/cad/synopsys/tmax/cur
 SYNOPSYS_LC_ROOT=/usr/cad/synopsys/synthesis/cur
-SSH_TTY=/dev/pts/39
-SSH_CONNECTION=140.112.175.69 60148 140.112.20.70 22
-SSH_CLIENT=140.112.175.69 60148 22
+SSH_TTY=/dev/pts/17
+SSH_CONNECTION=140.112.175.69 54024 140.112.20.70 22
+SSH_CLIENT=140.112.175.69 54024 22
 SPAPI_AHDL_INCLUDE=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/include
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06//linux64/clang
 SNPS_PLATFORM=linux64
@@ -107,8 +107,8 @@ ARCH=linux64
 0
 0
 5
-1727173782 ./alu.v
-1726893538 ../00_TESTBED/testbench.v
+1729830875 ./alu.v
+1729830359 ../00_TESTBED/testbench.v
 1727676420 rtl.f
 1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/verdi.tab
 1654052745 /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
@@ -117,5 +117,5 @@ ARCH=linux64
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1727772436 simv.daidir
+1729830952 simv.daidir
 -1 partitionlib

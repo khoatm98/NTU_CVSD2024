@@ -310,6 +310,7 @@ Wave_comment_string_font = -f COURIER12 -c ID_RED5
 HB_designTreeFont = *-adobe-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-*
 Text_font = COURIER12
 nMemory_font = Fixed 14
+Wave_getsignal_form_font = -f COURIER12
 [OtherEditor]
 cmd1 = "xterm -font 9x15 -fg black -bg gray -e"
 name = "vi"
@@ -320,11 +321,11 @@ FileName = test.ps
 PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
 [QtDialog]
-openFileDlg = 233,267,602,483
 unknownSave = 80,78,461,245
 QwWarnMsgDlg = 650,375,600,250
 qWaveSignalDialog = 411,283,800,479
 QwUserAskDlg = 788,392,324,134
+openFileDlg = 339,106,602,483
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
@@ -603,7 +604,7 @@ scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
 getSignalForm = 411 283 800 479 164 381 390 89
-viewPort = 0 23 1920 1009 238 65
+viewPort = 0 23 1280 649 238 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK

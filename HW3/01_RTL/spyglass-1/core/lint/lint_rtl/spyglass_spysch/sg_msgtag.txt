@@ -1,11 +1,8 @@
-4 "W486" 1
-"SPG_MSGTAG_HIERARCHY"
-":core"
-16 "InfoAnalyzeBBox" 2
-"BBoxEng"
-["sram_512x8","BB_NO_MOD_DEF"]
-"BBoxEngAuxiInfo"
-["WORK","sram_512x8","1"]
+-1 "CheckCelldefine" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
 -1 "DetectTopDesignUnits" 2
 "RULEGROUP"
 ["Design Read"]
@@ -16,16 +13,20 @@
 ["Design Read"]
 "BUILTIN"
 "1"
--1 "InferBlackBox" 2
+-1 "InferLatch" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[62]
 "RULEGROUP"
-["Design Read"]
-"BUILTIN"
-"1"
--1 "InfoAnalyzeBBox" 2
+["openmore/Coding_for_Synthesis"]
+-1 "LatchFeedback" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[78]
 "RULEGROUP"
-["Blackbox Resolution"]
-"BUILTIN"
-"1"
+["latch"]
 -1 "RegInputOutput-ML" 3
 "TEMPLATE"
 ["lint/lint_rtl"]
@@ -45,27 +46,56 @@
 [42]
 "RULEGROUP"
 ["morelint"]
--1 "W240" 3
+-1 "STARC05-1.4.3.4" 3
 "TEMPLATE"
 ["lint/lint_rtl"]
 "RULE_ORDER"
-[53]
+[81]
+"RULEGROUP"
+["starc2005/s05_Construct/s05_Construct1","starc2005/Basic_Design_Constraint_05"]
+-1 "STARC05-2.4.1.5" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[83]
+"RULEGROUP"
+["starc2005/s05_Construct/s05_Construct2","starc2005/RTL_Description_Technique_05"]
+-1 "SYNTH_5034" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "SYNTH_5059" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "SYNTH_92" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "UndrivenInTerm-ML" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[71]
+"RULEGROUP"
+["morelint/HangingNet-ML/Undriven-ML"]
+-1 "W123" 3
+"TEMPLATE"
+["lint/lint_rtl"]
+"RULE_ORDER"
+[50]
 "RULEGROUP"
 ["lint/Lint_Elab_Rules","lint/Usage"]
--1 "W287a" 3
+-1 "W415" 3
 "TEMPLATE"
 ["lint/lint_rtl"]
 "RULE_ORDER"
-[94]
+[86]
 "RULEGROUP"
-["lint/Lint_Elab_Rules","lint/Instance"]
--1 "W486" 3
-"TEMPLATE"
-["lint/lint_rtl"]
-"RULE_ORDER"
-[57]
-"RULEGROUP"
-["lint/Lint_Elab_Rules","lint/Expression"]
+["lint/MultipleDriver"]
 -1 "W528" 3
 "TEMPLATE"
 ["lint/lint_rtl"]

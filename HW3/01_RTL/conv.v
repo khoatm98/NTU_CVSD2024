@@ -13,28 +13,45 @@ module conv (
 // Wires and Registers
 // ---------------------------------------------------------------------------
 // ---- Add your own wires and registers here if needed ---- //
-reg [12:0] conv_e_r[15:0];
-reg [12:0] conv_e_wait_r[15:0];
+
 
 wire [13:0] out_data_w;
 reg [16:0] out_data_wait_r;
 reg [31:0] data_r;
 reg        i_isFirst_r;
 reg        i_input_done_r;
-reg [1:0]  cnt;
-reg [3:0] out_cnt;
+reg [1:0] cnt;
 reg [1:0] cs, ns;
 
-reg [12:0] data_a_r;
-reg [12:0] data_b_r;
-reg [12:0] data_c_r;
-reg [12:0] data_d_r;
-reg [12:0] data_e_r;
-reg [12:0] data_f_r;
-reg [12:0] data_g_r;
-reg [12:0] data_h_r;
-reg [12:0] data_i_r;
 
+
+wire [7:0] data_a_w;
+wire [7:0] data_b_w;
+wire [7:0] data_c_w;
+wire [7:0] data_d_w;
+
+wire [9:0] data_abc_w;
+wire [9:0] data_bcd_w;
+reg  [9:0] data_abc_r;
+reg  [9:0] data_bcd_r;
+reg  [10:0] data_abc_1_r;
+reg  [10:0] data_abc_3_r;
+reg  [10:0] data_bcd_2_r;
+reg  [10:0] data_bcd_4_r;
+
+reg  [16:0] conv_1_r;
+reg  [16:0] conv_2_r;
+reg  [16:0] conv_3_r;
+reg  [16:0] conv_4_r;
+
+wire  [16:0] conv_1_w;
+wire  [16:0] conv_2_w;
+wire  [16:0] conv_3_w;
+wire  [16:0] conv_4_w;
+
+reg  [16:0] conv_r;
+reg o_out_valid_ready_r;
+reg [13:0] o_out_data_ready_r;
 localparam READ   = 2'd1;
 localparam IDLE   = 2'd0;
 localparam CALC   = 2'd2;
@@ -46,104 +63,31 @@ genvar i;
 // ---------------------------------------------------------------------------
 // ---- Add your own wire data assignments here if needed ---- //
 
-assign o_out_valid = cs == OUTPUT;
-assign o_out_data  = out_data_w;
-small_alu_add u_alu(
-					.i_clk(i_clk),
-					.i_rst_n(i_rst_n),
-					.i_data_a(data_a_r),
-					.i_data_b(data_b_r),
-					.i_data_c(data_c_r),
-					.i_data_d(data_d_r),
-					.i_data_e(data_e_r),
-					.i_data_f(data_f_r),
-					.i_data_g(data_g_r),
-					.i_data_h(data_h_r),
-					.i_data_i(data_i_r),
-					.o_out_data(out_data_w)
-								);
+assign o_out_valid = o_out_valid_ready_r;
+assign o_out_data  =  o_out_data_ready_r;
+assign data_a_w = i_data[7 :0 ];
+assign data_b_w = i_data[15:8 ];
+assign data_c_w = i_data[23:16];
+assign data_d_w = i_data[31:24];
+
+assign data_abc_w = data_a_w + {data_b_w,1'b0} + data_c_w;
+assign data_bcd_w = data_b_w + {data_c_w,1'b0} + data_d_w;
+
+assign conv_1_w = conv_1_r + data_abc_1_r;
+assign conv_2_w = conv_2_r + data_bcd_2_r;
+assign conv_3_w = conv_3_r + data_abc_3_r;
+assign conv_4_w = conv_4_r + data_bcd_4_r;
 // ---------------------------------------------------------------------------
 // Combinational Blocks
 // ---------------------------------------------------------------------------
 // ---- Write your conbinational block design here ---- //
 
 always @ (*) begin
-	case({cs , out_cnt})
-		{CALC, 4'd0}    : begin
-			data_a_r = conv_e_r[0] ;
-			data_b_r = conv_e_r[1] ;
-			data_c_r = conv_e_r[2] ;
-			data_d_r = conv_e_r[4] ;
-			data_e_r = conv_e_r[5] ;
-			data_f_r = conv_e_r[6] ;
-			data_g_r = conv_e_r[8] ;
-			data_h_r = conv_e_r[9] ;
-			data_i_r = conv_e_r[10];
-		end
-		{CALC, 4'd1}       : begin
-			data_a_r = conv_e_r[0  + 1];
-			data_b_r = conv_e_r[1  + 1];
-			data_c_r = conv_e_r[2  + 1];
-			data_d_r = conv_e_r[4  + 1];
-			data_e_r = conv_e_r[5  + 1];
-			data_f_r = conv_e_r[6  + 1];
-			data_g_r = conv_e_r[8  + 1];
-			data_h_r = conv_e_r[9  + 1];
-			data_i_r = conv_e_r[10 + 1]; 
-		end
-		{CALC, 4'd2}      : begin
-			data_a_r = conv_e_r[0  + 4];
-			data_b_r = conv_e_r[1  + 4];
-			data_c_r = conv_e_r[2  + 4];
-			data_d_r = conv_e_r[4  + 4];
-			data_e_r = conv_e_r[5  + 4];
-			data_f_r = conv_e_r[6  + 4];
-			data_g_r = conv_e_r[8  + 4];
-			data_h_r = conv_e_r[9  + 4];
-			data_i_r = conv_e_r[10 + 4]; 
-		end
-		{CALC, 4'd3}     : begin
-			data_a_r = conv_e_r[0  + 5];
-			data_b_r = conv_e_r[1  + 5];
-			data_c_r = conv_e_r[2  + 5];
-			data_d_r = conv_e_r[4  + 5];
-			data_e_r = conv_e_r[5  + 5];
-			data_f_r = conv_e_r[6  + 5];
-			data_g_r = conv_e_r[8  + 5];
-			data_h_r = conv_e_r[9  + 5];
-			data_i_r = conv_e_r[10 + 5]; 
-		end
-		default : begin
-			data_a_r = 0;
-			data_b_r = 0;
-			data_c_r = 0;
-			data_d_r = 0;
-			data_e_r = 0;
-			data_f_r = 0;
-			data_g_r = 0;
-			data_h_r = 0;
-			data_i_r = 0;
-		end
-	endcase
-end
-
-generate
-	for(i = 0; i < 16; i = i + 1) begin:conv_e_read
-		always @(*) begin
-			if(cnt == i[3:2] )
-				conv_e_wait_r[i] = conv_e_r[i] + {5'b00000, data_r[{i[1:0],3'b000} + 7 -: 8]};
-			else
-				conv_e_wait_r[i] = conv_e_r[i];
-		end
-	end
-endgenerate
-
-always @ (*) begin
 	case(cs)
-		IDLE    : ns = i_isFirst_r ? READ : IDLE;
+		IDLE    : ns = i_isFirst ? READ : IDLE;
 		READ    : ns = i_input_done_r ? CALC : READ;
-		CALC    : ns = out_cnt == 5   ? OUTPUT : CALC;
-		OUTPUT  : ns = out_cnt == 9   ? IDLE : OUTPUT;
+		CALC    : ns = cnt == 1   ? OUTPUT : CALC;
+		OUTPUT  : ns = cnt == 1   ? IDLE : OUTPUT;
 		default : ns = IDLE;
 	endcase
 end
@@ -166,176 +110,140 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	if(~i_rst_n) begin
 		cnt <= 0;
 	end
-	else if  (ns == READ) begin
-		cnt <= cnt == 3 ? 0 : cnt + 1;
+	else if  (|ns[1:0]) begin
+		cnt <= cnt+1;
 	end
 	else begin
 		cnt <= 0;
 	end
+end
+
+always @ (*) begin
+	case(cnt)
+		2'd1   : conv_r = conv_1_r;
+		2'd2   : conv_r = conv_2_r;
+		2'd3   : conv_r = conv_3_r;
+		default: conv_r = conv_4_r;
+	endcase
+end
+
+always @ (posedge i_clk or negedge i_rst_n) begin
+	if(~i_rst_n) begin
+		o_out_data_ready_r  <= 0;
+	end
+	else begin
+		o_out_data_ready_r  <= conv_r[16:4] + conv_r[3];
+	end
 
 end
 
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if(~i_rst_n) begin
-		out_cnt <= 0;
-		i_isFirst_r <= 0;
-		data_r <= 0;
+		o_out_valid_ready_r <= 0;
+	end
+	else if  (ns == OUTPUT) begin
+		o_out_valid_ready_r <= 1;
+	end
+	else begin
+		o_out_valid_ready_r <= 0;
+	end
+end
+
+always @ (posedge i_clk or negedge i_rst_n) begin
+	if(~i_rst_n) begin
+		//i_isFirst_r <= 0;
+		//data_r <= 0;
 		i_input_done_r <= 0;
 	end
 	else begin
-		out_cnt <= cs >= CALC ? out_cnt + 1 : 0;
-		i_isFirst_r <= i_isFirst;
-		i_input_done_r <= ns == CALC ? i_input_done_r : i_input_done ;
-		data_r <= i_input_done_r ? 0 : i_data;
-	end
-
-end
-
-generate
-for(i = 0; i < 16; i = i + 1) begin:conv_e_accum
-	always @ (posedge i_clk or negedge i_rst_n) begin
-		if (~i_rst_n) begin
-			conv_e_r[i] <= 0;
-		end
-		else begin
-			conv_e_r[i] <=  (ns >= READ) ? conv_e_wait_r[i] : 0;
-		end
+		//i_isFirst_r <= i_isFirst;
+		i_input_done_r <= i_input_done;
+		//if (ns != READ)
+		//	data_r <= 0;
+		//else begin
+		//	data_r <= i_data;
+		//end
+		//data_r <= i_data;
 	end
 end
-endgenerate
-endmodule
-
-module small_alu_add (                       
-	input         i_clk,
-	input         i_rst_n,
-	input  [12:0] i_data_a,
-	input  [12:0] i_data_b,
-	input  [12:0] i_data_c,
-	input  [12:0] i_data_d,
-	input  [12:0] i_data_e,
-	input  [12:0] i_data_f,
-	input  [12:0] i_data_g,
-	input  [12:0] i_data_h,
-	input  [12:0] i_data_i,
-	output [13:0] o_out_data
-);
-reg [13:0]   out_data_ready_r;
-reg  [12:0] i_data_a_r;
-reg  [12:0] i_data_b_r;
-reg  [12:0] i_data_c_r;
-reg  [12:0] i_data_d_r;
-reg  [12:0] i_data_e_r;
-reg  [12:0] i_data_f_r;
-reg  [12:0] i_data_g_r;
-reg  [12:0] i_data_h_r;
-reg  [12:0] i_data_i_r;
-// pipeline stage 1
-reg [13:0]   out_data_s1_0_wait_r;
-reg [13:0]   out_data_s2_0_wait_r;
-reg [13:0]   out_data_s3_0_wait_r;
-reg [13:0]   out_data_s4_0_wait_r;
-reg [12:0]   out_data_s5_0_wait_r;
-reg [13:0]   out_data_s1_0_ready_r;
-reg [13:0]   out_data_s2_0_ready_r;
-reg [13:0]   out_data_s3_0_ready_r;
-reg [13:0]   out_data_s4_0_ready_r;
-reg [12:0]   out_data_s5_0_ready_r;
-
-
-// pipeline stage 2
-reg [14:0]   out_data_s1_1_wait_r;
-reg [14:0]   out_data_s2_1_wait_r;
-reg [12:0]   out_data_s3_1_wait_r;
-reg [14:0]   out_data_s1_1_ready_r;
-reg [14:0]   out_data_s2_1_ready_r;
-reg [12:0]   out_data_s3_1_ready_r;
-
-// pipeline stage 3
-reg [16:0]   out_data_s1_2_wait_r;
-reg [12:0]   out_data_s2_2_wait_r;
-reg [16:0]   out_data_s1_2_ready_r;
-reg [12:0]   out_data_s2_2_ready_r;
-
-// pipeline stage 4
-reg [14:0]   out_data_s1_3_wait_r;
-reg [14:0]   out_data_s1_3_ready_r;
-
-wire [13:0]  out_data_wait_sat_w;
-reg  [13:0]  out_data_ready_sat_r;
-always @(*) begin
-	// pipeline stage 1
-	out_data_s1_0_wait_r = (i_data_d_r)    + (i_data_b_r);
-	out_data_s2_0_wait_r = (i_data_h_r)    + (i_data_f_r);
-	out_data_s3_0_wait_r = i_data_a_r         + i_data_c_r     ;
-	out_data_s4_0_wait_r = i_data_g_r         + i_data_i_r     ;
-	out_data_s5_0_wait_r = (i_data_e_r);
-	// pipeline stage 2
-	out_data_s1_1_wait_r = out_data_s1_0_ready_r + out_data_s2_0_ready_r;
-	out_data_s2_1_wait_r = out_data_s3_0_ready_r + out_data_s4_0_ready_r;
-	out_data_s3_1_wait_r = out_data_s5_0_ready_r;
-	// pipeline stage 3
-	out_data_s1_2_wait_r = {out_data_s1_1_ready_r,1'b0} + out_data_s2_1_ready_r;
-	out_data_s2_2_wait_r = out_data_s3_1_ready_r;
-	// pipeline stage 4
-	out_data_s1_3_wait_r = out_data_s1_2_ready_r[16:2] + out_data_s2_2_ready_r;
-	
-end
-assign out_data_wait_sat_w = out_data_s1_3_ready_r[14:2] + out_data_s1_3_ready_r[1];
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if(~i_rst_n) begin
-		out_data_s1_0_ready_r <= 0;
-		out_data_s2_0_ready_r <= 0;
-		out_data_s3_0_ready_r <= 0;
-		out_data_s4_0_ready_r <= 0;
-		out_data_s5_0_ready_r <= 0;
-		out_data_s1_1_ready_r <= 0;
-		out_data_s2_1_ready_r <= 0;
-		out_data_s3_1_ready_r <= 0;
-		out_data_s1_2_ready_r <= 0;
-		out_data_s2_2_ready_r <= 0;
-		out_data_s1_3_ready_r <= 0;
-		out_data_ready_sat_r  <= 0;
-		
-		i_data_a_r <= 0;
-		i_data_b_r <= 0;
-		i_data_c_r <= 0;
-		i_data_d_r <= 0;
-		i_data_e_r <= 0;
-		i_data_f_r <= 0;
-		i_data_g_r <= 0;
-		i_data_h_r <= 0;
-		i_data_i_r <= 0;
+		data_abc_r <= 0;
+		data_bcd_r <= 0;
 	end
 	else begin
-	
-		i_data_a_r <= i_data_a;
-		i_data_b_r <= i_data_b;
-		i_data_c_r <= i_data_c;
-		i_data_d_r <= i_data_d;
-		i_data_e_r <= i_data_e;
-		i_data_f_r <= i_data_f;
-		i_data_g_r <= i_data_g;
-		i_data_h_r <= i_data_h;
-		i_data_i_r <= i_data_i;
-		
-		out_data_s1_0_ready_r <= {out_data_s1_0_wait_r};
-		out_data_s2_0_ready_r <= {out_data_s2_0_wait_r};
-		out_data_s3_0_ready_r <= out_data_s3_0_wait_r;
-		out_data_s4_0_ready_r <= out_data_s4_0_wait_r;
-		out_data_s5_0_ready_r <= {out_data_s5_0_wait_r};
-		
-		out_data_s1_1_ready_r <= out_data_s1_1_wait_r;
-		out_data_s2_1_ready_r <= out_data_s2_1_wait_r;
-		out_data_s3_1_ready_r <= out_data_s3_1_wait_r;
-
-		out_data_s1_2_ready_r <= out_data_s1_2_wait_r;
-		out_data_s2_2_ready_r <= out_data_s2_2_wait_r;
-		
-		out_data_s1_3_ready_r <= out_data_s1_3_wait_r;
-		
-		out_data_ready_sat_r  <= out_data_wait_sat_w;
+		data_abc_r <= data_abc_w;
+		data_bcd_r <= data_bcd_w;
 	end
 end
 
-assign o_out_data = out_data_ready_sat_r;
+
+always @ (posedge i_clk or negedge i_rst_n) begin
+	if(~i_rst_n) begin
+		data_abc_1_r <= 0;
+		data_bcd_2_r <= 0;
+	end
+	else begin
+		casez(cnt)
+			2'bz1    : begin
+				data_abc_1_r <= cs[1] ? 0 : data_abc_r;
+				data_bcd_2_r <= cs[1] ? 0 : data_bcd_r;
+			end
+			2'd2    : begin
+				data_abc_1_r <= cs[1] ? 0 :  {data_abc_r,1'b0};
+				data_bcd_2_r <= cs[1] ? 0 :  {data_bcd_r,1'b0};
+			end
+			default : begin
+				data_abc_1_r <= 0;
+				data_bcd_2_r <= 0;
+			end
+		endcase
+	end
+end
+
+always @ (posedge i_clk or negedge i_rst_n) begin
+	if(~i_rst_n) begin
+		data_abc_3_r <= 0;
+		data_bcd_4_r <= 0;
+	end
+	else begin
+		casez(cnt)
+			2'bz0    : begin
+				data_abc_3_r <=  ^cs ?  {data_abc_r} : 0;
+				data_bcd_4_r <=  ^cs ?  {data_bcd_r} : 0;
+			end
+			2'd3    : begin
+				data_abc_3_r <=  ^cs ?  {data_abc_r,1'b0} : 0;
+				data_bcd_4_r <=  ^cs ?  {data_bcd_r,1'b0} : 0;
+			end
+			default : begin
+				data_abc_3_r <= 0;
+				data_bcd_4_r <= 0;
+			end
+		endcase
+	end
+end
+
+always @ (posedge i_clk or negedge i_rst_n) begin
+	if(~i_rst_n) begin
+		conv_4_r <= 0;
+		conv_3_r <= 0;
+		conv_2_r <= 0;
+		conv_1_r <= 0;
+	end else if(cs == IDLE) begin
+		conv_1_r <= 0;
+		conv_2_r <= 0;
+		conv_3_r <= 0;
+		conv_4_r <= 0;
+	end
+	else begin
+		conv_1_r <= conv_1_w;
+		conv_2_r <= conv_2_w;
+		conv_3_r <= conv_3_w;
+		conv_4_r <= conv_4_w;
+	end
+end
+
 endmodule
+
+

@@ -3,16 +3,16 @@ All Rights Reserved. Use, disclosure or duplication
 without prior written permission of Synopsys Inc. is prohibited.
 Technical support: email spyglass_support@synopsys.com 
 
-Creating 'dashboard' reports using config file '/tmp/config_86318'
+Creating 'dashboard' reports using config file '/tmp/config_68862'
 ##cwd         : /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL
 ##system      : Linux cad27 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-##Date & Time : Sun Oct 13 17:53:14 2024
-Checkout 'dashboard' license at Sun Oct 13 17:53:14 2024 
-Checkout 'dashboard' license completed at Sun Oct 13 17:53:14 2024 
-Generating Dashboard report started at Sun Oct 13 17:53:14 2024 
+##Date & Time : Sun Oct 20 19:39:22 2024
+Checkout 'dashboard' license at Sun Oct 20 19:39:21 2024 
+Checkout 'dashboard' license completed at Sun Oct 20 19:39:21 2024 
+Generating Dashboard report started at Sun Oct 20 19:39:21 2024 
 No or invalid 'SUCCESS_CRITERIA_FILE_PATH' set in Config file.The report will use some of the SpyGlass default set values but it may be incomplete. 
 INFO: No data found to create the report. 
-Checkin 'dashboard' license at Sun Oct 13 17:53:14 2024 
+Checkin 'dashboard' license at Sun Oct 20 19:39:21 2024 
 ----------------------------------------------------------------
 Report 'dashboard' creation failed.
 ----------------------------------------------------------------
