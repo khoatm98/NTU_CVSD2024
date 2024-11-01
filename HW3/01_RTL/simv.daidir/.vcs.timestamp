@@ -1,6 +1,6 @@
 0 
 35
-+define+CYCLE=2.35
++define+CYCLE=2.29
 +define+tb4
 +itf+/usr/cad/synopsys/vcs/cur/linux64/lib/vcsdp_lite.tab
 +notimingcheck
@@ -101,7 +101,7 @@ CDSHOME=/usr/cad/cadence/IC/IC_06.18.210
 1730463158 ./conv.v
 1730440654 ./define.v
 1730440655 ../sram_512x8/sram_512x8.v
-1730465347 ../00_TESTBED/testbench.v
+1730465954 ../00_TESTBED/testbench.v
 1730445758 rtl_01.f
 1630295641 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
 1630379311 /usr/cad/synopsys/vcs/cur/linux64/lib/vcsdp_lite.tab
@@ -111,5 +111,5 @@ CDSHOME=/usr/cad/cadence/IC/IC_06.18.210
 1630379861 /usr/cad/synopsys/vcs/cur/linux64/lib/libsnpsmalloc.so
 1630379961 /usr/cad/synopsys/vcs/cur/linux64/lib/libvfs.so
 1630294660 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a
-1730465721 simv.daidir
+1730467927 simv.daidir
 -1 partitionlib

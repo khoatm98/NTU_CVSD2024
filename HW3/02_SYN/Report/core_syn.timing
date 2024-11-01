@@ -7,15 +7,15 @@ Report : timing
         -max_paths 1
 Design : core
 Version: S-2021.06-SP2
-Date   : Fri Nov  1 20:57:50 2024
+Date   : Fri Nov  1 21:27:00 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: median_sobel_inst/u_sobel_gradient_submodule/Gx1_r_reg[6]
+  Startpoint: median_sobel_inst/u_sober_compare_submodule/temp_b_r_reg[2]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: median_sobel_inst/u_sobel_gradient_submodule/Gx_imm_r_reg[10]
+  Endpoint: median_sobel_inst/u_sober_compare_submodule/sobel_result_r_reg[6]
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -28,26 +28,29 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_clk (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.50       0.50
-  median_sobel_inst/u_sobel_gradient_submodule/Gx1_r_reg[6]/CK (DFFRX1)
+  median_sobel_inst/u_sober_compare_submodule/temp_b_r_reg[2]/CK (DFFRHQX1)
                                                           0.00       0.50 r
-  median_sobel_inst/u_sobel_gradient_submodule/Gx1_r_reg[6]/Q (DFFRX1)
-                                                          0.65       1.15 f
-  U7208/Y (NOR2X2)                                        0.43       1.57 r
-  U4950/Y (NOR2X4)                                        0.18       1.76 f
-  U7209/Y (NAND2X1)                                       0.20       1.96 r
-  U5671/Y (NAND2BX4)                                      0.18       2.13 r
-  U3795/Y (NAND2X4)                                       0.12       2.25 f
-  U7841/Y (AOI21X1)                                       0.23       2.49 r
-  median_sobel_inst/u_sobel_gradient_submodule/Gx_imm_r_reg[10]/D (DFFRX1)
-                                                          0.00       2.49 r
+  median_sobel_inst/u_sober_compare_submodule/temp_b_r_reg[2]/Q (DFFRHQX1)
+                                                          0.43       0.93 r
+  U4085/Y (NOR2BX1)                                       0.44       1.37 r
+  U7484/Y (OAI21X1)                                       0.21       1.59 f
+  U7485/Y (OAI2BB1X2)                                     0.17       1.76 r
+  U5260/Y (OAI21X4)                                       0.10       1.85 f
+  U4636/Y (NAND2X4)                                       0.09       1.95 r
+  U3743/Y (NAND2X4)                                       0.11       2.05 f
+  U4816/Y (NAND2X6)                                       0.09       2.14 r
+  U5264/Y (NAND2X8)                                       0.14       2.28 f
+  U6304/Y (AND2X2)                                        0.21       2.49 f
+  median_sobel_inst/u_sober_compare_submodule/sobel_result_r_reg[6]/D (DFFRHQX1)
+                                                          0.00       2.49 f
   data arrival time                                                  2.49
 
-  clock i_clk (rise edge)                                 2.35       2.35
-  clock network delay (ideal)                             0.50       2.85
-  clock uncertainty                                      -0.10       2.75
-  median_sobel_inst/u_sobel_gradient_submodule/Gx_imm_r_reg[10]/CK (DFFRX1)
-                                                          0.00       2.75 r
-  library setup time                                     -0.26       2.49
+  clock i_clk (rise edge)                                 2.29       2.29
+  clock network delay (ideal)                             0.50       2.79
+  clock uncertainty                                      -0.10       2.69
+  median_sobel_inst/u_sober_compare_submodule/sobel_result_r_reg[6]/CK (DFFRHQX1)
+                                                          0.00       2.69 r
+  library setup time                                     -0.20       2.49
   data required time                                                 2.49
   --------------------------------------------------------------------------
   data required time                                                 2.49

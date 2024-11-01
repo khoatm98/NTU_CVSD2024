@@ -1301,3 +1301,5 @@ wvZoomIn -win $_nWave1
 wvZoomIn -win $_nWave1
 wvZoomIn -win $_nWave1
 wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 4826271.557786 -snap {("G1" 12)}
+wvSelectSignal -win $_nWave1 {( "G1" 8 )} 
