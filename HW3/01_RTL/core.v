@@ -38,7 +38,7 @@ localparam SRAM_NO          = 4;
 
 
 
-
+reg [7:0] in_data_r;
 reg [3:0]  curr_state, next_state, pre_state[2:0];
 reg [10:0] cnt;
 wire [7:0] sram_data_out_w[SRAM_NO-1:0];
@@ -132,7 +132,7 @@ generate
 			.CEN(1'b0),
 			.WEN(sram_wen_ready_r[i]),
 			.A(sram_addr_w[i]),
-			.D(i_in_data)
+			.D(in_data_r)
 			);
 			
 		assign sram_addr_w[i] = sram_addr_ready_r[i];
@@ -368,6 +368,12 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		op_mode_r <= i_op_valid? i_op_mode : op_mode_r;
 end
 
+always @ (posedge i_clk or negedge i_rst_n) begin
+	if (~i_rst_n)
+		in_data_r <= 0;
+	else
+		in_data_r <= i_in_data;
+end
 
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if (~i_rst_n)

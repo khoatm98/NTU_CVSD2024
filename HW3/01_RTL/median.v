@@ -663,7 +663,7 @@ always @(posedge clk or negedge rst) begin
 		p2_r  <= 0;
 		p3_r  <= 0;
 		p4_r  <= 0;
-		p5_r  <= 0;
+		//p5_r  <= 0;
 		p6_r  <= 0;
 		p7_r  <= 0;
 		p8_r  <= 0;
@@ -674,7 +674,7 @@ always @(posedge clk or negedge rst) begin
 		p2_r  <= p2;
 		p3_r  <= p3;
 		p4_r  <= p4;
-		p5_r  <= p5;
+		//p5_r  <= p5;
 		p6_r  <= p6;
 		p7_r  <= p7;
 		p8_r  <= p8;
@@ -708,19 +708,22 @@ end
 reg [9:0] Gx1_r, Gy1_r;
 reg [9:0] Gx2_r, Gy2_r;
 
-
+wire [9:0] Gx1_w = Gx1  + p1_d_r;
+wire [9:0] Gx2_w = Gx2  + p9_d_r;
+wire [9:0] Gy1_w = Gy1  + p1_d_r;
+wire [9:0] Gy2_w = Gy2  + p9_d_r;
 always @ (posedge clk or negedge rst) begin
 	if(~rst) begin
 		Gx1_r <= 0;
 		Gy1_r <= 0;
 		Gx2_r <= 0;
 		Gy2_r <= 0;
-
+		
 	end else begin
-		Gx1_r <=  Gx1  + p1_d_r; // + {p8_r,1'b0}
-		Gx2_r <=  Gx2  + p9_d_r; // + {p2_r,1'b0}
-		Gy1_r <=  Gy1  + p1_d_r; // + {p6_r,1'b0}
-		Gy2_r <=  Gy2  + p9_d_r; // + {p4_r,1'b0}
+		Gx1_r <= Gx1_w; // + {p8_r,1'b0}
+		Gx2_r <= Gx2_w; // + {p2_r,1'b0}
+		Gy1_r <= Gy1_w; // + {p6_r,1'b0}
+		Gy2_r <= Gy2_w; // + {p4_r,1'b0}
 	end
 end
 

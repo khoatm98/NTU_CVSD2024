@@ -8,7 +8,7 @@ Report : timing
         -max_paths 1
 Design : core
 Version: U-2022.12
-Date   : Thu Oct 31 14:51:58 2024
+Date   : Fri Nov  1 13:43:27 2024
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -16,9 +16,9 @@ Date   : Thu Oct 31 14:51:58 2024
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: median_inst/cnt_reg[0]
+  Startpoint: median_inst/cnt_reg[1]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: median_inst/u_median_filter_submodule/a47_r_reg
+  Endpoint: median_inst/u_median_filter_submodule/a25_r_reg
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -31,41 +31,38 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_clk (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.50       0.50
-  median_inst/cnt_reg[0]/CK (DFFRHQX8)                    0.00 #     0.50 r
-  median_inst/cnt_reg[0]/Q (DFFRHQX8)                     0.29       0.79 r
-  median_inst/U234/Y (INVX16)                             0.08       0.87 f
-  median_inst/U37/Y (INVX20)                              0.06       0.93 r
-  median_inst/U281/Y (NAND2X8)                            0.11       1.04 f
-  median_inst/U295/Y (BUFX20)                             0.18       1.22 f
-  median_inst/U147/Y (BUFX16)                             0.13       1.35 f
-  median_inst/U722/Y (OA22X4)                             0.25       1.60 f
-  median_inst/U704/Y (OAI221X4)                           0.33       1.94 r
-  median_inst/u_median_filter_submodule/p7[5] (median_filter_submodule)
-                                                          0.00       1.94 r
-  median_inst/u_median_filter_submodule/U76/Y (INVX6)     0.11       2.05 f
-  median_inst/u_median_filter_submodule/U161/Y (OAI2BB2X4)
-                                                          0.13       2.18 r
-  median_inst/u_median_filter_submodule/U413/Y (AND2X8)
-                                                          0.15       2.33 r
-  median_inst/u_median_filter_submodule/U5/Y (OA22X4)     0.18       2.50 r
-  median_inst/u_median_filter_submodule/U4/Y (NAND2X2)
-                                                          0.08       2.59 f
-  median_inst/u_median_filter_submodule/U478/Y (NAND3X2)
-                                                          0.12       2.70 r
-  median_inst/u_median_filter_submodule/a47_r_reg/D (DFFRX4)
-                                                          0.00       2.70 r
-  data arrival time                                                  2.70
+  median_inst/cnt_reg[1]/CK (DFFRX4)                      0.00 #     0.50 r
+  median_inst/cnt_reg[1]/QN (DFFRX4)                      0.41       0.91 r
+  median_inst/U162/Y (NAND2X6)                            0.11       1.03 f
+  median_inst/U612/Y (BUFX20)                             0.13       1.15 f
+  median_inst/U14/Y (BUFX12)                              0.12       1.27 f
+  median_inst/U140/Y (BUFX12)                             0.17       1.44 f
+  median_inst/U193/Y (OA22X2)                             0.37       1.80 f
+  median_inst/U644/Y (OAI221X2)                           0.20       2.00 r
+  median_inst/u_median_filter_submodule/p5[0] (median_filter_submodule)
+                                                          0.00       2.00 r
+  median_inst/u_median_filter_submodule/U334/Y (OAI211X2)
+                                                          0.20       2.21 f
+  median_inst/u_median_filter_submodule/U463/Y (AO22X4)
+                                                          0.26       2.47 f
+  median_inst/u_median_filter_submodule/U317/Y (AOI2BB1X4)
+                                                          0.20       2.67 f
+  median_inst/u_median_filter_submodule/U402/Y (OAI221X2)
+                                                          0.23       2.90 r
+  median_inst/u_median_filter_submodule/a25_r_reg/D (DFFRX2)
+                                                          0.00       2.90 r
+  data arrival time                                                  2.90
 
-  clock i_clk (rise edge)                                 2.48       2.48
-  clock network delay (ideal)                             0.50       2.98
-  clock uncertainty                                      -0.10       2.88
-  median_inst/u_median_filter_submodule/a47_r_reg/CK (DFFRX4)
-                                                          0.00       2.88 r
-  library setup time                                     -0.18       2.70
-  data required time                                                 2.70
+  clock i_clk (rise edge)                                 2.70       2.70
+  clock network delay (ideal)                             0.50       3.20
+  clock uncertainty                                      -0.10       3.10
+  median_inst/u_median_filter_submodule/a25_r_reg/CK (DFFRX2)
+                                                          0.00       3.10 r
+  library setup time                                     -0.20       2.90
+  data required time                                                 2.90
   --------------------------------------------------------------------------
-  data required time                                                 2.70
-  data arrival time                                                 -2.70
+  data required time                                                 2.90
+  data arrival time                                                 -2.90
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 
