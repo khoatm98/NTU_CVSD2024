@@ -8,7 +8,7 @@ Option          Value             Origin  File                           LineNo
 --goal_info     Design_Read@      CmdLine -                              -
 --strict_sgdc_check <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 40
 -batch          <ON>              CmdLine -                              -
--ignoredu       srasram_256x8     CmdLine -                              -
+-ignoredu       sram_512x8        CmdLine -                              -
 -inferblackbox  <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 30
 -lib            WORK=>./spyglass-1/core/WORK CmdLine -                              -
                 SYNOPSYS=>$SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS Config  $SPYGLASS_HOME/.spyglass.setup 25
@@ -19,13 +19,14 @@ Option          Value             Origin  File                           LineNo
 -report         moresimple        Config  $SPYGLASS_HOME/.spyglass.setup 17
 -sortmethod     du                Config  $SPYGLASS_HOME/.spyglass.setup 27
 -template       Design_Read       CmdLine -                              -
--templatedir    /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read CmdLine -                              -
+-templatedir    /home/cad/synopsys/spyglass/2021.09/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read CmdLine -                              -
 -top            core              CmdLine -                              -
 -wdir           ./spyglass-1/core/Design_Read CmdLine -                              -
-<design_files>  ../sram_256x8/sram_256x8.v APICall -                              -
+<design_files>  ../sram_512x8/sram_512x8.v APICall -                              -
                 conv.v            APICall -                              -
                 core.v            APICall -                              -
                 define.v          APICall -                              -
+                median.v          APICall -                              -
 
 
 Rules Parameter
@@ -40,6 +41,6 @@ Policy Info
 ===============================================================================
 NameOfPolicy    VersionNumber   Path (from where policy loaded)
 ===============================================================================
-spyglass        SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/spyglass
+spyglass        SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/spyglass
 
 

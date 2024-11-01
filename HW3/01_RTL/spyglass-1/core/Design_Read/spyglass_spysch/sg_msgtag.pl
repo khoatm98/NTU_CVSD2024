@@ -8,7 +8,7 @@ use SpyGlass;
 use SpyGlass::Objects;
 spyRebootMsgTagSupport();
 
-spySetMsgTagCount(2,44);
+spySetMsgTagCount(2,41);
 spyParseTextMessageTagFile("./spyglass-1/core/Design_Read/spyglass_spysch/sg_msgtag.txt");
 
 if(!defined $::spyInIspy || !$::spyInIspy)
@@ -20,6 +20,6 @@ if(!defined $::spyInIspy || !$::spyInIspy)
 )
 );
 }
-spyMessageTagTestBenchmark(6,"./spyglass-1/core/Design_Read/spyglass.vdb");
+spyMessageTagTestBenchmark(4,"./spyglass-1/core/Design_Read/spyglass.vdb");
 
 1;

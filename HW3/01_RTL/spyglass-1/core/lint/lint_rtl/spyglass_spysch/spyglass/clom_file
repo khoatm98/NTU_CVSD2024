@@ -12,7 +12,7 @@ Option          Value             Origin  File                           LineNo
 -enable_fast_traversal <ON>              CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/lint/lint_rtl.spq 82
 -enable_save_restore <ON>              CmdLine -                              -
 -enable_save_restore_builtin true              CmdLine -                              -
--ignoredu       srasram_256x8     CmdLine -                              -
+-ignoredu       sram_512x8        CmdLine -                              -
 -inferblackbox  <ON>              Config  $SPYGLASS_HOME/.spyglass.setup 30
 -lib            WORK=>./spyglass-1/core/WORK CmdLine -                              -
                 SYNOPSYS=>$SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS Config  $SPYGLASS_HOME/.spyglass.setup 25
@@ -177,13 +177,14 @@ Option          Value             Origin  File                           LineNo
                 W339a             CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/lint/lint_rtl.spq 555
 -sortmethod     du                Config  $SPYGLASS_HOME/.spyglass.setup 27
 -template       lint/lint_rtl     CmdLine -                              -
--templatedir    /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff CmdLine -                              -
+-templatedir    /home/cad/synopsys/spyglass/2021.09/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff CmdLine -                              -
 -top            core              CmdLine -                              -
 -wdir           ./spyglass-1/core/lint/lint_rtl CmdLine -                              -
-<design_files>  ../sram_256x8/sram_256x8.v APICall -                              -
+<design_files>  ../sram_512x8/sram_512x8.v APICall -                              -
                 conv.v            APICall -                              -
                 core.v            APICall -                              -
                 define.v          APICall -                              -
+                median.v          APICall -                              -
 
 
 Rules Parameter
@@ -246,28 +247,28 @@ Policy Info
 ===============================================================================
 NameOfPolicy    VersionNumber   Path (from where policy loaded)
 ===============================================================================
-spyglass        SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/spyglass
-openmore        SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/openmore
-starc           SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/starc
-starc2005       SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/starc2005
-erc             SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/erc
-simulation      SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/simulation
-lint            SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/lint
-latch           SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/latch
-morelint        SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/morelint
-timing          SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/timing
-starc2002       SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/starc2002
-Audits          SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/Audits
-area            SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/area
-miscellaneous   SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/miscellaneous
-starcad-21      SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/starcad-21
-txv             SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/txv
-power_est       SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/power_est
+spyglass        SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/spyglass
+openmore        SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/openmore
+starc           SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/starc
+starc2005       SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/starc2005
+erc             SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/erc
+simulation      SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/simulation
+lint            SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/lint
+latch           SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/latch
+morelint        SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/morelint
+timing          SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/timing
+starc2002       SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/starc2002
+Audits          SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/Audits
+area            SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/area
+miscellaneous   SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/miscellaneous
+starcad-21      SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/starcad-21
+txv             SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/txv
+power_est       SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/power_est
 lowpower        5.6.1           $SPYGLASS_HOME/policies/lowpower
-dft_dsm         SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/dft_dsm
-dft             SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/dft
-constraints     SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/constraints
-const_intern1   SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/constraints
-clock-reset     SpyGlass_vT-2022.06 $SPYGLASS_HOME/policies/clock
+dft_dsm         SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/dft_dsm
+dft             SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/dft
+constraints     SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/constraints
+const_intern1   SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/constraints
+clock-reset     SpyGlass_vS-2021.09 $SPYGLASS_HOME/policies/clock
 
 

@@ -17,8 +17,6 @@ module conv (
 
 wire [13:0] out_data_w;
 reg [16:0] out_data_wait_r;
-reg [31:0] data_r;
-reg        i_isFirst_r;
 reg        i_input_done_r;
 reg [1:0] cnt;
 reg [1:0] cs, ns;
@@ -44,10 +42,10 @@ reg  [16:0] conv_2_r;
 reg  [16:0] conv_3_r;
 reg  [16:0] conv_4_r;
 
-wire  [16:0] conv_1_w;
-wire  [16:0] conv_2_w;
-wire  [16:0] conv_3_w;
-wire  [16:0] conv_4_w;
+wire  [17:0] conv_1_w;
+wire  [17:0] conv_2_w;
+wire  [17:0] conv_3_w;
+wire  [17:0] conv_4_w;
 
 reg  [16:0] conv_r;
 reg o_out_valid_ready_r;
@@ -57,7 +55,6 @@ localparam IDLE   = 2'd0;
 localparam CALC   = 2'd2;
 localparam OUTPUT = 2'd3;
 
-genvar i;
 // ---------------------------------------------------------------------------
 // Continuous Assignment
 // ---------------------------------------------------------------------------
@@ -151,19 +148,10 @@ end
 
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if(~i_rst_n) begin
-		//i_isFirst_r <= 0;
-		//data_r <= 0;
 		i_input_done_r <= 0;
 	end
 	else begin
-		//i_isFirst_r <= i_isFirst;
 		i_input_done_r <= i_input_done;
-		//if (ns != READ)
-		//	data_r <= 0;
-		//else begin
-		//	data_r <= i_data;
-		//end
-		//data_r <= i_data;
 	end
 end
 always @ (posedge i_clk or negedge i_rst_n) begin
@@ -186,8 +174,8 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	else begin
 		casez(cnt)
 			2'bz1    : begin
-				data_abc_1_r <= cs[1] ? 0 : data_abc_r;
-				data_bcd_2_r <= cs[1] ? 0 : data_bcd_r;
+				data_abc_1_r <= cs[1] ? 0 : {1'b0,data_abc_r};
+				data_bcd_2_r <= cs[1] ? 0 : {1'b0,data_bcd_r};
 			end
 			2'd2    : begin
 				data_abc_1_r <= cs[1] ? 0 :  {data_abc_r,1'b0};
@@ -209,8 +197,8 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	else begin
 		casez(cnt)
 			2'bz0    : begin
-				data_abc_3_r <=  ^cs ?  {data_abc_r} : 0;
-				data_bcd_4_r <=  ^cs ?  {data_bcd_r} : 0;
+				data_abc_3_r <=  ^cs ?  {1'b0,data_abc_r} : 0;
+				data_bcd_4_r <=  ^cs ?  {1'b0,data_bcd_r} : 0;
 			end
 			2'd3    : begin
 				data_abc_3_r <=  ^cs ?  {data_abc_r,1'b0} : 0;
@@ -237,10 +225,10 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		conv_4_r <= 0;
 	end
 	else begin
-		conv_1_r <= conv_1_w;
-		conv_2_r <= conv_2_w;
-		conv_3_r <= conv_3_w;
-		conv_4_r <= conv_4_w;
+		conv_1_r <= conv_1_w[16:0];
+		conv_2_r <= conv_2_w[16:0];
+		conv_3_r <= conv_3_w[16:0];
+		conv_4_r <= conv_4_w[16:0];
 	end
 end
 

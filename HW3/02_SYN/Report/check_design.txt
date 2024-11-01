@@ -1,40 +1,29 @@
  
 ****************************************
 check_design summary:
-Version:     U-2022.12
-Date:        Fri Nov  1 13:42:23 2024
+Version:     S-2021.06-SP2
+Date:        Fri Nov  1 20:55:14 2024
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                      8
-    Unconnected ports (LINT-28)                                     8
-
 Cells                                                              15
     Cells do not drive (LINT-1)                                    15
 --------------------------------------------------------------------------------
 
-Warning: In design 'core', cell 'C2192' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2204' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2497' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2498' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'B_99' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2583' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2600' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2601' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2655' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2656' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2217' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2229' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2531' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2532' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'B_101' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2617' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2634' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2635' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2689' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2690' does not drive any nets. (LINT-1)
 Warning: In design 'conv', cell 'C761' does not drive any nets. (LINT-1)
 Warning: In design 'median', cell 'C1938' does not drive any nets. (LINT-1)
-Warning: In design 'sobel_gradient', cell 'C936' does not drive any nets. (LINT-1)
-Warning: In design 'sobel_gradient', cell 'C939' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_gradient', cell 'C913' does not drive any nets. (LINT-1)
+Warning: In design 'sobel_gradient', cell 'C916' does not drive any nets. (LINT-1)
 Warning: In design 'sober_compare', cell 'C528' does not drive any nets. (LINT-1)
-Warning: In design 'sobel_gradient', port 'p5[7]' is not connected to any nets. (LINT-28)
-Warning: In design 'sobel_gradient', port 'p5[6]' is not connected to any nets. (LINT-28)
-Warning: In design 'sobel_gradient', port 'p5[5]' is not connected to any nets. (LINT-28)
-Warning: In design 'sobel_gradient', port 'p5[4]' is not connected to any nets. (LINT-28)
-Warning: In design 'sobel_gradient', port 'p5[3]' is not connected to any nets. (LINT-28)
-Warning: In design 'sobel_gradient', port 'p5[2]' is not connected to any nets. (LINT-28)
-Warning: In design 'sobel_gradient', port 'p5[1]' is not connected to any nets. (LINT-28)
-Warning: In design 'sobel_gradient', port 'p5[0]' is not connected to any nets. (LINT-28)
 1

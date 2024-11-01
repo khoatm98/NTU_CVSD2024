@@ -1,15 +1,15 @@
 rc file Version 1.0
 
 [Design]
-COMPILE_PATH=/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL
-VCS_HOME=/usr/cad/synopsys/vcs/2022.06/
-VERDI_HOME=/usr/cad/synopsys/verdi/cur
+COMPILE_PATH=/home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL
+VCS_HOME=/usr/cad/synopsys/vcs/cur
+VERDI_HOME=
 SystemC=FALSE
 UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
 COSIM=FALSE
-TOP=testbed sobel 
+TOP=testbed 
 OPTION=-ssv -ssy 
 ELAB_OPTION=-ssv -ssy 
 

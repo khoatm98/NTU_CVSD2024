@@ -9,13 +9,7 @@ fHsimCertRaptMode                  	0
 fSharedMasterElab                  	0
 fFsimDutPathEnabled                	0
 fFsimEVCDEnabled                   	0
-fCcExSummaryReportFlag             	0
-fCcExConnReport                    	0
-fCcExConnDbReport                  	0
 fFsimForcelist                     	0
-fSvNettRealResType                 	0
-fFgpSched0User                     	0
-fFgpDynelabFix                     	1
 hsimLevelizeDone                   	1
 fHsimCompressDiag                  	1
 fHsimPowerOpt                      	0
@@ -37,6 +31,7 @@ fHsimCompressMdbForDynamicElab     	1
 fHsimCompressMdbDiag               	0
 fHsimDeferForceSelTillReElab       	0
 fHsimModByModElab                  	1
+fSvNettRealResType                 	0
 fHsimExprID                        	1
 fHsimSequdpon                      	0
 fHsimDatapinOpt                    	0
@@ -208,7 +203,6 @@ noInstsInVectorization             	0
 fHsimScanRaptor                    	0
 fHsimConfigFileCount               	0
 fHsimVectorConstProp               	0
-fHsStopSlowSigPropForMI            	0
 fHsimPromoteParam                  	0
 fHsimNoVecInRaptor                 	0
 fRaptorDumpVal                     	0
@@ -223,6 +217,7 @@ fRaptorTotalGatesBeforeVect        	0
 fHsimCountRaptorBits               	0
 fHsimNewEvcd                       	1
 fHsimNewEvcdMX                     	0
+fHsimNewEvcdVecRoot                	1
 fHsimNewEvcdForce                  	1
 fHsimNewEvcdTest                   	0
 fHsimNewEvcdObnDrv                 	1
@@ -277,13 +272,13 @@ fHsimAllowAlwaysCombCmpDvcSimv     	0
 fHsimAllowAlwaysCombDbg            	0
 fHsimMakeAllP2SPrimary             	0
 fHsimMakeAllSeqPrimary             	0
+fHsimNoCcnDump                     	0
 fHsimFsdbProfDiag                  	0
 fHsimAllCapSet                     	1
 fVIDriverPartComp                  	0
 fPCAllNodesVIDriver                	0
 fVpdSeqGate                        	0
 fVpdUseMaxBCode                    	1
-fFsdbUseBCodeLimit                 	0
 fVpdHsIntVecGate                   	1
 fVpdHsCmplxVecGate                 	1
 fVpdHsVecGateDiags                 	0
@@ -307,7 +302,6 @@ fHsimSK                            	0
 fHsimSKInteg                       	0
 fHsimSKCtOnly                      	0
 fHsimSharedKernel                  	0
-fHsimPeLocalXmr                    	0
 fHsimOnepass                       	0
 fHsimStitchNew                     	0
 fHsimGlobalLevelize                	0
@@ -321,7 +315,7 @@ fHsimFepats                        	0
 fHsimSeqUdpEblkOpt                 	0
 fHsimSeqUdpEblkOptDiag             	0
 fHsimGateInputAndDbsOffsetsOpt     	1
-fHsimMasterNodeSort                	3
+fHsimMasterNodeSort                	0
 fHsimGDBLargeModule                	1
 fHsimUdpDynElab                    	0
 fHsimCompressData                  	4
@@ -335,7 +329,6 @@ fHsimIgnoreReElab                  	0
 fHsimFuseMultiDrivers              	0
 fHsimNoSched0Reg                   	0
 fHsimAmsFusionEnabled              	0
-fHsimElab64                        	0
 fHsimRtlDbs                        	0
 fHsimWakeupId                      	0
 fHsimPassiveIbn                    	0
@@ -465,7 +458,6 @@ fHsimMdbNewDebugOpt                	0
 fHsimMdbNewDebugOptExitOnError     	1
 fHsimNewDebugOptMemDiag            	0
 hsGlobalVerboseLevel               	0
-fHsimTestPxpcode                   	0
 fHsimMdbVectorConstProp            	1
 fHsimEnableSeqUdpWrite             	1
 fHsimDumpMDBOnlyForSeqUdp          	0
@@ -487,7 +479,6 @@ fUCaseLabelCtrl                    	0
 fUniSolRtSvaEna                    	1
 fUniSolSvaEna                      	1
 fXpropRtCtrlCallerOnly             	0
-fXpropVhVlCombineDisabled          	0
 fHsimRaptorPart                    	0
 fHsimRaptor                        	0
 fHsimEnableDbsMemOpt               	1
@@ -526,9 +517,6 @@ fHsimMdbDeltaGateAggr              	0
 fHsimMdbVecDeltaGate               	0
 fHsimVpdOptVfsDB                   	1
 fHsimMdbPruneVpdGates              	1
-fHsimDynamicEblk                   	0
-fHsimDynamicEblkDiag               	0
-fHsimCompactCompiledLoads          	0
 fHsimPcPe                          	0
 fHsimVpdGateOnlyFlag               	1
 fHsimMxConnFrc                     	0
@@ -609,6 +597,15 @@ fHsCgMaxInputs                     	6
 fHsCgOptFwdPass                    	1
 fHsimHpnodes                       	0
 fLightDump                         	0
+fHDLCosim                          	0
+fHDLCosimDebug                     	0
+fHDLCosimTimeCoupled               	0
+fHDLCosimTimeCoupledPorts          	0
+HDLCosimMaxDataPerDpi              	1
+HDLCosimMaxCallsPerDpi             	2147483647
+fHDLCosimCompileDUT                	0
+fHDLCosimCustomCompile             	0
+fHDLCosimBoundaryAnalysis          	0
 fVpdBeforeScan                     	1
 fHsCgOptMiSched0                   	0
 fgcAddSched0                       	0
@@ -705,6 +702,7 @@ fFgpTbNoVSA                        	0
 fFgpTbEvXmr                        	0
 fFgpTbEvCgCall                     	1
 fFgpDisabledLevel                  	512
+fFgpSched0User                     	0
 fFgpNoSdDelayedNbas                	1
 fFgpNoEvNbas                       	0
 fFgpTimingFlags                    	0
@@ -833,7 +831,7 @@ VFS_XCMP_HSIM                      	1
 VFS_XCMP_ELABMODDB                 	1
 fHsimHybridArray                   	0
 fHsimMapNumHybridArray             	0
-fHsimDumpCompressedSdb             	1
+fHsimDumpCompressedSdb             	0
 fHsimUdpDisableReachability        	0
 fHsimDbsOffsetsMemOpt              	0
 fHsCgOptDynElab                    	0
@@ -842,16 +840,9 @@ fHsimCompressLevelDB               	0
 fHubbleAnnotations                 	0
 fHsimScanOptNoFwdProp              	0
 fHsimCcnDepositFix                 	0
+fFgpDynelabFix                     	1
 fHsimMdbUnidirSelectsForDceDebug   	0
-fRtLongFaninMHID                   	0
+fRtLongFanin                       	0
 fHsCgOptMuxClkIsSel                	0
 fHsCgOptMuxClkIsSelDiag            	0
-fHsimObfuscate                     	1
-fHsimCompressRaceDiag              	1
-fHsimNoDumpPrintScanPathData       	0
-fHsimRmvRmaIbfIpOfBehavIBN         	0
-fHsimCompressNodeMapForVpd         	0
-fHsimCompressNodeMapForVpdDiag     	0
-fHsimInitOrder                     	0
-fHsimChangePathOldImpl             	0
 hsoptDiagDirPath                   	diag_dir/

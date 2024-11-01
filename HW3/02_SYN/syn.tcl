@@ -5,7 +5,8 @@ sh mkdir -p Report
 set company {NTUGIEE}
 set designer {Student}
 
-set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  ../sram_256x8 ../sram_512x8 ../sram_4096x8 $search_path ../ ./"
+#set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  ../sram_256x8 ../sram_512x8 ../sram_4096x8 $search_path ../ ./"
+set search_path      ". /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/  ../sram_256x8 ../sram_512x8 ../sram_4096x8 $search_path ../ ./"
 set target_library   "slow.db                 \
                       sram_256x8_slow_syn.db  \
                       sram_512x8_slow_syn.db  \
@@ -42,12 +43,13 @@ current_design [get_designs ${DESIGN}]
 
 check_design > Report/check_design.txt
 check_timing > Report/check_timing.txt
-#set high_fanout_net_threshold 0
+set high_fanout_net_threshold 0
 
 uniquify
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 compile
-
+compile -map_effort high
+compile_ultra  -area_high_effort_script -timing_high_effort_script
 # Report Output
 current_design [get_designs ${DESIGN}]
 report_timing > "./Report/${DESIGN}_syn.timing"

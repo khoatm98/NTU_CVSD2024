@@ -50,8 +50,6 @@ wire [8:0] sram_addr_w[SRAM_NO-1:0];
 reg  [8:0] sram_addr_wait_r[SRAM_NO-1:0];
 reg  [8:0] sram_addr_ready_r[SRAM_NO-1:0];
 
-reg  [3:0] sram_select0_delay_r [2:0];
-
 wire conv_calc_done_w;
 reg conv_calc_done_r;
 
@@ -95,7 +93,7 @@ wire [13:0] result_w;
 wire [13:0] conv_result_w;
 wire 	    conv_out_valid_w;
 reg 	    conv_isFirst_signal_r;
-reg 	    med_isFirst_signal_r;
+reg 	    med_sobel_isFirst_signal_r;
 reg 	    med_sobel_r;
 wire 	    med_out_valid_w;
 wire [10:0] med_result_w;
@@ -140,16 +138,16 @@ generate
 endgenerate
 
 
-assign result_w =  conv_result_w | med_result_w;
+assign result_w =  conv_result_w | {3'b000, med_result_w};
 
-assign out_valid_w = conv_out_valid_w || med_out_valid_w;
-assign o_op_ready = curr_state == FETCH;
-assign o_in_ready = curr_state == MAP_LOAD;
-assign o_out_data  = out_data_ready_r;
-assign o_out_valid = out_valid_ready_r;
-assign map_load_done_w = cnt == 2047;
+assign out_valid_w       = conv_out_valid_w || med_out_valid_w;
+assign o_op_ready        = curr_state == FETCH;
+assign o_in_ready        = next_state == MAP_LOAD;
+assign o_out_data        = out_data_ready_r;
+assign o_out_valid       = out_valid_ready_r;
+assign map_load_done_w   = cnt == 2047;
 assign display_done_w    = cnt[7:5] == depth_ready_r;
-assign conv_calc_done_w  = cnt ==  {4'b0000, depth_ready_r, 5'b00011};// (depth_ready_r<<4) + 2;
+assign conv_calc_done_w  = cnt ==  {3'b000, depth_ready_r, 5'b00011};// (depth_ready_r<<4) + 2;
 //assign med_done_w        = cnt == 28;
 
 assign l_valid_w = |x_origin_r[2:0]; 
@@ -162,26 +160,28 @@ assign d_valid_w = ~&y_origin_r[2:1];
 // ---------------------------------------------------------------------------
 // ---- Write your conbinational block design here ---- //
 
-conv conv_inst (.i_clk(i_clk),
+conv conv_inst (
+				.i_clk(i_clk),
 				.i_rst_n(i_rst_n),
 				.i_data(input_data_ready_r),
 				.i_isFirst(conv_isFirst_signal_r),
 				.i_input_done(conv_calc_done_r),
 				.o_out_valid(conv_out_valid_w),
-				.o_out_data(conv_result_w));
+				.o_out_data(conv_result_w)
+				);
 				                   
 				
 				
-median median_inst (                       
-				.i_clk(i_clk),
-				.i_rst_n(i_rst_n),
-				.i_data(input_data_ready_r),
-				.i_isFirst(med_isFirst_signal_r),
-				.i_med_sobel(med_sobel_r),
-				.o_out_valid(med_out_valid_w),
-				.o_out_data(med_result_w),
-				.o_done(med_done_w)
-				);
+median median_sobel_inst (                       
+									.i_clk(i_clk),
+									.i_rst_n(i_rst_n),
+									.i_data(input_data_ready_r),
+									.i_isFirst(med_sobel_isFirst_signal_r),
+									.i_med_sobel(med_sobel_r),
+									.o_out_valid(med_out_valid_w),
+									.o_out_data(med_result_w),
+									.o_done(med_done_w)
+									);
 				
 /* Origin shifting */
 always @ (*) begin
@@ -278,15 +278,20 @@ always @ (*) begin
 		2'd2    : input_data_wait_r = {sram_data_out_r[0], sram_data_out_r[3], sram_data_out_r[2], sram_data_out_r[1]};
 		default : input_data_wait_r = {sram_data_out_r[1], sram_data_out_r[0], sram_data_out_r[3], sram_data_out_r[2]};
 	endcase
-	//input_data_wait_r = |cnt[7:1] ? {sram_data_out_r[7],sram_data_out_r[6],sram_data_out_r[5],sram_data_out_r[4], sram_data_out_r[3],sram_data_out_r[2],sram_data_out_r[1],sram_data_out_r[0]} : 0;
 end
 
 /* Output */
 always @ (*) begin
 	case({pre_state[2],pre_state[1]})
 		{DISPLAY,DISPLAY}: begin
-			out_data_wait_r = {6'b0, sram_data_out_r[{x_delay_r[2][1:0] }]};
 			out_valid_wait_r = 1;
+			case(x_delay_r[2][1:0])
+				2'd0    : out_data_wait_r = {6'b0, sram_data_out_r[0]};
+				2'd1    : out_data_wait_r = {6'b0, sram_data_out_r[1]};
+				2'd2    : out_data_wait_r = {6'b0, sram_data_out_r[2]};
+				default : out_data_wait_r = {6'b0, sram_data_out_r[3]};
+			endcase
+			//out_data_wait_r = {6'b0, sram_data_out_r[{x_delay_r[2][1:0] }]};
 		end
 		default : begin
 			out_data_wait_r  = result_w;
@@ -316,7 +321,7 @@ always @ (*) begin
 				default         : next_state = FETCH;
 			endcase
 		end
-		MAP_LOAD   : next_state = map_load_done_r  ? DELAY1 : MAP_LOAD;
+		MAP_LOAD   : next_state = map_load_done_r  ? FETCH : MAP_LOAD;
 		CONV       : next_state = conv_calc_done_r  ? CONV_OUT : CONV;
 		CONV_OUT   : next_state = out_valid_ready_r ? DELAY3   : CONV_OUT;
 		MED        : next_state = med_done_r        ? FETCH    : MED;
@@ -387,9 +392,7 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 			4'b1110: input_data_ready_r <= {8'b0, input_data_wait_r[23:0]};
 			4'b1011: input_data_ready_r <= cnt[1:0] == 3 ? 0 : input_data_wait_r;
 			4'b1001: input_data_ready_r <= cnt[1:0] == 3 ? 0 : {input_data_wait_r[31:8],8'b0};
-			4'b1101: input_data_ready_r <= {input_data_wait_r[31:8],8'b0};
 			4'b1010: input_data_ready_r <= cnt[1:0] == 3 ? 0 : {8'b0, input_data_wait_r[23:0]};
-			4'b1110: input_data_ready_r <= {8'b0, input_data_wait_r[23:0]};
 			default: input_data_ready_r <= input_data_wait_r;
 		endcase
 	end
@@ -478,6 +481,10 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		y_delay_r[2]  <= y_delay_r[1];
 	end
 end
+
+reg x_ovf_r, y_ovf_r, z_ovf_r;
+
+
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if (~i_rst_n) begin
 		x_r <= 0;
@@ -486,7 +493,7 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	else begin
 		casez(next_state)
 			DISPLAY: begin
-				x_r <= x_origin_r + (cnt[0]);
+				x_r <= (x_origin_r + (cnt[0]))%8;
 				z_r <= cnt[6:2];//(cnt)>>2;
 			end
 			
@@ -509,7 +516,7 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	else begin
 		casez(next_state)
 			DISPLAY: begin
-				y_r <= y_origin_r + cnt[1];
+				y_r <= (y_origin_r + cnt[1])%8;
 			end
 			4'b11zz: begin // conv med sobel
 				y_r <= y_origin_r + {cnt[1],cnt[0]} - 1;
@@ -525,14 +532,12 @@ end
 always @ (posedge i_clk or negedge i_rst_n) begin
 	if (~i_rst_n) begin
 		conv_isFirst_signal_r    <= 0;
-		med_isFirst_signal_r     <= 0;
-		//sobel_isFirst_signal_r   <= 0;
+		med_sobel_isFirst_signal_r     <= 0;
 		med_sobel_r              <= 0;
 	end
 	else begin
 		conv_isFirst_signal_r  <= curr_state == CONV && cnt == 4 ? 1 : 0 ;
-		med_isFirst_signal_r   <= {curr_state[3:2], curr_state[0]} == 3'b111 && cnt == 4 ? 1 : 0 ;
-		//sobel_isFirst_signal_r <= curr_state == SOBEL_NMS && cnt == 4 ? 1 : 0 ;
+		med_sobel_isFirst_signal_r   <= {curr_state[3:2], curr_state[0]} == 3'b111 && cnt == 4 ? 1 : 0 ;
 		med_sobel_r            <= op_mode_r == `OP_SOBEL_NMS ? 1 : 0;
 	end
 end

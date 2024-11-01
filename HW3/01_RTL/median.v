@@ -14,9 +14,9 @@ module median (
 // Wires and Registers
 // ---------------------------------------------------------------------------
 // ---- Add your own wires and registers here if needed ---- //
-reg [7:0] med_e_r[15:0];
-reg [7:0] med_e_delay_r[15:0];
-reg [7:0] med_e_wait_r[15:0];
+reg [7:0] med_sobel_e_r[15:0];
+reg [7:0] med_sobel_e_delay_r[15:0];
+reg [7:0] med_sobel_e_wait_r[15:0];
 
 wire [7:0] out_data_w;
 reg [16:0] out_data_wait_r;
@@ -80,8 +80,7 @@ sobel_gradient u_sobel_gradient_submodule(
 					.p1(data_a_r),
 					.p2(data_b_r),
 					.p3(data_c_r),
-					.p4(data_d_r),
-					.p5(data_e_r),
+					.p4(data_d_r), 
 					.p6(data_f_r),
 					.p7(data_g_r),
 					.p8(data_h_r),
@@ -111,48 +110,48 @@ sober_compare u_sober_compare_submodule(
 always @ (*) begin
 	case(cnt[1:0])
 		{2'd0}    : begin
-			data_a_r = med_e_delay_r[0] ;
-			data_b_r = med_e_delay_r[1] ;
-			data_c_r = med_e_delay_r[2] ;
-			data_d_r = med_e_delay_r[4] ;
-			data_e_r = med_e_delay_r[5] ;
-			data_f_r = med_e_delay_r[6] ;
-			data_g_r = med_e_delay_r[8] ;
-			data_h_r = med_e_delay_r[9] ;
-			data_i_r = med_e_delay_r[10];
+			data_a_r = med_sobel_e_delay_r[0] ;
+			data_b_r = med_sobel_e_delay_r[1] ;
+			data_c_r = med_sobel_e_delay_r[2] ;
+			data_d_r = med_sobel_e_delay_r[4] ;
+			data_e_r = med_sobel_e_delay_r[5] ;
+			data_f_r = med_sobel_e_delay_r[6] ;
+			data_g_r = med_sobel_e_delay_r[8] ;
+			data_h_r = med_sobel_e_delay_r[9] ;
+			data_i_r = med_sobel_e_delay_r[10];
 		end
 		{2'd1}     : begin
-			data_a_r = med_e_delay_r[0  + 1];
-			data_b_r = med_e_delay_r[1  + 1];
-			data_c_r = med_e_delay_r[2  + 1];
-			data_d_r = med_e_delay_r[4  + 1];
-			data_e_r = med_e_delay_r[5  + 1];
-			data_f_r = med_e_delay_r[6  + 1];
-			data_g_r = med_e_delay_r[8  + 1];
-			data_h_r = med_e_delay_r[9  + 1];
-			data_i_r = med_e_delay_r[10 + 1]; 
+			data_a_r = med_sobel_e_delay_r[0  + 1];
+			data_b_r = med_sobel_e_delay_r[1  + 1];
+			data_c_r = med_sobel_e_delay_r[2  + 1];
+			data_d_r = med_sobel_e_delay_r[4  + 1];
+			data_e_r = med_sobel_e_delay_r[5  + 1];
+			data_f_r = med_sobel_e_delay_r[6  + 1];
+			data_g_r = med_sobel_e_delay_r[8  + 1];
+			data_h_r = med_sobel_e_delay_r[9  + 1];
+			data_i_r = med_sobel_e_delay_r[10 + 1]; 
 		end
 		{2'd2}    : begin
-			data_a_r = med_e_delay_r[0  + 4];
-			data_b_r = med_e_delay_r[1  + 4];
-			data_c_r = med_e_delay_r[2  + 4];
-			data_d_r = med_e_delay_r[4  + 4];
-			data_e_r = med_e_delay_r[5  + 4];
-			data_f_r = med_e_delay_r[6  + 4];
-			data_g_r = med_e_delay_r[8  + 4];
-			data_h_r = med_e_delay_r[9  + 4];
-			data_i_r = med_e_delay_r[10 + 4]; 
+			data_a_r = med_sobel_e_delay_r[0  + 4];
+			data_b_r = med_sobel_e_delay_r[1  + 4];
+			data_c_r = med_sobel_e_delay_r[2  + 4];
+			data_d_r = med_sobel_e_delay_r[4  + 4];
+			data_e_r = med_sobel_e_delay_r[5  + 4];
+			data_f_r = med_sobel_e_delay_r[6  + 4];
+			data_g_r = med_sobel_e_delay_r[8  + 4];
+			data_h_r = med_sobel_e_delay_r[9  + 4];
+			data_i_r = med_sobel_e_delay_r[10 + 4]; 
 		end
 		default : begin
-			data_a_r = med_e_delay_r[0  + 5];
-			data_b_r = med_e_delay_r[1  + 5];
-			data_c_r = med_e_delay_r[2  + 5];
-			data_d_r = med_e_delay_r[4  + 5];
-			data_e_r = med_e_delay_r[5  + 5];
-			data_f_r = med_e_delay_r[6  + 5];
-			data_g_r = med_e_delay_r[8  + 5];
-			data_h_r = med_e_delay_r[9  + 5];
-			data_i_r = med_e_delay_r[10 + 5]; 
+			data_a_r = med_sobel_e_delay_r[0  + 5];
+			data_b_r = med_sobel_e_delay_r[1  + 5];
+			data_c_r = med_sobel_e_delay_r[2  + 5];
+			data_d_r = med_sobel_e_delay_r[4  + 5];
+			data_e_r = med_sobel_e_delay_r[5  + 5];
+			data_f_r = med_sobel_e_delay_r[6  + 5];
+			data_g_r = med_sobel_e_delay_r[8  + 5];
+			data_h_r = med_sobel_e_delay_r[9  + 5];
+			data_i_r = med_sobel_e_delay_r[10 + 5]; 
 		end
 	endcase
 end
@@ -161,9 +160,9 @@ generate
 	for(i = 0; i < 16; i = i + 1) begin:conv_e_read
 		always @(*) begin
 			if(cnt[1:0] == i[3:2])// && cs <= CALC)
-				med_e_wait_r[i] = i_data[{i[1:0],3'b000} + 7 -: 8];
+				med_sobel_e_wait_r[i] = i_data[{i[1:0],3'b111} -: 8];
 			else
-				med_e_wait_r[i] = med_e_r[i];
+				med_sobel_e_wait_r[i] = med_sobel_e_r[i];
 		end
 	end
 endgenerate
@@ -242,12 +241,12 @@ generate
 for(i = 0; i < 16; i = i + 1) begin:conv_e_accum
 	always @ (posedge i_clk or negedge i_rst_n) begin
 		if (~i_rst_n) begin
-			med_e_r[i] <= 0;
-			med_e_delay_r[i] <= 0;
+			med_sobel_e_r[i] <= 0;
+			med_sobel_e_delay_r[i] <= 0;
 		end
 		else begin
-			med_e_r[i] <= med_e_wait_r[i];
-			med_e_delay_r[i] <= cnt[1:0] == 3 ? med_e_wait_r[i] : med_e_delay_r[i];
+			med_sobel_e_r[i] <= med_sobel_e_wait_r[i];
+			med_sobel_e_delay_r[i] <= cnt[1:0] == 3 ? med_sobel_e_wait_r[i] : med_sobel_e_delay_r[i];
 		end
 	end
 end
@@ -305,7 +304,7 @@ module median_filter_submodule(
 	assign a39_w = (p3 < p9);
 	assign a69_w = (p6 < p9);
 	always @(posedge clk or negedge rst) begin
-		if(~rst) begin
+		if(!rst) begin
 			p1_r  <= 0;
 			p2_r  <= 0;
 			p3_r  <= 0;
@@ -348,100 +347,128 @@ module median_filter_submodule(
 	end
 	
 	always @(*) begin
-		case({a14_r,a17_r,a47_r})
-			3'b001: begin //3 1 2
+		casez({a14_r,a17_r,a47_r}) // 
+			3'b1z0: begin //1 3 2
+				a1 = p4_r;
+			end
+			3'bz11: begin //1 2 3
+				a1 = p7_r;
+			end
+			default: begin // 3'b000
 				a1 = p1_r;
+			end
+		endcase
+		
+		case({a14_r,a17_r,a47_r}) // 
+			3'b001: begin //3 1 2
 				a4 = p7_r;
-				a7 = p4_r;
 			end
 			3'b011:  begin //2 1 3
-				a1 = p7_r;
 				a4 = p1_r;
-				a7 = p4_r;
 			end
 			3'b100:  begin //2 3 1
-				a1 = p4_r;
 				a4 = p1_r;
-				a7 = p7_r;
 			end
 			3'b110: begin //1 3 2
-				a1 = p4_r;
 				a4 = p7_r;
+			end
+			default: begin // 3'b000
+				a4 = p4_r;
+			end
+		endcase
+		
+		casez({a14_r,a17_r,a47_r}) // 
+			3'b0z1:  begin //2 1 3
+				a7 = p4_r;
+			end
+			3'b11z: begin //1 2 3
 				a7 = p1_r;
 			end
-			3'b111: begin //1 2 3
-				a1 = p7_r;
-				a4 = p4_r;
-				a7 = p1_r;
-			end
-			default: begin
-				a1 = p1_r;
-				a4 = p4_r;
+			default: begin // 3'b000
 				a7 = p7_r;
 			end
 		endcase
 		
-		case({a25_r,a28_r,a58_r})
-			3'b001: begin //3 1 2
-				a2 = p2_r;
-				a5 = p8_r;
-				a8 = p5_r;
-			end
-			3'b011:  begin //2 1 3
-				a2 = p8_r;
-				a5 = p2_r;
-				a8 = p5_r;
-			end
-			3'b100:  begin //2 3 1
+		casez({a25_r,a28_r,a58_r}) // 
+			3'b1z0: begin //1 3 2
 				a2 = p5_r;
-				a5 = p2_r;
-				a8 = p8_r;
 			end
-			3'b110: begin //1 3 2
-				a2 = p5_r;
-				a5 = p8_r;
-				a8 = p2_r;
-			end
-			3'b111: begin //1 2 3
+			3'bz11: begin //1 2 3
 				a2 = p8_r;
-				a5 = p5_r;
-				a8 = p2_r;
 			end
 			default: begin
 				a2 = p2_r;
+			end
+		endcase
+		
+		case({a25_r,a28_r,a58_r}) // 
+			3'b001: begin //3 1 2
+				a5 = p8_r;
+			end
+			3'b011:  begin //2 1 3
+				a5 = p2_r;
+			end
+			3'b100:  begin //2 3 1
+				a5 = p2_r;
+			end
+			3'b110: begin //1 3 2
+				a5 = p8_r;
+			end
+			default: begin
 				a5 = p5_r;
+			end
+		endcase
+		
+		casez({a25_r,a28_r,a58_r}) // 
+			3'b0z1:  begin //2 1 3
+				a8 = p5_r;
+			end
+			3'b11z: begin //1 3 2
+				a8 = p2_r;
+			end
+			default: begin
 				a8 = p8_r;
 			end
 		endcase
-		case({a36_r,a39_r,a69_r})
-			3'b001: begin //3 1 2
-				a3 = p3_r;
-				a6 = p9_r;
-				a9 = p6_r;
-			end
-			3'b011:  begin //2 1 3
-				a3 = p9_r;
-				a6 = p3_r;
-				a9 = p6_r;
-			end
-			3'b100:  begin //2 3 1
+		
+		casez({a36_r,a39_r,a69_r}) // 
+			3'b1z0:  begin //2 3 1
 				a3 = p6_r;
-				a6 = p3_r;
-				a9 = p9_r;
 			end
-			3'b110: begin //1 3 2
-				a3 = p6_r;
-				a6 = p9_r;
-				a9 = p3_r;
-			end
-			3'b111: begin //1 2 3
+			3'bz11: begin //1 2 3
 				a3 = p9_r;
-				a6 = p6_r;
-				a9 = p3_r;
 			end
 			default: begin
 				a3 = p3_r;
+			end
+		endcase
+		
+		case({a36_r,a39_r,a69_r}) // 
+			3'b001: begin //3 1 2
+				a6 = p9_r;
+			end
+			3'b011:  begin //2 1 3
+				a6 = p3_r;
+			end
+			3'b100:  begin //2 3 1
+				a6 = p3_r;
+			end
+			3'b110: begin //1 3 2
+				a6 = p9_r;
+			end
+			default: begin
 				a6 = p6_r;
+			end
+		endcase
+		
+		casez({a36_r,a39_r,a69_r}) // 
+			3'b0z1:  begin //2 1 3
+				a9 = p6_r;
+			end
+			3'b11z: begin //1 2 3
+				a9 = p3_r;
+			end
+			default: begin
 				a9 = p9_r;
 			end
 		endcase
@@ -477,35 +504,29 @@ module median_filter_submodule(
 	// sorted vertically
 	reg [7:0] b1, b5, b9;
 	reg [7:0] b1_r, b5_r, b9_r;
-	wire b13;
-	wire b12;
-	wire b23;
-	wire b46;
-	wire b45;
-	wire b56;
-	wire b78;
-	wire b79;
-	wire b89;
+	wire b13_w;
+	wire b12_w;
+	wire b23_w;
+	wire b46_w;
+	wire b45_w;
+	wire b56_w;
+	wire b78_w;
+	wire b79_w;
+	wire b89_w;
 	
-	
-	assign b13 = (a1_r < a3_r);
-	assign b12 = (a1_r < a2_r);
-	assign b23 = (a2_r < a3_r);
-	assign b46 = (a4_r < a6_r);
-	assign b45 = (a4_r < a5_r);
-	assign b56 = (a5_r < a6_r);
-	assign b78 = (a7_r < a8_r);
-	assign b79 = (a7_r < a9_r);
-	assign b89 = (a8_r < a9_r);
+	assign b13_w = (a1_r < a3_r);
+	assign b12_w = (a1_r < a2_r);
+	assign b23_w = (a2_r < a3_r);
+	assign b46_w = (a4_r < a6_r);
+	assign b45_w = (a4_r < a5_r);
+	assign b56_w = (a5_r < a6_r);
+	assign b78_w = (a7_r < a8_r);
+	assign b79_w = (a7_r < a9_r);
+	assign b89_w = (a8_r < a9_r);
+
 	
 	always @(*) begin
-		casez({b12,b13,b23})
-			//3'b000: begin //3 2 1
-			//	b1 = a3_r;
-			//end
-			//3'b011: begin //3 1 2
-			//	b1 = a2_r;
-			//end
+		casez({b12_w,b13_w,b23_w}) // 
 			3'b0z1: begin //3 1 2
 				b1 = a2_r;
 			end
@@ -517,7 +538,7 @@ module median_filter_submodule(
 			end
 		endcase
 		
-		case({b45,b46,b56})
+		case({b45_w,b46_w,b56_w}) // 
 			3'b001: begin //3 1 2
 				b5 = a6_r;
 			end
@@ -535,13 +556,7 @@ module median_filter_submodule(
 			end
 		endcase
 		
-		casez({b78,b79,b89})
-			//3'b011:  begin //2 1 3
-			//	b9 = a9_r;
-			//end
-			//3'b100:  begin //2 3 1
-			//	b9 = a8_r;
-			//end
+		casez({b78_w,b79_w,b89_w}) // 
 			3'b1z0: begin //1 3 2
 				b9 = a8_r;
 			end
@@ -553,6 +568,7 @@ module median_filter_submodule(
 			end
 		endcase
 	end
+	
 	always @(posedge clk or negedge rst) begin
 		if(~rst) begin
 			b1_r <= 0;
@@ -570,16 +586,17 @@ module median_filter_submodule(
 	// sorted diagonally
 	reg [7:0] c2;
 	reg [7:0] c2_r;
-	wire c13;
-	wire c12;
-	wire c23;
-	
-	assign c13 = (b1_r < b9_r);
-	assign c12 = (b1_r < b5_r);
-	assign c23 = (b5_r < b9_r);
+	wire c13_w;
+	wire c12_w;
+	wire c23_w;
 
+	assign c13_w = (b1_r < b9_r);
+	assign c12_w = (b1_r < b5_r);
+	assign c23_w = (b5_r < b9_r);
+	
+	
 	always @(*) begin
-		case({c12,c13,c23})
+		case({c12_w,c13_w,c23_w}) // 
 			3'b001: begin //3 1 2
 				c2 = b9_r;
 			end
@@ -620,7 +637,7 @@ module sobel_gradient(
 	input   [7:0] p2,
 	input   [7:0] p3,
 	input   [7:0] p4,
-	input   [7:0] p5,
+	//input   [7:0] p5,
 	input   [7:0] p6,
 	input   [7:0] p7,
 	input   [7:0] p8,
@@ -651,7 +668,7 @@ reg [7:0] p1_r;
 reg [7:0] p2_r;
 reg [7:0] p3_r;
 reg [7:0] p4_r;
-reg [7:0] p5_r;
+//reg [7:0] p5_r;
 reg [7:0] p6_r;
 reg [7:0] p7_r;
 reg [7:0] p8_r;
@@ -708,10 +725,10 @@ end
 reg [9:0] Gx1_r, Gy1_r;
 reg [9:0] Gx2_r, Gy2_r;
 
-wire [9:0] Gx1_w = Gx1  + p1_d_r;
-wire [9:0] Gx2_w = Gx2  + p9_d_r;
-wire [9:0] Gy1_w = Gy1  + p1_d_r;
-wire [9:0] Gy2_w = Gy2  + p9_d_r;
+wire [10:0] Gx1_w = Gx1  + p1_d_r;
+wire [10:0] Gx2_w = Gx2  + p9_d_r;
+wire [10:0] Gy1_w = Gy1  + p1_d_r;
+wire [10:0] Gy2_w = Gy2  + p9_d_r;
 always @ (posedge clk or negedge rst) begin
 	if(~rst) begin
 		Gx1_r <= 0;
@@ -720,10 +737,10 @@ always @ (posedge clk or negedge rst) begin
 		Gy2_r <= 0;
 		
 	end else begin
-		Gx1_r <= Gx1_w; // + {p8_r,1'b0}
-		Gx2_r <= Gx2_w; // + {p2_r,1'b0}
-		Gy1_r <= Gy1_w; // + {p6_r,1'b0}
-		Gy2_r <= Gy2_w; // + {p4_r,1'b0}
+		Gx1_r <= Gx1_w[9:0]; // + {p8_r,1'b0}
+		Gx2_r <= Gx2_w[9:0]; // + {p2_r,1'b0}
+		Gy1_r <= Gy1_w[9:0]; // + {p6_r,1'b0}
+		Gy2_r <= Gy2_w[9:0]; // + {p4_r,1'b0}
 	end
 end
 
@@ -754,7 +771,6 @@ always @ (posedge clk or negedge rst) begin
 	end
 end
 
-reg [9:0] Gx_abs_delay;
 
 always @ (posedge clk or negedge rst) begin
 	if(~rst) begin
@@ -769,7 +785,6 @@ always @ (posedge clk or negedge rst) begin
 		Gy_abs_delay[0] <= 0;
 		Gy_abs_delay[1] <= 0;
 		Gy_abs_delay[2] <= 0;
-		Gx_abs_delay    <= 0;
 	end else begin
 		Gx_delay[0] <= Gx_imm_r[10];
 		Gy_delay[0] <= Gy_imm_r[10];
@@ -782,7 +797,6 @@ always @ (posedge clk or negedge rst) begin
 		Gy_abs_delay[0] <= Gy_abs;
 		Gy_abs_delay[1] <= Gy_abs_delay[0];
 		Gy_abs_delay[2] <= Gy_abs_delay[1];
-		Gx_abs_delay    <= Gx_abs;
 	end
 end
 
@@ -800,25 +814,25 @@ always @ (posedge clk or negedge rst) begin
 	end
 end
 
-reg  [17:0] Gx_acc1_r;
+reg  [9:0] Gx_acc1_r;
 reg  [11:0] Gx_acc2_r;
 reg  [12:0] Gx_acc3_r;
-reg  [18:0] Gx_mult1_r,  Gx_mult2_r;
 
 
 always @ (posedge clk or negedge rst) begin
 	if(~rst) begin
 		Gx_acc1_r <= 0;
 		Gx_acc2_r <= 0;
+		Gx_acc3_r <= 0;
 	end else begin
-		Gx_acc1_r <= {Gx_abs,8'b00000000};
+		Gx_acc1_r <= Gx_abs;//{Gx_abs,8'b00000000};
 		Gx_acc2_r <= {Gx_abs,1'b0} +  Gx_abs;//;{Gx_abs,5'b00000} + {Gx_abs,4'b0000};
 		Gx_acc3_r <= {Gx_abs,2'b00} + Gx_abs;
 	end
 end
 
-reg  [17:0] Gx_acc1_1_r;
-reg  [15:0] Gx_acc2_1_r;
+reg  [9:0] Gx_acc1_1_r;
+reg  [16:0] Gx_acc2_1_r;
 
  
 always @ (posedge clk or negedge rst) begin
@@ -831,14 +845,16 @@ always @ (posedge clk or negedge rst) begin
 	end
 end
 
+reg  [18:0] Gx_mult1_r;
+reg  [15:0] Gx_mult2_r;
 
 always @ (posedge clk or negedge rst) begin
 	if(~rst) begin
 		Gx_mult1_r <= 0;
 		Gx_mult2_r <= 0;
 	end else begin
-		Gx_mult1_r <= Gx_acc1_1_r + Gx_acc2_1_r ; //Gx_acc1_r + 
-		Gx_mult2_r <= Gx_acc2_1_r;
+		Gx_mult1_r <= {Gx_acc1_1_r,8'b00000000} + Gx_acc2_1_r[15:0] ; //Gx_acc1_r + 
+		Gx_mult2_r <= Gx_acc2_1_r[15:0];
 	end
 end
 
@@ -847,7 +863,7 @@ end
 always @ (*) begin
 	if ({2'b00,Gy_abs_delay[2],7'b0000000} >= Gx_mult1_r)
 		angle_wait_r = angle90;
-	else if ({2'b00,Gy_abs_delay[2],7'b0000000} < Gx_mult2_r)
+	else if ({2'b00,Gy_abs_delay[2],7'b0000000} < {3'b000, Gx_mult2_r})
 		angle_wait_r = angle0;
 	else
 		angle_wait_r = (Gx_delay[3] ^ Gy_delay[3]) ? angle135 : angle45;

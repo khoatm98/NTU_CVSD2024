@@ -4,8 +4,8 @@
 <!-- This file schema is internal to Atrenta DashBoard and subject to change in future without notice --> 
 <goal name="Design_Read"/>
 <top name="core"/>
-<dir name="/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/spyglass-1/consolidated_reports/core_Design_Read/"/>
-<log name="/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL/spyglass-1/core/Design_Read/spyglass.log" link="data_files/core_Design_Read_spyglass.log"/>
+<dir name="/home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL/spyglass-1/consolidated_reports/core_Design_Read/"/>
+<log name="/home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL/spyglass-1/core/Design_Read/spyglass.log" link="data_files/core_Design_Read_spyglass.log"/>
   <std_reports> 
 <report name="moresimple" link="data_files/core_Design_Read_moresimple.rpt" tooltip="moresimple.rpt" />
 <report name="no_msg_reporting_rules" link="data_files/core_Design_Read_no_msg_reporting_rules.rpt" tooltip="no_msg_reporting_rules.rpt" />

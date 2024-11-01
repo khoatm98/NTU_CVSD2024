@@ -86,50 +86,47 @@ VCS compile option:
  option[1]: +v2k
  option[2]: +maxdelays
  option[3]: +neg_tchk
- option[4]: +define+SDF+tb4
- option[5]: +define+CYCLE=10.0
- option[6]: /usr/cad/synopsys/vcs/2022.06/linux64/bin/vcs1
+ option[4]: +define+SDF+tbh
+ option[5]: +define+CYCLE=2.35
+ option[6]: /usr/cad/synopsys/vcs/cur/linux64/bin/vcs1
  option[7]: -Mcc=gcc
  option[8]: -Mcplusplus=g++
  option[9]: -Masflags=
- option[10]: -Mcfl= -pipe -fPIC -O -I/usr/cad/synopsys/vcs/2022.06/include 
+ option[10]: -Mcfl= -pipe -fPIC -O -I/usr/cad/synopsys/vcs/cur/include 
  option[11]: -Mxllcflags=
- option[12]: -Mxcflags= -pipe -fPIC -I/usr/cad/synopsys/vcs/2022.06/include
+ option[12]: -Mxcflags= -pipe -fPIC -I/usr/cad/synopsys/vcs/cur/include
  option[13]: -Mldflags= -rdynamic 
  option[14]: -Mout=simv
  option[15]: -Mamsrun=
  option[16]: -Mvcsaceobjs=
- option[17]: -Mobjects= /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvirsim.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so 
+ option[17]: -Mobjects= /usr/cad/synopsys/vcs/cur/linux64/lib/libvirsim.so /usr/cad/synopsys/vcs/cur/linux64/lib/liberrorinf.so /usr/cad/synopsys/vcs/cur/linux64/lib/libsnpsmalloc.so /usr/cad/synopsys/vcs/cur/linux64/lib/libvfs.so /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a 
  option[18]: -Mexternalobj=
- option[19]: -Msaverestoreobj=/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o
+ option[19]: -Msaverestoreobj=/usr/cad/synopsys/vcs/cur/linux64/lib/vcs_save_restore_new.o
  option[20]: -Mcrt0=
  option[21]: -Mcrtn=
  option[22]: -Mcsrc=
- option[23]: -Msyslibs=/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl 
+ option[23]: -Msyslibs=-ldl -lm 
  option[24]: -Xvcs_run_simv=1
  option[25]: -full64
  option[26]: -debug_access+all
  option[27]: +vpi
  option[28]: +vcsd1
- option[29]: +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
+ option[29]: +itf+/usr/cad/synopsys/vcs/cur/linux64/lib/vcsdp_lite.tab
  option[30]: +v2k
  option[31]: +maxdelays
  option[32]: -negdelay
  option[33]: +neg_tchk
- option[34]: +define+SDF+tb4
- option[35]: +define+CYCLE=10.0
- option[36]: -picarchive
- option[37]: -P
- option[38]: /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/verdi.tab
- option[39]: -fsdb
- option[40]: -gen_obj
- option[41]: -f
- option[42]: rtl_03.f
- option[43]: -load
- option[44]: /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
-Chronologic Simulation VCS Release T-2022.06_Full64
+ option[34]: +define+SDF+tbh
+ option[35]: +define+CYCLE=2.35
+ option[36]: -P
+ option[37]: /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
+ option[38]: -picarchive
+ option[39]: -gen_obj
+ option[40]: -f
+ option[41]: rtl_03.f
+Chronologic Simulation VCS Release S-2021.09_Full64
 Linux 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64
-CPU cores: 32
+CPU cores: 128
 Limit information:
 ======================================
 cputime		unlimited
@@ -146,194 +143,184 @@ maxproc		4096
 (Special)Runtime environment variables:
 
 Runtime environment variables:
-REMOTEHOST=140.112.175.69
-MANPATH=/usr/cad/synopsys/synthesis/cur/doc/syn/man:/usr/cad/synopsys/vcs/2022.06//doc/man
-SYNOPSYS_LC_ROOT=/usr/cad/synopsys/synthesis/cur
-XDG_SESSION_ID=36608
-TMIARCH=RH_64
-HOSTNAME=cad21
-XLOCALEDIR=/usr/cad/synopsys/astro/cur/etc/locale
-SYNOPSYS_TMAX=/usr/cad/synopsys/tmax/cur
+REMOTEHOST=xdn175o69.ee.ntu.edu.tw
+MANPATH=/usr/cad/synopsys/synthesis/cur/doc/syn/man
+XDG_SESSION_ID=9275
+HOSTNAME=dcs-expensive03
 UNAME=/bin/uname
 SELINUX_ROLE_REQUESTED=
-XKEYSYMDB=/usr/cad/synopsys/astro/cur/etc/XKeysymDB
 SCRNAME=vcs
 VCS_DEPTH=0
-SHELL=/bin/tcsh
 TERM=xterm
-HOST=cad21
-SSH_CLIENT=140.112.175.69 56048 22
+SHELL=/bin/bash
+HOST=dcs-expensive03
+HISTSIZE=1000
+SSH_CLIENT=140.112.175.69 49581 30101
 SELINUX_USE_CURRENT_RANGE=
-CDS_LOAD_ENV=CSF
 QTDIR=/usr/lib64/qt-3.3
 MGC_LOCATION_MAP=NO_MAP
-HSP_GCC_VERSION=9.2.0
 QTINC=/usr/lib64/qt-3.3/include
-SSH_TTY=/dev/pts/26
+SSH_TTY=/dev/pts/10
 LC_ALL=C
-SNPS_VCS_INTERNAL_ROOT_PID=17917
+SG_HTML_BROWSER=/usr/bin/mozilla
+SNPS_VCS_INTERNAL_ROOT_PID=112123
 QT_GRAPHICSSYSTEM_CHECKED=1
-SPAPI_AHDL_INCLUDE=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/include
-USER=r2k41036
-GROUP=user
-HSP_HOME=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice
+USER=MingKe
+GROUP=DCSLab
+LD_LIBRARY_PATH=/usr/cad/synopsys/vcs/cur/lib:/usr/cad/synopsys/vcs/cur/linux64/lib:/usr/cad/cadence/STRATUS/STRATUS_19.12.100/tools/lib/64bit:/usr/cad/cadence/STRATUS/STRATUS_19.12.100/tools/lib::/usr/cad/synopsys/verdi/cur/etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX64/:/:/usr/cad/cadence/IC/IC_06.18.210/tools/lib:/usr/cad/cadence/IC/IC_06.18.210/tools/lib/64bit:/usr/cad/cadence/IC/IC_06.18.210/tools/lib64::/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/lib/64bit:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/lib64:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/lib::/usr/cad/cadence/XCELIUM/XCELIUM_20.09.007/tools/lib/64bit:/usr/cad/cadence/XCELIUM/XCELIUM_20.09.007/tools/lib64:/usr/cad/cadence/XCELIUM/XCELIUM_20.09.007/tools/lib::/usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/lib/64bit:/usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/lib64:/usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/lib::/usr/local/cuda-12.4/lib64::/lib64:/usr/lib64:/usr/local/lib64:/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
-LD_LIBRARY_PATH=/usr/cad/synopsys/vcs/2022.06//lib:/usr/cad/synopsys/vcs/2022.06/linux64/lib:/lib64:/usr/lib64:/usr/local/lib64::/usr/cad/cadence/ASSURA/cur/tools/assura/lib:/usr/cad/cadence/ASSURA/cur/tools/dsm/lib:/usr/cad/cadence/ASSURA/cur/tools/lib:::/usr/cad/innovus/cur//tools/tlfUtil/lib:/usr/cad/cadence/CONFRML/cur/tools/lib:/usr/cad/cadence/IC/cur/tools/lib:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/home/raid7_4/raid1_1/linux/novas/verdi/cur/share/PLI/IUS/LINUX/::/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64
+SC_HLPPATH=/usr/cad/synopsys/laker_oa/cur
 SCRIPT_NAME=vcs
 VCS_MX_HOME_INTERNAL=1
 HOSTTYPE=x86_64-linux
-installdir=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice
-SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06//linux64/clang
-ENCOUNTER=/usr/cad/innovus/cur/tools/fe
-SNPSLMD_LICENSE_FILE=26585@lshc
-VCS_USER_OPTIONS=-f rtl_03.f -full64 -R -debug_access+all +v2k +maxdelays -negdelay +neg_tchk +define+SDF+tb4 +define+CYCLE=10.0
-CMIARCH=RH_64
+SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/cur/linux64/clang
 OVA_UUM=0
 VCS_MODE_FLAG=64
-PATH=.:/usr/cad/synopsys/vcs/2022.06//amd64/bin:/usr/cad/synopsys/spyglass/2022.06//SPYGLASS_HOME/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64:/usr/bin:/usr/ucb/bin:/usr/cad/innovus/cur/tools/celtic/bin:/usr/cad/innovus/cur/tools/plato/bin:/usr/cad/innovus/cur/tools/dfII/bin:/usr/cad/innovus/cur/tools/bin:/usr/cad/innovus/cur//tools/tlfUtil/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/mentor/calibre/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/cad/synopsys/astro/cur/bin/AMD.64:/usr/spring_soft/verdi/cur/bin:/usr/spring_soft/verdi/cur/nLint/bin:/usr/cad/synopsys/primetime/2022.12/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/mentor/calibre/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/cadence/SPECTRE/cur/tools/dfII/bin:/usr/cad/cadence/SPECTRE/cur/tools/bin:/usr/cad/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/JASPER/cur/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/RC/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit/bin:bin.linux:/usr/cad/cadence/SPB/cur/tools/specctra/bin:/usr/cad/cadence/SPB/cur/tools/pcb/bin:/usr/cad/cadence/SPB/cur/tools/dfII/bin:/usr/cad/cadence/SPB/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/CCD/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/raid7_4/raid1_1/linux/novas/verdi/cur/bin
-MAIL=/var/spool/mail/r2k41036
-SNPS_VCS_INTERNAL_CURR_PID=17917
-VERDI_HOME=/usr/cad/synopsys/verdi/cur
-PWD=/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/03_GATE
-OAHOME=/usr/cad/cadence/oa_v22.04.073
-VCS_HOME=/usr/cad/synopsys/vcs/2022.06/
+MAIL=/var/spool/mail/MingKe
+PATH=.:/usr/cad/cadence/STRATUS/STRATUS_19.12.100/tools/bin/64bit:/usr/cad/cadence/STRATUS/STRATUS_19.12.100/tools/bin:/usr/cad/synopsys/vcs/cur/bin:/usr/cad/synopsys/vcs/cur/linux/bin:/usr/cad/synopsys/vcs/cur/linux/util:/usr/cad/synopsys/vcs/cur/linux/flexlm:/usr/cad/synopsys/laker_oa/cur/bin:/usr/cad/synopsys/laker/cur/bin:/usr/bin/X11:/usr/cad/synopsys/primetime/cur/amd64/syn/bin:/usr/cad/synopsys/spyglass/cur/SPYGLASS_HOME/bin:/usr/cad/synopsys/synplify/cur/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cad/synopsys/verdi/cur/bin:/usr/cad/synopsys/verdi/cur/nLint/bin:/usr/cad/mentor/calibre/cur/bin:/usr/cad/cadence/JASPER/jasper_2021.03/bin:/usr/cad/cadence/IC/IC_06.18.210/tools/bin:/usr/cad/cadence/IC/IC_06.18.210/tools/dracula/bin:/usr/cad/cadence/IC/IC_06.18.210/tools/dfII/bin:/usr/cad/cadence/IC/IC_06.18.210/tools/bin/64bit:/usr/cad/cadence/IC/IC_06.18.210/tools/dracula/bin/64bit:/usr/cad/cadence/IC/IC_06.18.210/tools/dfII/bin/64bit:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/bin/64bit:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/bin:/usr/cad/cadence/XCELIUM/XCELIUM_20.09.007/tools/bin/64bit:/usr/cad/cadence/XCELIUM/XCELIUM_20.09.007/tools/bin:/usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/bin/64bit:/usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/bin:/tools/Xilinx/Vitis_HLS/2023.2/bin:/tools/Xilinx/Vivado/2023.2/bin:/tools/Xilinx/Model_Composer/2023.2/bin:/tools/Xilinx/Vitis/2023.2/bin:/tools/Xilinx/Vitis/2023.2/gnu/microblaze/lin/bin:/tools/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-linux/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-none/bin:/tools/Xilinx/Vitis/2023.2/gnu/armr5/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.2/tps/lnx64/cmake-3.3.2/bin:/tools/Xilinx/Vitis/2023.2/aietools/bin:/tools/Xilinx/Vitis/2023.2/gnu/riscv/lin/riscv64-unknown-elf/bin:/tools/Xilinx/DocNav:/usr/local/cuda-12.4/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/MingKe/.local/bin:/home/MingKe/bin
+XILINX_VITIS=/tools/Xilinx/Vitis/2023.2
+SNPS_VCS_INTERNAL_CURR_PID=112123
+PWD=/home/MingKe/Study/NTU_CVSD2024/HW3/03_GATE
+SYNOPSYS_synplify=/usr/cad/synopsys/synplify/cur
+VCS_HOME=/usr/cad/synopsys/vcs/cur
 SNPS_VCS_INTERNAL_MEMPRELOAD_USE_LIBC=1
-SNPS_INTERNAL_VCS_LINUX_OS=linux
-VERPLEX_HOME=/usr/cad/cadence/CONFRML/cur
-OA_HOME=/usr/cad/innovus/cur/oa
+EDITOR=/usr/bin/vim
+LANG=en_US.UTF-8
+Laker_TCL_ToolBox=1
+KDEDIRS=/usr
 SYNTHESIS=/usr/cad/synopsys/synthesis/cur
 VMR_MODE_FLAG=64
+XILINX_HLS=/tools/Xilinx/Vitis_HLS/2023.2
 SELINUX_LEVEL_REQUESTED=
+CDSHOME=/usr/cad/cadence/IC/IC_06.18.210
 VCS_CC=gcc
-LM_LICENSE_FILE=26585@lstc:5280@lshc:5280@lstc:5280@lstn:1717@lstc:
+XILINX_VIVADO=/tools/Xilinx/Vivado/2023.2
+LM_LICENSE_FILE=5280@lshc:26585@lshc:1717@lsntu:
 CDS_Netlisting_Mode=Analog
+PRIMETIME=/usr/cad/synopsys/primetime/cur
+HISTCONTROL=ignoredups
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20241101055206_17917
-HOME=/home/raid7_2/user12/r2k41036
-SHLVL=3
-HSP_GCC=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin/gcc -m64 
+SNPS_VCS_TMPDIR=/tmp/vcs_20241101130140_112123
+RISCV=/home/MingKe/lab/riscv
+SHLVL=4
+HOME=/home/MingKe
 OSTYPE=linux
-MGC_HOME=/usr/mentor/calibre/cur
-SNPS_64=1
-VCS_COM=/usr/cad/synopsys/vcs/2022.06/linux64/bin/vcs1
+MGC_HOME=/usr/cad/mentor/calibre/cur
+Laker_TCL_L3=1
+VCS_COM=/usr/cad/synopsys/vcs/cur/linux64/bin/vcs1
 VENDOR=unknown
 MGC_TMPDIR=/tmp
-HSP_SIGMA_AMP=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64/python/AVA/ava
-SNPS_PLATFORM=linux64
-LOGNAME=r2k41036
+LOGNAME=MingKe
 MACHTYPE=x86_64
 QTLIB=/usr/lib64/qt-3.3/lib
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1730440326.436815525
-SSH_CONNECTION=140.112.175.69 56048 140.112.20.64 22
-NEOCKTHOME=/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit
-CDS_LIC_FILE=/usr/cad/cadence/IC/cur/share/license/license.dat
-mraarch=linux_64
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1730466100.646902257
+XDG_DATA_DIRS=/home/MingKe/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+SSH_CONNECTION=140.112.175.69 49581 140.112.20.89 30101
 LESSOPEN=||/usr/bin/lesspipe.sh %s
-SHLIB_PATH=/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared
-ARCH=linux64
-sysc_uni_pwd=/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/03_GATE
-CDPL_HOME=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/cdpl
-DISPLAY=localhost:15.0
-XDG_RUNTIME_DIR=/run/user/1340
+SHLIB_PATH=/usr/cad/synopsys/verdi/cur/etc/lib/libstdc++/LINUX64/
+sysc_uni_pwd=/home/MingKe/Study/NTU_CVSD2024/HW3/03_GATE
+XDG_RUNTIME_DIR=/run/user/2012
+DISPLAY=localhost:13.0
 VCS_ARCH=linux64
-SYN_MAN_DIR=/usr/cad/synopsys/vcs/2022.06//doc/man
-TOOL_HOME=/usr/cad/synopsys/vcs/2022.06/linux64
-ASSURAHOME=/usr/cad/cadence/ASSURA/cur
+QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
+SYN_MAN_DIR=/usr/cad/synopsys/synthesis/cur/doc/syn/man
+TOOL_HOME=/usr/cad/synopsys/vcs/cur/linux64
 _=./simv
-OLDPWD=/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/03_GATE/simv.daidir/debug_dump/fsearch
+OLDPWD=/home/MingKe/Study/NTU_CVSD2024/HW3/03_GATE/simv.daidir/debug_dump/fsearch
 VCS_PATHMAP_PRELOAD_DONE=1
 VCS_EXEC_DONE=1
-DVE=/usr/cad/synopsys/vcs/2022.06//gui/dve
+DVE=/usr/cad/synopsys/vcs/cur/gui/dve
 SPECMAN_OUTPUT_TO_TTY=1
-FLEXLM_BORROWFILE=/home/raid7_2/user12/r2k41036/.cad21-borrow.txt
+FLEXLM_BORROWFILE=/home/MingKe/.dcs-expensive03-borrow.txt
 Runtime command line arguments:
 argv[0]=simv
 argv[1]=+v2k
 argv[2]=+maxdelays
 argv[3]=+neg_tchk
-argv[4]=+define+SDF+tb4
-argv[5]=+define+CYCLE=10.0
-255 profile - 100
-          CPU/Mem usage: 0.090 sys,  0.380 user,  273.14M mem
-256 Elapsed time:    0:00:01    Fri Nov  1 13:52:17 2024
-257 User CPU time used: 0 seconds
-258 System CPU time used: 0 seconds
-259 pliAppInit
-260 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
-261 FSDB_GATE is set.
-262 FSDB_RTL is set.
-263 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
-264 Enable Parallel Dumping.
-265 pliAppMiscSet: New Sim Round
-266 pliEntryInit
-267 LIBSSCORE=found /usr/cad/synopsys/verdi/cur/share/PLI/lib/LINUXAMD64/libsscore_vcs202206.so through $NOVAS_HOME setting.
-268 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
-269 (C) 1996 - 2022 by Synopsys, Inc.
-270 sps_call_fsdbDumpfile_main at 0 : ../00_TESTBED/testbench.v(102)
-271 argv[0]: (core.fsdb)
-272 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-273 *Verdi* : Create FSDB file 'core.fsdb'
-274 [spi_vcs_vd_ppi_create_root]: no upf option
-275 compile option from '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/03_GATE/simv.daidir/vcs_rebuild'.
-276   "vcs '-f' 'rtl_03.f' '-full64' '-R' '-debug_access+all' '+v2k' '+maxdelays' '-negdelay' '+neg_tchk' '+define+SDF+tb4' '+define+CYCLE=10.0' 2>&1"
-277 DVDI_is_vir_unload_enabled is enable
-278 FSDB_VCS_ENABLE_NATIVE_VC is enable
-279 sps_call_fsdbDumpvars_vd_main at 0 : ../00_TESTBED/testbench.v(103)
-280 argv[0]: (0)
-281 argv[1]: (+mda)
-282 *Verdi* : Begin traversing the scopes, layer (0).
-283 *Verdi* : Enable +mda dumping.
-284 *Verdi* : End of traversing.
-285 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.110 sys,  0.500 user,  390.48M mem
-                   incr: 0.010 sys,  0.090 user,  8.50M mem
-                   accu: 0.010 sys,  0.090 user,  8.50M mem
-              accu incr: 0.010 sys,  0.090 user,  8.50M mem
+argv[4]=+define+SDF+tbh
+argv[5]=+define+CYCLE=2.35
+241 profile - 100
+          CPU/Mem usage: 0.040 sys,  0.230 user,  262.62M mem
+242 Elapsed time:    0:00:02    Fri Nov  1 21:01:48 2024
+243 User CPU time used: 0 seconds
+244 System CPU time used: 0 seconds
+245 pliAppInit
+246 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
+247 FSDB_GATE is set.
+248 FSDB_RTL is set.
+249 FSDB_FIELDTYPE is set.
+250 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
+251 Enable Parallel Dumping.
+252 pliAppMiscSet: New Sim Round
+253 pliEntryInit
+254 LIBSSCORE=found /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/libsscore_vcs202109.so through $LD_LIBRARY_PATH setting.
+255 FSDB Dumper for VCS, Release Verdi_S-2021.09, Linux x86_64/64bit, 08/29/2021
+256 (C) 1996 - 2021 by Synopsys, Inc.
+257 sps_call_fsdbDumpfile_main at 0 : ../00_TESTBED/testbench.v(148)
+258 argv[0]: (core.fsdb)
+259 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+260 *Verdi* : Create FSDB file 'core.fsdb'
+261 [spi_vcs_vd_ppi_create_root]: no upf option
+262 compile option from '/home/MingKe/Study/NTU_CVSD2024/HW3/03_GATE/simv.daidir/vcs_rebuild'.
+263   "vcs '-f' 'rtl_03.f' '-full64' '-R' '-debug_access+all' '+v2k' '+maxdelays' '-negdelay' '+neg_tchk' '+define+SDF+tbh' '+define+CYCLE=2.35' '-P' '/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab' '/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a' 2>&1"
+264 DVDI_is_vir_unload_enabled is enable
+265 FSDB_VCS_ENABLE_NATIVE_VC is enable
+266 sps_call_fsdbDumpvars_vd_main at 0 : ../00_TESTBED/testbench.v(149)
+267 argv[0]: (0)
+268 argv[1]: (+mda)
+269 *Verdi* : Begin traversing the scopes, layer (0).
+270 *Verdi* : Enable +mda dumping.
+271 *Verdi* : End of traversing.
+272 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.290 user,  380.72M mem
+                   incr: 0.000 sys,  0.040 user,  9.13M mem
+                   accu: 0.000 sys,  0.040 user,  9.13M mem
+              accu incr: 0.000 sys,  0.040 user,  9.13M mem
 
-          Count usage: 12602 var,  13832 idcode,  6147 callback
-                 incr: 12602 var,  13832 idcode,  6147 callback
-                 accu: 12602 var,  13832 idcode,  6147 callback
-            accu incr: 12602 var,  13832 idcode,  6147 callback
-286 Elapsed time:    0:00:02    Fri Nov  1 13:52:18 2024
-287 User CPU time used: 0 seconds
-288 System CPU time used: 0 seconds
-289 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.110 sys,  0.510 user,  391.68M mem
-                   incr: 0.000 sys,  0.010 user,  1.19M mem
-                   accu: 0.010 sys,  0.100 user,  9.70M mem
-              accu incr: 0.000 sys,  0.010 user,  1.19M mem
+          Count usage: 12821 var,  13488 idcode,  6239 callback
+                 incr: 12821 var,  13488 idcode,  6239 callback
+                 accu: 12821 var,  13488 idcode,  6239 callback
+            accu incr: 12821 var,  13488 idcode,  6239 callback
+273 Elapsed time:    0:00:02    Fri Nov  1 21:01:48 2024
+274 User CPU time used: 0 seconds
+275 System CPU time used: 0 seconds
+276 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.290 user,  381.77M mem
+                   incr: 0.000 sys,  0.000 user,  1.05M mem
+                   accu: 0.000 sys,  0.040 user,  10.18M mem
+              accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
-          Count usage: 12602 var,  13832 idcode,  6147 callback
+          Count usage: 12821 var,  13488 idcode,  6239 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 12602 var,  13832 idcode,  6147 callback
+                 accu: 12821 var,  13488 idcode,  6239 callback
             accu incr: 0 var,  0 idcode,  0 callback
-290 Elapsed time:    0:00:02    Fri Nov  1 13:52:18 2024
-291 User CPU time used: 0 seconds
-292 System CPU time used: 0 seconds
-293 End of simulation at 61660000
-294 Memory usage: 495.600 M
-295 Maximum resident set size: 121 MB
-296 Hard page faults: 0
-297 Soft page faults: 45262
-298 Elapsed time:    0:00:04    Fri Nov  1 13:52:20 2024
-299 User CPU time used: 3 seconds
-300 System CPU time used: 0 seconds
-301 Begin FSDB profile info:
-302 FSDB Writer : bc1(5013323) bcn(119851) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.753485) io wait(0.000000) theadpool wait(0.000000)
+277 Elapsed time:    0:00:02    Fri Nov  1 21:01:48 2024
+278 User CPU time used: 0 seconds
+279 System CPU time used: 0 seconds
+280 End of simulation at 43141300
+281 Memory usage: 559.845 M
+282 Maximum resident set size: 268 MB
+283 Hard page faults: 0
+284 Soft page faults: 72463
+285 Elapsed time:    0:00:07    Fri Nov  1 21:01:53 2024
+286 User CPU time used: 8 seconds
+287 System CPU time used: 0 seconds
+288 Begin FSDB profile info:
+289 FSDB Writer : bc1(17139126) bcn(757682) mtf/stf(0/1)
+FSDB Writer elapsed time : flush(1.875119) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-303 End FSDB profile info
-304 FSDB closed. Name: core.fsdb Size: 4261110
-305 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-306                      - BlockUsed:53 Acquire:8391656 BufferUsed:99200656
-307                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:51
-308                      - MainProducerTime:3.708601282 TotalConsumerTime:0.648879093
-309                      - ElapsedTime:3.448112000
-310 Producer   0 profile - BlockUsed:53 Acquire:8391656 BufferUsed:99200656
-311 Consumer   0 profile - Affinity:-1 CPUTime:0.648879093 LifeTime:2.352133836 (0.28%)
-312                      - BlockUsed:53 Acquire:8391656 BufferUsed:99200656
-313 SimExit
-314 Elapsed time:    0:00:05    Fri Nov  1 13:52:21 2024
-315 User CPU time used: 4 seconds
-316 System CPU time used: 0 seconds
-317 Sim process exit
+290 End FSDB profile info
+291 FSDB closed. Name: core.fsdb Size: 13964451
+292 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:96MB
+293                      - BlockUsed:179 Acquire:28903987 BufferUsed:342506547
+294                      - Flush:3 Expand:1 ProducerWait:0 ConsumerWait:123
+295                      - MainProducerTime:6.298897524 TotalConsumerTime:2.571752379
+296                      - ElapsedTime:6.035940000
+297 Producer   0 profile - BlockUsed:179 Acquire:28903987 BufferUsed:342506547
+298 Consumer   0 profile - Affinity:-1 CPUTime:2.571752379 LifeTime:5.212735743 (0.49%)
+299                      - BlockUsed:179 Acquire:28903987 BufferUsed:342506547
+300 SimExit
+301 Elapsed time:    0:00:08    Fri Nov  1 21:01:54 2024
+302 User CPU time used: 8 seconds
+303 System CPU time used: 0 seconds
+304 Sim process exit

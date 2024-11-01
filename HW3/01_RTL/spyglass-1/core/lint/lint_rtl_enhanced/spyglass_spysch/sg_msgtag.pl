@@ -8,7 +8,8 @@ use SpyGlass;
 use SpyGlass::Objects;
 spyRebootMsgTagSupport();
 
-spySetMsgTagCount(99,46);
+spySetMsgTagCount(378,59);
+spyCacheTagValuesFromBatch(["pe_crossprobe_tag"]);
 spyParseTextMessageTagFile("./spyglass-1/core/lint/lint_rtl_enhanced/spyglass_spysch/sg_msgtag.txt");
 
 if(!defined $::spyInIspy || !$::spyInIspy)
@@ -20,6 +21,6 @@ if(!defined $::spyInIspy || !$::spyInIspy)
 )
 );
 }
-spyMessageTagTestBenchmark(663,"./spyglass-1/core/lint/lint_rtl_enhanced/spyglass.vdb");
+spyMessageTagTestBenchmark(7,"./spyglass-1/core/lint/lint_rtl_enhanced/spyglass.vdb");
 
 1;

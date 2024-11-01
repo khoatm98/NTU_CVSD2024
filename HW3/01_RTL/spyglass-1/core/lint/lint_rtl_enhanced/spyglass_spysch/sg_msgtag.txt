@@ -1,23 +1,11 @@
-5 "W164a" 1
-"SPG_MSGTAG_HIERARCHY"
-":core"
-6 "W164a" 1
-"SPG_MSGTAG_HIERARCHY"
-":core"
-7 "W164a" 1
-"SPG_MSGTAG_HIERARCHY"
-":core"
-11 "W164a" 1
-"SPG_MSGTAG_HIERARCHY"
-":core:conv_inst@conv:\conv_e_read_accum[0] "
+6 "InfoAnalyzeBBox" 2
+"BBoxEng"
+["sram_512x8","BB_NO_MOD_DEF"]
+"BBoxEngAuxiInfo"
+["WORK","sram_512x8","1"]
 -1 "CMD_overloadrule01" 2
 "RULEGROUP"
 ["Command-line read"]
-"BUILTIN"
-"1"
--1 "CheckCelldefine" 2
-"RULEGROUP"
-["Design Read"]
 "BUILTIN"
 "1"
 -1 "DetectTopDesignUnits" 2
@@ -30,20 +18,16 @@
 ["Design Read"]
 "BUILTIN"
 "1"
--1 "InferLatch" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[17]
+-1 "InferBlackBox" 2
 "RULEGROUP"
-["openmore/Coding_for_Synthesis"]
--1 "LatchFeedback" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[20]
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "InfoAnalyzeBBox" 2
 "RULEGROUP"
-["latch"]
+["Blackbox Resolution"]
+"BUILTIN"
+"1"
 -1 "ReportIgnoreSummary" 2
 "RULEGROUP"
 ["Design Read"]
@@ -56,79 +40,3 @@
 [28]
 "RULEGROUP"
 ["morelint"]
--1 "STARC05-1.4.3.4" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[40]
-"RULEGROUP"
-["starc2005/s05_Construct/s05_Construct1","starc2005/Basic_Design_Constraint_05"]
--1 "STARC05-2.4.1.5" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[57]
-"RULEGROUP"
-["starc2005/s05_Construct/s05_Construct2","starc2005/RTL_Description_Technique_05"]
--1 "SYNTH_5034" 2
-"RULEGROUP"
-["Design Read"]
-"BUILTIN"
-"1"
--1 "SYNTH_5059" 2
-"RULEGROUP"
-["Design Read"]
-"BUILTIN"
-"1"
--1 "SYNTH_92" 2
-"RULEGROUP"
-["Design Read"]
-"BUILTIN"
-"1"
--1 "UndrivenInTerm-ML" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[70]
-"RULEGROUP"
-["morelint/HangingNet-ML/Undriven-ML"]
--1 "UndrivenNet-ML" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[71]
-"RULEGROUP"
-["morelint/HangingNet-ML/Undriven-ML"]
--1 "UndrivenOutPort-ML" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[72]
-"RULEGROUP"
-["morelint/HangingNet-ML/Undriven-ML"]
--1 "W123" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[78]
-"RULEGROUP"
-["lint/Lint_Elab_Rules","lint/Usage"]
--1 "W164a" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[82]
-"RULEGROUP"
-["lint/width_rules_lint","lint/Lint_Elab_Rules","lint/Assign/W164"]
--1 "W415" 3
-"TEMPLATE"
-["lint/lint_rtl_enhanced"]
-"RULE_ORDER"
-[119]
-"RULEGROUP"
-["lint/MultipleDriver"]
--1 "WRN_69" 2
-"RULEGROUP"
-["Design Read"]
-"BUILTIN"
-"1"

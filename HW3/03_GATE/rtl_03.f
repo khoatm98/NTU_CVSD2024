@@ -5,7 +5,7 @@
 // testbench
 // -----------------------------------------------------------------------------
 ../00_TESTBED/testbench.v
-/home/raid7_2/course/cvsd/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v
+/home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/Verilog/tsmc13_neg.v
 
 // memory file
 // -----------------------------------------------------------------------------
