@@ -1,4 +1,4 @@
-6 "InfoAnalyzeBBox" 2
+5 "InfoAnalyzeBBox" 2
 "BBoxEng"
 ["sram_512x8","BB_NO_MOD_DEF"]
 "BBoxEngAuxiInfo"
@@ -14,11 +14,6 @@
 "BUILTIN"
 "1"
 -1 "ElabSummary" 2
-"RULEGROUP"
-["Design Read"]
-"BUILTIN"
-"1"
--1 "InferBlackBox" 2
 "RULEGROUP"
 ["Design Read"]
 "BUILTIN"

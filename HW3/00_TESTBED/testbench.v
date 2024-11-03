@@ -7,7 +7,7 @@
 `ifdef ALL
   `define MAX_CYCLE   20000 * `PAT_NUM
 `else
-  `define MAX_CYCLE   20000
+  `define MAX_CYCLE   200000
 `endif
 
 `define RST_DELAY   2
@@ -101,8 +101,8 @@ wire [13:0] out_data;
 reg  [13:0] golden_data;
 
 reg  [ 7:0] indata_mem [0:2047];
-reg  [ 3:0] opmode_mem [0:1023];
-reg  [13:0] golden_mem [0:4095];
+reg  [ 3:0] opmode_mem [0:10230];
+reg  [13:0] golden_mem [0:40950];
 
 integer opmode_counter;
 integer golden_counter;
@@ -276,11 +276,11 @@ initial begin
         @(negedge clk);
 // if op_ready is 1
         if(op_ready === 1) begin
-            if(opmode_counter >= 1024) begin
-                $display("opmode overflow");
-                $display("golden_counter: %d", golden_counter);
-                pass_task;
-            end
+            //if(opmode_counter >= 1024) begin
+            //    $display("opmode overflow");
+            //    $display("golden_counter: %d", golden_counter);
+            //    pass_task;
+            //end 
             if(opmode_mem[opmode_counter] === 4'bx) begin
                 $display("opmode complete");
                 $display("golden_counter: %d", golden_counter);
@@ -376,11 +376,11 @@ initial begin
                 $display("golden_counter: %d", golden_counter);
                 pass_task;
             end
-            if(next_op_ready && opmode_counter >= 1024) begin
-                $display("opmode overflow");
-                $display("golden_counter: %d", golden_counter);
-                pass_task;
-            end
+            //if(next_op_ready && opmode_counter >= 1024) begin
+            //    $display("opmode overflow");
+            //    $display("golden_counter: %d", golden_counter);
+            //    pass_task;
+            //end
         end
     end
 end

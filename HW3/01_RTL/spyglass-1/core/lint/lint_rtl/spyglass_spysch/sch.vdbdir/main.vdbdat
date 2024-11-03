@@ -16,9 +16,5 @@
 #x HLEND
 #x HLBEGIN S.5
 #x {{COLOR=>1;}}
-#x 115 { @@n 11 a 0 @@p 11 a 0 }
-#x HLEND
-#x HLBEGIN S.6
-#x {{COLOR=>1;}}
 #x 115 { @@n 19 a 0 @@p 19 a 0 }
 #x HLEND

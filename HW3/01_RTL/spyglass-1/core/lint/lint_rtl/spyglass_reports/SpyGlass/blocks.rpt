@@ -1,2 +1,2 @@
 conv@@@@core.conv_inst
-median_sobel_nms@@@@core.median_sobel_inst
+median@@@@core.median_sobel_inst

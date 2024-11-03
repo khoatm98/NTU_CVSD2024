@@ -2,7 +2,7 @@
 ****************************************
 check_design summary:
 Version:     S-2021.06-SP2
-Date:        Fri Nov  1 21:24:00 2024
+Date:        Fri Nov  1 22:39:12 2024
 ****************************************
 
                    Name                                            Total
@@ -21,7 +21,7 @@ Warning: In design 'core', cell 'C2634' does not drive any nets. (LINT-1)
 Warning: In design 'core', cell 'C2635' does not drive any nets. (LINT-1)
 Warning: In design 'core', cell 'C2689' does not drive any nets. (LINT-1)
 Warning: In design 'core', cell 'C2690' does not drive any nets. (LINT-1)
-Warning: In design 'conv', cell 'C761' does not drive any nets. (LINT-1)
+Warning: In design 'conv', cell 'C758' does not drive any nets. (LINT-1)
 Warning: In design 'median', cell 'C1938' does not drive any nets. (LINT-1)
 Warning: In design 'sobel_gradient', cell 'C913' does not drive any nets. (LINT-1)
 Warning: In design 'sobel_gradient', cell 'C916' does not drive any nets. (LINT-1)

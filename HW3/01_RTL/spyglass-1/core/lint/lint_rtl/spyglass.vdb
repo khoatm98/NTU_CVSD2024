@@ -1,5 +1,5 @@
 ##spyglass_version: SpyGlass_vS-2021.09
-##date: Fri Nov  1 20:32:32 2024
+##date: Sun Nov  3 16:33:24 2024
 ##user: MingKe
 ##cwd: /home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL
 ##lang: verilog+vhdl
@@ -1590,16 +1590,15 @@ ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/lint/lint_rtl/spyglass_reports
 ##sde_property: msg_id DEFAULT
 ##files_verilog: core.v conv.v median.v
 ##sde_property: file /home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL/define.v -id 1
-##sde_property: file /home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL/core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 mlc 19 13 19 0 mlc 36 18 36 0 slc 41 41 1 slc 117 120 1 slc 150 151 1 slc 158 161 1 mlc 186 22 186 0 mlc 220 20 220 0 mlc 241 31 241 0 mlc 273 26 273 0 mlc 283 13 283 0 slc 301 301 1 slc 336 339 1 slc 375 380 1 slc 496 496 1 slc 499 499 1 slc 501 501 1 slc 520 520 1
+##sde_property: file /home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL/core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 mlc 19 13 19 0 mlc 36 18 36 0 slc 117 120 1 slc 150 151 1 slc 158 161 1 mlc 186 22 186 0 mlc 220 20 220 0 mlc 241 31 241 0 mlc 273 26 273 0 mlc 283 13 283 0 slc 294 294 1 slc 302 302 1 slc 337 340 1 slc 497 497 1 slc 500 500 1 slc 502 502 1 slc 521 521 1
 ##sde_property: file /home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL/conv.v -id 3 -inactiveList slc 12 15 1 slc 58 61 1 slc 77 80 1 slc 91 94 1
 ##sde_property: file /home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL/median.v -id 4 -inactiveList slc 13 16 1 slc 52 55 1 slc 105 108 1 slc 162 162 1 slc 180 183 1 slc 255 257 1 slc 265 265 1 slc 276 276 1 slc 350 351 1 slc 354 354 1 slc 357 357 1 slc 362 363 1 slc 366 366 1 slc 369 369 1 slc 372 372 1 slc 375 375 1 slc 380 381 1 slc 384 384 1 slc 387 387 1 slc 392 393 1 slc 396 396 1 slc 404 405 1 slc 408 408 1 slc 411 411 1 slc 414 414 1 slc 422 423 1 slc 426 426 1 slc 434 435 1 slc 438 438 1 slc 446 447 1 slc 450 450 1 slc 453 453 1 slc 456 456 1 slc 464 465 1 slc 468 468 1 slc 504 504 1 slc 529 530 1 slc 533 533 1 slc 541 542 1 slc 545 545 1 slc 548 548 1 slc 551 551 1 slc 559 560 1 slc 563 563 1 slc 586 586 1 slc 599 600 1 slc 603 603 1 slc 606 606 1 slc 609 609 1 slc 630 632 1 slc 640 640 1 slc 671 671 1 slc 683 683 1 slc 694 694 1 slc 740 743 1 slc 828 829 1 slc 844 844 1 slc 856 856 1
-##sde_property: file /home/MingKe/Study/NTU_CVSD2024/HW3/sram_512x8/sram_512x8.v -id 5
-#span core core.v 2 571
+#span core core.v 2 572
 #rtl_idmap core 1 -lang 1
 #span conv conv.v 2 235
 #rtl_idmap conv 2 -lang 1
-#span median_sobel_nms median.v 2 254
-#rtl_idmap median_sobel_nms 3 -lang 1
+#span median median.v 2 254
+#rtl_idmap median 3 -lang 1
 #span median_filter_submodule median.v 258 628 median.v 255 628
 #rtl_idmap median_filter_submodule 4 -lang 1
 #span sobel_gradient median.v 633 883 median.v 630 883
@@ -1608,7 +1607,7 @@ ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/lint/lint_rtl/spyglass_reports
 #rtl_idmap sober_compare 6 -lang 1
 #greybox core 15
 #greybox conv 15
-#greybox median_sobel_nms 15
+#greybox median 15
 #greybox median_filter_submodule 15
 #greybox sobel_gradient 15
 #greybox sober_compare 15
@@ -1624,15 +1623,15 @@ ReportPortInfo-ML@@@@Data@@./spyglass-1/core/lint/lint_rtl/spyglass_reports/more
 #child sober_compare sober_compare sober_compare -elabDuId 6
 #child sobel_gradient sobel_gradient sobel_gradient -elabDuId 5
 #child median_filter_submodule median_filter_submodule median_filter_submodule -elabDuId 4
-#child median_sobel_nms median_sobel_nms median_sobel_nms -elabDuId 3 u_median_filter_submodule median_filter_submodule u_sobel_gradient_submodule sobel_gradient u_sober_compare_submodule sober_compare
+#child median median median -elabDuId 3 u_median_filter_submodule median_filter_submodule u_sobel_gradient_submodule sobel_gradient u_sober_compare_submodule sober_compare
 #child conv conv conv -elabDuId 2
-#child core core core -elabDuId 1 \SRAM_inst_loop[0].u_sram  sram_512x8 \SRAM_inst_loop[1].u_sram  sram_512x8 \SRAM_inst_loop[2].u_sram  sram_512x8 \SRAM_inst_loop[3].u_sram  sram_512x8 conv_inst conv median_sobel_inst median_sobel_nms
+#child core core core -elabDuId 1 \SRAM_inst_loop[0].u_sram  sram_512x8 \SRAM_inst_loop[1].u_sram  sram_512x8 \SRAM_inst_loop[2].u_sram  sram_512x8 \SRAM_inst_loop[3].u_sram  sram_512x8 conv_inst conv median_sobel_inst median
 #top_modules core
 #bbox_modules
 InferBlackBox@@inferblackbox@@Info@@N.A.@@0@@1@@10@@Interfaces for blackbox modules have been inferred. Please refer to AnalyzeBBox violations for more details
 ##sde_property: violation -ruleLang 1 
 #precompiled_dulist
-RegInputOutput-ML@@@@Data@@core.v@@306@@1@@10@@Port 'i_op_valid' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@307@@1@@10@@Port 'i_op_valid' is not registered [Hierarchy: 'core']@@0
 ##continue: S.1
 ##sde_property: container S.1 -rtlpath 1 -nonprob
 ##sde_property: violation -duId 1 -elabDuId 1 
@@ -1644,25 +1643,19 @@ RegInputOutput-ML@@@@Data@@core.v@@144@@1@@10@@Port 'o_op_ready' is not register
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@core.v@@362@@1@@10@@Port 'i_in_valid' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@363@@1@@10@@Port 'i_in_valid' is not registered [Hierarchy: 'core']@@0
 ##continue: S.4
 ##sde_property: container S.4 -rtlpath 1 -nonprob
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
 RegInputOutput-ML@@@@Data@@core.v@@145@@1@@10@@Port 'o_in_ready' is not registered [Hierarchy: 'core']@@0
-##continue: S.6
-##sde_property: container S.6 -rtlpath 1 -nonprob
+##continue: S.5
+##sde_property: container S.5 -rtlpath 1 -nonprob
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@core.v@@133@@1@@10@@Port 'i_in_data[7:0]' is not registered [Hierarchy: 'core']@@0
-##continue: S.5
-##sde_property: container S.5 -rtlpath 1 
-##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 i_in_data -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label RegInputOutput-ML
-##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@core.v@@372@@1@@10@@Port 'i_op_mode[3:0]' is not registered [Hierarchy: 'core']@@0
+RegInputOutput-ML@@@@Data@@core.v@@373@@1@@10@@Port 'i_op_mode[3:0]' is not registered [Hierarchy: 'core']@@0
 ##continue: S.2
 ##sde_property: container S.2 -rtlpath 1 
 ##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 i_op_mode -mergeRange1 3:0 -completeRange1 3:0  
@@ -1681,6 +1674,6 @@ InfoAnalyzeBBox@@InfoAnalyzeBBox@@Info@@core.v@@127@@1@@10@@Design Unit 'sram_51
 ##totalGeneratedCount:         5
 ##totalWaivedViolationCount:         0
 ##totalReportCount:         5
-##totalDataSeverityCount:         7
+##totalDataSeverityCount:         6
 ##totalSuppressedCount:         0
 ##Active_Rules  BlockHeader BufClock CheckDelayTimescale-ML CombLoop FlopClockConstant FlopEConst LatchFeedback NoAssignX-ML NoXInCase-ML ParamWidthMismatch-ML STARC05-1.2.1.2 STARC05-1.3.1.3 STARC05-2.1.3.1 STARC05-2.1.4.5 STARC05-2.1.5.3 STARC05-2.1.6.5 STARC05-2.10.1.4a STARC05-2.10.1.4b STARC05-2.10.2.3 STARC05-2.10.3.2a STARC05-2.11.3.1 STARC05-2.2.3.3 STARC05-2.3.1.2c STARC05-2.3.1.5b STARC05-2.3.1.6 STARC05-2.3.3.1 STARC05-2.3.4.1v STARC05-2.4.1.5 STARC05-2.5.1.2 STARC05-2.5.1.7 STARC05-2.5.1.9 UndrivenInTerm-ML W110 W110a W116 W122 W123 W156 W19 W215 W216 W218 W224 W240 W263 W287a W287b W289 W292 W293 W317 W336 W337 W339a W352 W362 W392 W398 W414 W415 W415a W416 W421 W422 W424 W426 W442a W442b W442c W442f W450L W467 W480 W481a W481b W486 W496a W496b W499 W502 W505 W528 W66 W71 badimplicitSM1 badimplicitSM2 badimplicitSM4 bothedges mixedsenselist sim_race02

@@ -39,8 +39,7 @@ Loading Shared library librmerules-Linux4.spyso from /home/cad/synopsys/spyglass
              define.v \
              core.v \
              conv.v \
-             median.v \
-             ../sram_512x8/sram_512x8.v
+             median.v
 
 ##verbosity level   : 2
 ##exact cmdline arg : -batch -project spyglass-1.prj -designread  -64bit
@@ -53,8 +52,7 @@ Loading Shared library librmerules-Linux4.spyso from /home/cad/synopsys/spyglass
 ##files    : define.v \
              core.v \
              conv.v \
-             median.v \
-             ../sram_512x8/sram_512x8.v
+             median.v
 
 
 INFO [76]    Using './spyglass-1/core/WORK/64' as the Work Directory for 64bit precompiled dump.
@@ -77,8 +75,8 @@ Checking Rule SGDC_voltagedomain05 (Rule 16 of total 120) .... done (Time = 0.00
 Checking Rule SGDC_voltagedomain06 (Rule 17 of total 120) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_voltagedomain07 (Rule 18 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_powerdomainoutputs02 (Rule 19 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_supply01 (Rule 20 of total 120) .... done (Time = 0.00s, Memory = 8.0K)
-Checking Rule SGDC_waive01 (Rule 21 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_supply01 (Rule 20 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive01 (Rule 21 of total 120) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_waive02 (Rule 22 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive03 (Rule 23 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive04 (Rule 24 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
@@ -89,7 +87,7 @@ Checking Rule SGDC_waive08 (Rule 28 of total 120) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_waive09 (Rule 29 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive10 (Rule 30 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive11 (Rule 31 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive12 (Rule 32 of total 120) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_waive12 (Rule 32 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive13 (Rule 33 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive21 (Rule 34 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive22 (Rule 35 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
@@ -101,37 +99,36 @@ Checking Rule SGDC_waive38 (Rule 40 of total 120) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_fifo01 (Rule 41 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_libgroup01 (Rule 42 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_libgroup02 (Rule 43 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_libgroup04 (Rule 44 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_libgroup04 (Rule 44 of total 120) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_power_data01 (Rule 45 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_ungroup01 (Rule 46 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port06 (Rule 47 of total 120) .... done (Time = 0.00s, Memory = -8.0K)
-Checking Rule SGDC_abstract_port14 (Rule 48 of total 120) .... done (Time = 0.00s, Memory = 1976.0K)
-Checking Rule SGDC_abstract_port15 (Rule 49 of total 120) .... done (Time = 0.00s, Memory = 16.0K)
+Checking Rule SGDC_abstract_port06 (Rule 47 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port14 (Rule 48 of total 120) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_abstract_port15 (Rule 49 of total 120) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_abstract_port18 (Rule 50 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule sdc_init_rule (Rule 51 of total 120) .... done (Time = 0.00s, Memory = 80.0K)
 Checking Rule CMD_ignorelibs01 (Rule 52 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportRuleNotRun (Rule 53 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportStopSummary (Rule 54 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportIgnoreSummary (Rule 55 of total 120) .... done (Time = 0.00s, Memory = 32.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 0 sec, 0.54 sec, 812936 KB, 3297708 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis started: 0 sec, 0.54 sec, 812936 KB, 3297708 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 0 sec, 0.55 sec, 2317640 KB, 4446812 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis started: 0 sec, 0.55 sec, 2317640 KB, 4446812 KB
  Analyzing source file "define.v" ....
  Analyzing source file "core.v" ....
  Analyzing source file "conv.v" ....
  Analyzing source file "median.v" ....
- Analyzing source file "../sram_512x8/sram_512x8.v" ....
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 0 sec, 0.55 sec, 880528 KB, 3297708 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.01 sec, 67592 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 0 sec, 0.55 sec, 880528 KB, 3297708 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 0 sec, 0.56 sec, 2383256 KB, 4512364 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.01 sec, 65616 KB, 65552 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 0 sec, 0.56 sec, 2383256 KB, 4512364 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elaboration started: 0 sec, 0.00 sec, 0 KB, 0 KB
  Elaborating Top Verilog Design Unit 'core' ..... done
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 0 sec, 0.55 sec, 944248 KB, 3297708 KB
-##SGDEBUG [BENCHMARK_INCR]: Elaboration finished: 0 sec, 0.00 sec, 63720 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 0 sec, 0.55 sec, 944248 KB, 3297708 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 0 sec, 0.56 sec, 2448960 KB, 4577916 KB
+##SGDEBUG [BENCHMARK_INCR]: Elaboration finished: 0 sec, 0.00 sec, 65704 KB, 65552 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 0 sec, 0.56 sec, 2448960 KB, 4577916 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker started: 0 sec, 0.00 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 0 sec, 0.55 sec, 946224 KB, 3297708 KB
-##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker finished: 0 sec, 0.00 sec, 1976 KB, 0 KB
-Checking Rule ElabSummary (Rule 56 of total 120) .... done (Time = 0.00s, Memory = -1976.0K)
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 0 sec, 0.56 sec, 2448960 KB, 4577916 KB
+##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker finished: 0 sec, 0.00 sec, 0 KB, 0 KB
+Checking Rule ElabSummary (Rule 56 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportCheckDataSummary (Rule 57 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 
 INFO [38]    Design option 'ignoredu/ignorefile' specified.
@@ -155,16 +152,16 @@ Checking Rule RtlDesignInfo (Rule 64 of total 120)
 ##SGDEBUG: RTL statistics for Verilog design units:
 ##SGDEBUG[BENCHMARK_DATA]: RTL Ports = 61 360 36
 ##SGDEBUG[BENCHMARK_DATA]: RTL Insts = 59
-##SGDEBUG[BENCHMARK_DATA]: RTL Nets = 226 1703 166
+##SGDEBUG[BENCHMARK_DATA]: RTL Nets = 226 1653 164
 ##SGDEBUG[BENCHMARK_DATA]: RTL Terms = 159 327 33
 
 ##SGDEBUG: NOTE: Following estimated data is applicable for structural designs only.
 ##SGDEBUG:     In case of RTL designs, this data may differ significantly from the actual figure.
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Insts = 4
-##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 473
+##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 476
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Terms = 278
 ##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Paths = 2
- .... done (Time = 0.00s, Memory = -1976.0K)
+ .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule CheckCelldefine (Rule 65 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive23 (Rule 66 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive26 (Rule 67 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
@@ -176,15 +173,15 @@ Checking Rule SGDC_waive31 (Rule 72 of total 120) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_waive35 (Rule 73 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule checkCMD_mthresh (Rule 74 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule AnalyzeBBox (Rule 75 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportCheckDataSummary (Rule 57 of total 120) .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule ReportCheckDataSummary (Rule 57 of total 120) .... done (Time = 0.00s, Memory = 0.0K)
 
 Generating data for Console...
-##SGDEBUG [PEAK_VMSIZE_END_RULE]: 3297708 KB for entire run at 'DetectTopDesignUnits.Init' stage
+##SGDEBUG [PEAK_VMSIZE_END_RULE]: 4577916 KB for entire run at 'Elaboration finished' stage
 ##SGDEBUG [PEAK_SWAP_MEMORY_END_RULE]: 0 KB for entire run
-##SGDEBUG [VMPEAK_MEMORY]: 3535100 KB for entire run
-##SGDEBUG [PEAK_RSS_MEMORY]: 1043992 KB for entire run
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 1 sec, 0.95 sec, 943640 KB, 3297704 KB
-##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 1 sec, 0.40 sec, -2584 KB, -4 KB
+##SGDEBUG [VMPEAK_MEMORY]: 4616292 KB for entire run
+##SGDEBUG [PEAK_RSS_MEMORY]: 2062552 KB for entire run
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 1 sec, 0.98 sec, 2448720 KB, 4577912 KB
+##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 1 sec, 0.42 sec, -240 KB, -4 KB
 
 
 =====================================================================================
@@ -300,7 +297,7 @@ Results Summary:
 ---------------------------------------------------------------------------------------------------
  
 SpyGlass Exit Code 0 (Rule-checking completed without errors or warnings)
-SpyGlass total run-time is 00:10:50 (650 secs)
+SpyGlass total run-time is 07:21:09 (26469 secs)
 SpyGlass total goal run-time is 00:00:01 (1 secs)
 SpyGlass total cpu-time is 1 secs
-SpyGlass run completed at 03:25:12 PM on Nov 01 2024
+SpyGlass run completed at 10:35:31 PM on Nov 01 2024

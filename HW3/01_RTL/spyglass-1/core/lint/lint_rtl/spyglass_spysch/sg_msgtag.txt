@@ -1,4 +1,4 @@
-11 "InfoAnalyzeBBox" 2
+10 "InfoAnalyzeBBox" 2
 "BBoxEng"
 ["sram_512x8","BB_NO_MOD_DEF"]
 "BBoxEngAuxiInfo"

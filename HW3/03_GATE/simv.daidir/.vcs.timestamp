@@ -2,7 +2,7 @@
 0 ../02_SYN/Netlist/core_syn.sdf_c
 36
 +define+CYCLE=2.29
-+define+SDF+tb0
++define+SDF+tb6
 +itf+/usr/cad/synopsys/vcs/cur/linux64/lib/vcsdp_lite.tab
 +maxdelays
 +neg_tchk
@@ -98,11 +98,11 @@ CDSHOME=/usr/cad/cadence/IC/IC_06.18.210
 0
 0
 8
-1730467620 ../02_SYN/Netlist/core_syn.sdf
-1730467620 ../02_SYN/Netlist/core_syn.v
+1730472136 ../02_SYN/Netlist/core_syn.sdf
+1730472135 ../02_SYN/Netlist/core_syn.v
 1730440655 ../sram_512x8/sram_512x8.v
 1664902931 /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/Verilog/tsmc13_neg.v
-1730465954 ../00_TESTBED/testbench.v
+1730471295 ../00_TESTBED/testbench.v
 1730444440 rtl_03.f
 1630295641 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
 1630379311 /usr/cad/synopsys/vcs/cur/linux64/lib/vcsdp_lite.tab
@@ -112,5 +112,5 @@ CDSHOME=/usr/cad/cadence/IC/IC_06.18.210
 1630379861 /usr/cad/synopsys/vcs/cur/linux64/lib/libsnpsmalloc.so
 1630379961 /usr/cad/synopsys/vcs/cur/linux64/lib/libvfs.so
 1630294660 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a
-1730467753 simv.daidir
+1730621930 simv.daidir
 -1 partitionlib

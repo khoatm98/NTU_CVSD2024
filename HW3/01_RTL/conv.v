@@ -47,7 +47,7 @@ wire  [17:0] conv_2_w;
 wire  [17:0] conv_3_w;
 wire  [17:0] conv_4_w;
 
-reg  [16:0] conv_r;
+reg  [13:0] conv_r;
 reg o_out_valid_ready_r;
 reg [13:0] o_out_data_ready_r;
 localparam READ   = 2'd1;
@@ -117,10 +117,10 @@ end
 
 always @ (*) begin
 	case(cnt)
-		2'd1   : conv_r = conv_1_r;
-		2'd2   : conv_r = conv_2_r;
-		2'd3   : conv_r = conv_3_r;
-		default: conv_r = conv_4_r;
+		2'd1   : conv_r = conv_1_r[16:3];
+		2'd2   : conv_r = conv_2_r[16:3];
+		2'd3   : conv_r = conv_3_r[16:3];
+		default: conv_r = conv_4_r[16:3];
 	endcase
 end
 
@@ -129,7 +129,7 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		o_out_data_ready_r  <= 0;
 	end
 	else begin
-		o_out_data_ready_r  <= conv_r[16:4] + conv_r[3];
+		o_out_data_ready_r  <= conv_r[13:1] + conv_r[0];
 	end
 
 end

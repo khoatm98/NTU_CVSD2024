@@ -161,7 +161,7 @@ QTINC=/usr/lib64/qt-3.3/include
 SSH_TTY=/dev/pts/8
 LC_ALL=C
 SG_HTML_BROWSER=/usr/bin/mozilla
-SNPS_VCS_INTERNAL_ROOT_PID=7937
+SNPS_VCS_INTERNAL_ROOT_PID=9794
 QT_GRAPHICSSYSTEM_CHECKED=1
 USER=MingKe
 GROUP=DCSLab
@@ -177,7 +177,7 @@ VCS_MODE_FLAG=64
 MAIL=/var/spool/mail/MingKe
 PATH=.:/usr/cad/cadence/STRATUS/STRATUS_19.12.100/tools/bin/64bit:/usr/cad/cadence/STRATUS/STRATUS_19.12.100/tools/bin:/usr/cad/synopsys/vcs/cur/bin:/usr/cad/synopsys/vcs/cur/linux/bin:/usr/cad/synopsys/vcs/cur/linux/util:/usr/cad/synopsys/vcs/cur/linux/flexlm:/usr/cad/synopsys/laker_oa/cur/bin:/usr/cad/synopsys/laker/cur/bin:/usr/bin/X11:/usr/cad/synopsys/primetime/cur/amd64/syn/bin:/usr/cad/synopsys/spyglass/cur/SPYGLASS_HOME/bin:/usr/cad/synopsys/synplify/cur/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cad/synopsys/verdi/cur/bin:/usr/cad/synopsys/verdi/cur/nLint/bin:/usr/cad/mentor/calibre/cur/bin:/usr/cad/cadence/JASPER/jasper_2021.03/bin:/usr/cad/cadence/IC/IC_06.18.210/tools/bin:/usr/cad/cadence/IC/IC_06.18.210/tools/dracula/bin:/usr/cad/cadence/IC/IC_06.18.210/tools/dfII/bin:/usr/cad/cadence/IC/IC_06.18.210/tools/bin/64bit:/usr/cad/cadence/IC/IC_06.18.210/tools/dracula/bin/64bit:/usr/cad/cadence/IC/IC_06.18.210/tools/dfII/bin/64bit:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/bin/64bit:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/bin:/usr/cad/cadence/XCELIUM/XCELIUM_20.09.007/tools/bin/64bit:/usr/cad/cadence/XCELIUM/XCELIUM_20.09.007/tools/bin:/usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/bin/64bit:/usr/cad/cadence/INCISIV/INCISIVE_15.20.084/tools/bin:/tools/Xilinx/Vitis_HLS/2023.2/bin:/tools/Xilinx/Vivado/2023.2/bin:/tools/Xilinx/Model_Composer/2023.2/bin:/tools/Xilinx/Vitis/2023.2/bin:/tools/Xilinx/Vitis/2023.2/gnu/microblaze/lin/bin:/tools/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-linux/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-none/bin:/tools/Xilinx/Vitis/2023.2/gnu/armr5/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.2/tps/lnx64/cmake-3.3.2/bin:/tools/Xilinx/Vitis/2023.2/aietools/bin:/tools/Xilinx/Vitis/2023.2/gnu/riscv/lin/riscv64-unknown-elf/bin:/tools/Xilinx/DocNav:/usr/local/cuda-12.4/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/MingKe/.local/bin:/home/MingKe/bin
 XILINX_VITIS=/tools/Xilinx/Vitis/2023.2
-SNPS_VCS_INTERNAL_CURR_PID=7937
+SNPS_VCS_INTERNAL_CURR_PID=9794
 PWD=/home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL
 SYNOPSYS_synplify=/usr/cad/synopsys/synplify/cur
 VCS_HOME=/usr/cad/synopsys/vcs/cur
@@ -198,7 +198,7 @@ CDS_Netlisting_Mode=Analog
 PRIMETIME=/usr/cad/synopsys/primetime/cur
 HISTCONTROL=ignoredups
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20241101133202_7937
+SNPS_VCS_TMPDIR=/tmp/vcs_20241103082734_9794
 RISCV=/home/MingKe/lab/riscv
 SHLVL=4
 HOME=/home/MingKe
@@ -211,7 +211,7 @@ MGC_TMPDIR=/tmp
 LOGNAME=MingKe
 MACHTYPE=x86_64
 QTLIB=/usr/lib64/qt-3.3/lib
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1730467922.775821967
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1730622454.458908964
 XDG_DATA_DIRS=/home/MingKe/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 SSH_CONNECTION=140.112.175.69 56375 140.112.20.89 30101
 LESSOPEN=||/usr/bin/lesspipe.sh %s
@@ -238,7 +238,7 @@ argv[3]=+define+tb4
 argv[4]=+define+CYCLE=2.29
 238 profile - 100
           CPU/Mem usage: 0.030 sys,  0.210 user,  256.56M mem
-239 Elapsed time:    0:00:01    Fri Nov  1 21:32:06 2024
+239 Elapsed time:    0:00:01    Sun Nov  3 16:27:39 2024
 240 User CPU time used: 0 seconds
 241 System CPU time used: 0 seconds
 242 pliAppInit
@@ -269,55 +269,55 @@ argv[4]=+define+CYCLE=2.29
 267 *Verdi* : Enable +mda dumping.
 268 *Verdi* : End of traversing.
 269 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.050 sys,  0.220 user,  357.39M mem
-                   incr: 0.000 sys,  0.010 user,  9.11M mem
-                   accu: 0.000 sys,  0.010 user,  9.11M mem
-              accu incr: 0.000 sys,  0.010 user,  9.11M mem
+          CPU/Mem usage: 0.050 sys,  0.230 user,  358.64M mem
+                   incr: 0.010 sys,  0.020 user,  10.36M mem
+                   accu: 0.010 sys,  0.020 user,  10.36M mem
+              accu incr: 0.010 sys,  0.020 user,  10.36M mem
 
-          Count usage: 7638 var,  7614 idcode,  209 callback
-                 incr: 7638 var,  7614 idcode,  209 callback
-                 accu: 7638 var,  7614 idcode,  209 callback
-            accu incr: 7638 var,  7614 idcode,  209 callback
-270 Elapsed time:    0:00:01    Fri Nov  1 21:32:06 2024
+          Count usage: 53700 var,  53676 idcode,  209 callback
+                 incr: 53700 var,  53676 idcode,  209 callback
+                 accu: 53700 var,  53676 idcode,  209 callback
+            accu incr: 53700 var,  53676 idcode,  209 callback
+270 Elapsed time:    0:00:01    Sun Nov  3 16:27:39 2024
 271 User CPU time used: 0 seconds
 272 System CPU time used: 0 seconds
 273 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.050 sys,  0.220 user,  358.72M mem
-                   incr: 0.000 sys,  0.000 user,  1.33M mem
-                   accu: 0.000 sys,  0.010 user,  10.43M mem
-              accu incr: 0.000 sys,  0.000 user,  1.33M mem
+          CPU/Mem usage: 0.050 sys,  0.240 user,  361.36M mem
+                   incr: 0.000 sys,  0.010 user,  2.72M mem
+                   accu: 0.010 sys,  0.030 user,  13.07M mem
+              accu incr: 0.000 sys,  0.010 user,  2.72M mem
 
-          Count usage: 7638 var,  7614 idcode,  209 callback
+          Count usage: 53700 var,  53676 idcode,  209 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 7638 var,  7614 idcode,  209 callback
+                 accu: 53700 var,  53676 idcode,  209 callback
             accu incr: 0 var,  0 idcode,  0 callback
-274 Elapsed time:    0:00:01    Fri Nov  1 21:32:06 2024
+274 Elapsed time:    0:00:01    Sun Nov  3 16:27:39 2024
 275 User CPU time used: 0 seconds
 276 System CPU time used: 0 seconds
 277 End of simulation at 14117850
-278 Memory usage: 437.379 M
-279 Maximum resident set size: 158 MB
+278 Memory usage: 441.074 M
+279 Maximum resident set size: 159 MB
 280 Hard page faults: 0
-281 Soft page faults: 27433
-282 Elapsed time:    0:00:01    Fri Nov  1 21:32:06 2024
+281 Soft page faults: 28357
+282 Elapsed time:    0:00:01    Sun Nov  3 16:27:39 2024
 283 User CPU time used: 0 seconds
 284 System CPU time used: 0 seconds
 285 Begin FSDB profile info:
-286 FSDB Writer : bc1(28121) bcn(581785) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.042608) io wait(0.000000) theadpool wait(0.000000)
+286 FSDB Writer : bc1(28121) bcn(627847) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.050660) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 287 End FSDB profile info
-288 FSDB closed. Name: core.fsdb Size: 243888
+288 FSDB closed. Name: core.fsdb Size: 247242
 289 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
 290                      - BlockUsed:5 Acquire:620482 BufferUsed:7689167
 291                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:3
-292                      - MainProducerTime:0.426109993 TotalConsumerTime:0.039992444
-293                      - ElapsedTime:0.181518000
+292                      - MainProducerTime:0.448513107 TotalConsumerTime:0.040209747
+293                      - ElapsedTime:0.205711000
 294 Producer   0 profile - BlockUsed:5 Acquire:620482 BufferUsed:7689167
-295 Consumer   0 profile - Affinity:-1 CPUTime:0.039992444 LifeTime:0.078777726 (0.51%)
+295 Consumer   0 profile - Affinity:-1 CPUTime:0.040209747 LifeTime:0.078429346 (0.51%)
 296                      - BlockUsed:5 Acquire:620482 BufferUsed:7689167
 297 SimExit
-298 Elapsed time:    0:00:02    Fri Nov  1 21:32:07 2024
+298 Elapsed time:    0:00:01    Sun Nov  3 16:27:39 2024
 299 User CPU time used: 0 seconds
 300 System CPU time used: 0 seconds
 301 Sim process exit

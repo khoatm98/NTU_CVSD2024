@@ -180,8 +180,7 @@ Option          Value             Origin  File                           LineNo
 -templatedir    /home/cad/synopsys/spyglass/2021.09/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff CmdLine -                              -
 -top            core              CmdLine -                              -
 -wdir           ./spyglass-1/core/lint/lint_rtl CmdLine -                              -
-<design_files>  ../sram_512x8/sram_512x8.v APICall -                              -
-                conv.v            APICall -                              -
+<design_files>  conv.v            APICall -                              -
                 core.v            APICall -                              -
                 define.v          APICall -                              -
                 median.v          APICall -                              -

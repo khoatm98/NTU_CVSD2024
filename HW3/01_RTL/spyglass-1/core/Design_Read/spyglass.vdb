@@ -1,5 +1,5 @@
 ##spyglass_version: SpyGlass_vS-2021.09
-##date: Fri Nov  1 15:25:12 2024
+##date: Fri Nov  1 22:35:31 2024
 ##user: MingKe
 ##cwd: /home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL
 ##lang: verilog+vhdl
@@ -927,21 +927,20 @@ ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/Design_Read/spyglass_reports/S
 ##sde_property: msg_id DEFAULT
 ##files_verilog: core.v conv.v median.v
 ##sde_property: file define.v -id 1
-##sde_property: file core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 mlc 19 13 19 0 mlc 36 18 36 0 slc 119 122 1 slc 152 153 1 slc 160 163 1 mlc 186 22 186 0 mlc 220 20 220 0 mlc 241 31 241 0 mlc 273 26 273 0 slc 281 281 1 mlc 284 13 284 0 slc 297 297 1 slc 332 335 1 slc 488 488 1 slc 491 491 1 slc 493 493 1 slc 512 512 1 slc 527 527 1 slc 533 533 1
-##sde_property: file conv.v -id 3 -inactiveList slc 12 15 1 slc 61 64 1 slc 80 83 1 slc 94 97 1 slc 154 155 1 slc 159 159 1 slc 161 166 1
-##sde_property: file median.v -id 4 -inactiveList slc 13 16 1 slc 52 55 1 slc 105 108 1 slc 162 162 1 slc 180 183 1 slc 255 257 1 slc 265 265 1 slc 276 276 1 slc 351 351 1 slc 356 356 1 slc 361 361 1 slc 366 366 1 slc 371 371 1 slc 384 384 1 slc 389 389 1 slc 394 394 1 slc 399 399 1 slc 404 404 1 slc 416 416 1 slc 421 421 1 slc 426 426 1 slc 431 431 1 slc 436 436 1 slc 476 476 1 slc 502 508 1 slc 511 511 1 slc 520 520 1 slc 523 523 1 slc 526 526 1 slc 529 529 1 slc 538 544 1 slc 547 547 1 slc 569 569 1 slc 582 582 1 slc 585 585 1 slc 588 588 1 slc 591 591 1 slc 612 614 1 slc 622 622 1 slc 653 653 1 slc 665 665 1 slc 676 676 1 slc 722 725 1 slc 814 814 1 slc 829 829 1 slc 839 839 1
-##sde_property: file ../sram_512x8/sram_512x8.v -id 5
-#span core core.v 2 565
+##sde_property: file core.v -id 2 -inactiveList slc 2 2 1 slc 15 18 1 mlc 19 13 19 0 mlc 36 18 36 0 slc 117 120 1 slc 150 151 1 slc 158 161 1 mlc 186 22 186 0 mlc 220 20 220 0 mlc 241 31 241 0 mlc 273 26 273 0 mlc 283 13 283 0 slc 294 294 1 slc 302 302 1 slc 337 340 1 slc 497 497 1 slc 500 500 1 slc 502 502 1 slc 521 521 1
+##sde_property: file conv.v -id 3 -inactiveList slc 12 15 1 slc 58 61 1 slc 77 80 1 slc 91 94 1
+##sde_property: file median.v -id 4 -inactiveList slc 13 16 1 slc 52 55 1 slc 105 108 1 slc 162 162 1 slc 180 183 1 slc 255 257 1 slc 265 265 1 slc 276 276 1 slc 350 351 1 slc 354 354 1 slc 357 357 1 slc 362 363 1 slc 366 366 1 slc 369 369 1 slc 372 372 1 slc 375 375 1 slc 380 381 1 slc 384 384 1 slc 387 387 1 slc 392 393 1 slc 396 396 1 slc 404 405 1 slc 408 408 1 slc 411 411 1 slc 414 414 1 slc 422 423 1 slc 426 426 1 slc 434 435 1 slc 438 438 1 slc 446 447 1 slc 450 450 1 slc 453 453 1 slc 456 456 1 slc 464 465 1 slc 468 468 1 slc 504 504 1 slc 529 530 1 slc 533 533 1 slc 541 542 1 slc 545 545 1 slc 548 548 1 slc 551 551 1 slc 559 560 1 slc 563 563 1 slc 586 586 1 slc 599 600 1 slc 603 603 1 slc 606 606 1 slc 609 609 1 slc 630 632 1 slc 640 640 1 slc 671 671 1 slc 683 683 1 slc 694 694 1 slc 740 743 1 slc 828 829 1 slc 844 844 1 slc 856 856 1
+#span core core.v 2 572
 #rtl_idmap core 1 -lang 1
-#span conv conv.v 2 247
+#span conv conv.v 2 235
 #rtl_idmap conv 2 -lang 1
 #span median median.v 2 254
 #rtl_idmap median 3 -lang 1
-#span median_filter_submodule median.v 258 610 median.v 255 610
+#span median_filter_submodule median.v 258 628 median.v 255 628
 #rtl_idmap median_filter_submodule 4 -lang 1
-#span sobel_gradient median.v 615 866 median.v 612 866
+#span sobel_gradient median.v 633 883 median.v 630 883
 #rtl_idmap sobel_gradient 5 -lang 1
-#span sober_compare median.v 867 980
+#span sober_compare median.v 884 997
 #rtl_idmap sober_compare 6 -lang 1
 #greybox core 15
 #greybox conv 15
@@ -953,11 +952,11 @@ ElabSummary@@ElabSummary@@Info@@./spyglass-1/core/Design_Read/spyglass_reports/S
 DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@core.v@@2@@1@@2@@Module core is a top level design unit
 ##sde_property: violation -duId 1 
 #rtl_top_modules core
-InfoAnalyzeBBox@@InfoAnalyzeBBox@@Info@@core.v@@129@@1@@10@@Design Unit 'sram_512x8' has empty definition; Ignore specification applied on design unit using 'ignoredu' option
+InfoAnalyzeBBox@@InfoAnalyzeBBox@@Info@@core.v@@127@@1@@10@@Design Unit 'sram_512x8' has empty definition; Ignore specification applied on design unit using 'ignoredu' option
 ##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label Label_1
 ##sde_property: msg_id Label_1
-#childElab core core -elabDuId 1 conv_inst conv median_inst median \SRAM_inst_loop[0].u_sram  sram_512x8 \SRAM_inst_loop[1].u_sram  sram_512x8 \SRAM_inst_loop[2].u_sram  sram_512x8 \SRAM_inst_loop[3].u_sram  sram_512x8
+#childElab core core -elabDuId 1 conv_inst conv median_sobel_inst median \SRAM_inst_loop[0].u_sram  sram_512x8 \SRAM_inst_loop[1].u_sram  sram_512x8 \SRAM_inst_loop[2].u_sram  sram_512x8 \SRAM_inst_loop[3].u_sram  sram_512x8
 #childElab conv conv -elabDuId 2
 #childElab median median -elabDuId 3 u_median_filter_submodule median_filter_submodule u_sobel_gradient_submodule sobel_gradient u_sober_compare_submodule sober_compare
 #childElab median_filter_submodule median_filter_submodule -elabDuId 4

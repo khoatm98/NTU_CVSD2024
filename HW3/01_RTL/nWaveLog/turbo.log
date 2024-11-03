@@ -2,3 +2,4 @@ Command Line: /usr/cad/synopsys/verdi/cur/platform/LINUXAMD64/bin/Novas -nWave
 uname(Linux dcs-expensive03 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64)
 Failure on Verdi 3-tier licensing, Use nWave -licdebug for more information.
 \! Could not get the fileId of /home/MingKe/Study/NTU_CVSD2024/HW3/01_RTL/core.fsdb
+au time 27185.533354 138.626737 262.242404 delta 1212297216 1212297216 total 1702424576 1702424576
