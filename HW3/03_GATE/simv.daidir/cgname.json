@@ -363,7 +363,7 @@
         "AOI221XL",
         "BUsfE",
         "module",
-        575
+        61
     ],
     "AOI221X1": [
         "AOI221X1",
@@ -801,7 +801,7 @@
         "NAND3X4",
         "fbbg6",
         "module",
-        574
+        134
     ],
     "NAND3X6": [
         "NAND3X6",
@@ -813,7 +813,7 @@
         "NAND3X8",
         "mHaQH",
         "module",
-        573
+        136
     ],
     "NAND4XL": [
         "NAND4XL",
@@ -855,7 +855,7 @@
         "NAND2BXL",
         "B7bZD",
         "module",
-        555
+        143
     ],
     "NAND2BX1": [
         "NAND2BX1",
@@ -1431,7 +1431,7 @@
         "OAI33XL",
         "tCIx7",
         "module",
-        553
+        239
     ],
     "OAI33X1": [
         "OAI33X1",
@@ -1623,7 +1623,7 @@
         "XNOR2XL",
         "rpKsx",
         "module",
-        544
+        271
     ],
     "XNOR2X1": [
         "XNOR2X1",
@@ -1803,7 +1803,7 @@
         "CLKAND2X12",
         "LPmRi",
         "module",
-        543
+        301
     ],
     "CLKMX2X2": [
         "CLKMX2X2",
@@ -3177,84 +3177,84 @@
         "core",
         "YakRT",
         "module",
-        542
+        530
     ],
     "...MASTER...": [
         "SIM",
         "amcQw",
         "module",
-        560
+        531
     ],
     "udp_sedff": [
         "udp_sedff",
         "D2wHf",
         "udp",
-        561
+        532
     ],
     "udp_edfft": [
         "udp_edfft",
         "uYEPC",
         "udp",
-        562
+        533
     ],
     "udp_mux": [
         "udp_mux",
         "vCfas",
         "udp",
-        563
+        534
     ],
     "udp_sedfft": [
         "udp_sedfft",
         "IEZrF",
         "udp",
-        564
+        535
     ],
     "udp_mux2": [
         "udp_mux2",
         "U7Vwg",
         "udp",
-        565
+        536
     ],
     "udp_tlatrf": [
         "udp_tlatrf",
         "i2VqJ",
         "udp",
-        566
+        537
     ],
     "udp_mux4": [
         "udp_mux4",
         "CjLsY",
         "udp",
-        567
+        538
     ],
     "udp_outrf": [
         "udp_outrf",
         "sk4QJ",
         "udp",
-        568
+        539
     ],
     "udp_dff": [
         "udp_dff",
         "exIG1",
         "udp",
-        569
+        540
     ],
     "udp_tlat": [
         "udp_tlat",
         "gSqMj",
         "udp",
-        570
+        541
     ],
     "udp_edff": [
         "udp_edff",
         "Cpxa2",
         "udp",
-        571
+        542
     ],
     "udp_bmx": [
         "udp_bmx",
         "AubIW",
         "udp",
-        572
+        543
     ]
 }

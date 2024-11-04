@@ -1,20 +1,24 @@
 #x HLBEGIN S.1
 #x {{COLOR=>1;}}
-#x 115 { @@n 2 a 0 @@p 2 a 0 }
+#x 111 { @@n 2 a 0 @@p 2 a 0 }
 #x HLEND
 #x HLBEGIN S.2
 #x {{COLOR=>1;}}
-#x 115 { @@n 4 a 0 @@p 4 a 0 }
+#x 111 { @@n 4 a 0 @@p 4 a 0 }
 #x HLEND
 #x HLBEGIN S.3
 #x {{COLOR=>1;}}
-#x 115 { @@n 8 a 0 @@p 8 a 0 }
+#x 111 { @@n 5 a 0 @@p 5 a 0 }
 #x HLEND
 #x HLBEGIN S.4
 #x {{COLOR=>1;}}
-#x 115 { @@n 9 a 0 @@p 9 a 0 }
+#x 111 { @@n 8 a 0 @@p 8 a 0 }
 #x HLEND
 #x HLBEGIN S.5
 #x {{COLOR=>1;}}
-#x 115 { @@n 19 a 0 @@p 19 a 0 }
+#x 111 { @@n 9 a 0 @@p 9 a 0 }
+#x HLEND
+#x HLBEGIN S.6
+#x {{COLOR=>1;}}
+#x 111 { @@n 19 a 0 @@p 19 a 0 }
 #x HLEND

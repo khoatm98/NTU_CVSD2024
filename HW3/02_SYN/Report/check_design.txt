@@ -1,8 +1,8 @@
  
 ****************************************
 check_design summary:
-Version:     S-2021.06-SP2
-Date:        Fri Nov  1 22:39:12 2024
+Version:     U-2022.12
+Date:        Mon Nov  4 14:59:46 2024
 ****************************************
 
                    Name                                            Total
@@ -11,18 +11,18 @@ Cells                                                              15
     Cells do not drive (LINT-1)                                    15
 --------------------------------------------------------------------------------
 
-Warning: In design 'core', cell 'C2217' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2229' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2531' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2532' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'B_101' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2617' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2634' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2635' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2689' does not drive any nets. (LINT-1)
-Warning: In design 'core', cell 'C2690' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2100' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2112' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2396' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2397' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'B_94' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2482' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2499' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2500' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2554' does not drive any nets. (LINT-1)
+Warning: In design 'core', cell 'C2555' does not drive any nets. (LINT-1)
 Warning: In design 'conv', cell 'C758' does not drive any nets. (LINT-1)
-Warning: In design 'median', cell 'C1938' does not drive any nets. (LINT-1)
+Warning: In design 'median', cell 'C1936' does not drive any nets. (LINT-1)
 Warning: In design 'sobel_gradient', cell 'C913' does not drive any nets. (LINT-1)
 Warning: In design 'sobel_gradient', cell 'C916' does not drive any nets. (LINT-1)
 Warning: In design 'sober_compare', cell 'C528' does not drive any nets. (LINT-1)

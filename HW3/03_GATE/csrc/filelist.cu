@@ -4,16 +4,16 @@ ifeq ($(LDVERSION), 0)
 endif
 
 ARCHIVE_OBJS=
-ARCHIVE_OBJS += _126425_archive_1.so
-_126425_archive_1.so : archive.92/_126425_archive_1.a
+ARCHIVE_OBJS += _59598_archive_1.so
+_59598_archive_1.so : archive.71/_59598_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../simv.daidir//_126425_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../simv.daidir//_59598_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../simv.daidir//_126425_archive_1.so $@
+	@ln -sf .//../simv.daidir//_59598_archive_1.so $@
 
 
 ARCHIVE_OBJS += _prev_archive_1.so
-_prev_archive_1.so : archive.92/_prev_archive_1.a
+_prev_archive_1.so : archive.71/_prev_archive_1.a
 	@$(AR) -s $<
 	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../simv.daidir//_prev_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
@@ -24,6 +24,8 @@ _prev_archive_1.so : archive.92/_prev_archive_1.a
 VCS_CU_ARC0 =_cuarc0.so
 
 VCS_CU_ARC_OBJS0 =objs/amcQw_d.o 
+
+VCS_CU_ARC_OBJS = $(VCS_CU_ARC_OBJS0) 
 
 
 O0_OBJS =

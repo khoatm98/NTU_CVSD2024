@@ -20,9 +20,9 @@ PRODUCT_TIMESTAMP=product_timestamp
 DEPLIBS=
 VCSUCLI=-lvcsucli
 LLVM_FLAGS=
-RUNTIME=-lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/cur/linux64/lib/vcs_tls.o $(DEPLIBS) 
+RUNTIME=-lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o $(DEPLIBS) 
 
-VCS_SAVE_RESTORE_OBJ=/usr/cad/synopsys/vcs/cur/linux64/lib/vcs_save_restore_new.o
+VCS_SAVE_RESTORE_OBJ=/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o
 
 # Select your favorite compiler
 
@@ -39,9 +39,9 @@ STDLIB =
 STRIPFLAGS= 
 
 PRE_LDFLAGS= # Loader Flags
-LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/cur/linux64/lib -L/usr/cad/synopsys/vcs/cur/linux64/lib 
+LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib 
 # Picarchive Flags
-PICLDFLAGS= -Wl,-rpath-link=./ -Wl,--no-as-needed 
+PICLDFLAGS= -Wl,-rpath-link=./ 
 PIC_LD=ld
 
 # C run time startup
@@ -49,7 +49,7 @@ CRT0=
 # C run time startup
 CRTN=
 # Machine specific libraries
-SYSLIBS=-ldl -lm  -lc -lpthread -ldl
+SYSLIBS=/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl -lm  -lc -lpthread -ldl
 
 # Default defines
 SHELL=/bin/sh
@@ -65,15 +65,15 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/usr/cad/synopsys/vcs/cur/include   
+CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/usr/cad/synopsys/vcs/2022.06/include   
 
-CFLAGS_O0=-w  -pipe -fPIC -I/usr/cad/synopsys/vcs/cur/include -O0  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_O0=-w  -pipe -fPIC -I/usr/cad/synopsys/vcs/2022.06/include -O0  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_CG=-w  -pipe -fPIC -I/usr/cad/synopsys/vcs/cur/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG=-w  -pipe -fPIC -I/usr/cad/synopsys/vcs/2022.06/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/usr/cad/synopsys/vcs/cur/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/usr/cad/synopsys/vcs/2022.06/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_RMAR=-w  -pipe -fPIC -I/usr/cad/synopsys/vcs/cur/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_RMAR=-w  -pipe -fPIC -I/usr/cad/synopsys/vcs/2022.06/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
 CFLAGS_CG+=$(STDLIB)
 CFLAGS_CG_CLIB+=$(STDLIB)
@@ -119,6 +119,6 @@ $(PRODUCT_TIMESTAMP) : product_clean_order
 	@touch $(PRODUCT_TIMESTAMP)
 	@-if [ -d ./objs ]; then find ./objs -type d -empty -delete; fi
 
-$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB)  /usr/cad/synopsys/vcs/cur/linux64/lib/libvcsnew.so /usr/cad/synopsys/vcs/cur/linux64/lib/libsimprofile.so /usr/cad/synopsys/vcs/cur/linux64/lib/libuclinative.so /usr/cad/synopsys/vcs/cur/linux64/lib/vcs_tls.o /usr/cad/synopsys/vcs/cur/linux64/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
+$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB)  /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvcsnew.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsimprofile.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/libuclinative.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
 	@touch $(PRODUCT)
 

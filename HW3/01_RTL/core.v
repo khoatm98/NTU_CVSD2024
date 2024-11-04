@@ -55,8 +55,8 @@ reg conv_calc_done_r;
 
 
 wire med_done_w      ;
-wire sobel_done_w;
 reg med_done_r;
+
 wire display_done_w  ;
 wire map_load_done_w ;
 reg  map_load_done_r ;
@@ -81,26 +81,18 @@ reg [13:0] out_data_ready_r;
 reg        out_valid_wait_r;
 reg [13:0] out_data_wait_r;
 
-reg [31:0] conv_input_data_r;
-reg [31:0] med_input_data_r;
-reg [31:0] sobel_input_data_r;
 reg [31:0] input_data_wait_r;
 reg [31:0] input_data_ready_r;
 
-reg [12:0]   conv_partial_sum_wait_r [15:0];
-reg [12:0]   conv_partial_sum_ready_r[15:0];
 wire [13:0] result_w; 
 wire [13:0] conv_result_w;
 wire 	    conv_out_valid_w;
 reg 	    conv_isFirst_signal_r;
 reg 	    med_sobel_isFirst_signal_r;
 reg 	    med_sobel_r;
-wire 	    med_out_valid_w;
-wire [10:0] med_result_w;
+wire 	    med_sobel_out_valid_w;
+wire [10:0] med_sobel_result_w;
 
-reg 	    sobel_isFirst_signal_r;
-wire [13:0] sobel_result_w;
-wire        sobel_out_valid_w;
 wire       out_valid_w;
 reg [2:0]  x_minus_one_r;
 reg [2:0]  x_plus_one_r;
@@ -109,9 +101,6 @@ reg [2:0]  x_r;
 reg [2:0]  y_r;
 reg [2:0]  x_delay_r[2:0]; 
 reg [2:0]  y_delay_r[2:0];
-reg [2:0]  x_minus_one_delay_r[2:0];
-reg [2:0]  x_plus_one_delay_r[2:0];
-reg [2:0]  x_plus_two_delay_r[2:0];
 
 wire [2:0] sram_select[7:0];
 // ---------------------------------------------------------------------------
@@ -138,9 +127,9 @@ generate
 endgenerate
 
 
-assign result_w =  conv_result_w | {3'b000, med_result_w};
+assign result_w =  conv_result_w | {3'b000, med_sobel_result_w};
 
-assign out_valid_w       = conv_out_valid_w || med_out_valid_w;
+assign out_valid_w       = conv_out_valid_w || med_sobel_out_valid_w;
 assign o_op_ready        = curr_state == FETCH;
 assign o_in_ready        = next_state == MAP_LOAD;
 assign o_out_data        = out_data_ready_r;
@@ -178,8 +167,8 @@ median median_sobel_inst (
 									.i_data(input_data_ready_r),
 									.i_isFirst(med_sobel_isFirst_signal_r),
 									.i_med_sobel(med_sobel_r),
-									.o_out_valid(med_out_valid_w),
-									.o_out_data(med_result_w),
+									.o_out_valid(med_sobel_out_valid_w),
+									.o_out_data(med_sobel_result_w),
 									.o_done(med_done_w)
 									);
 				
@@ -308,12 +297,6 @@ always @ (*) begin
 		DECODE     : begin
 			case(op_mode_r)
 				`OP_MAP_LOADING : next_state = MAP_LOAD;
-				`OP_R_SHIFT     : next_state = FETCH;
-				`OP_L_SHIFT     : next_state = FETCH;
-				`OP_U_SHIFT     : next_state = FETCH;
-				`OP_D_SHIFT     : next_state = FETCH;
-				`OP_SCALE_DOWN  : next_state = FETCH;
-				`OP_SCALE_UP    : next_state = FETCH;
 				`OP_DISPLAY     : next_state = DISPLAY;
 				`OP_CONV        : next_state = CONV;
 				`OP_MED_FILTER  : next_state = MED;
@@ -443,42 +426,19 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		x_plus_one_r  <= 0;
 		x_plus_two_r  <= 0;
 		
-		x_minus_one_delay_r[0] <= 0;
-		x_minus_one_delay_r[1] <= 0;
-		x_minus_one_delay_r [2]<= 0;
-		x_plus_one_delay_r[0]  <= 0;
-		x_plus_one_delay_r[1]  <= 0;
-		x_plus_one_delay_r [2] <= 0;
-		x_plus_two_delay_r[0]  <= 0;
-		x_plus_two_delay_r[1]  <= 0;
-		x_plus_two_delay_r [2] <= 0;
 		x_delay_r[0]  <= 0;
 		x_delay_r[1]  <= 0;
 		x_delay_r[2]  <= 0;
-		y_delay_r[0]  <= 0;
-		y_delay_r[1]  <= 0;
-		y_delay_r[2]  <= 0;
 	end
 	else begin
 		x_minus_one_r <= {x_origin_r} - 1;
 		x_plus_one_r  <= {x_origin_r} + 1;
 		x_plus_two_r  <= {x_origin_r} + 2;
 		
-		x_minus_one_delay_r[0]  <= x_minus_one_r;
-		x_minus_one_delay_r[1]  <= x_minus_one_delay_r[0];
-		x_minus_one_delay_r [2] <= x_minus_one_delay_r[1];
-		x_plus_one_delay_r[0]   <= x_plus_one_r;
-		x_plus_one_delay_r[1]   <= x_plus_one_delay_r[0];
-		x_plus_one_delay_r [2]  <= x_plus_one_delay_r[1];
-		x_plus_two_delay_r[0]   <= x_plus_two_r;
-		x_plus_two_delay_r[1]   <= x_plus_two_delay_r[0];
-		x_plus_two_delay_r [2]  <= x_plus_two_delay_r[1];
 		x_delay_r[0]  <= x_r;
 		x_delay_r[1]  <= x_delay_r[0];
 		x_delay_r[2]  <= x_delay_r[1];
-		y_delay_r[0]  <= y_r;
-		y_delay_r[1]  <= y_delay_r[0];
-		y_delay_r[2]  <= y_delay_r[1];
+
 	end
 end
 

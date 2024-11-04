@@ -1,14 +1,14 @@
-SpyGlass run started at 03:14:22 PM on Nov 01 2024 
+SpyGlass run started at 05:55:04 PM on Nov 03 2024 
 
-SpyGlass Predictive Analyzer(R) - Version SpyGlass_vS-2021.09
+SpyGlass Predictive Analyzer(R) - Version SpyGlass_vT-2022.06
 Synopsys TestMAX(TM)
-Last compiled on Aug 30 2021
+Last compiled on May 30 2022
 
 All Rights Reserved. Use, disclosure or duplication
 without prior written permission of Synopsys Inc. is prohibited.
 Technical support: email spyglass_support@synopsys.com.
 
-Loading Policy: spyglass (Version: SpyGlass_vS-2021.09) from path: /home/cad/synopsys/spyglass/2021.09/SPYGLASS_HOME/policies/spyglass
-Loading Shared library libspyglassrules-Linux4.spyso from /home/cad/synopsys/spyglass/2021.09/SPYGLASS_HOME/lib/libspyglassrules-Linux4.spyso 
-Loading Shared library libsdcInitRules-Linux4.spyso from /home/cad/synopsys/spyglass/2021.09/SPYGLASS_HOME/lib/libsdcInitRules-Linux4.spyso 
-Loading Shared library librmerules-Linux4.spyso from /home/cad/synopsys/spyglass/2021.09/SPYGLASS_HOME/lib/librmerules-Linux4.spyso 
+Loading Policy: spyglass (Version: SpyGlass_vT-2022.06) from path: /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/spyglass
+Loading Shared library libspyglassrules-Linux4.spyso from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/libspyglassrules-Linux4.spyso 
+Loading Shared library libsdcInitRules-Linux4.spyso from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/libsdcInitRules-Linux4.spyso 
+Loading Shared library librmerules-Linux4.spyso from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/librmerules-Linux4.spyso 

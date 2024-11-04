@@ -108,7 +108,7 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 		cnt <= 0;
 	end
 	else if  (|ns[1:0]) begin
-		cnt <= cnt+1;
+		cnt <= (cnt+1)%4;
 	end
 	else begin
 		cnt <= 0;

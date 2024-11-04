@@ -20,7 +20,7 @@ reg [7:0] med_sobel_e_wait_r[15:0];
 
 wire [7:0] out_data_w;
 reg [16:0] out_data_wait_r;
-reg [5:0]  cnt;
+reg [4:0]  cnt;
 reg [2:0] cs, ns;
 
 reg [7:0] data_a_r;
@@ -36,7 +36,7 @@ reg [7:0] data_i_r;
 reg med_sobel_r;
 
 reg      out_valid_r;
-
+reg      out_done_r;
 wire [10:0] sobel_data_w;
 wire [10:0] sobel_out_data_w;
 wire [1:0] angle_w;
@@ -54,7 +54,7 @@ genvar i;
 // ---------------------------------------------------------------------------
 // ---- Add your own wire data assignments here if needed ---- //
 wire start_compare_w = cnt[1:0] == 1;
-assign o_done = ~med_sobel_r ? cnt == 23 : cnt == 35;
+assign o_done = out_done_r;
 
 assign o_out_valid = out_valid_r;
 assign o_out_data  = out_valid_r ? (~med_sobel_r ? {6'b000000,out_data_w} : {3'b000,sobel_out_data_w}) : 0;
@@ -173,7 +173,7 @@ always @ (*) begin
 		READ    : ns = cnt == 7  ? (med_sobel_r ? CALC : OUTPUT) : READ;
 		CALC    : ns = cnt == 19 ?  OUTPUT_SOBEL : CALC;
 		OUTPUT  : ns = cnt == 23 ? IDLE : OUTPUT;
-		OUTPUT_SOBEL  : ns = cnt == 35 ? IDLE : OUTPUT_SOBEL;
+		OUTPUT_SOBEL  : ns = cnt == 3 ? IDLE : OUTPUT_SOBEL;
 		default : ns = IDLE;
 	endcase
 end
@@ -196,10 +196,12 @@ always @ (posedge i_clk or negedge i_rst_n) begin
 	if(~i_rst_n) begin
 		med_sobel_r <= 0;
 		out_valid_r <= 0;
+		out_done_r  <= 0;
 	end
 	else begin
 		med_sobel_r <= cs == IDLE ? i_med_sobel : med_sobel_r;
 		out_valid_r <= ns[2] ? 1 : 0;
+		out_done_r  <= ns[2] ? (~med_sobel_r ? cnt == 22 : cnt == 2) : 0;
 	end
 
 end
@@ -360,6 +362,9 @@ module median_filter_submodule(
 		endcase
 		
 		case({a14_r,a17_r,a47_r}) // 
+			//2'b01: a4 = p7_r;
+			//2'b10: a4 = p1_r;
+			//default : a4 = p4_r;
 			3'b001: begin //3 1 2
 				a4 = p7_r;
 			end
@@ -372,7 +377,7 @@ module median_filter_submodule(
 			3'b110: begin //1 3 2
 				a4 = p7_r;
 			end
-			default: begin // 3'b000
+			default: begin // 3'b000 3'b111
 				a4 = p4_r;
 			end
 		endcase
@@ -703,7 +708,7 @@ reg [7:0] p1_d_r;
 reg [7:0] p9_d_r;
 
 reg [9:0] Gx1, Gy1;
-reg [9:0] Gx2, Gx3, Gy2;
+reg [9:0] Gx2, Gy2;
 always @ (posedge clk or negedge rst) begin
 	if(~rst) begin
 		Gx1 <= 0;
@@ -735,7 +740,6 @@ always @ (posedge clk or negedge rst) begin
 		Gy1_r <= 0;
 		Gx2_r <= 0;
 		Gy2_r <= 0;
-		
 	end else begin
 		Gx1_r <= Gx1_w[9:0]; // + {p8_r,1'b0}
 		Gx2_r <= Gx2_w[9:0]; // + {p2_r,1'b0}
@@ -857,8 +861,6 @@ always @ (posedge clk or negedge rst) begin
 		Gx_mult2_r <= Gx_acc2_1_r[15:0];
 	end
 end
-
-
 
 always @ (*) begin
 	if ({2'b00,Gy_abs_delay[2],7'b0000000} >= Gx_mult1_r)
