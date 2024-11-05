@@ -1,7 +1,7 @@
 1        
 0 ../02_SYN/Netlist/core_syn.sdf_c
 39
-+define+CYCLE=2.27
++define+CYCLE=2.31
 +define+SDF+tb4
 +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 +maxdelays
@@ -113,8 +113,8 @@ ARCH=linux64
 0
 0
 9
-1730703826 ../02_SYN/Netlist/core_syn.sdf
-1730703825 ../02_SYN/Netlist/core_syn.v
+1730803686 ../02_SYN/Netlist/core_syn.sdf
+1730803685 ../02_SYN/Netlist/core_syn.v
 1730624392 ../sram_512x8/sram_512x8.v
 1608252293 /home/raid7_2/course/cvsd/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v
 1730624379 ../00_TESTBED/testbench.v
@@ -128,5 +128,5 @@ ARCH=linux64
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
 1653824934 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a
-1730703919 simv.daidir
+1730803706 simv.daidir
 -1 partitionlib

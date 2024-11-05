@@ -3,7 +3,7 @@
 Report : area
 Design : core
 Version: U-2022.12
-Date   : Mon Nov  4 15:03:45 2024
+Date   : Tue Nov  5 18:48:05 2024
 ****************************************
 
 Library(s) Used:
@@ -12,20 +12,20 @@ Library(s) Used:
     sram_512x8 (File: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db)
 
 Number of ports:                           33
-Number of nets:                          6237
-Number of cells:                         5843
-Number of combinational cells:           4616
-Number of sequential cells:              1220
+Number of nets:                          6272
+Number of cells:                         5748
+Number of combinational cells:           4519
+Number of sequential cells:              1219
 Number of macros/black boxes:               4
-Number of buf/inv:                        689
-Number of references:                     165
+Number of buf/inv:                        648
+Number of references:                     166
 
-Combinational area:              47386.315607
-Buf/Inv area:                     4528.663177
-Noncombinational area:           43078.313889
+Combinational area:              46518.944215
+Buf/Inv area:                     4292.724587
+Noncombinational area:           42823.703796
 Macro/Black Box area:           123791.546875
-Net Interconnect area:          663930.107208
+Net Interconnect area:          658890.073486
 
-Total cell area:                214256.176370
-Total area:                     878186.283578
+Total cell area:                213134.194886
+Total area:                     872024.268372
 1

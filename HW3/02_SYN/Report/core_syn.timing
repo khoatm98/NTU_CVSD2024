@@ -7,15 +7,15 @@ Report : timing
         -max_paths 1
 Design : core
 Version: U-2022.12
-Date   : Mon Nov  4 15:03:45 2024
+Date   : Tue Nov  5 18:48:05 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: conv_inst/data_abc_1_r_reg[2]
+  Startpoint: conv_inst/conv_2_r_reg[6]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: conv_inst/conv_1_r_reg[10]
+  Endpoint: conv_inst/conv_2_r_reg[14]
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -28,33 +28,32 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_clk (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.50       0.50
-  conv_inst/data_abc_1_r_reg[2]/CK (DFFRX2)               0.00       0.50 r
-  conv_inst/data_abc_1_r_reg[2]/Q (DFFRX2)                0.54       1.04 r
-  U4722/Y (NOR2X4)                                        0.15       1.19 f
-  U6265/Y (AOI2BB1X2)                                     0.24       1.43 r
-  U4724/Y (NAND2X8)                                       0.12       1.55 f
-  U4866/Y (NAND2X6)                                       0.11       1.66 r
-  U4864/Y (NAND3X6)                                       0.10       1.76 f
-  U4423/Y (NAND2X6)                                       0.09       1.85 r
-  U4862/Y (NAND2X8)                                       0.10       1.94 f
-  U4872/Y (NAND2X6)                                       0.09       2.03 r
-  U4385/Y (INVX3)                                         0.06       2.10 f
-  U7280/Y (AOI21X1)                                       0.24       2.34 r
-  U4719/Y (AND2X4)                                        0.18       2.52 r
-  conv_inst/conv_1_r_reg[10]/D (DFFRX2)                   0.00       2.52 r
-  data arrival time                                                  2.52
+  conv_inst/conv_2_r_reg[6]/CK (DFFRX2)                   0.00       0.50 r
+  conv_inst/conv_2_r_reg[6]/Q (DFFRX2)                    0.65       1.15 f
+  U6508/Y (NAND2X2)                                       0.23       1.38 r
+  U3774/Y (NAND2X2)                                       0.13       1.51 f
+  U6509/Y (NOR2X4)                                        0.14       1.65 r
+  U6516/Y (OAI2BB1X4)                                     0.20       1.85 r
+  U4953/Y (NAND3X8)                                       0.15       2.00 f
+  U3929/Y (INVX12)                                        0.08       2.08 r
+  U6518/Y (NAND2X8)                                       0.10       2.18 f
+  U3338/Y (NAND2X2)                                       0.13       2.31 r
+  U7550/Y (XOR2X4)                                        0.15       2.46 f
+  U2987/Y (NOR2X6)                                        0.09       2.55 r
+  conv_inst/conv_2_r_reg[14]/D (DFFRX2)                   0.00       2.55 r
+  data arrival time                                                  2.55
 
-  clock i_clk (rise edge)                                 2.27       2.27
-  clock network delay (ideal)                             0.50       2.77
-  clock uncertainty                                      -0.10       2.67
-  conv_inst/conv_1_r_reg[10]/CK (DFFRX2)                  0.00       2.67 r
-  library setup time                                     -0.15       2.52
-  data required time                                                 2.52
+  clock i_clk (rise edge)                                 2.31       2.31
+  clock network delay (ideal)                             0.50       2.81
+  clock uncertainty                                      -0.10       2.71
+  conv_inst/conv_2_r_reg[14]/CK (DFFRX2)                  0.00       2.71 r
+  library setup time                                     -0.16       2.55
+  data required time                                                 2.55
   --------------------------------------------------------------------------
-  data required time                                                 2.52
-  data arrival time                                                 -2.52
+  data required time                                                 2.55
+  data arrival time                                                 -2.55
   --------------------------------------------------------------------------
-  slack (VIOLATED: increase significant digits)                      0.00
+  slack (MET)                                                        0.00
 
 
 1
