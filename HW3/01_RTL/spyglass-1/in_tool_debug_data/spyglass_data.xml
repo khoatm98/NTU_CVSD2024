@@ -1,0 +1,543 @@
+<CWD>/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL</CWD>
+<ENVVAR>
+	<env name="SPYGLASS_SPYAUTH_FILE">
+		<value>/tmp/spyAuthFileList2063651730627705</value>
+	</env>
+	<env name="LD_LIBRARY_PATH">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/Audits:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/adv_lowpower:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/area:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/auto-verify:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/clock:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/constraints:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/cubic_netlist:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft_dsm:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/erc:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/latch:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lint:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lowpower:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/mbist-dft:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/miscellaneous:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/morelint:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/openmore:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/power_est:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/prof:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/rtl2netlist:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/sec:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/simulation:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/spyglass:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc2002:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc2005:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starcad-21:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/timing:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/txv:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme/Parser:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/rme/Parser/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-perl/lib/5.8.3:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-perl/lib/site_perl/5.8.3:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/lib64/tls:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-tcl/lib/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/python/Linux4/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-tcl/lib/Linux4::/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-qt/lib/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-nlview/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-boost/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-thirdparty/Linux4:/depot/gcc-4.8.3-patch/lib64:/usr/lib64:/usr/X11R6/lib64:/usr/local/lib64:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-vcst/vcs-mx/linux64/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/oa/Linux4:::/home/raid7_4/raid1_1/linux/novas/verdi/cur/share/PLI/IUS/LINUX/:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/oa/Linux4:/lib64:/usr/cad/cadence/ASSURA/cur/tools/assura/lib:/usr/cad/cadence/ASSURA/cur/tools/dsm/lib:/usr/cad/cadence/ASSURA/cur/tools/lib:/usr/cad/cadence/CONFRML/cur/tools/lib:/usr/cad/cadence/IC/cur/tools/lib:/usr/cad/innovus/cur//tools/tlfUtil/lib:/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64:/usr/lib64:/usr/local/lib64:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared::/usr/lib:/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/zebulib</value>
+	</env>
+	<env name="REMOTEHOST">
+		<value>xdn175o69.ee.ntu.edu.tw</value>
+	</env>
+	<env name="MANPATH">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/power_est/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/morelint/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lowpower/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lint/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/latch/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/erc/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/constraints/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/clock/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/auto-verify/sgtcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-tcl/man:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/help_doc/man:/usr/cad/synopsys/synthesis/cur/doc/syn/man:/usr/cad/synopsys/vcs/2022.06//doc/man</value>
+	</env>
+	<env name="SYNOPSYS_LC_ROOT">
+		<value>/usr/cad/synopsys/synthesis/cur</value>
+	</env>
+	<env name="XDG_SESSION_ID">
+		<value>32776</value>
+	</env>
+	<env name="TMIARCH">
+		<value>RH_64</value>
+	</env>
+	<env name="HOSTNAME">
+		<value>cad27</value>
+	</env>
+	<env name="XLOCALEDIR">
+		<value>/usr/cad/synopsys/astro/cur/etc/locale</value>
+	</env>
+	<env name="SYNOPSYS_TMAX">
+		<value>/usr/cad/synopsys/tmax/cur</value>
+	</env>
+	<env name="SELINUX_ROLE_REQUESTED">
+		<value/>
+	</env>
+	<env name="XKEYSYMDB">
+		<value>/usr/cad/synopsys/astro/cur/etc/XKeysymDB</value>
+	</env>
+	<env name="SKIP_PLATFORM_CHECK">
+		<value>1</value>
+	</env>
+	<env name="SHELL">
+		<value>/bin/tcsh</value>
+	</env>
+	<env name="TERM">
+		<value>xterm</value>
+	</env>
+	<env name="HOST">
+		<value>cad27</value>
+	</env>
+	<env name="SPYGLASS_DW_PATH">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/dw_support</value>
+	</env>
+	<env name="SSH_CLIENT">
+		<value>140.112.175.69 52676 22</value>
+	</env>
+	<env name="TMPDIR">
+		<value/>
+	</env>
+	<env name="LD_PRELOAD">
+		<value/>
+	</env>
+	<env name="SELINUX_USE_CURRENT_RANGE">
+		<value/>
+	</env>
+	<env name="CDS_LOAD_ENV">
+		<value>CSF</value>
+	</env>
+	<env name="SPYGLASS_IPC_SERVER_APP_INFO">
+		<value>/tmp/.SPYGLASS_IPC_SERVER_APP_INFO@@705</value>
+	</env>
+	<env name="QTDIR">
+		<value>/usr/lib64/qt-3.3</value>
+	</env>
+	<env name="MGC_LOCATION_MAP">
+		<value>NO_MAP</value>
+	</env>
+	<env name="HSP_GCC_VERSION">
+		<value>9.2.0</value>
+	</env>
+	<env name="QTINC">
+		<value>/usr/lib64/qt-3.3/include</value>
+	</env>
+	<env name="SSH_TTY">
+		<value>/dev/pts/36</value>
+	</env>
+	<env name="LC_ALL">
+		<value/>
+	</env>
+	<env name="QT_GRAPHICSSYSTEM_CHECKED">
+		<value>1</value>
+	</env>
+	<env name="SPAPI_AHDL_INCLUDE">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/include</value>
+	</env>
+	<env name="SG_SPYGLASS_DW_PATH">
+		<value>1</value>
+	</env>
+	<env name="USER">
+		<value>r2k41036</value>
+	</env>
+	<env name="GROUP">
+		<value>user</value>
+	</env>
+	<env name="HSP_HOME">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice</value>
+	</env>
+	<env name="LS_COLORS">
+		<value>rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:</value>
+	</env>
+	<env name="TCL_LIBRARY">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/multi-tcl/lib/tcl</value>
+	</env>
+	<env name="HOSTTYPE">
+		<value>x86_64-linux</value>
+	</env>
+	<env name="installdir">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice</value>
+	</env>
+	<env name="ENCOUNTER">
+		<value>/usr/cad/innovus/cur/tools/fe</value>
+	</env>
+	<env name="SNPSLMD_LICENSE_FILE">
+		<value>26585@lshc</value>
+	</env>
+	<env name="SPYGLASS_PLATFORM">
+		<value>Linux4</value>
+	</env>
+	<env name="CMIARCH">
+		<value>RH_64</value>
+	</env>
+	<env name="SPYGLASS_TMPDIR">
+		<value>/tmp</value>
+	</env>
+	<env name="PATH">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/../dotty/scripts:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/../dotty/bin/Linux4:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/usr/cad/synopsys/vcs/2022.06//amd64/bin:/usr/cad/synopsys/spyglass/2022.06//SPYGLASS_HOME/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64:/usr/bin:/usr/ucb/bin:/usr/cad/innovus/cur/tools/celtic/bin:/usr/cad/innovus/cur/tools/plato/bin:/usr/cad/innovus/cur/tools/dfII/bin:/usr/cad/innovus/cur/tools/bin:/usr/cad/innovus/cur//tools/tlfUtil/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/mentor/calibre/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/cad/synopsys/astro/cur/bin/AMD.64:/usr/spring_soft/verdi/cur/bin:/usr/spring_soft/verdi/cur/nLint/bin:/usr/cad/synopsys/primetime/2022.12/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/mentor/calibre/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/cadence/SPECTRE/cur/tools/dfII/bin:/usr/cad/cadence/SPECTRE/cur/tools/bin:/usr/cad/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/JASPER/cur/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/RC/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit/bin:bin.linux:/usr/cad/cadence/SPB/cur/tools/specctra/bin:/usr/cad/cadence/SPB/cur/tools/pcb/bin:/usr/cad/cadence/SPB/cur/tools/dfII/bin:/usr/cad/cadence/SPB/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/CCD/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/raid7_4/raid1_1/linux/novas/verdi/cur/bin</value>
+	</env>
+	<env name="MAIL">
+		<value>/var/spool/mail/r2k41036</value>
+	</env>
+	<env name="SAVE_CATALOG">
+		<value>PATH</value>
+	</env>
+	<env name="VERDI_HOME">
+		<value>/usr/cad/synopsys/verdi/cur</value>
+	</env>
+	<env name="PWD">
+		<value>/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/01_RTL</value>
+	</env>
+	<env name="OAHOME">
+		<value>/usr/cad/cadence/oa_v22.04.073</value>
+	</env>
+	<env name="CMD_FILE_PATH">
+		<value>/tmp/cmdfile_206365</value>
+	</env>
+	<env name="VCS_HOME">
+		<value>/usr/cad/synopsys/vcs/2022.06/</value>
+	</env>
+	<env name="SG_CONSOLE_SE">
+		<value>1</value>
+	</env>
+	<env name="LANG">
+		<value/>
+	</env>
+	<env name="VERPLEX_HOME">
+		<value>/usr/cad/cadence/CONFRML/cur</value>
+	</env>
+	<env name="OA_HOME">
+		<value>/usr/cad/innovus/cur/oa</value>
+	</env>
+	<env name="SYNTHESIS">
+		<value>/usr/cad/synopsys/synthesis/cur</value>
+	</env>
+	<env name="SPYGLASS_IPC_SERVER_APP_PID">
+		<value>206608</value>
+	</env>
+	<env name="SELINUX_LEVEL_REQUESTED">
+		<value/>
+	</env>
+	<env name="SPG_INTRNL_INVCN">
+		<value>1</value>
+	</env>
+	<env name="VCS_CC">
+		<value>gcc</value>
+	</env>
+	<env name="LM_LICENSE_FILE">
+		<value>26585@lstc:5280@lshc:5280@lstc:5280@lstn:1717@lstc:</value>
+	</env>
+	<env name="CDS_Netlisting_Mode">
+		<value>Analog</value>
+	</env>
+	<env name="SPYGLASS_USE_SNPSMEM">
+		<value>yes</value>
+	</env>
+	<env name="HOME">
+		<value>/home/raid7_2/user12/r2k41036</value>
+	</env>
+	<env name="SHLVL">
+		<value>5</value>
+	</env>
+	<env name="HSP_GCC">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin/gcc -m64 </value>
+	</env>
+	<env name="OSTYPE">
+		<value>linux</value>
+	</env>
+	<env name="MGC_HOME">
+		<value>/usr/mentor/calibre/cur</value>
+	</env>
+	<env name="SNPS_64">
+		<value>1</value>
+	</env>
+	<env name="VENDOR">
+		<value>unknown</value>
+	</env>
+	<env name="MGC_TMPDIR">
+		<value>/tmp</value>
+	</env>
+	<env name="HSP_SIGMA_AMP">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64/python/AVA/ava</value>
+	</env>
+	<env name="SNPS_PLATFORM">
+		<value>linux64</value>
+	</env>
+	<env name="LOGNAME">
+		<value>r2k41036</value>
+	</env>
+	<env name="MACHTYPE">
+		<value>x86_64</value>
+	</env>
+	<env name="QTLIB">
+		<value>/usr/lib64/qt-3.3/lib</value>
+	</env>
+	<env name="SPYGLASS_HOME">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME</value>
+	</env>
+	<env name="SPYGLASS_ENABLE_SYS_IPC_SERVER">
+		<value>yes</value>
+	</env>
+	<env name="SPYGLASS_TCL_SHELL">
+		<value>ok</value>
+	</env>
+	<env name="SSH_CONNECTION">
+		<value>140.112.175.69 52676 140.112.20.70 22</value>
+	</env>
+	<env name="NEOCKTHOME">
+		<value>/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit</value>
+	</env>
+	<env name="CDS_LIC_FILE">
+		<value>/usr/cad/cadence/IC/cur/share/license/license.dat</value>
+	</env>
+	<env name="mraarch">
+		<value>linux_64</value>
+	</env>
+	<env name="SPYGLASS_LD_PRELOAD">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/libreplacemalloc.so</value>
+	</env>
+	<env name="LESSOPEN">
+		<value>||/usr/bin/lesspipe.sh %s</value>
+	</env>
+	<env name="SHLIB_PATH">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/oa/Linux4:::/home/raid7_4/raid1_1/linux/novas/verdi/cur/share/PLI/IUS/LINUX/:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/lib/oa/Linux4:/lib64:/usr/cad/cadence/ASSURA/cur/tools/assura/lib:/usr/cad/cadence/ASSURA/cur/tools/dsm/lib:/usr/cad/cadence/ASSURA/cur/tools/lib:/usr/cad/cadence/CONFRML/cur/tools/lib:/usr/cad/cadence/IC/cur/tools/lib:/usr/cad/innovus/cur//tools/tlfUtil/lib:/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64:/usr/lib64:/usr/local/lib64:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared::/usr/lib:/lib</value>
+	</env>
+	<env name="ARCH">
+		<value>linux64</value>
+	</env>
+	<env name="SPYGLASS_LICENSE_QUEUING_INTERVAL">
+		<value>24000 10</value>
+	</env>
+	<env name="CDPL_HOME">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/cdpl</value>
+	</env>
+	<env name="DISPLAY">
+		<value>localhost:20.0</value>
+	</env>
+	<env name="XDG_RUNTIME_DIR">
+		<value>/run/user/1340</value>
+	</env>
+	<env name="SPG_RANDOM">
+		<value>206199</value>
+	</env>
+	<env name="SYN_MAN_DIR">
+		<value>/usr/cad/synopsys/vcs/2022.06//doc/man</value>
+	</env>
+	<env name="SPG_CMD_PARSE_TO_GET_SCREEN_OUT_SETTING">
+		<value>no</value>
+	</env>
+	<env name="ASSURAHOME">
+		<value>/usr/cad/cadence/ASSURA/cur</value>
+	</env>
+	<env name="SPYGLASS_CHECKER_PID_FILE_VAR">
+		<value>/tmp/.SPYGLASS_CHECKER_PID_FILE@@206365705</value>
+	</env>
+	<env name="SAVE_PATH">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj:/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/usr/cad/synopsys/vcs/2022.06//amd64/bin:/usr/cad/synopsys/spyglass/2022.06//SPYGLASS_HOME/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64:/usr/bin:/usr/ucb/bin:/usr/cad/innovus/cur/tools/celtic/bin:/usr/cad/innovus/cur/tools/plato/bin:/usr/cad/innovus/cur/tools/dfII/bin:/usr/cad/innovus/cur/tools/bin:/usr/cad/innovus/cur//tools/tlfUtil/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/mentor/calibre/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/cad/synopsys/astro/cur/bin/AMD.64:/usr/spring_soft/verdi/cur/bin:/usr/spring_soft/verdi/cur/nLint/bin:/usr/cad/synopsys/primetime/2022.12/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/mentor/calibre/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/cadence/SPECTRE/cur/tools/dfII/bin:/usr/cad/cadence/SPECTRE/cur/tools/bin:/usr/cad/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/JASPER/cur/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/RC/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit/bin:bin.linux:/usr/cad/cadence/SPB/cur/tools/specctra/bin:/usr/cad/cadence/SPB/cur/tools/pcb/bin:/usr/cad/cadence/SPB/cur/tools/dfII/bin:/usr/cad/cadence/SPB/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/CCD/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/raid7_4/raid1_1/linux/novas/verdi/cur/bin</value>
+	</env>
+	<env name="_">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/obj/check.Linux4</value>
+	</env>
+	<env name="CONCORDE_HOME">
+		<value>DUMMY_CONCORDE_HOME</value>
+	</env>
+	<env name="FLEXLM_BORROWFILE">
+		<value>/home/raid7_2/user12/r2k41036/.cad27-borrow.txt</value>
+	</env>
+	<env name="METHODOLOGY_HOME">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read</value>
+	</env>
+</ENVVAR>
+<ENVFILE>./spyglass-1/core/Design_Read//.sg.env</ENVFILE>
+<SPG_VERSION>SpyGlass_vT-2022.06</SPG_VERSION>
+<MACHINE name="cad27" version="#1 SMP Mon Oct 19 16:18:59 UTC 2020"/>
+<Options>
+	<Opt name="--template_info">
+		<value>Design_Read</value>
+	</Opt>
+	<Opt name="-ignoredu">
+		<value>sram_512x8</value>
+	</Opt>
+	<Opt name="-lib">
+		<value>WORK=&gt;./spyglass-1/core/WORK</value>
+		<value>SYNOPSYS=&gt;/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/vhdl_libs/Linux4/SYNOPSYS</value>
+	</Opt>
+	<Opt name="-m">
+		<value>SpyGlass::Compatibility::v2_7_3</value>
+		<value>SpyGlass::Compatibility::v2_7_3</value>
+		<value>SpyGlass::Compatibility::v2_7_3</value>
+	</Opt>
+	<Opt name="-policy">
+		<value>none</value>
+	</Opt>
+	<Opt name="-report">
+		<value>moresimple</value>
+		<value>runsummary</value>
+	</Opt>
+	<Opt name="-template">
+		<value>Design_Read</value>
+	</Opt>
+	<Opt name="-top">
+		<value>core</value>
+	</Opt>
+	<Opt name="-verilog_files">
+		<value>define.v</value>
+		<value>core.v</value>
+		<value>conv.v</value>
+		<value>median.v</value>
+	</Opt>
+	<Opt name="--stime">
+		<value>05:55:04 PM on Nov 03 2024</value>
+	</Opt>
+	<Opt name="-blackboxdir">
+		<value>inout</value>
+	</Opt>
+	<Opt name="-debuglevel">
+		<value>0</value>
+	</Opt>
+	<Opt name="-gateslibtype">
+		<value>0</value>
+	</Opt>
+	<Opt name="-logfile">
+		<value>./spyglass-1/core/Design_Read/spyglass.log</value>
+	</Opt>
+	<Opt name="-mthresh">
+		<value>4096</value>
+	</Opt>
+	<Opt name="-projectwdir">
+		<value>./spyglass-1</value>
+	</Opt>
+	<Opt name="-sortmethod">
+		<value>du</value>
+	</Opt>
+	<Opt name="-templatedir">
+		<value>/home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read</value>
+	</Opt>
+	<Opt name="-vdbfile">
+		<value>./spyglass-1/core/Design_Read/spyglass.vdb</value>
+	</Opt>
+	<Opt name="-wdir">
+		<value>./spyglass-1/core/Design_Read</value>
+	</Opt>
+	<Opt name="-work">
+		<value>WORK</value>
+	</Opt>
+	<Opt name="-64bit">
+		<value>yes</value>
+	</Opt>
+	<Opt name="--end_of_user_arg">
+		<value>yes</value>
+	</Opt>
+	<Opt name="-batch">
+		<value>yes</value>
+	</Opt>
+	<Opt name="-inferblackbox">
+		<value>yes</value>
+	</Opt>
+	<Opt name="-nl">
+		<value>yes</value>
+	</Opt>
+	<Opt name="-mixed">
+		<value>yes</value>
+	</Opt>
+</Options>
+<TOP_MODULE>core</TOP_MODULE>
+<GOAL_NAME>Design_Read</GOAL_NAME>
+<FILES/>
+<SPG_LOG>./spyglass-1/core/Design_Read/spyglass.log</SPG_LOG>
+<CMD_STRING> -batch -project spyglass-1.prj -designread  -64bit</CMD_STRING>
+<BlackBox>
+	<BBOX>
+		<SEVERITY>INFO</SEVERITY>
+		<SEV_CODE>0</SEV_CODE>
+		<CAUSE>sram_512x8,Ignore specification applied on design unit using &apos;ignoredu&apos; option</CAUSE>
+		<ELABNAME>sram_512x8</ELABNAME>
+		<RTLNAME>sram_512x8</RTLNAME>
+	</BBOX>
+</BlackBox>
+<PEAK_MEMORY>3657608</PEAK_MEMORY>
+<Parameters>
+	<Param name="-allow_clock_on_output_port">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-check_clock_group_violations">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-debug_proc">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-force_genclk_for_txv">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-library_gen_clock_naming">
+		<DefaultValue>yes</DefaultValue>
+		<Value>yes</Value>
+	</Param>
+	<Param name="-netlist_clock_polarity">
+		<DefaultValue>yes</DefaultValue>
+		<Value>yes</Value>
+	</Param>
+	<Param name="-populate_comboelements_for_minmax_in_fromto">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-post_clock_group_population">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-preserve_path">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-pt">
+		<DefaultValue>yes</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-show_all_sdc_violations">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-show_sdc_progress">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-suppress_sdc_violation_in_abstract">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-tc_cache_empty_collections">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-tc_disable_caching">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-tc_disable_ignored_command_dump">
+		<DefaultValue>yes</DefaultValue>
+		<Value>yes</Value>
+	</Param>
+	<Param name="-tc_enable_sdc_393">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+	<Param name="-tc_ignored_commands">
+		<DefaultValue>unspecified</DefaultValue>
+		<Value>unspecified</Value>
+	</Param>
+	<Param name="-tc_stop_parsing_ignored_commands">
+		<DefaultValue>yes</DefaultValue>
+		<Value>yes</Value>
+	</Param>
+	<Param name="-truncate_through">
+		<DefaultValue>yes</DefaultValue>
+		<Value>yes</Value>
+	</Param>
+	<Param name="-write_sdc">
+		<DefaultValue>no</DefaultValue>
+		<Value>no</Value>
+	</Param>
+</Parameters>
+<RULES>
+	<Rule name="ElabSummary">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>1</Count>
+	</Rule>
+	<Rule name="ReportIgnoreSummary">
+		<Time>0</Time>
+		<Memory>40</Memory>
+		<Count>1</Count>
+	</Rule>
+	<Rule name="InfoAnalyzeBBox">
+		<Time>0</Time>
+		<Memory>16</Memory>
+		<Count>1</Count>
+	</Rule>
+	<Rule name="DetectTopDesignUnits">
+		<Time>0</Time>
+		<Memory>-2568</Memory>
+		<Count>1</Count>
+	</Rule>
+</RULES>
+<RUN_MODE/>
+<REPORTS>
+	<Report name="moresimple">
+		<value>./spyglass-1/core/Design_Read/spyglass_reports/moresimple.rpt</value>
+	</Report>
+	<Report/>
+	<Report name="no_msg_reporting_rules">
+		<value>./spyglass-1/core/Design_Read/spyglass_reports/no_msg_reporting_rules.rpt</value>
+	</Report>
+</REPORTS>
+<VIOL_SUMMARY>
+	<FATAL>0</FATAL>
+	<ERROR>0</ERROR>
+	<WARNING>0</WARNING>
+	<INFO>4</INFO>
+</VIOL_SUMMARY>
+<Exit_code>0</Exit_code>
+<Total_time>77125</Total_time>

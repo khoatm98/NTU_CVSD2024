@@ -1,0 +1,1 @@
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.data_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '156')}

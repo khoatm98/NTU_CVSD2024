@@ -1,0 +1,40 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Fri Nov  8 23:34:21 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     13
+    Unconnected ports (LINT-28)                                    12
+    Constant outputs (LINT-52)                                      1
+
+Cells                                                               4
+    Cells do not drive (LINT-1)                                     4
+
+Nets                                                                2
+    Unloaded nets (LINT-2)                                          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'IOTDF', cell 'C1195' does not drive any nets. (LINT-1)
+Warning: In design 'IOTDF', cell 'B_13' does not drive any nets. (LINT-1)
+Warning: In design 'top2maxmin', cell 'C3137' does not drive any nets. (LINT-1)
+Warning: In design 'compare_128bit', cell 'C613' does not drive any nets. (LINT-1)
+Warning: In design 'IOTDF', net 'clk_f2' driven by pin 'u_clock_gating/gated_clk' has no loads. (LINT-2)
+Warning: In design 'IOTDF', net 'u_top2maxmin/done2_w' driven by pin 'u_top2maxmin/u_compare_128bit_inst2/done' has no loads. (LINT-2)
+Warning: In design 'key_gen', port 'main_key[56]' is not connected to any nets. (LINT-28)
+Warning: In design 'key_gen', port 'main_key[48]' is not connected to any nets. (LINT-28)
+Warning: In design 'key_gen', port 'main_key[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'key_gen', port 'main_key[32]' is not connected to any nets. (LINT-28)
+Warning: In design 'key_gen', port 'main_key[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'key_gen', port 'main_key[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'key_gen', port 'main_key[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'key_gen', port 'main_key[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'top2maxmin', port 'round[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'top2maxmin', port 'round[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'top2maxmin', port 'round[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'top2maxmin', port 'round[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'IOTDF', output port 'busy' is connected directly to 'logic 0'. (LINT-52)
+1

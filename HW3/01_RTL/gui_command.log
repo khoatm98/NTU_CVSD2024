@@ -1,0 +1,66 @@
+read_file -type verilog {define.v core.v conv.v median.v}
+# Started at 17:55:30, Completed at 17:55:32 (Elapsed time = 00:00:01.989)
+
+set_option top core
+# Started at 17:55:39, Completed at 17:55:39 (Elapsed time = 00:00:00.000)
+
+remove_option ignoredu
+# Started at 17:56:02, Completed at 17:56:03 (Elapsed time = 00:00:00.019)
+
+set_option ignoredu sram_512x8
+# Started at 17:56:03, Completed at 17:56:03 (Elapsed time = 00:00:00.009)
+
+current_goal Design_Read -top core
+# Started at 17:56:05, Completed at 17:56:06 (Elapsed time = 00:00:01.019)
+
+current_goal lint/lint_rtl -top core
+# Started at 18:02:01, Completed at 18:02:05 (Elapsed time = 00:00:05.200)
+
+run_goal
+# Started at 18:02:05, Completed at 18:02:27 (Elapsed time = 00:00:21.500)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 18:02:27, Completed at 18:02:33 (Elapsed time = 00:00:06.089)
+
+run_goal
+# Started at 18:02:33, Completed at 18:02:46 (Elapsed time = 00:00:13.119)
+
+current_goal lint/lint_rtl -top core
+# Started at 18:02:46, Completed at 18:02:52 (Elapsed time = 00:00:05.820)
+
+run_goal
+# Started at 18:10:10, Completed at 18:11:23 (Elapsed time = 00:00:26.710)
+
+current_goal lint/lint_rtl_enhanced -top core
+# Started at 18:11:27, Completed at 18:11:36 (Elapsed time = 00:00:11.189)
+
+run_goal
+# Started at 18:33:00, Completed at 18:33:26 (Elapsed time = 00:00:25.870)
+
+gui_select_message -rule W164b -msg {LHS: 'Gx_mult1_r' width 19 is greater than RHS: '{(Gx_acc1_1_r + Gx_acc2_1_r[15:8] ) ,Gx_acc2_1_r[7:0] }' width 18 in assignment [Hierarchy: ':core:median_sobel_inst@median:u_sobel_gradient_submodule@sobel_gradient']}
+# Started at 18:34:47, Completed at 18:34:47 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 18:44:59, Completed at 18:45:26 (Elapsed time = 00:00:26.330)
+
+run_goal
+# Started at 20:07:11, Completed at 20:07:39 (Elapsed time = 00:00:24.909)
+
+run_goal
+# Started at 14:48:17, Completed at 14:48:44 (Elapsed time = 00:00:25.180)
+
+run_goal
+# Started at 14:49:41, Completed at 14:50:11 (Elapsed time = 00:00:26.620)
+
+current_goal lint/lint_rtl -top core
+# Started at 14:50:13, Completed at 14:50:22 (Elapsed time = 00:00:11.000)
+
+run_goal
+# Started at 14:50:24, Completed at 14:50:40 (Elapsed time = 00:00:14.490)
+
+current_goal Design_Read -top core
+# Started at 15:20:22, Completed at 15:20:25 (Elapsed time = 00:00:02.030)
+
+link_design -force
+# Started at 15:20:25, Completed at 15:20:32 (Elapsed time = 00:00:03.369)
+

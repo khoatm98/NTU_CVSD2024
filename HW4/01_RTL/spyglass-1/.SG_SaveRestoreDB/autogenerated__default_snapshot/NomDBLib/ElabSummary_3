@@ -1,0 +1,40 @@
+================================================================================
+Elaborated Name: 'key_gen'
+    (RTL Design Unit name: 'key_gen', IOTDF.v:180)
+     Parameters (Total: 0)
+     Instances (Total: 1): IOTDF.u_key_gen 
+
+================================================================================
+
+Elaborated Name: 'ciptext_gen'
+    (RTL Design Unit name: 'ciptext_gen', IOTDF.v:260)
+     Parameters (Total: 0)
+     Instances (Total: 1): IOTDF.u_ciptext_gen 
+
+================================================================================
+
+Elaborated Name: 'sbox'
+    (RTL Design Unit name: 'sbox', IOTDF.v:325)
+     Parameters (Total: 0)
+     Instances (Total: 1): IOTDF.u_ciptext_gen.u_sbox 
+
+================================================================================
+
+Elaborated Name: 'crc_calc'
+    (RTL Design Unit name: 'crc_calc', IOTDF.v:463)
+     Parameters (Total: 0)
+     Instances (Total: 1): IOTDF.u_crc_calc 
+
+================================================================================
+
+Elaborated Name: 'IOTDF'
+    (RTL Design Unit name: 'IOTDF', IOTDF.v:2)
+     Parameters (Total: 7)
+         S_RESET    = 0 (default: 3'd0)
+         S_READ     = 1 (default: 3'd1)
+         S_DES_ENC  = 2 (default: 3'd2)
+         S_DES_DEC  = 3 (default: 3'd3)
+         S_CRC      = 4 (default: 3'd4)
+         S_TOP_MAX  = 5 (default: 3'd5)
+         S_LAST_MIN = 6 (default: 3'd6)
+================================================================================

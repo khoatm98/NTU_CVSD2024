@@ -1,0 +1,6 @@
+{"vcs1":{"timestamp_begin":1730624808.371045092, "rt":1.42, "ut":0.11, "st":0.08}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1730624807.200176003}
+{"VCS_COMP_START_TIME": 1730624807.200176003}
+{"VCS_COMP_END_TIME": 1730624809.953460150}
+{"VCS_USER_OPTIONS": "-f rtl_03.f -full64 -R -debug_access+all +v2k +maxdelays -negdelay +neg_tchk +define+SDF+tb4 +define+CYCLE=2.29 -P /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a"}
+{"vcs1": {"peak_mem": 313428}}

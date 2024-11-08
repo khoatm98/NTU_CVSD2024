@@ -1,0 +1,60 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : core
+Version: U-2022.12
+Date   : Mon Nov  4 15:03:45 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: conv_inst/data_abc_1_r_reg[2]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: conv_inst/conv_1_r_reg[10]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  conv_inst/data_abc_1_r_reg[2]/CK (DFFRX2)               0.00       0.50 r
+  conv_inst/data_abc_1_r_reg[2]/Q (DFFRX2)                0.54       1.04 r
+  U4722/Y (NOR2X4)                                        0.15       1.19 f
+  U6265/Y (AOI2BB1X2)                                     0.24       1.43 r
+  U4724/Y (NAND2X8)                                       0.12       1.55 f
+  U4866/Y (NAND2X6)                                       0.11       1.66 r
+  U4864/Y (NAND3X6)                                       0.10       1.76 f
+  U4423/Y (NAND2X6)                                       0.09       1.85 r
+  U4862/Y (NAND2X8)                                       0.10       1.94 f
+  U4872/Y (NAND2X6)                                       0.09       2.03 r
+  U4385/Y (INVX3)                                         0.06       2.10 f
+  U7280/Y (AOI21X1)                                       0.24       2.34 r
+  U4719/Y (AND2X4)                                        0.18       2.52 r
+  conv_inst/conv_1_r_reg[10]/D (DFFRX2)                   0.00       2.52 r
+  data arrival time                                                  2.52
+
+  clock i_clk (rise edge)                                 2.27       2.27
+  clock network delay (ideal)                             0.50       2.77
+  clock uncertainty                                      -0.10       2.67
+  conv_inst/conv_1_r_reg[10]/CK (DFFRX2)                  0.00       2.67 r
+  library setup time                                     -0.15       2.52
+  data required time                                                 2.52
+  --------------------------------------------------------------------------
+  data required time                                                 2.52
+  data arrival time                                                 -2.52
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+1

@@ -1,0 +1,291 @@
+read_file -type verilog IOTDF.v
+# Started at 01:11:47, Completed at 01:11:55 (Elapsed time = 00:00:02.660)
+
+current_goal Design_Read -alltop
+# Started at 01:11:57, Completed at 01:11:58 (Elapsed time = 00:00:00.960)
+
+link_design -force
+# Started at 01:12:02, Completed at 01:12:11 (Elapsed time = 00:00:05.830)
+
+gui_select_message -rule STX_VE_479 -msg {Syntax error near ( end ). Please use 'set_option enableV05 yes' to support Verilog-2005 construct ( Generate for loop with unnamed generate block )}
+# Started at 01:12:14, Completed at 01:12:14 (Elapsed time = 00:00:00.000)
+
+link_design -force
+# Started at 01:13:44, Completed at 01:13:56 (Elapsed time = 00:00:07.539)
+
+current_goal lint/lint_rtl -alltop
+# Started at 01:14:03, Completed at 01:14:12 (Elapsed time = 00:00:05.399)
+
+run_goal
+# Started at 01:14:12, Completed at 01:14:36 (Elapsed time = 00:00:20.540)
+
+current_goal lint/lint_rtl_enhanced -alltop
+# Started at 01:14:36, Completed at 01:14:43 (Elapsed time = 00:00:05.899)
+
+run_goal
+# Started at 01:14:43, Completed at 01:14:55 (Elapsed time = 00:00:12.160)
+
+current_goal lint/lint_rtl -alltop
+# Started at 01:14:55, Completed at 01:15:01 (Elapsed time = 00:00:05.640)
+
+current_goal lint/lint_rtl_enhanced -alltop
+# Started at 01:15:10, Completed at 01:15:20 (Elapsed time = 00:00:06.349)
+
+gui_select_message -rule ReserveName -msg {Reserved name 'out' used}
+# Started at 01:15:29, Completed at 01:15:29 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 01:17:28, Completed at 01:17:57 (Elapsed time = 00:00:26.210)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '151')}
+# Started at 01:20:05, Completed at 01:20:05 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule W263 -msg {Case label (RESET) width (1) does not match selector (cs) width (4).[Hierarchy: ':IOTDF']}
+# Started at 01:20:27, Completed at 01:20:27 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 01:21:13, Completed at 01:21:43 (Elapsed time = 00:00:25.500)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '151')}
+# Started at 01:21:47, Completed at 01:21:47 (Elapsed time = 00:00:00.000)
+
+current_goal Design_Read -alltop
+# Started at 01:22:37, Completed at 01:22:41 (Elapsed time = 00:00:02.500)
+
+link_design -force
+# Started at 01:22:41, Completed at 01:22:51 (Elapsed time = 00:00:07.890)
+
+current_goal lint/lint_rtl_enhanced -alltop
+# Started at 01:22:55, Completed at 01:23:05 (Elapsed time = 00:00:06.550)
+
+run_goal
+# Started at 01:23:05, Completed at 01:23:22 (Elapsed time = 00:00:17.470)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '151')}
+# Started at 01:25:07, Completed at 01:25:07 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '151')}
+# Started at 01:27:00, Completed at 01:27:00 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 01:28:35, Completed at 01:28:58 (Elapsed time = 00:00:22.030)
+
+gui_select_message -rule STX_VE_606 -msg {Identifier ( RESET ) not declared in current scope}
+# Started at 01:29:03, Completed at 01:29:03 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 01:30:00, Completed at 01:30:26 (Elapsed time = 00:00:20.640)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '151')}
+# Started at 01:30:54, Completed at 01:30:54 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 01:33:45, Completed at 01:34:12 (Elapsed time = 00:00:20.890)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.L_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.u_ciptext_gen.\R_ready_r_reg[0] .EN' (File Name: 'IOTDF.v' ,Line no.: '298')}
+# Started at 01:34:25, Completed at 01:34:25 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 01:35:15, Completed at 01:35:42 (Elapsed time = 00:00:20.560)
+
+gui_select_message -rule W240 -msg {Input 'main_key[56, 48, ...]' declared but not read.[Hierarchy: ':IOTDF:u_key_gen@key_gen']}
+# Started at 01:36:18, Completed at 01:36:18 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 01:37:53, Completed at 01:38:22 (Elapsed time = 00:00:21.839)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '151')}
+# Started at 01:38:27, Completed at 01:38:27 (Elapsed time = 00:00:00.000)
+
+current_goal lint/lint_rtl -alltop
+# Started at 01:48:06, Completed at 01:48:17 (Elapsed time = 00:00:08.589)
+
+run_goal
+# Started at 01:48:17, Completed at 01:48:47 (Elapsed time = 00:00:23.509)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '156')}
+# Started at 01:48:51, Completed at 01:48:51 (Elapsed time = 00:00:00.000)
+
+current_goal lint/lint_rtl_enhanced -alltop
+# Started at 01:50:43, Completed at 01:50:59 (Elapsed time = 00:00:09.020)
+
+run_goal
+# Started at 01:51:04, Completed at 01:51:33 (Elapsed time = 00:00:23.329)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_key_gen.pc2_in_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '156')}
+# Started at 01:52:21, Completed at 01:52:21 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 01:53:27, Completed at 01:53:56 (Elapsed time = 00:00:24.780)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_crc_calc.crcIn[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '156')}
+# Started at 01:54:00, Completed at 01:54:00 (Elapsed time = 00:00:00.020)
+
+run_goal
+# Started at 01:54:14, Completed at 01:54:45 (Elapsed time = 00:00:25.550)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.data_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '156')}
+# Started at 01:54:57, Completed at 01:54:57 (Elapsed time = 00:00:00.019)
+
+current_goal Design_Read -alltop
+# Started at 01:56:21, Completed at 01:56:25 (Elapsed time = 00:00:02.719)
+
+set_option top IOTDF
+# Started at 01:56:44, Completed at 01:56:44 (Elapsed time = 00:00:00.050)
+
+link_design -force
+# Started at 01:56:52, Completed at 01:57:04 (Elapsed time = 00:00:06.639)
+
+current_goal lint/lint_rtl_enhanced -top IOTDF
+# Started at 01:57:09, Completed at 01:57:19 (Elapsed time = 00:00:07.820)
+
+run_goal
+# Started at 01:57:33, Completed at 01:58:01 (Elapsed time = 00:00:23.960)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '156')}
+# Started at 01:58:05, Completed at 01:58:05 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 16:33:56, Completed at 16:34:25 (Elapsed time = 00:00:20.769)
+
+run_goal
+# Started at 16:34:38, Completed at 16:35:02 (Elapsed time = 00:00:20.259)
+
+run_goal
+# Started at 16:35:11, Completed at 16:35:35 (Elapsed time = 00:00:20.340)
+
+run_goal
+# Started at 16:58:47, Completed at 16:59:14 (Elapsed time = 00:00:22.139)
+
+gui_select_message -rule STX_VE_362 -msg {The left-hand-side of continuous assignment cannot be reg type}
+# Started at 16:59:17, Completed at 16:59:17 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule STX_VE_362 -msg {The left-hand-side of continuous assignment cannot be reg type}
+# Started at 16:59:34, Completed at 16:59:34 (Elapsed time = 00:00:00.009)
+
+gui_select_message -rule STX_VE_362 -msg {The left-hand-side of continuous assignment cannot be reg type}
+# Started at 16:59:41, Completed at 16:59:41 (Elapsed time = 00:00:00.019)
+
+current_goal Design_Read -top IOTDF
+# Started at 16:59:44, Completed at 16:59:48 (Elapsed time = 00:00:03.350)
+
+link_design -force
+# Started at 16:59:49, Completed at 16:59:56 (Elapsed time = 00:00:03.590)
+
+link_design -force
+# Started at 16:59:56, Completed at 17:00:04 (Elapsed time = 00:00:06.759)
+
+gui_select_message -rule STX_VE_362 -msg {The left-hand-side of continuous assignment cannot be reg type}
+# Started at 17:02:46, Completed at 17:02:46 (Elapsed time = 00:00:00.009)
+
+link_design -force
+# Started at 17:03:05, Completed at 17:03:16 (Elapsed time = 00:00:04.689)
+
+current_goal lint/lint_rtl_enhanced -top IOTDF
+# Started at 17:03:20, Completed at 17:03:28 (Elapsed time = 00:00:07.089)
+
+current_goal lint/lint_rtl_enhanced -top IOTDF
+# Started at 17:03:34, Completed at 17:03:34 (Elapsed time = 00:00:00.050)
+
+run_goal
+# Started at 17:03:34, Completed at 17:04:01 (Elapsed time = 00:00:22.620)
+
+gui_select_message -rule W415 -msg {Signal 'IOTDF.u_top2maxmin.done_w' has multiple simultaneous drivers}
+# Started at 17:06:46, Completed at 17:06:46 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 17:07:12, Completed at 17:07:38 (Elapsed time = 00:00:23.340)
+
+gui_select_message -rule STARC05-2.1.5.3 -msg {Conditional expression (cnt) does not evaluate to a scalar [Hierarchy: ':IOTDF:u_top2maxmin@top2maxmin']}
+# Started at 17:10:23, Completed at 17:10:23 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 17:10:53, Completed at 17:11:20 (Elapsed time = 00:00:23.829)
+
+gui_select_message -rule STARC05-2.1.5.3 -msg {Conditional expression (cnt) does not evaluate to a scalar [Hierarchy: ':IOTDF:u_top2maxmin@top2maxmin']}
+# Started at 17:12:28, Completed at 17:12:28 (Elapsed time = 00:00:00.020)
+
+current_goal Design_Read -top IOTDF
+# Started at 17:12:35, Completed at 17:12:38 (Elapsed time = 00:00:02.610)
+
+current_goal lint/lint_rtl_enhanced -top IOTDF
+# Started at 17:13:26, Completed at 17:13:35 (Elapsed time = 00:00:07.900)
+
+run_goal
+# Started at 17:13:36, Completed at 17:13:51 (Elapsed time = 00:00:12.860)
+
+gui_select_message -rule STARC05-2.1.5.3 -msg {Conditional expression (cnt) does not evaluate to a scalar [Hierarchy: ':IOTDF:u_top2maxmin@top2maxmin']}
+# Started at 17:15:36, Completed at 17:15:36 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 17:16:49, Completed at 17:17:16 (Elapsed time = 00:00:23.150)
+
+run_goal
+# Started at 17:17:48, Completed at 17:18:14 (Elapsed time = 00:00:23.240)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '168')}
+# Started at 17:18:42, Completed at 17:18:42 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 17:31:40, Completed at 17:31:57 (Elapsed time = 00:00:13.990)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '168')}
+# Started at 17:32:59, Completed at 17:32:59 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 17:34:39, Completed at 17:35:06 (Elapsed time = 00:00:24.299)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.first_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '168')}
+# Started at 17:35:20, Completed at 17:35:20 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 17:35:48, Completed at 17:36:15 (Elapsed time = 00:00:24.250)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '168')}
+# Started at 17:36:19, Completed at 17:36:19 (Elapsed time = 00:00:00.019)
+
+run_goal
+# Started at 17:36:54, Completed at 17:37:22 (Elapsed time = 00:00:24.370)
+
+gui_select_message -rule STARC05-1.3.1.3 -msg {Asynchronous reset signal 'IOTDF.rst' (flop: 'IOTDF.u_ciptext_gen.R_ready_r[0]') used as non-reset/synchronous-reset at instance 'IOTDF.\cs_reg[0] .D' (File Name: 'IOTDF.v' ,Line no.: '168')}
+# Started at 17:37:30, Completed at 17:37:30 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 17:42:25, Completed at 17:42:52 (Elapsed time = 00:00:23.409)
+
+run_goal
+# Started at 17:43:01, Completed at 17:43:28 (Elapsed time = 00:00:23.080)
+
+run_goal
+# Started at 17:43:39, Completed at 17:44:08 (Elapsed time = 00:00:23.560)
+
+run_goal
+# Started at 17:44:21, Completed at 17:44:49 (Elapsed time = 00:00:24.359)
+
+run_goal
+# Started at 17:44:55, Completed at 17:45:22 (Elapsed time = 00:00:24.360)
+
+run_goal
+# Started at 17:45:33, Completed at 17:46:00 (Elapsed time = 00:00:23.580)
+
+run_goal
+# Started at 17:46:17, Completed at 17:46:44 (Elapsed time = 00:00:24.900)
+
+run_goal
+# Started at 17:47:02, Completed at 17:47:31 (Elapsed time = 00:00:24.889)
+
+run_goal
+# Started at 17:47:48, Completed at 17:48:16 (Elapsed time = 00:00:24.110)
+
+run_goal
+# Started at 17:48:42, Completed at 17:49:10 (Elapsed time = 00:00:24.600)
+
+run_goal
+# Started at 17:50:04, Completed at 17:50:33 (Elapsed time = 00:00:25.409)
+
+run_goal
+# Started at 17:50:51, Completed at 17:51:19 (Elapsed time = 00:00:25.490)
+
+run_goal
+# Started at 17:52:06, Completed at 17:52:34 (Elapsed time = 00:00:24.899)
+

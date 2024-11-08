@@ -1,0 +1,11 @@
+SCHEMA@@PName@@HierName
+VALUE@@in_en@@IOTDF
+VALUE@@iot_in[0]@@IOTDF
+VALUE@@iot_in[1]@@IOTDF
+VALUE@@iot_in[2]@@IOTDF
+VALUE@@iot_in[3]@@IOTDF
+VALUE@@iot_in[4]@@IOTDF
+VALUE@@iot_in[5]@@IOTDF
+VALUE@@iot_in[6]@@IOTDF
+VALUE@@iot_in[7]@@IOTDF
+VALUE@@busy@@IOTDF

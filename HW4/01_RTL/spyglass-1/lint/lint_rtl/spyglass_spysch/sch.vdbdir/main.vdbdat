@@ -1,0 +1,23 @@
+#x HLBEGIN S.1
+#x {{COLOR=>1;}}
+#x 75 { @@n 2 a 0 @@p 2 a 0 }
+#x HLEND
+#x HLBEGIN S.2
+#x {{COLOR=>1;}}
+#x 75 { @@n 4 a 0 @@p 4 a 0 }
+#x HLEND
+#x HLBEGIN S.3
+#x {{COLOR=>1;}}
+#x 75 { @@n 5 a 0 @@p 5 a 0 }
+#x HLEND
+#x HLBEGIN S.4
+#x {{COLOR=>1;}}
+#x 75 { @@n 16 a 0 @@p 16 a 0 }
+#x HLEND
+#x HLBEGIN S.5
+#x {{COLOR=>1;}{COLOR=>2;}{COLOR=>3;}{COLOR=>4;}}
+#x !{-6 0 0 -2 1 0}
+#x 75 { @@i 13 a 0 @@i 25 a 0 @@i 715 a 3 @@t0 0 715 1 @@t0 1 13 0 @@t0 2 13 4
+#x @@t0 3 25 0 @@t0 4 25 1 @@p0 5 1 @@p1 1 1 @@d 1 { @@i 434 a 2 @@t1 0 434 3 }
+#x }
+#x HLEND

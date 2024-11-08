@@ -1,0 +1,5 @@
+StudentID: R12K41036
+
+Clock period: 2.27 (ns)
+
+Area : 214256.176370 (um^2)

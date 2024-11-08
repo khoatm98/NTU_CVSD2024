@@ -1,0 +1,9 @@
+SCHEMA@@PName@@Dir@@Msb@@Lsb@@Desc@@DU@@DU_BBOX
+VALUE@@clk@@INPUT@@0@@0@@-@@IOTDF@@No
+VALUE@@rst@@INPUT@@0@@0@@-@@IOTDF@@No
+VALUE@@in_en@@INPUT@@0@@0@@-@@IOTDF@@No
+VALUE@@iot_in@@INPUT@@7@@0@@-@@IOTDF@@No
+VALUE@@fn_sel@@INPUT@@2@@0@@-@@IOTDF@@No
+VALUE@@busy@@OUTPUT@@0@@0@@-@@IOTDF@@No
+VALUE@@valid@@OUTPUT@@0@@0@@-@@IOTDF@@No
+VALUE@@iot_out@@OUTPUT@@127@@0@@-@@IOTDF@@No

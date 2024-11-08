@@ -1,0 +1,9 @@
+Module Name,Module Type,Port Name,Direction,Width,Index,Comment Source,Comment 
+IOTDF,Top_Level,clk,INPUT,1,-,-,-
+IOTDF,Top_Level,rst,INPUT,1,-,-,-
+IOTDF,Top_Level,in_en,INPUT,1,-,-,-
+IOTDF,Top_Level,iot_in,INPUT,8,[7:0],-,-
+IOTDF,Top_Level,fn_sel,INPUT,3,[2:0],-,-
+IOTDF,Top_Level,busy,OUTPUT,1,-,-,-
+IOTDF,Top_Level,valid,OUTPUT,1,-,-,-
+IOTDF,Top_Level,iot_out,OUTPUT,128,[127:0],-,-

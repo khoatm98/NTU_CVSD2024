@@ -1,0 +1,2068 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version U-2022.12 for linux64 - Nov 22, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+# Setting environment
+sh mkdir -p Netlist
+sh mkdir -p Report
+set company {NTUGIEE}
+NTUGIEE
+set designer {Student}
+Student
+set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  ../sram_256x8 ../sram_512x8 ../sram_4096x8 $search_path ../ ./"
+. /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  ../sram_256x8 ../sram_512x8 ../sram_4096x8 . /usr/cad/synopsys/synthesis/cur/libraries/syn /usr/cad/synopsys/synthesis/cur/dw/syn_ver /usr/cad/synopsys/synthesis/cur/dw/sim_ver ../ ./
+set target_library   "slow.db                 \
+                      sram_256x8_slow_syn.db  \
+                      sram_512x8_slow_syn.db  \
+                      sram_4096x8_slow_syn.db \
+                     "
+slow.db                  sram_256x8_slow_syn.db   sram_512x8_slow_syn.db   sram_4096x8_slow_syn.db  
+set link_library     "* $target_library dw_foundation.sldb"
+* slow.db                  sram_256x8_slow_syn.db   sram_512x8_slow_syn.db   sram_4096x8_slow_syn.db   dw_foundation.sldb
+set symbol_library   "tsmc13.sdb generic.sdb"
+tsmc13.sdb generic.sdb
+set synthetic_library "dw_foundation.sldb"
+dw_foundation.sldb
+set default_schematic_options {-size infinite}
+-size infinite
+# Import Design
+set DESIGN "core"
+core
+set hdlin_translate_off_skip_text "TRUE"
+Information: Variable 'hdlin_translate_off_skip_text' is obsolete and is being ignored. (INFO-100)
+TRUE
+set edifout_netlist_only "TRUE"
+TRUE
+set verilogout_no_tri true
+true
+set hdlin_enable_presto_for_vhdl "TRUE"
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+TRUE
+set sh_enable_line_editing true
+true
+set sh_line_editing_mode emacs
+emacs
+history keep 100
+100
+alias h history
+analyze -format sverilog "flist.sv"
+Running PRESTO HDLC
+Compiling source file ./flist.sv
+Opening include file ../01_RTL/define.v
+Opening include file ../01_RTL/core.v
+Opening include file ../01_RTL/conv.v
+Opening include file ../01_RTL/median.v
+Presto compilation completed successfully.
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+1
+elaborate $DESIGN
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow'
+  Loading link library 'sram_256x8'
+  Loading link library 'sram_512x8'
+  Loading link library 'sram_4096x8'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ../01_RTL/core.v:499: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:500: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../01_RTL/core.v:501: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 176 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           177            |    auto/auto     |
+|           179            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 210 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           211            |    auto/auto     |
+|           213            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 233 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           234            |    auto/auto     |
+|           250            |     auto/no      |
+===============================================
+
+Statistics for case statements in always block at line 263 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           264            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 273 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           274            |    auto/auto     |
+|           277            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 292 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           293            |    auto/auto     |
+|           298            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 340 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           344            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 366 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           370            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 448 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           454            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 472 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           477            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 520 in file
+	'../01_RTL/core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           525            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine core line 325 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pre_state_reg    | Flip-flop |   6   |  Y  | N  | N  | Y  | N  | N  | N  |
+|    pre_state_reg    | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   curr_state_reg    | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|   curr_state_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 340 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 352 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    op_mode_r_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 359 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    in_data_r_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 366 in file
+		'../01_RTL/core.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| input_data_ready_r_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine core line 384 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  depth_ready_r_reg  | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|  depth_ready_r_reg  | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   x_origin_r_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   y_origin_r_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 397 in file
+		'../01_RTL/core.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| map_load_done_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| conv_calc_done_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    med_done_r_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  display_done_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine core line 412 in file
+		'../01_RTL/core.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| out_valid_ready_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| out_data_ready_r_reg  | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine core line 423 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    x_delay_r_reg    | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  x_minus_one_r_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  x_plus_one_r_reg   | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  x_plus_two_r_reg   | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 448 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       z_r_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       x_r_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 472 in file
+		'../01_RTL/core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       y_r_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine core line 492 in file
+		'../01_RTL/core.v'.
+==========================================================================================
+|         Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==========================================================================================
+|        med_sobel_r_reg         | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   conv_isFirst_signal_r_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| med_sobel_isFirst_signal_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+==========================================================================================
+
+Inferred memory devices in process
+	in routine core line 507 in file
+		'../01_RTL/core.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+|  sram_data_out_r_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sram_addr_ready_r_reg | Flip-flop |  36   |  Y  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine core line 520 in file
+		'../01_RTL/core.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| sram_wen_ready_r_reg | Flip-flop |   4   |  Y  | N  | N  | Y  | N  | N  | N  |
+================================================================================
+Presto compilation completed successfully. (core)
+Elaborated 1 design.
+Current design is now 'core'.
+Information: Building the design 'conv'. (HDL-193)
+Warning:  ../01_RTL/conv.v:88: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 82 in file
+	'../01_RTL/conv.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            83            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 118 in file
+	'../01_RTL/conv.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           119            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 169 in file
+	'../01_RTL/conv.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           175            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 192 in file
+	'../01_RTL/conv.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           198            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine conv line 96 in file
+		'../01_RTL/conv.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cs_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine conv line 106 in file
+		'../01_RTL/conv.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine conv line 127 in file
+		'../01_RTL/conv.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| o_out_data_ready_r_reg | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine conv line 137 in file
+		'../01_RTL/conv.v'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+| o_out_valid_ready_r_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===================================================================================
+
+Inferred memory devices in process
+	in routine conv line 149 in file
+		'../01_RTL/conv.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| i_input_done_r_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine conv line 157 in file
+		'../01_RTL/conv.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   data_bcd_r_reg    | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   data_abc_r_reg    | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine conv line 169 in file
+		'../01_RTL/conv.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  data_bcd_2_r_reg   | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  data_abc_1_r_reg   | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine conv line 192 in file
+		'../01_RTL/conv.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  data_bcd_4_r_reg   | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  data_abc_3_r_reg   | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine conv line 215 in file
+		'../01_RTL/conv.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    conv_1_r_reg     | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    conv_4_r_reg     | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    conv_3_r_reg     | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    conv_2_r_reg     | Flip-flop |  17   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (conv)
+Information: Building the design 'median'. (HDL-193)
+Warning:  ../01_RTL/median.v:203: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 110 in file
+	'../01_RTL/median.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           111            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 170 in file
+	'../01_RTL/median.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           171            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine median line 185 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cs_reg        | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine median line 195 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   out_done_r_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   med_sobel_r_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   out_valid_r_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine median line 211 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      angle_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        G_reg        | Flip-flop |  44   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine median line 229 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine median line 244 in file
+		'../01_RTL/median.v'.
+===================================================================================
+|      Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================
+| med_sobel_e_delay_r_reg | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+|    med_sobel_e_r_reg    | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+===================================================================================
+Presto compilation completed successfully. (median)
+Information: Building the design 'median_filter_submodule'. (HDL-193)
+
+Statistics for case statements in always block at line 351 in file
+	'../01_RTL/median.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           352            |    auto/auto     |
+|           364            |    auto/auto     |
+|           385            |    auto/auto     |
+|           397            |    auto/auto     |
+|           409            |    auto/auto     |
+|           427            |    auto/auto     |
+|           439            |    auto/auto     |
+|           451            |    auto/auto     |
+|           469            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 533 in file
+	'../01_RTL/median.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           534            |    auto/auto     |
+|           546            |    auto/auto     |
+|           564            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 603 in file
+	'../01_RTL/median.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           604            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine median_filter_submodule line 308 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      a69_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      p1_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p2_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p3_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p4_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p5_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p6_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p7_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p8_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p9_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a14_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      a17_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      a47_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      a25_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      a28_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      a58_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      a36_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      a39_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine median_filter_submodule line 483 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      a9_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a1_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a2_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a3_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a4_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a5_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a6_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a7_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      a8_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine median_filter_submodule line 577 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      b9_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      b1_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      b5_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine median_filter_submodule line 622 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      c2_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (median_filter_submodule)
+Information: Building the design 'sobel_gradient'. (HDL-193)
+Warning:  ../01_RTL/median.v:751: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/median.v:752: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../01_RTL/median.v:773: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../01_RTL/median.v:774: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine sobel_gradient line 682 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      p9_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p1_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p2_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p3_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p4_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p6_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p7_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      p8_r_reg       | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 712 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     p9_d_r_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       Gx1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       Gy1_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       Gx2_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       Gy2_reg       | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     p1_d_r_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 737 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      Gy2_r_reg      | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      Gx1_r_reg      | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      Gy1_r_reg      | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      Gx2_r_reg      | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 757 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    Gy_imm_r_reg     | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    Gx_imm_r_reg     | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 768 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     Gx_abs_reg      | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     Gy_abs_reg      | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 779 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  Gy_abs_delay_reg   | Flip-flop |  30   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    Gx_delay_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    Gy_delay_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 809 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   G_abs_delay_reg   | Flip-flop |  22   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      G_abs_reg      | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 826 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    Gx_acc3_r_reg    | Flip-flop |  13   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    Gx_acc1_r_reg    | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    Gx_acc2_r_reg    | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 842 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   Gx_acc2_1_r_reg   | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Gx_acc1_1_r_reg   | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 855 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   Gx_mult2_r_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Gx_mult1_r_reg    | Flip-flop |  19   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sobel_gradient line 874 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| sobel_result_r_reg  | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     angle_r_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (sobel_gradient)
+Information: Building the design 'sober_compare'. (HDL-193)
+
+Statistics for case statements in always block at line 947 in file
+	'../01_RTL/median.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           948            |    auto/auto     |
+|           951            |    auto/auto     |
+|           960            |    auto/auto     |
+|           969            |    auto/auto     |
+|           978            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine sober_compare line 921 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      G1_r_reg       | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      G2_r_reg       | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      G3_r_reg       | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      G4_r_reg       | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    angle1_r_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    angle2_r_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    angle3_r_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    angle4_r_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sober_compare line 988 in file
+		'../01_RTL/median.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    temp_b_r_reg     | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+| sobel_result_r_reg  | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    temp_a_r_reg     | Flip-flop |  11   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (sober_compare)
+1
+current_design [get_designs $DESIGN]
+Current design is 'core'.
+{core}
+link
+
+  Linking design 'core'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (6 designs)               /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/core.db, etc
+  slow (library)              /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db
+  sram_256x8 (library)        /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db
+  sram_512x8 (library)        /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db
+  sram_4096x8 (library)       /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+1
+source -echo -verbose ./core_dc.sdc
+# operating conditions and boundary conditions #
+set cycle  2.31;  # modify your clock cycle here #
+2.31
+create_clock -period $cycle [get_ports  i_clk]
+1
+set_dont_touch_network      [get_clocks i_clk]
+1
+set_fix_hold                [get_clocks i_clk]
+1
+set_ideal_network           [get_ports i_clk]
+1
+set_clock_uncertainty  0.1  [get_clocks i_clk]
+1
+set_clock_latency      0.5  [get_clocks i_clk]
+1
+set_input_delay  [ expr $cycle*0.5 ] -clock i_clk [all_inputs]
+1
+set_output_delay [ expr $cycle*0.5 ] -clock i_clk [all_outputs] 
+1
+set_load         0.05     [all_outputs]
+1
+set_operating_conditions  -max_library slow -max slow
+Using operating conditions 'slow' found in library 'slow'.
+1
+set_wire_load_model -name tsmc13_wl10 -library slow                        
+1
+set_max_fanout 20 [all_inputs]
+1
+1
+# Compile Design
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+check_design > Report/check_design.txt
+check_timing > Report/check_timing.txt
+set high_fanout_net_threshold 0
+0
+uniquify
+1
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+1
+set_max_area 0 -ignore_tns
+1
+#compile
+compile -boundary_optimization -map_effort high  -auto_ungroup area
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | U-2022.12-DWBB_202212.0 |     *     |
+| Licensed DW Building Blocks        | U-2022.12-DWBB_202212.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 2655                                   |
+| Number of User Hierarchies                              | 5                                      |
+| Sequential Cell Count                                   | 1329                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 566                                    |
+| Number of Dont Touch Nets                               | 6                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+
+Information: There are 16 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'sober_compare'
+  Processing 'sobel_gradient'
+  Processing 'median_filter_submodule'
+  Processing 'median'
+Information: The register 'med_sobel_e_r_reg[15][7]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[15][6]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[15][5]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[15][4]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[15][3]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[15][2]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[15][1]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[15][0]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[14][7]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[14][6]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[14][5]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[14][4]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[14][3]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[14][2]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[14][1]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[14][0]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[13][7]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[13][6]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[13][5]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[13][4]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[13][3]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[13][2]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[13][1]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[13][0]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[12][7]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[12][6]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[12][5]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[12][4]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[12][3]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[12][2]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[12][1]' will be removed. (OPT-1207)
+Information: The register 'med_sobel_e_r_reg[12][0]' will be removed. (OPT-1207)
+  Processing 'conv'
+  Processing 'core'
+Information: Added key list 'DesignWare' to design 'core'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'core_DW01_inc_0_DW01_inc_4'
+  Processing 'median_DW01_inc_0_DW01_inc_5'
+  Mapping 'sober_compare_DW_cmp_0'
+  Mapping 'sobel_gradient_DW_cmp_0'
+  Mapping 'sobel_gradient_DW_cmp_1'
+  Processing 'sobel_gradient_DW01_add_0_DW01_add_3'
+  Processing 'sobel_gradient_DW01_add_1_DW01_add_4'
+  Processing 'sobel_gradient_DW01_add_2_DW01_add_5'
+  Processing 'sobel_gradient_DW01_add_3_DW01_add_6'
+  Processing 'sobel_gradient_DW01_add_4_DW01_add_7'
+  Processing 'sobel_gradient_DW01_sub_0_DW01_sub_2'
+  Processing 'sobel_gradient_DW01_sub_1_DW01_sub_3'
+  Processing 'sobel_gradient_DW01_add_5_DW01_add_8'
+  Processing 'sobel_gradient_DW01_add_6_DW01_add_9'
+  Processing 'sobel_gradient_DW01_add_7_DW01_add_10'
+  Processing 'sobel_gradient_DW01_add_8_DW01_add_11'
+  Processing 'sobel_gradient_DW01_add_9_DW01_add_12'
+  Processing 'sobel_gradient_DW01_add_10_DW01_add_13'
+  Processing 'sobel_gradient_DW01_add_11_DW01_add_14'
+  Processing 'sobel_gradient_DW01_add_12_DW01_add_15'
+  Mapping 'median_filter_submodule_DW_cmp_0'
+  Mapping 'median_filter_submodule_DW_cmp_1'
+  Mapping 'median_filter_submodule_DW_cmp_2'
+  Mapping 'median_filter_submodule_DW_cmp_3'
+  Mapping 'median_filter_submodule_DW_cmp_4'
+  Mapping 'median_filter_submodule_DW_cmp_5'
+  Mapping 'median_filter_submodule_DW_cmp_6'
+  Mapping 'median_filter_submodule_DW_cmp_7'
+  Mapping 'median_filter_submodule_DW_cmp_8'
+  Mapping 'median_filter_submodule_DW_cmp_9'
+  Mapping 'median_filter_submodule_DW_cmp_10'
+  Mapping 'median_filter_submodule_DW_cmp_11'
+  Mapping 'median_filter_submodule_DW_cmp_12'
+  Mapping 'median_filter_submodule_DW_cmp_13'
+  Mapping 'median_filter_submodule_DW_cmp_14'
+  Mapping 'median_filter_submodule_DW_cmp_15'
+  Mapping 'median_filter_submodule_DW_cmp_16'
+  Mapping 'median_filter_submodule_DW_cmp_17'
+  Mapping 'median_filter_submodule_DW_cmp_18'
+  Mapping 'median_filter_submodule_DW_cmp_19'
+  Mapping 'median_filter_submodule_DW_cmp_20'
+  Processing 'conv_DW01_inc_0_DW01_inc_6'
+  Processing 'conv_DW01_add_0_DW01_add_16'
+  Processing 'conv_DW01_add_1_DW01_add_17'
+  Processing 'conv_DW01_add_2_DW01_add_18'
+  Processing 'conv_DW01_add_3_DW01_add_19'
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width3' (rpl)
+  Processing 'DW01_add_width3'
+  Building model 'DW01_dec_width3' (rpl)
+  Processing 'DW01_dec_width3'
+  Building model 'DW01_sub_width10' (rpl)
+  Processing 'DW01_sub_width10'
+  Building model 'DW01_inc_width10' (rpl)
+  Processing 'DW01_inc_width10'
+  Building model 'DW01_add_width10' (rpl)
+  Processing 'DW01_add_width10'
+  Processing 'DW01_add_width3_DW01_add_20'
+  Processing 'DW01_dec_width3_DW01_dec_1'
+  Processing 'sobel_gradient_DW01_inc_0_DW01_inc_7'
+  Processing 'sobel_gradient_DW01_sub_2_DW01_sub_4'
+  Processing 'sobel_gradient_DW01_inc_1_DW01_inc_8'
+  Processing 'sobel_gradient_DW01_sub_3_DW01_sub_5'
+  Processing 'conv_DW01_add_4_DW01_add_21'
+  Processing 'conv_DW01_add_5_DW01_add_22'
+  Processing 'conv_DW01_add_6_DW01_add_23'
+  Processing 'conv_DW01_add_7_DW01_add_24'
+Information: Complementing port 'o_out_valid' in design 'conv'.
+	 The new name of the port is 'o_out_valid_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[10]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[10]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[9]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[9]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[8]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[8]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[7]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[7]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[6]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[6]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[5]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[5]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[4]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[4]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[3]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[3]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[2]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[2]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[1]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[1]_BAR'. (OPT-319)
+Information: Complementing port 'sobel_result[0]' in design 'sobel_gradient'.
+	 The new name of the port is 'sobel_result[0]_BAR'. (OPT-319)
+Information: Complementing port 'angle[1]' in design 'sobel_gradient'.
+	 The new name of the port is 'angle[1]_BAR'. (OPT-319)
+Information: Complementing port 'angle[0]' in design 'sobel_gradient'.
+	 The new name of the port is 'angle[0]_BAR'. (OPT-319)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'median_filter_submodule'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'sober_compare'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'sobel_gradient'. (DDB-72)
+Information: compile falsified 1 infeasible paths. (OPT-1720)
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+  Mapping Optimization (Phase 6)
+  Mapping Optimization (Phase 7)
+  Mapping Optimization (Phase 8)
+  Mapping Optimization (Phase 9)
+  Mapping Optimization (Phase 10)
+  Mapping Optimization (Phase 11)
+  Mapping Optimization (Phase 12)
+  Mapping Optimization (Phase 13)
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:32  273731.4      0.33      50.2      86.4                                0.00  
+    0:00:33  274848.3      0.39      67.4      86.4                                0.00  
+    0:00:33  274860.1      0.39      66.9      86.4                                0.00  
+    0:00:33  274860.1      0.39      66.9      86.4                                0.00  
+    0:00:33  274843.2      0.39      67.4      86.4                                0.00  
+    0:00:33  274843.2      0.39      67.4      86.4                                0.00  
+    0:00:37  209444.0      3.03     840.7       0.0                                0.00  
+    0:00:39  209330.3      2.71     961.4       0.0                                0.00  
+    0:00:40  209330.3      2.78    1033.1       0.0                                0.00  
+    0:00:41  209310.0      2.49    1023.6       0.0                                0.00  
+    0:00:41  209216.6      2.44    1017.2       0.0                                0.00  
+    0:00:42  209301.5      2.45     938.6       0.0                                0.00  
+    0:00:42  209315.0      2.39     931.5       0.0                                0.00  
+    0:00:43  209308.3      2.33     913.6       0.0                                0.00  
+    0:00:43  209259.0      2.56     915.3       0.0                                0.00  
+    0:00:43  209360.9      2.24     911.9       0.0                                0.00  
+    0:00:43  209364.3      2.19     896.4       0.0                                0.00  
+    0:00:44  209364.3      2.31     891.4       0.0                                0.00  
+    0:00:44  209445.7      2.09     862.1       0.0                                0.00  
+    0:00:44  209647.7      1.96     809.9       0.0                                0.00  
+    0:00:44  209734.3      1.89     770.1       0.0                                0.00  
+    0:00:44  209812.4      1.82     762.7       0.0                                0.00  
+    0:00:44  209853.1      1.79     710.6       0.0                                0.00  
+    0:00:45  210111.1      1.70     704.7       0.0                                0.00  
+    0:00:45  210190.9      1.70     704.2       0.0                                0.00  
+    0:00:45  210190.9      1.70     704.2       0.0                                0.00  
+    0:00:45  210190.9      1.70     704.2       0.0                                0.00  
+    0:00:45  210190.9      1.70     704.2       0.0                                0.00  
+    0:00:45  210190.9      1.70     704.2       0.0                                0.00  
+    0:00:45  210190.9      1.70     704.2       0.0                                0.00  
+    0:00:46  210771.4      1.52     659.6       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[7]/D      0.00  
+    0:00:46  211160.1      1.36     636.4       0.0 median_sobel_inst/u_sobel_gradient_submodule/Gx_acc3_r_reg[9]/D      0.00  
+    0:00:46  211671.0      1.26     605.3       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[6]/D      0.00  
+    0:00:46  212013.9      1.17     588.9       0.0 input_data_ready_r_reg[19]/D      0.00  
+    0:00:47  212424.7      1.10     562.0       0.0 input_data_ready_r_reg[25]/D      0.00  
+    0:00:47  214366.5      1.03     527.2       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[6]/D      0.00  
+    0:00:47  214549.8      1.01     502.7       0.0 conv_inst/o_out_data_ready_r_reg[11]/D      0.00  
+    0:00:48  214758.6      0.99     496.7       0.0 median_sobel_inst/u_sobel_gradient_submodule/Gx_acc3_r_reg[11]/D      0.00  
+    0:00:48  214872.3      0.97     487.4       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[0]/D      0.00  
+    0:00:48  214943.6      0.96     480.7       0.0 median_sobel_inst/u_median_filter_submodule/b1_r_reg[6]/D      0.00  
+    0:00:48  215052.3      0.96     478.6       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[2]/D      0.00  
+    0:00:48  215276.3      0.94     474.9       0.0 sram_addr_ready_r_reg[3][3]/D      0.00  
+    0:00:48  215441.0      0.93     466.0       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[2]/D      0.00  
+    0:00:48  215654.8      0.91     456.1       0.0 median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[13]/D      0.00  
+    0:00:49  215917.9      0.89     449.1       0.0 median_sobel_inst/u_median_filter_submodule/b1_r_reg[4]/D      0.00  
+    0:00:49  216150.5      0.87     440.3       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[0]/D      0.00  
+    0:00:49  216316.8      0.86     435.5       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[0]/D      0.00  
+    0:00:49  216481.5      0.85     414.3       0.0 conv_inst/data_bcd_r_reg[8]/D      0.00  
+    0:00:49  216790.4      0.82     404.8       0.0 sram_addr_ready_r_reg[2][8]/D      0.00  
+    0:00:49  216873.6      0.81     402.0       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[5]/D      0.00  
+    0:00:49  217041.6      0.80     397.5       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[5]/D      0.00  
+    0:00:50  217114.6      0.80     395.0       0.0 input_data_ready_r_reg[27]/D      0.00  
+    0:00:50  217253.8      0.80     389.6       0.0 conv_inst/data_bcd_4_r_reg[10]/D      0.00  
+    0:00:50  217494.8      0.77     381.7       0.0 median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[13]/D      0.00  
+    0:00:50  217732.5      0.76     374.9       5.7 median_sobel_inst/u_median_filter_submodule/b5_r_reg[7]/D      0.00  
+    0:00:50  217976.9      0.75     371.6       5.7 median_sobel_inst/u_sobel_gradient_submodule/Gx1_r_reg[6]/D      0.00  
+    0:00:50  218138.1      0.74     365.2       5.7 median_sobel_inst/u_sobel_gradient_submodule/Gx1_reg[8]/D      0.00  
+    0:00:50  218389.3      0.73     358.1       5.7 median_sobel_inst/u_median_filter_submodule/b1_r_reg[3]/D      0.00  
+    0:00:51  218538.7      0.72     355.8       5.7 median_sobel_inst/u_median_filter_submodule/c2_r_reg[5]/D      0.00  
+    0:00:51  218603.2      0.72     354.4       5.7 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:00:51  218664.3      0.71     352.6       5.7 median_sobel_inst/u_median_filter_submodule/b1_r_reg[3]/D      0.00  
+    0:00:51  218810.3      0.70     350.3       5.7 conv_inst/cnt_reg[0]/D         0.00  
+    0:00:51  218908.7      0.70     336.5       5.7 median_sobel_inst/u_median_filter_submodule/b5_r_reg[0]/D      0.00  
+    0:00:52  219256.7      0.67     329.9       5.7                                0.00  
+    0:00:52  219721.8      0.65     312.0      13.1                                0.00  
+    0:00:52  220051.1      0.62     294.7      13.1                                0.00  
+    0:00:52  220253.1      0.60     288.2      13.1                                0.00  
+    0:00:52  220764.0      0.58     277.8      13.1                                0.00  
+    0:00:53  220989.8      0.56     267.5      13.1                                0.00  
+    0:00:53  221237.6      0.55     254.8      13.1                                0.00  
+    0:00:53  221470.1      0.55     253.2      13.1                                0.00  
+    0:00:53  221650.1      0.54     250.7      13.1                                0.00  
+    0:00:53  221806.2      0.53     237.9      13.1                                0.00  
+    0:00:53  221957.3      0.52     235.0      13.1                                0.00  
+    0:00:54  222152.5      0.51     222.0      13.1                                0.00  
+    0:00:54  222239.0      0.50     215.5      13.1                                0.00  
+    0:00:54  222402.0      0.50     205.4      13.1                                0.00  
+    0:00:54  222581.9      0.50     195.3      13.1                                0.00  
+    0:00:54  222658.3      0.50     192.3       7.8                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:54  222658.3      0.50     192.3       7.8                                0.00  
+    0:00:54  222692.3      0.50     192.3       7.8 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:55  222733.0      0.50     180.9       7.8 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:55  222746.6      0.49     180.2       7.8 median_sobel_inst/u_median_filter_submodule/b5_r_reg[5]/D      0.00  
+    0:00:55  222843.3      0.48     178.2       7.8 median_sobel_inst/u_median_filter_submodule/b5_r_reg[5]/D      0.00  
+    0:00:55  223033.4      0.48     175.3       7.8 median_sobel_inst/u_median_filter_submodule/c2_r_reg[6]/D      0.00  
+    0:00:55  223199.8      0.47     172.4       7.8 median_sobel_inst/u_median_filter_submodule/b1_r_reg[6]/D      0.00  
+    0:00:55  223364.4      0.46     170.3       7.8 median_sobel_inst/u_median_filter_submodule/b1_r_reg[6]/D      0.00  
+    0:00:56  223512.1      0.46     167.1       5.7 conv_inst/conv_2_r_reg[8]/D      0.00  
+    0:00:56  223583.4      0.45     164.1       5.7 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:00:56  223710.7      0.45     163.1       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:56  223822.7      0.44     161.3       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:56  223866.9      0.44     160.1       5.7 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:00:56  223982.3      0.43     156.2       5.7 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:00:56  224038.3      0.43     155.7       5.7 median_sobel_inst/u_median_filter_submodule/c2_r_reg[4]/D      0.00  
+    0:00:56  224113.0      0.43     153.9       5.7 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:00:57  224186.0      0.42     153.5       5.7 y_r_reg[2]/D                   0.00  
+    0:00:57  224221.6      0.42     152.5       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:57  224270.8      0.42     151.6       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:57  224377.8      0.41     151.8       5.7 median_sobel_inst/u_sober_compare_submodule/sobel_result_r_reg[10]/D      0.00  
+    0:00:57  224467.7      0.41     150.6       5.7 median_sobel_inst/u_sobel_gradient_submodule/Gx1_r_reg[9]/D      0.00  
+    0:00:57  224581.5      0.41     149.4       5.7 median_sobel_inst/u_median_filter_submodule/b9_r_reg[0]/D      0.00  
+    0:00:57  224629.0      0.41     144.9       5.7 median_sobel_inst/u_sobel_gradient_submodule/Gx_acc2_1_r_reg[13]/D      0.00  
+    0:00:57  224676.5      0.40     144.3       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:58  224756.3      0.40     143.8       5.7 median_sobel_inst/u_median_filter_submodule/c2_r_reg[4]/D      0.00  
+    0:00:58  224808.9      0.40     143.0       5.7 conv_inst/conv_1_r_reg[12]/D      0.00  
+    0:00:58  224915.8      0.40     142.1       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:58  225038.1      0.39     139.2       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:58  225038.1      0.39     138.7       5.7 median_sobel_inst/u_median_filter_submodule/b5_r_reg[3]/D      0.00  
+    0:00:58  225099.2      0.39     138.5       5.7 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:00:58  225168.8      0.38     137.6       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:58  225153.5      0.38     137.2       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:59  225241.7      0.38     135.9       5.7 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:00:59  225284.2      0.37     134.6       5.7 median_sobel_inst/u_median_filter_submodule/c2_r_reg[4]/D      0.00  
+    0:00:59  225335.1      0.37     133.5       5.7 median_sobel_inst/u_median_filter_submodule/b5_r_reg[3]/D      0.00  
+    0:00:59  225433.6      0.37     132.4       5.7 median_sobel_inst/u_median_filter_submodule/b9_r_reg[3]/D      0.00  
+    0:00:59  225486.2      0.37     131.8       5.7 conv_inst/data_bcd_r_reg[7]/D      0.00  
+    0:00:59  225628.8      0.36     129.1       5.7 median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[15]/D      0.00  
+    0:00:59  225659.3      0.36     128.9       5.7 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:00:59  225655.9      0.36     128.8       5.7 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:00  225747.6      0.36     127.4       5.7 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:00  225851.1      0.35     127.1       5.7 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:00  225939.4      0.35     125.6       5.7 median_sobel_inst/u_sobel_gradient_submodule/Gx1_r_reg[9]/D      0.00  
+    0:01:00  226027.6      0.34     125.0       5.7 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:00  226093.8      0.34     124.6       5.7 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:00  226194.0      0.34     123.7       5.7 conv_inst/conv_4_r_reg[15]/D      0.00  
+    0:01:00  226287.3      0.34     123.5       5.7 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:00  226309.4      0.34     121.7       5.7 median_sobel_inst/u_median_filter_submodule/b5_r_reg[3]/D      0.00  
+    0:01:01  226326.4      0.34     121.4       5.7 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:01  226372.2      0.34     118.0       5.7 out_data_ready_r_reg[4]/D      0.00  
+    0:01:01  226472.4      0.33     116.3       5.7 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:01  226514.8      0.33     115.8       5.7 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:01  226575.9      0.33     115.4       5.7 median_sobel_inst/u_median_filter_submodule/b9_r_reg[3]/D      0.00  
+    0:01:01  226667.6      0.33     114.7       5.7 conv_inst/conv_3_r_reg[16]/D      0.00  
+    0:01:01  226728.7      0.32     114.4       5.7 conv_inst/conv_4_r_reg[9]/D      0.00  
+    0:01:01  226806.8      0.32     114.2       5.7 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:02  226810.1      0.32     113.8       5.7 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:02  226842.4      0.32     113.5       5.7 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:02  226878.0      0.32     113.2       5.7 input_data_ready_r_reg[17]/D      0.00  
+    0:01:02  226889.9      0.32     112.9       5.7 conv_inst/data_abc_r_reg[6]/D      0.00  
+    0:01:02  226934.1      0.32     112.8       5.7 o_in_ready                     0.00  
+    0:01:02  227018.9      0.31     112.2       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:02  227085.1      0.31     110.3       0.0 median_sobel_inst/u_median_filter_submodule/b9_r_reg[5]/D      0.00  
+    0:01:03  227112.3      0.31     109.8       0.0 conv_inst/data_bcd_r_reg[8]/D      0.00  
+    0:01:03  227103.8      0.31     109.5       0.0 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:03  227332.9      0.31     108.1       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:03  227351.6      0.31     107.7       0.0 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:03  227411.0      0.30     107.3       0.0 conv_inst/data_abc_r_reg[6]/D      0.00  
+    0:01:03  227417.8      0.30     105.8       0.0 input_data_ready_r_reg[17]/D      0.00  
+    0:01:03  227468.7      0.30     105.4       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:03  227426.3      0.30     104.8       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:03  227540.0      0.30     104.3       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:03  227565.5      0.30     103.8       0.0 median_sobel_inst/u_median_filter_submodule/b1_r_reg[6]/D      0.00  
+    0:01:04  227558.7      0.30     103.5       0.0 median_sobel_inst/u_median_filter_submodule/b1_r_reg[6]/D      0.00  
+    0:01:04  227592.6      0.30     103.0       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[4]/D      0.00  
+    0:01:04  227630.0      0.29     102.1       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:04  227672.4      0.29     101.9       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:04  227684.3      0.29     101.1       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[4]/D      0.00  
+    0:01:04  227703.0      0.29     100.5       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:04  227723.3      0.29     100.3       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:04  227784.5      0.29     100.0       0.0 input_data_ready_r_reg[17]/D      0.00  
+    0:01:04  227811.6      0.29      99.5       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:05  227852.4      0.29      99.4       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[5]/D      0.00  
+    0:01:05  227891.4      0.28      98.9       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[5]/D      0.00  
+    0:01:05  227911.8      0.28      98.3       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:05  227937.2      0.28      97.3       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:05  227933.8      0.28      97.2       0.0 input_data_ready_r_reg[17]/D      0.00  
+    0:01:05  227959.3      0.28      97.2       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:05  227954.2      0.28      97.1       0.0 conv_inst/conv_3_r_reg[10]/D      0.00  
+    0:01:05  227969.5      0.28      96.9       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:05  228003.4      0.28      96.6       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:06  228146.0      0.28      92.7       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:06  228154.5      0.28      91.6       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[3]/D      0.00  
+    0:01:06  228137.5      0.28      91.2       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:06  228213.9      0.27      88.9       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:06  228288.6      0.27      88.2       0.0 median_sobel_inst/u_median_filter_submodule/c2_r_reg[2]/D      0.00  
+    0:01:06  228366.7      0.27      88.2       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:06  228453.2      0.27      87.6       0.0 o_in_ready                     0.00  
+    0:01:06  228510.9      0.27      86.3       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:07  228516.0      0.27      86.4       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[3]/D      0.00  
+    0:01:07  228560.2      0.27      85.9       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:07  228556.8      0.26      85.9       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:07  228512.6      0.26      85.7       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:07  228575.4      0.26      84.9       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:07  228590.7      0.26      84.8       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[7]/D      0.00  
+    0:01:07  228624.7      0.26      84.3       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[3]/D      0.00  
+    0:01:07  228609.4      0.26      84.3       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[3]/D      0.00  
+    0:01:07  228616.2      0.26      84.3       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[3]/D      0.00  
+    0:01:07  228643.3      0.26      84.0       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[2]/D      0.00  
+    0:01:08  228639.9      0.26      83.7       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:08  228643.3      0.26      83.7       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[2]/D      0.00  
+    0:01:09  228645.0      0.26      83.5       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[1]/D      0.00  
+    0:01:10  228638.2      0.26      83.2       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:10  228672.2      0.25      82.8       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:10  228728.2      0.25      82.1       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:11  228774.0      0.25      82.1       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:11  228787.6      0.25      81.7       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:11  228799.5      0.25      81.1       0.0 median_sobel_inst/u_median_filter_submodule/a7_r_reg[0]/D      0.00  
+    0:01:11  228823.3      0.25      79.4       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:11  228864.0      0.25      78.9       0.0 input_data_ready_r_reg[0]/D      0.00  
+    0:01:11  228853.8      0.25      78.9       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:12  228884.4      0.25      78.9       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:12  228877.6      0.25      78.8       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:12  228918.3      0.25      78.8       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:12  228986.2      0.24      78.1       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[1]/D      0.00  
+    0:01:12  228996.4      0.24      78.1       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:12  229108.4      0.24      76.9       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:12  229115.2      0.24      76.5       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:12  229116.9      0.24      76.3       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:13  229161.0      0.24      75.8       0.0 median_sobel_inst/u_sobel_gradient_submodule/Gy1_r_reg[9]/D      0.00  
+    0:01:13  229200.1      0.24      75.6       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:13  229206.9      0.24      75.5       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:13  229218.8      0.24      75.3       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:13  229235.7      0.24      75.3       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:13  229303.6      0.24      75.3       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:13  229330.8      0.24      75.4       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:13  229347.8      0.23      75.3       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:14  229453.0      0.23      73.9       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:14  229485.2      0.23      73.7       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:14  229495.4      0.23      73.7       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:14  229481.9      0.23      73.5       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:14  229490.3      0.23      73.3       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:14  229527.7      0.23      72.4       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:14  229551.4      0.23      72.3       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:14  229553.1      0.23      72.4       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:15  229593.9      0.23      72.0       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:15  229644.8      0.23      72.0       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:15  229655.0      0.23      71.8       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:15  229648.2      0.23      71.8       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:15  229666.9      0.23      71.5       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:15  229695.7      0.23      71.0       0.0 sram_addr_ready_r_reg[3][8]/D      0.00  
+    0:01:15  229705.9      0.23      70.9       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:15  229734.8      0.23      70.9       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:15  229768.7      0.23      70.8       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:16  229841.7      0.22      69.5       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:16  229823.0      0.22      69.3       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:16  229870.6      0.22      68.8       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:16  229894.3      0.22      67.1       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:16  229862.1      0.22      68.9       0.0 sram_addr_ready_r_reg[3][8]/D      0.00  
+    0:01:16  229955.4      0.22      68.0       0.0 conv_inst/data_bcd_r_reg[5]/D      0.00  
+    0:01:16  229969.0      0.22      67.9       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:16  229982.6      0.22      67.9       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:16  230052.2      0.22      65.9       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:16  230042.0      0.22      65.8       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:18  230060.7      0.22      65.2       0.0                                0.00  
+    0:01:19  229821.3      0.22      65.9      13.6                                0.00  
+    0:01:20  229558.2      0.22      66.8      92.1                                0.00  
+    0:01:21  229498.8      0.22      67.3     136.2                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:21  229498.8      0.22      67.3     136.2                                0.00  
+    0:01:22  229524.3      0.22      67.3       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:22  229497.1      0.22      67.1       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:01:22  229497.1      0.22      66.7       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:22  229503.9      0.22      66.6       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:23  229532.8      0.22      66.3       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:23  229590.5      0.22      65.9       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:23  229658.4      0.21      64.0       0.0 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:23  229666.9      0.21      61.7       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:23  229651.6      0.21      61.9       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:23  229695.7      0.21      61.5       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:23  229746.6      0.21      61.7       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:24  229738.2      0.21      61.7       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:24  229733.1      0.21      61.7       0.0                                0.00  
+    0:01:24  229761.9      0.21      61.6       0.0                                0.00  
+    0:01:24  229821.3      0.21      60.9       0.0                                0.00  
+    0:01:24  229840.0      0.21      59.7       0.0                                0.00  
+    0:01:24  229846.8      0.21      59.3       0.0                                0.00  
+    0:01:25  229999.6      0.21      57.6       0.0                                0.00  
+    0:01:25  230040.3      0.21      57.1       0.0                                0.00  
+    0:01:25  230065.8      0.21      56.5       0.0                                0.00  
+    0:01:25  230104.8      0.21      54.4       0.0                                0.00  
+    0:01:25  230188.0      0.21      50.5       0.0                                0.00  
+    0:01:25  230283.0      0.21      49.6       0.0                                0.00  
+    0:01:25  230415.4      0.21      47.1       0.0                                0.00  
+    0:01:25  230479.9      0.21      45.6       0.0                                0.00  
+    0:01:26  230539.3      0.21      45.3       0.0                                0.00  
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:26  230539.3      0.21      45.3       0.0                                0.00  
+    0:01:26  230539.3      0.21      45.3       0.0                                0.00  
+    0:01:26  228527.9      0.27      45.4       0.0                                0.00  
+    0:01:26  227716.6      0.27      43.2       0.0                                0.00  
+    0:01:27  227411.0      0.27      42.7       0.0                                0.00  
+    0:01:27  227334.6      0.27      43.2       0.0                                0.00  
+    0:01:27  227254.9      0.27      42.8       0.0                                0.00  
+    0:01:27  227197.2      0.27      42.3       0.0                                0.00  
+    0:01:27  227163.2      0.27      42.3       0.0                                0.00  
+    0:01:27  227132.7      0.27      42.2       0.0                                0.00  
+    0:01:27  227100.4      0.27      42.2       0.0                                0.00  
+    0:01:27  227051.2      0.27      42.2       0.0                                0.00  
+    0:01:27  227002.0      0.27      42.1       0.0                                0.00  
+    0:01:27  226981.6      0.27      42.1       0.0                                0.00  
+    0:01:27  226961.2      0.27      42.1       0.0                                0.00  
+    0:01:27  226940.8      0.27      42.1       0.0                                0.00  
+    0:01:27  226920.5      0.27      42.1       0.0                                0.00  
+    0:01:27  226920.5      0.27      42.1       0.0                                0.00  
+    0:01:28  227025.7      0.21      41.9       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:28  227049.5      0.21      41.5       0.0 conv_inst/data_bcd_r_reg[8]/D      0.00  
+    0:01:28  227044.4      0.21      41.7       0.0                                0.00  
+    0:01:29  224588.3      0.54      65.4       0.0                                0.00  
+    0:01:29  223882.1      0.85      67.4       0.0                                0.00  
+    0:01:29  223863.5      0.85      67.5       0.0                                0.00  
+    0:01:29  223863.5      0.85      67.5       0.0                                0.00  
+    0:01:29  223863.5      0.85      67.5       0.0                                0.00  
+    0:01:29  223863.5      0.85      67.5       0.0                                0.00  
+    0:01:29  223863.5      0.85      67.5       0.0                                0.00  
+    0:01:29  223863.5      0.85      67.5       0.0                                0.00  
+    0:01:30  224077.3      0.21      45.9       0.0 conv_inst/conv_1_r_reg[13]/D      0.00  
+    0:01:30  224096.0      0.20      45.9       0.0                                0.00  
+    0:01:30  224094.3      0.20      45.8       0.0                                0.00  
+    0:01:31  224148.6      0.20      45.7       0.0                                0.00  
+    0:01:31  224153.7      0.20      45.8       0.0                                0.00  
+    0:01:31  224182.6      0.20      45.4       0.0                                0.00  
+    0:01:31  224191.1      0.20      45.3       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:31  224192.8      0.20      45.1       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:32  224199.5      0.20      44.5       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:32  224182.6      0.20      44.7       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:32  224175.8      0.20      44.7       0.0                                0.00  
+    0:01:32  224062.1      0.20      43.2       0.0                                0.00  
+    0:01:32  223870.2      0.20      42.9       0.0                                0.00  
+    0:01:33  223624.1      0.20      44.6       0.0                                0.00  
+    0:01:33  223355.9      0.20      52.9       0.0                                0.00  
+    0:01:34  222994.4      0.20      55.3       0.0                                0.00  
+    0:01:35  222709.2      0.20      58.6       0.0                                0.00  
+    0:01:35  222683.8      0.20      58.2       0.0                                0.00  
+    0:01:36  222105.0      0.39      64.8       0.0                                0.00  
+    0:01:36  222023.5      0.39      75.5       0.0                                0.00  
+    0:01:36  222023.5      0.39      75.5       0.0                                0.00  
+    0:01:36  222023.5      0.39      75.5       0.0                                0.00  
+    0:01:36  222023.5      0.39      75.5       0.0                                0.00  
+    0:01:36  222023.5      0.39      75.5       0.0                                0.00  
+    0:01:36  222023.5      0.39      75.5       0.0                                0.00  
+    0:01:36  222232.3      0.20      58.2       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:37  222235.7      0.20      58.2       0.0 conv_inst/data_abc_r_reg[8]/D      0.00  
+    0:01:37  222235.7      0.20      58.2       0.0                                0.00  
+    0:01:38  222206.8      0.20      58.0       0.0                                0.00  
+    0:01:41  222032.0      0.23      58.1       0.0                                0.00  
+    0:01:42  221872.4      0.32      57.1       0.0                                0.00  
+    0:01:44  221714.6      0.32      58.5       0.0                                0.00  
+    0:01:46  221624.6      0.32      56.7       0.0                                0.00  
+    0:01:47  221544.8      0.28      54.2       0.0                                0.00  
+    0:01:49  221437.9      0.29      53.8       0.0                                0.00  
+    0:01:50  221314.0      0.29      53.5       0.0                                0.00  
+    0:01:50  221227.4      0.29      52.3       0.0                                0.00  
+    0:01:51  221173.1      0.29      52.4       0.0                                0.00  
+    0:01:51  221103.5      0.29      52.3       0.0                                0.00  
+    0:01:52  221037.3      0.29      52.0       0.0                                0.00  
+    0:01:52  221022.0      0.29      52.4       0.0                                0.00  
+    0:01:52  221006.7      0.29      52.4       0.0                                0.00  
+    0:01:53  220967.7      0.34      53.8       0.0                                0.00  
+    0:01:53  220952.4      0.34      53.6       0.0                                0.00  
+    0:01:53  220945.6      0.34      54.5       0.0                                0.00  
+    0:01:53  220930.4      0.35      52.8       0.0                                0.00  
+    0:01:53  220930.4      0.35      52.8       0.0                                0.00  
+    0:01:53  220930.4      0.35      52.8       0.0                                0.00  
+    0:01:54  220490.7      0.73      59.7       0.0                                0.00  
+    0:01:54  220400.8      0.82      83.1       0.0                                0.00  
+    0:01:54  220395.7      0.82      83.1       0.0                                0.00  
+    0:01:54  220395.7      0.82      83.1       0.0                                0.00  
+    0:01:54  220395.7      0.82      83.1       0.0                                0.00  
+    0:01:54  220395.7      0.82      83.1       0.0                                0.00  
+    0:01:54  220395.7      0.82      83.1       0.0                                0.00  
+    0:01:54  220395.7      0.82      83.1       0.0                                0.00  
+    0:01:54  220526.4      0.32      55.0       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:55  220633.3      0.31      55.2       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:01:56  221188.4      0.29      55.1       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:56  221222.3      0.29      55.1       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:56  221234.2      0.29      53.2       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:56  221244.4      0.28      53.2       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:56  221329.2      0.28      52.4       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:56  221339.4      0.27      52.3       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:57  221397.1      0.27      52.4       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:57  221429.4      0.27      52.2       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:57  221524.4      0.26      51.5       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:57  221502.4      0.26      51.5       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[7]/D      0.00  
+    0:01:57  221546.5      0.26      51.5       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:57  221599.1      0.26      51.3       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:01:58  221600.8      0.26      51.3       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:01:58  221622.9      0.26      51.3       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:58  221645.0      0.26      50.9       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:01:58  221684.0      0.26      51.1       0.0 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:58  221694.2      0.26      50.9       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:58  221743.4      0.26      50.5       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:58  221755.3      0.26      50.4       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:01:59  221770.6      0.26      50.4       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:59  221807.9      0.25      50.5       0.0 median_sobel_inst/u_median_filter_submodule/a58_r_reg/D      0.00  
+    0:01:59  221807.9      0.25      50.5       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:01:59  221816.4      0.25      50.5       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:01:59  221819.8      0.25      50.5       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:02:00  221857.1      0.25      50.4       0.0 median_sobel_inst/u_median_filter_submodule/a39_r_reg/D      0.00  
+    0:02:00  221828.3      0.25      50.4       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:02:00  221835.1      0.25      50.4       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:02:00  221852.0      0.25      50.4       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:02:00  221928.4      0.25      50.4       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:02:00  221921.6      0.25      50.4       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:02:01  221906.4      0.25      50.3       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:02:01  221911.5      0.25      50.3       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:02:01  221930.1      0.24      49.6       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:02:01  222008.2      0.23      49.2       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:02:01  222033.7      0.22      48.1       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:02:02  222081.2      0.22      48.1       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:02:02  222123.6      0.22      47.7       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:02:02  222140.6      0.22      47.7       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:02:02  222167.8      0.22      47.5       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:02:02  222174.5      0.22      47.5       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:02:03  222222.1      0.21      47.4       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:02:03  222200.0      0.21      47.4       0.0 median_sobel_inst/u_median_filter_submodule/a36_r_reg/D      0.00  
+    0:02:03  222228.9      0.21      47.3       0.0 median_sobel_inst/u_median_filter_submodule/a28_r_reg/D      0.00  
+    0:02:03  222250.9      0.21      47.4       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[7]/D      0.00  
+    0:02:03  222247.5      0.21      47.3       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:02:04  222234.0      0.21      47.3       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:02:04  222234.0      0.21      47.3       0.0 median_sobel_inst/u_median_filter_submodule/a47_r_reg/D      0.00  
+    0:02:05  222230.6      0.21      47.3       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:02:05  222257.7      0.21      47.3       0.0 median_sobel_inst/u_median_filter_submodule/a17_r_reg/D      0.00  
+    0:02:05  222247.5      0.21      47.0       0.0 median_sobel_inst/u_median_filter_submodule/b9_r_reg[3]/D      0.00  
+    0:02:05  222291.7      0.21      47.0       0.0 median_sobel_inst/u_median_filter_submodule/a14_r_reg/D      0.00  
+    0:02:05  222295.1      0.21      46.9       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:02:06  222317.1      0.20      47.2       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[6]/D      0.00  
+    0:02:06  222317.1      0.20      47.1       0.0 median_sobel_inst/u_median_filter_submodule/b9_r_reg[0]/D      0.00  
+    0:02:06  222310.3      0.20      47.1       0.0 median_sobel_inst/u_median_filter_submodule/b5_r_reg[4]/D      0.00  
+    0:02:06  222310.3      0.20      47.3       0.0 median_sobel_inst/u_median_filter_submodule/a25_r_reg/D      0.00  
+    0:02:06  222291.7      0.20      47.3       0.0 median_sobel_inst/u_median_filter_submodule/a69_r_reg/D      0.00  
+    0:02:07  222306.9      0.20      47.3       0.0                                0.00  
+    0:02:07  222340.9      0.20      46.5       0.0                                0.00  
+    0:02:07  222354.5      0.20      46.4       0.0                                0.00  
+    0:02:07  222334.1      0.20      46.3       0.0                                0.00  
+    0:02:07  222342.6      0.20      46.3       0.0                                0.00  
+    0:02:07  222373.1      0.20      46.3       0.0                                0.00  
+    0:02:07  222373.1      0.20      46.3       0.0                                0.00  
+    0:02:07  222447.8      0.20      45.5       0.0                                0.00  
+    0:02:08  222468.2      0.20      44.9       0.0                                0.00  
+    0:02:08  222537.8      0.20      44.5       0.0                                0.00  
+    0:02:08  222658.3      0.20      43.2       0.0                                0.00  
+    0:02:08  222753.4      0.20      42.4       0.0                                0.00  
+    0:02:08  222760.2      0.20      42.1       0.0                                0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Comand Line  | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 5938                                   |
+| Number of User Hierarchies                              | 29                                     |
+| Sequential Cell Count                                   | 1297                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 4                                      |
+| Number of Dont Touch Nets                               | 6                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 238 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'core'
+
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+  Loading target library 'sram_256x8'
+  Loading target library 'sram_512x8'
+  Loading target library 'sram_4096x8'
+Loaded alib file './alib-52/slow.db.alib'
+Loaded alib file './alib-52/sram_256x8_slow_syn.db.alib' (placeholder)
+Loaded alib file './alib-52/sram_512x8_slow_syn.db.alib' (placeholder)
+Loaded alib file './alib-52/sram_4096x8_slow_syn.db.alib' (placeholder)
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy conv_inst before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy median_sobel_inst before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy median_sobel_inst/u_median_filter_submodule before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy median_sobel_inst/u_sobel_gradient_submodule before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy median_sobel_inst/u_sober_compare_submodule before Pass 1 (OPT-776)
+Information: Ungrouping 5 of 30 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'core'
+Information: In design 'core', the register 'x_plus_one_r_reg[0]' is removed because it is merged to 'x_minus_one_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p2_r_reg[7]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p2_r_reg[7]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p9_r_reg[7]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p9_r_reg[7]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p6_r_reg[7]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p6_r_reg[7]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p7_r_reg[7]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p7_r_reg[7]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p1_r_reg[7]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p1_r_reg[7]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p4_r_reg[7]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p4_r_reg[7]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p2_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p2_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p8_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p8_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p6_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p6_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p9_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p9_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p4_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p4_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p1_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p1_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p7_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p7_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p2_r_reg[5]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p2_r_reg[5]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p8_r_reg[5]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p8_r_reg[5]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p6_r_reg[5]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p6_r_reg[5]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p9_r_reg[5]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p9_r_reg[5]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p4_r_reg[5]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p4_r_reg[5]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p1_r_reg[5]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p1_r_reg[5]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p7_r_reg[5]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p7_r_reg[5]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p2_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p2_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p8_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p8_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p6_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p6_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p3_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p3_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p4_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p4_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p1_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p1_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p7_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p7_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p8_r_reg[3]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p8_r_reg[3]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p2_r_reg[3]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p2_r_reg[3]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p6_r_reg[3]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p6_r_reg[3]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p9_r_reg[3]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p9_r_reg[3]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p4_r_reg[3]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p4_r_reg[3]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p1_r_reg[3]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p1_r_reg[3]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p7_r_reg[3]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p7_r_reg[3]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p2_r_reg[2]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p2_r_reg[2]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p6_r_reg[2]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p6_r_reg[2]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p3_r_reg[2]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p3_r_reg[2]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p9_r_reg[2]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p9_r_reg[2]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p4_r_reg[2]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p4_r_reg[2]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p1_r_reg[2]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p1_r_reg[2]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p9_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p9_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p8_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p8_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p4_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p4_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p2_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p2_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p8_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p8_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p6_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p6_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p3_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p3_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p9_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p9_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p1_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p1_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc3_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc1_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc3_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc1_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc2_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc1_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult2_r_reg[7]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[7]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult2_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult2_r_reg[5]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[5]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult2_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult2_r_reg[3]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[3]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult2_r_reg[2]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[2]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult2_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult2_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_mult1_r_reg[0]'. (OPT-1215)
+ Implement Synthetic for 'core'.
+  Processing 'conv_DW01_add_11'
+  Processing 'conv_DW01_add_10'
+  Processing 'conv_DW01_add_8'
+  Processing 'conv_DW01_add_9'
+  Processing 'sobel_gradient_DW01_add_13'
+  Processing 'sobel_gradient_DW01_add_18'
+  Processing 'sobel_gradient_DW01_sub_4'
+  Processing 'sobel_gradient_DW01_sub_5'
+  Processing 'sobel_gradient_DW01_add_14'
+  Processing 'conv_DW01_add_13'
+  Processing 'sobel_gradient_DW01_add_17'
+  Processing 'sobel_gradient_DW01_add_16'
+  Processing 'sobel_gradient_DW01_add_15'
+  Processing 'conv_DW01_add_15'
+  Processing 'conv_DW01_add_12'
+  Processing 'conv_DW01_add_14'
+  Processing 'sobel_gradient_DW01_add_21'
+  Processing 'sobel_gradient_DW01_add_19'
+  Processing 'sobel_gradient_DW01_add_20'
+  Processing 'sobel_gradient_DW01_add_22'
+  Processing 'conv_DW01_inc_1'
+  Processing 'core_DW01_inc_1'
+  Processing 'sobel_gradient_DW01_inc_2'
+  Processing 'sobel_gradient_DW01_inc_3'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p8_r_reg[7]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p8_r_reg[7]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p3_r_reg[6]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p3_r_reg[6]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p9_r_reg[4]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p9_r_reg[4]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p8_r_reg[2]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p8_r_reg[2]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p1_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p1_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p3_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p3_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p2_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p2_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p6_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p6_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/p4_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_median_filter_submodule/p4_r_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gy2_reg[0]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx1_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gy1_reg[0]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx2_reg[0]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc2_1_r_reg[1]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc1_1_r_reg[1]'. (OPT-1215)
+Information: In design 'core', the register 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc2_1_r_reg[0]' is removed because it is merged to 'median_sobel_inst/u_sobel_gradient_submodule/Gx_acc1_1_r_reg[0]'. (OPT-1215)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 14)
+  Mapping Optimization (Phase 15)
+  Mapping Optimization (Phase 16)
+  Mapping Optimization (Phase 17)
+  Mapping Optimization (Phase 18)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:27  273821.3      0.18      20.3    1087.5                           189264592.0000      0.00  
+    0:00:28  273532.8      0.37      20.9    1087.5                           188954720.0000      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:00:28  273532.8      0.37      20.9    1087.5                           188954720.0000      0.00  
+    0:00:28  273354.6      0.33      21.2    1087.5                           188783568.0000      0.00  
+
+  Beginning Global Optimizations
+  ------------------------------
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:31  221841.9      0.67      74.8    2460.5                           141547248.0000      0.00  
+    0:00:36  225380.9      0.06       4.9    2249.3                           144133712.0000      0.00  
+    0:00:36  225380.9      0.06       4.9    2249.3                           144133712.0000      0.00  
+    0:00:37  224846.3      0.06       4.4    2249.5                           143779936.0000      0.00  
+    0:00:38  224846.3      0.06       4.4    2249.5                           143779936.0000      0.00  
+    0:00:38  224795.3      0.09       4.6    2249.5                           143741536.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:40  223335.6      0.09       7.6    2195.0                           142192464.0000      0.00  
+    0:00:40  223289.7      0.09       7.0    2197.5                           142157120.0000      0.00  
+    0:00:40  223289.7      0.09       7.0    2197.5                           142157120.0000      0.00  
+    0:00:41  219793.1      0.09       4.8    2175.7                           138790992.0000      0.00  
+    0:00:41  219793.1      0.09       4.8    2175.7                           138790992.0000      0.00  
+    0:00:45  224649.4      0.09       3.1    2179.1                           142798336.0000      0.00  
+    0:00:45  224649.4      0.09       3.1    2179.1                           142798336.0000      0.00  
+    0:00:45  224848.0      0.05       2.2    2184.0                           142980176.0000      0.00  
+    0:00:45  224848.0      0.05       2.2    2184.0                           142980176.0000      0.00  
+    0:00:46  225270.6      0.04       1.9    2184.0                           143453056.0000      0.00  
+    0:00:46  225270.6      0.04       1.9    2184.0                           143453056.0000      0.00  
+    0:00:49  225913.9      0.00       0.0    2234.5                           143991648.0000      0.00  
+    0:00:49  225913.9      0.00       0.0    2234.5                           143991648.0000      0.00  
+    0:00:50  225907.1      0.00       0.0    2234.5                           143982608.0000      0.00  
+    0:00:50  225907.1      0.00       0.0    2234.5                           143982608.0000      0.00  
+    0:00:50  225908.8      0.00       0.0    2234.5                           143986464.0000      0.00  
+    0:00:50  225908.8      0.00       0.0    2234.5                           143986464.0000      0.00  
+    0:00:50  225908.8      0.00       0.0    2234.5                           143986464.0000      0.00  
+    0:00:50  225908.8      0.00       0.0    2234.5                           143986464.0000      0.00  
+    0:00:50  225908.8      0.00       0.0    2234.5                           143986464.0000      0.00  
+    0:00:50  225908.8      0.00       0.0    2234.5                           143986464.0000      0.00  
+    0:00:50  225908.8      0.00       0.0    2234.5                           143986464.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:50  225908.8      0.00       0.0    2234.5                           143986464.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:00:50  226071.8      0.00       0.0       0.0                           144190640.0000      0.00  
+    0:00:50  226071.8      0.00       0.0       0.0                           144190640.0000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:50  226071.8      0.00       0.0       0.0                           144190640.0000      0.00  
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+    0:00:55  218513.3      0.15      21.1       0.0                           136820560.0000      0.00  
+    0:01:01  224870.0      0.13      15.6     618.7                           141516288.0000      0.00  
+    0:01:01  224870.0      0.13      15.6     618.7                           141516288.0000      0.00  
+    0:01:01  220528.1      0.14      10.0       0.0                           136937248.0000      0.00  
+    0:01:01  220528.1      0.14      10.0       0.0                           136937248.0000      0.00  
+    0:01:13  225389.4      0.07       4.5       0.0                           141684176.0000      0.00  
+    0:01:14  225389.4      0.07       4.5       0.0                           141684176.0000      0.00  
+    0:01:14  225389.4      0.07       4.5       0.0                           141684176.0000      0.00  
+    0:01:14  225389.4      0.07       4.5       0.0                           141684176.0000      0.00  
+    0:01:14  225503.1      0.07       4.4       0.0                           141795216.0000      0.00  
+    0:01:14  225503.1      0.07       4.4       0.0                           141795216.0000      0.00  
+    0:01:16  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:16  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:16  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:16  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:16  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:16  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:17  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:17  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:17  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:17  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:17  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:01:18  225958.1      0.03       1.1       0.0                           142186672.0000      0.00  
+    0:01:19  222456.3      0.03       0.8       0.0                           138756928.0000      0.00  
+    0:01:19  222463.1      0.01       0.3       0.0                           138782976.0000      0.00  
+    0:01:19  222463.1      0.01       0.3       0.0                           138782976.0000      0.00  
+    0:01:20  220774.2      0.02       0.5       0.0                           137067568.0000      0.00  
+    0:01:21  219482.5      0.02       0.6       0.0                           136132064.0000      0.00  
+    0:01:22  219976.4      0.00       0.0       1.2                           136640064.0000      0.00  
+    0:01:22  219976.4      0.00       0.0       1.2                           136640064.0000      0.00  
+    0:01:22  219976.4      0.00       0.0       1.2                           136640064.0000      0.00  
+    0:01:22  219976.4      0.00       0.0       1.2                           136640064.0000      0.00  
+    0:01:22  219976.4      0.00       0.0       1.2                           136640064.0000      0.00  
+    0:01:25  215245.8      0.00       0.0       0.0                           132764488.0000      0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+  Loading target library 'sram_256x8'
+  Loading target library 'sram_512x8'
+  Loading target library 'sram_4096x8'
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated black box outputs. (PWR-428)
+1
+optimize_netlist -area 
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+
+
+  Updating timing information
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+
+  Beginning Area Optimization
+  -----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:02  215245.8      0.00       0.0       0.0                           132764488.0000      0.00  
+    0:00:13  213134.2      0.00       0.0       0.0                           131468504.0000      0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_256x8/sram_256x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db'
+Loading db file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_4096x8/sram_4096x8_slow_syn.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+# Report Output
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+report_timing > "./Report/${DESIGN}_syn.timing"
+report_area > "./Report/${DESIGN}_syn.area"
+# Output Design
+current_design [get_designs ${DESIGN}]
+Current design is 'core'.
+{core}
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+1
+set verilogout_higher_designs_first true
+true
+write -format ddc     -hierarchy -output "./Netlist/${DESIGN}_syn.ddc"
+Writing ddc file './Netlist/core_syn.ddc'.
+1
+write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
+Writing verilog file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/Netlist/core_syn.v'.
+1
+write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
+Information: Writing timing information to file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/02_SYN/Netlist/core_syn.sdf'. (WT-3)
+1
+write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : core
+Version: U-2022.12
+Date   : Tue Nov  5 18:48:06 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: conv_inst_conv_2_r_reg_6_
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: conv_inst_conv_2_r_reg_14_
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  core               tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  conv_inst_conv_2_r_reg_6_/CK (DFFRX2)                   0.00       0.50 r
+  conv_inst_conv_2_r_reg_6_/Q (DFFRX2)                    0.65       1.15 f
+  U6508/Y (NAND2X2)                                       0.23       1.38 r
+  U3774/Y (NAND2X2)                                       0.13       1.51 f
+  U6509/Y (NOR2X4)                                        0.14       1.65 r
+  U6516/Y (OAI2BB1X4)                                     0.20       1.85 r
+  U4953/Y (NAND3X8)                                       0.15       2.00 f
+  U3929/Y (INVX12)                                        0.08       2.08 r
+  U6518/Y (NAND2X8)                                       0.10       2.18 f
+  U3338/Y (NAND2X2)                                       0.13       2.31 r
+  U7550/Y (XOR2X4)                                        0.15       2.46 f
+  U2987/Y (NOR2X6)                                        0.09       2.55 r
+  conv_inst_conv_2_r_reg_14_/D (DFFRX2)                   0.00       2.55 r
+  data arrival time                                                  2.55
+
+  clock i_clk (rise edge)                                 2.31       2.31
+  clock network delay (ideal)                             0.50       2.81
+  clock uncertainty                                      -0.10       2.71
+  conv_inst_conv_2_r_reg_14_/CK (DFFRX2)                  0.00       2.71 r
+  library setup time                                     -0.16       2.55
+  data required time                                                 2.55
+  --------------------------------------------------------------------------
+  data required time                                                 2.55
+  data arrival time                                                 -2.55
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+report_area
+ 
+****************************************
+Report : area
+Design : core
+Version: U-2022.12
+Date   : Tue Nov  5 18:48:06 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
+    sram_512x8 (File: /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/sram_512x8/sram_512x8_slow_syn.db)
+
+Number of ports:                           33
+Number of nets:                          6272
+Number of cells:                         5748
+Number of combinational cells:           4519
+Number of sequential cells:              1219
+Number of macros/black boxes:               4
+Number of buf/inv:                        648
+Number of references:                     166
+
+Combinational area:              46518.944215
+Buf/Inv area:                     4292.724587
+Noncombinational area:           42823.703796
+Macro/Black Box area:           123791.546875
+Net Interconnect area:          658890.073486
+
+Total cell area:                213134.194886
+Total area:                     872024.268372
+1
+check_design
+1
+exit
+
+Memory usage for this session 229 Mbytes.
+Memory usage for this session including child processes 229 Mbytes.
+CPU usage for this session 233 seconds ( 0.06 hours ).
+Elapsed time for this session 245 seconds ( 0.07 hours ).
+
+Thank you...
