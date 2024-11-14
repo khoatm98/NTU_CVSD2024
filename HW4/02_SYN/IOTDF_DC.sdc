@@ -1,7 +1,7 @@
 # operating conditions and boundary conditions #
 
 
-create_clock -name clk  -period 3.0   [get_ports  clk]      ;#Modify period by yourself
+create_clock -name clk  -period 20.0   [get_ports  clk]      ;#Modify period by yourself
 
 set_dont_touch_network      [all_clocks]
 set_fix_hold                [all_clocks]

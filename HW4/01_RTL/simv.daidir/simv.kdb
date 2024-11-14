@@ -9,7 +9,7 @@ UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
 COSIM=FALSE
-TOP=test 
+TOP=test top2maxmin 
 OPTION=-ssv -ssy 
 ELAB_OPTION=-ssv -ssy 
 

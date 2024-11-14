@@ -36,6 +36,6 @@ read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F5.fsdb
 update_power
 report_power
 report_power >> F1_5.power
-
+exit
 
 

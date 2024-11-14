@@ -14,5 +14,5 @@
 [READSCOPE]Scope read count is 3
 [READSCOPE]Decompressed blk is 2
 [FSDBGate Info] start
-[FSDBGate Info] Total fhdb_compute_count = 34
+[FSDBGate Info] Total fhdb_compute_count = 54318
 [FSDBGate Info] end

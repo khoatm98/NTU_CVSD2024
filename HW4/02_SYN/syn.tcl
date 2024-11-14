@@ -5,14 +5,6 @@ sh mkdir -p Report
 set company {NTUGIEE}
 set designer {Student}
 
-set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  $search_path ../ ./"
-set target_library   "slow.db                 \
-                     "
-set link_library     "* $target_library dw_foundation.sldb"
-set symbol_library   "tsmc13.sdb generic.sdb"
-set synthetic_library "dw_foundation.sldb"
-set default_schematic_options {-size infinite}
-
 
 # Import Design
 set DESIGN "IOTDF"
@@ -46,8 +38,29 @@ set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 #set_max_area 0 
 #compile -ignore_tns
 
-set_clock_gating_style -max_fanout 4 -pos integrated -control_point before -control_signal scan_enable
-compile -gate_clock
+#set_clock_gating_style -max_fanout 4 -pos integrated -control_point before  {nand}
+#set_max_area 0  -ignore_tns
+
+
+set_clock_gating_style \
+	-max_fanout 8 \
+	-pos {integrated} \
+	-control_point before \
+	-control_signal scan_enable
+
+set_host_options -max_cores 16
+
+set_max_leakage_power 0
+set_max_dynamic_power 0
+set_dynamic_optimization true 
+set_app_var power_low_power_placement true
+#compile_ultra -gate_clock  -retime
+compile_ultra -gate_clock -retime
+optimize_netlist -area 
+
+
+
+
 #compile -boundary_optimization -map_effort high  -auto_ungroup area
 
 #compile_ultra
@@ -78,7 +91,7 @@ write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
 write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
 write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
 
-
+report_clock_gating -gating_elements
 report_timing
 report_area
 check_design

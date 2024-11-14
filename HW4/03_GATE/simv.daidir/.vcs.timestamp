@@ -1,12 +1,13 @@
 1        
 0 ../02_SYN/Netlist/IOTDF_syn.sdf_c
-37
-+define+CYCLE=3.0
-+define+SDF+p1+F5
+38
++define+CYCLE=22
++define+SDF+p1+F1
 +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 +maxdelays
 +neg_tchk
 +v2k
++vcs+no_warning
 +vcsd1
 +vpi
 -Mamsrun=
@@ -111,8 +112,8 @@ ARCH=linux64
 0
 0
 7
-1731080141 ../02_SYN/Netlist/IOTDF_syn.sdf
-1731080140 ../02_SYN/Netlist/IOTDF_syn.v
+1731567892 ../02_SYN/Netlist/IOTDF_syn.sdf
+1731567892 ../02_SYN/Netlist/IOTDF_syn.v
 1608252293 /home/raid7_2/course/cvsd/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v
 1731056953 ../00_TESTBED/testfixture.v
 1731056972 rtl_03.f
@@ -123,5 +124,5 @@ ARCH=linux64
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1731080251 simv.daidir
+1731567949 simv.daidir
 -1 partitionlib

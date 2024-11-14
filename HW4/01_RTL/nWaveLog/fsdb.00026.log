@@ -1,7 +1,7 @@
 #######################################################################################
 # fsdb.xxxxx.log : log primitive debug message of FSDB Reader
 # This is for R&D to analyze when there are issues happening when FSDB reading
-# The corresponding FSDB file is /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/01_RTL/IOTDF_F1.fsdb
+# The corresponding FSDB file is /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/01_RTL/IOTDF_F3.fsdb
 #######################################################################################
 [BASIC]Reader version : Chronologic Simulation VCS Release T-2022.06_Full64
 [BASIC]simulator version : Chronologic Simulation VCS Release T-2022.06_Full64
@@ -14,5 +14,5 @@
 [READSCOPE]Scope read count is 3
 [READSCOPE]Decompressed blk is 2
 [FSDBGate Info] start
-[FSDBGate Info] Total fhdb_compute_count = 628
+[FSDBGate Info] Total fhdb_compute_count = 4977
 [FSDBGate Info] end

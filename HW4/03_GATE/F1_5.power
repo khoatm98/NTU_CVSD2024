@@ -1,20 +1,38 @@
-Information: Running time_based power analysis... (PWR-601)
-Error: Can't find main library for the design. (PWR-289)
-Error: Power is not calculated. Please run update_power before report_power.  (PRPT-115)
-0
-Information: Running time_based power analysis... (PWR-601)
-Error: Can't find main library for the design. (PWR-289)
-Error: Power is not calculated. Please run update_power before report_power.  (PRPT-115)
-0
-Information: Running time_based power analysis... (PWR-601)
-Error: Can't find main library for the design. (PWR-289)
-Error: Power is not calculated. Please run update_power before report_power.  (PRPT-115)
-0
-Information: Running time_based power analysis... (PWR-601)
-Error: Can't find main library for the design. (PWR-289)
-Error: Power is not calculated. Please run update_power before report_power.  (PRPT-115)
-0
-Information: Running time_based power analysis... (PWR-601)
-Error: Can't find main library for the design. (PWR-289)
-Error: Power is not calculated. Please run update_power before report_power.  (PRPT-115)
-0
+****************************************
+Report : Time Based Power
+Design : IOTDF
+Version: U-2022.12
+Date   : Thu Nov 14 15:06:09 2024
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
+register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+combinational           1.022e-04 6.691e-05 4.358e-06 1.735e-04 (29.10%)  
+sequential              3.724e-04 4.188e-05 8.333e-06 4.226e-04 (70.90%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 1.088e-04   (18.25%)
+  Cell Internal Power  = 4.746e-04   (79.62%)
+  Cell Leakage Power   = 1.269e-05   ( 2.13%)
+                         ---------
+Total Power            = 5.961e-04  (100.00%)
+
+X Transition Power     = 2.476e-07
+Glitching Power        =    0.0000
+
+Peak Power             =    0.4192
+Peak Time              = 11000.000
+
+1

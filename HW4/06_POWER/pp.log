@@ -34,11 +34,11 @@ link
 Loading verilog file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/Netlist/IOTDF_syn.v'
 Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
 Linking design IOTDF...
-Information: Removing 153 unneeded designs..... (LNK-034)
-Information: 339 (64.33%) library cells are unused in library slow..... (LNK-045)
-Information: total 339 library cells are unused (LNK-046)
+Information: Removing 42 unneeded designs..... (LNK-034)
+Information: 430 (81.59%) library cells are unused in library slow..... (LNK-045)
+Information: total 430 library cells are unused (LNK-046)
 Design 'IOTDF' was successfully linked.
-Information: There are 6982 leaf cells, ports, hiers and 9105 nets in the design (LNK-047)
+Information: There are 1665 leaf cells, ports, hiers and 1829 nets in the design (LNK-047)
 1
 read_sdf -load_delay net ../02_SYN/Netlist/IOTDF_syn.sdf
 
@@ -50,14 +50,14 @@ Report : read_sdf /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/Netlist/
 	-max_type sdf_max
 Design : IOTDF
 Version: U-2022.12
-Date   : Fri Nov  8 23:37:56 2024
+Date   : Sun Nov 10 05:31:12 2024
 ****************************************
 
         0 error(s)
-        Number of annotated cell delay arcs :     23587
-        Number of annotated net delay arcs  :     19082
-        Number of annotated timing checks   :     15204
-        Number of annotated constraints     :      7036
+        Number of annotated cell delay arcs :      5083
+        Number of annotated net delay arcs  :      4329
+        Number of annotated timing checks   :      2552
+        Number of annotated constraints     :      1235
         TEMPERATURE: 125.00 (min)  125.00 (max)
         VOLTAGE    : 1.08 (min)  1.08 (max)
         PROCESS    : slow (min)  slow (max)
@@ -74,10 +74,10 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 7220
-Number of annotated nets = 7220 (100.00%)
-Total number of leaf cells = 6684
-Number of fully annotated leaf cells = 4893 (73.20%)
+Total number of nets = 1594
+Number of annotated nets = 1594 (100.00%)
+Total number of leaf cells = 1478
+Number of fully annotated leaf cells = 1140 (77.13%)
 ======================================================================
 
 1
@@ -101,16 +101,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 49.974000 ns  Last event time = 64.974000 ns  Last event time = 86.523000 ns  Last event time = 108.091000 ns  Last event time = 122.708000 ns  Last event time = 146.255000 ns  Last event time = 161.107000 ns  Last event time = 182.914000 ns  Last event time = 204.427000 ns  Last event time = 221.108000 ns  Last event time = 245.264000 ns  Last event time = 257.861000 ns  Last event time = 278.844000 ns  Last event time = 300.000000 ns  Last event time = 315.081000 ns  Last event time = 339.094000 ns  Last event time = 353.263000 ns  Last event time = 374.693000 ns  Last event time = 395.957000 ns  Last event time = 411.090000 ns  Last event time = 435.000000 ns  Last event time = 448.489000 ns  Last event time = 470.056000 ns  Last event time = 491.856000 ns  Last event time = 508.927000 ns  Last event time = 531.565000 ns  Last event time = 546.157000 ns  Last event time = 567.842000 ns  Last event time = 588.421000 ns  Last event time = 605.471000 ns  Last event time = 628.832000 ns  Last event time = 642.113000 ns  Last event time = 664.093000 ns  Last event time = 684.590000 ns  Last event time = 701.894000 ns  Last event time = 725.391000 ns  Last event time = 738.483000 ns  Last event time = 758.800000 ns  Last event time = 779.630000 ns  Last event time = 794.248000 ns  Last event time = 816.113000 ns  Last event time = 831.094000 ns  Last event time = 851.420000 ns  Last event time = 874.044000 ns  Last event time = 887.926000 ns  Last event time = 909.458000 ns  Last event time = 926.897000 ns  Last event time = 944.919000 ns  Last event time = 968.688000 ns  Last event time = 983.124000 ns  Last event time = 1004.988000 ns  Last event time = 1023.012000 ns  Last event time = 1042.997000 ns  Last event time = 1065.000000 ns  Last event time = 1079.277000 ns  Last event time = 1100.183000 ns  Last event time = 1118.757000 ns  Last event time = 1138.974000 ns  Last event time = 1161.199000 ns  Last event time = 1175.059000 ns  Last event time = 1196.604000 ns  Last event time = 1214.100000 ns  Last event time = 1232.487000 ns  Last event time = 1257.276000 ns  Last event time = 1271.775000 ns  Last event time = 1295.216000 ns  Last event time = 1312.706000 ns  Last event time = 1331.825000 ns  Last event time = 1354.976000 ns  Last event time = 1369.728000 ns  Last event time = 1391.297000 ns  Last event time = 1407.538000 ns  Last event time = 1427.678000 ns  Last event time = 1450.927000 ns  Last event time = 1465.720000 ns  Last event time = 1487.056000 ns  Last event time = 1503.152000 ns  Last event time = 1522.997000 ns  Last event time = 1545.113000 ns  Last event time = 1559.060000 ns  Last event time = 1583.061000 ns  Last event time = 1598.857000 ns  Last event time = 1619.520000 ns  Last event time = 1641.839000 ns  Last event time = 1655.735000 ns  Last event time = 1678.829000 ns  Last event time = 1695.233000 ns  Last event time = 1714.927000 ns  Last event time = 1736.657000 ns  Last event time = 1750.997000 ns  Last event time = 1772.078000 ns  Last event time = 1790.714000 ns  Last event time = 1808.306000 ns  Last event time = 1830.113000 ns  Last event time = 1844.362000 ns  Last event time = 1865.060000 ns  Last event time = 1884.010000 ns  Last event time = 1900.927000 ns  Last event time = 1922.393000 ns  Last event time = 1937.469000 ns  Last event time = 1958.790000 ns  Last event time = 1980.000000 ns  Last event time = 1994.458000 ns  Last event time = 2018.024000 ns  Last event time = 2033.211000 ns  Last event time = 2054.061000 ns  Last event time = 2075.427000 ns  Last event time = 2090.061000 ns  Last event time = 2111.200000 ns  Last event time = 2127.301000 ns  Last event time = 2146.997000 ns  Last event time = 2169.681000 ns  Last event time = 2183.334000 ns  Last event time = 2204.676000 ns  Last event time = 2222.776000 ns  Last event time = 2240.769000 ns  Last event time = 2264.334000 ns  Last event time = 2276.905000 ns  Last event time = 2298.698000 ns  Last event time = 2318.263000 ns  Last event time = 2336.653000 ns  Last event time = 2360.767000 ns  Last event time = 2372.708000 ns  Last event time = 2396.466000 ns  Last event time = 2414.681000 ns  Last event time = 2432.702000 ns  Last event time = 2456.541000 ns  Last event time = 2470.974000 ns  Last event time = 2492.472000 ns  Last event time = 2510.474000 ns  Last event time = 2528.104000 ns  Last event time = 2550.091000 ns  Last event time = 2564.354000 ns  Last event time = 2585.452000 ns  Last event time = 2604.714000 ns  Last event time = 2621.452000 ns  Last event time = 2642.573000 ns  Last event time = 2657.670000 ns  Last event time = 2678.136000 ns  Last event time = 2699.953000 ns  Last event time = 2715.108000 ns  Last event time = 2738.603000 ns  Last event time = 2752.588000 ns  Last event time = 2772.565000 ns  Last event time = 2795.695000 ns  Last event time = 2810.729000 ns  Last event time = 2834.321000 ns  Last event time = 2849.777000 ns  Last event time = 2871.093000 ns  Last event time = 2892.150000 ns  Last event time = 2909.061000 ns  Last event time = 2930.996000 ns  Last event time = 2946.554000 ns  Last event time = 2969.076000 ns  Last event time = 2989.952000 ns  Last event time = 3006.405000 ns  Last event time = 3029.660000 ns  Last event time = 3044.363000 ns  Last event time = 3065.597000 ns  Last event time = 3084.457000 ns  Last event time = 3101.704000 ns  Last event time = 3129.070000 ns Information: analysis is done for time window (0ns - 3138ns)
+ Last event time = 118.534000 ns  Last event time = 192.000000 ns  Last event time = 263.232000 ns  Last event time = 335.750000 ns  Last event time = 412.459000 ns  Last event time = 487.802000 ns  Last event time = 556.443000 ns  Last event time = 628.551000 ns  Last event time = 700.534000 ns  Last event time = 774.054000 ns  Last event time = 844.740000 ns  Last event time = 919.112000 ns  Last event time = 991.802000 ns  Last event time = 1069.274000 ns  Last event time = 1144.583000 ns  Last event time = 1218.000000 ns  Last event time = 1289.874000 ns  Last event time = 1362.423000 ns  Last event time = 1434.618000 ns  Last event time = 1506.276000 ns  Last event time = 1578.252000 ns  Last event time = 1654.373000 ns  Last event time = 1726.582000 ns  Last event time = 1795.619000 ns  Last event time = 1866.792000 ns  Last event time = 1939.880000 ns  Last event time = 2016.668000 ns  Last event time = 2089.634000 ns  Last event time = 2164.508000 ns  Last event time = 2236.365000 ns  Last event time = 2316.000000 ns  Last event time = 2387.882000 ns  Last event time = 2462.129000 ns  Last event time = 2536.770000 ns  Last event time = 2610.790000 ns  Last event time = 2687.053000 ns  Last event time = 2759.516000 ns  Last event time = 2836.334000 ns  Last event time = 2909.955000 ns  Last event time = 2982.127000 ns  Last event time = 3053.132000 ns  Last event time = 3127.419000 ns  Last event time = 3203.124000 ns  Last event time = 3280.777000 ns  Last event time = 3352.891000 ns  Last event time = 3424.839000 ns  Last event time = 3492.197000 ns  Last event time = 3569.060000 ns  Last event time = 3640.225000 ns  Last event time = 3710.399000 ns  Last event time = 3779.699000 ns  Last event time = 3856.521000 ns  Last event time = 3924.604000 ns  Last event time = 3999.906000 ns  Last event time = 4071.888000 ns  Last event time = 4145.018000 ns  Last event time = 4216.276000 ns  Last event time = 4289.642000 ns  Last event time = 4363.163000 ns  Last event time = 4438.808000 ns  Last event time = 4511.723000 ns  Last event time = 4583.687000 ns  Last event time = 4655.381000 ns  Last event time = 4728.265000 ns  Last event time = 4804.546000 ns  Last event time = 4873.776000 ns  Last event time = 4944.976000 ns  Last event time = 5016.824000 ns  Last event time = 5093.301000 ns  Last event time = 5165.781000 ns  Last event time = 5238.585000 ns  Last event time = 5305.361000 ns  Last event time = 5382.278000 ns  Last event time = 5453.104000 ns  Last event time = 5525.100000 ns  Last event time = 5596.823000 ns  Last event time = 5670.131000 ns  Last event time = 5746.451000 ns  Last event time = 5819.126000 ns  Last event time = 5890.491000 ns  Last event time = 5965.582000 ns  Last event time = 6040.357000 ns  Last event time = 6112.551000 ns  Last event time = 6184.890000 ns  Last event time = 6263.423000 ns Information: analysis is done for time window (0ns - 6270ns)
 
-Information: Total simulation time = 3138.000000 ns
+Information: Total simulation time = 6270.000000 ns
 1
 report_power 
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Fri Nov  8 23:38:13 2024
+Date   : Sun Nov 10 05:31:18 2024
 ****************************************
 
 
@@ -125,23 +125,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           2.945e-03 2.023e-03 3.927e-05 5.007e-03 (23.11%)  
-sequential                 0.0161 5.305e-04 7.221e-05    0.0167 (76.89%)  
+combinational           3.813e-04 2.666e-04 5.109e-06 6.530e-04 (24.82%)  
+sequential              1.791e-03 1.743e-04 1.298e-05 1.978e-03 (75.18%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 2.553e-03   (11.79%)
-  Cell Internal Power  =    0.0190   (87.70%)
-  Cell Leakage Power   = 1.115e-04   ( 0.51%)
+  Net Switching Power  = 4.409e-04   (16.76%)
+  Cell Internal Power  = 2.172e-03   (82.55%)
+  Cell Leakage Power   = 1.809e-05   ( 0.69%)
                          ---------
-Total Power            =    0.0217  (100.00%)
+Total Power            = 2.631e-03  (100.00%)
 
-X Transition Power     = 1.889e-04
+X Transition Power     = 1.169e-07
 Glitching Power        =    0.0000
 
-Peak Power             =    3.4459
-Peak Time              =   444.000
+Peak Power             =    0.6866
+Peak Time              =  4008.000
 
 1
 report_power > F1_5.power
@@ -155,10 +155,10 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 7220
-Number of annotated nets = 7220 (100.00%)
-Total number of leaf cells = 6684
-Number of fully annotated leaf cells = 4893 (73.20%)
+Total number of nets = 1594
+Number of annotated nets = 1594 (100.00%)
+Total number of leaf cells = 1478
+Number of fully annotated leaf cells = 1140 (77.13%)
 ======================================================================
 
 1
@@ -177,16 +177,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 10.996000 ns  Last event time = 62.475000 ns  Last event time = 81.000000 ns  Last event time = 105.451000 ns  Last event time = 119.955000 ns  Last event time = 142.974000 ns  Last event time = 158.834000 ns  Last event time = 177.010000 ns  Last event time = 200.915000 ns  Last event time = 214.972000 ns  Last event time = 236.894000 ns  Last event time = 254.879000 ns  Last event time = 272.709000 ns  Last event time = 296.469000 ns  Last event time = 309.007000 ns  Last event time = 333.113000 ns  Last event time = 351.049000 ns  Last event time = 368.955000 ns  Last event time = 392.750000 ns  Last event time = 407.060000 ns  Last event time = 430.927000 ns  Last event time = 446.522000 ns  Last event time = 466.974000 ns  Last event time = 491.060000 ns  Last event time = 505.997000 ns  Last event time = 527.901000 ns  Last event time = 543.414000 ns  Last event time = 563.467000 ns  Last event time = 585.734000 ns  Last event time = 600.374000 ns  Last event time = 623.059000 ns  Last event time = 640.879000 ns  Last event time = 659.769000 ns  Last event time = 682.927000 ns  Last event time = 695.921000 ns  Last event time = 717.482000 ns  Last event time = 736.851000 ns  Last event time = 755.781000 ns  Last event time = 778.891000 ns  Last event time = 794.263000 ns  Last event time = 817.997000 ns  Last event time = 833.062000 ns  Last event time = 855.386000 ns  Last event time = 876.597000 ns  Last event time = 893.061000 ns  Last event time = 914.894000 ns  Last event time = 928.962000 ns  Last event time = 948.000000 ns  Last event time = 970.974000 ns  Last event time = 985.997000 ns  Last event time = 1007.961000 ns  Last event time = 1024.397000 ns  Last event time = 1043.857000 ns  Last event time = 1066.927000 ns  Last event time = 1079.603000 ns  Last event time = 1102.927000 ns  Last event time = 1119.540000 ns  Last event time = 1140.557000 ns  Last event time = 1163.762000 ns  Last event time = 1178.430000 ns  Last event time = 1202.469000 ns  Last event time = 1216.791000 ns  Last event time = 1238.750000 ns  Last event time = 1260.498000 ns  Last event time = 1277.469000 ns  Last event time = 1301.044000 ns  Last event time = 1313.414000 ns  Last event time = 1334.551000 ns  Last event time = 1355.687000 ns  Last event time = 1370.263000 ns  Last event time = 1393.974000 ns  Last event time = 1409.197000 ns  Last event time = 1430.880000 ns  Last event time = 1452.721000 ns  Last event time = 1469.209000 ns  Last event time = 1493.263000 ns  Last event time = 1506.917000 ns  Last event time = 1529.795000 ns  Last event time = 1550.061000 ns  Last event time = 1568.061000 ns  Last event time = 1593.415000 ns  Last event time = 1604.977000 ns  Last event time = 1629.047000 ns  Last event time = 1647.276000 ns  Last event time = 1667.060000 ns  Last event time = 1689.241000 ns  Last event time = 1701.000000 ns  Last event time = 1723.927000 ns  Last event time = 1742.332000 ns  Last event time = 1760.005000 ns  Last event time = 1782.010000 ns  Last event time = 1796.076000 ns  Last event time = 1817.291000 ns  Last event time = 1836.863000 ns  Last event time = 1853.542000 ns  Last event time = 1875.272000 ns  Last event time = 1889.861000 ns  Last event time = 1913.079000 ns  Last event time = 1933.974000 ns  Last event time = 1952.061000 ns  Last event time = 1976.375000 ns  Last event time = 1987.899000 ns  Last event time = 2010.113000 ns  Last event time = 2030.589000 ns  Last event time = 2048.567000 ns  Last event time = 2072.076000 ns  Last event time = 2083.997000 ns  Last event time = 2104.033000 ns  Last event time = 2124.112000 ns  Last event time = 2140.972000 ns  Last event time = 2162.651000 ns  Last event time = 2180.061000 ns  Last event time = 2201.061000 ns  Last event time = 2222.544000 ns  Last event time = 2240.275000 ns  Last event time = 2261.975000 ns  Last event time = 2278.997000 ns  Last event time = 2300.173000 ns  Last event time = 2319.471000 ns  Last event time = 2339.894000 ns  Last event time = 2363.816000 ns  Last event time = 2379.000000 ns  Last event time = 2403.026000 ns  Last event time = 2418.387000 ns  Last event time = 2441.061000 ns  Last event time = 2460.237000 ns  Last event time = 2475.435000 ns  Last event time = 2498.349000 ns  Last event time = 2513.061000 ns  Last event time = 2534.127000 ns  Last event time = 2555.611000 ns  Last event time = 2570.061000 ns  Last event time = 2594.010000 ns  Last event time = 2609.111000 ns  Last event time = 2629.974000 ns  Last event time = 2651.726000 ns  Last event time = 2666.176000 ns  Last event time = 2689.829000 ns  Last event time = 2704.790000 ns  Last event time = 2726.192000 ns  Last event time = 2747.910000 ns  Last event time = 2762.127000 ns  Last event time = 2786.000000 ns  Last event time = 2801.631000 ns  Last event time = 2823.011000 ns  Last event time = 2843.871000 ns  Last event time = 2859.136000 ns  Last event time = 2882.895000 ns  Last event time = 2897.500000 ns  Last event time = 2918.702000 ns  Last event time = 2940.082000 ns  Last event time = 2956.829000 ns  Last event time = 2979.603000 ns  Last event time = 2993.861000 ns  Last event time = 3014.963000 ns  Last event time = 3036.357000 ns  Last event time = 3053.091000 ns  Last event time = 3076.795000 ns  Last event time = 3089.678000 ns  Last event time = 3115.927000 ns  Last event time = 3135.155000 ns Information: analysis is done for time window (0ns - 3138ns)
+ Last event time = 378.956000 ns  Last event time = 730.473000 ns  Last event time = 1073.948000 ns  Last event time = 1424.138000 ns  Last event time = 1779.086000 ns  Last event time = 2133.359000 ns  Last event time = 2490.189000 ns  Last event time = 2837.927000 ns  Last event time = 3182.927000 ns  Last event time = 3531.658000 ns  Last event time = 3867.927000 ns  Last event time = 4220.805000 ns  Last event time = 4571.415000 ns  Last event time = 4904.172000 ns Information: analysis is done for time window (0ns - 5225ns)
 
-Information: Total simulation time = 3138.000000 ns
+Information: Total simulation time = 5225.000000 ns
 1
 report_power
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Fri Nov  8 23:38:28 2024
+Date   : Sun Nov 10 05:31:19 2024
 ****************************************
 
 
@@ -201,23 +201,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           2.814e-03 1.969e-03 3.927e-05 4.822e-03 (22.58%)  
-sequential                 0.0160 5.122e-04 7.221e-05    0.0165 (77.42%)  
+combinational           7.139e-05 8.966e-05 5.109e-06 1.662e-04 (16.83%)  
+sequential              7.548e-04 5.314e-05 1.298e-05 8.209e-04 (83.17%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 2.481e-03   (11.62%)
-  Cell Internal Power  =    0.0188   (87.86%)
-  Cell Leakage Power   = 1.115e-04   ( 0.52%)
+  Net Switching Power  = 1.428e-04   (14.47%)
+  Cell Internal Power  = 8.261e-04   (83.70%)
+  Cell Leakage Power   = 1.809e-05   ( 1.83%)
                          ---------
-Total Power            =    0.0214  (100.00%)
+Total Power            = 9.870e-04  (100.00%)
 
-X Transition Power     = 4.314e-04
+X Transition Power     = 6.388e-08
 Glitching Power        =    0.0000
 
-Peak Power             =    3.5068
-Peak Time              =  3132.000
+Peak Power             =    0.2564
+Peak Time              =  2500.000
 
 1
 report_power >> F1_5.power
@@ -231,12 +231,13 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 7220
-Number of annotated nets = 7220 (100.00%)
-Total number of leaf cells = 6684
-Number of fully annotated leaf cells = 4893 (73.20%)
+Total number of nets = 1594
+Number of annotated nets = 456 (28.61%)
+Total number of leaf cells = 1478
+Number of fully annotated leaf cells = 61 (4.13%)
 ======================================================================
 
+Warning: VCD coverage on the design is too small. Power may be underestimated. (PWR-007)
 1
 update_power
 Information: Running time_based power analysis... (PWR-601)
@@ -253,16 +254,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 37.974000 ns  Last event time = 63.058000 ns  Last event time = 82.997000 ns  Last event time = 105.809000 ns  Last event time = 119.595000 ns  Last event time = 142.972000 ns  Last event time = 159.459000 ns  Last event time = 179.955000 ns  Last event time = 203.534000 ns  Last event time = 218.641000 ns  Last event time = 242.425000 ns  Last event time = 257.211000 ns  Last event time = 277.974000 ns  Last event time = 299.448000 ns  Last event time = 314.425000 ns  Last event time = 338.334000 ns  Last event time = 353.061000 ns  Last event time = 374.128000 ns  Last event time = 395.715000 ns  Last event time = 410.994000 ns  Last event time = 434.878000 ns  Last event time = 448.674000 ns  Last event time = 470.143000 ns  Last event time = 491.965000 ns  Last event time = 509.104000 ns  Last event time = 533.127000 ns  Last event time = 548.061000 ns  Last event time = 569.452000 ns  Last event time = 589.903000 ns  Last event time = 607.997000 ns  Last event time = 629.955000 ns  Last event time = 644.611000 ns  Last event time = 666.019000 ns  Last event time = 686.453000 ns  Last event time = 704.769000 ns  Last event time = 728.680000 ns  Last event time = 741.342000 ns  Last event time = 762.000000 ns  Last event time = 780.718000 ns  Last event time = 797.857000 ns  Last event time = 821.346000 ns  Last event time = 833.419000 ns  Last event time = 855.457000 ns  Last event time = 876.360000 ns  Last event time = 893.192000 ns  Last event time = 915.000000 ns  Last event time = 929.861000 ns  Last event time = 950.605000 ns  Last event time = 971.849000 ns  Last event time = 989.107000 ns  Last event time = 1012.751000 ns  Last event time = 1028.011000 ns  Last event time = 1049.061000 ns  Last event time = 1068.883000 ns  Last event time = 1085.513000 ns  Last event time = 1107.094000 ns  Last event time = 1124.061000 ns  Last event time = 1145.707000 ns  Last event time = 1165.081000 ns  Last event time = 1181.990000 ns  Last event time = 1205.556000 ns  Last event time = 1217.785000 ns  Last event time = 1241.626000 ns  Last event time = 1262.401000 ns  Last event time = 1280.710000 ns  Last event time = 1304.969000 ns  Last event time = 1319.750000 ns  Last event time = 1341.458000 ns  Last event time = 1359.133000 ns  Last event time = 1379.037000 ns  Last event time = 1401.801000 ns  Last event time = 1415.901000 ns  Last event time = 1439.061000 ns  Last event time = 1455.483000 ns  Last event time = 1475.591000 ns  Last event time = 1497.731000 ns  Last event time = 1511.955000 ns  Last event time = 1534.927000 ns  Last event time = 1550.824000 ns  Last event time = 1571.591000 ns  Last event time = 1595.127000 ns  Last event time = 1608.565000 ns  Last event time = 1632.093000 ns  Last event time = 1649.059000 ns  Last event time = 1668.986000 ns  Last event time = 1691.448000 ns  Last event time = 1706.417000 ns  Last event time = 1727.668000 ns  Last event time = 1744.790000 ns  Last event time = 1763.857000 ns  Last event time = 1786.037000 ns  Last event time = 1801.997000 ns  Last event time = 1823.026000 ns  Last event time = 1839.471000 ns  Last event time = 1858.997000 ns  Last event time = 1880.608000 ns  Last event time = 1894.983000 ns  Last event time = 1916.044000 ns  Last event time = 1934.504000 ns  Last event time = 1952.919000 ns  Last event time = 1976.857000 ns  Last event time = 1988.829000 ns  Last event time = 2012.060000 ns  Last event time = 2030.658000 ns  Last event time = 2048.769000 ns  Last event time = 2072.402000 ns  Last event time = 2085.474000 ns  Last event time = 2106.080000 ns  Last event time = 2125.976000 ns  Last event time = 2142.458000 ns  Last event time = 2165.857000 ns  Last event time = 2180.309000 ns  Last event time = 2201.511000 ns  Last event time = 2221.478000 ns  Last event time = 2238.000000 ns  Last event time = 2261.196000 ns  Last event time = 2275.974000 ns  Last event time = 2297.061000 ns  Last event time = 2316.896000 ns  Last event time = 2335.844000 ns  Last event time = 2358.955000 ns  Last event time = 2372.060000 ns  Last event time = 2394.458000 ns  Last event time = 2414.334000 ns  Last event time = 2432.239000 ns  Last event time = 2456.060000 ns  Last event time = 2470.927000 ns  Last event time = 2492.407000 ns  Last event time = 2510.516000 ns  Last event time = 2528.431000 ns  Last event time = 2551.091000 ns  Last event time = 2564.929000 ns  Last event time = 2585.978000 ns  Last event time = 2605.974000 ns  Last event time = 2622.157000 ns  Last event time = 2643.449000 ns  Last event time = 2659.974000 ns  Last event time = 2680.071000 ns  Last event time = 2700.634000 ns  Last event time = 2717.800000 ns  Last event time = 2741.421000 ns  Last event time = 2753.625000 ns  Last event time = 2775.805000 ns  Last event time = 2796.714000 ns  Last event time = 2814.113000 ns  Last event time = 2837.860000 ns  Last event time = 2853.215000 ns  Last event time = 2876.264000 ns  Last event time = 2894.571000 ns  Last event time = 2912.857000 ns  Last event time = 2936.409000 ns  Last event time = 2951.471000 ns  Last event time = 2974.804000 ns  Last event time = 2992.193000 ns  Last event time = 3011.937000 ns  Last event time = 3035.060000 ns  Last event time = 3050.127000 ns  Last event time = 3071.645000 ns  Last event time = 3087.411000 ns  Last event time = 3109.927000 ns  Last event time = 3132.412000 ns Information: analysis is done for time window (0ns - 3135ns)
+ Last event time = 98.831000 ns  Last event time = 885.364000 ns  Last event time = 1662.927000 ns  Last event time = 2424.544000 ns  Last event time = 3216.331000 ns  Last event time = 3985.000000 ns  Last event time = 4747.927000 ns Information: analysis is done for time window (0ns - 5225ns)
 
-Information: Total simulation time = 3135.000000 ns
+Information: Total simulation time = 5225.000000 ns
 1
 report_power
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Fri Nov  8 23:38:44 2024
+Date   : Sun Nov 10 05:31:20 2024
 ****************************************
 
 
@@ -277,23 +278,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           2.914e-03 2.020e-03 3.927e-05 4.973e-03 (23.01%)  
-sequential                 0.0160 5.305e-04 7.221e-05    0.0166 (76.99%)  
+combinational           2.062e-05 5.883e-05 5.109e-06 8.455e-05 ( 9.50%)  
+sequential              7.463e-04 4.611e-05 1.298e-05 8.054e-04 (90.50%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 2.551e-03   (11.80%)
-  Cell Internal Power  =    0.0189   (87.68%)
-  Cell Leakage Power   = 1.115e-04   ( 0.52%)
+  Net Switching Power  = 1.049e-04   (11.79%)
+  Cell Internal Power  = 7.669e-04   (86.18%)
+  Cell Leakage Power   = 1.809e-05   ( 2.03%)
                          ---------
-Total Power            =    0.0216  (100.00%)
+Total Power            = 8.900e-04  (100.00%)
 
-X Transition Power     = 1.889e-04
+X Transition Power     =    0.0000
 Glitching Power        =    0.0000
 
-Peak Power             =    3.4438
-Peak Time              =    60.009
+Peak Power             =    0.2562
+Peak Time              =  2560.000
 
 1
 report_power >> F1_5.power
@@ -307,12 +308,13 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 7220
-Number of annotated nets = 7220 (100.00%)
-Total number of leaf cells = 6684
-Number of fully annotated leaf cells = 4893 (73.20%)
+Total number of nets = 1594
+Number of annotated nets = 456 (28.61%)
+Total number of leaf cells = 1478
+Number of fully annotated leaf cells = 61 (4.13%)
 ======================================================================
 
+Warning: VCD coverage on the design is too small. Power may be underestimated. (PWR-007)
 1
 update_power
 Information: Running time_based power analysis... (PWR-601)
@@ -329,16 +331,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 41.769000 ns  Last event time = 68.894000 ns  Last event time = 92.499000 ns  Last event time = 111.421000 ns  Last event time = 131.266000 ns  Last event time = 153.546000 ns  Last event time = 167.061000 ns  Last event time = 188.769000 ns  Last event time = 207.000000 ns  Last event time = 227.010000 ns  Last event time = 249.968000 ns  Last event time = 263.475000 ns  Last event time = 285.065000 ns  Last event time = 303.113000 ns  Last event time = 323.572000 ns  Last event time = 347.328000 ns  Last event time = 361.997000 ns  Last event time = 383.579000 ns  Last event time = 400.727000 ns  Last event time = 422.107000 ns  Last event time = 443.789000 ns  Last event time = 458.468000 ns  Last event time = 482.769000 ns  Last event time = 498.293000 ns  Last event time = 520.927000 ns  Last event time = 540.176000 ns  Last event time = 557.061000 ns  Last event time = 579.010000 ns  Last event time = 594.094000 ns  Last event time = 615.565000 ns  Last event time = 637.927000 ns  Last event time = 654.011000 ns  Last event time = 677.769000 ns  Last event time = 691.883000 ns  Last event time = 712.997000 ns  Last event time = 734.263000 ns  Last event time = 751.997000 ns  Last event time = 773.594000 ns  Last event time = 789.000000 ns  Last event time = 812.402000 ns  Last event time = 830.606000 ns  Last event time = 851.332000 ns  Last event time = 874.974000 ns  Last event time = 888.520000 ns  Last event time = 911.045000 ns  Last event time = 926.702000 ns  Last event time = 944.641000 ns  Last event time = 968.060000 ns  Last event time = 982.952000 ns  Last event time = 1004.446000 ns  Last event time = 1022.793000 ns  Last event time = 1040.955000 ns  Last event time = 1064.634000 ns  Last event time = 1077.088000 ns  Last event time = 1100.136000 ns  Last event time = 1118.894000 ns  Last event time = 1139.392000 ns  Last event time = 1162.974000 ns  Last event time = 1177.974000 ns  Last event time = 1201.742000 ns  Last event time = 1216.241000 ns  Last event time = 1238.060000 ns  Last event time = 1260.010000 ns  Last event time = 1277.061000 ns  Last event time = 1299.457000 ns  Last event time = 1313.322000 ns  Last event time = 1334.386000 ns  Last event time = 1355.587000 ns  Last event time = 1370.462000 ns  Last event time = 1394.061000 ns  Last event time = 1409.452000 ns  Last event time = 1432.153000 ns  Last event time = 1453.974000 ns  Last event time = 1470.157000 ns  Last event time = 1494.261000 ns  Last event time = 1508.894000 ns  Last event time = 1532.443000 ns  Last event time = 1550.793000 ns  Last event time = 1571.076000 ns  Last event time = 1595.548000 ns  Last event time = 1608.010000 ns  Last event time = 1632.157000 ns  Last event time = 1649.274000 ns  Last event time = 1670.061000 ns  Last event time = 1691.407000 ns  Last event time = 1704.565000 ns  Last event time = 1727.403000 ns  Last event time = 1743.646000 ns  Last event time = 1763.713000 ns  Last event time = 1786.879000 ns  Last event time = 1800.000000 ns  Last event time = 1822.974000 ns  Last event time = 1839.324000 ns  Last event time = 1859.184000 ns  Last event time = 1881.377000 ns  Last event time = 1895.955000 ns  Last event time = 1919.734000 ns  Last event time = 1936.845000 ns  Last event time = 1958.857000 ns  Last event time = 1980.000000 ns  Last event time = 1994.178000 ns  Last event time = 2018.587000 ns  Last event time = 2034.011000 ns  Last event time = 2055.591000 ns  Last event time = 2075.762000 ns  Last event time = 2090.208000 ns  Last event time = 2111.989000 ns  Last event time = 2128.469000 ns  Last event time = 2147.762000 ns  Last event time = 2171.121000 ns  Last event time = 2187.000000 ns  Last event time = 2210.228000 ns  Last event time = 2228.061000 ns  Last event time = 2249.026000 ns  Last event time = 2270.218000 ns  Last event time = 2288.036000 ns  Last event time = 2310.526000 ns  Last event time = 2327.367000 ns  Last event time = 2351.194000 ns  Last event time = 2368.782000 ns  Last event time = 2389.974000 ns  Last event time = 2412.000000 ns  Last event time = 2428.997000 ns  Last event time = 2451.446000 ns  Last event time = 2465.218000 ns  Last event time = 2486.222000 ns  Last event time = 2507.751000 ns  Last event time = 2522.646000 ns  Last event time = 2546.061000 ns  Last event time = 2561.061000 ns  Last event time = 2582.202000 ns  Last event time = 2604.078000 ns  Last event time = 2619.611000 ns  Last event time = 2642.683000 ns  Last event time = 2657.452000 ns  Last event time = 2678.830000 ns  Last event time = 2700.158000 ns  Last event time = 2717.486000 ns  Last event time = 2741.639000 ns  Last event time = 2753.600000 ns  Last event time = 2775.594000 ns  Last event time = 2797.974000 ns  Last event time = 2815.997000 ns  Last event time = 2838.084000 ns  Last event time = 2852.061000 ns  Last event time = 2874.157000 ns  Last event time = 2894.469000 ns  Last event time = 2912.125000 ns  Last event time = 2935.832000 ns  Last event time = 2949.080000 ns  Last event time = 2972.563000 ns  Last event time = 2990.934000 ns  Last event time = 3009.094000 ns  Last event time = 3033.000000 ns  Last event time = 3047.532000 ns  Last event time = 3071.060000 ns  Last event time = 3087.301000 ns  Last event time = 3109.997000 ns  Last event time = 3132.873000 ns Information: analysis is done for time window (0ns - 3141ns)
+ Last event time = 400.000000 ns  Last event time = 1265.000000 ns  Last event time = 2120.000000 ns  Last event time = 2993.500000 ns  Last event time = 3858.500000 ns  Last event time = 4687.927000 ns Information: analysis is done for time window (0ns - 5235ns)
 
-Information: Total simulation time = 3141.000000 ns
+Information: Total simulation time = 5235.000000 ns
 1
 report_power
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Fri Nov  8 23:39:00 2024
+Date   : Sun Nov 10 05:31:21 2024
 ****************************************
 
 
@@ -353,23 +355,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           2.782e-03 1.966e-03 3.927e-05 4.787e-03 (22.48%)  
-sequential                 0.0159 5.119e-04 7.221e-05    0.0165 (77.52%)  
+combinational           1.498e-05 2.265e-05 5.109e-06 4.274e-05 ( 5.15%)  
+sequential              7.324e-04 4.211e-05 1.298e-05 7.875e-04 (94.85%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 2.478e-03   (11.63%)
-  Cell Internal Power  =    0.0187   (87.84%)
-  Cell Leakage Power   = 1.115e-04   ( 0.52%)
+  Net Switching Power  = 6.476e-05   ( 7.80%)
+  Cell Internal Power  = 7.474e-04   (90.02%)
+  Cell Leakage Power   = 1.809e-05   ( 2.18%)
                          ---------
-Total Power            =    0.0213  (100.00%)
+Total Power            = 8.302e-04  (100.00%)
 
-X Transition Power     = 4.394e-04
+X Transition Power     =    0.0000
 Glitching Power        =    0.0000
 
-Peak Power             =    3.5040
-Peak Time              =   444.009
+Peak Power             =    0.2562
+Peak Time              =  5055.000
 
 1
 report_power >> F1_5.power
@@ -383,12 +385,13 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 7220
-Number of annotated nets = 7220 (100.00%)
-Total number of leaf cells = 6684
-Number of fully annotated leaf cells = 4893 (73.20%)
+Total number of nets = 1594
+Number of annotated nets = 456 (28.61%)
+Total number of leaf cells = 1478
+Number of fully annotated leaf cells = 61 (4.13%)
 ======================================================================
 
+Warning: VCD coverage on the design is too small. Power may be underestimated. (PWR-007)
 1
 update_power
 Information: Running time_based power analysis... (PWR-601)
@@ -405,16 +408,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 16.927000 ns  Last event time = 61.927000 ns  Last event time = 74.282000 ns  Last event time = 98.196000 ns  Last event time = 113.211000 ns  Last event time = 134.212000 ns  Last event time = 156.000000 ns  Last event time = 172.927000 ns  Last event time = 197.060000 ns  Last event time = 210.765000 ns  Last event time = 233.702000 ns  Last event time = 254.072000 ns  Last event time = 269.954000 ns  Last event time = 293.241000 ns  Last event time = 307.829000 ns  Last event time = 329.762000 ns  Last event time = 350.060000 ns  Last event time = 366.124000 ns  Last event time = 389.770000 ns  Last event time = 404.065000 ns  Last event time = 427.927000 ns  Last event time = 445.014000 ns  Last event time = 461.925000 ns  Last event time = 486.011000 ns  Last event time = 501.000000 ns  Last event time = 524.536000 ns  Last event time = 542.782000 ns  Last event time = 562.922000 ns  Last event time = 585.155000 ns  Last event time = 599.703000 ns  Last event time = 621.262000 ns  Last event time = 639.029000 ns  Last event time = 659.011000 ns  Last event time = 681.283000 ns  Last event time = 697.984000 ns  Last event time = 719.769000 ns  Last event time = 735.871000 ns  Last event time = 755.096000 ns  Last event time = 776.883000 ns  Last event time = 790.775000 ns  Last event time = 812.096000 ns  Last event time = 829.976000 ns  Last event time = 846.013000 ns  Last event time = 870.068000 ns  Last event time = 884.613000 ns  Last event time = 905.672000 ns  Last event time = 925.869000 ns  Last event time = 941.750000 ns  Last event time = 965.212000 ns  Last event time = 980.263000 ns  Last event time = 1001.857000 ns  Last event time = 1022.231000 ns  Last event time = 1040.061000 ns  Last event time = 1062.000000 ns  Last event time = 1077.000000 ns  Last event time = 1097.760000 ns  Last event time = 1118.123000 ns  Last event time = 1136.643000 ns  Last event time = 1160.488000 ns  Last event time = 1172.884000 ns  Last event time = 1195.806000 ns  Last event time = 1213.209000 ns  Last event time = 1230.559000 ns  Last event time = 1256.578000 ns  Last event time = 1271.431000 ns  Last event time = 1294.927000 ns  Last event time = 1311.979000 ns  Last event time = 1331.619000 ns  Last event time = 1354.927000 ns  Last event time = 1368.459000 ns  Last event time = 1391.209000 ns  Last event time = 1407.727000 ns  Last event time = 1427.769000 ns  Last event time = 1450.974000 ns  Last event time = 1465.997000 ns  Last event time = 1487.349000 ns  Last event time = 1503.516000 ns  Last event time = 1523.360000 ns  Last event time = 1545.664000 ns  Last event time = 1559.480000 ns  Last event time = 1583.735000 ns  Last event time = 1599.311000 ns  Last event time = 1620.000000 ns  Last event time = 1642.974000 ns  Last event time = 1657.997000 ns  Last event time = 1679.703000 ns  Last event time = 1696.921000 ns  Last event time = 1715.830000 ns  Last event time = 1737.483000 ns  Last event time = 1752.278000 ns  Last event time = 1775.061000 ns  Last event time = 1792.727000 ns  Last event time = 1811.420000 ns  Last event time = 1833.687000 ns  Last event time = 1847.452000 ns  Last event time = 1868.422000 ns  Last event time = 1886.238000 ns  Last event time = 1904.076000 ns  Last event time = 1926.128000 ns  Last event time = 1940.769000 ns  Last event time = 1963.997000 ns  Last event time = 1981.974000 ns  Last event time = 1998.011000 ns  Last event time = 2021.797000 ns  Last event time = 2036.587000 ns  Last event time = 2057.995000 ns  Last event time = 2077.803000 ns  Last event time = 2093.917000 ns  Last event time = 2117.060000 ns  Last event time = 2130.117000 ns  Last event time = 2151.113000 ns  Last event time = 2172.179000 ns  Last event time = 2189.035000 ns  Last event time = 2210.750000 ns  Last event time = 2225.785000 ns  Last event time = 2246.480000 ns  Last event time = 2267.711000 ns  Last event time = 2282.797000 ns  Last event time = 2306.061000 ns  Last event time = 2321.329000 ns  Last event time = 2343.000000 ns  Last event time = 2364.000000 ns  Last event time = 2378.884000 ns  Last event time = 2402.769000 ns  Last event time = 2417.703000 ns  Last event time = 2438.825000 ns  Last event time = 2460.015000 ns  Last event time = 2477.061000 ns  Last event time = 2499.352000 ns  Last event time = 2513.838000 ns  Last event time = 2534.727000 ns  Last event time = 2555.762000 ns  Last event time = 2570.759000 ns  Last event time = 2593.997000 ns  Last event time = 2609.068000 ns  Last event time = 2628.043000 ns  Last event time = 2649.455000 ns  Last event time = 2664.863000 ns  Last event time = 2687.060000 ns  Last event time = 2704.230000 ns  Last event time = 2723.848000 ns  Last event time = 2746.927000 ns  Last event time = 2759.285000 ns  Last event time = 2782.974000 ns  Last event time = 2800.062000 ns  Last event time = 2820.094000 ns  Last event time = 2843.494000 ns  Last event time = 2858.955000 ns  Last event time = 2882.543000 ns  Last event time = 2897.340000 ns  Last event time = 2918.516000 ns  Last event time = 2940.000000 ns  Last event time = 2957.127000 ns  Last event time = 2981.125000 ns  Last event time = 2996.060000 ns  Last event time = 3017.404000 ns  Last event time = 3037.972000 ns  Last event time = 3054.407000 ns  Last event time = 3077.216000 ns  Last event time = 3090.729000 ns  Last event time = 3114.229000 ns  Last event time = 3134.846000 ns Information: analysis is done for time window (0ns - 3141ns)
+ Last event time = 338.700000 ns  Last event time = 1218.844000 ns  Last event time = 2074.420000 ns  Last event time = 2950.000000 ns  Last event time = 3800.000000 ns  Last event time = 4658.991000 ns Information: analysis is done for time window (0ns - 5235ns)
 
-Information: Total simulation time = 3141.000000 ns
+Information: Total simulation time = 5235.000000 ns
 1
 report_power
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Fri Nov  8 23:39:17 2024
+Date   : Sun Nov 10 05:31:22 2024
 ****************************************
 
 
@@ -429,33 +432,33 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           2.918e-03 2.020e-03 3.927e-05 4.977e-03 (23.05%)  
-sequential                 0.0160 5.302e-04 7.221e-05    0.0166 (76.95%)  
+combinational           1.395e-05 1.985e-05 5.109e-06 3.890e-05 ( 4.71%)  
+sequential              7.317e-04 4.221e-05 1.298e-05 7.869e-04 (95.29%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 2.551e-03   (11.81%)
-  Cell Internal Power  =    0.0189   (87.67%)
-  Cell Leakage Power   = 1.115e-04   ( 0.52%)
+  Net Switching Power  = 6.205e-05   ( 7.51%)
+  Cell Internal Power  = 7.456e-04   (90.29%)
+  Cell Leakage Power   = 1.809e-05   ( 2.19%)
                          ---------
-Total Power            =    0.0216  (100.00%)
+Total Power            = 8.258e-04  (100.00%)
 
-X Transition Power     = 1.922e-04
+X Transition Power     = 1.494e-07
 Glitching Power        =    0.0000
 
-Peak Power             =    3.4493
-Peak Time              =   444.000
+Peak Power             =    0.2559
+Peak Time              =  2900.000
 
 1
 report_power >> F1_5.power
-pt_shell> exit
+exit
 
 Timing updates: 1 (1 implicit, 0 explicit) (0 incremental, 1 full, 0 logical)
 Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
-Maximum memory usage for this session: 2489.28 MB
-CPU usage for this session: 89 seconds 
-Elapsed time for this session: 121 seconds
-Diagnostics summary: 6 warnings, 14 informationals
+Maximum memory usage for this session: 2560.19 MB
+CPU usage for this session: 16 seconds 
+Elapsed time for this session: 17 seconds
+Diagnostics summary: 9 warnings, 14 informationals
 
 Thank you for using pt_shell!

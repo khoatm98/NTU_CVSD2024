@@ -7,15 +7,15 @@ Report : timing
         -max_paths 1
 Design : IOTDF
 Version: U-2022.12
-Date   : Fri Nov  8 23:35:40 2024
+Date   : Thu Nov 14 15:06:20 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: u_key_gen/pc2_in_r_reg[8]
+  Startpoint: data_buffer_r_reg[25]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: iot_out_r_reg[18]
+  Endpoint: R_ready_r_reg[18]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -24,45 +24,41 @@ Wire Load Model Mode: top
   ------------------------------------------------
   IOTDF              tsmc13_wl10           slow
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock clk (rise edge)                                   0.00       0.00
-  clock network delay (ideal)                             1.00       1.00
-  u_key_gen/pc2_in_r_reg[8]/CK (DFFRX4)                   0.00       1.00 r
-  u_key_gen/pc2_in_r_reg[8]/Q (DFFRX4)                    0.47       1.47 f
-  u_key_gen/key_out[12] (key_gen)                         0.00       1.47 f
-  u_ciptext_gen/key_in[12] (ciptext_gen)                  0.00       1.47 f
-  u_ciptext_gen/u_sbox/K[12] (sbox)                       0.00       1.47 f
-  u_ciptext_gen/u_sbox/U191/Y (CLKINVX8)                  0.05       1.52 r
-  u_ciptext_gen/u_sbox/U612/Y (XOR2X4)                    0.14       1.66 f
-  u_ciptext_gen/u_sbox/U195/Y (INVX16)                    0.12       1.79 r
-  u_ciptext_gen/u_sbox/U230/Y (CLKINVX16)                 0.08       1.87 f
-  u_ciptext_gen/u_sbox/U89/Y (NAND2X4)                    0.16       2.02 r
-  u_ciptext_gen/u_sbox/U88/Y (INVX3)                      0.12       2.14 f
-  u_ciptext_gen/u_sbox/U87/Y (AOI2BB2X1)                  0.30       2.44 f
-  u_ciptext_gen/u_sbox/U86/Y (OAI22X1)                    0.28       2.73 r
-  u_ciptext_gen/u_sbox/U686/Y (AOI211X4)                  0.29       3.02 f
-  u_ciptext_gen/u_sbox/U685/Y (OR2X8)                     0.16       3.19 f
-  u_ciptext_gen/u_sbox/U18/Y (NAND2X6)                    0.07       3.25 r
-  u_ciptext_gen/u_sbox/sbox_out[13] (sbox)                0.00       3.25 r
-  u_ciptext_gen/U118/Y (XNOR2X4)                          0.15       3.40 r
-  u_ciptext_gen/U81/Y (NOR2X6)                            0.08       3.48 f
-  u_ciptext_gen/cipher_text[18] (ciptext_gen)             0.00       3.48 f
-  U403/Y (AO22X4)                                         0.25       3.74 f
-  iot_out_r_reg[18]/D (DFFSRHQX4)                         0.00       3.74 f
-  data arrival time                                                  3.74
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              1.00       1.00
+  data_buffer_r_reg[25]/CK (DFFQX1)        0.00       1.00 r
+  data_buffer_r_reg[25]/Q (DFFQX1)         0.61       1.61 r
+  u_sbox/K[21] (sbox)                      0.00       1.61 r
+  u_sbox/U40/Y (XNOR2X1)                   0.73       2.34 r
+  u_sbox/U8/Y (CLKINVX1)                   0.77       3.11 f
+  u_sbox/U411/Y (NAND2X1)                  0.85       3.96 r
+  u_sbox/U412/Y (INVX1)                    0.48       4.44 f
+  u_sbox/U414/Y (NOR2X1)                   0.83       5.28 r
+  u_sbox/U415/Y (INVX1)                    0.56       5.84 f
+  u_sbox/U441/Y (NOR2XL)                   0.74       6.58 r
+  u_sbox/U523/Y (NOR3XL)                   0.30       6.88 f
+  u_sbox/U526/Y (OAI211XL)                 0.50       7.38 r
+  u_sbox/U527/Y (AOI22XL)                  0.29       7.67 f
+  u_sbox/U531/Y (OAI211XL)                 0.53       8.20 r
+  u_sbox/sbox_out[18] (sbox)               0.00       8.20 r
+  U901/Y (AOI2BB2X1)                       0.41       8.60 f
+  U951/Y (AO22X1)                          0.48       9.09 f
+  R_ready_r_reg[18]/D (DFFQX1)             0.00       9.09 f
+  data arrival time                                   9.09
 
-  clock clk (rise edge)                                   3.00       3.00
-  clock network delay (ideal)                             1.00       4.00
-  clock uncertainty                                      -0.10       3.90
-  iot_out_r_reg[18]/CK (DFFSRHQX4)                        0.00       3.90 r
-  library setup time                                     -0.16       3.74
-  data required time                                                 3.74
-  --------------------------------------------------------------------------
-  data required time                                                 3.74
-  data arrival time                                                 -3.74
-  --------------------------------------------------------------------------
-  slack (MET)                                                        0.00
+  clock clk (rise edge)                   20.00      20.00
+  clock network delay (ideal)              1.00      21.00
+  clock uncertainty                       -0.10      20.90
+  R_ready_r_reg[18]/CK (DFFQX1)            0.00      20.90 r
+  library setup time                      -0.27      20.63
+  data required time                                 20.63
+  -----------------------------------------------------------
+  data required time                                 20.63
+  data arrival time                                  -9.09
+  -----------------------------------------------------------
+  slack (MET)                                        11.54
 
 
 1

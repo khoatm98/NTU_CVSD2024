@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running pt_shell Version U-2022.12 for linux64 -- Nov 27, 2022
-#@ # Date:   Fri Nov  8 23:37:54 2024
+#@ # Date:   Sun Nov 10 05:31:11 2024
 #@ # Run by: r2k41036@cad27
 #@ 
 
@@ -934,10 +934,6 @@ source -echo -verbose ./pt_script.tcl
 #@ update_power
 #@ report_power
 #@ report_power >> F1_5.power
-#@ 
-#@ 
-#@ 
-#@ # -- End source ./pt_script.tcl
+#@ exit
+#@ if { [namespace which -command __pre_quit_tcl_procs] == "::__pre_quit_tcl_procs" } {   __pre_quit_tcl_procs}
 
-exit
-if { [namespace which -command __pre_quit_tcl_procs] == "::__pre_quit_tcl_procs" } {   __pre_quit_tcl_procs}

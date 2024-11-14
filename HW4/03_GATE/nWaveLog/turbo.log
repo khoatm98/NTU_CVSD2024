@@ -1,3 +1,3 @@
 Command Line: /usr/spring_soft/verdi/cur/platform/LINUXAMD64/bin/Novas -nWave
 uname(Linux cad27 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64)
-au time 19178.465798 154.466084 197.740396 delta 686739456 686739456 total 1214156800 1214156800
+au time 10.738935 2.248269 0.419562 delta 148709376 148709376 total 676126720 676126720

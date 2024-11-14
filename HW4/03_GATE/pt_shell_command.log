@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running pt_shell Version U-2022.12 for linux64 -- Nov 27, 2022
-#@ # Date:   Fri Nov  8 19:06:46 2024
+#@ # Date:   Thu Nov 14 15:06:00 2024
 #@ # Run by: r2k41036@cad27
 #@ 
 
@@ -64,6 +64,27 @@ source /home/raid7_4/raid1_1/linux/synopsys/primetime/2022.12/admin/setup/.synop
 #@ #alias q quit
 #@ 
 #@ # -- End source /home/raid7_4/raid1_1/linux/synopsys/primetime/2022.12/admin/setup/.synopsys_pt.setup
+
+source /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/03_GATE/.synopsys_pt.setup
+#@ # -- Starting source /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/03_GATE/.synopsys_pt.setup
+
+#@ set company "CIC"
+#@ set designer "Student"
+#@ set search_path       "./ /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  $search_path"
+#@ set target_library    "slow.db"
+#@ set link_library      "* $target_library"
+#@ 
+#@ set hdlin_translate_off_skip_text "TRUE"
+#@ set edifout_netlist_only "TRUE"
+#@ set verilogout_no_tri true
+#@ 
+#@ set hdlin_enable_presto_for_vhdl "TRUE"
+#@ set sh_enable_line_editing true
+#@ set sh_line_editing_mode emacs
+#@ history keep 100
+#@ alias h history
+#@ 
+#@ # -- End source /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/03_GATE/.synopsys_pt.setup
 
 #@ # -- Starting source /home/raid7_4/raid1_1/linux/synopsys/primetime/2022.12/auxx/tcllib/lib/itcl4.2.1/itcl.tcl
 
@@ -872,8 +893,8 @@ source /home/raid7_4/raid1_1/linux/synopsys/primetime/2022.12/admin/setup/.synop
 #@ }
 #@ # -- End source /home/raid7_4/raid1_1/linux/synopsys/primetime/2022.12/auxx/tcllib/lib/itcl4.2.1/itcl.tcl
 
-source -echo -verbose ../06_POWER/pt_script.tcl
-#@ # -- Starting source ../06_POWER/pt_script.tcl
+source -echo -verbose ./pt_script.tcl
+#@ # -- Starting source ./pt_script.tcl
 
 #@ #PrimeTime Script
 #@ set power_enable_analysis TRUE
@@ -893,31 +914,29 @@ source -echo -verbose ../06_POWER/pt_script.tcl
 #@ update_power
 #@ report_power 
 #@ report_power > F1_5.power
+#@ #
+#@ #read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F2.fsdb
+#@ #update_power
+#@ #report_power
+#@ #report_power >> F1_5.power
 #@ 
-#@ read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F2.fsdb
-#@ update_power
-#@ report_power
-#@ report_power >> F1_5.power
-#@ 
-#@ read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F3.fsdb
-#@ update_power
-#@ report_power
-#@ report_power >> F1_5.power
-#@ 
-#@ read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F4.fsdb
-#@ update_power
-#@ report_power
-#@ report_power >> F1_5.power
-#@ 
-#@ read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F5.fsdb
-#@ update_power
-#@ report_power
-#@ report_power >> F1_5.power
+#@ #read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F3.fsdb
+#@ #update_power
+#@ #report_power
+#@ #report_power >> F1_5.power
+#@ #
+#@ #read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F4.fsdb
+#@ #update_power
+#@ #report_power
+#@ #report_power >> F1_5.power
+#@ #
+#@ #read_vcd  -strip_path test/u_IOTDF  ../03_GATE/IOTDF_F5.fsdb
+#@ #update_power
+#@ #report_power
+#@ #report_power >> F1_5.power
 #@ 
 #@ 
 #@ 
-#@ # -- End source ../06_POWER/pt_script.tcl
+#@ exit
+#@ if { [namespace which -command __pre_quit_tcl_procs] == "::__pre_quit_tcl_procs" } {   __pre_quit_tcl_procs}
 
-cd ..
-exit
-if { [namespace which -command __pre_quit_tcl_procs] == "::__pre_quit_tcl_procs" } {   __pre_quit_tcl_procs}
