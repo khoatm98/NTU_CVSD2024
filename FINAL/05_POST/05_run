@@ -1,0 +1,1 @@
+vcs -R -full64 -f post_sim.f +define+PAT0 | tee post_sim_p0.log
