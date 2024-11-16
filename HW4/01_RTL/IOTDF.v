@@ -26,7 +26,7 @@ wire [63:0]    plain_text_w;
 wire CRC_en;
 wire MAXMIN_en;
 
-reg [3:0] input_cnt;
+reg [2:0] input_cnt;
 reg [3:0] round_r;
 reg       first_r;
 
@@ -36,12 +36,14 @@ reg [127:0] iot_out_r;
 reg			clk_DES_en; 
 reg			clk_CRC_en;
 reg			clk_MINMAX_en;          
+
+reg busy_r;
+reg in_en_r;
+reg [7:0] iot_in_r;
 genvar i;
 // ---------------------------------------------------------------------------
 // Assignment Block
 // ---------------------------------------------------------------------------
-
-
 assign busy = 0;
 
 assign main_key_w   = data_r[127:64];
@@ -49,7 +51,7 @@ assign plain_text_w = data_r[63:0]   ;
 
 
 assign iot_out = iot_out_r;    
-assign valid   = round_r == 1 && clk_DES_en || (CRC_en && first_r && round_r == 0);  
+assign valid   = round_r == 1 && clk_DES_en || (CRC_en && first_r && round_r == 0) || (MAXMIN_en && first_r && (input_cnt==0) && (~|round_r[3:1]));  
 
 // ---------------------------------------------------------------------------
 // Submodules declaration
@@ -74,6 +76,8 @@ wire    [63:0] cipher_text;
 wire    [63:0] final_permutation_w;
 reg     [31:0] L_ready_r;
 reg     [31:0] R_ready_r;
+wire    [31:0] L_ready_w;
+wire    [31:0] R_ready_w;
 reg     [31:0] L_wait_r;
 reg     [31:0] R_wait_r;
 wire    [31:0] sbox_out_w;
@@ -136,23 +140,20 @@ assign cipher_text[63:0]   =  {final_permutation_w[64-40], final_permutation_w[6
 							   final_permutation_w[64-34], final_permutation_w[64-2], final_permutation_w[64-42], final_permutation_w[64-10], final_permutation_w[64-50], final_permutation_w[64-18], final_permutation_w[64-58], final_permutation_w[64-26],
 							   final_permutation_w[64-33], final_permutation_w[64-1], final_permutation_w[64-41], final_permutation_w[64-9],  final_permutation_w[64-49], final_permutation_w[64-17], final_permutation_w[64-57], final_permutation_w[64-25]};
 
+assign L_ready_w = data_buffer_r[119:88];
+assign R_ready_w = data_buffer_r[87:56];
 always @* begin
-	R_wait_r = L_ready_r ^ sbox_out_w;
-	L_wait_r = R_ready_r;
+	R_wait_r = L_ready_w ^ sbox_out_w;
+	L_wait_r = R_ready_w;
 end
 
 assign final_permutation_w = {R_wait_r, L_wait_r};
 
-sbox u_sbox(.R(R_ready_r), .K(key), .sbox_out(sbox_out_w));
+sbox u_sbox(.R(R_ready_w), .K(key), .sbox_out(sbox_out_w));
 
-always @(posedge clk) begin
-	if (DES_en) begin
-		R_ready_r   <= (round_r == 0 ? init_permutation_w[31:0]  : R_wait_r);
-		L_ready_r   <= (round_r == 0 ? init_permutation_w[63:32] : L_wait_r);
-	end else begin
-		R_ready_r   <= R_ready_r  ;
-		L_ready_r   <= L_ready_r  ;
-	end
+always @(*) begin
+	R_ready_r   = (round_r == 0 ? init_permutation_w[31:0]  : R_wait_r);
+	L_ready_r   = (round_r == 0 ? init_permutation_w[63:32] : L_wait_r);
 end
 
 always @(*) begin
@@ -168,9 +169,6 @@ wire  [2:0]   crc;
 
 assign CRC_en = fn_sel == 3'b011;
 
-//wire inv_1_036_w = ~CRC_en ? 0 :iot_in[0] ^ iot_in[3] ^ iot_in[6];
-//wire inv_1_147_w = ~CRC_en ? 0 :iot_in[1] ^ iot_in[4] ^ iot_in[7];
-//wire inv_1_25_w  = ~CRC_en ? 0 :iot_in[2] ^ iot_in[5];
 wire inv_1_036_w = iot_in[0] ^ iot_in[3] ^ iot_in[6];
 wire inv_1_147_w = iot_in[1] ^ iot_in[4] ^ iot_in[7];
 wire inv_1_25_w  = iot_in[2] ^ iot_in[5];
@@ -179,7 +177,6 @@ assign inv_1_w =  inv_1_036_w ^ inv_1_147_w;
 assign inv_2_w =  inv_1_036_w ^ inv_1_25_w;
 
 wire inv_1_2_w = inv_1_147_w^inv_1_25_w;
-
 
 assign crc[0] = 1'b0;
 assign crc[1] = round_r%3 == 0 ? inv_1_w   : (round_r%3 == 1 ?  inv_1_2_w   : inv_2_w   );
@@ -193,11 +190,181 @@ assign MAXMIN_en = (fn_sel == 3'b100 || fn_sel == 3'b101);
 
 reg [127:0] first_output ;
 reg [127:0] second_output;
+
 reg [127:0] intermediate ;
 
-comparator u_comp_inst0()
+reg [7:0] first_comp_r ;
+reg [7:0] second_comp_r;
+wire [7:0] first_comp_w ;
+wire [7:0] second_comp_w;
+wire [7:0] im_comp_w;
+wire 		comp_res_less_0_w;
+wire 		comp_res_less_1_w;
 
+wire 		comp_res_equal_0_w;
+wire 		comp_res_equal_1_w;
 
+reg 		comp_res_0_r;
+reg 		comp_res_1_r;
+
+assign im_comp_w = iot_in;
+
+comparator u_comp_inst0(.a(first_comp_r) , .b(im_comp_w), .less(comp_res_less_0_w), .equal(comp_res_equal_0_w));
+comparator u_comp_inst1(.a(second_comp_r), .b(im_comp_w), .less(comp_res_less_1_w), .equal(comp_res_equal_1_w));
+
+always @* begin
+	case(round_r)
+		4'd0    : second_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} :data_buffer_r[7 -: 8];
+		4'd1    : second_comp_r = data_buffer_r[15 -: 8];
+		4'd2    : second_comp_r = data_buffer_r[23 -: 8];
+		4'd3    : second_comp_r = data_buffer_r[31 -: 8];
+		4'd4    : second_comp_r = data_buffer_r[39 -: 8];
+		4'd5    : second_comp_r = data_buffer_r[47 -: 8];
+		4'd6    : second_comp_r = data_buffer_r[55 -: 8];
+		4'd7    : second_comp_r = data_buffer_r[63 -: 8];
+		4'd8    : second_comp_r = data_buffer_r[71 -: 8];
+		4'd9    : second_comp_r = data_buffer_r[79 -: 8];
+		4'd10   : second_comp_r = data_buffer_r[87 -: 8];
+		4'd11   : second_comp_r = data_buffer_r[95 -: 8];
+		4'd12   : second_comp_r = data_buffer_r[103 -: 8];
+		4'd13   : second_comp_r = data_buffer_r[111 -: 8];
+		4'd14   : second_comp_r = data_buffer_r[119  -: 8];
+		default : second_comp_r = data_buffer_r[127  -: 8];
+	endcase
+	
+	case(round_r)
+		4'd0    : first_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} : iot_out_r[7 -: 8];
+		4'd1    : first_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} : iot_out_r[15 -: 8];
+		4'd2    : first_comp_r = iot_out_r[23 -: 8];
+		4'd3    : first_comp_r = iot_out_r[31 -: 8];
+		4'd4    : first_comp_r = iot_out_r[39 -: 8];
+		4'd5    : first_comp_r = iot_out_r[47 -: 8];
+		4'd6    : first_comp_r = iot_out_r[55 -: 8];
+		4'd7    : first_comp_r = iot_out_r[63 -: 8];
+		4'd8    : first_comp_r = iot_out_r[71 -: 8];
+		4'd9    : first_comp_r = iot_out_r[79 -: 8];
+		4'd10   : first_comp_r = iot_out_r[87 -: 8];
+		4'd11   : first_comp_r = iot_out_r[95 -: 8];
+		4'd12   : first_comp_r = iot_out_r[103 -: 8];
+		4'd13   : first_comp_r = iot_out_r[111 -: 8];
+		4'd14   : first_comp_r = iot_out_r[119  -: 8];
+		default : first_comp_r = iot_out_r[127  -: 8];
+	endcase
+end
+
+reg c0;
+reg c1;
+
+always @* begin
+	case({comp_res_less_0_w, comp_res_equal_0_w})
+		2'b00 : c0 = 0;
+		2'b10 : c0 = 1;
+		2'b01 : c0 = comp_res_0_r;
+	endcase
+	case({comp_res_less_1_w, comp_res_equal_1_w})
+		2'b00 : c1 = 0;
+		2'b10 : c1 = 1;
+		2'b01 : c1 = comp_res_1_r;
+	endcase
+end
+always @* begin
+	if(round_r==15) begin		
+		if(!fn_sel[0]) begin
+			case({c0, c1})
+				2'b00  : begin
+					first_output  = iot_out_r;    
+					second_output = data_buffer_r;    
+				end
+				2'b01  : begin
+					first_output  = iot_out_r;    
+					second_output = {iot_in_r , data_r[127:8]};  
+				end
+				default: begin
+					first_output  =  {iot_in_r , data_r[127:8]};    
+					second_output = iot_out_r;    
+				end
+			endcase
+		end else begin
+			case({c0, c1})
+				2'b00  : begin
+					first_output  = {iot_in_r , data_r[127:8]};  
+					second_output = iot_out_r;    
+				end
+				2'b10  : begin
+					first_output  = iot_out_r;    
+					second_output = {iot_in_r , data_r[127:8]};  
+				end
+				default: begin
+					first_output  =  iot_out_r;    
+					second_output =  data_buffer_r;    
+				end
+			endcase
+		end
+	end
+	
+	else if(round_r==0) begin		
+		if(input_cnt == 0 ) begin
+			first_output  = data_buffer_r;  
+			second_output = {128{fn_sel[0]}};   
+		end
+		else begin
+			first_output  = iot_out_r;  
+			second_output = data_buffer_r; 
+		end
+	end
+	else if(round_r==1) begin		
+		if(input_cnt == 0 ) begin
+			first_output  = {128{fn_sel[0]}};  
+			second_output = data_buffer_r;   
+		end
+		else begin
+			first_output  = iot_out_r;  
+			second_output = data_buffer_r; 
+		end
+	end
+	else begin
+		first_output  = iot_out_r;
+		second_output = data_buffer_r;
+	end
+
+end
+
+always @ (posedge clk or posedge rst) begin
+	if(rst)
+		input_cnt <= 0;
+	else begin
+		if(MAXMIN_en)
+			input_cnt <= input_cnt + (round_r == 15 && in_en);
+		else
+			input_cnt <= input_cnt;
+	end	
+end
+
+always @ (posedge clk or posedge rst) begin
+	if(rst) begin
+		comp_res_0_r <= 0;
+		comp_res_1_r <= 0;
+	end
+	else begin
+		if(MAXMIN_en) begin
+			case({comp_res_less_0_w, comp_res_equal_0_w})
+				2'b00 : comp_res_0_r <= round_r == 15 ? 0 : 0;
+				2'b10 : comp_res_0_r <= round_r == 15 ? 0 : 1;
+				2'b01 : comp_res_0_r <= round_r == 15 ? 0 : comp_res_0_r;
+			endcase
+			
+			case({comp_res_less_1_w, comp_res_equal_1_w})
+				2'b00 : comp_res_1_r <= round_r == 15 ? 0 : 0;
+				2'b10 : comp_res_1_r <= round_r == 15 ? 0 : 1;
+				2'b01 : comp_res_1_r <= round_r == 15 ? 0 : comp_res_1_r;
+			endcase
+		end else begin
+			comp_res_0_r <= comp_res_0_r;
+			comp_res_1_r <= comp_res_1_r;
+		end
+	end
+		
+end
 
 // ---------------------------------------------------------------------------
 // Combinational Block
@@ -225,6 +392,8 @@ end
 always @ (posedge clk) begin
 	if(first_r && DES_en)
 		data_buffer_r[55:0] <= PC2_permutation_r;
+	else if(MAXMIN_en)
+		data_buffer_r[55:0] <= second_output[55:0];
 	else begin
 		data_buffer_r[55:0] <= data_buffer_r[55:0];
 	end
@@ -232,17 +401,30 @@ end
 
 always @ (posedge clk) begin
 	if(MAXMIN_en)
-		data_buffer_r[127:56] <= 0;
+		data_buffer_r[127:56] <= second_output[127:56];
+	else if(first_r && DES_en)
+		data_buffer_r[127:56] <= {8'd0,L_ready_r, R_ready_r};
 	else begin
 		data_buffer_r[127:56] <= data_buffer_r[127:56]; 
 	end
 end
 
+//always @ (posedge clk or posedge rst) begin
+//	if(rst)
+//		in_en_r <= 0;
+//	else begin
+//		in_en_r <= in_en;
+//	end
+//		
+//end
 
+always @ (negedge clk) begin
+	iot_in_r <= iot_in;
+end
 
 always @ (posedge clk) begin
-	if(in_en && DES_en)
-		data_r <= {iot_in , data_r[127:8]};
+	if(in_en & (DES_en | MAXMIN_en))
+		data_r <= {iot_in_r, data_r[127:8]};
 	else begin
 		data_r <= data_r;
 	end
@@ -268,24 +450,13 @@ always @ (posedge clk or posedge rst) begin
 	end
 end
 
-//always @ (posedge clk or posedge rst) begin
-//	if(rst) begin
-//		valid_r   <= 0;
-//	end
-//	else begin
-//		if(clk_DES_en) begin
-//			valid_r           <= round_r == 0;
-//		end else begin
-//			valid_r           <= valid_r;
-//		end
-//	end
-//end
-
 always @ (posedge clk) begin
 	if(clk_DES_en) begin
 		iot_out_r[127:64] <=  round_r == 8 ? data_r[63:0] : iot_out_r[127:64];
 	end else if(CRC_en) begin
 		iot_out_r[127:64] <= 0;
+	end else if (MAXMIN_en) begin
+		iot_out_r[127:64] <= first_output[127:64];
 	end else begin
 		iot_out_r[127:64] <= iot_out_r[127:64];
 	end
@@ -298,6 +469,8 @@ always @ (posedge clk) begin
 		iot_out_r[63:3]   <= 0;
 		iot_out_r[0]      <= 0;
 		iot_out_r[2:1]    <= round_r == 0 ? crc[2:1] : {iot_out_r[2]^crc[2] , iot_out_r[1]^crc[1]};
+	end else if (MAXMIN_en) begin
+		iot_out_r[63:0]   <= first_output[63:0];
 	end else begin
 		iot_out_r[63:0]   <= iot_out_r[63:0];
 	end
@@ -465,179 +638,15 @@ assign sbox_out =   {sbox_outs_r[32-16], sbox_outs_r[32-7],  sbox_outs_r[32-20],
 endmodule
 
 
-module top2maxmin 
+module comparator
 (
-input 			  clk,
-input 			  en,
-input [127:0] 	  i_data,
-input 			  first,
-input 			  rst,
-input 			  maxmin,
-input [  3:0]	  round,
-output 			  o_out_valid,
-output [127:0]    o_top2max
+input [7:0] a,
+input [7:0] b,
+output		less,
+output		equal
 );
 
-reg [127:0] max1_r;
-reg [127:0] max2_r;
-reg [127:0] max1_wait_r;
-reg [127:0] max2_wait_r;
+assign less  = a < b;
+assign equal = a == b;
 
-/* reg [127:0] min1_r;
-reg [127:0] min2_r;
-reg [127:0] min1_wait_r;
-reg [127:0] min2_wait_r; */
-
-reg [127:0] new_data_r;
-reg [2:0  ] cnt;
-
-reg [127:0] o1_max_r;
-reg [127:0] o2_max_r;
-
-/* reg [127:0] o1_min_r;
-reg [127:0] o2_min_r; */
-
-reg [129:0] valid_r;
-wire c1_w;
-wire c2_w;
-wire done_w;
-wire done2_w;
-reg first_r;
-
-assign o_top2max   = o1_max_r;
-assign o_out_valid = valid_r[129];
-
-compare_128bit u_compare_128bit_inst1( clk, en, first_r | rst, max1_r, new_data_r, c1_w, done_w);
-compare_128bit u_compare_128bit_inst2( clk, en, first_r | rst, max2_r, new_data_r, c2_w, done2_w);
-
-always @ (*) begin
-	if (done_w) begin
-		case({maxmin,c1_w, c2_w})
-			3'b111  : begin  // a < c, b < c
-				max2_wait_r = max1_r;
-				max1_wait_r = new_data_r;
-			end
-			3'b101  : begin // a > c, b < c
-				max2_wait_r = new_data_r;
-				max1_wait_r = max1_r;
-			end
-			3'b100  : begin             // a > c, b > c
-				max2_wait_r = max2_r;
-				max1_wait_r = max1_r;
-			end
-			3'b000  : begin // a > c, b > c
-				max2_wait_r = max1_r;
-				max1_wait_r = new_data_r;
-			end
-			3'b010  : begin // a < c, b > c
-				max2_wait_r = new_data_r;
-				max1_wait_r = max1_r;
-			end
-			default : begin  //  a < c, b < c
-				max2_wait_r = max2_r;
-				max1_wait_r = max1_r;
-			end
-		endcase
-	end else begin
-		max2_wait_r = max2_r;
-		max1_wait_r = max1_r;
-	end
-end
-
-always @ (posedge clk or posedge rst) begin
-	if(rst) begin
-		max1_r <= 0;
-		max2_r <= 0;
-		new_data_r <= 0;
-		cnt    <= 0;
-		first_r <= 0;
-		o1_max_r    <= 0;
-		o2_max_r    <= 0;
-		valid_r <= 0;
-	end else begin
-		if (en) begin
-			max1_r      <= first && cnt==0 ? i_data : max1_wait_r;
-			max2_r      <= first && cnt==0 ? (maxmin ? 0 : 128'hffff_ffff_ffff_ffff_ffff_ffff_ffff_ffff) : max2_wait_r;
-			o1_max_r    <= cnt == 0 ? max1_wait_r : o2_max_r;
-			o2_max_r    <= max2_wait_r;
-			new_data_r  <= first ? (|cnt[2:0] ? i_data : (maxmin ? 0 : 128'hffff_ffff_ffff_ffff_ffff_ffff_ffff_ffff))  : new_data_r;
-			first_r     <= first;
-			cnt         <= first ? cnt + 1 : cnt;
-			valid_r     <= first && cnt==0 ? {valid_r[128:0],1'b0} | 8'd3 : {valid_r[128:0],1'b0};
-		end else begin
-			max1_r      <= 0 ;
-			max2_r      <= 0 ;
-			o1_max_r    <= 0 ;
-			o2_max_r    <= 0 ;
-			new_data_r  <= 0 ;
-			first_r     <= 0 ;
-			cnt         <= 0 ;
-			valid_r     <= 0 ;
-		end
-	end
-end
-
-
-endmodule
-
-module compare_128bit (
-    input clk,                // Clock signal
-	input en,                // Clock signal
-    input reset,              // Active high reset
-    input [127:0] a,          // 128-bit input A
-    input [127:0] b,          // 128-bit input B
-    output res,          // Output: 1 if A < B, 0 otherwise
-	output done         
-);
-	
-	reg less;
-
-    reg [3:0] byte_idx;       // Byte index for comparison (0 to 15)
-    wire [8:0] a_byte, b_byte; // Byte for A and B
-    reg comparing;             // Flag to indicate if comparison is ongoing
-    reg [134:0] a_r ;          // 128-bit input A
-    reg [134:0] b_r ;          // 128-bit input B
-	assign res = done ? less : 0;
-	assign done = byte_idx == 14;
-	
-	assign a_byte = a_r[134 -: 9];
-	assign b_byte = b_r[134 -: 9];
-    // Comparison process
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            less <= 0;         // Default to A < B
-			comparing <= 1;       
-            byte_idx <= 0;     // Start at the first byte
-			a_r  <= {7'd0, a};
-			b_r  <= {7'd0, b};
-        end else begin
-			if(en) begin
-				a_r <= {a_r[125:0],9'd0};
-				b_r <= {b_r[125:0],9'd0};
-				byte_idx <= byte_idx + 1;  
-				if (comparing) begin
-					if (a_byte < b_byte) begin
-						less <= 1;    
-						comparing <= 0;
-					end else if (a_byte == b_byte) begin
-						less    <= less;    
-						comparing <= comparing;
-					end else begin
-						comparing <= 0;
-						less    <= less;     
-					end
-				
-				end else begin
-					less    <= less;    
-					comparing <= comparing;
-				end
-			end else begin
-				a_r <= a_r;
-				b_r <= b_r;
-				byte_idx <= byte_idx;  
-				less    <= less;    
-				comparing <= comparing;
-			end
-        end
-    end
 endmodule

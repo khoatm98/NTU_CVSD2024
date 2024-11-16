@@ -1,10 +1,10 @@
 `timescale 1ns/10ps
 `define SDFFILE     "../02_SYN/Netlist/IOTDF_syn.sdf"     //Modify your sdf file name
-`define CYCLE       6.5                   //Modify your CYCLE 
+`define CYCLE       10.0                   //Modify your CYCLE 
 `define DEL         1.0
 `define PAT_NUM     64
-`define End_CYCLE  10000
-
+//`define End_CYCLE  1000000 
+`define End_CYCLE  1000000
 
 module test;
 reg           clk;
@@ -25,12 +25,12 @@ integer cycle_count;
    localparam F4_NUM = 16;
    localparam F5_NUM = 16;
 `elsif p2 // modify the following number according to your pattern
-   localparam PAT_NUM = 64;
-   localparam F1_NUM = 64;
-   localparam F2_NUM = 64;
-   localparam F3_NUM = 64;
-   localparam F4_NUM = 16;
-   localparam F5_NUM = 16;
+   localparam PAT_NUM = 20000;
+   localparam F1_NUM = 20000;
+   localparam F2_NUM = 20000;
+   localparam F3_NUM = 20000;
+   localparam F4_NUM = 20000/4;
+   localparam F5_NUM = 20000/4;
 `else
    localparam PAT_NUM = 64;
    localparam F1_NUM = 64;
@@ -95,7 +95,7 @@ end
    initial begin 
       pattern_file_path = "../00_TESTBED/pattern1_data/pattern1.dat";
       // $display("Hello");
-       $display("%s", pattern_file_path);
+      // $display("%s", pattern_file_path);
       $readmemh(pattern_file_path, pat_mem);
    end
 `elsif p2
@@ -170,7 +170,6 @@ initial begin
    over          = 0;
    over1         = 0;
    over2         = 0;
-   $display("%s", func_ans_path);
 end
 
 always begin #(`CYCLE/2)  clk = ~clk; end
@@ -252,6 +251,7 @@ always @(posedge clk)begin
       if(iot_out !== out_tmp)begin
          $display("P%02d:  iot_out=%032h  != expect %032h", x, iot_out, out_tmp);
          err = err + 1 ;  
+		 //$finish;  
       end
       else begin
          $display("P%02d:  ** Correct!! ** , iot_out=%032h", x, iot_out);

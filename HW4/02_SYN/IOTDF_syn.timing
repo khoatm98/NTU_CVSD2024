@@ -1,0 +1,85 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : IOTDF
+Version: U-2022.12
+Date   : Sat Nov 16 13:50:40 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: round_r_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_gate_iot_out_r_reg/latch
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  IOTDF              tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             1.00       1.00
+  round_r_reg[3]/CK (DFFRX1)                              0.00       1.00 r
+  round_r_reg[3]/Q (DFFRX1)                               0.84       1.84 f
+  U1626/Y (NAND2BX1)                                      0.67       2.52 f
+  U1664/Y (NOR2X1)                                        0.61       3.13 r
+  U1808/Y (CLKINVX1)                                      0.42       3.55 f
+  U1430/Y (NOR2XL)                                        0.73       4.27 r
+  U1809/Y (NAND2X1)                                       0.69       4.97 f
+  U1816/Y (CLKINVX1)                                      0.38       5.34 r
+  U1877/Y (NOR4X1)                                        0.18       5.52 f
+  U1878/Y (OAI211X1)                                      0.23       5.75 r
+  U1879/Y (AOI211X1)                                      0.26       6.00 f
+  U1884/Y (OAI2BB2XL)                                     0.78       6.78 r
+  U1886/Y (NAND2BX1)                                      0.28       7.07 r
+  U1887/Y (AOI211X1)                                      0.20       7.26 f
+  U1888/Y (AOI211X1)                                      0.30       7.56 r
+  U1889/Y (AOI2BB1X1)                                     0.44       8.00 r
+  U1903/Y (OAI21X1)                                       0.44       8.44 f
+  U1905/Y (AOI2BB2X1)                                     0.85       9.29 r
+  U1438/Y (OAI21XL)                                       0.36       9.66 f
+  U1906/Y (AOI22X1)                                       0.36      10.02 r
+  U1413/Y (OAI31XL)                                       0.39      10.41 f
+  U1907/Y (AOI2BB1X1)                                     0.29      10.69 r
+  clk_gate_iot_out_r_reg/EN (SNPS_CLOCK_GATE_HIGH_IOTDF_2)
+                                                          0.00      10.69 r
+  clk_gate_iot_out_r_reg/test_or/Y (OR2X1)                0.23      10.92 r
+  clk_gate_iot_out_r_reg/latch/D (TLATNX1)                0.00      10.92 r
+  data arrival time                                                 10.92
+
+  clock clk (fall edge)                                  10.00      10.00
+  clock network delay (ideal)                             1.00      11.00
+  clock uncertainty                                      -0.10      10.90
+  clk_gate_iot_out_r_reg/latch/GN (TLATNX1)               0.00      10.90 f
+  time borrowed from endpoint                             0.02      10.92
+  data required time                                                10.92
+  --------------------------------------------------------------------------
+  data required time                                                10.92
+  data arrival time                                                -10.92
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                                10.00   
+  library setup time                                     -0.11   
+  --------------------------------------------------------------
+  max time borrow                                         9.89   
+  --------------------------------------------------------------
+  actual time borrow                                      0.02   
+  clock uncertainty                                      -0.10   
+  --------------------------------------------------------------
+  time given to startpoint                               -0.08   
+  --------------------------------------------------------------
+
+
+1
