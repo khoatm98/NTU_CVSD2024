@@ -7,7 +7,7 @@ input  [7:0]   iot_in;
 input  [2:0]   fn_sel;
 output         busy;
 output         valid;
-output [127:0] iot_out;
+output [127:0] iot_out; 
 
 // ---------------------------------------------------------------------------
 // Parameter declaration
@@ -143,8 +143,8 @@ assign cipher_text[63:0]   =  {final_permutation_w[64-40], final_permutation_w[6
 assign L_ready_w = data_buffer_r[119:88];
 assign R_ready_w = data_buffer_r[87:56];
 always @* begin
-	R_wait_r = L_ready_w ^ sbox_out_w;
-	L_wait_r = R_ready_w;
+	R_wait_r = DES_en ? L_ready_w ^ sbox_out_w : 0;
+	L_wait_r = DES_en ? R_ready_w              : 0;
 end
 
 assign final_permutation_w = {R_wait_r, L_wait_r};
@@ -165,22 +165,38 @@ end
 
 wire inv_1_w;
 wire inv_2_w;
-wire  [2:0]   crc;
+reg  [2:0]   crc;
 
 assign CRC_en = fn_sel == 3'b011;
 
-wire inv_1_036_w = iot_in[0] ^ iot_in[3] ^ iot_in[6];
-wire inv_1_147_w = iot_in[1] ^ iot_in[4] ^ iot_in[7];
-wire inv_1_25_w  = iot_in[2] ^ iot_in[5];
+wire inv_1_036_w = CRC_en ? iot_in[0] ^ iot_in[3] ^ iot_in[6] : 0;
+wire inv_1_147_w = CRC_en ? iot_in[1] ^ iot_in[4] ^ iot_in[7] : 0;
+wire inv_1_25_w  = CRC_en ? iot_in[2] ^ iot_in[5]             : 0;
 
 assign inv_1_w =  inv_1_036_w ^ inv_1_147_w;
 assign inv_2_w =  inv_1_036_w ^ inv_1_25_w;
 
 wire inv_1_2_w = inv_1_147_w^inv_1_25_w;
 
-assign crc[0] = 1'b0;
-assign crc[1] = round_r%3 == 0 ? inv_1_w   : (round_r%3 == 1 ?  inv_1_2_w   : inv_2_w   );
-assign crc[2] = round_r%3 == 0 ? inv_2_w   : (round_r%3 == 1 ?  inv_1_w     : inv_1_2_w );
+always @* begin
+	case(round_r)
+		0,3,6,9,12,15: begin
+			crc[1] = inv_1_w;
+			crc[2] = inv_2_w;
+		end
+		1,4,7,10,13: begin
+			crc[1] = inv_1_2_w;
+			crc[2] = inv_1_w;
+		end
+		default: begin
+			crc[1] = inv_2_w;
+			crc[2] = inv_1_2_w;
+		end
+	endcase
+end
+//assign crc[0] = 1'b0;
+//assign crc[1] = round_r%3 == 0 ? inv_1_w   : (round_r%3 == 1 ?  inv_1_2_w   : inv_2_w   );
+//assign crc[2] = round_r%3 == 0 ? inv_2_w   : (round_r%3 == 1 ?  inv_1_w     : inv_1_2_w );
 
 
 // ---------------------------------------------------------------------------
@@ -328,44 +344,32 @@ always @* begin
 	end
 
 end
-
-always @ (posedge clk or posedge rst) begin
-	if(rst)
-		input_cnt <= 0;
-	else begin
-		if(MAXMIN_en)
-			input_cnt <= input_cnt + (round_r == 15 && in_en);
-		else
-			input_cnt <= input_cnt;
-	end	
+ 
+always @ (posedge clk) begin
+	if(MAXMIN_en)
+		input_cnt <= in_en ? input_cnt + (round_r == 15 ) : 0;
+	else
+		input_cnt <= input_cnt;
 end
 
-always @ (posedge clk or posedge rst) begin
-	if(rst) begin
-		comp_res_0_r <= 0;
-		comp_res_1_r <= 0;
-	end
-	else begin
-		if(MAXMIN_en) begin
-			case({comp_res_less_0_w, comp_res_equal_0_w})
-				2'b00 : comp_res_0_r <= round_r == 15 ? 0 : 0;
-				2'b10 : comp_res_0_r <= round_r == 15 ? 0 : 1;
-				2'b01 : comp_res_0_r <= round_r == 15 ? 0 : comp_res_0_r;
-			endcase
-			
-			case({comp_res_less_1_w, comp_res_equal_1_w})
-				2'b00 : comp_res_1_r <= round_r == 15 ? 0 : 0;
-				2'b10 : comp_res_1_r <= round_r == 15 ? 0 : 1;
-				2'b01 : comp_res_1_r <= round_r == 15 ? 0 : comp_res_1_r;
-			endcase
-		end else begin
-			comp_res_0_r <= comp_res_0_r;
-			comp_res_1_r <= comp_res_1_r;
-		end
-	end
+always @ (posedge clk) begin
+	if(MAXMIN_en) begin
+		case({comp_res_less_0_w, comp_res_equal_0_w})
+			2'b00 : comp_res_0_r <= round_r == 15 ? 0 : 0;
+			2'b10 : comp_res_0_r <= round_r == 15 ? 0 : 1;
+			2'b01 : comp_res_0_r <= round_r == 15 ? 0 : comp_res_0_r;
+		endcase
 		
+		case({comp_res_less_1_w, comp_res_equal_1_w})
+			2'b00 : comp_res_1_r <= round_r == 15 ? 0 : 0;
+			2'b10 : comp_res_1_r <= round_r == 15 ? 0 : 1;
+			2'b01 : comp_res_1_r <= round_r == 15 ? 0 : comp_res_1_r;
+		endcase
+	end else begin
+		comp_res_0_r <= comp_res_0_r;
+		comp_res_1_r <= comp_res_1_r;
+	end
 end
-
 // ---------------------------------------------------------------------------
 // Combinational Block
 // ---------------------------------------------------------------------------
