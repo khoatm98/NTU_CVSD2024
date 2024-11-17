@@ -343,7 +343,7 @@ always @* begin
 		second_output = data_buffer_r;
 	end
 
-end
+end 
  
 always @ (posedge clk) begin
 	if(MAXMIN_en)
