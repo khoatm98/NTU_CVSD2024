@@ -21,7 +21,7 @@ output [127:0] iot_out;
 reg  [127: 0] data_r;
 reg  [127: 0] data_buffer_r;   // for max min operation
 wire [7:0]    data_w [15:0];
-wire [63:0]    main_key_w;
+wire [63:0]    main_key_w; 
 wire [63:0]    plain_text_w;
 wire CRC_en;
 wire MAXMIN_en;
@@ -166,12 +166,15 @@ end
 wire inv_1_w;
 wire inv_2_w;
 reg  [2:0]   crc;
+wire [7:0]   crc_input;
 
 assign CRC_en = fn_sel == 3'b011;
 
-wire inv_1_036_w = CRC_en ? iot_in[0] ^ iot_in[3] ^ iot_in[6] : 0;
-wire inv_1_147_w = CRC_en ? iot_in[1] ^ iot_in[4] ^ iot_in[7] : 0;
-wire inv_1_25_w  = CRC_en ? iot_in[2] ^ iot_in[5]             : 0;
+assign crc_input = CRC_en ? iot_in : 0;
+
+wire inv_1_036_w = crc_input[0] ^ crc_input[3] ^ crc_input[6];
+wire inv_1_147_w = crc_input[1] ^ crc_input[4] ^ crc_input[7]; 
+wire inv_1_25_w  = crc_input[2] ^ crc_input[5]            ;
 
 assign inv_1_w =  inv_1_036_w ^ inv_1_147_w;
 assign inv_2_w =  inv_1_036_w ^ inv_1_25_w;

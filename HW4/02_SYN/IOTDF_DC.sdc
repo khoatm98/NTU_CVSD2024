@@ -1,5 +1,5 @@
 # operating conditions and boundary conditions #
-
+ 
 
 create_clock -name clk  -period 20.00   [get_ports  clk]      ;#Modify period by yourself
  
