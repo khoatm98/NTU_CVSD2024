@@ -1,7 +1,7 @@
 0 
 37
-+define+CYCLE=13
-+define+p1+F2
++define+CYCLE=20
++define+p1+F4
 +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 +notimingcheck
 +v2k
@@ -42,7 +42,7 @@ mraarch=linux_64
 installdir=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice
 XLOCALEDIR=/usr/cad/synopsys/astro/cur/etc/locale
 XKEYSYMDB=/usr/cad/synopsys/astro/cur/etc/XKeysymDB
-XDG_SESSION_ID=52462
+XDG_SESSION_ID=76134
 XDG_RUNTIME_DIR=/run/user/1340
 VMR_MODE_FLAG=64
 VERPLEX_HOME=/usr/cad/cadence/CONFRML/cur
@@ -64,9 +64,9 @@ SYN_MAN_DIR=/usr/cad/synopsys/vcs/2022.06//doc/man
 SYNTHESIS=/usr/cad/synopsys/synthesis/cur
 SYNOPSYS_TMAX=/usr/cad/synopsys/tmax/cur
 SYNOPSYS_LC_ROOT=/usr/cad/synopsys/synthesis/cur
-SSH_TTY=/dev/pts/1
-SSH_CONNECTION=140.112.175.69 61438 140.112.20.70 22
-SSH_CLIENT=140.112.175.69 61438 22
+SSH_TTY=/dev/pts/111
+SSH_CONNECTION=104.28.230.10 64139 140.112.20.70 22
+SSH_CLIENT=104.28.230.10 64139 22
 SPAPI_AHDL_INCLUDE=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/include
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06//linux64/clang
 SNPS_PLATFORM=linux64
@@ -78,7 +78,7 @@ SELINUX_ROLE_REQUESTED=
 SELINUX_LEVEL_REQUESTED=
 SCRNAME=vcs
 SCRIPT_NAME=vcs
-REMOTEHOST=xdn175o69.ee.ntu.edu.tw
+REMOTEHOST=104.28.230.10
 QT_GRAPHICSSYSTEM_CHECKED=1
 QTLIB=/usr/lib64/qt-3.3/lib
 QTINC=/usr/lib64/qt-3.3/include
@@ -110,9 +110,9 @@ ARCH=linux64
 0
 0
 5
-1731567736 ./IOTDF.v
-1731056953 ../00_TESTBED/testfixture.v
-1730817890 rtl_01.f
+1731979948 ./IOTDF.v
+1731926180 ../00_TESTBED/testfixture.v
+1731927050 rtl_01.f
 1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/verdi.tab
 1654052745 /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 4
@@ -120,5 +120,5 @@ ARCH=linux64
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1731567748 simv.daidir
+1731979986 simv.daidir
 -1 partitionlib

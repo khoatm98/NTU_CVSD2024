@@ -251,8 +251,8 @@ always @* begin
 		4'd11   : second_comp_r = w2[95 -: 8];
 		4'd12   : second_comp_r = w2[103 -: 8];
 		4'd13   : second_comp_r = w2[111 -: 8];
-		4'd14   : second_comp_r = w2[119  -: 8];
-		default : second_comp_r = w2[127  -: 8];
+		4'd14   : second_comp_r = w2[119 -: 8];
+		default : second_comp_r = w2[127 -: 8];
 	endcase
 	
 	case(round_r)
@@ -270,13 +270,17 @@ always @* begin
 		4'd11   : first_comp_r = w1[95 -: 8];
 		4'd12   : first_comp_r = w1[103 -: 8];
 		4'd13   : first_comp_r = w1[111 -: 8];
-		4'd14   : first_comp_r = w1[119  -: 8];
-		default : first_comp_r = w1[127  -: 8];
+		4'd14   : first_comp_r = w1[119 -: 8];
+		default : first_comp_r = w1[127 -: 8];
 	endcase
 end
 
 always @* begin
-	if(round_r==15) begin			
+	if(input_cnt == 0 && ~|round_r[3:1]) begin		
+		first_output  = data_buffer_r;  
+		second_output = {128{fn_sel[0]}};
+	end
+	else if(round_r==15) begin			
 		case({c0^fn_sel[0], c1^fn_sel[0]})
 			2'b11  : begin
 				first_output  =  {iot_in_r , data_r[127:8]};    
@@ -292,27 +296,6 @@ always @* begin
 			end
 		endcase
 	end
-	
-	else if(round_r==0) begin		
-		if(input_cnt == 0 ) begin
-			first_output  = data_buffer_r;  
-			second_output = {128{fn_sel[0]}};   
-		end
-		else begin
-			first_output  = iot_out_r;  
-			second_output = data_buffer_r; 
-		end
-	end
-	else if(round_r==1) begin		
-		if(input_cnt == 0 ) begin
-			first_output  = {128{fn_sel[0]}};  
-			second_output = data_buffer_r;   
-		end
-		else begin
-			first_output  = iot_out_r;  
-			second_output = data_buffer_r; 
-		end
-	end
 	else begin
 		first_output  = iot_out_r;
 		second_output = data_buffer_r;
@@ -322,10 +305,10 @@ end
  
 always @ (posedge clk or posedge rst) begin
 	if (rst)
-		input_cnt <= 0;
+		input_cnt <= MAXMIN_en ? 0 : 1;
 	else
 	if(MAXMIN_en)
-		input_cnt <= input_cnt + (round_r == 15 );
+		input_cnt <= input_cnt + (round_r == 15);
 	else
 		input_cnt <= input_cnt;
 end
@@ -368,7 +351,7 @@ always @ (posedge clk or posedge rst) begin
 		clk_DES_en <= 0;
 	else begin
 		if(~clk_DES_en )
-			clk_DES_en <= round_r[1] && in_en && first_r&& DES_en;
+			clk_DES_en <= round_r[1]&& first_r&& DES_en;
 		else
 			clk_DES_en <= clk_DES_en;
 	end
@@ -421,7 +404,7 @@ always @ (posedge clk or posedge rst) begin
 		first_r <= 0;
 	else begin
 		if(~first_r) begin 
-			first_r <= (round_r == 15 && in_en); 
+			first_r <= (round_r == 15); 
 		end else
 			first_r <= first_r;
 	end

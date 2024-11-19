@@ -84,6 +84,7 @@ Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
   Loading link library 'slow'
   Loading link library 'gtech'
 Running PRESTO HDLC
+Warning:  ../01_RTL/IOTDF.v:308: signed to unsigned assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 115 in file
 	'../01_RTL/IOTDF.v'
@@ -115,29 +116,30 @@ Statistics for case statements in always block at line 278 in file
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           280            |    auto/auto     |
+|           284            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 333 in file
+Statistics for case statements in always block at line 316 in file
 	'../01_RTL/IOTDF.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           334            |     no/auto      |
-|           339            |     no/auto      |
+|           317            |     no/auto      |
+|           322            |     no/auto      |
 ===============================================
 
 Inferred memory devices in process
-	in routine IOTDF line 323 in file
+	in routine IOTDF line 306 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|    input_cnt_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    input_cnt_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    input_cnt_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 333 in file
+	in routine IOTDF line 316 in file
 		'../01_RTL/IOTDF.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -147,7 +149,7 @@ Inferred memory devices in process
 ===========================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 346 in file
+	in routine IOTDF line 329 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -157,7 +159,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 366 in file
+	in routine IOTDF line 349 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -166,7 +168,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 378 in file
+	in routine IOTDF line 361 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -175,7 +177,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 388 in file
+	in routine IOTDF line 371 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -184,7 +186,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 398 in file
+	in routine IOTDF line 381 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -193,7 +195,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 402 in file
+	in routine IOTDF line 385 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -202,7 +204,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 410 in file
+	in routine IOTDF line 393 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -211,7 +213,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 419 in file
+	in routine IOTDF line 402 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -220,7 +222,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 430 in file
+	in routine IOTDF line 413 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -229,7 +231,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 442 in file
+	in routine IOTDF line 425 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -241,25 +243,25 @@ Elaborated 1 design.
 Current design is now 'IOTDF'.
 Information: Building the design 'sbox'. (HDL-193)
 
-Statistics for case statements in always block at line 582 in file
+Statistics for case statements in always block at line 565 in file
 	'../01_RTL/IOTDF.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           583            |    auto/auto     |
+|           566            |    auto/auto     |
 ===============================================
 Statistics for MUX_OPs
 ======================================================
 | block name/line  | Inputs | Outputs | # sel inputs |
 ======================================================
-|     sbox/584     |   4    |   64    |      2       |
-|     sbox/584     |   4    |   64    |      2       |
-|     sbox/584     |   4    |   64    |      2       |
-|     sbox/584     |   4    |   64    |      2       |
-|     sbox/584     |   4    |   64    |      2       |
-|     sbox/584     |   4    |   64    |      2       |
-|     sbox/584     |   4    |   64    |      2       |
-|     sbox/584     |   4    |   64    |      2       |
+|     sbox/567     |   4    |   64    |      2       |
+|     sbox/567     |   4    |   64    |      2       |
+|     sbox/567     |   4    |   64    |      2       |
+|     sbox/567     |   4    |   64    |      2       |
+|     sbox/567     |   4    |   64    |      2       |
+|     sbox/567     |   4    |   64    |      2       |
+|     sbox/567     |   4    |   64    |      2       |
+|     sbox/567     |   4    |   64    |      2       |
 ======================================================
 Presto compilation completed successfully. (sbox)
 Information: Building the design 'comparator'. (HDL-193)
@@ -350,8 +352,6 @@ Observation logic depth: 5
 1
 set_host_options -max_cores 16
 1
-compile_power -total_power_optimization
-Error: unknown command 'compile_power' (CMD-005)
 set_max_leakage_power 0
 Information: Command 'set_max_leakage_power' is obsolete and is being ignored. (INFO-102)
 0
@@ -383,7 +383,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 1774                                   |
+| Leaf Cell Count                                         | 1731                                   |
 | Number of User Hierarchies                              | 3                                      |
 | Sequential Cell Count                                   | 405                                    |
 | Macro Count                                             | 0                                      |
@@ -391,7 +391,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Number of Path Groups                                   | 2                                      |
 | Number of VT Class                                      | 0                                      |
 | Number of Clocks                                        | 1                                      |
-| Number of Dont Touch Cells                              | 544                                    |
+| Number of Dont Touch Cells                              | 508                                    |
 | Number of Dont Touch Nets                               | 2                                      |
 | Number of Size Only Cells                               | 0                                      |
 | Design with UPF Data                                    | false                                  |
@@ -445,13 +445,13 @@ Information: There is no timing violation in design IOTDF. Delay-based auto_ungr
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:11   36986.3      0.00       0.0       0.0                           34845324.0000      0.00  
-    0:00:11   36984.6      0.00       0.0       0.0                           34844884.0000      0.00  
+    0:00:10   36171.6      0.00       0.0       0.0                           32648080.0000      0.00  
+    0:00:11   36147.8      0.00       0.0       0.0                           32637876.0000      0.00  
 
   Beginning Constant Register Removal
   -----------------------------------
-    0:00:12   36984.6      0.00       0.0       0.0                           34844884.0000      0.00  
-    0:00:12   36984.6      0.00       0.0       0.0                           34844884.0000      0.00  
+    0:00:11   36147.8      0.00       0.0       0.0                           32637876.0000      0.00  
+    0:00:11   36147.8      0.00       0.0       0.0                           32637876.0000      0.00  
 
   Beginning Global Optimizations
   ------------------------------
@@ -494,52 +494,52 @@ Information: There is no timing violation in design IOTDF. Delay-based auto_ungr
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:14   25388.0      0.00       0.0     142.8                           15455526.0000      0.00  
-    0:00:14   25388.0      0.00       0.0     142.8                           15455526.0000      0.00  
-    0:00:14   25388.0      0.00       0.0     142.8                           15455526.0000      0.00  
-    0:00:14   25381.2      0.00       0.0     142.8                           15452583.0000      0.00  
-    0:00:15   25379.5      0.00       0.0     142.8                           15451425.0000      0.00  
-    0:00:15   25379.5      0.00       0.0     142.8                           15451425.0000      0.00  
+    0:00:13   24914.4      0.00       0.0       4.9                           13865999.0000      0.00  
+    0:00:13   24914.4      0.00       0.0       4.9                           13865999.0000      0.00  
+    0:00:13   24914.4      0.00       0.0       4.9                           13865999.0000      0.00  
+    0:00:14   24843.1      0.00       0.0       4.9                           13768352.0000      0.00  
+    0:00:15   24841.4      0.00       0.0       4.9                           13767194.0000      0.00  
+    0:00:15   24841.4      0.00       0.0       4.9                           13767194.0000      0.00  
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:00:16   25274.3      0.00       0.0     102.7                           15346501.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15346501.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15346501.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753948.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753948.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753948.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
 
 
-  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  Beginning Design Rule Fixing  (max_transition)
   ----------------------------
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       4.9                           13753033.0000      0.00  
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
   Global Optimization (Phase 34)
-    0:00:16   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
-    0:00:16   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       0.0                           13752472.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       0.0                           13752472.0000      0.00  
 
 
   Beginning Power Optimization
@@ -549,45 +549,45 @@ Information: There is no timing violation in design IOTDF. Delay-based auto_ungr
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:16   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
-    0:00:17   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
-    0:00:17   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
-    0:00:17   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
-    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       0.0                           13752472.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       0.0                           13752472.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       0.0                           13752472.0000      0.00  
+    0:00:16   24810.9      0.00       0.0       0.0                           13752472.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
+    0:00:17   24812.6      0.00       0.0       0.0                           12533096.0000      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:17   25282.8      0.00       0.0       0.0                           14099113.0000      0.00  
-    0:00:18   25281.1      0.00       0.0       0.0                           14009649.0000      0.00  
-    0:00:18   25281.1      0.00       0.0       0.0                           14009649.0000      0.00  
-    0:00:18   25281.1      0.00       0.0       0.0                           14009649.0000      0.00  
-    0:00:18   25286.2      0.00       0.0       0.0                           13990920.0000      0.00  
-    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
-    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
-    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
-    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
-    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
-    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
+    0:00:17   24816.0      0.00       0.0       0.0                           12533653.0000      0.00  
+    0:00:17   24810.9      0.00       0.0       0.0                           12535273.0000      0.00  
+    0:00:17   24810.9      0.00       0.0       0.0                           12535273.0000      0.00  
+    0:00:17   24810.9      0.00       0.0       0.0                           12535273.0000      0.00  
+    0:00:18   24816.0      0.00       0.0       0.0                           12520115.0000      0.00  
+    0:00:18   24802.4      0.00       0.0       0.0                           12505679.0000      0.00  
+    0:00:18   24802.4      0.00       0.0       0.0                           12505679.0000      0.00  
+    0:00:18   24802.4      0.00       0.0       0.0                           12505679.0000      0.00  
+    0:00:18   24802.4      0.00       0.0       0.0                           12505679.0000      0.00  
+    0:00:18   24802.4      0.00       0.0       0.0                           12505679.0000      0.00  
+    0:00:18   24802.4      0.00       0.0       0.0                           12505679.0000      0.00  
 Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
 
 
@@ -620,8 +620,8 @@ Information: The target library(s) contains cell(s), other than black boxes, tha
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:01   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
-    0:00:06   25225.1      0.00       0.0       0.0                           13918884.0000      0.00  
+    0:00:02   24802.4      0.00       0.0       0.0                           12505679.0000      0.00  
+    0:00:06   24754.9      0.00       0.0       0.0                           12461459.0000      0.00  
 Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
 
 
@@ -681,7 +681,7 @@ Report : clock_gating
         -gating_elements
 Design : IOTDF
 Version: U-2022.12
-Date   : Mon Nov 18 23:00:05 2024
+Date   : Tue Nov 19 11:26:40 2024
 ****************************************
 
 Information: Identification of clock-gating cells has not been performed. Pre-existing clock-gating cells will not be reported. (PWR-947)
@@ -696,11 +696,11 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
 
      INPUTS :
          clk_gate_input_cnt_reg/CLK = clk 
-         clk_gate_input_cnt_reg/EN = MAXMIN_en 
-         clk_gate_input_cnt_reg/TE = n2280 
+         clk_gate_input_cnt_reg/EN = n2074 
+         clk_gate_input_cnt_reg/TE = n2162 
 
      OUTPUTS :
-         clk_gate_input_cnt_reg/ENCLK = net2386 
+         clk_gate_input_cnt_reg/ENCLK = net2380 
 
  Clock Gating Bank : clk_gate_data_buffer_r_reg
 -------------------
@@ -709,11 +709,11 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
 
      INPUTS :
          clk_gate_data_buffer_r_reg/CLK = clk 
-         clk_gate_data_buffer_r_reg/EN = n1144 
-         clk_gate_data_buffer_r_reg/TE = n2280 
+         clk_gate_data_buffer_r_reg/EN = n1063 
+         clk_gate_data_buffer_r_reg/TE = n2162 
 
      OUTPUTS :
-         clk_gate_data_buffer_r_reg/ENCLK = net2392 
+         clk_gate_data_buffer_r_reg/ENCLK = net2386 
 
  Clock Gating Bank : clk_gate_data_buffer_r_reg_0
 -------------------
@@ -722,11 +722,11 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
 
      INPUTS :
          clk_gate_data_buffer_r_reg_0/CLK = clk 
-         clk_gate_data_buffer_r_reg_0/EN = n1144 
-         clk_gate_data_buffer_r_reg_0/TE = n2280 
+         clk_gate_data_buffer_r_reg_0/EN = n1063 
+         clk_gate_data_buffer_r_reg_0/TE = n2162 
 
      OUTPUTS :
-         clk_gate_data_buffer_r_reg_0/ENCLK = net2397 
+         clk_gate_data_buffer_r_reg_0/ENCLK = net2391 
 
  Clock Gating Bank : clk_gate_data_r_reg
 -------------------
@@ -735,11 +735,11 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
 
      INPUTS :
          clk_gate_data_r_reg/CLK = clk 
-         clk_gate_data_r_reg/EN = N878 
-         clk_gate_data_r_reg/TE = n2280 
+         clk_gate_data_r_reg/EN = N877 
+         clk_gate_data_r_reg/TE = n2162 
 
      OUTPUTS :
-         clk_gate_data_r_reg/ENCLK = net2402 
+         clk_gate_data_r_reg/ENCLK = net2396 
 
  Clock Gating Bank : clk_gate_iot_out_r_reg
 -------------------
@@ -748,11 +748,11 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
 
      INPUTS :
          clk_gate_iot_out_r_reg/CLK = clk 
-         clk_gate_iot_out_r_reg/EN = n1145 
-         clk_gate_iot_out_r_reg/TE = n2280 
+         clk_gate_iot_out_r_reg/EN = n1064 
+         clk_gate_iot_out_r_reg/TE = n2162 
 
      OUTPUTS :
-         clk_gate_iot_out_r_reg/ENCLK = net2407 
+         clk_gate_iot_out_r_reg/ENCLK = net2401 
 
  Clock Gating Bank : clk_gate_iot_out_r_reg_0
 -------------------
@@ -761,11 +761,11 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
 
      INPUTS :
          clk_gate_iot_out_r_reg_0/CLK = clk 
-         clk_gate_iot_out_r_reg_0/EN = n1146 
-         clk_gate_iot_out_r_reg_0/TE = n2280 
+         clk_gate_iot_out_r_reg_0/EN = n1065 
+         clk_gate_iot_out_r_reg_0/TE = n2162 
 
      OUTPUTS :
-         clk_gate_iot_out_r_reg_0/ENCLK = net2412 
+         clk_gate_iot_out_r_reg_0/ENCLK = net2406 
 --------------------------------------------------------------------------------
 
 
@@ -814,14 +814,14 @@ Report : timing
         -max_paths 1
 Design : IOTDF
 Version: U-2022.12
-Date   : Mon Nov 18 23:00:05 2024
+Date   : Tue Nov 19 11:26:41 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: iot_in[6] (input port clocked by clk)
-  Endpoint: iot_in_r_reg_6_
+  Startpoint: iot_in[7] (input port clocked by clk)
+  Endpoint: iot_in_r_reg_7_
             (falling edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -830,22 +830,23 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              1.00       1.00
-  input external delay                     1.00       2.00 f
-  iot_in[6] (in)                           0.00       2.00 f
-  iot_in_r_reg_6_/D (DFFNSRXL)             0.00       2.00 f
-  data arrival time                                   2.00
+  input external delay                     1.00       2.00 r
+  iot_in[7] (in)                           0.00       2.00 r
+  U1362/Y (INVXL)                          0.05       2.05 f
+  iot_in_r_reg_7_/D (DFFNSRXL)             0.00       2.05 f
+  data arrival time                                   2.05
 
   clock clk (fall edge)                    7.00       7.00
   clock network delay (ideal)              1.00       8.00
   clock uncertainty                       -0.10       7.90
-  iot_in_r_reg_6_/CKN (DFFNSRXL)           0.00       7.90 f
-  library setup time                      -0.29       7.61
-  data required time                                  7.61
+  iot_in_r_reg_7_/CKN (DFFNSRXL)           0.00       7.90 f
+  library setup time                      -0.30       7.60
+  data required time                                  7.60
   -----------------------------------------------------------
-  data required time                                  7.61
-  data arrival time                                  -2.00
+  data required time                                  7.60
+  data arrival time                                  -2.05
   -----------------------------------------------------------
-  slack (MET)                                         5.61
+  slack (MET)                                         5.55
 
 
 1
@@ -855,7 +856,7 @@ report_area
 Report : area
 Design : IOTDF
 Version: U-2022.12
-Date   : Mon Nov 18 23:00:05 2024
+Date   : Tue Nov 19 11:26:41 2024
 ****************************************
 
 Library(s) Used:
@@ -863,21 +864,21 @@ Library(s) Used:
     slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
 
 Number of ports:                          280
-Number of nets:                          2530
-Number of cells:                         2381
-Number of combinational cells:           1955
+Number of nets:                          2499
+Number of cells:                         2259
+Number of combinational cells:           1833
 Number of sequential cells:               409
 Number of macros/black boxes:               0
-Number of buf/inv:                        321
+Number of buf/inv:                        318
 Number of references:                      51
 
-Combinational area:              14665.536057
-Buf/Inv area:                     1099.915183
-Noncombinational area:           10559.525558
+Combinational area:              13969.602073
+Buf/Inv area:                     1088.033383
+Noncombinational area:           10785.279648
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                 25225.061615
+Total cell area:                 24754.881721
 Total area:                 undefined
 1
 check_design
@@ -885,7 +886,7 @@ check_design
 ****************************************
 check_design summary:
 Version:     U-2022.12
-Date:        Mon Nov 18 23:00:05 2024
+Date:        Tue Nov 19 11:26:41 2024
 ****************************************
 
                    Name                                            Total
@@ -909,9 +910,9 @@ Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_0' is con
 1
 exit
 
-Memory usage for this session 357 Mbytes.
-Memory usage for this session including child processes 380 Mbytes.
-CPU usage for this session 136 seconds ( 0.04 hours ).
+Memory usage for this session 356 Mbytes.
+Memory usage for this session including child processes 379 Mbytes.
+CPU usage for this session 121 seconds ( 0.03 hours ).
 Elapsed time for this session 42 seconds ( 0.01 hours ).
 
 Thank you...

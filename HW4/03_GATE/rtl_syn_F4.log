@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version T-2022.06_Full64 -- Mon Nov 18 22:38:08 2024
+         Version T-2022.06_Full64 -- Tue Nov 19 11:42:07 2024
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -49,7 +49,6 @@ Top Level Modules:
        TBUFX20
        HOLDX1
        AND2XL
-       AND2X1
        AND2X2
        AND2X4
        AND2X6
@@ -68,6 +67,7 @@ Top Level Modules:
        AOI21X1
        AOI21X2
        AOI21X4
+       AOI211X1
        AOI211X2
        AOI211X4
        AOI22X1
@@ -133,6 +133,7 @@ Top Level Modules:
        NAND2X4
        NAND2X6
        NAND2X8
+       NAND3X1
        NAND3X2
        NAND3X4
        NAND3X6
@@ -156,7 +157,6 @@ Top Level Modules:
        NAND4BBX1
        NAND4BBX2
        NAND4BBX4
-       NOR2X2
        NOR2X4
        NOR2X6
        NOR2X8
@@ -164,6 +164,7 @@ Top Level Modules:
        NOR3X4
        NOR3X6
        NOR3X8
+       NOR4X1
        NOR4X2
        NOR4X4
        NOR4X6
@@ -202,6 +203,7 @@ Top Level Modules:
        OAI21X1
        OAI21X2
        OAI21X4
+       OAI211X1
        OAI211X2
        OAI211X4
        OAI22X1
@@ -352,7 +354,6 @@ Top Level Modules:
        CMPR42X2
        CMPR42X4
        DFFXL
-       DFFX1
        DFFX2
        DFFX4
        DFFQX2
@@ -366,7 +367,6 @@ Top Level Modules:
        DFFSX2
        DFFSX4
        DFFSRXL
-       DFFSRX1
        DFFSRX2
        DFFSRX4
        DFFNSRX2
@@ -501,88 +501,400 @@ Top Level Modules:
 TimeScale is 1 ns / 1 ps
 
 Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 407
+IOTDF, "DFFRX1 input_cnt_reg_2_( .D (N708),  .CK (net2380),  .RN (n1048),  .Q (input_cnt[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 409
+IOTDF, "DFFSRX1 input_cnt_reg_0_( .D (N706),  .CK (net2380),  .SN (n1061),  .RN (n1060),  .Q (input_cnt[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 411
+IOTDF, "DFFRX1 first_r_reg( .D (n1050),  .CK (clk),  .RN (n1048),  .Q (first_r));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 552
+IOTDF, "DFFX1 data_r_reg_39_( .D (plain_text_w[47]),  .CK (net2396),  .Q (plain_text_w[39]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 554
+IOTDF, "DFFX1 data_r_reg_35_( .D (plain_text_w[43]),  .CK (net2396),  .Q (plain_text_w[35]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 572
+IOTDF, "DFFX1 data_r_reg_9_( .D (plain_text_w[17]),  .CK (net2396),  .Q (plain_text_w[9]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 573
+IOTDF, "DFFX1 data_r_reg_7_( .D (plain_text_w[15]),  .CK (net2396),  .Q (plain_text_w[7]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 574
+IOTDF, "DFFX1 data_r_reg_6_( .D (plain_text_w[14]),  .CK (net2396),  .Q (plain_text_w[6]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 575
+IOTDF, "DFFX1 data_r_reg_5_( .D (plain_text_w[13]),  .CK (net2396),  .Q (plain_text_w[5]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 576
+IOTDF, "DFFX1 data_r_reg_3_( .D (plain_text_w[11]),  .CK (net2396),  .Q (plain_text_w[3]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 593
+IOTDF, "DFFX1 data_r_reg_37_( .D (plain_text_w[45]),  .CK (net2396),  .Q (plain_text_w[37]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
 ../02_SYN/Netlist/IOTDF_syn.v, 620
-IOTDF, "DFFRX1 input_cnt_reg_0_( .D (N707),  .CK (net2386),  .RN (n1132),  .Q (input_cnt[0]));"
+IOTDF, "DFFX1 data_r_reg_4_( .D (plain_text_w[12]),  .CK (net2396),  .Q (plain_text_w[4]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 624
-IOTDF, "DFFRX1 input_cnt_reg_2_( .D (N709),  .CK (net2386),  .RN (n1132),  .Q (input_cnt[2]));"
+../02_SYN/Netlist/IOTDF_syn.v, 621
+IOTDF, "DFFX1 data_r_reg_0_( .D (plain_text_w[8]),  .CK (net2396),  .Q (plain_text_w[0]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 626
-IOTDF, "DFFRX1 first_r_reg( .D (n1134),  .CK (clk),  .RN (n1132),  .QN (n2278));"
+../02_SYN/Netlist/IOTDF_syn.v, 625
+IOTDF, "DFFX1 data_r_reg_112_( .D (main_key_w[56]),  .CK (net2396),  .Q (main_key_w[48]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 757
-IOTDF, "DFFNSRXL iot_in_r_reg_7_( .D (iot_in[7]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[7]));"
+../02_SYN/Netlist/IOTDF_syn.v, 627
+IOTDF, "DFFX1 data_r_reg_104_( .D (main_key_w[48]),  .CK (net2396),  .Q (main_key_w[40]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 759
-IOTDF, "DFFNSRXL iot_in_r_reg_6_( .D (iot_in[6]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[6]));"
+../02_SYN/Netlist/IOTDF_syn.v, 629
+IOTDF, "DFFX1 data_r_reg_96_( .D (main_key_w[40]),  .CK (net2396),  .Q (main_key_w[32]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 761
-IOTDF, "DFFNSRXL iot_in_r_reg_2_( .D (iot_in[2]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[2]));"
+../02_SYN/Netlist/IOTDF_syn.v, 631
+IOTDF, "DFFX1 data_r_reg_88_( .D (main_key_w[32]),  .CK (net2396),  .Q (main_key_w[24]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 763
-IOTDF, "DFFNSRXL iot_in_r_reg_1_( .D (iot_in[1]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[1]));"
+../02_SYN/Netlist/IOTDF_syn.v, 633
+IOTDF, "DFFX1 data_r_reg_80_( .D (main_key_w[24]),  .CK (net2396),  .Q (main_key_w[16]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 765
-IOTDF, "DFFNSRXL iot_in_r_reg_0_( .D (iot_in[0]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[0]));"
+../02_SYN/Netlist/IOTDF_syn.v, 635
+IOTDF, "DFFX1 data_r_reg_72_( .D (main_key_w[16]),  .CK (net2396),  .Q (main_key_w[8]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 767
-IOTDF, "DFFNSRXL iot_in_r_reg_5_( .D (iot_in[5]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[5]));"
+../02_SYN/Netlist/IOTDF_syn.v, 645
+IOTDF, "DFFX1 data_r_reg_2_( .D (plain_text_w[10]),  .CK (net2396),  .Q (plain_text_w[2]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 769
-IOTDF, "DFFNSRXL iot_in_r_reg_4_( .D (iot_in[4]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[4]));"
+../02_SYN/Netlist/IOTDF_syn.v, 672
+IOTDF, "DFFX1 data_r_reg_111_( .D (main_key_w[55]),  .CK (net2396),  .Q (main_key_w[47]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
 
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 771
-IOTDF, "DFFNSRX1 iot_in_r_reg_3_( .D (iot_in[3]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[3]));"
+../02_SYN/Netlist/IOTDF_syn.v, 674
+IOTDF, "DFFX1 data_r_reg_107_( .D (main_key_w[51]),  .CK (net2396),  .Q (main_key_w[43]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 692
+IOTDF, "DFFX1 data_r_reg_81_( .D (main_key_w[25]),  .CK (net2396),  .Q (main_key_w[17]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 694
+IOTDF, "DFFX1 data_r_reg_79_( .D (main_key_w[23]),  .CK (net2396),  .Q (main_key_w[15]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 696
+IOTDF, "DFFX1 data_r_reg_78_( .D (main_key_w[22]),  .CK (net2396),  .Q (main_key_w[14]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 698
+IOTDF, "DFFX1 data_r_reg_77_( .D (main_key_w[21]),  .CK (net2396),  .Q (main_key_w[13]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 700
+IOTDF, "DFFX1 data_r_reg_75_( .D (main_key_w[19]),  .CK (net2396),  .Q (main_key_w[11]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 702
+IOTDF, "DFFX1 data_r_reg_74_( .D (main_key_w[18]),  .CK (net2396),  .Q (main_key_w[10]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 714
+IOTDF, "DFFX1 data_r_reg_1_( .D (plain_text_w[9]),  .CK (net2396),  .Q (plain_text_w[1]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 718
+IOTDF, "DFFX1 data_r_reg_108_( .D (main_key_w[52]),  .CK (net2396),  .Q (main_key_w[44]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 724
+IOTDF, "DFFX1 data_r_reg_99_( .D (main_key_w[43]),  .CK (net2396),  .Q (main_key_w[35]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 732
+IOTDF, "DFFX1 data_r_reg_67_( .D (main_key_w[11]),  .CK (net2396),  .Q (main_key_w[3]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 742
+IOTDF, "DFFX1 data_r_reg_84_( .D (main_key_w[28]),  .CK (net2396),  .Q (main_key_w[20]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 744
+IOTDF, "DFFX1 data_r_reg_76_( .D (main_key_w[20]),  .CK (net2396),  .Q (main_key_w[12]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 746
+IOTDF, "DFFX1 data_r_reg_73_( .D (main_key_w[17]),  .CK (net2396),  .Q (main_key_w[9]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 748
+IOTDF, "DFFX1 data_r_reg_59_( .D (main_key_w[3]),  .CK (net2396),  .Q (plain_text_w[59]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 750
+IOTDF, "DFFX1 data_r_reg_116_( .D (main_key_w[60]),  .CK (net2396),  .Q (main_key_w[52]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 754
+IOTDF, "DFFX1 data_r_reg_114_( .D (main_key_w[58]),  .CK (net2396),  .Q (main_key_w[50]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 758
+IOTDF, "DFFX1 data_r_reg_109_( .D (main_key_w[53]),  .CK (net2396),  .Q (main_key_w[45]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 764
+IOTDF, "DFFX1 data_r_reg_92_( .D (main_key_w[36]),  .CK (net2396),  .Q (main_key_w[28]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 768
+IOTDF, "DFFX1 data_r_reg_110_( .D (main_key_w[54]),  .CK (net2396),  .Q (main_key_w[46]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 778
+IOTDF, "DFFX1 iot_out_r_reg_96_( .D (N919),  .CK (net2401),  .Q (iot_out[96]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 779
+IOTDF, "DFFX1 iot_out_r_reg_88_( .D (N911),  .CK (net2401),  .Q (iot_out[88]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 780
+IOTDF, "DFFX1 iot_out_r_reg_80_( .D (N903),  .CK (net2401),  .Q (iot_out[80]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 781
+IOTDF, "DFFX1 iot_out_r_reg_72_( .D (N895),  .CK (net2401),  .Q (iot_out[72]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 784
+IOTDF, "DFFX1 iot_out_r_reg_89_( .D (N912),  .CK (net2401),  .Q (iot_out[89]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 785
+IOTDF, "DFFX1 iot_out_r_reg_84_( .D (N907),  .CK (net2401),  .Q (iot_out[84]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 786
+IOTDF, "DFFX1 iot_out_r_reg_76_( .D (N899),  .CK (net2401),  .Q (iot_out[76]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 787
+IOTDF, "DFFX1 iot_out_r_reg_73_( .D (N896),  .CK (net2401),  .Q (iot_out[73]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 788
+IOTDF, "DFFX1 iot_out_r_reg_116_( .D (n2079),  .CK (net2401),  .QN (iot_out[116]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
@@ -601,14 +913,14 @@ IOTDF, "DFFNSRX1 iot_in_r_reg_3_( .D (iot_in[3]),  .CKN (clk),  .SN (1'b1),  .RN
    ***    Turnoff delay: "FROM_FILE"
    ***    Approximation (mipd) policy: "MAXIMUM"
 
-   ***    SDF annotation begin: Mon Nov 18 22:38:10 2024
+   ***    SDF annotation begin: Tue Nov 19 11:42:08 2024
 
 
 SDF Info: +pulse_r/100, +pulse_e/100 in effect
 
           Total errors: 0
           Total warnings: 0
-   ***    SDF annotation completed: Mon Nov 18 22:38:10 2024
+   ***    SDF annotation completed: Tue Nov 19 11:42:08 2024
 
 
 Starting vcs inline pass...
@@ -619,11 +931,11 @@ rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
 rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _220974_archive_1.so _prev_archive_1.so _cuarc0.so objs/udps/D2wHf.o objs/udps/uYEPC.o objs/udps/vCfas.o objs/udps/IEZrF.o objs/udps/U7Vwg.o objs/udps/i2VqJ.o objs/udps/CjLsY.o objs/udps/sk4QJ.o objs/udps/exIG1.o objs/udps/gSqMj.o objs/udps/Cpxa2.o objs/udps/AubIW.o  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _223391_archive_1.so _prev_archive_1.so _cuarc0.so objs/udps/D2wHf.o objs/udps/uYEPC.o objs/udps/vCfas.o objs/udps/IEZrF.o objs/udps/U7Vwg.o objs/udps/i2VqJ.o objs/udps/CjLsY.o objs/udps/sk4QJ.o objs/udps/exIG1.o objs/udps/gSqMj.o objs/udps/Cpxa2.o objs/udps/AubIW.o  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 Chronologic VCS simulator copyright 1991-2022
 Contains Synopsys proprietary information.
-Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 18 22:38 2024
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 19 11:42 2024
 Doing SDF annotation ...... Done
 *Verdi* Loading libsscore_vcs202206.so
 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
@@ -635,6 +947,10 @@ FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
 *Verdi* : Begin traversing the MDAs, layer (0).
 *Verdi* : Enable +mda and +packedmda dumping.
 *Verdi* : End of traversing the MDAs.
+
+"/home/raid7_2/course/cvsd/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v", 18934: Timing violation in test.u_IOTDF.input_cnt_reg_0_
+    $hold( posedge SN:73, posedge RN:59, limit: 268 );
+
 -----------------------------------------------------
 
 Start to Send IOT Data & Compare ...
@@ -668,6 +984,6 @@ $finish called from file "../00_TESTBED/testfixture.v", line 303.
 $finish at simulation time             14406000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 14406000 ps
-CPU Time:      0.830 seconds;       Data structure size:   0.8Mb
-Mon Nov 18 22:38:18 2024
-CPU time: 3.270 seconds to compile + .567 seconds to elab + 1.129 seconds to link + .874 seconds in simulation
+CPU Time:      0.910 seconds;       Data structure size:   0.8Mb
+Tue Nov 19 11:42:18 2024
+CPU time: 3.503 seconds to compile + .635 seconds to elab + 1.155 seconds to link + .969 seconds in simulation

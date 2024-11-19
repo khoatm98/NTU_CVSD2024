@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version U-2022.12 for linux64 -- Nov 22, 2022
-#@ # Date:   Mon Nov 18 22:59:28 2024
+#@ # Date:   Tue Nov 19 11:26:05 2024
 #@ # Run by: r2k41036@cad21
 #@ 
 
@@ -9516,7 +9516,7 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/syn.
 #@ 	-control_signal scan_enable
 #@ 
 #@ set_host_options -max_cores 16
-#@ compile_power -total_power_optimization
+#@ 
 #@ set_max_leakage_power 0
 #@ set_max_dynamic_power 0
 #@ set_dynamic_optimization true 

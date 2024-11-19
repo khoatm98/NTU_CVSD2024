@@ -16,6 +16,7 @@ End point
 ---------------
 c0_reg/data_in
 c1_reg/data_in
+input_cnt_reg[0]/data_in
 
 Information: Checking pulse_clock_cell_type...
 

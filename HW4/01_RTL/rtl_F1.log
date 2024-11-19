@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version T-2022.06_Full64 -- Thu Nov 14 15:02:19 2024
+         Version T-2022.06_Full64 -- Tue Nov 19 09:32:59 2024
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -22,32 +22,25 @@ Parsing design file '../00_TESTBED/testfixture.v'
 Parsing design file './IOTDF.v'
 Top Level Modules:
        test
-       top2maxmin
 TimeScale is 1 ns / 10 ps
 Starting vcs inline pass...
 
-3 modules and 0 UDP read.
+1 module and 0 UDP read.
 recompiling module test
-recompiling module top2maxmin
-recompiling module compare_128bit
-All of 3 modules done
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
 rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _149318_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _107649_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 Notice: timing checks disabled with +notimingcheck at compile-time
 Chronologic VCS simulator copyright 1991-2022
 Contains Synopsys proprietary information.
-Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 14 15:02 2024
-../00_TESTBED/pattern1_data/pattern1.dat
-../00_TESTBED/pattern1_data/f2.dat
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 19 09:33 2024
 *Verdi* Loading libsscore_vcs202206.so
 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
 (C) 1996 - 2022 by Synopsys, Inc.
-*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-*Verdi* : Create FSDB file 'IOTDF_F2.fsdb'
+*Verdi* : Create FSDB file 'IOTDF_F4.fsdb'
 *Verdi* : Begin traversing the scopes, layer (0).
 *Verdi* : End of traversing.
 *Verdi* : Begin traversing the MDAs, layer (0).
@@ -58,82 +51,34 @@ FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
 Start to Send IOT Data & Compare ...
 
 
-P00:  ** Correct!! ** , iot_out=2e897e91786116228d710a36f8fc98fe
-P01:  ** Correct!! ** , iot_out=a59318bf8f2351a55dbebd7f37787767
-P02:  ** Correct!! ** , iot_out=142e6137b63db622d70f7ed67388d1cb
-P03:  ** Correct!! ** , iot_out=c5f214a78fa276f2b4e0d337acc1a2ea
-P04:  ** Correct!! ** , iot_out=7abf238a950148fe5f88749007b7282d
-P05:  ** Correct!! ** , iot_out=5f3e4925951df5f1e27ac6d4e43d75fd
-P06:  ** Correct!! ** , iot_out=38d50b51a21a3710ac9b396d0d673098
-P07:  ** Correct!! ** , iot_out=e49198391ae44eba85d211a43ccb63d7
-P08:  ** Correct!! ** , iot_out=0320af8eb5079188dcd9b547fe7ad682
-P09:  ** Correct!! ** , iot_out=914bef7bb7efa131b38a0882b42d421d
-P10:  ** Correct!! ** , iot_out=0c85f1936083aebcc1e938c60e8d743a
-P11:  ** Correct!! ** , iot_out=89db87c22328e8bc359e2ed7f6b620e4
-P12:  ** Correct!! ** , iot_out=e6b3be32fcfe311aed289f8e7918dff4
-P13:  ** Correct!! ** , iot_out=6e4bcf2dd6e64cc2639d74424e4f01ba
-P14:  ** Correct!! ** , iot_out=88d3b66f02985206e6346e2612aeadd5
-P15:  ** Correct!! ** , iot_out=5506211da0dae8420eab28113cc427f4
-P16:  ** Correct!! ** , iot_out=a78b6fdb2575911c4dae0426782452a6
-P17:  ** Correct!! ** , iot_out=ee0bcb877a4ebac56e5dd3516dd491d6
-P18:  ** Correct!! ** , iot_out=2540b6ef761ce9a760e3ffdc14b8564e
-P19:  ** Correct!! ** , iot_out=09603231d2959306781353f906ed0bcc
-P20:  ** Correct!! ** , iot_out=ad863f233c8f0ea09b9d1441d9a64a1e
-P21:  ** Correct!! ** , iot_out=74c6e953b79834e1ddaa9b671d1c0654
-P22:  ** Correct!! ** , iot_out=9a1bba9ab280e7abb328750209be4b4a
-P23:  ** Correct!! ** , iot_out=9c578478beace278731282263cc9560d
-P24:  ** Correct!! ** , iot_out=38d6da57486b8a6f073a76f5b842c3c3
-P25:  ** Correct!! ** , iot_out=a65e56d6b7bb7e2163095eec295d6547
-P26:  ** Correct!! ** , iot_out=134569620aa75a0a54f5a718708ba778
-P27:  ** Correct!! ** , iot_out=7dbdf0a4219fb7437db589f42f6f9c40
-P28:  ** Correct!! ** , iot_out=5a829301cea8cc02352e3be7f7c5e5ef
-P29:  ** Correct!! ** , iot_out=555fbfe2f2950dfd63299f730bc2ea5b
-P30:  ** Correct!! ** , iot_out=87a77bb1d0c5ec77f6a10d02d1c92b38
-P31:  ** Correct!! ** , iot_out=49400065461c6508ef7ec899a84e19bb
-P32:  ** Correct!! ** , iot_out=1fd10ae1da696d3fa679eeb2dfd6caec
-P33:  ** Correct!! ** , iot_out=c08ab85d0d125de4f31c169d5f8b2c8b
-P34:  ** Correct!! ** , iot_out=2cf2f2baaf67e08afd50a046cfe46457
-P35:  ** Correct!! ** , iot_out=35ad7787018c28f34d044d2a84d75ad8
-P36:  ** Correct!! ** , iot_out=00a75ddd02744c9aa33935503d2f5901
-P37:  ** Correct!! ** , iot_out=6f88a6efbdef93364d6d553924c60427
-P38:  ** Correct!! ** , iot_out=006164dd0fdf21e35395a73bb07e3bea
-P39:  ** Correct!! ** , iot_out=537194d97ad60145a135aa5c91a77c9d
-P40:  ** Correct!! ** , iot_out=28751f666a31e9c0818920658602d70b
-P41:  ** Correct!! ** , iot_out=b7f317bd7bea5469ec35d408313a5bd6
-P42:  ** Correct!! ** , iot_out=698ea66c3d34a3d87c6e96482d5b4c5a
-P43:  ** Correct!! ** , iot_out=b18e851eab2d274c6089e734d2d0d001
-P44:  ** Correct!! ** , iot_out=36b1964a8276dc1b6931bf535de10a13
-P45:  ** Correct!! ** , iot_out=b26738094fafd0893597d588ac074b88
-P46:  ** Correct!! ** , iot_out=552b86d47e47f235c3a10eec66ee48db
-P47:  ** Correct!! ** , iot_out=e34c293e2a2ef9f9f49a1bea72010241
-P48:  ** Correct!! ** , iot_out=5225ea0a309b5b0e18efb79af9d20899
-P49:  ** Correct!! ** , iot_out=0c515fe5687f25e5c7110ee9dc4a0f0a
-P50:  ** Correct!! ** , iot_out=ab84d26e7580488d8f9e7cd359923385
-P51:  ** Correct!! ** , iot_out=6e71ad55156fce561f3ee52e287ebdc0
-P52:  ** Correct!! ** , iot_out=0d6426ed125b95681ec89bbe68cb6235
-P53:  ** Correct!! ** , iot_out=b08f6da5bb0a1de72b77e8cd570413cd
-P54:  ** Correct!! ** , iot_out=3b3b04b87d825c0766cfffa4bf83bef2
-P55:  ** Correct!! ** , iot_out=628ea8c43d3cd9fbfef4c6830b7342e3
-P56:  ** Correct!! ** , iot_out=2d39a66edbaa018c7cf7a6c76490aa26
-P57:  ** Correct!! ** , iot_out=a1f6675ead2612409ad4e80db8eeba95
-P58:  ** Correct!! ** , iot_out=a8ad7c18223d8dbc928f7fa08ef6a788
-P59:  ** Correct!! ** , iot_out=a9cfd46237afa3998072dcc4af536f19
-P60:  ** Correct!! ** , iot_out=29ec780d45228e9fee258f89c4dc2187
-P61:  ** Correct!! ** , iot_out=1a41b801efe440ffee5cb32c6830fd21
-P62:  ** Correct!! ** , iot_out=1554f97bb6bb3c6243cac7413b5716cd
-P63:  ** Correct!! ** , iot_out=19a5b8d57249de3bf1470cad74478215
+P00:  ** Correct!! ** , iot_out=e49198391ae44eba6ac104063164548f
+P01:  ** Correct!! ** , iot_out=c5f214a78fa276f2bf5449dfeffff9bb
+P02:  ** Correct!! ** , iot_out=e6b3be32fcfe311a847a2b145eab6b26
+P03:  ** Correct!! ** , iot_out=914bef7bb7efa13186b0eae95184716f
+P04:  ** Correct!! ** , iot_out=ee0bcb877a4ebac51ee8f4df8861695b
+P05:  ** Correct!! ** , iot_out=ad863f233c8f0ea0907323af0fd8a76a
+P06:  ** Correct!! ** , iot_out=a65e56d6b7bb7e21443f128e9733cec8
+P07:  ** Correct!! ** , iot_out=87a77bb1d0c5ec775fc2ca95025e96a0
+P08:  ** Correct!! ** , iot_out=c08ab85d0d125de4899fe5085b954a06
+P09:  ** Correct!! ** , iot_out=6f88a6efbdef93365230a1b8462f6fdc
+P10:  ** Correct!! ** , iot_out=e34c293e2a2ef9f97759500989156d39
+P11:  ** Correct!! ** , iot_out=b7f317bd7bea54690ed03480a1cdb352
+P12:  ** Correct!! ** , iot_out=b08f6da5bb0a1de7008c1025a1adc361
+P13:  ** Correct!! ** , iot_out=ab84d26e7580488ded47e4eadeca6256
+P14:  ** Correct!! ** , iot_out=a9cfd46237afa3997e04be99b91ca724
+P15:  ** Correct!! ** , iot_out=a8ad7c18223d8dbca7c9f0fbf7e4e769
 
 -----------------------------------------------------
 
 Congratulations! All data have been generated successfully!
 
-Total cost time:   13585.00 ns
+Total cost time:   20580.00 ns
 -------------------------PASS------------------------
 
 $finish called from file "../00_TESTBED/testfixture.v", line 303.
-$finish at simulation time              1254000
+$finish at simulation time              2058000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 12540000 ps
-CPU Time:      0.630 seconds;       Data structure size:   0.0Mb
-Thu Nov 14 15:02:28 2024
-CPU time: 1.103 seconds to compile + .661 seconds to elab + .570 seconds to link + .675 seconds in simulation
+Time: 20580000 ps
+CPU Time:      0.530 seconds;       Data structure size:   0.0Mb
+Tue Nov 19 09:33:06 2024
+CPU time: 1.079 seconds to compile + .690 seconds to elab + .626 seconds to link + .601 seconds in simulation

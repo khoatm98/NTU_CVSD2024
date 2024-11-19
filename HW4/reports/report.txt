@@ -1,18 +1,18 @@
 StudentID: r12k41036
-Clock period: 20.00 (ns)
-Area: 26036.418859 (um^2)
+Clock period: 14.00 (ns)
+Area: 25225.061615 (um^2)
 -----------------------------
-f1 time: 20900.00 (ns)
-f1 power: 0.6821 (mW)
+f1 time: 14630.00 (ns)
+f1 power: 0.8817 (mW)
 -----------------------------
-f2 time: 20900.00 (ns)
-f2 power: 0.6803 (mW)
+f2 time: 14630.00 (ns)
+f2 power: 0.8810 (mW)
 -----------------------------
-f3 time: 20560.00 (ns)
-f3 power: 0.1877 (mW)
+f3 time: 14392.00 (ns)
+f3 power: 0.2460 (mW)
 -----------------------------
-f4 time: 20580.00 (ns)
-f4 power: 0.2949 (mW)
+f4 time: 14406.00 (ns)
+f4 power: 0.4012 (mW)
 -----------------------------
-f5 time: 20580.00 (ns)
-f5 power: 0.3116 (mW)
+f5 time: 14406.00 (ns)
+f5 power: 0.4220 (mW)
