@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version T-2022.06_Full64 -- Thu Nov 14 15:05:34 2024
+         Version T-2022.06_Full64 -- Mon Nov 18 22:37:27 2024
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -24,11 +24,14 @@ Parsing design file '../02_SYN/Netlist/IOTDF_syn.v'
 Top Level Modules:
        test
        BUFX3
+       BUFX4
        BUFX6
        BUFX8
        BUFX12
        BUFX16
        BUFX20
+       INVX2
+       INVX4
        INVX6
        INVX8
        INVX12
@@ -46,6 +49,8 @@ Top Level Modules:
        TBUFX20
        HOLDX1
        AND2XL
+       AND2X1
+       AND2X2
        AND2X4
        AND2X6
        AND2X8
@@ -63,7 +68,7 @@ Top Level Modules:
        AOI21X1
        AOI21X2
        AOI21X4
-       AOI211X1
+       AOI211X2
        AOI211X4
        AOI22X1
        AOI22X2
@@ -74,7 +79,6 @@ Top Level Modules:
        AOI222X1
        AOI222X2
        AOI222X4
-       AOI31XL
        AOI31X1
        AOI31X2
        AOI31X4
@@ -89,6 +93,7 @@ Top Level Modules:
        AOI2BB1X2
        AOI2BB1X4
        AOI2BB2XL
+       AOI2BB2X2
        AOI2BB2X4
        AO21XL
        AO21X1
@@ -126,15 +131,18 @@ Top Level Modules:
        MXI3X2
        MXI3X4
        NAND2X4
+       NAND2X6
        NAND2X8
        NAND3X2
        NAND3X4
        NAND3X6
        NAND3X8
+       NAND4X1
        NAND4X2
        NAND4X4
        NAND4X6
        NAND4X8
+       NAND2BXL
        NAND2BX2
        NAND2BX4
        NAND3BXL
@@ -148,15 +156,14 @@ Top Level Modules:
        NAND4BBX1
        NAND4BBX2
        NAND4BBX4
+       NOR2X2
        NOR2X4
+       NOR2X6
        NOR2X8
-       NOR3X1
        NOR3X2
        NOR3X4
        NOR3X6
        NOR3X8
-       NOR4XL
-       NOR4X1
        NOR4X2
        NOR4X4
        NOR4X6
@@ -192,10 +199,13 @@ Top Level Modules:
        OR4X4
        OR4X6
        OR4X8
+       OAI21X1
+       OAI21X2
        OAI21X4
-       OAI211X1
        OAI211X2
        OAI211X4
+       OAI22X1
+       OAI22X2
        OAI22X4
        OAI221X1
        OAI221X2
@@ -216,6 +226,8 @@ Top Level Modules:
        OAI2BB1X1
        OAI2BB1X2
        OAI2BB1X4
+       OAI2BB2X1
+       OAI2BB2X2
        OAI2BB2X4
        OA21X1
        OA21X2
@@ -224,6 +236,7 @@ Top Level Modules:
        OA22X2
        OA22X4
        CLKXOR2X1
+       CLKXOR2X2
        CLKXOR2X4
        CLKXOR2X8
        XOR2XL
@@ -234,6 +247,7 @@ Top Level Modules:
        XOR3X2
        XOR3X4
        XNOR2XL
+       XNOR2X1
        XNOR2X2
        XNOR2X4
        XNOR3XL
@@ -241,10 +255,14 @@ Top Level Modules:
        XNOR3X2
        XNOR3X4
        CLKBUFX2
+       CLKBUFX3
        CLKBUFX4
+       CLKBUFX6
+       CLKBUFX8
        CLKBUFX12
        CLKBUFX16
        CLKBUFX20
+       CLKINVX2
        CLKINVX3
        CLKINVX4
        CLKINVX6
@@ -256,6 +274,7 @@ Top Level Modules:
        CLKAND2X3
        CLKAND2X4
        CLKAND2X6
+       CLKAND2X8
        CLKAND2X12
        CLKMX2X2
        CLKMX2X3
@@ -340,6 +359,7 @@ Top Level Modules:
        DFFQX4
        DFFQXL
        DFFRXL
+       DFFRX2
        DFFRX4
        DFFSXL
        DFFSX1
@@ -349,8 +369,6 @@ Top Level Modules:
        DFFSRX1
        DFFSRX2
        DFFSRX4
-       DFFNSRXL
-       DFFNSRX1
        DFFNSRX2
        DFFNSRX4
        DFFTRXL
@@ -482,6 +500,94 @@ Top Level Modules:
        TIELO
 TimeScale is 1 ns / 1 ps
 
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 620
+IOTDF, "DFFRX1 input_cnt_reg_0_( .D (N707),  .CK (net2386),  .RN (n1132),  .Q (input_cnt[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 624
+IOTDF, "DFFRX1 input_cnt_reg_2_( .D (N709),  .CK (net2386),  .RN (n1132),  .Q (input_cnt[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 626
+IOTDF, "DFFRX1 first_r_reg( .D (n1134),  .CK (clk),  .RN (n1132),  .QN (n2278));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 757
+IOTDF, "DFFNSRXL iot_in_r_reg_7_( .D (iot_in[7]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[7]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 759
+IOTDF, "DFFNSRXL iot_in_r_reg_6_( .D (iot_in[6]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[6]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 761
+IOTDF, "DFFNSRXL iot_in_r_reg_2_( .D (iot_in[2]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 763
+IOTDF, "DFFNSRXL iot_in_r_reg_1_( .D (iot_in[1]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[1]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 765
+IOTDF, "DFFNSRXL iot_in_r_reg_0_( .D (iot_in[0]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 767
+IOTDF, "DFFNSRXL iot_in_r_reg_5_( .D (iot_in[5]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[5]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 769
+IOTDF, "DFFNSRXL iot_in_r_reg_4_( .D (iot_in[4]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[4]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 771
+IOTDF, "DFFNSRX1 iot_in_r_reg_3_( .D (iot_in[3]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[3]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
    ***   $sdf_annotate() version 1.2R
    ***    SDF file: "../02_SYN/Netlist/IOTDF_syn.sdf"
    ***    Annotation scope: test.u_IOTDF
@@ -495,61 +601,30 @@ TimeScale is 1 ns / 1 ps
    ***    Turnoff delay: "FROM_FILE"
    ***    Approximation (mipd) policy: "MAXIMUM"
 
-   ***    SDF annotation begin: Thu Nov 14 15:05:36 2024
+   ***    SDF annotation begin: Mon Nov 18 22:37:28 2024
 
 
 SDF Info: +pulse_r/100, +pulse_e/100 in effect
 
           Total errors: 0
           Total warnings: 0
-   ***    SDF annotation completed: Thu Nov 14 15:05:36 2024
+   ***    SDF annotation completed: Mon Nov 18 22:37:29 2024
 
 
 Starting vcs inline pass...
-578 modules and 12 UDPs read.
+536 modules and 12 UDPs read.
+recompiling module test
+recompiling module INVXL
+recompiling module INVX1
+recompiling module NAND2BX1
+recompiling module NOR2XL
+recompiling module NOR2X1
+recompiling module NOR3XL
+recompiling module NOR3X1
+recompiling module OR2X1
+recompiling module OR2X2
+recompiling module CLKINVX1
 recompiling module IOTDF
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_47
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_46
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_45
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_44
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_43
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_42
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_41
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_40
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_39
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_38
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_37
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_36
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_35
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_34
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_33
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_32
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_31
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_30
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_29
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_28
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_27
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_26
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_25
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_24
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_23
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_22
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_21
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_20
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_19
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_18
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_17
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_16
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_15
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_14
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_13
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_12
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_11
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_10
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_9
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_8
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_7
-recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_6
 recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_5
 recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_4
 recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_3
@@ -557,19 +632,16 @@ recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_2
 recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_1
 recompiling module SNPS_CLOCK_GATE_HIGH_IOTDF_0
 recompiling module sbox
-	However, due to incremental compilation, only 50 modules need to be compiled. 
+19 of 536 modules done
+	However, due to incremental compilation, only 19 modules need to be compiled. 
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
-rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _159158_archive_1.so _prev_archive_1.so _cuarc0.so objs/udps/D2wHf.o objs/udps/uYEPC.o objs/udps/vCfas.o objs/udps/IEZrF.o objs/udps/U7Vwg.o objs/udps/i2VqJ.o objs/udps/CjLsY.o objs/udps/sk4QJ.o objs/udps/exIG1.o objs/udps/gSqMj.o objs/udps/Cpxa2.o objs/udps/AubIW.o  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _217234_archive_1.so _prev_archive_1.so objs/udps/D2wHf.o objs/udps/uYEPC.o objs/udps/vCfas.o objs/udps/IEZrF.o objs/udps/U7Vwg.o objs/udps/i2VqJ.o objs/udps/CjLsY.o objs/udps/sk4QJ.o objs/udps/exIG1.o objs/udps/gSqMj.o objs/udps/Cpxa2.o objs/udps/AubIW.o  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 Chronologic VCS simulator copyright 1991-2022
 Contains Synopsys proprietary information.
-Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 14 15:05 2024
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 18 22:37 2024
 Doing SDF annotation ...... Done
-../00_TESTBED/pattern1_data/pattern1.dat
-../00_TESTBED/pattern1_data/f1.dat
 *Verdi* Loading libsscore_vcs202206.so
 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
 (C) 1996 - 2022 by Synopsys, Inc.
@@ -654,13 +726,13 @@ P63:  ** Correct!! ** , iot_out=19a5b8d57249de3bc6c17b1f6db77f41
 
 Congratulations! All data have been generated successfully!
 
-Total cost time:   22990.00 ns
+Total cost time:   14630.00 ns
 -------------------------PASS------------------------
 
 $finish called from file "../00_TESTBED/testfixture.v", line 303.
-$finish at simulation time             22990000
+$finish at simulation time             14630000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 22990000 ps
-CPU Time:      1.380 seconds;       Data structure size:   0.6Mb
-Thu Nov 14 15:05:48 2024
-CPU time: 3.434 seconds to compile + .510 seconds to elab + 1.120 seconds to link + 1.424 seconds in simulation
+Time: 14630000 ps
+CPU Time:      1.480 seconds;       Data structure size:   0.8Mb
+Mon Nov 18 22:37:39 2024
+CPU time: 3.314 seconds to compile + .500 seconds to elab + 1.136 seconds to link + 1.525 seconds in simulation

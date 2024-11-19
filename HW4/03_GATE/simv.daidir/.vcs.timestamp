@@ -1,8 +1,8 @@
 1        
 0 ../02_SYN/Netlist/IOTDF_syn.sdf_c
 38
-+define+CYCLE=22
-+define+SDF+p1+F1
++define+CYCLE=14
++define+SDF+p1+F5
 +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 +maxdelays
 +neg_tchk
@@ -44,7 +44,7 @@ mraarch=linux_64
 installdir=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice
 XLOCALEDIR=/usr/cad/synopsys/astro/cur/etc/locale
 XKEYSYMDB=/usr/cad/synopsys/astro/cur/etc/XKeysymDB
-XDG_SESSION_ID=47794
+XDG_SESSION_ID=72750
 XDG_RUNTIME_DIR=/run/user/1340
 VMR_MODE_FLAG=64
 VERPLEX_HOME=/usr/cad/cadence/CONFRML/cur
@@ -66,9 +66,9 @@ SYN_MAN_DIR=/usr/cad/synopsys/vcs/2022.06//doc/man
 SYNTHESIS=/usr/cad/synopsys/synthesis/cur
 SYNOPSYS_TMAX=/usr/cad/synopsys/tmax/cur
 SYNOPSYS_LC_ROOT=/usr/cad/synopsys/synthesis/cur
-SSH_TTY=/dev/pts/108
-SSH_CONNECTION=140.112.175.69 49273 140.112.20.70 22
-SSH_CLIENT=140.112.175.69 49273 22
+SSH_TTY=/dev/pts/1
+SSH_CONNECTION=140.112.175.69 58285 140.112.20.70 22
+SSH_CLIENT=140.112.175.69 58285 22
 SPAPI_AHDL_INCLUDE=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/include
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06//linux64/clang
 SNPS_PLATFORM=linux64
@@ -112,11 +112,11 @@ ARCH=linux64
 0
 0
 7
-1731567892 ../02_SYN/Netlist/IOTDF_syn.sdf
-1731567892 ../02_SYN/Netlist/IOTDF_syn.v
+1731940631 ../02_SYN/Netlist/IOTDF_syn.sdf
+1731940631 ../02_SYN/Netlist/IOTDF_syn.v
 1608252293 /home/raid7_2/course/cvsd/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v
-1731056953 ../00_TESTBED/testfixture.v
-1731056972 rtl_03.f
+1731926180 ../00_TESTBED/testfixture.v
+1731927053 rtl_03.f
 1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/verdi.tab
 1654052745 /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 4
@@ -124,5 +124,5 @@ ARCH=linux64
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1731567949 simv.daidir
+1731940709 simv.daidir
 -1 partitionlib

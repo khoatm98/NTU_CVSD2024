@@ -1,11 +1,4 @@
 Information: Checking out the license 'DesignWare'. (SEC-104)
-  Allocating blocks in 'DW_div_uns_a_width4_b_width2'
-  Allocating blocks in 'DW_div_a_width4_b_width2_tc_mode0_rem_mode1'
-Information: Changed wire load model for 'alt1' from '(none)' to 'tsmc13_wl10'. (OPT-170)
-Information: Changed wire load model for 'pparch' from '(none)' to 'tsmc13_wl10'. (OPT-170)
-Information: Changed wire load model for 'alt1' from '(none)' to 'tsmc13_wl10'. (OPT-170)
-Information: Changed wire load model for 'pparch' from '(none)' to 'tsmc13_wl10'. (OPT-170)
-Warning: Design 'DW_div_uns_a_width4_b_width2' inherited license information from design 'DW_div_a_width4_b_width2_tc_mode0_rem_mode1'. (DDB-74)
 Information: Updating design information... (UID-85)
 Warning: Design 'IOTDF' contains 3 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
 
@@ -16,6 +9,13 @@ Information: Checking loops...
 Information: Checking no_input_delay...
 
 Information: Checking unconstrained_endpoints...
+
+Warning: The following end-points are not constrained for maximum delay.
+
+End point
+---------------
+c0_reg/data_in
+c1_reg/data_in
 
 Information: Checking pulse_clock_cell_type...
 

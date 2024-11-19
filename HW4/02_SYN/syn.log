@@ -36,8 +36,21 @@ set company {NTUGIEE}
 NTUGIEE
 set designer {Student}
 Student
+set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db $search_path ../ ./"
+. /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db . /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db . /usr/cad/synopsys/synthesis/cur/libraries/syn /usr/cad/synopsys/synthesis/cur/dw/syn_ver /usr/cad/synopsys/synthesis/cur/dw/sim_ver ../ ./
+set target_library   "slow.db                 \
+                     "
+slow.db                  
+set link_library     "* $target_library dw_foundation.sldb"
+* slow.db                   dw_foundation.sldb
+set symbol_library   "tsmc13.sdb generic.sdb"
+tsmc13.sdb generic.sdb
+set synthetic_library "dw_foundation.sldb"
+dw_foundation.sldb
+set default_schematic_options {-size infinite}
+-size infinite
 # Import Design
-set DESIGN "IOTDF"
+set DESIGN "IOTDF" 
 IOTDF
 set hdlin_translate_off_skip_text "TRUE"
 Information: Variable 'hdlin_translate_off_skip_text' is obsolete and is being ignored. (INFO-100)
@@ -72,26 +85,79 @@ Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
   Loading link library 'gtech'
 Running PRESTO HDLC
 
-Statistics for case statements in always block at line 111 in file
+Statistics for case statements in always block at line 115 in file
 	'../01_RTL/IOTDF.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           112            |    auto/auto     |
+|           116            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 184 in file
+	'../01_RTL/IOTDF.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           185            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 238 in file
+	'../01_RTL/IOTDF.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           239            |    auto/auto     |
+|           258            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 278 in file
+	'../01_RTL/IOTDF.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           280            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 333 in file
+	'../01_RTL/IOTDF.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           334            |     no/auto      |
+|           339            |     no/auto      |
 ===============================================
 
 Inferred memory devices in process
-	in routine IOTDF line 148 in file
+	in routine IOTDF line 323 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|    L_ready_r_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
-|    R_ready_r_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|    input_cnt_reg    | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 208 in file
+	in routine IOTDF line 333 in file
+		'../01_RTL/IOTDF.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|       c0_reg        | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|       c1_reg        | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine IOTDF line 346 in file
+		'../01_RTL/IOTDF.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  comp_res_1_r_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  comp_res_0_r_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine IOTDF line 366 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -100,7 +166,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 220 in file
+	in routine IOTDF line 378 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -109,7 +175,25 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 238 in file
+	in routine IOTDF line 388 in file
+		'../01_RTL/IOTDF.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  data_buffer_r_reg  | Flip-flop |  72   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine IOTDF line 398 in file
+		'../01_RTL/IOTDF.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    iot_in_r_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine IOTDF line 402 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -118,7 +202,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 246 in file
+	in routine IOTDF line 410 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -127,7 +211,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 255 in file
+	in routine IOTDF line 419 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -136,7 +220,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 279 in file
+	in routine IOTDF line 430 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -145,7 +229,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine IOTDF line 289 in file
+	in routine IOTDF line 442 in file
 		'../01_RTL/IOTDF.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -157,27 +241,29 @@ Elaborated 1 design.
 Current design is now 'IOTDF'.
 Information: Building the design 'sbox'. (HDL-193)
 
-Statistics for case statements in always block at line 427 in file
+Statistics for case statements in always block at line 582 in file
 	'../01_RTL/IOTDF.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           428            |    auto/auto     |
+|           583            |    auto/auto     |
 ===============================================
 Statistics for MUX_OPs
 ======================================================
 | block name/line  | Inputs | Outputs | # sel inputs |
 ======================================================
-|     sbox/429     |   4    |   64    |      2       |
-|     sbox/429     |   4    |   64    |      2       |
-|     sbox/429     |   4    |   64    |      2       |
-|     sbox/429     |   4    |   64    |      2       |
-|     sbox/429     |   4    |   64    |      2       |
-|     sbox/429     |   4    |   64    |      2       |
-|     sbox/429     |   4    |   64    |      2       |
-|     sbox/429     |   4    |   64    |      2       |
+|     sbox/584     |   4    |   64    |      2       |
+|     sbox/584     |   4    |   64    |      2       |
+|     sbox/584     |   4    |   64    |      2       |
+|     sbox/584     |   4    |   64    |      2       |
+|     sbox/584     |   4    |   64    |      2       |
+|     sbox/584     |   4    |   64    |      2       |
+|     sbox/584     |   4    |   64    |      2       |
+|     sbox/584     |   4    |   64    |      2       |
 ======================================================
 Presto compilation completed successfully. (sbox)
+Information: Building the design 'comparator'. (HDL-193)
+Presto compilation completed successfully. (comparator)
 1
 current_design [get_designs $DESIGN]
 Current design is 'IOTDF'.
@@ -187,14 +273,14 @@ link
   Linking design 'IOTDF'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (2 designs)               /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/IOTDF.db, etc
+  * (3 designs)               /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/IOTDF.db, etc
   slow (library)              /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db
   dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
 
 1
 source -echo -verbose ./IOTDF_DC.sdc
 # operating conditions and boundary conditions #
-create_clock -name clk  -period 20.0   [get_ports  clk]      ;#Modify period by yourself
+create_clock -name clk  -period 14.00   [get_ports  clk]      ;#Modify period by yourself
 1
 set_dont_touch_network      [all_clocks]
 1
@@ -219,10 +305,8 @@ set_load         0.01  [all_outputs]
 1
 set_drive        0.1   [all_inputs]
 1
-set_operating_conditions -max_library slow -max slow
+set_operating_conditions -max_library slow -max slow   
 Using operating conditions 'slow' found in library 'slow'.
-1
-set_wire_load_model -name tsmc13_wl10 -library slow      
 1
 set_max_fanout 10 [all_inputs]
 1
@@ -236,16 +320,15 @@ check_timing > Report/check_timing.txt
 set high_fanout_net_threshold 0
 0
 uniquify
+Information: Uniquified 2 instances of design 'comparator'. (OPT-1056)
 1
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 1
-#set_max_area 0 
-#compile -ignore_tns
-#set_clock_gating_style -max_fanout 4 -pos integrated -control_point before  {nand}
-#set_max_area 0  -ignore_tns
+set_max_area 0  -ignore_tns
+1
 set_clock_gating_style \
-	-max_fanout 8 \
-	-pos {integrated} \
+	-max_fanout 128 \
+	-pos {integrated } \
 	-control_point before \
 	-control_signal scan_enable
 
@@ -253,10 +336,10 @@ Current clock gating style....
 Sequential cell: latch
 Minimum bank bitwidth: 3
 Minimum bank bitwidth for enhanced clock gating: 6
-Maximum fanout: 8
+Maximum fanout: 128
 Setup time for clock gate: -
 Hold time for clock gate: -
-Clock gating circuitry (positive edge): integrated
+Clock gating circuitry (positive edge): integrated 
 Clock gating circuitry (negative edge): or
  Note: inverter between clock gating circuitry 
        and (negative edge) register clock pin.
@@ -266,8 +349,9 @@ Observation point insertion: false
 Observation logic depth: 5
 1
 set_host_options -max_cores 16
-Warning: You requested 16 cores. However, load on host cad27 is 17.50. Tool will ignore the request and use 15 cores. (UIO-231)
 1
+compile_power -total_power_optimization
+Error: unknown command 'compile_power' (CMD-005)
 set_max_leakage_power 0
 Information: Command 'set_max_leakage_power' is obsolete and is being ignored. (INFO-102)
 0
@@ -276,14 +360,11 @@ Information: Command 'set_max_dynamic_power' is obsolete and is being ignored. (
 0
 set_dynamic_optimization true 
 1
-set_app_var power_low_power_placement true
-true
-#compile_ultra -gate_clock  -retime
-compile_ultra -gate_clock -retime
-Warning: Low power placement will not be performed because DCG has not been enabled.  (PWR-891)
+#set_app_var power_low_power_placement true
+compile_ultra -gate_clock -retime 
 Information: Performing power optimization. (PWR-850)
 Alib files are up-to-date.
-Information: Running optimization using a maximum of 15 cores. (OPT-1500)
+Information: Running optimization using a maximum of 16 cores. (OPT-1500)
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
 ============================================================================
@@ -302,16 +383,16 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 1297                                   |
-| Number of User Hierarchies                              | 1                                      |
-| Sequential Cell Count                                   | 382                                    |
+| Leaf Cell Count                                         | 1774                                   |
+| Number of User Hierarchies                              | 3                                      |
+| Sequential Cell Count                                   | 405                                    |
 | Macro Count                                             | 0                                      |
 | Number of Power Domains                                 | 0                                      |
 | Number of Path Groups                                   | 2                                      |
 | Number of VT Class                                      | 0                                      |
 | Number of Clocks                                        | 1                                      |
-| Number of Dont Touch Cells                              | 316                                    |
-| Number of Dont Touch Nets                               | 1                                      |
+| Number of Dont Touch Cells                              | 544                                    |
+| Number of Dont Touch Nets                               | 2                                      |
 | Number of Size Only Cells                               | 0                                      |
 | Design with UPF Data                                    | false                                  |
 ----------------------------------------------------------------------------------------------------
@@ -328,7 +409,9 @@ Information: There are 2 potential problems in your design. Please run 'check_de
 
 Loaded alib file './alib-52/slow.db.alib'
   Building model 'DW01_NAND2'
-Information: Ungrouping 0 of 49 hierarchies before Pass 1 (OPT-775)
+Information: Ungrouping hierarchy u_comp_inst0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy u_comp_inst1 before Pass 1 (OPT-776)
+Information: Ungrouping 2 of 10 hierarchies before Pass 1 (OPT-775)
 Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping
@@ -351,64 +434,24 @@ Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_2, since
 Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_3, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_4, since there are no registers. (PWR-806)
 Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_5, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_6, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_7, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_8, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_9, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_10, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_11, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_12, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_13, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_14, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_15, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_16, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_17, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_18, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_19, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_20, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_21, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_22, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_23, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_24, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_25, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_26, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_27, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_28, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_29, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_30, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_31, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_32, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_33, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_34, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_35, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_36, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_37, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_38, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_39, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_40, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_41, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_42, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_43, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_44, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_45, since there are no registers. (PWR-806)
-Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_IOTDF_46, since there are no registers. (PWR-806)
 Information: Performing clock-gating on design IOTDF. (PWR-730)
 
   Beginning Mapping Optimizations  (Ultra High effort)
   -------------------------------
+Information: There is no timing violation in design IOTDF. Delay-based auto_ungroup will not be performed. (OPT-780)
   Mapping Optimization (Phase 1)
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:08   29899.7      0.00       0.0    1416.6                           31315076.0000      0.00  
-    0:00:08   29898.0      0.00       0.0    1416.6                           31314632.0000      0.00  
+    0:00:11   36986.3      0.00       0.0       0.0                           34845324.0000      0.00  
+    0:00:11   36984.6      0.00       0.0       0.0                           34844884.0000      0.00  
 
   Beginning Constant Register Removal
   -----------------------------------
-    0:00:09   29898.0      0.00       0.0    1416.6                           31314632.0000      0.00  
-    0:00:09   29898.0      0.00       0.0    1416.6                           31314632.0000      0.00  
+    0:00:12   36984.6      0.00       0.0       0.0                           34844884.0000      0.00  
+    0:00:12   36984.6      0.00       0.0       0.0                           34844884.0000      0.00  
 
   Beginning Global Optimizations
   ------------------------------
@@ -451,37 +494,37 @@ Information: Performing clock-gating on design IOTDF. (PWR-730)
 
   Beginning Delay Optimization
   ----------------------------
-    0:00:11   19742.5      0.00       0.0     265.4                           13318848.0000      0.00  
-    0:00:11   19742.5      0.00       0.0     265.4                           13318848.0000      0.00  
-    0:00:11   19742.5      0.00       0.0     265.4                           13318848.0000      0.00  
-    0:00:11   19739.1      0.00       0.0     322.9                           13317376.0000      0.00  
-    0:00:11   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:11   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
+    0:00:14   25388.0      0.00       0.0     142.8                           15455526.0000      0.00  
+    0:00:14   25388.0      0.00       0.0     142.8                           15455526.0000      0.00  
+    0:00:14   25388.0      0.00       0.0     142.8                           15455526.0000      0.00  
+    0:00:14   25381.2      0.00       0.0     142.8                           15452583.0000      0.00  
+    0:00:15   25379.5      0.00       0.0     142.8                           15451425.0000      0.00  
+    0:00:15   25379.5      0.00       0.0     142.8                           15451425.0000      0.00  
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15346501.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15346501.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15346501.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
@@ -491,12 +534,12 @@ Information: Performing clock-gating on design IOTDF. (PWR-730)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:12   19737.4      0.00       0.0     322.9                           13316218.0000      0.00  
+    0:00:16   25274.3      0.00       0.0     102.7                           15345586.0000      0.00  
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
   Global Optimization (Phase 34)
-    0:00:12   19856.2      0.00       0.0       0.0                           13380143.0000      0.00  
-    0:00:12   19856.2      0.00       0.0       0.0                           13380143.0000      0.00  
+    0:00:16   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
+    0:00:16   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
 
 
   Beginning Power Optimization
@@ -506,46 +549,45 @@ Information: Performing clock-gating on design IOTDF. (PWR-730)
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:12   19856.2      0.00       0.0       0.0                           13380143.0000      0.00  
-    0:00:12   19856.2      0.00       0.0       0.0                           13380143.0000      0.00  
-    0:00:12   19856.2      0.00       0.0       0.0                           13380143.0000      0.00  
-    0:00:12   19856.2      0.00       0.0       0.0                           13380143.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12797942.0000      0.00  
+    0:00:16   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
+    0:00:17   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
+    0:00:17   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
+    0:00:17   25284.5      0.00       0.0       0.0                           15355932.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
+    0:00:17   25279.4      0.00       0.0       0.0                           14098556.0000      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:13   19861.3      0.00       0.0       0.0                           12798499.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12805665.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12805665.0000      0.00  
-    0:00:13   19857.9      0.00       0.0       0.0                           12805665.0000      0.00  
-    0:00:13   19861.3      0.00       0.0       0.0                           12798499.0000      0.00  
-    0:00:14   19861.3      0.00       0.0       0.0                           12798499.0000      0.00  
-    0:00:14   19861.3      0.00       0.0       0.0                           12798499.0000      0.00  
-    0:00:14   19861.3      0.00       0.0       0.0                           12798499.0000      0.00  
-    0:00:14   19861.3      0.00       0.0       0.0                           12798499.0000      0.00  
-    0:00:14   19861.3      0.00       0.0       0.0                           12798499.0000      0.00  
-    0:00:14   19861.3      0.00       0.0       0.0                           12798499.0000      0.00  
-    0:00:14   19857.9      0.00       0.0       0.0                           12798773.0000      0.00  
+    0:00:17   25282.8      0.00       0.0       0.0                           14099113.0000      0.00  
+    0:00:18   25281.1      0.00       0.0       0.0                           14009649.0000      0.00  
+    0:00:18   25281.1      0.00       0.0       0.0                           14009649.0000      0.00  
+    0:00:18   25281.1      0.00       0.0       0.0                           14009649.0000      0.00  
+    0:00:18   25286.2      0.00       0.0       0.0                           13990920.0000      0.00  
+    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
+    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
+    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
+    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
+    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
+    0:00:18   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
 Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
 
 
@@ -558,12 +600,11 @@ Information: State dependent leakage is now switched from off to on.
 Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
 1
 optimize_netlist -area 
-Warning: Low power placement will not be performed because DCG has not been enabled.  (PWR-891)
 Information: Performing power optimization. (PWR-850)
 Alib files are up-to-date.
-Information: Running optimization using a maximum of 15 cores. (OPT-1500)
+Information: Running optimization using a maximum of 16 cores. (OPT-1500)
 
-Information: There are 48 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 6 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
@@ -579,8 +620,8 @@ Information: The target library(s) contains cell(s), other than black boxes, tha
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:02   19857.9      0.00       0.0       0.0                           12798773.0000      0.00  
-    0:00:04   19757.7      0.00       0.0       0.0                           12691209.0000      0.00  
+    0:00:01   25267.5      0.00       0.0       0.0                           13961746.0000      0.00  
+    0:00:06   25225.1      0.00       0.0       0.0                           13918884.0000      0.00  
 Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
 
 
@@ -590,9 +631,6 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
   Optimization Complete
   ---------------------
 1
-#compile -boundary_optimization -map_effort high  -auto_ungroup area
-#compile_ultra
-#optimize_netlist -area 
 # Report Output
 current_design [get_designs ${DESIGN}]
 Current design is 'IOTDF'.
@@ -643,7 +681,7 @@ Report : clock_gating
         -gating_elements
 Design : IOTDF
 Version: U-2022.12
-Date   : Thu Nov 14 15:06:20 2024
+Date   : Mon Nov 18 23:00:05 2024
 ****************************************
 
 Information: Identification of clock-gating cells has not been performed. Pre-existing clock-gating cells will not be reported. (PWR-947)
@@ -651,641 +689,95 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
                              Clock Gating Cell Report
 --------------------------------------------------------------------------------
 
- Clock Gating Bank : clk_gate_L_ready_r_reg
+ Clock Gating Bank : clk_gate_input_cnt_reg
 -------------------
 
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
+     STYLE = latch, MIN = 3, MAX = 128, OBS_DEPTH = 5 
 
      INPUTS :
-         clk_gate_L_ready_r_reg/CLK = clk 
-         clk_gate_L_ready_r_reg/EN = DES_en 
-         clk_gate_L_ready_r_reg/TE = n675 
+         clk_gate_input_cnt_reg/CLK = clk 
+         clk_gate_input_cnt_reg/EN = MAXMIN_en 
+         clk_gate_input_cnt_reg/TE = n2280 
 
      OUTPUTS :
-         clk_gate_L_ready_r_reg/ENCLK = net1417 
-
- Clock Gating Bank : clk_gate_L_ready_r_reg_0
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_L_ready_r_reg_0/CLK = clk 
-         clk_gate_L_ready_r_reg_0/EN = DES_en 
-         clk_gate_L_ready_r_reg_0/TE = n675 
-
-     OUTPUTS :
-         clk_gate_L_ready_r_reg_0/ENCLK = net1423 
-
- Clock Gating Bank : clk_gate_L_ready_r_reg_1
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_L_ready_r_reg_1/CLK = clk 
-         clk_gate_L_ready_r_reg_1/EN = DES_en 
-         clk_gate_L_ready_r_reg_1/TE = n675 
-
-     OUTPUTS :
-         clk_gate_L_ready_r_reg_1/ENCLK = net1428 
-
- Clock Gating Bank : clk_gate_L_ready_r_reg_2
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_L_ready_r_reg_2/CLK = clk 
-         clk_gate_L_ready_r_reg_2/EN = DES_en 
-         clk_gate_L_ready_r_reg_2/TE = n675 
-
-     OUTPUTS :
-         clk_gate_L_ready_r_reg_2/ENCLK = net1433 
-
- Clock Gating Bank : clk_gate_R_ready_r_reg
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_R_ready_r_reg/CLK = clk 
-         clk_gate_R_ready_r_reg/EN = DES_en 
-         clk_gate_R_ready_r_reg/TE = n675 
-
-     OUTPUTS :
-         clk_gate_R_ready_r_reg/ENCLK = net1438 
-
- Clock Gating Bank : clk_gate_R_ready_r_reg_0
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_R_ready_r_reg_0/CLK = clk 
-         clk_gate_R_ready_r_reg_0/EN = DES_en 
-         clk_gate_R_ready_r_reg_0/TE = n675 
-
-     OUTPUTS :
-         clk_gate_R_ready_r_reg_0/ENCLK = net1443 
-
- Clock Gating Bank : clk_gate_R_ready_r_reg_1
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_R_ready_r_reg_1/CLK = clk 
-         clk_gate_R_ready_r_reg_1/EN = DES_en 
-         clk_gate_R_ready_r_reg_1/TE = n675 
-
-     OUTPUTS :
-         clk_gate_R_ready_r_reg_1/ENCLK = net1448 
-
- Clock Gating Bank : clk_gate_R_ready_r_reg_2
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_R_ready_r_reg_2/CLK = clk 
-         clk_gate_R_ready_r_reg_2/EN = DES_en 
-         clk_gate_R_ready_r_reg_2/TE = n675 
-
-     OUTPUTS :
-         clk_gate_R_ready_r_reg_2/ENCLK = net1453 
+         clk_gate_input_cnt_reg/ENCLK = net2386 
 
  Clock Gating Bank : clk_gate_data_buffer_r_reg
 -------------------
 
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
+     STYLE = latch, MIN = 3, MAX = 128, OBS_DEPTH = 5 
 
      INPUTS :
          clk_gate_data_buffer_r_reg/CLK = clk 
-         clk_gate_data_buffer_r_reg/EN = N394 
-         clk_gate_data_buffer_r_reg/TE = n675 
+         clk_gate_data_buffer_r_reg/EN = n1144 
+         clk_gate_data_buffer_r_reg/TE = n2280 
 
      OUTPUTS :
-         clk_gate_data_buffer_r_reg/ENCLK = net1458 
+         clk_gate_data_buffer_r_reg/ENCLK = net2392 
 
  Clock Gating Bank : clk_gate_data_buffer_r_reg_0
 -------------------
 
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
+     STYLE = latch, MIN = 3, MAX = 128, OBS_DEPTH = 5 
 
      INPUTS :
          clk_gate_data_buffer_r_reg_0/CLK = clk 
-         clk_gate_data_buffer_r_reg_0/EN = N394 
-         clk_gate_data_buffer_r_reg_0/TE = n675 
+         clk_gate_data_buffer_r_reg_0/EN = n1144 
+         clk_gate_data_buffer_r_reg_0/TE = n2280 
 
      OUTPUTS :
-         clk_gate_data_buffer_r_reg_0/ENCLK = net1463 
-
- Clock Gating Bank : clk_gate_data_buffer_r_reg_1
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_buffer_r_reg_1/CLK = clk 
-         clk_gate_data_buffer_r_reg_1/EN = N394 
-         clk_gate_data_buffer_r_reg_1/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_buffer_r_reg_1/ENCLK = net1468 
-
- Clock Gating Bank : clk_gate_data_buffer_r_reg_2
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_buffer_r_reg_2/CLK = clk 
-         clk_gate_data_buffer_r_reg_2/EN = N394 
-         clk_gate_data_buffer_r_reg_2/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_buffer_r_reg_2/ENCLK = net1473 
-
- Clock Gating Bank : clk_gate_data_buffer_r_reg_3
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_buffer_r_reg_3/CLK = clk 
-         clk_gate_data_buffer_r_reg_3/EN = N394 
-         clk_gate_data_buffer_r_reg_3/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_buffer_r_reg_3/ENCLK = net1478 
-
- Clock Gating Bank : clk_gate_data_buffer_r_reg_4
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_buffer_r_reg_4/CLK = clk 
-         clk_gate_data_buffer_r_reg_4/EN = N394 
-         clk_gate_data_buffer_r_reg_4/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_buffer_r_reg_4/ENCLK = net1483 
-
- Clock Gating Bank : clk_gate_data_buffer_r_reg_5
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_buffer_r_reg_5/CLK = clk 
-         clk_gate_data_buffer_r_reg_5/EN = N394 
-         clk_gate_data_buffer_r_reg_5/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_buffer_r_reg_5/ENCLK = net1488 
+         clk_gate_data_buffer_r_reg_0/ENCLK = net2397 
 
  Clock Gating Bank : clk_gate_data_r_reg
 -------------------
 
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
+     STYLE = latch, MIN = 3, MAX = 128, OBS_DEPTH = 5 
 
      INPUTS :
          clk_gate_data_r_reg/CLK = clk 
-         clk_gate_data_r_reg/EN = n672 
-         clk_gate_data_r_reg/TE = n675 
+         clk_gate_data_r_reg/EN = N878 
+         clk_gate_data_r_reg/TE = n2280 
 
      OUTPUTS :
-         clk_gate_data_r_reg/ENCLK = net1493 
-
- Clock Gating Bank : clk_gate_data_r_reg_0
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_0/CLK = clk 
-         clk_gate_data_r_reg_0/EN = n672 
-         clk_gate_data_r_reg_0/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_0/ENCLK = net1498 
-
- Clock Gating Bank : clk_gate_data_r_reg_1
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_1/CLK = clk 
-         clk_gate_data_r_reg_1/EN = n672 
-         clk_gate_data_r_reg_1/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_1/ENCLK = net1503 
-
- Clock Gating Bank : clk_gate_data_r_reg_2
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_2/CLK = clk 
-         clk_gate_data_r_reg_2/EN = n672 
-         clk_gate_data_r_reg_2/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_2/ENCLK = net1508 
-
- Clock Gating Bank : clk_gate_data_r_reg_3
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_3/CLK = clk 
-         clk_gate_data_r_reg_3/EN = n672 
-         clk_gate_data_r_reg_3/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_3/ENCLK = net1513 
-
- Clock Gating Bank : clk_gate_data_r_reg_4
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_4/CLK = clk 
-         clk_gate_data_r_reg_4/EN = n672 
-         clk_gate_data_r_reg_4/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_4/ENCLK = net1518 
-
- Clock Gating Bank : clk_gate_data_r_reg_5
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_5/CLK = clk 
-         clk_gate_data_r_reg_5/EN = n672 
-         clk_gate_data_r_reg_5/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_5/ENCLK = net1523 
-
- Clock Gating Bank : clk_gate_data_r_reg_6
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_6/CLK = clk 
-         clk_gate_data_r_reg_6/EN = n672 
-         clk_gate_data_r_reg_6/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_6/ENCLK = net1528 
-
- Clock Gating Bank : clk_gate_data_r_reg_7
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_7/CLK = clk 
-         clk_gate_data_r_reg_7/EN = n672 
-         clk_gate_data_r_reg_7/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_7/ENCLK = net1533 
-
- Clock Gating Bank : clk_gate_data_r_reg_8
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_8/CLK = clk 
-         clk_gate_data_r_reg_8/EN = n672 
-         clk_gate_data_r_reg_8/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_8/ENCLK = net1538 
-
- Clock Gating Bank : clk_gate_data_r_reg_9
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_9/CLK = clk 
-         clk_gate_data_r_reg_9/EN = n672 
-         clk_gate_data_r_reg_9/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_9/ENCLK = net1543 
-
- Clock Gating Bank : clk_gate_data_r_reg_10
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_10/CLK = clk 
-         clk_gate_data_r_reg_10/EN = n672 
-         clk_gate_data_r_reg_10/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_10/ENCLK = net1548 
-
- Clock Gating Bank : clk_gate_data_r_reg_11
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_11/CLK = clk 
-         clk_gate_data_r_reg_11/EN = n672 
-         clk_gate_data_r_reg_11/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_11/ENCLK = net1553 
-
- Clock Gating Bank : clk_gate_data_r_reg_12
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_12/CLK = clk 
-         clk_gate_data_r_reg_12/EN = n672 
-         clk_gate_data_r_reg_12/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_12/ENCLK = net1558 
-
- Clock Gating Bank : clk_gate_data_r_reg_13
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_13/CLK = clk 
-         clk_gate_data_r_reg_13/EN = n672 
-         clk_gate_data_r_reg_13/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_13/ENCLK = net1563 
-
- Clock Gating Bank : clk_gate_data_r_reg_14
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_data_r_reg_14/CLK = clk 
-         clk_gate_data_r_reg_14/EN = n672 
-         clk_gate_data_r_reg_14/TE = n675 
-
-     OUTPUTS :
-         clk_gate_data_r_reg_14/ENCLK = net1568 
+         clk_gate_data_r_reg/ENCLK = net2402 
 
  Clock Gating Bank : clk_gate_iot_out_r_reg
 -------------------
 
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
+     STYLE = latch, MIN = 3, MAX = 128, OBS_DEPTH = 5 
 
      INPUTS :
          clk_gate_iot_out_r_reg/CLK = clk 
-         clk_gate_iot_out_r_reg/EN = n264 
-         clk_gate_iot_out_r_reg/TE = n675 
+         clk_gate_iot_out_r_reg/EN = n1145 
+         clk_gate_iot_out_r_reg/TE = n2280 
 
      OUTPUTS :
-         clk_gate_iot_out_r_reg/ENCLK = net1573 
+         clk_gate_iot_out_r_reg/ENCLK = net2407 
 
  Clock Gating Bank : clk_gate_iot_out_r_reg_0
 -------------------
 
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
+     STYLE = latch, MIN = 3, MAX = 128, OBS_DEPTH = 5 
 
      INPUTS :
          clk_gate_iot_out_r_reg_0/CLK = clk 
-         clk_gate_iot_out_r_reg_0/EN = n264 
-         clk_gate_iot_out_r_reg_0/TE = n675 
+         clk_gate_iot_out_r_reg_0/EN = n1146 
+         clk_gate_iot_out_r_reg_0/TE = n2280 
 
      OUTPUTS :
-         clk_gate_iot_out_r_reg_0/ENCLK = net1578 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_1
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_1/CLK = clk 
-         clk_gate_iot_out_r_reg_1/EN = n267 
-         clk_gate_iot_out_r_reg_1/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_1/ENCLK = net1583 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_2
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_2/CLK = clk 
-         clk_gate_iot_out_r_reg_2/EN = n266 
-         clk_gate_iot_out_r_reg_2/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_2/ENCLK = net1588 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_3
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_3/CLK = clk 
-         clk_gate_iot_out_r_reg_3/EN = n265 
-         clk_gate_iot_out_r_reg_3/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_3/ENCLK = net1593 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_4
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_4/CLK = clk 
-         clk_gate_iot_out_r_reg_4/EN = n267 
-         clk_gate_iot_out_r_reg_4/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_4/ENCLK = net1598 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_5
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_5/CLK = clk 
-         clk_gate_iot_out_r_reg_5/EN = n266 
-         clk_gate_iot_out_r_reg_5/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_5/ENCLK = net1603 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_6
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_6/CLK = clk 
-         clk_gate_iot_out_r_reg_6/EN = n265 
-         clk_gate_iot_out_r_reg_6/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_6/ENCLK = net1608 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_7
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_7/CLK = clk 
-         clk_gate_iot_out_r_reg_7/EN = n260 
-         clk_gate_iot_out_r_reg_7/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_7/ENCLK = net1613 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_8
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_8/CLK = clk 
-         clk_gate_iot_out_r_reg_8/EN = n260 
-         clk_gate_iot_out_r_reg_8/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_8/ENCLK = net1618 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_9
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_9/CLK = clk 
-         clk_gate_iot_out_r_reg_9/EN = n260 
-         clk_gate_iot_out_r_reg_9/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_9/ENCLK = net1623 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_10
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_10/CLK = clk 
-         clk_gate_iot_out_r_reg_10/EN = n260 
-         clk_gate_iot_out_r_reg_10/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_10/ENCLK = net1628 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_11
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_11/CLK = clk 
-         clk_gate_iot_out_r_reg_11/EN = n260 
-         clk_gate_iot_out_r_reg_11/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_11/ENCLK = net1633 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_12
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_12/CLK = clk 
-         clk_gate_iot_out_r_reg_12/EN = n260 
-         clk_gate_iot_out_r_reg_12/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_12/ENCLK = net1638 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_13
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_13/CLK = clk 
-         clk_gate_iot_out_r_reg_13/EN = n260 
-         clk_gate_iot_out_r_reg_13/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_13/ENCLK = net1643 
-
- Clock Gating Bank : clk_gate_iot_out_r_reg_14
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_iot_out_r_reg_14/CLK = clk 
-         clk_gate_iot_out_r_reg_14/EN = n260 
-         clk_gate_iot_out_r_reg_14/TE = n675 
-
-     OUTPUTS :
-         clk_gate_iot_out_r_reg_14/ENCLK = net1648 
-
- Clock Gating Bank : clk_gate_round_r_reg
--------------------
-
-     STYLE = latch, MIN = 3, MAX = 8, OBS_DEPTH = 5 
-
-     INPUTS :
-         clk_gate_round_r_reg/CLK = clk 
-         clk_gate_round_r_reg/EN = in_en 
-         clk_gate_round_r_reg/TE = n675 
-
-     OUTPUTS :
-         clk_gate_round_r_reg/ENCLK = n674 
+         clk_gate_iot_out_r_reg_0/ENCLK = net2412 
 --------------------------------------------------------------------------------
 
 
                              Clock Gating Summary
           ------------------------------------------------------------
-          |    Number of Clock gating elements    |       48         |
+          |    Number of Clock gating elements    |        6         |
           |                                       |                  |
-          |    Number of Gated registers          |   382 (100.00%)  |
+          |    Number of Gated registers          |   390 (96.77%)   |
           |                                       |                  |
-          |    Number of Ungated registers        |     0 (0.00%)    |
+          |    Number of Ungated registers        |    13 (3.23%)    |
           |                                       |                  |
-          |    Total number of registers          |      382         |
+          |    Total number of registers          |      403         |
           ------------------------------------------------------------
 
 
@@ -1295,19 +787,19 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
           |                                                 |    Actual (%)    |
           |                                                 |    Count         |
           +-------------------------------------------------+------------------+
-          |  Number of tool-inserted clock gating elements  |    48 (100.00%)  |
+          |  Number of tool-inserted clock gating elements  |     6 (100.00%)  |
           |                                                 |                  |
           |  Number of pre-existing clock gating elements   |     0 (0.00%)    |
           |                                                 |                  |
-          |  Number of gated registers                      |   382 (100.00%)  |
+          |  Number of gated registers                      |   390 (96.77%)   |
           |                                                 |                  |
-          |  Number of tool-inserted gated registers        |   382 (100.00%)  |
+          |  Number of tool-inserted gated registers        |   390 (96.77%)   |
           |                                                 |                  |
           |  Number of pre-existing gated registers         |     0 (0.00%)    |
           |                                                 |                  |
-          |  Number of ungated registers                    |     0 (0.00%)    |
+          |  Number of ungated registers                    |    13 (3.23%)    |
           |                                                 |                  |
-          |  Number of registers                            |      382         |
+          |  Number of registers                            |      403         |
           +-------------------------------------------------+------------------+
 
 
@@ -1322,58 +814,38 @@ Report : timing
         -max_paths 1
 Design : IOTDF
 Version: U-2022.12
-Date   : Thu Nov 14 15:06:20 2024
+Date   : Mon Nov 18 23:00:05 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: data_buffer_r_reg_25_
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: R_ready_r_reg_18_
-            (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: iot_in[6] (input port clocked by clk)
+  Endpoint: iot_in_r_reg_6_
+            (falling edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  IOTDF              tsmc13_wl10           slow
 
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              1.00       1.00
-  data_buffer_r_reg_25_/CK (DFFQX1)        0.00       1.00 r
-  data_buffer_r_reg_25_/Q (DFFQX1)         0.61       1.61 r
-  u_sbox/K[21] (sbox)                      0.00       1.61 r
-  u_sbox/U40/Y (XNOR2X1)                   0.73       2.34 r
-  u_sbox/U8/Y (CLKINVX1)                   0.77       3.11 f
-  u_sbox/U411/Y (NAND2X1)                  0.85       3.96 r
-  u_sbox/U412/Y (INVX1)                    0.48       4.44 f
-  u_sbox/U414/Y (NOR2X1)                   0.83       5.28 r
-  u_sbox/U415/Y (INVX1)                    0.56       5.84 f
-  u_sbox/U441/Y (NOR2XL)                   0.74       6.58 r
-  u_sbox/U523/Y (NOR3XL)                   0.30       6.88 f
-  u_sbox/U526/Y (OAI211XL)                 0.50       7.38 r
-  u_sbox/U527/Y (AOI22XL)                  0.29       7.67 f
-  u_sbox/U531/Y (OAI211XL)                 0.53       8.20 r
-  u_sbox/sbox_out[18] (sbox)               0.00       8.20 r
-  U901/Y (AOI2BB2X1)                       0.41       8.60 f
-  U951/Y (AO22X1)                          0.48       9.09 f
-  R_ready_r_reg_18_/D (DFFQX1)             0.00       9.09 f
-  data arrival time                                   9.09
+  input external delay                     1.00       2.00 f
+  iot_in[6] (in)                           0.00       2.00 f
+  iot_in_r_reg_6_/D (DFFNSRXL)             0.00       2.00 f
+  data arrival time                                   2.00
 
-  clock clk (rise edge)                   20.00      20.00
-  clock network delay (ideal)              1.00      21.00
-  clock uncertainty                       -0.10      20.90
-  R_ready_r_reg_18_/CK (DFFQX1)            0.00      20.90 r
-  library setup time                      -0.27      20.63
-  data required time                                 20.63
+  clock clk (fall edge)                    7.00       7.00
+  clock network delay (ideal)              1.00       8.00
+  clock uncertainty                       -0.10       7.90
+  iot_in_r_reg_6_/CKN (DFFNSRXL)           0.00       7.90 f
+  library setup time                      -0.29       7.61
+  data required time                                  7.61
   -----------------------------------------------------------
-  data required time                                 20.63
-  data arrival time                                  -9.09
+  data required time                                  7.61
+  data arrival time                                  -2.00
   -----------------------------------------------------------
-  slack (MET)                                        11.54
+  slack (MET)                                         5.61
 
 
 1
@@ -1383,147 +855,63 @@ report_area
 Report : area
 Design : IOTDF
 Version: U-2022.12
-Date   : Thu Nov 14 15:06:20 2024
+Date   : Mon Nov 18 23:00:05 2024
 ****************************************
 
 Library(s) Used:
 
     slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
 
-Number of ports:                          448
-Number of nets:                          1984
-Number of cells:                         1709
-Number of combinational cells:           1228
-Number of sequential cells:               430
+Number of ports:                          280
+Number of nets:                          2530
+Number of cells:                         2381
+Number of combinational cells:           1955
+Number of sequential cells:               409
 Number of macros/black boxes:               0
-Number of buf/inv:                        255
-Number of references:                      90
+Number of buf/inv:                        321
+Number of references:                      51
 
-Combinational area:               8840.059192
-Buf/Inv area:                      965.820584
-Noncombinational area:           10917.676933
+Combinational area:              14665.536057
+Buf/Inv area:                     1099.915183
+Noncombinational area:           10559.525558
 Macro/Black Box area:                0.000000
-Net Interconnect area:          206734.361603
+Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                 19757.736126
-Total area:                     226492.097728
+Total cell area:                 25225.061615
+Total area:                 undefined
 1
 check_design
  
 ****************************************
 check_design summary:
 Version:     U-2022.12
-Date:        Thu Nov 14 15:06:20 2024
+Date:        Mon Nov 18 23:00:05 2024
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Cells                                                              48
-    Connected to power or ground (LINT-32)                         48
+Cells                                                               6
+    Connected to power or ground (LINT-32)                          6
 --------------------------------------------------------------------------------
 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_L_ready_r_reg' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_L_ready_r_reg_0' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_L_ready_r_reg_1' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_L_ready_r_reg_2' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_R_ready_r_reg' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_R_ready_r_reg_0' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_R_ready_r_reg_1' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_R_ready_r_reg_2' is connected to logic 1 or logic 0. (LINT-32)
+Warning: In design 'IOTDF', a pin on submodule 'clk_gate_input_cnt_reg' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
 Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_buffer_r_reg' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
 Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_buffer_r_reg_0' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_buffer_r_reg_1' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_buffer_r_reg_2' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_buffer_r_reg_3' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_buffer_r_reg_4' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_buffer_r_reg_5' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
 Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_0' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_1' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_2' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_3' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_4' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_5' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_6' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_7' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_8' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_9' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_10' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_11' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_12' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_13' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_data_r_reg_14' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
 Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
 Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_0' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_1' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_2' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_3' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_4' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_5' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_6' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_7' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_8' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_9' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_10' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_11' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_12' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_13' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_iot_out_r_reg_14' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
-Warning: In design 'IOTDF', a pin on submodule 'clk_gate_round_r_reg' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'TE' is connected to logic 0. 
 1
 exit
 
-Memory usage for this session 345 Mbytes.
-Memory usage for this session including child processes 361 Mbytes.
-CPU usage for this session 94 seconds ( 0.03 hours ).
-Elapsed time for this session 38 seconds ( 0.01 hours ).
+Memory usage for this session 357 Mbytes.
+Memory usage for this session including child processes 380 Mbytes.
+CPU usage for this session 136 seconds ( 0.04 hours ).
+Elapsed time for this session 42 seconds ( 0.01 hours ).
 
 Thank you...

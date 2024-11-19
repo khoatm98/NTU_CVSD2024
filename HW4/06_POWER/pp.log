@@ -34,11 +34,11 @@ link
 Loading verilog file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/Netlist/IOTDF_syn.v'
 Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
 Linking design IOTDF...
-Information: Removing 42 unneeded designs..... (LNK-034)
-Information: 430 (81.59%) library cells are unused in library slow..... (LNK-045)
-Information: total 430 library cells are unused (LNK-046)
+Information: Removing 7 unneeded designs..... (LNK-034)
+Information: 475 (90.13%) library cells are unused in library slow..... (LNK-045)
+Information: total 475 library cells are unused (LNK-046)
 Design 'IOTDF' was successfully linked.
-Information: There are 1665 leaf cells, ports, hiers and 1829 nets in the design (LNK-047)
+Information: There are 2516 leaf cells, ports, hiers and 2520 nets in the design (LNK-047)
 1
 read_sdf -load_delay net ../02_SYN/Netlist/IOTDF_syn.sdf
 
@@ -50,14 +50,14 @@ Report : read_sdf /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/Netlist/
 	-max_type sdf_max
 Design : IOTDF
 Version: U-2022.12
-Date   : Sun Nov 10 05:31:12 2024
+Date   : Mon Nov 18 22:38:46 2024
 ****************************************
 
         0 error(s)
-        Number of annotated cell delay arcs :      5083
-        Number of annotated net delay arcs  :      4329
-        Number of annotated timing checks   :      2552
-        Number of annotated constraints     :      1235
+        Number of annotated cell delay arcs :      6951
+        Number of annotated net delay arcs  :      6905
+        Number of annotated timing checks   :      1654
+        Number of annotated constraints     :       837
         TEMPERATURE: 125.00 (min)  125.00 (max)
         VOLTAGE    : 1.08 (min)  1.08 (max)
         PROCESS    : slow (min)  slow (max)
@@ -74,10 +74,10 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 1594
-Number of annotated nets = 1594 (100.00%)
-Total number of leaf cells = 1478
-Number of fully annotated leaf cells = 1140 (77.13%)
+Total number of nets = 2390
+Number of annotated nets = 2390 (100.00%)
+Total number of leaf cells = 2364
+Number of fully annotated leaf cells = 2352 (99.49%)
 ======================================================================
 
 1
@@ -101,16 +101,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 118.534000 ns  Last event time = 192.000000 ns  Last event time = 263.232000 ns  Last event time = 335.750000 ns  Last event time = 412.459000 ns  Last event time = 487.802000 ns  Last event time = 556.443000 ns  Last event time = 628.551000 ns  Last event time = 700.534000 ns  Last event time = 774.054000 ns  Last event time = 844.740000 ns  Last event time = 919.112000 ns  Last event time = 991.802000 ns  Last event time = 1069.274000 ns  Last event time = 1144.583000 ns  Last event time = 1218.000000 ns  Last event time = 1289.874000 ns  Last event time = 1362.423000 ns  Last event time = 1434.618000 ns  Last event time = 1506.276000 ns  Last event time = 1578.252000 ns  Last event time = 1654.373000 ns  Last event time = 1726.582000 ns  Last event time = 1795.619000 ns  Last event time = 1866.792000 ns  Last event time = 1939.880000 ns  Last event time = 2016.668000 ns  Last event time = 2089.634000 ns  Last event time = 2164.508000 ns  Last event time = 2236.365000 ns  Last event time = 2316.000000 ns  Last event time = 2387.882000 ns  Last event time = 2462.129000 ns  Last event time = 2536.770000 ns  Last event time = 2610.790000 ns  Last event time = 2687.053000 ns  Last event time = 2759.516000 ns  Last event time = 2836.334000 ns  Last event time = 2909.955000 ns  Last event time = 2982.127000 ns  Last event time = 3053.132000 ns  Last event time = 3127.419000 ns  Last event time = 3203.124000 ns  Last event time = 3280.777000 ns  Last event time = 3352.891000 ns  Last event time = 3424.839000 ns  Last event time = 3492.197000 ns  Last event time = 3569.060000 ns  Last event time = 3640.225000 ns  Last event time = 3710.399000 ns  Last event time = 3779.699000 ns  Last event time = 3856.521000 ns  Last event time = 3924.604000 ns  Last event time = 3999.906000 ns  Last event time = 4071.888000 ns  Last event time = 4145.018000 ns  Last event time = 4216.276000 ns  Last event time = 4289.642000 ns  Last event time = 4363.163000 ns  Last event time = 4438.808000 ns  Last event time = 4511.723000 ns  Last event time = 4583.687000 ns  Last event time = 4655.381000 ns  Last event time = 4728.265000 ns  Last event time = 4804.546000 ns  Last event time = 4873.776000 ns  Last event time = 4944.976000 ns  Last event time = 5016.824000 ns  Last event time = 5093.301000 ns  Last event time = 5165.781000 ns  Last event time = 5238.585000 ns  Last event time = 5305.361000 ns  Last event time = 5382.278000 ns  Last event time = 5453.104000 ns  Last event time = 5525.100000 ns  Last event time = 5596.823000 ns  Last event time = 5670.131000 ns  Last event time = 5746.451000 ns  Last event time = 5819.126000 ns  Last event time = 5890.491000 ns  Last event time = 5965.582000 ns  Last event time = 6040.357000 ns  Last event time = 6112.551000 ns  Last event time = 6184.890000 ns  Last event time = 6263.423000 ns Information: analysis is done for time window (0ns - 6270ns)
+ Last event time = 372.994000 ns  Last event time = 499.903000 ns  Last event time = 639.622000 ns  Last event time = 779.049000 ns  Last event time = 919.591000 ns  Last event time = 1058.891000 ns  Last event time = 1198.428000 ns  Last event time = 1325.178000 ns  Last event time = 1464.493000 ns  Last event time = 1604.608000 ns  Last event time = 1730.958000 ns  Last event time = 1857.307000 ns  Last event time = 1997.063000 ns  Last event time = 2150.165000 ns  Last event time = 2277.710000 ns  Last event time = 2417.407000 ns  Last event time = 2557.138000 ns  Last event time = 2697.264000 ns  Last event time = 2837.153000 ns  Last event time = 2977.090000 ns  Last event time = 3116.512000 ns  Last event time = 3256.153000 ns  Last event time = 3396.425000 ns  Last event time = 3522.680000 ns  Last event time = 3662.178000 ns  Last event time = 3789.819000 ns  Last event time = 3928.979000 ns  Last event time = 4068.708000 ns  Last event time = 4194.932000 ns  Last event time = 4334.254000 ns  Last event time = 4461.468000 ns  Last event time = 4601.044000 ns  Last event time = 4742.454000 ns  Last event time = 4881.074000 ns  Last event time = 5020.766000 ns  Last event time = 5160.599000 ns  Last event time = 5300.762000 ns  Last event time = 5440.758000 ns  Last event time = 5580.572000 ns  Last event time = 5720.240000 ns  Last event time = 5860.585000 ns  Last event time = 5987.126000 ns  Last event time = 6127.079000 ns  Last event time = 6268.098000 ns  Last event time = 6406.994000 ns  Last event time = 6546.590000 ns  Last event time = 6686.873000 ns  Last event time = 6826.718000 ns  Last event time = 6966.772000 ns  Last event time = 7093.408000 ns  Last event time = 7232.885000 ns  Last event time = 7386.722000 ns  Last event time = 7527.186000 ns  Last event time = 7666.351000 ns  Last event time = 7793.458000 ns  Last event time = 7933.070000 ns  Last event time = 8073.013000 ns  Last event time = 8212.142000 ns  Last event time = 8339.061000 ns  Last event time = 8478.363000 ns  Last event time = 8604.849000 ns  Last event time = 8731.991000 ns  Last event time = 8870.727000 ns  Last event time = 8997.902000 ns  Last event time = 9136.948000 ns  Last event time = 9276.444000 ns  Last event time = 9416.446000 ns  Last event time = 9543.878000 ns  Last event time = 9682.925000 ns  Last event time = 9809.986000 ns  Last event time = 9949.126000 ns  Last event time = 10102.568000 ns  Last event time = 10229.337000 ns  Last event time = 10368.671000 ns  Last event time = 10508.769000 ns  Last event time = 10648.093000 ns  Last event time = 10787.786000 ns  Last event time = 10915.040000 ns  Last event time = 11054.803000 ns  Last event time = 11195.008000 ns  Last event time = 11334.253000 ns  Last event time = 11461.260000 ns  Last event time = 11600.540000 ns  Last event time = 11727.991000 ns  Last event time = 11867.987000 ns  Last event time = 12020.268000 ns  Last event time = 12147.126000 ns  Last event time = 12286.417000 ns  Last event time = 12412.735000 ns  Last event time = 12552.948000 ns  Last event time = 12679.538000 ns  Last event time = 12818.346000 ns  Last event time = 12945.239000 ns  Last event time = 13084.618000 ns  Last event time = 13225.126000 ns  Last event time = 13365.182000 ns  Last event time = 13504.634000 ns  Last event time = 13644.629000 ns  Last event time = 13784.771000 ns  Last event time = 13925.170000 ns  Last event time = 14064.788000 ns  Last event time = 14204.548000 ns  Last event time = 14344.786000 ns  Last event time = 14485.128000 ns Information: analysis is done for time window (0ns - 14630ns)
 
-Information: Total simulation time = 6270.000000 ns
+Information: Total simulation time = 14630.000000 ns
 1
 report_power 
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Sun Nov 10 05:31:18 2024
+Date   : Mon Nov 18 22:38:52 2024
 ****************************************
 
 
@@ -125,23 +125,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           3.813e-04 2.666e-04 5.109e-06 6.530e-04 (24.82%)  
-sequential              1.791e-03 1.743e-04 1.298e-05 1.978e-03 (75.18%)  
+combinational           1.571e-04 1.243e-04 6.097e-06 2.874e-04 (32.60%)  
+sequential              5.156e-04 7.089e-05 7.822e-06 5.943e-04 (67.40%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 4.409e-04   (16.76%)
-  Cell Internal Power  = 2.172e-03   (82.55%)
-  Cell Leakage Power   = 1.809e-05   ( 0.69%)
+  Net Switching Power  = 1.952e-04   (22.13%)
+  Cell Internal Power  = 6.726e-04   (76.29%)
+  Cell Leakage Power   = 1.392e-05   ( 1.58%)
                          ---------
-Total Power            = 2.631e-03  (100.00%)
+Total Power            = 8.817e-04  (100.00%)
 
-X Transition Power     = 1.169e-07
+X Transition Power     = 8.916e-07
 Glitching Power        =    0.0000
 
-Peak Power             =    0.6866
-Peak Time              =  4008.000
+Peak Power             =    0.3446
+Peak Time              =  6552.000
 
 1
 report_power > F1_5.power
@@ -155,10 +155,10 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 1594
-Number of annotated nets = 1594 (100.00%)
-Total number of leaf cells = 1478
-Number of fully annotated leaf cells = 1140 (77.13%)
+Total number of nets = 2390
+Number of annotated nets = 2390 (100.00%)
+Total number of leaf cells = 2364
+Number of fully annotated leaf cells = 2352 (99.49%)
 ======================================================================
 
 1
@@ -177,16 +177,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 378.956000 ns  Last event time = 730.473000 ns  Last event time = 1073.948000 ns  Last event time = 1424.138000 ns  Last event time = 1779.086000 ns  Last event time = 2133.359000 ns  Last event time = 2490.189000 ns  Last event time = 2837.927000 ns  Last event time = 3182.927000 ns  Last event time = 3531.658000 ns  Last event time = 3867.927000 ns  Last event time = 4220.805000 ns  Last event time = 4571.415000 ns  Last event time = 4904.172000 ns Information: analysis is done for time window (0ns - 5225ns)
+ Last event time = 106.829000 ns  Last event time = 386.403000 ns  Last event time = 513.266000 ns  Last event time = 654.189000 ns  Last event time = 793.052000 ns  Last event time = 933.168000 ns  Last event time = 1073.008000 ns  Last event time = 1212.351000 ns  Last event time = 1339.656000 ns  Last event time = 1479.013000 ns  Last event time = 1619.040000 ns  Last event time = 1758.126000 ns  Last event time = 1898.349000 ns  Last event time = 2037.939000 ns  Last event time = 2164.870000 ns  Last event time = 2304.167000 ns  Last event time = 2431.837000 ns  Last event time = 2571.311000 ns  Last event time = 2711.224000 ns  Last event time = 2851.584000 ns  Last event time = 2990.729000 ns  Last event time = 3130.464000 ns  Last event time = 3257.512000 ns  Last event time = 3396.865000 ns  Last event time = 3536.378000 ns  Last event time = 3663.022000 ns  Last event time = 3803.540000 ns  Last event time = 3956.337000 ns  Last event time = 4083.063000 ns  Last event time = 4222.789000 ns  Last event time = 4362.573000 ns  Last event time = 4502.612000 ns  Last event time = 4642.632000 ns  Last event time = 4782.590000 ns  Last event time = 4922.916000 ns  Last event time = 5062.945000 ns  Last event time = 5202.510000 ns  Last event time = 5343.372000 ns  Last event time = 5483.053000 ns  Last event time = 5623.132000 ns  Last event time = 5762.717000 ns  Last event time = 5902.309000 ns  Last event time = 6042.238000 ns  Last event time = 6169.711000 ns  Last event time = 6310.016000 ns  Last event time = 6449.011000 ns  Last event time = 6589.647000 ns  Last event time = 6742.787000 ns  Last event time = 6869.843000 ns  Last event time = 7008.709000 ns  Last event time = 7148.655000 ns  Last event time = 7288.282000 ns  Last event time = 7429.096000 ns  Last event time = 7568.622000 ns  Last event time = 7707.477000 ns  Last event time = 7848.503000 ns  Last event time = 7975.108000 ns  Last event time = 8114.705000 ns  Last event time = 8254.317000 ns  Last event time = 8381.237000 ns  Last event time = 8520.582000 ns  Last event time = 8660.275000 ns  Last event time = 8786.977000 ns  Last event time = 8927.103000 ns  Last event time = 9067.866000 ns  Last event time = 9207.285000 ns  Last event time = 9346.364000 ns  Last event time = 9478.547000 ns  Last event time = 9613.417000 ns  Last event time = 9752.778000 ns  Last event time = 9892.871000 ns  Last event time = 10032.584000 ns  Last event time = 10159.126000 ns  Last event time = 10300.150000 ns  Last event time = 10439.910000 ns  Last event time = 10578.950000 ns  Last event time = 10718.561000 ns  Last event time = 10858.701000 ns  Last event time = 11012.518000 ns  Last event time = 11139.587000 ns  Last event time = 11279.586000 ns  Last event time = 11432.394000 ns  Last event time = 11559.252000 ns  Last event time = 11698.624000 ns  Last event time = 11838.588000 ns  Last event time = 11965.582000 ns  Last event time = 12118.728000 ns  Last event time = 12245.896000 ns  Last event time = 12384.750000 ns  Last event time = 12525.104000 ns  Last event time = 12664.785000 ns  Last event time = 12804.272000 ns  Last event time = 12930.546000 ns  Last event time = 13057.252000 ns  Last event time = 13196.783000 ns  Last event time = 13336.761000 ns  Last event time = 13476.999000 ns  Last event time = 13603.408000 ns  Last event time = 13742.838000 ns  Last event time = 13883.049000 ns  Last event time = 14022.733000 ns  Last event time = 14150.543000 ns  Last event time = 14289.545000 ns  Last event time = 14429.178000 ns  Last event time = 14582.903000 ns Information: analysis is done for time window (0ns - 14630ns)
 
-Information: Total simulation time = 5225.000000 ns
+Information: Total simulation time = 14630.000000 ns
 1
 report_power
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Sun Nov 10 05:31:19 2024
+Date   : Mon Nov 18 22:38:57 2024
 ****************************************
 
 
@@ -201,23 +201,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           7.139e-05 8.966e-05 5.109e-06 1.662e-04 (16.83%)  
-sequential              7.548e-04 5.314e-05 1.298e-05 8.209e-04 (83.17%)  
+combinational           1.570e-04 1.232e-04 6.097e-06 2.863e-04 (32.50%)  
+sequential              5.160e-04 7.091e-05 7.822e-06 5.947e-04 (67.50%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 1.428e-04   (14.47%)
-  Cell Internal Power  = 8.261e-04   (83.70%)
-  Cell Leakage Power   = 1.809e-05   ( 1.83%)
+  Net Switching Power  = 1.941e-04   (22.03%)
+  Cell Internal Power  = 6.730e-04   (76.39%)
+  Cell Leakage Power   = 1.392e-05   ( 1.58%)
                          ---------
-Total Power            = 9.870e-04  (100.00%)
+Total Power            = 8.810e-04  (100.00%)
 
-X Transition Power     = 6.388e-08
+X Transition Power     = 4.963e-07
 Glitching Power        =    0.0000
 
-Peak Power             =    0.2564
-Peak Time              =  2500.000
+Peak Power             =    0.3445
+Peak Time              =  6552.000
 
 1
 report_power >> F1_5.power
@@ -231,13 +231,12 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 1594
-Number of annotated nets = 456 (28.61%)
-Total number of leaf cells = 1478
-Number of fully annotated leaf cells = 61 (4.13%)
+Total number of nets = 2390
+Number of annotated nets = 2390 (100.00%)
+Total number of leaf cells = 2364
+Number of fully annotated leaf cells = 2352 (99.49%)
 ======================================================================
 
-Warning: VCD coverage on the design is too small. Power may be underestimated. (PWR-007)
 1
 update_power
 Information: Running time_based power analysis... (PWR-601)
@@ -254,16 +253,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 98.831000 ns  Last event time = 885.364000 ns  Last event time = 1662.927000 ns  Last event time = 2424.544000 ns  Last event time = 3216.331000 ns  Last event time = 3985.000000 ns  Last event time = 4747.927000 ns Information: analysis is done for time window (0ns - 5225ns)
+ Last event time = 1141.706000 ns  Last event time = 2724.662000 ns  Last event time = 4320.193000 ns  Last event time = 5944.571000 ns  Last event time = 7568.074000 ns  Last event time = 9178.082000 ns  Last event time = 10802.180000 ns  Last event time = 12404.547000 ns  Last event time = 14021.881000 ns Information: analysis is done for time window (0ns - 14392ns)
 
-Information: Total simulation time = 5225.000000 ns
+Information: Total simulation time = 14392.000000 ns
 1
 report_power
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Sun Nov 10 05:31:20 2024
+Date   : Mon Nov 18 22:38:58 2024
 ****************************************
 
 
@@ -278,23 +277,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           2.062e-05 5.883e-05 5.109e-06 8.455e-05 ( 9.50%)  
-sequential              7.463e-04 4.611e-05 1.298e-05 8.054e-04 (90.50%)  
+combinational           9.519e-06 9.479e-06 6.097e-06 2.510e-05 (10.20%)  
+sequential              1.918e-04 2.121e-05 7.822e-06 2.209e-04 (89.80%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 1.049e-04   (11.79%)
-  Cell Internal Power  = 7.669e-04   (86.18%)
-  Cell Leakage Power   = 1.809e-05   ( 2.03%)
+  Net Switching Power  = 3.069e-05   (12.48%)
+  Cell Internal Power  = 2.014e-04   (81.87%)
+  Cell Leakage Power   = 1.392e-05   ( 5.66%)
                          ---------
-Total Power            = 8.900e-04  (100.00%)
+Total Power            = 2.460e-04  (100.00%)
 
-X Transition Power     =    0.0000
+X Transition Power     = 4.874e-06
 Glitching Power        =    0.0000
 
-Peak Power             =    0.2562
-Peak Time              =  2560.000
+Peak Power             =    0.1511
+Peak Time              =    28.000
 
 1
 report_power >> F1_5.power
@@ -308,13 +307,12 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 1594
-Number of annotated nets = 456 (28.61%)
-Total number of leaf cells = 1478
-Number of fully annotated leaf cells = 61 (4.13%)
+Total number of nets = 2390
+Number of annotated nets = 2390 (100.00%)
+Total number of leaf cells = 2364
+Number of fully annotated leaf cells = 2352 (99.49%)
 ======================================================================
 
-Warning: VCD coverage on the design is too small. Power may be underestimated. (PWR-007)
 1
 update_power
 Information: Running time_based power analysis... (PWR-601)
@@ -331,16 +329,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 400.000000 ns  Last event time = 1265.000000 ns  Last event time = 2120.000000 ns  Last event time = 2993.500000 ns  Last event time = 3858.500000 ns  Last event time = 4687.927000 ns Information: analysis is done for time window (0ns - 5235ns)
+ Last event time = 525.685000 ns  Last event time = 988.414000 ns  Last event time = 1450.358000 ns  Last event time = 1842.925000 ns  Last event time = 2430.927000 ns  Last event time = 2878.003000 ns  Last event time = 3340.536000 ns  Last event time = 3832.762000 ns  Last event time = 4293.186000 ns  Last event time = 4741.278000 ns  Last event time = 5189.901000 ns  Last event time = 5726.000000 ns  Last event time = 6224.951000 ns  Last event time = 6686.670000 ns  Last event time = 7148.878000 ns  Last event time = 7654.428000 ns  Last event time = 8101.170000 ns  Last event time = 8549.170000 ns  Last event time = 9010.179000 ns  Last event time = 9542.107000 ns  Last event time = 9949.044000 ns  Last event time = 10410.945000 ns  Last event time = 10886.523000 ns  Last event time = 11447.040000 ns  Last event time = 11881.052000 ns  Last event time = 12342.547000 ns  Last event time = 12831.571000 ns  Last event time = 13295.080000 ns  Last event time = 13742.838000 ns  Last event time = 14232.955000 ns Information: analysis is done for time window (0ns - 14406ns)
 
-Information: Total simulation time = 5235.000000 ns
+Information: Total simulation time = 14406.000000 ns
 1
 report_power
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Sun Nov 10 05:31:21 2024
+Date   : Mon Nov 18 22:39:00 2024
 ****************************************
 
 
@@ -355,23 +353,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           1.498e-05 2.265e-05 5.109e-06 4.274e-05 ( 5.15%)  
-sequential              7.324e-04 4.211e-05 1.298e-05 7.875e-04 (94.85%)  
+combinational           3.844e-05 3.217e-05 6.097e-06 7.671e-05 (19.12%)  
+sequential              2.754e-04 4.125e-05 7.822e-06 3.245e-04 (80.88%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 6.476e-05   ( 7.80%)
-  Cell Internal Power  = 7.474e-04   (90.02%)
-  Cell Leakage Power   = 1.809e-05   ( 2.18%)
+  Net Switching Power  = 7.343e-05   (18.30%)
+  Cell Internal Power  = 3.138e-04   (78.23%)
+  Cell Leakage Power   = 1.392e-05   ( 3.47%)
                          ---------
-Total Power            = 8.302e-04  (100.00%)
+Total Power            = 4.012e-04  (100.00%)
 
-X Transition Power     =    0.0000
+X Transition Power     = 1.711e-07
 Glitching Power        =    0.0000
 
-Peak Power             =    0.2562
-Peak Time              =  5055.000
+Peak Power             =    0.4200
+Peak Time              =    56.000
 
 1
 report_power >> F1_5.power
@@ -385,13 +383,12 @@ Information: Reading fsdb file '/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/0
 
 ======================================================================
 Summary:
-Total number of nets = 1594
-Number of annotated nets = 456 (28.61%)
-Total number of leaf cells = 1478
-Number of fully annotated leaf cells = 61 (4.13%)
+Total number of nets = 2390
+Number of annotated nets = 2390 (100.00%)
+Total number of leaf cells = 2364
+Number of fully annotated leaf cells = 2352 (99.49%)
 ======================================================================
 
-Warning: VCD coverage on the design is too small. Power may be underestimated. (PWR-007)
 1
 update_power
 Information: Running time_based power analysis... (PWR-601)
@@ -408,16 +405,16 @@ Information: The waveform options are:
 
 Information: Power analysis is running, please wait ...
 
- Last event time = 338.700000 ns  Last event time = 1218.844000 ns  Last event time = 2074.420000 ns  Last event time = 2950.000000 ns  Last event time = 3800.000000 ns  Last event time = 4658.991000 ns Information: analysis is done for time window (0ns - 5235ns)
+ Last event time = 261.977000 ns  Last event time = 696.004000 ns  Last event time = 1099.608000 ns  Last event time = 1521.120000 ns  Last event time = 1899.052000 ns  Last event time = 2278.034000 ns  Last event time = 2738.648000 ns  Last event time = 3200.411000 ns  Last event time = 3634.905000 ns  Last event time = 4013.052000 ns  Last event time = 4376.170000 ns  Last event time = 4782.374000 ns  Last event time = 5243.972000 ns  Last event time = 5636.779000 ns  Last event time = 6056.586000 ns  Last event time = 6476.738000 ns  Last event time = 6966.955000 ns  Last event time = 7371.937000 ns  Last event time = 7722.449000 ns  Last event time = 8155.668000 ns  Last event time = 8549.712000 ns  Last event time = 8983.052000 ns  Last event time = 9318.177000 ns  Last event time = 9697.056000 ns  Last event time = 10130.792000 ns  Last event time = 10565.558000 ns  Last event time = 10997.000000 ns  Last event time = 11335.285000 ns  Last event time = 11797.019000 ns  Last event time = 12217.088000 ns  Last event time = 12621.604000 ns  Last event time = 13027.916000 ns  Last event time = 13477.009000 ns  Last event time = 13897.040000 ns  Last event time = 14260.572000 ns Information: analysis is done for time window (0ns - 14406ns)
 
-Information: Total simulation time = 5235.000000 ns
+Information: Total simulation time = 14406.000000 ns
 1
 report_power
 ****************************************
 Report : Time Based Power
 Design : IOTDF
 Version: U-2022.12
-Date   : Sun Nov 10 05:31:22 2024
+Date   : Mon Nov 18 22:39:02 2024
 ****************************************
 
 
@@ -432,23 +429,23 @@ Power Group             Power     Power      Power      Power   (     %)  Attrs
 --------------------------------------------------------------------------------
 clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
 register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
-combinational           1.395e-05 1.985e-05 5.109e-06 3.890e-05 ( 4.71%)  
-sequential              7.317e-04 4.221e-05 1.298e-05 7.869e-04 (95.29%)  
+combinational           4.701e-05 3.800e-05 6.097e-06 9.111e-05 (21.59%)  
+sequential              2.821e-04 4.096e-05 7.822e-06 3.308e-04 (78.41%)  
 memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
 
-  Net Switching Power  = 6.205e-05   ( 7.51%)
-  Cell Internal Power  = 7.456e-04   (90.29%)
-  Cell Leakage Power   = 1.809e-05   ( 2.19%)
+  Net Switching Power  = 7.897e-05   (18.71%)
+  Cell Internal Power  = 3.291e-04   (77.99%)
+  Cell Leakage Power   = 1.392e-05   ( 3.30%)
                          ---------
-Total Power            = 8.258e-04  (100.00%)
+Total Power            = 4.220e-04  (100.00%)
 
-X Transition Power     = 1.494e-07
+X Transition Power     = 1.703e-07
 Glitching Power        =    0.0000
 
-Peak Power             =    0.2559
-Peak Time              =  2900.000
+Peak Power             =    0.4164
+Peak Time              =  9016.000
 
 1
 report_power >> F1_5.power
@@ -456,9 +453,9 @@ exit
 
 Timing updates: 1 (1 implicit, 0 explicit) (0 incremental, 1 full, 0 logical)
 Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
-Maximum memory usage for this session: 2560.19 MB
-CPU usage for this session: 16 seconds 
-Elapsed time for this session: 17 seconds
-Diagnostics summary: 9 warnings, 14 informationals
+Maximum memory usage for this session: 2425.68 MB
+CPU usage for this session: 23 seconds 
+Elapsed time for this session: 24 seconds
+Diagnostics summary: 6 warnings, 14 informationals
 
 Thank you for using pt_shell!

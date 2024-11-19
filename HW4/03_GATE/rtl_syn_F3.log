@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version T-2022.06_Full64 -- Wed Nov 13 06:30:28 2024
+         Version T-2022.06_Full64 -- Mon Nov 18 22:37:55 2024
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -30,7 +30,9 @@ Top Level Modules:
        BUFX12
        BUFX16
        BUFX20
-       INVX3
+       INVX2
+       INVX4
+       INVX6
        INVX8
        INVX12
        INVX16
@@ -48,6 +50,7 @@ Top Level Modules:
        HOLDX1
        AND2XL
        AND2X1
+       AND2X2
        AND2X4
        AND2X6
        AND2X8
@@ -62,11 +65,12 @@ Top Level Modules:
        AND4X4
        AND4X6
        AND4X8
+       AOI21X1
        AOI21X2
        AOI21X4
        AOI211X2
        AOI211X4
-       AOI22XL
+       AOI22X1
        AOI22X2
        AOI22X4
        AOI221X1
@@ -89,6 +93,7 @@ Top Level Modules:
        AOI2BB1X2
        AOI2BB1X4
        AOI2BB2XL
+       AOI2BB2X2
        AOI2BB2X4
        AO21XL
        AO21X1
@@ -125,15 +130,19 @@ Top Level Modules:
        MXI3X1
        MXI3X2
        MXI3X4
+       NAND2X4
        NAND2X6
+       NAND2X8
        NAND3X2
        NAND3X4
        NAND3X6
        NAND3X8
+       NAND4X1
        NAND4X2
        NAND4X4
        NAND4X6
        NAND4X8
+       NAND2BXL
        NAND2BX2
        NAND2BX4
        NAND3BXL
@@ -147,6 +156,7 @@ Top Level Modules:
        NAND4BBX1
        NAND4BBX2
        NAND4BBX4
+       NOR2X2
        NOR2X4
        NOR2X6
        NOR2X8
@@ -154,8 +164,7 @@ Top Level Modules:
        NOR3X4
        NOR3X6
        NOR3X8
-       NOR4XL
-       NOR4X1
+       NOR4X2
        NOR4X4
        NOR4X6
        NOR4X8
@@ -190,10 +199,13 @@ Top Level Modules:
        OR4X4
        OR4X6
        OR4X8
+       OAI21X1
        OAI21X2
        OAI21X4
        OAI211X2
        OAI211X4
+       OAI22X1
+       OAI22X2
        OAI22X4
        OAI221X1
        OAI221X2
@@ -204,14 +216,18 @@ Top Level Modules:
        OAI31X1
        OAI31X2
        OAI31X4
+       OAI32X1
        OAI32X2
        OAI32X4
        OAI33XL
        OAI33X1
        OAI33X2
        OAI33X4
+       OAI2BB1X1
        OAI2BB1X2
        OAI2BB1X4
+       OAI2BB2X1
+       OAI2BB2X2
        OAI2BB2X4
        OA21X1
        OA21X2
@@ -220,6 +236,7 @@ Top Level Modules:
        OA22X2
        OA22X4
        CLKXOR2X1
+       CLKXOR2X2
        CLKXOR2X4
        CLKXOR2X8
        XOR2XL
@@ -230,6 +247,7 @@ Top Level Modules:
        XOR3X2
        XOR3X4
        XNOR2XL
+       XNOR2X1
        XNOR2X2
        XNOR2X4
        XNOR3XL
@@ -237,11 +255,15 @@ Top Level Modules:
        XNOR3X2
        XNOR3X4
        CLKBUFX2
+       CLKBUFX3
        CLKBUFX4
+       CLKBUFX6
        CLKBUFX8
        CLKBUFX12
        CLKBUFX16
        CLKBUFX20
+       CLKINVX2
+       CLKINVX3
        CLKINVX4
        CLKINVX6
        CLKINVX8
@@ -337,6 +359,7 @@ Top Level Modules:
        DFFQX4
        DFFQXL
        DFFRXL
+       DFFRX2
        DFFRX4
        DFFSXL
        DFFSX1
@@ -346,8 +369,6 @@ Top Level Modules:
        DFFSRX1
        DFFSRX2
        DFFSRX4
-       DFFNSRXL
-       DFFNSRX1
        DFFNSRX2
        DFFNSRX4
        DFFTRXL
@@ -480,8 +501,88 @@ Top Level Modules:
 TimeScale is 1 ns / 1 ps
 
 Warning-[TFIPC] Too few instance port connections
-../02_SYN/Netlist/IOTDF_syn.v, 622
-IOTDF, "DFFRX2 round_r_reg_2_( .D (N308),  .CK (clk),  .RN (n3170),  .Q (round_r[2]));"
+../02_SYN/Netlist/IOTDF_syn.v, 620
+IOTDF, "DFFRX1 input_cnt_reg_0_( .D (N707),  .CK (net2386),  .RN (n1132),  .Q (input_cnt[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 624
+IOTDF, "DFFRX1 input_cnt_reg_2_( .D (N709),  .CK (net2386),  .RN (n1132),  .Q (input_cnt[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 626
+IOTDF, "DFFRX1 first_r_reg( .D (n1134),  .CK (clk),  .RN (n1132),  .QN (n2278));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 757
+IOTDF, "DFFNSRXL iot_in_r_reg_7_( .D (iot_in[7]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[7]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 759
+IOTDF, "DFFNSRXL iot_in_r_reg_6_( .D (iot_in[6]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[6]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 761
+IOTDF, "DFFNSRXL iot_in_r_reg_2_( .D (iot_in[2]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[2]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 763
+IOTDF, "DFFNSRXL iot_in_r_reg_1_( .D (iot_in[1]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[1]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 765
+IOTDF, "DFFNSRXL iot_in_r_reg_0_( .D (iot_in[0]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 767
+IOTDF, "DFFNSRXL iot_in_r_reg_5_( .D (iot_in[5]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[5]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 769
+IOTDF, "DFFNSRXL iot_in_r_reg_4_( .D (iot_in[4]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[4]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../02_SYN/Netlist/IOTDF_syn.v, 771
+IOTDF, "DFFNSRX1 iot_in_r_reg_3_( .D (iot_in[3]),  .CKN (clk),  .SN (1'b1),  .RN (1'b1),  .Q (iot_in_r[3]));"
   The above instance has fewer port connections than the module definition.
   Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
   ports.
@@ -500,32 +601,30 @@ IOTDF, "DFFRX2 round_r_reg_2_( .D (N308),  .CK (clk),  .RN (n3170),  .Q (round_r
    ***    Turnoff delay: "FROM_FILE"
    ***    Approximation (mipd) policy: "MAXIMUM"
 
-   ***    SDF annotation begin: Wed Nov 13 06:30:30 2024
+   ***    SDF annotation begin: Mon Nov 18 22:37:57 2024
 
 
 SDF Info: +pulse_r/100, +pulse_e/100 in effect
 
           Total errors: 0
           Total warnings: 0
-   ***    SDF annotation completed: Wed Nov 13 06:30:30 2024
+   ***    SDF annotation completed: Mon Nov 18 22:37:57 2024
 
 
 Starting vcs inline pass...
-554 modules and 12 UDPs read.
+536 modules and 12 UDPs read.
 recompiling module test
 	However, due to incremental compilation, only 1 module needs to be compiled. 
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
 rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _11636_archive_1.so _prev_archive_1.so _cuarc0.so objs/udps/D2wHf.o objs/udps/uYEPC.o objs/udps/vCfas.o objs/udps/IEZrF.o objs/udps/U7Vwg.o objs/udps/i2VqJ.o objs/udps/CjLsY.o objs/udps/sk4QJ.o objs/udps/exIG1.o objs/udps/gSqMj.o objs/udps/Cpxa2.o objs/udps/AubIW.o  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _220027_archive_1.so _prev_archive_1.so _cuarc0.so objs/udps/D2wHf.o objs/udps/uYEPC.o objs/udps/vCfas.o objs/udps/IEZrF.o objs/udps/U7Vwg.o objs/udps/i2VqJ.o objs/udps/CjLsY.o objs/udps/sk4QJ.o objs/udps/exIG1.o objs/udps/gSqMj.o objs/udps/Cpxa2.o objs/udps/AubIW.o  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 Chronologic VCS simulator copyright 1991-2022
 Contains Synopsys proprietary information.
-Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 13 06:30 2024
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 18 22:38 2024
 Doing SDF annotation ...... Done
-../00_TESTBED/pattern1_data/pattern1.dat
-../00_TESTBED/pattern1_data/f3.dat
 *Verdi* Loading libsscore_vcs202206.so
 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
 (C) 1996 - 2022 by Synopsys, Inc.
@@ -610,13 +709,13 @@ P63:  ** Correct!! ** , iot_out=00000000000000000000000000000006
 
 Congratulations! All data have been generated successfully!
 
-Total cost time:   21588.00 ns
+Total cost time:   14392.00 ns
 -------------------------PASS------------------------
 
 $finish called from file "../00_TESTBED/testfixture.v", line 303.
-$finish at simulation time             20560000
+$finish at simulation time             14392000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 20560000 ps
-CPU Time:      0.640 seconds;       Data structure size:   0.6Mb
-Wed Nov 13 06:30:38 2024
-CPU time: 3.204 seconds to compile + .518 seconds to elab + 1.296 seconds to link + .704 seconds in simulation
+Time: 14392000 ps
+CPU Time:      0.690 seconds;       Data structure size:   0.8Mb
+Mon Nov 18 22:38:07 2024
+CPU time: 3.186 seconds to compile + .525 seconds to elab + 1.012 seconds to link + .732 seconds in simulation

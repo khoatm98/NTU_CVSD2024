@@ -2,4 +2,4 @@ vcs -f rtl_03.f -full64 -R +v2k +vcs+no_warning -debug_access+all +maxdelays -ne
 vcs -f rtl_03.f -full64 -R +v2k +vcs+no_warning -debug_access+all +maxdelays -negdelay +define+SDF+p$1+F2 +define+CYCLE=$2 +neg_tchk  | tee rtl_syn_F2.log
 vcs -f rtl_03.f -full64 -R +v2k +vcs+no_warning -debug_access+all +maxdelays -negdelay +define+SDF+p$1+F3 +define+CYCLE=$2 +neg_tchk  | tee rtl_syn_F3.log
 vcs -f rtl_03.f -full64 -R +v2k +vcs+no_warning -debug_access+all +maxdelays -negdelay +define+SDF+p$1+F4 +define+CYCLE=$2 +neg_tchk  | tee rtl_syn_F4.log
-vcs -f rtl_03.f -full64 -R +v2k +vcs+no_warning -debug_access+all +maxdelays -negdelay +define+SDF+p$1+F5 +define+CYCLE=$2 +neg_tchk  | tee rtl_syn_F5.log
+vcs -f rtl_03.f -full64 -R +v2k +vcs+no_warning -debug_access+all +maxdelays -negdelay +define+SDF+p$1+F5 +define+CYCLE=$2 +neg_tchk  | tee rtl_syn_F5.log 

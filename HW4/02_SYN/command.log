@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version U-2022.12 for linux64 -- Nov 22, 2022
-#@ # Date:   Thu Nov 14 15:05:48 2024
-#@ # Run by: r2k41036@cad27
+#@ # Date:   Mon Nov 18 22:59:28 2024
+#@ # Run by: r2k41036@cad21
 #@ 
 
 source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
@@ -9439,9 +9439,15 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/syn.
 #@ set company {NTUGIEE}
 #@ set designer {Student}
 #@ 
-#@ 
+#@ set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db $search_path ../ ./"
+#@ set target_library   "slow.db                 \
+#@                      "
+#@ set link_library     "* $target_library dw_foundation.sldb"
+#@ set symbol_library   "tsmc13.sdb generic.sdb"
+#@ set synthetic_library "dw_foundation.sldb"
+#@ set default_schematic_options {-size infinite}
 #@ # Import Design
-#@ set DESIGN "IOTDF"
+#@ set DESIGN "IOTDF" 
 #@ 
 #@ set hdlin_translate_off_skip_text "TRUE"
 #@ set edifout_netlist_only "TRUE"
@@ -9464,7 +9470,7 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/syn.
 #@ # operating conditions and boundary conditions #
 #@ 
 #@ 
-#@ create_clock -name clk  -period 20.0   [get_ports  clk]      ;#Modify period by yourself
+#@ create_clock -name clk  -period 14.00   [get_ports  clk]      ;#Modify period by yourself
 #@ 
 #@ set_dont_touch_network      [all_clocks]
 #@ set_fix_hold                [all_clocks]
@@ -9483,8 +9489,7 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/syn.
 #@ set_load         0.01  [all_outputs]
 #@ set_drive        0.1   [all_inputs]
 #@ 
-#@ set_operating_conditions -max_library slow -max slow
-#@ set_wire_load_model -name tsmc13_wl10 -library slow      
+#@ set_operating_conditions -max_library slow -max slow   
 #@ set_max_fanout 10 [all_inputs]
 #@ 
 #@ 
@@ -9500,36 +9505,27 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW4/02_SYN/syn.
 #@ 
 #@ uniquify
 #@ set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
-#@ #set_max_area 0 
-#@ #compile -ignore_tns
 #@ 
-#@ #set_clock_gating_style -max_fanout 4 -pos integrated -control_point before  {nand}
-#@ #set_max_area 0  -ignore_tns
+#@ set_max_area 0  -ignore_tns
 #@ 
 #@ 
 #@ set_clock_gating_style \
-#@ 	-max_fanout 8 \
-#@ 	-pos {integrated} \
+#@ 	-max_fanout 128 \
+#@ 	-pos {integrated } \
 #@ 	-control_point before \
 #@ 	-control_signal scan_enable
 #@ 
 #@ set_host_options -max_cores 16
-#@ 
+#@ compile_power -total_power_optimization
 #@ set_max_leakage_power 0
 #@ set_max_dynamic_power 0
 #@ set_dynamic_optimization true 
-#@ set_app_var power_low_power_placement true
-#@ #compile_ultra -gate_clock  -retime
-#@ compile_ultra -gate_clock -retime
+#@ #set_app_var power_low_power_placement true
+#@ 
+#@ 
+#@ compile_ultra -gate_clock -retime 
 #@ optimize_netlist -area 
 #@ 
-#@ 
-#@ 
-#@ 
-#@ #compile -boundary_optimization -map_effort high  -auto_ungroup area
-#@ 
-#@ #compile_ultra
-#@ #optimize_netlist -area 
 #@ 
 #@ # Report Output
 #@ current_design [get_designs ${DESIGN}]

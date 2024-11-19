@@ -7,58 +7,38 @@ Report : timing
         -max_paths 1
 Design : IOTDF
 Version: U-2022.12
-Date   : Thu Nov 14 15:06:20 2024
+Date   : Mon Nov 18 23:00:04 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: data_buffer_r_reg[25]
-              (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: R_ready_r_reg[18]
-            (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: iot_in[6] (input port clocked by clk)
+  Endpoint: iot_in_r_reg[6]
+            (falling edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  IOTDF              tsmc13_wl10           slow
 
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock clk (rise edge)                    0.00       0.00
   clock network delay (ideal)              1.00       1.00
-  data_buffer_r_reg[25]/CK (DFFQX1)        0.00       1.00 r
-  data_buffer_r_reg[25]/Q (DFFQX1)         0.61       1.61 r
-  u_sbox/K[21] (sbox)                      0.00       1.61 r
-  u_sbox/U40/Y (XNOR2X1)                   0.73       2.34 r
-  u_sbox/U8/Y (CLKINVX1)                   0.77       3.11 f
-  u_sbox/U411/Y (NAND2X1)                  0.85       3.96 r
-  u_sbox/U412/Y (INVX1)                    0.48       4.44 f
-  u_sbox/U414/Y (NOR2X1)                   0.83       5.28 r
-  u_sbox/U415/Y (INVX1)                    0.56       5.84 f
-  u_sbox/U441/Y (NOR2XL)                   0.74       6.58 r
-  u_sbox/U523/Y (NOR3XL)                   0.30       6.88 f
-  u_sbox/U526/Y (OAI211XL)                 0.50       7.38 r
-  u_sbox/U527/Y (AOI22XL)                  0.29       7.67 f
-  u_sbox/U531/Y (OAI211XL)                 0.53       8.20 r
-  u_sbox/sbox_out[18] (sbox)               0.00       8.20 r
-  U901/Y (AOI2BB2X1)                       0.41       8.60 f
-  U951/Y (AO22X1)                          0.48       9.09 f
-  R_ready_r_reg[18]/D (DFFQX1)             0.00       9.09 f
-  data arrival time                                   9.09
+  input external delay                     1.00       2.00 f
+  iot_in[6] (in)                           0.00       2.00 f
+  iot_in_r_reg[6]/D (DFFNSRXL)             0.00       2.00 f
+  data arrival time                                   2.00
 
-  clock clk (rise edge)                   20.00      20.00
-  clock network delay (ideal)              1.00      21.00
-  clock uncertainty                       -0.10      20.90
-  R_ready_r_reg[18]/CK (DFFQX1)            0.00      20.90 r
-  library setup time                      -0.27      20.63
-  data required time                                 20.63
+  clock clk (fall edge)                    7.00       7.00
+  clock network delay (ideal)              1.00       8.00
+  clock uncertainty                       -0.10       7.90
+  iot_in_r_reg[6]/CKN (DFFNSRXL)           0.00       7.90 f
+  library setup time                      -0.29       7.61
+  data required time                                  7.61
   -----------------------------------------------------------
-  data required time                                 20.63
-  data arrival time                                  -9.09
+  data required time                                  7.61
+  data arrival time                                  -2.00
   -----------------------------------------------------------
-  slack (MET)                                        11.54
+  slack (MET)                                         5.61
 
 
 1

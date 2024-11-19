@@ -47,7 +47,7 @@ set_max_area 0  -ignore_tns
 
 set_clock_gating_style \
 	-max_fanout 128 \
-	-pos {and} \
+	-pos {integrated } \
 	-control_point before \
 	-control_signal scan_enable
 
@@ -56,7 +56,7 @@ set_host_options -max_cores 16
 set_max_leakage_power 0
 set_max_dynamic_power 0
 set_dynamic_optimization true 
-set_app_var power_low_power_placement true
+#set_app_var power_low_power_placement true
 
 
 compile_ultra -gate_clock -retime 

@@ -21,7 +21,7 @@ output [127:0] iot_out;
 reg  [127: 0] data_r;
 reg  [127: 0] data_buffer_r;   // for max min operation
 wire [7:0]    data_w [15:0];
-wire [63:0]    main_key_w; 
+wire [63:0]    main_key_w;
 wire [63:0]    plain_text_w;
 wire CRC_en;
 wire MAXMIN_en;
@@ -143,10 +143,10 @@ assign cipher_text[63:0]   =  {final_permutation_w[64-40], final_permutation_w[6
 assign L_ready_w = data_buffer_r[119:88];
 assign R_ready_w = data_buffer_r[87:56];
 always @* begin
-	R_wait_r = DES_en ? L_ready_w ^ sbox_out_w : 0;
-	L_wait_r = DES_en ? R_ready_w              : 0;
+	R_wait_r = L_ready_w ^ sbox_out_w;
+	L_wait_r = R_ready_w             ;
 end
-
+ 
 assign final_permutation_w = {R_wait_r, L_wait_r};
 
 sbox u_sbox(.R(R_ready_w), .K(key), .sbox_out(sbox_out_w));
@@ -166,15 +166,15 @@ end
 wire inv_1_w;
 wire inv_2_w;
 reg  [2:0]   crc;
-wire [7:0]   crc_input;
+wire [7:0]   CrcIn;
+
 
 assign CRC_en = fn_sel == 3'b011;
+assign CrcIn  = CRC_en ? iot_in : 0;
 
-assign crc_input = CRC_en ? iot_in : 0;
-
-wire inv_1_036_w = crc_input[0] ^ crc_input[3] ^ crc_input[6];
-wire inv_1_147_w = crc_input[1] ^ crc_input[4] ^ crc_input[7]; 
-wire inv_1_25_w  = crc_input[2] ^ crc_input[5]            ;
+wire inv_1_036_w = CrcIn[0] ^ CrcIn[3] ^ CrcIn[6];
+wire inv_1_147_w = CrcIn[1] ^ CrcIn[4] ^ CrcIn[7];
+wire inv_1_25_w  = CrcIn[2] ^ CrcIn[5]           ;
 
 assign inv_1_w =  inv_1_036_w ^ inv_1_147_w;
 assign inv_2_w =  inv_1_036_w ^ inv_1_25_w;
@@ -197,10 +197,6 @@ always @* begin
 		end
 	endcase
 end
-//assign crc[0] = 1'b0;
-//assign crc[1] = round_r%3 == 0 ? inv_1_w   : (round_r%3 == 1 ?  inv_1_2_w   : inv_2_w   );
-//assign crc[2] = round_r%3 == 0 ? inv_2_w   : (round_r%3 == 1 ?  inv_1_w     : inv_1_2_w );
-
 
 // ---------------------------------------------------------------------------
 // Top Max -- Last Min
@@ -226,99 +222,75 @@ wire 		comp_res_equal_1_w;
 reg 		comp_res_0_r;
 reg 		comp_res_1_r;
 
-assign im_comp_w = iot_in;
+wire [127:0] w1;
+wire [127:0] w2;
 
+
+reg c0;
+reg c1;
+
+assign im_comp_w = MAXMIN_en ? iot_in : 0;
+assign w1 = MAXMIN_en ? iot_out_r : 0;
+assign w2 = MAXMIN_en ? data_buffer_r : 0;
 comparator u_comp_inst0(.a(first_comp_r) , .b(im_comp_w), .less(comp_res_less_0_w), .equal(comp_res_equal_0_w));
 comparator u_comp_inst1(.a(second_comp_r), .b(im_comp_w), .less(comp_res_less_1_w), .equal(comp_res_equal_1_w));
 
 always @* begin
 	case(round_r)
-		4'd0    : second_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} :data_buffer_r[7 -: 8];
-		4'd1    : second_comp_r = data_buffer_r[15 -: 8];
-		4'd2    : second_comp_r = data_buffer_r[23 -: 8];
-		4'd3    : second_comp_r = data_buffer_r[31 -: 8];
-		4'd4    : second_comp_r = data_buffer_r[39 -: 8];
-		4'd5    : second_comp_r = data_buffer_r[47 -: 8];
-		4'd6    : second_comp_r = data_buffer_r[55 -: 8];
-		4'd7    : second_comp_r = data_buffer_r[63 -: 8];
-		4'd8    : second_comp_r = data_buffer_r[71 -: 8];
-		4'd9    : second_comp_r = data_buffer_r[79 -: 8];
-		4'd10   : second_comp_r = data_buffer_r[87 -: 8];
-		4'd11   : second_comp_r = data_buffer_r[95 -: 8];
-		4'd12   : second_comp_r = data_buffer_r[103 -: 8];
-		4'd13   : second_comp_r = data_buffer_r[111 -: 8];
-		4'd14   : second_comp_r = data_buffer_r[119  -: 8];
-		default : second_comp_r = data_buffer_r[127  -: 8];
+		4'd0    : second_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} : w2[7 -: 8];
+		4'd1    : second_comp_r = w2[15 -: 8];
+		4'd2    : second_comp_r = w2[23 -: 8];
+		4'd3    : second_comp_r = w2[31 -: 8];
+		4'd4    : second_comp_r = w2[39 -: 8];
+		4'd5    : second_comp_r = w2[47 -: 8];
+		4'd6    : second_comp_r = w2[55 -: 8];
+		4'd7    : second_comp_r = w2[63 -: 8];
+		4'd8    : second_comp_r = w2[71 -: 8];
+		4'd9    : second_comp_r = w2[79 -: 8];
+		4'd10   : second_comp_r = w2[87 -: 8];
+		4'd11   : second_comp_r = w2[95 -: 8];
+		4'd12   : second_comp_r = w2[103 -: 8];
+		4'd13   : second_comp_r = w2[111 -: 8];
+		4'd14   : second_comp_r = w2[119  -: 8];
+		default : second_comp_r = w2[127  -: 8];
 	endcase
 	
 	case(round_r)
-		4'd0    : first_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} : iot_out_r[7 -: 8];
-		4'd1    : first_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} : iot_out_r[15 -: 8];
-		4'd2    : first_comp_r = iot_out_r[23 -: 8];
-		4'd3    : first_comp_r = iot_out_r[31 -: 8];
-		4'd4    : first_comp_r = iot_out_r[39 -: 8];
-		4'd5    : first_comp_r = iot_out_r[47 -: 8];
-		4'd6    : first_comp_r = iot_out_r[55 -: 8];
-		4'd7    : first_comp_r = iot_out_r[63 -: 8];
-		4'd8    : first_comp_r = iot_out_r[71 -: 8];
-		4'd9    : first_comp_r = iot_out_r[79 -: 8];
-		4'd10   : first_comp_r = iot_out_r[87 -: 8];
-		4'd11   : first_comp_r = iot_out_r[95 -: 8];
-		4'd12   : first_comp_r = iot_out_r[103 -: 8];
-		4'd13   : first_comp_r = iot_out_r[111 -: 8];
-		4'd14   : first_comp_r = iot_out_r[119  -: 8];
-		default : first_comp_r = iot_out_r[127  -: 8];
+		4'd0    : first_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} : w1[7 -: 8];
+		4'd1    : first_comp_r = input_cnt == 0 ? {8{fn_sel[0]}} : w1[15 -: 8];
+		4'd2    : first_comp_r = w1[23 -: 8];
+		4'd3    : first_comp_r = w1[31 -: 8];
+		4'd4    : first_comp_r = w1[39 -: 8];
+		4'd5    : first_comp_r = w1[47 -: 8];
+		4'd6    : first_comp_r = w1[55 -: 8];
+		4'd7    : first_comp_r = w1[63 -: 8];
+		4'd8    : first_comp_r = w1[71 -: 8];
+		4'd9    : first_comp_r = w1[79 -: 8];
+		4'd10   : first_comp_r = w1[87 -: 8];
+		4'd11   : first_comp_r = w1[95 -: 8];
+		4'd12   : first_comp_r = w1[103 -: 8];
+		4'd13   : first_comp_r = w1[111 -: 8];
+		4'd14   : first_comp_r = w1[119  -: 8];
+		default : first_comp_r = w1[127  -: 8];
 	endcase
 end
 
-reg c0;
-reg c1;
-
 always @* begin
-	case({comp_res_less_0_w, comp_res_equal_0_w})
-		2'b00 : c0 = 0;
-		2'b10 : c0 = 1;
-		2'b01 : c0 = comp_res_0_r;
-	endcase
-	case({comp_res_less_1_w, comp_res_equal_1_w})
-		2'b00 : c1 = 0;
-		2'b10 : c1 = 1;
-		2'b01 : c1 = comp_res_1_r;
-	endcase
-end
-always @* begin
-	if(round_r==15) begin		
-		if(!fn_sel[0]) begin
-			case({c0, c1})
-				2'b00  : begin
-					first_output  = iot_out_r;    
-					second_output = data_buffer_r;    
-				end
-				2'b01  : begin
-					first_output  = iot_out_r;    
-					second_output = {iot_in_r , data_r[127:8]};  
-				end
-				default: begin
-					first_output  =  {iot_in_r , data_r[127:8]};    
-					second_output = iot_out_r;    
-				end
-			endcase
-		end else begin
-			case({c0, c1})
-				2'b00  : begin
-					first_output  = {iot_in_r , data_r[127:8]};  
-					second_output = iot_out_r;    
-				end
-				2'b10  : begin
-					first_output  = iot_out_r;    
-					second_output = {iot_in_r , data_r[127:8]};  
-				end
-				default: begin
-					first_output  =  iot_out_r;    
-					second_output =  data_buffer_r;    
-				end
-			endcase
-		end
+	if(round_r==15) begin			
+		case({c0^fn_sel[0], c1^fn_sel[0]})
+			2'b11  : begin
+				first_output  =  {iot_in_r , data_r[127:8]};    
+				second_output = iot_out_r;    
+			end
+			2'b01  : begin
+				first_output  = iot_out_r;    
+				second_output = {iot_in_r , data_r[127:8]};  
+			end
+			default: begin
+				first_output  = iot_out_r;    
+				second_output = data_buffer_r;    
+			end
+		endcase
 	end
 	
 	else if(round_r==0) begin		
@@ -348,26 +320,33 @@ always @* begin
 
 end 
  
-always @ (posedge clk) begin
+always @ (posedge clk or posedge rst) begin
+	if (rst)
+		input_cnt <= 0;
+	else
 	if(MAXMIN_en)
-		input_cnt <= in_en ? input_cnt + (round_r == 15 ) : 0;
+		input_cnt <= input_cnt + (round_r == 15 );
 	else
 		input_cnt <= input_cnt;
 end
 
+always @* begin
+	case({comp_res_less_0_w, comp_res_equal_0_w})
+		2'b00 : c0 = 0;
+		2'b10 : c0 = 1;
+		2'b01 : c0 = comp_res_0_r;
+	endcase
+	case({comp_res_less_1_w, comp_res_equal_1_w})
+		2'b00 : c1 = 0;
+		2'b10 : c1 = 1;
+		2'b01 : c1 = comp_res_1_r;
+	endcase
+end
+
 always @ (posedge clk) begin
 	if(MAXMIN_en) begin
-		case({comp_res_less_0_w, comp_res_equal_0_w})
-			2'b00 : comp_res_0_r <= round_r == 15 ? 0 : 0;
-			2'b10 : comp_res_0_r <= round_r == 15 ? 0 : 1;
-			2'b01 : comp_res_0_r <= round_r == 15 ? 0 : comp_res_0_r;
-		endcase
-		
-		case({comp_res_less_1_w, comp_res_equal_1_w})
-			2'b00 : comp_res_1_r <= round_r == 15 ? 0 : 0;
-			2'b10 : comp_res_1_r <= round_r == 15 ? 0 : 1;
-			2'b01 : comp_res_1_r <= round_r == 15 ? 0 : comp_res_1_r;
-		endcase
+		comp_res_0_r <= round_r == 15 ? 0 : c0;
+		comp_res_1_r <= round_r == 15 ? 0 : c1;
 	end else begin
 		comp_res_0_r <= comp_res_0_r;
 		comp_res_1_r <= comp_res_1_r;
@@ -415,15 +394,6 @@ always @ (posedge clk) begin
 		data_buffer_r[127:56] <= data_buffer_r[127:56]; 
 	end
 end
-
-//always @ (posedge clk or posedge rst) begin
-//	if(rst)
-//		in_en_r <= 0;
-//	else begin
-//		in_en_r <= in_en;
-//	end
-//		
-//end
 
 always @ (negedge clk) begin
 	iot_in_r <= iot_in;
