@@ -1,15 +1,7 @@
 `timescale 1ns/1ps
-//`define CYCLE       5.0     // CLK period.
+`define CYCLE       5.0     // CLK period.
 `define HCYCLE      (`CYCLE/2)
-//`define MAX_CYCLE   10000000
-`define PAT_NUM 16
-
-`ifdef ALL
-  `define MAX_CYCLE   20000 * `PAT_NUM
-`else
-  `define MAX_CYCLE   200000
-`endif
-
+`define MAX_CYCLE   10000000
 `define RST_DELAY   2
 
 
@@ -17,423 +9,319 @@
     `define INFILE "../00_TESTBED/PATTERN/indata1.dat"
     `define OPFILE "../00_TESTBED/PATTERN/opmode1.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/golden1.dat"
+    `define TEST_OP_NUM 41
 `elsif tb2
     `define INFILE "../00_TESTBED/PATTERN/indata2.dat"
     `define OPFILE "../00_TESTBED/PATTERN/opmode2.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/golden2.dat"
+    `define TEST_OP_NUM 41
 `elsif tb3
     `define INFILE "../00_TESTBED/PATTERN/indata3.dat"
     `define OPFILE "../00_TESTBED/PATTERN/opmode3.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/golden3.dat"
+    `define TEST_OP_NUM 41
 `elsif tb4
     `define INFILE "../00_TESTBED/PATTERN/indata4.dat"
     `define OPFILE "../00_TESTBED/PATTERN/opmode4.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/golden4.dat"
-`elsif tb5
-    `define INFILE "../00_TESTBED/PATTERN/indata5.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode5.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden5.dat"
-`elsif tb11
-    `define INFILE "../00_TESTBED/PATTERN/indata11.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode11.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden11.dat"
-`elsif tb12
-    `define INFILE "../00_TESTBED/PATTERN/indata12.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode12.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden12.dat"
-`elsif tb13
-    `define INFILE "../00_TESTBED/PATTERN/indata13.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode13.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden13.dat"
-`elsif tb14
-    `define INFILE "../00_TESTBED/PATTERN/indata14.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode14.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden14.dat"
-`elsif tb15
-    `define INFILE "../00_TESTBED/PATTERN/indata15.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode15.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden15.dat"
-`elsif tb6
-    `define INFILE "../00_TESTBED/PATTERN/indata6.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode6.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden6.dat"
-`elsif tb7
-    `define INFILE "../00_TESTBED/PATTERN/indata7.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode7.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden7.dat"
-`elsif tb8
-    `define INFILE "../00_TESTBED/PATTERN/indata8.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode8.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden8.dat"
-`elsif tb9
-    `define INFILE "../00_TESTBED/PATTERN/indata9.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode9.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden9.dat"
-`elsif tb10
-    `define INFILE "../00_TESTBED/PATTERN/indata10.dat"
-    `define OPFILE "../00_TESTBED/PATTERN/opmode10.dat"
-    `define GOLDEN "../00_TESTBED/PATTERN/golden10.dat"
+    `define TEST_OP_NUM 121
 `elsif tbh
     `define INFILE "../00_TESTBED/PATTERN/indatah.dat"
     `define OPFILE "../00_TESTBED/PATTERN/opmodeh.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/goldenh.dat"
-`elsif tb0
+    `define TEST_OP_NUM 501
+`else
     `define INFILE "../00_TESTBED/PATTERN/indata0.dat"
     `define OPFILE "../00_TESTBED/PATTERN/opmode0.dat"
     `define GOLDEN "../00_TESTBED/PATTERN/golden0.dat"
+    `define TEST_OP_NUM 41
 `endif
 
+`define SDFFILE "../02_SYN/Netlist/core_syn.sdf"  // Modify your sdf file name
 
-// Modify your sdf file name
-`define SDFFILE "../02_SYN/Netlist/core_syn.sdf"
 
 module testbed;
 
-reg         clk, rst_n;
-reg         op_valid;
-reg  [ 3:0] op_mode;
-wire        op_ready;
-reg         in_valid;
-reg  [ 7:0] in_data;
-wire        in_ready;
-wire        out_valid;
-wire [13:0] out_data;
-reg  [13:0] golden_data;
+    parameter INST_BW     = 4;
+    parameter INPUT_BW    = 8;
+    parameter IMG_W       = 8;
+    parameter IMG_MAX_CH  = 32;
+    parameter IMG_MIN_CH  = 8;
+    parameter IMG_W_BW    = $clog2(IMG_W);
+    parameter IMG_CH_BW   = $clog2(IMG_MAX_CH);
+    parameter IMG_SIZE    = IMG_W * IMG_W * IMG_MAX_CH;
+    parameter DISP_W      = 2;
+    parameter DISP_NUM    = DISP_W * DISP_W * IMG_MAX_CH;
+    parameter DISP_NUM_BW = $clog2(DISP_NUM);
+    parameter OUTPUT_BW   = IMG_CH_BW + INPUT_BW + 1;  // + 1 sign bit
 
-reg  [ 7:0] indata_mem [0:2047];
-reg  [ 3:0] opmode_mem [0:10230];
-reg  [13:0] golden_mem [0:40950];
+    parameter MEDF_CH = 4;
+    parameter GRAD_CH = 4;
 
-integer opmode_counter;
-integer golden_counter;
-integer this_opmode;
-integer this_output_counter;
-integer next_op_ready;
-integer golden_depth;
-integer golden_output_number;
+	localparam MODE_LOAD = 4'b0000;
+	localparam MODE_SHFR = 4'b0001;
+	localparam MODE_SHFL = 4'b0010;
+	localparam MODE_SHFU = 4'b0011;
+	localparam MODE_SHFD = 4'b0100;
+	localparam MODE_SCAD = 4'b0101;
+	localparam MODE_SCAU = 4'b0110;
+	localparam MODE_DISP = 4'b0111;
+	localparam MODE_CONV = 4'b1000;
+    localparam MODE_MEDF = 4'b1001;
+    localparam MODE_GRAD = 4'b1010;
+     
+    reg                  clk, rst_n;
+    reg                  op_valid;
+    reg  [  INST_BW-1:0] op_mode;
+    wire                 op_ready;
+    reg                  in_valid;
+    reg  [ INPUT_BW-1:0] in_data;
+    wire                 in_ready;
+    wire                 out_valid;
+    wire [OUTPUT_BW-1:0] out_data;
 
-integer total_computation_time;
-integer in_out_time, d32_time, d16_time;
-initial in_out_time = 0;
-initial total_computation_time = 0;
-initial d32_time = 0;
-initial d16_time = 0;
-always @(posedge clk) total_computation_time = total_computation_time + 1;
-always @(posedge clk) if(in_valid || op_ready || op_valid || out_valid) in_out_time = in_out_time + 1;
-always @(posedge clk) if(!(in_valid || op_ready || op_valid || out_valid) && (this_opmode == 8 && golden_depth == 32)) d32_time = d32_time + 1;
-always @(posedge clk) if(!(in_valid || op_ready || op_valid || out_valid) && (this_opmode == 8 && golden_depth == 16)) d16_time = d16_time + 1;
+    integer              i;
+    integer              cnt_pixel;
+    integer              cnt_out_valid;
+    integer              a; //output address
+    integer              num_out;
+    integer              depth;
+    integer              t0, t1;
+    integer              cnt_spec_err;
+
+    reg  [ INPUT_BW-1:0] indata_mem [0:IMG_SIZE-1];
+    reg  [  INST_BW-1:0] opmode_mem [      0:1023];
+    reg  [OUTPUT_BW-1:0] golden_mem [      0:4095];
 
 
-integer sum_32_time, sum_16_time, sum_8_time;
-initial sum_32_time = 0;
-initial sum_16_time = 0;
-initial sum_8_time = 0;
-// ==============================================
-// TODO: Declare regs and wires you need
-// ==============================================
+    // For gate-level simulation only
+    `ifdef SDF
+        initial $sdf_annotate(`SDFFILE, u_core);
+        initial #1 $display("SDF File %s were used for this simulation.", `SDFFILE);
+    `endif
+
+    // Write out waveform file
+    // initial begin
+    //   $fsdbDumpfile("core.fsdb");
+    //   $fsdbDumpvars(0, "+mda");
+    // end
 
 
-//===============================================
-// For gate level simulation
-//===============================================
-`ifdef SDF
-    initial $sdf_annotate(`SDFFILE, u_core);
-    initial #1 $display("SDF File %s were used for this simulation.", `SDFFILE);
-`endif
+    core u_core (
+    	.i_clk(clk),
+    	.i_rst_n(rst_n),
+    	.i_op_valid(op_valid),
+    	.i_op_mode(op_mode),
+        .o_op_ready(op_ready),
+    	.i_in_valid(in_valid),
+    	.i_in_data(in_data),
+    	.o_in_ready(in_ready),
+    	.o_out_valid(out_valid),
+    	.o_out_data(out_data)
+    );
 
-//===============================================
-// waveform file
-//===============================================
-initial begin
-  $fsdbDumpfile("core.fsdb");
-  $fsdbDumpvars(0, "+mda");
-end
+    // Read in test pattern and golden pattern
+    initial $readmemb(`INFILE, indata_mem);
+    initial $readmemb(`OPFILE, opmode_mem);
+    initial $readmemb(`GOLDEN, golden_mem);
 
-//===============================================
-// design
-//===============================================
-core u_core (
-	.i_clk       (clk),
-	.i_rst_n     (rst_n),
-	.i_op_valid  (op_valid),
-	.i_op_mode   (op_mode),
-    .o_op_ready  (op_ready),
-	.i_in_valid  (in_valid),
-	.i_in_data   (in_data),
-	.o_in_ready  (in_ready),
-	.o_out_valid (out_valid),
-	.o_out_data  (out_data)
-);
+    // Clock generation
+    initial clk = 1'b0;
+    always begin #(`CYCLE/2) clk = ~clk; end
 
-//===============================================
-// Read in test pattern and golden pattern
-//===============================================
-initial $readmemb(`INFILE, indata_mem);
-initial $readmemb(`OPFILE, opmode_mem);
-initial $readmemb(`GOLDEN, golden_mem);
-
-//===============================================
-// clock
-//===============================================
-initial clk = 1'b0;
-always #(`CYCLE/2) clk = ~clk;
-
-//===============================================
-// Reset generation and runtime check
-//===============================================
-initial begin
-    force clk = 1'b0;
-    rst_n = 1; 
-    # (0.25 * `CYCLE);
-    rst_n = 0;
-    op_valid = 0;
-    op_mode = 0;
-    in_valid = 0;
-    in_data = 0; 
-    # ((`RST_DELAY - 0.25) * `CYCLE);
-    rst_n = 1; 
-    if(|op_ready===1'bx || |in_ready===1'bx || |out_valid===1'bx || |out_data===1'bx) 
-    begin
-		$display("************************************************************");   
-        $display("                          FAIL!                             ");   
-        $display(" Output signal should be reset after initial RESET at %8t   ",$time);
-        $display("************************************************************");
-        $finish;
-	end
-    release clk;
-    # (`MAX_CYCLE * `CYCLE);
-    $display("Error! Runtime exceeded!");
-    $finish;
-end
-
-//===============================================
-// Specification 2 check
-//===============================================
-always @(posedge clk or negedge clk) begin
-    if(in_valid && out_valid) begin
-        $display("************************************************************");   
-        $display("                          FAIL!                             ");   
-        $display("                       (SPEC 2-3)                           ");   
-        $display("        in_valid and out_valid raise simultaneously.        ");
-        $display("                 Vialation at %8t                           ",$time);
-        $display("************************************************************");
-        $finish;
+    // Reset generation
+    initial begin
+        rst_n = 1; # (               0.25 * `CYCLE);
+        rst_n = 0; # ((`RST_DELAY - 0.25) * `CYCLE);
+        rst_n = 1; # (         `MAX_CYCLE * `CYCLE);
+        $display("Error! Runtime exceeded!");
+        cnt_spec_err = cnt_spec_err + 1;
+        terminate;
     end
-    if(op_valid && out_valid) begin
-        $display("************************************************************");   
-        $display("                          FAIL!                             ");   
-        $display("                       (SPEC 2-4)                           ");   
-        $display("        op_valid and out_valid raise simultaneously.        ");
-        $display("                 Vialation at %8t                           ",$time);
-        $display("************************************************************");
-        $finish;
-    end
-    if(in_valid && op_ready) begin
-        $display("************************************************************");   
-        $display("                          FAIL!                             ");   
-        $display("                       (SPEC 2-5)                           ");   
-        $display("        in_valid and op_ready raise simultaneously.         ");
-        $display("                 Vialation at %8t                           ",$time);
-        $display("************************************************************");
-        $finish;
-    end
-    if(op_valid && op_ready) begin
-        $display("************************************************************");   
-        $display("                          FAIL!                             ");   
-        $display("                       (SPEC 2-6)                           ");   
-        $display("         op_valid and op_ready raise simultaneously.        ");
-        $display("                 Vialation at %8t                           ",$time);
-        $display("************************************************************");
-        $finish;
-    end
-    if(op_ready && out_valid) begin
-        $display("************************************************************");   
-        $display("                          FAIL!                             ");   
-        $display("                       (SPEC 2-7)                           ");   
-        $display("         op_ready and out_valid raise simultaneously.       ");
-        $display("                 Vialation at %8t                           ",$time);
-        $display("************************************************************");
-        $finish;
-    end
-end
 
-// ==============================================
-// TODO: Check pattern after process finish
-// ==============================================
+    // ==============================================
+    // TODO: Check pattern after process finish
+    // ==============================================
 
-integer golden_file, a;
+    initial begin
+        if (cnt_spec_err > 40) begin
+            terminate;
+        end
+    end
 
-initial begin
-    golden_file = $fopen(`GOLDEN, "r");
-// initialize
-    opmode_counter = 0;
-    golden_counter = 0;
-    next_op_ready = 1;
-    golden_depth = 32;
+    initial begin
 
-// always block
-    while(1) begin
+        i             = 0;
+        a             = 0;
+        cnt_pixel     = 0;
+        cnt_out_valid = 0;
+        num_out       = 0;
+        depth         = 32;
+        op_valid      = 0;
+        op_mode       = 0;
+        in_valid      = 0;
+        in_data       = 0;
+        rst_n         = 1;
+        t0            = 0;
+        t1            = 0;
+        cnt_spec_err  = 0;
+
+        // wait for reset
+        wait (rst_n === 1'b0);
+        wait (rst_n === 1'b1);
         @(negedge clk);
-// if op_ready is 1
-        if(op_ready === 1) begin
-            //if(opmode_counter >= 1024) begin
-            //    $display("opmode overflow");
-            //    $display("golden_counter: %d", golden_counter);
-            //    pass_task;
-            //end 
-            if(opmode_mem[opmode_counter] === 4'bx) begin
-                $display("opmode complete");
-                $display("golden_counter: %d", golden_counter);
-                pass_task;
-            end
 
-            if(!next_op_ready) begin
-                $display("************************************************************");   
-                $display("                          FAIL!                             ");   
-                $display("           op_ready raise before output compete             ");
-                $display("************************************************************");
-                $finish;
-            end
+        // load image
+        wait (op_ready === 1'b1);
+        @(negedge clk);
+        
+        @(negedge clk);
+        op_valid  =  1'b1;
+        op_mode   =  4'b0;
+
+        @(negedge clk);
+        if (op_ready) begin
+            $display("Error: o_op_ready & i_op_valid overlapped!!");
+            cnt_spec_err = cnt_spec_err + 1;
+            // $finish;
+        end
+        op_valid  = 1'b0;
+        in_valid  = 1'b1;
+        in_data   = indata_mem[cnt_pixel];
+
+        t0 = $realtime;
+        while (cnt_pixel < IMG_SIZE-1) begin
             @(negedge clk);
-            if(op_ready === 1) begin
-                $display("************************************************************");   
-                $display("                          FAIL!                             ");   
-                $display("                       (SPEC 3-1)                           ");   
-                $display(" Ready should be high for only one cycle. Vialation at %8t  ",$time);
-                $display("************************************************************");
-                $finish;
+            if (in_ready == 1'b1) begin
+                cnt_pixel = cnt_pixel + 1;
+                in_data   = indata_mem[cnt_pixel];
             end
-// op_mode input
-            op_valid = 1;
-            op_mode = opmode_mem[opmode_counter];
-            this_opmode = op_mode;
-
-            case(this_opmode)
-                4'b0000: begin next_op_ready = 1; golden_output_number = 0; end
-                4'b0001: begin next_op_ready = 1; golden_output_number = 0; end
-                4'b0010: begin next_op_ready = 1; golden_output_number = 0; end
-                4'b0011: begin next_op_ready = 1; golden_output_number = 0; end
-                4'b0100: begin next_op_ready = 1; golden_output_number = 0; end
-                4'b0101: begin next_op_ready = 1; golden_output_number = 0; golden_depth = golden_depth == 8 ? 8 : golden_depth / 2;   end // reduce depth 
-                4'b0110: begin next_op_ready = 1; golden_output_number = 0; golden_depth = golden_depth == 32 ? 32 : golden_depth * 2; end // increase depth 
-                4'b0111: begin next_op_ready = 0; golden_output_number = golden_depth * 4; end // output pixel 
-                4'b1000: begin next_op_ready = 0; golden_output_number = 4; end // convolution 
-                4'b1001: begin next_op_ready = 0; golden_output_number = 4 * 4; end // median filter 
-                4'b1010: begin next_op_ready = 0; golden_output_number = 4 * 4; end // salbor gradient 
-            endcase
-
-            if(this_opmode == 8) begin
-                if(golden_depth == 32) sum_32_time = sum_32_time + 1;
-                if(golden_depth == 16) sum_16_time = sum_16_time + 1;
-                if(golden_depth == 8 ) sum_8_time  = sum_8_time  + 1;
+            if (op_ready) begin
+                $display("Error: o_op_ready & i_in_valid overlapped!!");
+                cnt_spec_err = cnt_spec_err + 1;
+                // $finish;
             end
+        end
+
+        while (in_ready == 1'b0) begin
+            @(negedge clk);
+            if (op_ready) begin
+                $display("Error: o_op_ready & i_in_valid overlapped!!");
+                cnt_spec_err = cnt_spec_err + 1;
+                // $finish;
+            end
+        end
+        @(negedge clk);
+        in_valid  = 1'b0;
+        in_data   = 0;
+
+        t1 = $realtime;
+        $display("Data loading took %d", t1-t0);
+        if (t1 - t0 > 3000 * `CYCLE) begin
+            $display("Error: data loading exceeded 3000 cycles!!");
+            cnt_spec_err = cnt_spec_err + 1;
+            // $finish;
+        end
+
+        for (i = 1; i < `TEST_OP_NUM; i = i + 1) begin
+            cnt_out_valid = 0;
+            while (op_ready == 1'b0) begin
+                @(negedge clk);
+            end
+            if (out_valid && op_ready) begin
+                $display("Error: o_out_valid & o_op_ready overlapped!!");
+                cnt_spec_err = cnt_spec_err + 1;
+                // $finish;
+            end
+            t1 = $realtime;
 
             @(negedge clk);
-            op_valid = 0;
-            op_mode = 0;
-            this_output_counter = 0;
+            op_valid  =  1'b1;
+            op_mode   =  opmode_mem[i];
+            if (out_valid) begin
+                $display("Error: o_out_valid & i_op_valid overlapped!!");
+                cnt_spec_err = cnt_spec_err + 1;
+                // $finish;
+            end
             
-            if(this_opmode === 4'b0000)begin
-                raster_scan_input_task;
+            // Get the depth of image
+            if (opmode_mem[i] == MODE_SCAD) begin
+                case (depth)
+                    32:      depth = 16;
+                    16:      depth = 8;
+                    default: depth = depth;
+                endcase
             end
-            opmode_counter = opmode_counter + 1;
-        end
-// if out_valid
-        if(out_valid === 1) begin
-            if(next_op_ready) begin
-                $display("************************************************************");   
-                $display("                          FAIL!                             ");   
-                $display("                     too many output                        ");
-                $display("************************************************************");
-                $finish;
+            else if (opmode_mem[i] == MODE_SCAU) begin
+                case (depth)
+                    8:       depth = 16;
+                    16:      depth = 32;
+                    default: depth = depth;
+                endcase
             end
-            a 	 = $fscanf(golden_file, "%b", golden_data);
-            //golden_data = golden_mem[golden_counter];
-            if(out_data !== golden_data) begin
-                $display("************************************************************");   
-                $display("                          FAIL!                             ");   
-                $display("      GOLDEN: %d YOURS: %d          ", golden_data, out_data);   
-                $display("                   Vialation at %8t                         ", $time);
-                $display("************************************************************");
-                repeat(3) begin #(10);a 	 = $fscanf(golden_file, "%b", golden_data); end
-                $finish;
-            end else begin
-				//$display("      GOLDEN: %d YOURS: %d          ", golden_data, out_data);   
-			end
-            golden_counter = golden_counter + 1;
-            this_output_counter = this_output_counter + 1;
-            if(this_output_counter == golden_output_number) begin
-                next_op_ready = 1;
-            end else if (this_output_counter > golden_output_number) begin
-                $display("************************************************************");   
-                $display("                          FAIL!                             ");   
-                $display("           output raise before op input compete             ");
-                $display("************************************************************");
-                $finish;
+            
+            // Get the number of output for the current operation
+            if (opmode_mem[i] == MODE_CONV) begin      // convolution
+                num_out = DISP_W * DISP_W;
             end
-            if(next_op_ready && opmode_mem[opmode_counter] === 4'bx) begin
-                $display("opmode complete");
-                $display("golden_counter: %d", golden_counter);
-                pass_task;
+            else if (opmode_mem[i] == MODE_DISP) begin // display
+                num_out = DISP_W * DISP_W * depth;
             end
-            //if(next_op_ready && opmode_counter >= 1024) begin
-            //    $display("opmode overflow");
-            //    $display("golden_counter: %d", golden_counter);
-            //    pass_task;
-            //end
-        end
-    end
-end
+            else if (opmode_mem[i] == MODE_MEDF) begin // median filter
+                num_out = DISP_W * DISP_W * MEDF_CH;
+            end
+            else if (opmode_mem[i] == MODE_GRAD) begin // Sobel gradient + NMS
+                num_out = DISP_W * DISP_W * GRAD_CH;
+            end
+            else begin
+                num_out = 0;
+            end
 
-// ==============================================
-// raster scan input task
-// ==============================================
-task raster_scan_input_task;
-integer indata_counter;
-begin
-    indata_counter = 0;
-
-    in_valid = 1;
-    in_data = indata_mem[indata_counter];
-    while(!(in_ready)) begin
-        @(negedge clk);
-    end
-    indata_counter = indata_counter + 1;
-
-    while(indata_counter < 2048)begin
-        @(negedge clk);
-        in_data = indata_mem[indata_counter];
-        while(!(in_ready)) begin
             @(negedge clk);
-        end
-        indata_counter = indata_counter + 1;
-    end
-    @(negedge clk);
-    in_valid = 0;
-    in_data = 0;
-end
-endtask
+            if (op_ready) begin
+                $display("Error: o_op_ready & i_op_valid overlapped!!");
+                cnt_spec_err = cnt_spec_err + 1;
+                // $finish;
+            end
+            op_valid  = 1'b0;
+            op_mode   = 0;
+            t0        = $realtime;
+            if (out_valid == 1'b1) begin
+                $display("Error: o_out_valid & i_in_valid overlapped!!");
+                cnt_spec_err = cnt_spec_err + 1;
+                // $finish;
+            end
+            
+            $display("Idx[%d] Op: %d, require %d outputs", i, opmode_mem[i], num_out);
 
-// ==============================================
-// pass task
-// ==============================================
-task pass_task;
-begin
-	$display ("----------------------------------------------------------------------------------------------------");
-	$display ("                                             Congratulations!                                       ");
-	$display ("                                             You have passed!                                       ");
-    $display ("                                      total computation time %8d                                    ", total_computation_time);
-    $display ("                                       input and output time %8d                                    ", in_out_time);
-    $display ("                                     actual computation time %8d                                    ", total_computation_time - in_out_time);
-	$display ("----------------------------------------------------------------------------------------------------");             
-    $display (" %d %d %d %d %d ", sum_32_time, sum_16_time, sum_8_time, d32_time, d16_time);
-	@(posedge clk);
-    @(negedge clk);
-    force clk = 0;
-    #(`CYCLE * 1);
-    $finish;
-end
-endtask
+            while (cnt_out_valid < num_out) begin
+                @(negedge clk);
+                if (op_ready) begin
+                    $display("Error: You can't raise o_op_ready to high before output %d values", num_out);
+                    cnt_spec_err = cnt_spec_err + 1;
+                    // $finish;
+                end
+                if (out_valid) begin
+                    if (golden_mem[a] !== out_data) begin
+                        $display("Error: golden=[%b], your answer=[%b], T: %d", golden_mem[a], out_data, t0);
+                        terminate;
+                    end
+                    cnt_out_valid = cnt_out_valid + 1;
+                    a = a + 1;
+                end
+            end
+        end
+
+        $display("-----PASS!!-----");
+
+        # ( 2 * `CYCLE);
+        terminate;
+
+    end
+
+    task terminate; begin
+        $display("[Spec Error]: %3d", cnt_spec_err);
+        $finish;
+    end endtask
 
 endmodule
-

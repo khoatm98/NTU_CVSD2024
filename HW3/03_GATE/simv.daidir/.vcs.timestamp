@@ -1,7 +1,7 @@
 1        
 0 ../02_SYN/Netlist/core_syn.sdf_c
-39
-+define+CYCLE=2.31
+36
++define+CYCLE=2.27
 +define+SDF+tb4
 +itf+/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 +maxdelays
@@ -22,35 +22,30 @@
 -Mobjects= /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvirsim.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a
 -Mout=simv
 -Msaverestoreobj=/usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o
--Msyslibs=/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl -lm
+-Msyslibs=-ldl -lm
 -Mvcsaceobjs=
 -Mxcflags= -pipe -fPIC -I/usr/cad/synopsys/vcs/2022.06/include
 -Mxllcflags=
 -P
--P
 -Xvcs_run_simv=1
 -debug_access+all
 -f rtl_03.f
--fsdb
 -full64
 -gen_obj
 -negdelay
 -picarchive
 /usr/cad/synopsys/vcs/2022.06/linux64/bin/vcs1
 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
-/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/verdi.tab
 rtl_03.f
-69
+65
 mraarch=linux_64
 installdir=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice
-XLOCALEDIR=/usr/cad/synopsys/astro/cur/etc/locale
-XKEYSYMDB=/usr/cad/synopsys/astro/cur/etc/XKeysymDB
-XDG_SESSION_ID=32668
+XDG_SESSION_ID=80011
 XDG_RUNTIME_DIR=/run/user/1340
 VMR_MODE_FLAG=64
 VERPLEX_HOME=/usr/cad/cadence/CONFRML/cur
-VERDI_HOME=/usr/cad/synopsys/verdi/cur
 VENDOR=unknown
+VCS_STATIC_HOME=/usr/cad/synopsys/vcs/2022.06//vcfca
 VCS_PATHMAP_PRELOAD_DONE=1
 VCS_MX_HOME_INTERNAL=1
 VCS_MODE_FLAG=64
@@ -64,18 +59,16 @@ UNAME=/bin/uname
 TOOL_HOME=/usr/cad/synopsys/vcs/2022.06/linux64
 TMIARCH=RH_64
 SYN_MAN_DIR=/usr/cad/synopsys/vcs/2022.06//doc/man
-SYNTHESIS=/usr/cad/synopsys/synthesis/cur
-SYNOPSYS_TMAX=/usr/cad/synopsys/tmax/cur
-SYNOPSYS_LC_ROOT=/usr/cad/synopsys/synthesis/cur
-SSH_TTY=/dev/pts/123
-SSH_CONNECTION=140.112.175.69 52510 140.112.20.70 22
-SSH_CLIENT=140.112.175.69 52510 22
+SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
+SSH_TTY=/dev/pts/54
+SSH_CONNECTION=140.112.175.69 56598 140.112.20.70 22
+SSH_CLIENT=140.112.175.69 56598 22
 SPAPI_AHDL_INCLUDE=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/include
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06//linux64/clang
 SNPS_PLATFORM=linux64
 SNPS_INTERNAL_VCS_LINUX_OS=linux
 SNPS_64=1
-SHLIB_PATH=/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared
+SHLIB_PATH=/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared
 SELINUX_USE_CURRENT_RANGE=
 SELINUX_ROLE_REQUESTED=
 SELINUX_LEVEL_REQUESTED=
@@ -112,14 +105,13 @@ ASSURAHOME=/usr/cad/cadence/ASSURA/cur
 ARCH=linux64
 0
 0
-9
-1730803686 ../02_SYN/Netlist/core_syn.sdf
-1730803685 ../02_SYN/Netlist/core_syn.v
-1730624392 ../sram_512x8/sram_512x8.v
+8
+1731762977 ../02_SYN/Netlist/core_syn.sdf
+1731762977 ../02_SYN/Netlist/core_syn.v
+1731762993 ../sram_512x8/sram_512x8.v
 1608252293 /home/raid7_2/course/cvsd/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v
-1730624379 ../00_TESTBED/testbench.v
-1730624838 rtl_03.f
-1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/verdi.tab
+1732167417 ../00_TESTBED/testbench.v
+1731762987 rtl_03.f
 1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
 1654052745 /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 5
@@ -128,5 +120,5 @@ ARCH=linux64
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
 1653824934 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a
-1730803706 simv.daidir
+1732167671 simv.daidir
 -1 partitionlib

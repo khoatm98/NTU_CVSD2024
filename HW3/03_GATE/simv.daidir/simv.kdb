@@ -3,7 +3,7 @@ rc file Version 1.0
 [Design]
 COMPILE_PATH=/home/raid7_2/user12/r2k41036/NTU_CVSD2024/HW3/03_GATE
 VCS_HOME=/usr/cad/synopsys/vcs/2022.06/
-VERDI_HOME=/usr/cad/synopsys/verdi/cur
+VERDI_HOME=
 SystemC=FALSE
 UUM=FALSE
 KDB=FALSE

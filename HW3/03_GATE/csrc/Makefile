@@ -49,7 +49,7 @@ CRT0=
 # C run time startup
 CRTN=
 # Machine specific libraries
-SYSLIBS=/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl -lm  -lc -lpthread -ldl
+SYSLIBS=-ldl -lm  -lc -lpthread -ldl
 
 # Default defines
 SHELL=/bin/sh
