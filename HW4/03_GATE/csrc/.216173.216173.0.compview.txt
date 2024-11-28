@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1731940643.046012882, "rt":1.20, "ut":0.23, "st":0.07}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1731940642.405798615}
+{"VCS_COMP_START_TIME": 1731940642.405798615}
+{"VCS_COMP_END_TIME": 1731940644.352582592}
+{"VCS_USER_OPTIONS": "-f rtl_03.f -full64 -R +v2k +vcs+no_warning -debug_access+all +maxdelays -negdelay +define+SDF+p1+F1 +define+CYCLE=9 +neg_tchk"}

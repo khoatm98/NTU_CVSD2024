@@ -14,7 +14,8 @@
 
 `timescale 1ns/10ps
 `define PERIOD    10.0
-`define MAX_CYCLE 1_000_000
+//`define MAX_CYCLE 1_000_000
+`define MAX_CYCLE 1_00
 `define RST_CYCLE 5
 
 `define I_DELAY 1
@@ -102,6 +103,11 @@ module testbench #(
 `else
     `ifdef FSDB
     initial begin
+        $fsdbDumpfile("ed25519.fsdb");
+        $fsdbDumpvars(0, testbench, "+mda");
+    end
+	`else
+	initial begin
         $fsdbDumpfile("ed25519.fsdb");
         $fsdbDumpvars(0, testbench, "+mda");
     end
