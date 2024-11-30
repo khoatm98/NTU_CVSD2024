@@ -90,10 +90,11 @@ reg [255:0] res_r;
 modular_mult modular_mult_inst(
 	.i_clk  (i_clk)  ,
 	.a      (`q),
-	.b      (256'd1)  ,
+	.b      (1000000000000000000)  ,
 	.i_first(input_cnt==0)  ,
 	.res    (res_r)
 );
+
 always@ (*) begin
 	case(curr_state)
 		S_RST:       next_state = S_INPUT;
@@ -158,7 +159,7 @@ always @(posedge i_clk) begin
 	C_ <= C;
 end
 
-wire compare = C_ > `q ;
+wire compare = C_ >= `q ;
 assign res = compare ? C[DATA_W-1:0] : C_[DATA_W-1:0];
 endmodule
 
@@ -203,7 +204,7 @@ assign C_b[3] = b[255:128];
 //Start from C3 - C0 - C1 - C2
 // C = 38*C3 + C0 + C1*2^128 + C2*2^128
 always@ (*) begin
-	case(cnt[3:0])
+	case(cnt)
 		//a0*b0
 		0 : begin
 			a_in_r = C_a[3][63:0];
@@ -272,6 +273,10 @@ always@ (*) begin
 		15: begin
 			a_in_r = C_a[2][127:64];
 			b_in_r = C_b[2][127:64];
+		end
+		default: begin
+			a_in_r = 0;
+			b_in_r = 0;
 		end
 	endcase
 end
@@ -352,7 +357,8 @@ wire [136 -1:0] S1 = S[136*2 -1 -:136];
 wire [136 -1:0] S0 = S[136*1 -1 -:136];
 reg [136*2 -1:0] R;
 reg [136 -1:0] R_w[2:1];
-
+wire [136 -1:0] L2 = R[136*2 -1 -:136];
+wire [136 -1:0] L1 = R[136*1 -1 -:136];
 
 
 reg [136 -1:0] accum_l;
@@ -365,7 +371,7 @@ reg [4:0]      round;
 
 assign accum_l = S[136*2 -1 -:136] + shifted_cl; 
 assign accum_h = S[136*3 -1 -:136] + shifted_ch;
-assign o_valid = round == 20;
+assign o_valid = round == 19;
 // First 4 cycles to compute 38*C3
 always@ (*) begin
 	case(round)
@@ -382,15 +388,11 @@ always@ (*) begin
 			shifted_cl = R[136*1 -1 -:136] << 5; //R2 << 2
 		end
 		13: begin
-			shifted_ch = S[136*3 -1 -:136] << 0; //Calculate 19*S2
-			shifted_cl = R[136*1 -1 -:136]; 
-		end
-		14: begin
 			shifted_ch = S[136*3 -1 -:136] << 1; //Calculate 19*S2
 			shifted_cl = R[136*1 -1 -:136]; 
 		end
-		15: begin
-			shifted_ch = S[136*3 -1 -:136] << 4; //Calculate 19*S2
+		14: begin
+			shifted_ch = R_w[2] << 4; //Calculate 19*S2
 			shifted_cl = R[136*1 -1 -:136]; 
 		end
 		default: begin
@@ -407,6 +409,10 @@ always@ (*) begin
 			R_w[2] = {8'd0,b};
 			R_w[1] = {8'd0,a};
 		end
+		13: begin
+			R_w[2] = S[136*3 -1 -:136];
+			R_w[1] = R[136*1 -1 -:136];
+		end
 		default : begin
 			R_w[2] = R[136*2 -1 -:136];
 			R_w[1] = R[136*1 -1 -:136];
@@ -416,17 +422,17 @@ end
 
 always@ (*) begin
 	case(round)
-		8: begin // shift down 136 bit
+		7: begin // shift down 136 bit
 			S_w[2] = 0;
-			S_w[1] = accum_h;
-			S_w[0] = accum_l;
+			S_w[1] = S[136*3 -1 -:136];
+			S_w[0] = S[136*2 -1 -:136];
 		end
-		0,4,12: begin
+		0,4,8,12: begin
 			S_w[2] = accum_h;
 			S_w[1] = accum_l;
 			S_w[0] = S[136*1 -1 -:136];
 		end
-		13,14,15: begin
+		13,14: begin
 			S_w[2] = accum_h;  // 19*S2
 			S_w[1] = S[136*2 -1 -:136];
 			S_w[0] = S[136*1 -1 -:136];
@@ -456,9 +462,11 @@ end
 
 // 19*S2 + S0 + S1*2^128
 
-wire [256+8-1 : 0] sum_S;
-reg  [256+8-1 : 0] C;
-assign sum_S = round[0] == 0 ?  (S[136*3 -1 -:136] +  S[136*1 -1 -:136] ): (C + {S[136*2 -1 -:136], 128'd0}); //sumS = 19*S2 + S0 + S1*2^128
+wire [256+8: 0] sum_S;
+reg  [256+8: 0] C;
+assign sum_S = round[0] ?  ({S[136*3 -1 -:136],1'b0} +  S[136*1 -1 -:136] ): (C + {S[136*2 -1 -:136], 128'd0}); //sumS = 19*S2 + S0 + S1*2^128
+
+wire [511:0] sum_S_debug = (S2<<256) + (S1 <<128) + S0;
 always@ (posedge i_clk ) begin
 	C <= sum_S;
 end
@@ -469,13 +477,13 @@ reg  [254:0] res_r;
 wire [254:0] a_w, b_w;
 
 assign a_w = C[254:0];
-assign b_w = C[263:255]*19;
+assign b_w = C[264:255]*19;
 modular_add_sub modular_add_sub_inst (
 	.i_clk    (i_clk),
 	.a        (a_w),
 	.b        (b_w),
 	.i_add_sub(1'b1),
-	.i_first  (round[1:0]==2), // start at round == 2
+	.i_first  (round[1:0]==1), // start at round == 1
 	.res      (res_r)
 );
  

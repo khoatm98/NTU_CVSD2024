@@ -2164,3 +2164,2030 @@ wvDisplayGridCount -win $_nWave1 -off
 wvGetSignalClose -win $_nWave1
 wvReloadFile -win $_nWave1
 wvSetCursor -win $_nWave1 32322.246984 -snap {("G1" 14)}
+wvSetCursor -win $_nWave1 30823.239403 -snap {("G1" 44)}
+wvSelectSignal -win $_nWave1 {( "G1" 41 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvSetCursor -win $_nWave1 31408.217971 -snap {("G1" 14)}
+wvSetCursor -win $_nWave1 32358.808144 -snap {("G1" 14)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 41 )} 
+wvSetCursor -win $_nWave1 30457.627798 -snap {("G1" 44)}
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 37 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 37 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 37 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSetCursor -win $_nWave1 17639.284926 -snap {("G1" 36)}
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 37 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSetCursor -win $_nWave1 18589.875099 -snap {("G1" 44)}
+wvSetCursor -win $_nWave1 32300.310287 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetRadix -win $_nWave1 -format Ascii
+wvSelectSignal -win $_nWave1 {( "G1" 13 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 37 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetRadix -win $_nWave1 -format Hex
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 37 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvSetCursor -win $_nWave1 17675.846086 -snap {("G1" 36)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 45 46 )} 
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 45 46 )} 
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvSetCursor -win $_nWave1 16542.450111 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 17602.723765 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 20417.933124 -snap {("G1" 46)}
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvScrollDown -win $_nWave1 0
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 12666.967098 -snap {("G1" 47)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 0)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetCursor -win $_nWave1 13226.692588 -snap {("G1" 46)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 49)}
+wvSetPosition -win $_nWave1 {("G1" 49)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 48 49 )} 
+wvSetPosition -win $_nWave1 {("G1" 49)}
+wvSetPosition -win $_nWave1 {("G1" 49)}
+wvSetPosition -win $_nWave1 {("G1" 49)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 48 49 )} 
+wvSetPosition -win $_nWave1 {("G1" 49)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvSelectGroup -win $_nWave1 {G2}
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 37 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 34 35 36 )} 
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvSetPosition -win $_nWave1 {("G1" 38)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 40 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 33 )} 
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetPosition -win $_nWave1 {("G1" 39)}
+wvSetPosition -win $_nWave1 {("G1" 43)}
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSelectSignal -win $_nWave1 {( "G1" 43 )} 
+wvSetCursor -win $_nWave1 12422.347057 -snap {("G1" 45)}
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 43 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 43 44 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 43 44 )} 
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 43 44 )} 
+wvSetPosition -win $_nWave1 {("G1" 44)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 43 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 43 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 23 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 22 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 43 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 13575.158894 -snap {("G1" 15)}
+wvSetCursor -win $_nWave1 12514.885240 -snap {("G1" 15)}
+wvSetCursor -win $_nWave1 8675.963387 -snap {("G1" 17)}
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 11454.611585 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 7615.689732 -snap {("G1" 17)}
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 24 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 22 )} 
+wvSetCursor -win $_nWave1 8420.035264 -snap {("G1" 44)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 7652.250893 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 7385.354421 -snap {("G1" 12)}
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 22 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 8482.189236 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 9432.779409 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 10346.808422 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 11553.326718 -snap {("G1" 16)}
+wvScrollDown -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSetCursor -win $_nWave1 12467.355731 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 13454.507065 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 14478.219559 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 15575.054374 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 14734.147682 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 15611.615534 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 14514.780719 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 15465.370892 -snap {("G1" 16)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 43 )} 
+wvScrollDown -win $_nWave1 1
+wvSetCursor -win $_nWave1 12430.794571 -snap {("G1" 43)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 11736.132521 -snap {("G1" 42)}
+wvScrollDown -win $_nWave1 6
+wvSetCursor -win $_nWave1 12577.039213 -snap {("G1" 45)}
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvSetCursor -win $_nWave1 15392.248571 -snap {("G1" 16)}
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 23 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSetCursor -win $_nWave1 16415.961065 -snap {("G1" 49)}
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetCursor -win $_nWave1 15575.054374 -snap {("G1" 41)}
+wvScrollUp -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvScrollDown -win $_nWave1 0
+wvSetCursor -win $_nWave1 16452.522226 -snap {("G1" 49)}
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvSetCursor -win $_nWave1 17512.795880 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 20291.444078 -snap {("G1" 49)}
+wvSetCursor -win $_nWave1 17512.795880 -snap {("G1" 46)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 19523.659708 -snap {("G1" 41)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 21680.768177 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 32356.627044 -snap {("G1" 14)}
+wvSetCursor -win $_nWave1 32466.310525 -snap {("G1" 14)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvScrollUp -win $_nWave1 8
+wvScrollDown -win $_nWave1 8
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 22009.818622 -snap {("G1" 30)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 32649.116328 -snap {("G1" 14)}
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 30 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 30 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 28 29 30 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 22 23 24 25 26 27 28 29 30 )} 
+wvCut -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 26 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 12796.406176 -snap {("G1" 26)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 20 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 12540.478052 -snap {("G1" 15)}
+wvSetCursor -win $_nWave1 15538.493213 -snap {("G1" 16)}
+wvSetCursor -win $_nWave1 16415.961065 -snap {("G1" 39)}
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 36 )} 
+wvSetCursor -win $_nWave1 17659.040522 -snap {("G1" 36)}
+wvSetCursor -win $_nWave1 20547.372202 -snap {("G1" 36)}
+wvSetCursor -win $_nWave1 21388.278893 -snap {("G1" 37)}
+wvSetCursor -win $_nWave1 21497.962375 -snap {("G1" 36)}
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 15414.185267 -snap {("G1" 16)}
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvSetCursor -win $_nWave1 19545.596404 -snap {("G1" 16)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 15670.113391 -snap {("G1" 16)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 35 36 )} 
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 35 36 )} 
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvGetSignalClose -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvSetPosition -win $_nWave1 {("G1" 27)}
+wvSetPosition -win $_nWave1 {("G1" 21)}
+wvSetPosition -win $_nWave1 {("G1" 20)}
+wvSetPosition -win $_nWave1 {("G1" 19)}
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvSetPosition -win $_nWave1 {("G1" 15)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 15)}
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvExpandBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 21)}
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 20 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 20 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvExpandBus -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 24 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 20 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 20 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 26 )} 
+wvSetCursor -win $_nWave1 11611.824575 -snap {("G1" 26)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSetCursor -win $_nWave1 12441.762919 -snap {("G1" 26)}
+wvSetCursor -win $_nWave1 13319.230771 -snap {("G1" 26)}
+wvSetCursor -win $_nWave1 11381.489264 -snap {("G1" 28)}
+wvSelectSignal -win $_nWave1 {( "G1" 26 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvSetPosition -win $_nWave1 {("G1" 21)}
+wvCollapseBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 21)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 12368.640598 -snap {("G1" 15)}
+wvSetCursor -win $_nWave1 13502.036573 -snap {("G1" 22)}
+wvSetCursor -win $_nWave1 12697.691042 -snap {("G1" 22)}
+wvSetCursor -win $_nWave1 13757.964697 -snap {("G1" 22)}
+wvSetCursor -win $_nWave1 12697.691042 -snap {("G1" 22)}
+wvSetCursor -win $_nWave1 14160.137462 -snap {("G1" 22)}
+wvSetCursor -win $_nWave1 12843.935684 -snap {("G1" 22)}
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSetPosition -win $_nWave1 {("G1" 27)}
+wvSetPosition -win $_nWave1 {("G1" 19)}
+wvSetPosition -win $_nWave1 {("G1" 18)}
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvSetPosition -win $_nWave1 {("G1" 15)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 15)}
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSetCursor -win $_nWave1 13502.036573 -snap {("G1" 15)}
+wvSetCursor -win $_nWave1 14416.065586 -snap {("G1" 15)}
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvSetCursor -win $_nWave1 16573.174055 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 17450.641907 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 20485.218229 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 21545.491884 -snap {("G1" 43)}
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvSetCursor -win $_nWave1 20448.657069 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 21472.369563 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 20704.585192 -snap {("G1" 44)}
+wvSetCursor -win $_nWave1 21618.614205 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 20594.901711 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 21472.369563 -snap {("G1" 43)}
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvSetCursor -win $_nWave1 25713.464181 -snap {("G1" 38)}
+wvSetCursor -win $_nWave1 26335.003909 -snap {("G1" 38)}
+wvSetCursor -win $_nWave1 27504.961045 -snap {("G1" 38)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31453.566380 -snap {("G1" 14)}
+wvSetCursor -win $_nWave1 17487.203068 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 26444.687391 -snap {("G1" 42)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 27651.205688 -snap {("G1" 42)}
+wvSetCursor -win $_nWave1 32477.278874 -snap {("G1" 14)}
+wvSelectSignal -win $_nWave1 {( "G1" 41 )} 
+wvSetCursor -win $_nWave1 28345.867737 -snap {("G1" 42)}
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvSetRadix -win $_nWave1 -format UDec
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 27724.328009 -snap {("G1" 42)}
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvSetCursor -win $_nWave1 29625.508355 -snap {("G1" 35)}
+wvSetCursor -win $_nWave1 30795.465491 -snap {("G1" 35)}
+wvSetCursor -win $_nWave1 31161.077096 -snap {("G1" 13)}
+wvSetCursor -win $_nWave1 27651.205688 -snap {("G1" 42)}
+wvSetCursor -win $_nWave1 28748.040503 -snap {("G1" 38)}
+wvSetCursor -win $_nWave1 29625.508355 -snap {("G1" 38)}
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 35 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 18)}
+wvSetPosition -win $_nWave1 {("G1" 18)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSetPosition -win $_nWave1 {("G1" 18)}
+wvSetPosition -win $_nWave1 {("G1" 18)}
+wvSetPosition -win $_nWave1 {("G1" 18)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSetPosition -win $_nWave1 {("G1" 18)}
+wvGetSignalClose -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 28)}
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvSetPosition -win $_nWave1 {("G1" 37)}
+wvSetPosition -win $_nWave1 {("G1" 38)}
+wvSetPosition -win $_nWave1 {("G1" 39)}
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvSetPosition -win $_nWave1 {("G1" 41)}
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvSetPosition -win $_nWave1 {("G1" 43)}
+wvSetPosition -win $_nWave1 {("G1" 42)}
+wvSetPosition -win $_nWave1 {("G1" 41)}
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvSetPosition -win $_nWave1 {("G1" 39)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 39)}
+wvSetCursor -win $_nWave1 27578.083367 -snap {("G1" 38)}
+wvSelectSignal -win $_nWave1 {( "G1" 40 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 40 )} 
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 40 )} 
+wvSetPosition -win $_nWave1 {("G1" 40)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvSetCursor -win $_nWave1 28492.112379 -snap {("G1" 40)}
+wvSetCursor -win $_nWave1 27431.838725 -snap {("G1" 40)}
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSetRadix -win $_nWave1 -format Hex
+wvSetCursor -win $_nWave1 28528.673540 -snap {("G1" 40)}
+wvSetCursor -win $_nWave1 29479.263713 -snap {("G1" 39)}
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSetCursor -win $_nWave1 25420.974897 -snap {("G1" 35)}
+wvSetCursor -win $_nWave1 26444.687391 -snap {("G1" 35)}
+wvSetCursor -win $_nWave1 27578.083367 -snap {("G1" 33)}
+wvSetCursor -win $_nWave1 28528.673540 -snap {("G1" 33)}
+wvSetCursor -win $_nWave1 29515.824873 -snap {("G1" 33)}
+wvSetCursor -win $_nWave1 30466.415046 -snap {("G1" 33)}
+wvSetCursor -win $_nWave1 31380.444059 -snap {("G1" 32)}
+wvSetCursor -win $_nWave1 29515.824873 -snap {("G1" 32)}
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvSetCursor -win $_nWave1 31417.005219 -snap {("G1" 13)}
+wvSetCursor -win $_nWave1 29588.947194 -snap {("G1" 39)}
+wvSetCursor -win $_nWave1 30539.537367 -snap {("G1" 39)}
+wvSetCursor -win $_nWave1 31417.005219 -snap {("G1" 39)}
+wvSelectSignal -win $_nWave1 {( "G1" 40 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvSetCursor -win $_nWave1 29515.824873 -snap {("G1" 35)}
+wvSetCursor -win $_nWave1 31417.005219 -snap {("G1" 13)}
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSetCursor -win $_nWave1 30539.537367 -snap {("G1" 33)}
+wvSetCursor -win $_nWave1 31343.882898 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSetCursor -win $_nWave1 29601.743600 -snap {("G1" 35)}
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 29418.937797 -snap {("G1" 35)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 29 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 29 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 28 )} 
+wvSetPosition -win $_nWave1 {("G1" 27)}
+wvSetPosition -win $_nWave1 {("G1" 22)}
+wvSetPosition -win $_nWave1 {("G1" 18)}
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvSetPosition -win $_nWave1 {("G1" 15)}
+wvSetPosition -win $_nWave1 {("G1" 14)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 14)}
+wvSetPosition -win $_nWave1 {("G1" 16)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 40 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 44 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 39 )} 
+wvSetCursor -win $_nWave1 27846.807896 -snap {("G1" 44)}
+wvSetCursor -win $_nWave1 28322.102982 -snap {("G1" 39)}
+wvSetCursor -win $_nWave1 27444.635130 -snap {("G1" 39)}
+wvSetCursor -win $_nWave1 28358.664143 -snap {("G1" 39)}
+wvSetCursor -win $_nWave1 17646.244116 -snap {("G1" 45)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 18487.150807 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 19730.230264 -snap {("G1" 18)}
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSetCursor -win $_nWave1 20607.698116 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 21448.604808 -snap {("G1" 44)}
+wvSetCursor -win $_nWave1 20717.381598 -snap {("G1" 45)}
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[2:1\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvExpandBus -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 17 18 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvCollapseBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 17)}
+wvSetPosition -win $_nWave1 {("G1" 25)}
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvSetPosition -win $_nWave1 {("G1" 37)}
+wvSetPosition -win $_nWave1 {("G1" 38)}
+wvSetPosition -win $_nWave1 {("G1" 36)}
+wvSetPosition -win $_nWave1 {("G1" 35)}
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetPosition -win $_nWave1 {("G1" 32)}
+wvSetPosition -win $_nWave1 {("G1" 31)}
+wvSetPosition -win $_nWave1 {("G1" 32)}
+wvSetPosition -win $_nWave1 {("G1" 31)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 31)}
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvExpandBus -win $_nWave1
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 19328.057499 -snap {("G1" 33)}
+wvSetCursor -win $_nWave1 20607.698116 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 21412.043647 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 20571.136956 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 21375.482487 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 20571.136956 -snap {("G1" 49)}
+wvSetCursor -win $_nWave1 21302.360166 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 20644.259277 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 21667.971771 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 20753.942758 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 21412.043647 -snap {("G1" 48)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 30479.211452 -snap {("G1" 14)}
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetCursor -win $_nWave1 31502.923946 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 12381.437003 -snap {("G1" 45)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvResizeWindow -win $_nWave1 961 31 958 1000
+wvResizeWindow -win $_nWave1 2471 185 1920 1009
+wvSetCursor -win $_nWave1 31393.240464 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31539.485106 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 48 49 )} 
+wvSetCursor -win $_nWave1 30515.772612 -snap {("G1" 38)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 42 )} 
+wvSetCursor -win $_nWave1 29674.865921 -snap {("G1" 38)}
+wvSetCursor -win $_nWave1 30442.650291 -snap {("G1" 14)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 45 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetCursor -win $_nWave1 31283.556983 -snap {("G1" 14)}
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvScrollDown -win $_nWave1 2
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 50 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 45 46 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 48 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 50 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 50 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSetCursor -win $_nWave1 24483.181129 -snap {("G1" 46)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 20242.086511 -snap {("G1" 51)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[2:1\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[2\]\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[1\]\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S_debug\[511:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[2:1\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[2\]\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[1\]\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S_debug\[511:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSetPosition -win $_nWave1 {("G1" 34)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 22545.439623 -snap {("G1" 46)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 25324.087821 -snap {("G1" 32)}
+wvSetCursor -win $_nWave1 23569.152117 -snap {("G1" 31)}
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSetCursor -win $_nWave1 24629.425771 -snap {("G1" 42)}
+wvSetCursor -win $_nWave1 25360.648981 -snap {("G1" 42)}
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSetCursor -win $_nWave1 29492.060118 -snap {("G1" 39)}
+wvSelectSignal -win $_nWave1 {( "G1" 43 )} 
+wvSetCursor -win $_nWave1 31664.146095 -snap {("G1" 14)}
+wvSetCursor -win $_nWave1 29287.670662 -snap {("G1" 39)}
+wvSetCursor -win $_nWave1 31371.656811 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
