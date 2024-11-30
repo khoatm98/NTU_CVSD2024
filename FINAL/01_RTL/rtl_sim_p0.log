@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version T-2022.06_Full64 -- Wed Nov 27 17:14:04 2024
+         Version T-2022.06_Full64 -- Sat Nov 30 19:58:06 2024
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -25,6 +25,17 @@ Parsing design file './ed25519.v'
 Top Level Modules:
        testbench
 TimeScale is 1 ns / 10 ps
+
+Warning-[PCWM-W] Port connection width mismatch
+./ed25519.v, 90
+"modular_mult modular_mult_inst( .i_clk (i_clk),  .a (255'h7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffed),  .b (256'b1),  .i_first ((input_cnt == 0)),  .res (res_r));"
+  The following 255-bit expression is connected to 256-bit port "a" of module 
+  "modular_mult", instance "modular_mult_inst".
+  Expression: 
+  255'h7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffed
+  Instantiated module defined at: "./ed25519.v", 171
+  Use +lint=PCWM for more details.
+
 Starting vcs inline pass...
 
 4 modules and 0 UDP read.
@@ -34,12 +45,12 @@ rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
 rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _221435_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _12000_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 Notice: timing checks disabled with +notimingcheck at compile-time
 Chronologic VCS simulator copyright 1991-2022
 Contains Synopsys proprietary information.
-Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 27 17:14 2024
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 30 19:58 2024
 *Verdi* Loading libsscore_vcs202206.so
 *Verdi* WARNING: No '-debug_access' in VCS compile options
 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
@@ -50,12 +61,19 @@ FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
 *Verdi* : Enable +mda dumping.
 *Verdi* : End of traversing.
 ----------------------------------------------
-Error! Runtime exceeded!
+Scalar:  259f4329e6f4590b9a164106cf6a659eb4862b21fb97d43588561712e8e5216a, 
+Input:  (0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae, 2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2), 
+Golden: (47f6a5d15e1a09495f9216eba5253538db62c06ad333adbcc86932c069f00d26, 465032bc1d1cace745d1b3bad5ca1115805ab1512361151d1c84c68aa2f54468), 
+Yours:  (000000000000000f000000000000000f000000000000000f000000000000000f, 000000000000000f000000000000000f000000000000000f000000000000000f)
+**********************************************
+                 PAT 0 FAIL!                 
 ----------------------------------------------
-$finish called from file "../00_TESTBED/testbed.sv", line 287.
-$finish at simulation time               105500
+Simulation Cycle:     44, Time:      440.00 ns
+**********************************************
+$finish called from file "../00_TESTBED/testbed.sv", line 262.
+$finish at simulation time                50500
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 1055000 ps
-CPU Time:      0.510 seconds;       Data structure size:   0.0Mb
-Wed Nov 27 17:14:10 2024
-CPU time: .611 seconds to compile + .539 seconds to elab + .394 seconds to link + .565 seconds in simulation
+Time: 505000 ps
+CPU Time:      0.540 seconds;       Data structure size:   0.0Mb
+Sat Nov 30 19:58:11 2024
+CPU time: .736 seconds to compile + .625 seconds to elab + .415 seconds to link + .589 seconds in simulation

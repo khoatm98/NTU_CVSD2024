@@ -152,28 +152,28 @@ HSP_GCC_VERSION=4.8.5
 QTINC=/usr/lib64/qt-3.3/include
 SSH_TTY=/dev/pts/70
 LC_ALL=C
-SNPS_VCS_INTERNAL_ROOT_PID=221114
+SNPS_VCS_INTERNAL_ROOT_PID=11765
 QT_GRAPHICSSYSTEM_CHECKED=1
 SPAPI_AHDL_INCLUDE=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/include
 USER=r2k41036
 GROUP=user
 HSP_HOME=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
-LD_LIBRARY_PATH=/usr/cad/synopsys/vcs/2022.06//lib:/usr/cad/synopsys/vcs/2022.06/linux64/lib:/lib64:/usr/lib64:/usr/local/lib64::/usr/cad/cadence/ASSURA/cur/tools/assura/lib:/usr/cad/cadence/ASSURA/cur/tools/dsm/lib:/usr/cad/cadence/ASSURA/cur/tools/lib:::/usr/cad/innovus/cur//tools/tlfUtil/lib:/usr/cad/cadence/CONFRML/cur/tools/lib:/usr/cad/cadence/IC/cur/tools/lib:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/home/raid7_4/raid1_1/linux/novas/verdi/cur/share/PLI/IUS/LINUX/::/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64
+LD_LIBRARY_PATH=/usr/cad/synopsys/vcs/2022.06//lib:/usr/cad/synopsys/vcs/2022.06/linux64/lib::/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11///tools/tlfUtil/lib:/lib64:/usr/lib64:/usr/local/lib64:/usr/cad/cadence/ASSURA/cur/tools/assura/lib:/usr/cad/cadence/ASSURA/cur/tools/dsm/lib:/usr/cad/cadence/ASSURA/cur/tools/lib:/usr/cad/innovus/cur//tools/tlfUtil/lib:/usr/cad/cadence/CONFRML/cur/tools/lib:/usr/cad/cadence/IC/cur/tools/lib:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/xl_shared:/usr/spring_soft/verdi/cur/share/PLI/nc_xl/LINUX/nc_shared:/home/raid7_4/raid1_1/linux/novas/verdi/cur/share/PLI/IUS/LINUX/:/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64
 SCRIPT_NAME=vcs
 VCS_MX_HOME_INTERNAL=1
 HOSTTYPE=x86_64-linux
 installdir=/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06//linux64/clang
-ENCOUNTER=/usr/cad/innovus/cur/tools/fe
+ENCOUNTER=/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11//tools/fe
 SNPSLMD_LICENSE_FILE=26585@lshc
 VCS_USER_OPTIONS=-R -full64 -f rtl_sim.f +define+PAT0
 CMIARCH=RH_64
 OVA_UUM=0
 VCS_MODE_FLAG=64
-PATH=.:/usr/cad/synopsys/vcs/2022.06//amd64/bin:/usr/cad/synopsys/spyglass/2022.06//SPYGLASS_HOME/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64:/usr/ucb/bin:/usr/cad/innovus/cur/tools/celtic/bin:/usr/cad/innovus/cur/tools/plato/bin:/usr/cad/innovus/cur/tools/dfII/bin:/usr/cad/innovus/cur/tools/bin:/usr/cad/innovus/cur//tools/tlfUtil/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/mentor/calibre/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/spring_soft/verdi/cur/bin:/usr/spring_soft/verdi/cur/nLint/bin:/usr/cad/synopsys/primetime/2022.12/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/mentor/calibre/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/cadence/SPECTRE/cur/tools/dfII/bin:/usr/cad/cadence/SPECTRE/cur/tools/bin:/usr/cad/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/JASPER/cur/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/RC/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit/bin:bin.linux:/usr/cad/cadence/SPB/cur/tools/specctra/bin:/usr/cad/cadence/SPB/cur/tools/pcb/bin:/usr/cad/cadence/SPB/cur/tools/dfII/bin:/usr/cad/cadence/SPB/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/CCD/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/raid7_4/raid1_1/linux/novas/verdi/cur/bin
+PATH=.:/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11//tools/celtic/bin:/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11//tools/plato/bin:/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11//tools/dfII/bin:/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11//tools/bin:/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11///tools/tlfUtil/bin:/usr/cad/synopsys/vcs/2022.06//amd64/bin:/usr/cad/synopsys/spyglass/2022.06//SPYGLASS_HOME/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/GNU/linux64/gcc/bin:/home/raid7_4/raid1_1/linux/synopsys/hspice/2022.06/hspice/linux64:/usr/ucb/bin:/usr/cad/innovus/cur/tools/celtic/bin:/usr/cad/innovus/cur/tools/plato/bin:/usr/cad/innovus/cur/tools/dfII/bin:/usr/cad/innovus/cur/tools/bin:/usr/cad/innovus/cur//tools/tlfUtil/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/mentor/calibre/cur/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/tmax/cur/bin:/usr/spring_soft/verdi/cur/bin:/usr/spring_soft/verdi/cur/nLint/bin:/usr/cad/synopsys/primetime/2022.12/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/mentor/calibre/cur/bin:/usr/cad/synopsys/customexplorer/cur/bin:/usr/cad/cadence/SPECTRE/cur/tools/dfII/bin:/usr/cad/cadence/SPECTRE/cur/tools/bin:/usr/cad/cadence/STRATUS/cur/tools/bin:/usr/cad/cadence/JASPER/cur/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/RC/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit/bin:bin.linux:/usr/cad/cadence/SPB/cur/tools/specctra/bin:/usr/cad/cadence/SPB/cur/tools/pcb/bin:/usr/cad/cadence/SPB/cur/tools/dfII/bin:/usr/cad/cadence/SPB/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/CCD/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/assura/bin:/usr/cad/cadence/ASSURA/cur/tools/dsm/bin:/usr/cad/cadence/ASSURA/cur/tools/bin:/usr/cad/cadence/ASSURA/cur/tools/dfII/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/raid7_4/raid1_1/linux/novas/verdi/cur/bin
 MAIL=/var/spool/mail/r2k41036
-SNPS_VCS_INTERNAL_CURR_PID=221114
+SNPS_VCS_INTERNAL_CURR_PID=11765
 VERDI_HOME=/usr/cad/synopsys/verdi/cur
 PWD=/home/raid7_2/user12/r2k41036/NTU_CVSD2024/FINAL/01_RTL
 OAHOME=/usr/cad/cadence/oa_v22.04.073
@@ -181,7 +181,7 @@ VCS_HOME=/usr/cad/synopsys/vcs/2022.06/
 SNPS_VCS_INTERNAL_MEMPRELOAD_USE_LIBC=1
 SNPS_INTERNAL_VCS_LINUX_OS=linux
 VERPLEX_HOME=/usr/cad/cadence/CONFRML/cur
-OA_HOME=/usr/cad/innovus/cur/oa
+OA_HOME=/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11//oa
 SYNTHESIS=/usr/cad/synopsys/synthesis/cur
 VMR_MODE_FLAG=64
 SELINUX_LEVEL_REQUESTED=
@@ -189,7 +189,7 @@ VCS_CC=gcc
 LM_LICENSE_FILE=26585@lstc:5280@lshc:5280@lstc:5280@lstn:1717@lstc:
 CDS_Netlisting_Mode=Analog
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20241127091404_221114
+SNPS_VCS_TMPDIR=/tmp/vcs_20241130115806_11765
 HOME=/home/raid7_2/user12/r2k41036
 SHLVL=3
 HSP_GCC=/usr/bin/gcc -m64 
@@ -204,7 +204,7 @@ SNPS_PLATFORM=linux64
 LOGNAME=r2k41036
 MACHTYPE=x86_64
 QTLIB=/usr/lib64/qt-3.3/lib
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1732698844.242606874
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1732967886.296618532
 SSH_CONNECTION=140.112.175.69 63774 140.112.20.70 22
 NEOCKTHOME=/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit
 CDS_LIC_FILE=/usr/cad/cadence/IC/cur/share/license/license.dat
@@ -230,8 +230,8 @@ Runtime command line arguments:
 argv[0]=simv
 argv[1]=+define+PAT0
 231 profile - 100
-          CPU/Mem usage: 0.110 sys,  0.370 user,  265.56M mem
-232 Elapsed time:    0:00:01    Wed Nov 27 17:14:09 2024
+          CPU/Mem usage: 0.130 sys,  0.380 user,  265.64M mem
+232 Elapsed time:    0:00:00    Sat Nov 30 19:58:10 2024
 233 User CPU time used: 0 seconds
 234 System CPU time used: 0 seconds
 235 pliAppInit
@@ -262,55 +262,55 @@ argv[1]=+define+PAT0
 260 *Verdi* : Enable +mda dumping.
 261 *Verdi* : End of traversing.
 262 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.120 sys,  0.380 user,  365.05M mem
-                   incr: 0.000 sys,  0.000 user,  7.11M mem
-                   accu: 0.000 sys,  0.000 user,  7.11M mem
-              accu incr: 0.000 sys,  0.000 user,  7.11M mem
+          CPU/Mem usage: 0.140 sys,  0.390 user,  365.06M mem
+                   incr: 0.000 sys,  0.010 user,  7.04M mem
+                   accu: 0.000 sys,  0.010 user,  7.04M mem
+              accu incr: 0.000 sys,  0.010 user,  7.04M mem
 
-          Count usage: 35 var,  30 idcode,  22 callback
-                 incr: 35 var,  30 idcode,  22 callback
-                 accu: 35 var,  30 idcode,  22 callback
-            accu incr: 35 var,  30 idcode,  22 callback
-263 Elapsed time:    0:00:02    Wed Nov 27 17:14:10 2024
+          Count usage: 103 var,  93 idcode,  41 callback
+                 incr: 103 var,  93 idcode,  41 callback
+                 accu: 103 var,  93 idcode,  41 callback
+            accu incr: 103 var,  93 idcode,  41 callback
+263 Elapsed time:    0:00:01    Sat Nov 30 19:58:11 2024
 264 User CPU time used: 0 seconds
 265 System CPU time used: 0 seconds
 266 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.120 sys,  0.380 user,  366.10M mem
+          CPU/Mem usage: 0.140 sys,  0.390 user,  366.11M mem
                    incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.000 sys,  0.000 user,  8.16M mem
+                   accu: 0.000 sys,  0.010 user,  8.09M mem
               accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
-          Count usage: 35 var,  30 idcode,  22 callback
+          Count usage: 103 var,  93 idcode,  41 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 35 var,  30 idcode,  22 callback
+                 accu: 103 var,  93 idcode,  41 callback
             accu incr: 0 var,  0 idcode,  0 callback
-267 Elapsed time:    0:00:02    Wed Nov 27 17:14:10 2024
+267 Elapsed time:    0:00:01    Sat Nov 30 19:58:11 2024
 268 User CPU time used: 0 seconds
 269 System CPU time used: 0 seconds
-270 End of simulation at 105500
-271 Memory usage: 366.100 M
+270 End of simulation at 50500
+271 Memory usage: 366.113 M
 272 Maximum resident set size: 74 MB
 273 Hard page faults: 0
-274 Soft page faults: 29019
-275 Elapsed time:    0:00:02    Wed Nov 27 17:14:10 2024
+274 Soft page faults: 29201
+275 Elapsed time:    0:00:01    Sat Nov 30 19:58:11 2024
 276 User CPU time used: 0 seconds
 277 System CPU time used: 0 seconds
 278 Begin FSDB profile info:
-279 FSDB Writer : bc1(275) bcn(159) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.006657) io wait(0.000000) theadpool wait(0.000000)
+279 FSDB Writer : bc1(143) bcn(654) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.006070) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 280 End FSDB profile info
-281 FSDB closed. Name: ed25519.fsdb Size: 10682
+281 FSDB closed. Name: ed25519.fsdb Size: 14203
 282 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-283                      - BlockUsed:1 Acquire:672 BufferUsed:11210
+283                      - BlockUsed:1 Acquire:876 BufferUsed:31591
 284                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:0
-285                      - MainProducerTime:0.523760046 TotalConsumerTime:0.000000000
-286                      - ElapsedTime:0.376623000
-287 Producer   0 profile - BlockUsed:1 Acquire:672 BufferUsed:11210
+285                      - MainProducerTime:0.549504446 TotalConsumerTime:0.000000000
+286                      - ElapsedTime:0.327031000
+287 Producer   0 profile - BlockUsed:1 Acquire:876 BufferUsed:31591
 288 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-289                      - BlockUsed:1 Acquire:672 BufferUsed:11210
+289                      - BlockUsed:1 Acquire:876 BufferUsed:31591
 290 SimExit
-291 Elapsed time:    0:00:02    Wed Nov 27 17:14:10 2024
+291 Elapsed time:    0:00:01    Sat Nov 30 19:58:11 2024
 292 User CPU time used: 0 seconds
 293 System CPU time used: 0 seconds
 294 Sim process exit

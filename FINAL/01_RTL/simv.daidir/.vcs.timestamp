@@ -71,7 +71,7 @@ QTINC=/usr/lib64/qt-3.3/include
 QTDIR=/usr/lib64/qt-3.3
 OVA_UUM=0
 OSTYPE=linux
-OA_HOME=/usr/cad/innovus/cur/oa
+OA_HOME=/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11//oa
 OAHOME=/usr/cad/cadence/oa_v22.04.073
 NEOCKTHOME=/usr/cad/cadence/NEOCIRCUIT/cur/tools/NeoCircuit
 MGC_TMPDIR=/tmp
@@ -85,7 +85,7 @@ HSP_GCC_VERSION=4.8.5
 HSP_GCC=/usr/bin/gcc -m64 
 HOSTTYPE=x86_64-linux
 GROUP=user
-ENCOUNTER=/usr/cad/innovus/cur/tools/fe
+ENCOUNTER=/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11//tools/fe
 CMIARCH=RH_64
 CDS_Netlisting_Mode=Analog
 CDS_LOAD_ENV=CSF
@@ -98,7 +98,7 @@ ARCH=linux64
 0 /usr/cad/synopsys/synthesis/cur/dw/sim_ver
 5
 1731763540 ../00_TESTBED/pattern/tb_dat.sv
-1732698843 ./ed25519.v
+1732967882 ./ed25519.v
 1732262108 ../00_TESTBED/testbed.sv
 1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
 1732260389 rtl_sim.f
@@ -107,5 +107,5 @@ ARCH=linux64
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1732698850 simv.daidir
+1732967891 simv.daidir
 -1 partitionlib
