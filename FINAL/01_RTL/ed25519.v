@@ -89,8 +89,8 @@ end
 reg [255:0] res_r;
 modular_mult modular_mult_inst(
 	.i_clk  (i_clk)  ,
-	.a      (`q),
-	.b      (1000000000000000000)  ,
+	.a      (255'h213231231231231243242423432231),
+	.b      (255'h31231221313332312312312353123123123122)  ,
 	.i_first(input_cnt==0)  ,
 	.res    (res_r)
 );
@@ -176,6 +176,7 @@ module modular_mult  #(
 	input  [DATA_W-1:0]   a         ,
 	input  [DATA_W-1:0]   b         ,
 	input                 i_first   ,
+	output 				  o_valid   ,
 	output [DATA_W-1:0]	  res
 );
 	
@@ -183,7 +184,7 @@ reg  [63:0]   a_in_r;
 reg  [63:0]   b_in_r;
 reg  [127:0]  res_out_r;
 
-reg  [255:0]  accumulated_res_w;
+reg  [256:0]  accumulated_res_w;
 reg  [255:0]  accumulated_res_r;
 
 reg  [4:0]    cnt;
@@ -296,7 +297,7 @@ end
 always@ (posedge i_clk ) begin
 	if(i_first) begin
 		cnt <= 0;
-		accumulated_res_w <= 0;
+		accumulated_res_r <= 0;
 	end else begin
 		cnt <= cnt + 1;
 		accumulated_res_r <= cnt[1:0] == 2 ? accumulated_res_w >> 64 : accumulated_res_w;
@@ -316,6 +317,7 @@ mod_q_reduce mod_q_reduce_inst (
 );
 
 assign res = {1'b0, res_r};
+assign o_valid = o_valid_r;
 endmodule
 
 // ---------------------------------------------------------------------------
@@ -346,8 +348,8 @@ module mod_q_reduce #(
 	input  [DATA_W-1:0]   a         , // LSB of Cx
 	input  [DATA_W-1:0]   b         , // MSB of Cx
 	input                 i_first   ,
-	output [254:0]	      o_res,
-	output 					o_valid
+	output [254:0]	      o_res     ,
+	output 				  o_valid
 );
 
 reg [136*3 -1:0] S;
@@ -384,15 +386,15 @@ always@ (*) begin
 			shifted_cl = R[136*1 -1 -:136] << 2; //R2 << 2
 		end
 		2: begin
-			shifted_ch = R[136*2 -1 -:136] << 5; //R2 << 2
-			shifted_cl = R[136*1 -1 -:136] << 5; //R2 << 2
+			shifted_ch = R[136*2 -1 -:136] << 5; //R2 << 5
+			shifted_cl = R[136*1 -1 -:136] << 5; //R2 << 5
 		end
 		13: begin
 			shifted_ch = S[136*3 -1 -:136] << 1; //Calculate 19*S2
 			shifted_cl = R[136*1 -1 -:136]; 
 		end
 		14: begin
-			shifted_ch = R_w[2] << 4; //Calculate 19*S2
+			shifted_ch = R[136*2 -1 -:136] << 4; //Calculate 19*S2
 			shifted_cl = R[136*1 -1 -:136]; 
 		end
 		default: begin
@@ -427,7 +429,7 @@ always@ (*) begin
 			S_w[1] = S[136*3 -1 -:136];
 			S_w[0] = S[136*2 -1 -:136];
 		end
-		0,4,8,12: begin
+		0,1,2,4,8,12: begin
 			S_w[2] = accum_h;
 			S_w[1] = accum_l;
 			S_w[0] = S[136*1 -1 -:136];
@@ -466,7 +468,7 @@ wire [256+8: 0] sum_S;
 reg  [256+8: 0] C;
 assign sum_S = round[0] ?  ({S[136*3 -1 -:136],1'b0} +  S[136*1 -1 -:136] ): (C + {S[136*2 -1 -:136], 128'd0}); //sumS = 19*S2 + S0 + S1*2^128
 
-wire [511:0] sum_S_debug = (S2<<256) + (S1 <<128) + S0;
+wire [511:0] sum_S_debug = ({S[136*3 -1 -:136],1'b0} +  S[136*1 -1 -:136]   + {S[136*2 -1 -:136], 128'd0} )%`q;
 always@ (posedge i_clk ) begin
 	C <= sum_S;
 end

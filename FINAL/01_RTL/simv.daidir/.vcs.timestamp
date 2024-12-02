@@ -1,6 +1,6 @@
 0 
 25
-+define+PAT0
++define+PAT
 -Mamsrun=
 -Masflags=
 -Mcc=gcc
@@ -98,7 +98,7 @@ ARCH=linux64
 0 /usr/cad/synopsys/synthesis/cur/dw/sim_ver
 5
 1731763540 ../00_TESTBED/pattern/tb_dat.sv
-1732980307 ./ed25519.v
+1733151523 ./ed25519.v
 1732262108 ../00_TESTBED/testbed.sv
 1653825972 /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
 1732260389 rtl_sim.f
@@ -107,5 +107,5 @@ ARCH=linux64
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1732980314 simv.daidir
+1733151536 simv.daidir
 -1 partitionlib

@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version T-2022.06_Full64 -- Sat Nov 30 23:25:08 2024
+         Version T-2022.06_Full64 -- Mon Dec  2 22:58:50 2024
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -22,35 +22,34 @@ Parsing design file '../00_TESTBED/testbed.sv'
 Parsing included file '../00_TESTBED/pattern/tb_dat.sv'.
 Back to file '../00_TESTBED/testbed.sv'.
 Parsing design file './ed25519.v'
-
-Warning-[DCTL] Decimal constant too large
-./ed25519.v, 93
-  Decimal constant '1000000000000000000' is too large as a 32bit signed 
-  constant, it should be smaller than 2147483648.
-  VCS is using truncated value '-1486618624' instead.
-  To make it an unsigned constant, please use sized constant format.
-
 Top Level Modules:
        testbench
 TimeScale is 1 ns / 10 ps
 
+Warning-[TFIPC] Too few instance port connections
+./ed25519.v, 90
+ed25519, "modular_mult modular_mult_inst( .i_clk (i_clk),  .a (255'h00213231231231231243242423432231),  .b (255'h0031231221313332312312312353123123123122),  .i_first ((input_cnt == 0)),  .res (res_r));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
 Warning-[PCWM-W] Port connection width mismatch
 ./ed25519.v, 90
-"modular_mult modular_mult_inst( .i_clk (i_clk),  .a (255'h7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffed),  .b (-1486618624),  .i_first ((input_cnt == 0)),  .res (res_r));"
+"modular_mult modular_mult_inst( .i_clk (i_clk),  .a (255'h00213231231231231243242423432231),  .b (255'h0031231221313332312312312353123123123122),  .i_first ((input_cnt == 0)),  .res (res_r));"
   The following 255-bit expression is connected to 256-bit port "a" of module 
   "modular_mult", instance "modular_mult_inst".
-  Expression: 
-  255'h7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffed
+  Expression: 255'h00213231231231231243242423432231
   Instantiated module defined at: "./ed25519.v", 172
   Use +lint=PCWM for more details.
 
 
 Warning-[PCWM-W] Port connection width mismatch
 ./ed25519.v, 90
-"modular_mult modular_mult_inst( .i_clk (i_clk),  .a (255'h7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffed),  .b (-1486618624),  .i_first ((input_cnt == 0)),  .res (res_r));"
-  The following 32-bit expression is connected to 256-bit port "b" of module 
+"modular_mult modular_mult_inst( .i_clk (i_clk),  .a (255'h00213231231231231243242423432231),  .b (255'h0031231221313332312312312353123123123122),  .i_first ((input_cnt == 0)),  .res (res_r));"
+  The following 255-bit expression is connected to 256-bit port "b" of module 
   "modular_mult", instance "modular_mult_inst".
-  Expression: -1486618624
+  Expression: 255'h0031231221313332312312312353123123123122
   Instantiated module defined at: "./ed25519.v", 172
   Use +lint=PCWM for more details.
 
@@ -63,12 +62,12 @@ rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
 rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _127190_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _156592_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 Notice: timing checks disabled with +notimingcheck at compile-time
 Chronologic VCS simulator copyright 1991-2022
 Contains Synopsys proprietary information.
-Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Nov 30 23:25 2024
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Dec  2 22:58 2024
 *Verdi* Loading libsscore_vcs202206.so
 *Verdi* WARNING: No '-debug_access' in VCS compile options
 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
@@ -92,6 +91,6 @@ $finish called from file "../00_TESTBED/testbed.sv", line 262.
 $finish at simulation time                50500
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 505000 ps
-CPU Time:      0.550 seconds;       Data structure size:   0.0Mb
-Sat Nov 30 23:25:14 2024
-CPU time: .748 seconds to compile + .572 seconds to elab + .463 seconds to link + .595 seconds in simulation
+CPU Time:      0.640 seconds;       Data structure size:   0.0Mb
+Mon Dec  2 22:58:56 2024
+CPU time: .782 seconds to compile + .571 seconds to elab + .470 seconds to link + .699 seconds in simulation

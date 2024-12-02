@@ -4191,3 +4191,553 @@ wvSetCursor -win $_nWave1 31371.656811 -snap {("G1" 13)}
 wvDisplayGridCount -win $_nWave1 -off
 wvGetSignalClose -win $_nWave1
 wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31773.829576 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSetCursor -win $_nWave1 29360.792983 -snap {("G1" 39)}
+wvSelectSignal -win $_nWave1 {( "G1" 43 )} 
+wvSetCursor -win $_nWave1 28373.641650 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 23364.762661 -snap {("G1" 33)}
+wvSetCursor -win $_nWave1 30274.821996 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 31115.728687 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 30421.066638 -snap {("G1" 43)}
+wvSetCursor -win $_nWave1 30896.361724 -snap {("G1" 42)}
+wvSetCursor -win $_nWave1 29616.721107 -snap {("G1" 39)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 29580.159946 -snap {("G1" 39)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetCursor -win $_nWave1 31591.023774 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31554.462613 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31627.584934 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 13 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetCursor -win $_nWave1 31627.584934 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31664.146095 -snap {("G1" 38)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31371.656811 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSetCursor -win $_nWave1 31408.217971 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 31 32 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSetPosition -win $_nWave1 {("G1" 31)}
+wvCollapseBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 31)}
+wvSetPosition -win $_nWave1 {("G1" 32)}
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 34 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 41 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSetCursor -win $_nWave1 31371.656811 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 40 )} 
+wvSetCursor -win $_nWave1 12582.876429 -snap {("G1" 40)}
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetCursor -win $_nWave1 13423.783120 -snap {("G1" 46)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetCursor -win $_nWave1 14337.812133 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 13643.150083 -snap {("G1" 46)}
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSetCursor -win $_nWave1 14557.179096 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 15434.646948 -snap {("G1" 46)}
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvSetCursor -win $_nWave1 15471.208109 -snap {("G1" 49)}
+wvSetCursor -win $_nWave1 15361.524627 -snap {("G1" 49)}
+wvSetCursor -win $_nWave1 14191.567491 -snap {("G1" 49)}
+wvSelectSignal -win $_nWave1 {( "G1" 49 )} 
+wvCopy -win $_nWave1
+wvSetCursor -win $_nWave1 13570.027762 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 14410.934454 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 15690.575072 -snap {("G1" 46)}
+wvSetCursor -win $_nWave1 16421.798282 -snap {("G1" 40)}
+wvSetCursor -win $_nWave1 12436.631787 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 13533.466602 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 15690.575072 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 16641.165245 -snap {("G1" 49)}
+wvSetCursor -win $_nWave1 17701.438899 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 20589.770579 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 21576.921912 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 24611.498234 -snap {("G1" 49)}
+wvSetCursor -win $_nWave1 25415.843765 -snap {("G1" 46)}
+wvSelectSignal -win $_nWave1 {( "G1" 40 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[2:1\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S_debug\[511:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/shifted_ch\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/o_valid} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_r\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/accumulated_res_w\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/res_out_r\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[3\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[2\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[1\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_a\[0\]\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/C_b\[3:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/cnt\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/a_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b_in_r\[63:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/a\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/b\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/R_w\[2:1\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S_debug\[511:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/shifted_ch\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/res\[254:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C_\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/compare} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_h\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/accum_l\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/round\[4:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/C\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/sum_S\[263:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/a\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/b\[127:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/L1\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 33 )} 
+wvSetPosition -win $_nWave1 {("G1" 33)}
+wvGetSignalClose -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 43)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 48)}
+wvSetPosition -win $_nWave1 {("G1" 49)}
+wvSetPosition -win $_nWave1 {("G1" 50)}
+wvSetPosition -win $_nWave1 {("G1" 49)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 45)}
+wvSetPosition -win $_nWave1 {("G1" 47)}
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvMoveSelected -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 46)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSelectSignal -win $_nWave1 {( "G1" 38 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 50 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 46 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSetCursor -win $_nWave1 26549.239741 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 27463.268753 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 26402.995099 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 25342.721444 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 27536.391074 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 13496.905441 -snap {("G1" 48)}
+wvSetCursor -win $_nWave1 14264.689812 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 15361.524627 -snap {("G1" 47)}
+wvSelectSignal -win $_nWave1 {( "G1" 50 )} 
+wvSetCursor -win $_nWave1 17591.755418 -snap {("G1" 47)}
+wvSetCursor -win $_nWave1 20662.892900 -snap {("G1" 48)}
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 48 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 50 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 24465.253592 -snap {("G1" 51)}
+wvSetCursor -win $_nWave1 20443.525937 -snap {("G1" 51)}
+wvSetCursor -win $_nWave1 21394.116110 -snap {("G1" 48)}
+wvSelectSignal -win $_nWave1 {( "G1" 47 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetCursor -win $_nWave1 31338.751766 -snap {("G1" 14)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 8555.311557 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 9542.462891 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 10602.736545 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 11736.132521 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 12577.039213 -snap {("G1" 17)}
+wvSelectSignal -win $_nWave1 {( "G1" 50 )} 
+wvSetCursor -win $_nWave1 11663.010200 -snap {("G1" 43)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 28 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSetCursor -win $_nWave1 8372.505755 -snap {("G1" 27)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSetCursor -win $_nWave1 1462.446420 -snap {("G1" 27)}
+wvSetCursor -win $_nWave1 8372.505755 -snap {("G1" 27)}
+wvSetCursor -win $_nWave1 9323.095928 -snap {("G1" 27)}
+wvSetCursor -win $_nWave1 10383.369582 -snap {("G1" 27)}
+wvSetCursor -win $_nWave1 11370.520916 -snap {("G1" 27)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 12321.111089 -snap {("G1" 51)}
+wvSetCursor -win $_nWave1 11699.571360 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 15538.493213 -snap {("G1" 26)}
+wvSetCursor -win $_nWave1 19560.220868 -snap {("G1" 26)}
+wvSetCursor -win $_nWave1 23618.509684 -snap {("G1" 26)}
+wvSetCursor -win $_nWave1 31661.964994 -snap {("G1" 14)}
+wvSelectSignal -win $_nWave1 {( "G1" 27 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 25 )} 
+wvSetPosition -win $_nWave1 {("G1" 25)}
+wvExpandBus -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 50)}
+wvSelectSignal -win $_nWave1 {( "G1" 26 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSetCursor -win $_nWave1 11443.643237 -snap {("G1" 32)}
+wvSetCursor -win $_nWave1 10346.808422 -snap {("G1" 11)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 31347.368962 -snap {("G1" 14)}
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetCursor -win $_nWave1 31452.209661 -snap {("G1" 14)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31609.470709 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 0
+wvScrollDown -win $_nWave1 1
+wvScrollDown -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvScrollUp -win $_nWave1 1
+wvSetCursor -win $_nWave1 8439.676259 -snap {("G1" 18)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 11584.897225 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 15411.582734 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 19447.949640 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 15621.264132 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 19447.949640 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 23641.577595 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 8649.357657 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11375.215827 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 8439.676259 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11165.534430 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 15464.003083 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11427.636177 -snap {("G1" 30)}
+wvSelectSignal -win $_nWave1 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 16 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 26 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 21 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 26 )} 
+wvSetCursor -win $_nWave1 11322.795478 -snap {("G1" 17)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 15726.104830 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11427.636177 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 15568.843782 -snap {("G1" 30)}
+wvSelectSignal -win $_nWave1 {( "G1" 24 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 29 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 11846.998972 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 12371.202467 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11689.737924 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 12842.985612 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11846.998972 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 12371.202467 -snap {("G1" 30)}
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSetCursor -win $_nWave1 11794.578623 -snap {("G1" 30)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSetCursor -win $_nWave1 12476.043165 -snap {("G1" 17)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 11480.056526 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 12580.883864 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13524.450154 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 12476.043165 -snap {("G1" 17)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 11480.056526 -snap {("G1" 30)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 12371.202467 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 13314.768756 -snap {("G1" 17)}
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSetCursor -win $_nWave1 12371.202467 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 11270.375128 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 12423.622816 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 13314.768756 -snap {("G1" 32)}
+wvSetCursor -win $_nWave1 14625.277492 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 11322.795478 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 10693.751285 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 11794.578623 -snap {("G1" 31)}
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSetCursor -win $_nWave1 12633.304214 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 11375.215827 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 12895.405961 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 11480.056526 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 12738.144913 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 11584.897225 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 12476.043165 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 13419.609455 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 12423.622816 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 13472.029805 -snap {("G1" 31)}
+wvSetCursor -win $_nWave1 14834.958890 -snap {("G1" 31)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 12476.043165 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11689.737924 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 12476.043165 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11532.476876 -snap {("G1" 30)}
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 12318.782117 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11427.636177 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 12109.100719 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11165.534430 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11427.636177 -snap {("G1" 17)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 12580.883864 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13419.609455 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 14625.277492 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13629.290853 -snap {("G1" 17)}
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 31 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 32 )} 
+wvSelectSignal -win $_nWave1 {( "G1" 19 )} 
+wvSetCursor -win $_nWave1 12580.883864 -snap {("G1" 19)}
+wvSetCursor -win $_nWave1 14415.596095 -snap {("G1" 19)}
+wvSetCursor -win $_nWave1 12685.724563 -snap {("G1" 19)}
+wvSetCursor -win $_nWave1 13419.609455 -snap {("G1" 18)}
+wvSetCursor -win $_nWave1 12738.144913 -snap {("G1" 18)}
+wvSelectSignal -win $_nWave1 {( "G1" 17 )} 
+wvSetCursor -win $_nWave1 13838.972251 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 14363.175745 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 15516.423433 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 11270.375128 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 12371.202467 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 13576.870504 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 14415.596095 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 13524.450154 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 14468.016444 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13314.768756 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 12476.043165 -snap {("G1" 30)}
+wvSetCursor -win $_nWave1 11375.215827 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 12371.202467 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13576.870504 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 14572.857143 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13629.290853 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 14677.697842 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13262.348407 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 14415.596095 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13367.189106 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 14310.755396 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13419.609455 -snap {("G1" 17)}
+wvSetCursor -win $_nWave1 13472.029805 -snap {("G1" 17)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31347.368962 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31190.107914 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSetCursor -win $_nWave1 31294.948613 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 14 )} 
+wvSetCursor -win $_nWave1 31452.209661 -snap {("G1" 13)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
