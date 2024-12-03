@@ -87,19 +87,28 @@ end
 // 
 
 reg [255:0] res_r;
-modular_mult modular_mult_inst(
+wire         valid_w;
+/* modular_mult modular_mult_inst(
 	.i_clk  (i_clk)  ,
 	.a      (255'h213231231231231243242423432231),
 	.b      (255'h31231221313332312312312353123123123122)  ,
 	.i_first(input_cnt==0)  ,
 	.res    (res_r)
+); */
+inversion inversion_inst(
+	.i_clk      (i_clk) ,
+	.i_rst       (i_rst),
+	.i_in_a     (`q) , 
+	.i_first    (input_cnt==0) ,
+	.o_inv_a    (res_r) ,
+	.o_out_valid(valid_w)
 );
 
 always@ (*) begin
 	case(curr_state)
 		S_RST:       next_state = S_INPUT;
 		S_INPUT:     next_state = input_cnt == 11 && m_reg_rden ? S_PROCESS : S_INPUT;
-		S_PROCESS:   next_state = S_OUTPUT;
+		S_PROCESS:   next_state = valid_w ? S_OUTPUT : S_PROCESS;
 		S_OUTPUT :   next_state = S_OUTPUT;
 	endcase
 end
@@ -173,6 +182,7 @@ module modular_mult  #(
     parameter DATA_W = 256
 ) (
 	input                 i_clk     ,
+	input                 i_rst     ,
 	input  [DATA_W-1:0]   a         ,
 	input  [DATA_W-1:0]   b         ,
 	input                 i_first   ,
@@ -309,6 +319,7 @@ reg [DATA_W-2:0]	  res_r;
 reg o_valid_r;
 mod_q_reduce mod_q_reduce_inst (
 	 .i_clk  (i_clk)  ,
+	 .i_rst  (i_rst),
 	 .a      (accumulated_res_r[127:0])  , // LSB of Cx
 	 .b      (accumulated_res_r[255:128])  , // MSB of Cx
 	 .i_first(cnt==4)  ,
@@ -345,6 +356,7 @@ module mod_q_reduce #(
     parameter DATA_W = 128
 ) (
 	input                 i_clk     ,
+	input                 i_rst     ,
 	input  [DATA_W-1:0]   a         , // LSB of Cx
 	input  [DATA_W-1:0]   b         , // MSB of Cx
 	input                 i_first   ,
@@ -449,7 +461,7 @@ end
 
 
 always@ (posedge i_clk ) begin
-	if(i_first) begin
+	if(i_first || i_rst) begin
 		S <= 0;
 		round <= 0;
 	end else begin
@@ -497,3 +509,99 @@ endmodule
 // method: Called after MM
 // Ref : Cryptographic Accelerators for Digital Signature Based on Ed25519
 // ---------------------------------------------------------------------------
+
+module inversion #(
+    parameter DATA_W = 255
+) (
+	input                 i_clk        ,
+	input                 i_rst        ,
+	input  [254:0]        i_in_a       , 
+	input                 i_first      ,
+	output [254:0]	      o_inv_a      ,
+	output 				  o_out_valid
+);
+
+// Reg, Wire decleration
+
+reg			curr_state, next_state;
+
+reg [254:0] im_data_1_r;
+reg [254:0] im_data_2_r;
+reg [254:0] im_data_w;
+
+reg [5:0] state;
+reg [1:0] sub_state;
+
+reg [254:0] in_b_r;
+reg         in_mult_valid_r;
+
+reg [7:0]   cnt;
+wire		o_valid_w;
+// parameters
+localparam S_SQUARE = 0;
+localparam S_MULT   = 1;
+
+localparam [255:0] q_sub_2   = `q - 2;
+// Continuous assignment
+
+modular_mult modular_mult_inst(
+	.i_clk  (i_clk) ,
+	.i_rst  (i_rst),
+	.a      (im_data_1_r),
+	.b      (in_b_r),
+	.i_first(in_mult_valid_r)  ,
+	.o_valid(o_valid_w),
+	.res    (im_data_w)
+);
+// Combinational logic
+always @ (*) begin
+	case(curr_state)
+		S_SQUARE : begin
+			in_b_r = im_data_1_r;
+		end
+		S_MULT    : begin
+			in_b_r = i_in_a;
+		end
+	endcase
+end
+
+always @ (*) begin
+	case(curr_state)
+		S_SQUARE : begin
+			if(o_valid_w && q_sub_2[cnt]) 
+				next_state = S_MULT;
+			else
+				next_state = S_SQUARE;
+		end
+		S_MULT    : begin
+			if(o_valid_w) 
+				next_state = S_SQUARE;
+			else
+				next_state = S_MULT;
+		end
+	endcase
+end
+
+wire state_change;
+assign state_change = (curr_state != next_state) || o_valid_w;
+// Sequential circuit
+
+always @ ( posedge i_clk) begin
+	if(i_first) begin
+		cnt <= 255;
+		curr_state <= 0;
+		im_data_1_r <= 1;
+		in_mult_valid_r <= 1;
+	end
+	else  begin
+		cnt             <= state_change ? cnt - 1 : cnt;
+		curr_state      <= next_state;
+		im_data_1_r     <= o_valid_w ? im_data_w : im_data_1_r;
+		in_mult_valid_r <=  state_change;
+	end
+end
+
+assign o_inv_a     = im_data_1_r;
+assign o_out_valid = cnt == 0;
+
+endmodule

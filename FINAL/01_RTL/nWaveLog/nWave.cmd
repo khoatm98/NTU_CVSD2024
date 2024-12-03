@@ -4741,3 +4741,577 @@ wvReloadFile -win $_nWave1
 wvDisplayGridCount -win $_nWave1 -off
 wvGetSignalClose -win $_nWave1
 wvReloadFile -win $_nWave1
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvUnknownSaveResult -win $_nWave1 -clear
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 8334.835560 -snap {("G1" 12)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 10221.968140 -snap {("G1" 11)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/inversion_inst"
+wvSetPosition -win $_nWave1 {("G2" 1)}
+wvSetPosition -win $_nWave1 {("G2" 1)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 1 )} 
+wvSetPosition -win $_nWave1 {("G2" 1)}
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvSetPosition -win $_nWave1 {("G2" 3)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 10379.229188 -snap {("G1" 7)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSetPosition -win $_nWave1 {("G2" 4)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetPosition -win $_nWave1 {("G2" 5)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 8387.255910 -snap {("G2" 4)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 5 )} 
+wvSetCursor -win $_nWave1 8492.096608 -snap {("G2" 4)}
+wvSetCursor -win $_nWave1 7391.269270 -snap {("G2" 1)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 6 )} 
+wvSetPosition -win $_nWave1 {("G2" 6)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 7496.109969 -snap {("G2" 1)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 4 )} 
+wvZoomOut -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 2 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 2 )} 
+wvSelectSignal -win $_nWave1 {( "G2" 3 )} 
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+{/testbench/u_ed25519/inversion_inst/o_out_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+{/testbench/u_ed25519/inversion_inst/o_out_valid} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 7 )} 
+wvSetPosition -win $_nWave1 {("G2" 7)}
+wvGetSignalClose -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 7181.587873 -snap {("G2" 1)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 31977.451182 -snap {("G2" 6)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 261839.645427 -snap {("G2" 7)}
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 239947.661871 -snap {("G2" 6)}
+wvDisplayGridCount -win $_nWave1 -off
+wvGetSignalClose -win $_nWave1
+wvReloadFile -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 157852.723535 -snap {("G2" 5)}
+wvSetCursor -win $_nWave1 212006.577595 -snap {("G2" 5)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 6616484.568345 -snap {("G2" 7)}
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvZoomIn -win $_nWave1
+wvSetCursor -win $_nWave1 6636731.538557 -snap {("G2" 5)}
+wvZoomIn -win $_nWave1
+wvSetCursor -win $_nWave1 6637736.068424 -snap {("G2" 7)}
+wvGetSignalOpen -win $_nWave1
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+{/testbench/u_ed25519/inversion_inst/o_out_valid} \
+{/testbench/u_ed25519/inversion_inst/o_inv_a\[254:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+{/testbench/u_ed25519/inversion_inst/o_out_valid} \
+{/testbench/u_ed25519/inversion_inst/o_inv_a\[254:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvSetPosition -win $_nWave1 {("G2" 8)}
+wvGetSignalClose -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/inversion_inst"
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+{/testbench/u_ed25519/inversion_inst/o_out_valid} \
+{/testbench/u_ed25519/inversion_inst/o_inv_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/im_data_w\[254:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+{/testbench/u_ed25519/inversion_inst/o_out_valid} \
+{/testbench/u_ed25519/inversion_inst/o_inv_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/im_data_w\[254:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 9 )} 
+wvSetPosition -win $_nWave1 {("G2" 9)}
+wvGetSignalClose -win $_nWave1
+wvSetCursor -win $_nWave1 20552.977574 -snap {("G2" 9)}
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G2" 8 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/inversion_inst"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/inversion_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/inversion_inst/modular_mult_inst/multiplier_64x64_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/inversion_inst/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/inversion_inst/modular_mult_inst"
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/data_in_buf_r\[767:0\]} \
+{/testbench/u_ed25519/data_out_buf_r\[511:0\]} \
+{/testbench/u_ed25519/i_clk} \
+{/testbench/u_ed25519/i_in_data\[63:0\]} \
+{/testbench/u_ed25519/m_reg_rden} \
+{/testbench/u_ed25519/m_reg_wren} \
+{/testbench/u_ed25519/i_in_valid} \
+{/testbench/u_ed25519/o_in_ready_r} \
+{/testbench/u_ed25519/o_out_valid_r} \
+{/testbench/u_ed25519/curr_state\[1:0\]} \
+{/testbench/u_ed25519/input_cnt\[3:0\]} \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+{/testbench/u_ed25519/inversion_inst/i_first} \
+{/testbench/u_ed25519/inversion_inst/in_b_r\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/i_in_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/curr_state} \
+{/testbench/u_ed25519/inversion_inst/o_valid_w} \
+{/testbench/u_ed25519/inversion_inst/next_state} \
+{/testbench/u_ed25519/inversion_inst/o_out_valid} \
+{/testbench/u_ed25519/inversion_inst/o_inv_a\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/im_data_w\[254:0\]} \
+{/testbench/u_ed25519/inversion_inst/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/inversion_inst/modular_mult_inst/b\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G3" \
+}
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvSetPosition -win $_nWave1 {("G2" 11)}
+wvSelectSignal -win $_nWave1 {( "G2" 11 )} 
+wvSetCursor -win $_nWave1 59212.906025 -snap {("G2" 11)}

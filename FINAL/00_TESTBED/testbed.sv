@@ -14,8 +14,8 @@
 
 `timescale 1ns/10ps
 `define PERIOD    10.0
-//`define MAX_CYCLE 1_000_000
-`define MAX_CYCLE 1_00
+`define MAX_CYCLE 1_000_000
+//`define MAX_CYCLE 1_00
 `define RST_CYCLE 5
 
 `define I_DELAY 1
