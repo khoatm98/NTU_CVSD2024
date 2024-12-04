@@ -17,14 +17,14 @@ reg	   i_first_lvl2_r, i_first_lvl_r, i_first_lvl_r1;
 reg [5:0] lvl_count;
 reg [3:0] pd_level;
 reg [255:0] B_r, D_r, F_r, J_r;
-reg [254:0] a_addsub_r0, a_addsub_r1;
-reg [254:0] b_addsub_r0, b_addsub_r1;
+reg [255:0] a_addsub_r0, a_addsub_r1;
+reg [255:0] b_addsub_r0, b_addsub_r1;
 reg [255:0] a_mult_r, b_mult_r;
 //reg [255:0] lvl4_res_addsub;
 wire	  valid_pd, i_first_lvl;
 wire	  addsub_valid_0, addsub_valid_1, addsub_valid_2;
-wire [254:0] a_addsub_w0, a_addsub_w1, a_addsub_w2;
-wire [254:0] b_addsub_w0, b_addsub_w1, b_addsub_w2;
+wire [255:0] a_addsub_w0, a_addsub_w1, a_addsub_w2;
+wire [255:0] b_addsub_w0, b_addsub_w1, b_addsub_w2;
 wire [255:0] a_mult_w, b_mult_w;
 wire [255:0] res_addsub_w0, res_addsub_w1, res_addsub_w2, res_mult_w;
 wire z1 = 1'b1;
@@ -56,10 +56,8 @@ always @(posedge i_clk) begin
 				if (i_first_lvl_r) begin
 	                                a_mult_r    <= x1; 		//output: C
 	                                b_mult_r    <= x1; 		//output: C
-					B_r	    <= res_addsub_w0;	//temporary save B
-				end
-				if (i_first_lvl) begin
-					D_r	    <= res_mult_w;	//temporary save D
+					B_r	    <= res_addsub_w0;	//temporary save B double check this one
+					D_r	    <= res_mult_w;
 				end
                         end 
 			2: begin
@@ -79,19 +77,15 @@ always @(posedge i_clk) begin
 	                                b_addsub_r0 <= res_addsub_w2;	//input: E
 	                                a_mult_r    <= z1;		//input: Z
 	                                b_mult_r    <= z1;		//input: Z
+					F_r         <= res_addsub_w1;   //temporary save F
 				end
-				if (i_first_lvl) begin
-					F_r	    <= res_addsub_w1;	//temporary save F
-				end	
                         end 
 			4: begin
 				if (i_first_lvl_r) begin
 	                                a_addsub_r0 <= res_mult_w;	//output: A 
 	                                b_addsub_r0 <= res_mult_w; 	//output: A
-				end
-				if (i_first_lvl) begin
 					B_r <= res_addsub_w0; //temporary save add at level 4 in B
-                        	end
+				end
 			end 
                         5: begin
 				if (i_first_lvl_r) begin
@@ -105,9 +99,7 @@ always @(posedge i_clk) begin
 				if (i_first_lvl_r) begin
 	                                a_mult_r    <= B_r;
 	                                b_mult_r    <= res_addsub_w1;
-				end
-				if (i_first_lvl) begin
-					D_r	    <= res_mult_w;
+					D_r         <= res_mult_w;
 					J_r         <= res_addsub_w1;
 				end
                         end
@@ -115,13 +107,11 @@ always @(posedge i_clk) begin
 			 	if (i_first_lvl_r) begin	
 	                                a_mult_r    <= J_r;
 	                                b_mult_r    <= F_r;
-				end
-				if (i_first_lvl) begin
-					B_r	    <= res_mult_w;
+					B_r         <= res_mult_w;
 				end
 			end
 			8: begin
-				if (i_first_lvl) begin
+				if (i_first_lvl_r) begin
 					J_r	    <= res_mult_w;
 				end
                         end
