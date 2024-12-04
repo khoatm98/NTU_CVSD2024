@@ -88,21 +88,23 @@ end
 
 reg [255:0] res_r;
 wire         valid_w;
-/* modular_mult modular_mult_inst(
+modular_mult modular_mult_inst(
 	.i_clk  (i_clk)  ,
-	.a      (255'h213231231231231243242423432231),
+	.i_rst  (i_rst),
+	.a      (`q),
 	.b      (255'h31231221313332312312312353123123123122)  ,
 	.i_first(input_cnt==0)  ,
+	.o_valid(valid_w),
 	.res    (res_r)
-); */
-inversion inversion_inst(
+);
+/* inversion inversion_inst(
 	.i_clk      (i_clk) ,
 	.i_rst       (i_rst),
 	.i_in_a     (`q) , 
 	.i_first    (input_cnt==0) ,
 	.o_inv_a    (res_r) ,
 	.o_out_valid(valid_w)
-);
+); */
 
 always@ (*) begin
 	case(curr_state)
@@ -148,28 +150,72 @@ module modular_add_sub  #(
     parameter DATA_W = 255
 ) (
 input                 i_clk     ,
+input                 i_rst     ,
 input  [DATA_W-1:0]   a         ,
 input  [DATA_W-1:0]   b         ,
 input                 i_add_sub ,
 input                 i_first   ,
-output [DATA_W-1:0]	  res
+output                o_valid   ,
+output [DATA_W-1:0]   res
 );
 
-reg  [DATA_W:0]	  C;
-reg  [DATA_W:0]	  C_;
-wire  [DATA_W:0]	  a_;
-wire  [DATA_W:0]	  b_;
+localparam IDLE   = 2'd0;
+localparam ONE    = 2'd1;
+localparam TWO    = 2'd2;
+localparam THREE  = 2'd3;
 
-assign a_ = i_first ? a  : C[DATA_W-1:0];
-assign b_ = i_first ? b  : 19;
+reg     [1:0]     state, n_state;
+reg  [DATA_W:0]   C;
+reg  [DATA_W:0]   C_;
 
-always @(posedge i_clk) begin
-	C  <= i_add_sub ?  a_ + b_ : a_ - b_;
-	C_ <= C;
+wire  [DATA_W:0]   sum;
+wire  [DATA_W:0]   sub;
+
+wire  [DATA_W:0]          a_;
+wire  [DATA_W:0]          b_;
+
+assign a_ = state == IDLE ? {1'b0,a} : (state == TWO ? C[DATA_W:0] : {1'b0,C[DATA_W-1:0]});
+assign b_ = state == IDLE ? {1'b0,b} : (state == TWO ? `q : 19);
+
+assign sum = a_ + b_;
+assign sub = a_ - b_;
+
+always @(*) begin
+        case (state)
+                IDLE: begin
+                        n_state = (i_first) ? ONE : IDLE;
+                end
+                ONE: begin
+                        n_state = TWO;
+                end
+                TWO: begin
+                        n_state = THREE;
+                end
+				THREE: begin
+                        n_state = IDLE;
+                end
+        endcase
 end
 
-wire compare = C_ >= `q ;
-assign res = compare ? C[DATA_W-1:0] : C_[DATA_W-1:0];
+always @(posedge i_clk) begin
+	state <= i_rst ? IDLE : n_state;
+end
+
+always @(posedge i_clk) begin
+	if(state == IDLE)
+		C <= i_add_sub ? sum : sub;
+	else if(state == ONE && C[DATA_W])
+		C <= i_add_sub ? sum : sub;
+	else if(state == TWO)
+		C <= i_add_sub ? (sub[DATA_W] ? C : sub[DATA_W-1:0]) : (C[DATA_W] ? sum[DATA_W-1:0] : C[DATA_W-1:0]);
+	else
+		C <= C;
+end
+
+
+
+assign res = C;
+assign o_valid = (state == THREE);
 endmodule
 
 // ---------------------------------------------------------------------------
@@ -385,7 +431,7 @@ reg [4:0]      round;
 
 assign accum_l = S[136*2 -1 -:136] + shifted_cl; 
 assign accum_h = S[136*3 -1 -:136] + shifted_ch;
-assign o_valid = round == 19;
+assign o_valid = round == 20;
 // First 4 cycles to compute 38*C3
 always@ (*) begin
 	case(round)
@@ -494,6 +540,7 @@ assign a_w = C[254:0];
 assign b_w = C[264:255]*19;
 modular_add_sub modular_add_sub_inst (
 	.i_clk    (i_clk),
+	.i_rst    (i_rst),
 	.a        (a_w),
 	.b        (b_w),
 	.i_add_sub(1'b1),
@@ -543,7 +590,7 @@ localparam S_MULT   = 1;
 
 localparam [255:0] q_sub_2   = `q - 2;
 // Continuous assignment
-
+  
 modular_mult modular_mult_inst(
 	.i_clk  (i_clk) ,
 	.i_rst  (i_rst),
