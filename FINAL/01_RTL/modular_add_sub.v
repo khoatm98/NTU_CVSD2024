@@ -15,7 +15,6 @@ localparam ONE  = 2'd1;
 localparam TWO  = 2'd2;
 
 reg     [1:0]     state, n_state;
-reg               valid_r;
 reg  [DATA_W:0]   C;
 reg  [DATA_W:0]   C_;
 wire  [DATA_W:0]          a_;
@@ -30,7 +29,7 @@ always @(posedge i_clk) begin
 end
 
 always @(posedge i_clk) begin
-        C <= i_add_sub ?  a_ + b_ : a_ - b_;
+	if (state == ONE || i_first) C <= i_add_sub ?  a_ + b_ : a_ - b_;
         if (state == ONE) C_ <= C;
 end
 
