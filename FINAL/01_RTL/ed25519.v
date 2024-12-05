@@ -1,6 +1,8 @@
 `timescale 1ns/10ps
 
 `define q 255'h7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffed
+`define d 255'h52036cee2b6ffe738cc740797779e89800700a4d4141d8ab75eb4dca135978a3
+
 module ed25519 #(
     parameter DATA_W = 64,
 	parameter BUFF_W = 256
@@ -22,11 +24,12 @@ localparam S_RST     = 0;
 localparam S_INPUT   = 1;
 localparam S_PROCESS = 2;
 localparam S_OUTPUT  = 3;
+localparam S_P1      = 4;
 
 // ---------------------------------------------------------------------------
 // Reg and wire declaration
 // ---------------------------------------------------------------------------
-reg [1:0] curr_state, next_state;
+reg [2:0] curr_state, next_state;
 reg [3:0] input_cnt;
 
 reg [DATA_W-1:0]   o_out_data_r;
@@ -86,29 +89,97 @@ end
 // Sequential Circuit
 // 
 
-reg [255:0] res_r;
-wire         valid_w;
-/* modular_mult modular_mult_inst(
-	.i_clk  (i_clk)  ,
-	.a      (255'h213231231231231243242423432231),
-	.b      (255'h31231221313332312312312353123123123122)  ,
-	.i_first(input_cnt==0)  ,
-	.res    (res_r)
-); */
-inversion inversion_inst(
+reg [255:0] res_r, i_first_ad_r, i_first_pd_r;
+reg [255:0] x2_r, y2_r, z2_r, x1_r, y1_r;
+wire         valid_w, valid_w1, i_first_ad, i_first_pd;
+wire [255:0] x2, y2, z2, x2_w1, y2_w1, z2_w1, x1_w1, y1_w1;
+wire [255:0] x3, y3, z3;
+//modular_mult modular_mult_inst(
+//	.i_clk  (i_clk)  ,
+//	.i_rst  (i_rst),
+//	.a      (`q),
+//	.b      (255'h31231221313332312312312353123123123122)  ,
+//	.i_first(input_cnt==0)  ,
+//	.o_valid(valid_w),
+//	.res    (res_r)
+//);
+/* inversion inversion_inst(
 	.i_clk      (i_clk) ,
 	.i_rst       (i_rst),
 	.i_in_a     (`q) , 
 	.i_first    (input_cnt==0) ,
 	.o_inv_a    (res_r) ,
 	.o_out_valid(valid_w)
+); */
+
+point_adding point_adding_inst(
+        .i_clk  (i_clk),
+        .i_rst  (i_rst),
+	.i_state(curr_state),
+        .x1     (x1_w1),
+        .y1     (y1_w1),
+        .x2     (x2_w1),
+        .y2     (y2_w1),
+        .z2     (z2_w1),
+        .i_first (i_first_ad),
+        .o_valid (valid_w1),
+        .x3     (x3),
+        .y3     (y3),
+        .z3     (z3)
 );
 
+point_doubling point_doubling_inst(
+        .i_clk  (i_clk),
+        .i_rst  (i_rst),
+	.i_state(curr_state),
+        .x1     (255'h321),
+        .y1     (255'h111),
+        .i_first (i_first_pd),
+        .o_valid (valid_w),
+        .x2     (x2),
+        .y2     (y2),
+        .z2     (z2)
+
+);
+
+always@ (posedge i_clk) begin
+	if (i_rst) begin
+		x2_r <= 0;
+		y2_r <= 0;
+		z2_r <= 0;
+		x1_r <= 0;
+		y1_r <= 0;
+	end else if (valid_w) begin
+		x2_r <= x2;
+		y2_r <= y2;
+		z2_r <= z2;
+		x1_r <= 255'h321;
+		y1_r <= 255'h111;
+	end
+end
+assign x2_w1 = x2_r;
+assign y2_w1 = y2_r;
+assign z2_w1 = z2_r;
+assign x1_w1 = x1_r;
+assign y1_w1 = y1_r;
+assign i_first_ad = i_first_ad_r;
+assign i_first_pd = i_first_pd_r;
+
+always@ (posedge i_clk) begin
+	if (i_rst) begin
+		i_first_ad_r <= 0;
+		i_first_pd_r <= 0;
+	end else begin
+		i_first_ad_r <= valid_w;
+		i_first_pd_r <= input_cnt == 11 && m_reg_rden;
+	end	
+end
 always@ (*) begin
 	case(curr_state)
 		S_RST:       next_state = S_INPUT;
 		S_INPUT:     next_state = input_cnt == 11 && m_reg_rden ? S_PROCESS : S_INPUT;
-		S_PROCESS:   next_state = valid_w ? S_OUTPUT : S_PROCESS;
+		S_PROCESS:   next_state = valid_w ? S_P1 : S_PROCESS;
+		S_P1	:    next_state = valid_w1? S_OUTPUT : S_P1;
 		S_OUTPUT :   next_state = S_OUTPUT;
 	endcase
 end
@@ -138,470 +209,3 @@ end
 
 endmodule
 
-// ---------------------------------------------------------------------------
-// module: modular_add_sub
-// Info: Output after 2 cycles
-// Ref : Fast, Small, and Area-Time Efficient Architectures for Key-Exchange on Curve25519
-// TODO: reduce data buffer -> only use either C or C_ 
-// ---------------------------------------------------------------------------
-module modular_add_sub  #(
-    parameter DATA_W = 255
-) (
-input                 i_clk     ,
-input  [DATA_W-1:0]   a         ,
-input  [DATA_W-1:0]   b         ,
-input                 i_add_sub ,
-input                 i_first   ,
-output [DATA_W-1:0]	  res
-);
-
-reg  [DATA_W:0]	  C;
-reg  [DATA_W:0]	  C_;
-wire  [DATA_W:0]	  a_;
-wire  [DATA_W:0]	  b_;
-
-assign a_ = i_first ? a  : C[DATA_W-1:0];
-assign b_ = i_first ? b  : 19;
-
-always @(posedge i_clk) begin
-	C  <= i_add_sub ?  a_ + b_ : a_ - b_;
-	C_ <= C;
-end
-
-wire compare = C_ >= `q ;
-assign res = compare ? C[DATA_W-1:0] : C_[DATA_W-1:0];
-endmodule
-
-// ---------------------------------------------------------------------------
-// module: modular_mult
-// method: 2 levels of Karatsuba
-// Ref : Fast, Small, and Area-Time Efficient Architectures for Key-Exchange on Curve25519
-// TODO: Merge modular_mult and mod_q_reduce to share equivalent resources (eg. round)
-// ---------------------------------------------------------------------------
-module modular_mult  #(
-    parameter DATA_W = 256
-) (
-	input                 i_clk     ,
-	input                 i_rst     ,
-	input  [DATA_W-1:0]   a         ,
-	input  [DATA_W-1:0]   b         ,
-	input                 i_first   ,
-	output 				  o_valid   ,
-	output [DATA_W-1:0]	  res
-);
-	
-reg  [63:0]   a_in_r;
-reg  [63:0]   b_in_r;
-reg  [127:0]  res_out_r;
-
-reg  [256:0]  accumulated_res_w;
-reg  [255:0]  accumulated_res_r;
-
-reg  [4:0]    cnt;
-
-wire [127:0] C_a[3:0];
-wire [127:0] C_b[3:0];
-
-assign C_a[0] = a[127:0];
-assign C_a[1] = a[255:128];
-assign C_a[2] = a[127:0];
-assign C_a[3] = a[255:128];
-
-assign C_b[0] = b[127:0];
-assign C_b[1] = b[127:0];
-assign C_b[2] = b[255:128];
-assign C_b[3] = b[255:128];
-
-//Start from C3 - C0 - C1 - C2
-// C = 38*C3 + C0 + C1*2^128 + C2*2^128
-always@ (*) begin
-	case(cnt)
-		//a0*b0
-		0 : begin
-			a_in_r = C_a[3][63:0];
-			b_in_r = C_b[3][63:0];
-		end
-		//a1*b0
-		1 : begin
-			a_in_r = C_a[3][127:64];
-			b_in_r = C_b[3][63:0];
-		end
-		
-		//a0*b1
-		2 : begin
-			a_in_r = C_a[3][63:0];
-			b_in_r = C_b[3][127:64];
-		end
-		//a1*b1
-		3 : begin
-			a_in_r = C_a[3][127:64];
-			b_in_r = C_b[3][127:64];
-		end
-		4 : begin
-			a_in_r = C_a[0][63:0];
-			b_in_r = C_b[0][63:0];
-		end
-		5 : begin
-			a_in_r = C_a[0][127:64];
-			b_in_r = C_b[0][63:0];
-		end
-		6 : begin
-			a_in_r = C_a[0][63:0];
-			b_in_r = C_b[0][127:64];
-		end
-		7 : begin
-			a_in_r = C_a[0][127:64];
-			b_in_r = C_b[0][127:64];
-		end
-		8 : begin
-			a_in_r = C_a[1][63:0];
-			b_in_r = C_b[1][63:0];
-		end
-		9 : begin
-			a_in_r = C_a[1][127:64];
-			b_in_r = C_b[1][63:0];
-		end
-		10: begin
-			a_in_r = C_a[1][63:0];
-			b_in_r = C_b[1][127:64];
-		end
-		11: begin
-			a_in_r = C_a[1][127:64];
-			b_in_r = C_b[1][127:64];
-		end
-		12: begin
-			a_in_r = C_a[2][63:0];
-			b_in_r = C_b[2][63:0];
-		end
-		13: begin
-			a_in_r = C_a[2][127:64];
-			b_in_r = C_b[2][63:0];
-		end
-		14: begin
-			a_in_r = C_a[2][63:0];
-			b_in_r = C_b[2][127:64];
-		end
-		15: begin
-			a_in_r = C_a[2][127:64];
-			b_in_r = C_b[2][127:64];
-		end
-		default: begin
-			a_in_r = 0;
-			b_in_r = 0;
-		end
-	endcase
-end
-
-multiplier_64x64 multiplier_64x64_inst (
-							.a  (a_in_r) ,
-							.b  (b_in_r) ,
-							.res(res_out_r)
-						);
-
-//Accumulate partial products
-always@ (*) begin
-	accumulated_res_w = cnt[1:0] == 0 ? {64'd0, res_out_r, 64'd0} : {res_out_r,128'd0} + accumulated_res_r;
-end
-
-// Sequential
-always@ (posedge i_clk ) begin
-	if(i_first) begin
-		cnt <= 0;
-		accumulated_res_r <= 0;
-	end else begin
-		cnt <= cnt + 1;
-		accumulated_res_r <= cnt[1:0] == 2 ? accumulated_res_w >> 64 : accumulated_res_w;
-	end
-end
-
-// Connect with reduction module
-reg [DATA_W-2:0]	  res_r;
-reg o_valid_r;
-mod_q_reduce mod_q_reduce_inst (
-	 .i_clk  (i_clk)  ,
-	 .i_rst  (i_rst),
-	 .a      (accumulated_res_r[127:0])  , // LSB of Cx
-	 .b      (accumulated_res_r[255:128])  , // MSB of Cx
-	 .i_first(cnt==4)  ,
-	 .o_res  (res_r),
-	 .o_valid(o_valid_r)
-);
-
-assign res = {1'b0, res_r};
-assign o_valid = o_valid_r;
-endmodule
-
-// ---------------------------------------------------------------------------
-// module: multiplier_64x64
-// method: Generic 64x64 multiplier
-// ---------------------------------------------------------------------------
-
-module multiplier_64x64   #(
-    parameter DATA_W = 64
-) (
-input  [DATA_W  -1:0]   a   ,
-input  [DATA_W  -1:0]   b   ,
-output [DATA_W*2-1:0]	res
-);
-	assign res = a*b;
-endmodule
-
-// ---------------------------------------------------------------------------
-// module: mod_q_reduce
-// method: Fed to modular_mult every 4 cycles
-// Ref : Cryptographic Accelerators for Digital Signature Based on Ed25519
-// ---------------------------------------------------------------------------
-
-module mod_q_reduce #(
-    parameter DATA_W = 128
-) (
-	input                 i_clk     ,
-	input                 i_rst     ,
-	input  [DATA_W-1:0]   a         , // LSB of Cx
-	input  [DATA_W-1:0]   b         , // MSB of Cx
-	input                 i_first   ,
-	output [254:0]	      o_res     ,
-	output 				  o_valid
-);
-
-reg [136*3 -1:0] S;
-reg [136 -1:0] S_w[2:0];
-wire [136 -1:0] S2 = S[136*3 -1 -:136];
-wire [136 -1:0] S1 = S[136*2 -1 -:136];
-wire [136 -1:0] S0 = S[136*1 -1 -:136];
-reg [136*2 -1:0] R;
-reg [136 -1:0] R_w[2:1];
-wire [136 -1:0] L2 = R[136*2 -1 -:136];
-wire [136 -1:0] L1 = R[136*1 -1 -:136];
-
-
-reg [136 -1:0] accum_l;
-reg [136 -1:0] accum_h;
-
-reg [136 -1:0] shifted_cl;
-reg [136 -1:0] shifted_ch;
-
-reg [4:0]      round;
-
-assign accum_l = S[136*2 -1 -:136] + shifted_cl; 
-assign accum_h = S[136*3 -1 -:136] + shifted_ch;
-assign o_valid = round == 19;
-// First 4 cycles to compute 38*C3
-always@ (*) begin
-	case(round)
-		0: begin
-			shifted_ch = R[136*2 -1 -:136] << 1; //R2 << 1
-			shifted_cl = R[136*1 -1 -:136] << 1; //R2 << 1
-		end
-		1: begin
-			shifted_ch = R[136*2 -1 -:136] << 2; //R2 << 2
-			shifted_cl = R[136*1 -1 -:136] << 2; //R2 << 2
-		end
-		2: begin
-			shifted_ch = R[136*2 -1 -:136] << 5; //R2 << 5
-			shifted_cl = R[136*1 -1 -:136] << 5; //R2 << 5
-		end
-		13: begin
-			shifted_ch = S[136*3 -1 -:136] << 1; //Calculate 19*S2
-			shifted_cl = R[136*1 -1 -:136]; 
-		end
-		14: begin
-			shifted_ch = R[136*2 -1 -:136] << 4; //Calculate 19*S2
-			shifted_cl = R[136*1 -1 -:136]; 
-		end
-		default: begin
-			shifted_ch = R[136*2 -1 -:136]; //R2 << 0
-			shifted_cl = R[136*1 -1 -:136]; //R2 << 0
-		end
-	endcase
-end
-
-// First 4 cycles to compute 38*C3
-always@ (*) begin
-	case(round)
-		3,7,11: begin
-			R_w[2] = {8'd0,b};
-			R_w[1] = {8'd0,a};
-		end
-		13: begin
-			R_w[2] = S[136*3 -1 -:136];
-			R_w[1] = R[136*1 -1 -:136];
-		end
-		default : begin
-			R_w[2] = R[136*2 -1 -:136];
-			R_w[1] = R[136*1 -1 -:136];
-		end
-	endcase
-end
-
-always@ (*) begin
-	case(round)
-		7: begin // shift down 136 bit
-			S_w[2] = 0;
-			S_w[1] = S[136*3 -1 -:136];
-			S_w[0] = S[136*2 -1 -:136];
-		end
-		0,1,2,4,8,12: begin
-			S_w[2] = accum_h;
-			S_w[1] = accum_l;
-			S_w[0] = S[136*1 -1 -:136];
-		end
-		13,14: begin
-			S_w[2] = accum_h;  // 19*S2
-			S_w[1] = S[136*2 -1 -:136];
-			S_w[0] = S[136*1 -1 -:136];
-		end
-		default: begin
-			S_w[2] = S[136*3 -1 -:136];
-			S_w[1] = S[136*2 -1 -:136];
-			S_w[0] = S[136*1 -1 -:136];
-		end
-	endcase
-end
-
-
-always@ (posedge i_clk ) begin
-	if(i_first || i_rst) begin
-		S <= 0;
-		round <= 0;
-	end else begin
-		S <= {S_w[2], S_w[1], S_w[0]};
-		round <= round + 1;
-	end
-end
-
-always@ (posedge i_clk ) begin
-	R <= i_first ? {8'd0,b, 8'd0,a} : {R_w[2], R_w[1]};
-end
-
-// 19*S2 + S0 + S1*2^128
-
-wire [256+8: 0] sum_S;
-reg  [256+8: 0] C;
-assign sum_S = round[0] ?  ({S[136*3 -1 -:136],1'b0} +  S[136*1 -1 -:136] ): (C + {S[136*2 -1 -:136], 128'd0}); //sumS = 19*S2 + S0 + S1*2^128
-
-wire [511:0] sum_S_debug = ({S[136*3 -1 -:136],1'b0} +  S[136*1 -1 -:136]   + {S[136*2 -1 -:136], 128'd0} )%`q;
-always@ (posedge i_clk ) begin
-	C <= sum_S;
-end
-
-// 2 cycles for q modulation
-
-reg  [254:0] res_r;
-wire [254:0] a_w, b_w;
-
-assign a_w = C[254:0];
-assign b_w = C[264:255]*19;
-modular_add_sub modular_add_sub_inst (
-	.i_clk    (i_clk),
-	.a        (a_w),
-	.b        (b_w),
-	.i_add_sub(1'b1),
-	.i_first  (round[1:0]==1), // start at round == 1
-	.res      (res_r)
-);
- 
-assign o_res  = res_r;
-
-endmodule
-// ---------------------------------------------------------------------------
-// module: Inverse
-// method: Called after MM
-// Ref : Cryptographic Accelerators for Digital Signature Based on Ed25519
-// ---------------------------------------------------------------------------
-
-module inversion #(
-    parameter DATA_W = 255
-) (
-	input                 i_clk        ,
-	input                 i_rst        ,
-	input  [254:0]        i_in_a       , 
-	input                 i_first      ,
-	output [254:0]	      o_inv_a      ,
-	output 				  o_out_valid
-);
-
-// Reg, Wire decleration
-
-reg			curr_state, next_state;
-
-reg [254:0] im_data_1_r;
-reg [254:0] im_data_2_r;
-reg [254:0] im_data_w;
-
-reg [5:0] state;
-reg [1:0] sub_state;
-
-reg [254:0] in_b_r;
-reg         in_mult_valid_r;
-
-reg [7:0]   cnt;
-wire		o_valid_w;
-// parameters
-localparam S_SQUARE = 0;
-localparam S_MULT   = 1;
-
-localparam [255:0] q_sub_2   = `q - 2;
-// Continuous assignment
-
-modular_mult modular_mult_inst(
-	.i_clk  (i_clk) ,
-	.i_rst  (i_rst),
-	.a      (im_data_1_r),
-	.b      (in_b_r),
-	.i_first(in_mult_valid_r)  ,
-	.o_valid(o_valid_w),
-	.res    (im_data_w)
-);
-// Combinational logic
-always @ (*) begin
-	case(curr_state)
-		S_SQUARE : begin
-			in_b_r = im_data_1_r;
-		end
-		S_MULT    : begin
-			in_b_r = i_in_a;
-		end
-	endcase
-end
-
-always @ (*) begin
-	case(curr_state)
-		S_SQUARE : begin
-			if(o_valid_w && q_sub_2[cnt]) 
-				next_state = S_MULT;
-			else
-				next_state = S_SQUARE;
-		end
-		S_MULT    : begin
-			if(o_valid_w) 
-				next_state = S_SQUARE;
-			else
-				next_state = S_MULT;
-		end
-	endcase
-end
-
-wire state_change;
-assign state_change = (curr_state != next_state) || o_valid_w;
-// Sequential circuit
-
-always @ ( posedge i_clk) begin
-	if(i_first) begin
-		cnt <= 255;
-		curr_state <= 0;
-		im_data_1_r <= 1;
-		in_mult_valid_r <= 1;
-	end
-	else  begin
-		cnt             <= state_change ? cnt - 1 : cnt;
-		curr_state      <= next_state;
-		im_data_1_r     <= o_valid_w ? im_data_w : im_data_1_r;
-		in_mult_valid_r <=  state_change;
-	end
-end
-
-assign o_inv_a     = im_data_1_r;
-assign o_out_valid = cnt == 0;
-
-endmodule

@@ -4,6 +4,7 @@ module point_doubling #(
 ) (
 	input                 i_clk     ,
         input		      i_rst	,
+	input  [2:0]	      i_state	,
 	input  [DATA_W-1:0]   x1        ,
         input  [DATA_W-1:0]   y1        ,
         input                 i_first   , 
@@ -12,6 +13,11 @@ module point_doubling #(
 	output [DATA_W-1:0]   y2	,
 	output [DATA_W-1:0]   z2
 );
+localparam S_RST     = 0;
+localparam S_INPUT   = 1;
+localparam S_PROCESS = 2;
+localparam S_OUTPUT  = 3;
+localparam S_P1      = 4;
 
 reg	   i_first_lvl2_r, i_first_lvl_r, i_first_lvl_r1;
 reg [5:0] lvl_count;
@@ -131,11 +137,13 @@ end
 always @(posedge i_clk) begin
 	if (i_rst) begin
 		pd_level <= 0;
-	end else if (i_first) begin
-		pd_level <= 0;
-	end else if (valid_pd) begin
-		pd_level <= (pd_level ==8) ? 0: pd_level + 1;
-	end 
+	end else if (i_state == S_PROCESS) begin
+		if (i_first) begin
+			pd_level <= 0;
+		end else if (valid_pd) begin
+			pd_level <= (pd_level ==8) ? 0: pd_level + 1;
+		end 
+	end else pd_level <= 0;
 end
 
 always @(posedge i_clk) begin
@@ -163,6 +171,7 @@ assign o_valid	   = (pd_level == 8) ? i_first_lvl : 0;
 
 modular_add_sub modular_add_sub_pd_inst0 (
         .i_clk    (i_clk),
+	.i_rst    (i_rst),
         .a        (a_addsub_w0),
         .b        (b_addsub_w0),
         .i_add_sub(1'b1),
@@ -173,6 +182,7 @@ modular_add_sub modular_add_sub_pd_inst0 (
 
 modular_add_sub modular_add_sub_pd_inst1 (
         .i_clk    (i_clk),
+	.i_rst    (i_rst),
         .a        (a_addsub_w1),
         .b        (b_addsub_w1),
         .i_add_sub(1'b0),
@@ -183,6 +193,7 @@ modular_add_sub modular_add_sub_pd_inst1 (
 
 modular_add_sub modular_add_sub_pd_inst2 ( // E
         .i_clk    (i_clk),
+	.i_rst    (i_rst),
         .a        (`q),
         .b        (b_addsub_w2),
         .i_add_sub(1'b0),
@@ -193,6 +204,7 @@ modular_add_sub modular_add_sub_pd_inst2 ( // E
 
 modular_mult modular_mult_inst(
         .i_clk  (i_clk)  ,
+	.i_rst    (i_rst),
         .a      (a_mult_w),
         .b      (b_mult_w),
         .i_first(i_first_lvl)  ,
