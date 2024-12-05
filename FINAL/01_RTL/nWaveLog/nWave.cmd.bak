@@ -1,0 +1,182 @@
+verdiSetActWin -win $_nWave1
+wvSetPosition -win $_nWave1 {("G1" 0)}
+wvOpenFile -win $_nWave1 \
+           {/home/raid7_2/user12/r2k41036/FINAL/01_RTL/ed25519.fsdb}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvSetPosition -win $_nWave1 {("G1" 1)}
+wvSetPosition -win $_nWave1 {("G1" 1)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 1 )} 
+wvSetPosition -win $_nWave1 {("G1" 1)}
+wvSetPosition -win $_nWave1 {("G1" 2)}
+wvSetPosition -win $_nWave1 {("G1" 2)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 2 )} 
+wvSetPosition -win $_nWave1 {("G1" 2)}
+wvSetPosition -win $_nWave1 {("G1" 2)}
+wvSetPosition -win $_nWave1 {("G1" 2)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 2 )} 
+wvSetPosition -win $_nWave1 {("G1" 2)}
+wvGetSignalClose -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvZoomOut -win $_nWave1
+wvSetCursor -win $_nWave1 32502.255639 -snap {("G1" 2)}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvSetPosition -win $_nWave1 {("G1" 4)}
+wvSetPosition -win $_nWave1 {("G1" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 3 4 )} 
+wvSetPosition -win $_nWave1 {("G1" 4)}
+wvSetPosition -win $_nWave1 {("G1" 4)}
+wvSetPosition -win $_nWave1 {("G1" 4)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 3 4 )} 
+wvSetPosition -win $_nWave1 {("G1" 4)}
+wvGetSignalClose -win $_nWave1
+wvSelectSignal -win $_nWave1 {( "G1" 3 )} 
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvSetPosition -win $_nWave1 {("G1" 5)}
+wvSetPosition -win $_nWave1 {("G1" 5)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 5 )} 
+wvSetPosition -win $_nWave1 {("G1" 5)}
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 8 )} 
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 8 )} 
+wvSetPosition -win $_nWave1 {("G1" 8)}
+wvGetSignalClose -win $_nWave1
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/testbench"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519"
+wvGetSignalSetScope -win $_nWave1 "/testbench/u_ed25519/modular_mult_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst"
+wvGetSignalSetScope -win $_nWave1 \
+           "/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst"
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 9 )} 
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvAddSignal -win $_nWave1 -clear
+wvAddSignal -win $_nWave1 -group {"G1" \
+{/testbench/u_ed25519/res_r\[255:0\]} \
+{/testbench/u_ed25519/valid_w} \
+{/testbench/u_ed25519/modular_mult_inst/a\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/b\[255:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/i_first} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S2\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S1\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/S0\[135:0\]} \
+{/testbench/u_ed25519/modular_mult_inst/mod_q_reduce_inst/modular_add_sub_inst/C\[255:0\]} \
+}
+wvAddSignal -win $_nWave1 -group {"G2" \
+}
+wvSelectSignal -win $_nWave1 {( "G1" 9 )} 
+wvSetPosition -win $_nWave1 {("G1" 9)}
+wvGetSignalClose -win $_nWave1
