@@ -36,7 +36,7 @@ wire		o_valid_w;
 localparam S_SQUARE = 0;
 localparam S_MULT   = 1;
 
-localparam [255:0] q_sub_2   = `q - 2;
+localparam [254:0] q_sub_2   = `q - 2;
 // Continuous assignment
   
 modular_mult modular_mult_inst(
@@ -63,7 +63,7 @@ end
 always @ (*) begin
 	case(curr_state)
 		S_SQUARE : begin
-			if(o_valid_w && q_sub_2[cnt]) 
+			if(o_valid_w && q_sub_2[cnt-1]) 
 				next_state = S_MULT;
 			else
 				next_state = S_SQUARE;
@@ -80,23 +80,26 @@ end
 wire state_change;
 assign state_change = (curr_state != next_state) || o_valid_w;
 // Sequential circuit
-
+reg o_out_valid_r;
 always @ ( posedge i_clk) begin
 	if(i_first) begin
 		cnt <= 255;
 		curr_state <= 0;
 		im_data_1_r <= 1;
 		in_mult_valid_r <= 1;
+		o_out_valid_r   <= 0;
+		//$display("%b",q_sub_2);
 	end
 	else  begin
-		cnt             <= state_change ? cnt - 1 : cnt;
+		cnt             <= state_change && next_state == S_SQUARE ? cnt - 1 : cnt;
 		curr_state      <= next_state;
 		im_data_1_r     <= o_valid_w ? im_data_w : im_data_1_r;
-		in_mult_valid_r <=  state_change;
+		in_mult_valid_r <= state_change;
+		o_out_valid_r   <= cnt == 1 && state_change && next_state == S_SQUARE;
 	end
 end
 
 assign o_inv_a     = im_data_1_r;
-assign o_out_valid = cnt == 0;
+assign o_out_valid = o_out_valid_r;
 
 endmodule
