@@ -135,7 +135,7 @@ always@ (posedge i_clk ) begin
 		cnt <= 0;
 		accumulated_res_r <= 0;
 	end else begin
-		cnt <= cnt + 1;
+		cnt <= &cnt[4:0] ? cnt : cnt + 1;
 		accumulated_res_r <= cnt[1:0] == 2 ? accumulated_res_w >> 64 : accumulated_res_w;
 	end
 end

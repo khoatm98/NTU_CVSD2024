@@ -60,7 +60,7 @@ always @(posedge i_clk) begin
 end
 
 always @(posedge i_clk) begin
-	if(state == IDLE)
+	if(state == IDLE && i_first)
 		C <= i_add_sub ? sum : sub;
 	else if(state == ONE && C[DATA_W])
 		C <= i_add_sub ? sum : sub;

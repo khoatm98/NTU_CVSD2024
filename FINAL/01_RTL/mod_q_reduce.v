@@ -118,7 +118,7 @@ always@ (posedge i_clk ) begin
 		round <= 0;
 	end else begin
 		S <= {S_w[2], S_w[1], S_w[0]};
-		round <= round + 1;
+		round <= round == 21 ? round : round + 1;
 	end
 end
 
@@ -144,13 +144,15 @@ wire [254:0] a_w, b_w;
 
 assign a_w = C[254:0];
 assign b_w = C[264:255]*19;
+
+
 modular_add_sub modular_add_sub_inst (
 	.i_clk    (i_clk),
 	.i_rst    (i_rst),
 	.a        (a_w),
 	.b        (b_w),
 	.i_add_sub(1'b1),
-	.i_first  (round[1:0]==1), // start at round == 1
+	.i_first  (round==17), // start at round == 1
 	.res      (res_r)
 );
  
