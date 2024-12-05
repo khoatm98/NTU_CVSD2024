@@ -166,8 +166,8 @@ class point:
         print("Z3", Z3.value)
         return point(X3, Y3, Z3)
 # Test the fixed implementation with an example point
-X1 = number(0x321)
-Y1 = number(0x111)
+X1 = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)
+Y1 = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
 Z1 = number(1)
 
 P = point(X1, Y1, Z1)
