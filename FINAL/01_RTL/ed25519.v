@@ -92,6 +92,7 @@ end
 reg [255:0] res_r, i_first_ad_r, i_first_pd_r;
 reg [255:0] x2_r, y2_r, z2_r, x1_r, y1_r;
 wire         valid_w, valid_w1, i_first_ad, i_first_pd;
+wire [255:0] x1_pd, y1_pd;
 wire [255:0] x2, y2, z2, x2_w1, y2_w1, z2_w1, x1_w1, y1_w1;
 wire [255:0] x3, y3, z3;
 //modular_mult modular_mult_inst(
@@ -132,8 +133,8 @@ point_doubling point_doubling_inst(
         .i_clk  (i_clk),
         .i_rst  (i_rst),
 	.i_state(curr_state),
-        .x1     (255'h321),
-        .y1     (255'h111),
+        .x1     (x1_pd),
+        .y1     (y1_pd),
         .i_first (i_first_pd),
         .o_valid (valid_w),
         .x2     (x2),
@@ -153,10 +154,12 @@ always@ (posedge i_clk) begin
 		x2_r <= x2;
 		y2_r <= y2;
 		z2_r <= z2;
-		x1_r <= 255'h321;
-		y1_r <= 255'h111;
+		x1_r <= X_w;
+		y1_r <= Y_w;
 	end
 end
+assign x1_pd = (curr_state == S_PROCESS) ? X_w : 0;
+assign y1_pd = (curr_state == S_PROCESS) ? Y_w : 0; 
 assign x2_w1 = x2_r;
 assign y2_w1 = y2_r;
 assign z2_w1 = z2_r;
