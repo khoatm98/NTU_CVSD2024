@@ -1,1 +1,1 @@
-vcs -R -full64 -f rtl_sim_add_sub.f  | tee rtl_sim_p0.log
+vcs -R -full64 -f rtl_sim_mult.f  | tee rtl_sim_p0.log
