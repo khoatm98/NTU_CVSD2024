@@ -1,0 +1,162 @@
+import random
+q = pow(2,255)-19
+q_inv = 21330121701610878104342023554231983025602365596302209165163239159352418617883 # q*q_inv % 2^255 = 2^255-1 = -1 mod 2^255
+R = pow(2,255)%q
+count_add_sub = 0
+count_mul = 0
+
+class number:
+	def __init__(self, value: int):
+		self.value = value # 255 bit
+
+	def __add__(self, other: 'number') -> 'number': 
+		r = self.value + other.value
+		if(r>q):
+			r -= q
+		assert r == ((self.value + other.value) % q)
+		global count_add_sub
+		count_add_sub += 1
+		return number(r)
+
+	def __sub__(self, other: 'number') -> 'number':
+		if(self.value >= other.value):
+			r = self.value - other.value
+		else:
+			r = q - other.value
+			r += self.value
+		assert r == ((self.value - other.value) % q)
+		global count_add_sub
+		count_add_sub += 1
+		return number(r)
+
+	def MM(self,value1: int, value2: int) -> int: # Montgomery multiplication: (value1 * value2)>>255 mod q
+		r = value1 * value2
+		tmp = (((r%pow(2,255))*q_inv)%pow(2,255))*q
+		r = (r + tmp)>>255
+		if(r>=q):
+			r -= q
+		global count_mul
+		count_mul += 1
+		return r
+
+	def __mul__(self, other: 'number') -> 'number': # mod mul: value1 * value2 mod q
+		r = self.MM(self.value,R*R%q)
+		r = self.MM(r,other.value)
+		assert r == ((self.value * other.value) % q)
+		return number(r)
+
+	def __truediv__(self, other: 'number') -> 'number': # mod div: value1 / value2 mod q
+		#calculate value2 ^ (p-2) mod p
+		q_minus_2_in_bin = "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101011"
+		r = number(1)
+		for i in range(255):
+			r = r*r
+			if(q_minus_2_in_bin[i]=="1"):
+				r = r*other
+		#calculate value1/value2 mod p
+		r = self*r
+		return r
+	
+	def __eq__(self, other: 'number') -> bool: 	# used for debug
+		return self.value==other.value
+	
+d = number(0x52036cee2b6ffe738cc740797779e89800700a4d4141d8ab75eb4dca135978a3)
+
+class point:
+    def __init__(self, X: 'number', Y: 'number', Z: 'number'):
+        self.X = X
+        self.Y = Y
+        self.Z = Z
+
+    def double(self) -> 'point':
+        """
+        Perform point doubling on the curve using the given formula:
+        A = 2 * Z1^2
+        B = X1 + Y1
+        C = X1^2
+        D = Y1^2
+        E = p - (C + D)
+        F = C - D
+        J = F - A
+        K = B^2 + E
+        X2 = J * K
+        Y2 = F * E
+        Z2 = F * J
+        """
+        p = number(pow(2, 255) - 19)  # Prime field size as a `number`
+
+       
+        #level 1 
+        A = self.X + self.Y              
+        B = self.Z * self.Z              
+        
+        #level 2 
+        A = A*A    #(x+y)2
+        
+        #level 3 
+        C = self.X * self.Y 
+        #level 4 
+        D = C + C #(2xy)
+        #level 5 
+        A = A - D  #(x2+y2)
+        D = B * D  #z2(2xy)
+        
+        #level 6 
+        A = B * A  #z2(x2+y2)
+        #level 7 
+        C = C * C  #x2y2
+        #level 8
+        C = C * d  #dx2y2
+        #level 9
+        E = B * B  #z4
+        #level 10
+        B = E - C  #z4
+        C = E + C   #z4
+        
+        #level 10
+        X2 = B*D #z4
+        Y2 = C*A #z4
+        Z2 = C*B #z4
+        
+        print("X2", X2.value)
+        print("Y2", Y2.value)
+        print("Z2", Z2.value)
+        return point(X2, Y2, Z2)
+
+
+    def __add__(self, other: 'point') -> 'point':
+        Z1Z2 = self.Z*other.Z
+        X1X2Y1Y2 = self.X*other.X*self.Y*other.Y
+        X3 = Z1Z2*(self.X*other.Y+other.X*self.Y)*(Z1Z2*Z1Z2-d*X1X2Y1Y2)
+        Y3 = Z1Z2*(self.Y*other.Y+self.X*other.X)*(Z1Z2*Z1Z2+d*X1X2Y1Y2)
+        Z3 = (Z1Z2*Z1Z2-d*X1X2Y1Y2)*(Z1Z2*Z1Z2+d*X1X2Y1Y2)
+        return point(X3,Y3,Z3)
+
+    def __mul__(self, M: int) -> 'point':
+        r = point(number(0), number(1))  # the zero point
+        M_in_bin = "{:0255b}".format(M)
+        for i in range(255):
+            r = r + r
+            if(M_in_bin[i]=="1"):
+                r = r + self
+        return r
+    def __str__(self): # used for debug
+        # if(self.is_on_curve()):
+            # text = "X: {:064x}\n".format(self.X.value) + "Y: {:064x}\n".format(self.Y.value) + "Z: {:064x}\n".format(self.Z.value)
+        # else:
+            # text = "Invalid point"
+        text = "X: {:064d}\n".format(self.X.value) + "Y: {:064d}\n".format(self.Y.value) + "Z: {:064d}\n".format(self.Z.value)
+        return text
+# Test the fixed implementation with an example point
+X1 = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)
+Y1 = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
+Z1 = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
+
+P = point(X1, Y1, Z1)
+P3 = P+P
+P2 = P.double()  # Perform point doubling
+
+
+
+print(P3)
+#P3 = P + P2
