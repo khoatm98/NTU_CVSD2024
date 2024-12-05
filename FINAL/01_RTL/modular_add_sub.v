@@ -33,7 +33,7 @@ wire  [DATA_W:0]          a_;
 wire  [DATA_W:0]          b_;
 
 assign a_ = state == IDLE ? {1'b0,a} : (state == TWO ? C[DATA_W:0] : {1'b0,C[DATA_W-1:0]});
-assign b_ = state == IDLE ? {1'b0,b} : (state == TWO ? `q : 19);
+assign b_ = state == IDLE ? {1'b0,b} : (state == TWO ? {1'b0,`q} : 19);
 
 assign sum = a_ + b_;
 assign sub = a_ - b_;
@@ -58,6 +58,11 @@ end
 always @(posedge i_clk) begin
 	state <= i_rst ? IDLE : n_state;
 end
+
+
+wire carry = C[DATA_W];
+wire carry1 = i_add_sub ? sub[DATA_W] : C[DATA_W];
+
 
 always @(posedge i_clk) begin
 	if(state == IDLE && i_first)
