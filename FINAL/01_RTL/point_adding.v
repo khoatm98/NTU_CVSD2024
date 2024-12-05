@@ -187,7 +187,7 @@ always @(posedge i_clk) begin
 		i_first_lvl_r <= 0;
 		i_first_lvl_r1 <= 0;
 	end else begin
-		i_first_lvl_r <= i_first || valid_pd;
+		i_first_lvl_r <= (i_state == S_P1) ? (i_first || valid_pd) : 0; // update with state later
 		i_first_lvl_r1 <= i_first_lvl_r;
 	end
 end
