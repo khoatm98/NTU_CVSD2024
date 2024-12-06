@@ -84,44 +84,22 @@ class point:
         """
         p = number(pow(2, 255) - 19)  # Prime field size as a `number`
 
-       
-        #level 1 
-        A = self.X + self.Y              
-        B = self.Z * self.Z              
-        
-        #level 2 
-        A = A*A    #(x+y)2
-        
-        #level 3 
-        C = self.X * self.Y 
-        #level 4 
-        D = C + C #(2xy)
-        #level 5 
-        A = A - D  #(x2+y2)
-        D = B * D  #z2(2xy)
-        
-        #level 6 
-        A = B * A  #z2(x2+y2)
-        #level 7 
-        C = C * C  #x2y2
-        #level 8
-        C = C * d  #dx2y2
-        #level 9
-        E = B * B  #z4
-        #level 10
-        B = E - C  #z4
-        C = E + C   #z4
-        
-        #level 10
-        X2 = B*D #z4
-        Y2 = C*A #z4
-        Z2 = C*B #z4
-        
-        #print("X2", X2.value)
-        #print("Y2", Y2.value)
-        #print("Z2", Z2.value)
-        return point(X2, Y2, Z2)
+        A = self.Z * self.Z * number(2)  # A = 2 * Z1^2
+        B = self.X + self.Y              # B = X1 + Y1
+        C = self.X * self.X              # C = X1^2
+        D = self.Y * self.Y              # D = Y1^2
+        E = p - (C + D)                  # E = p - (C + D)
+        F = C - D                        # F = C - D
+        J = F + A                        # J = F - A
+        K = (B * B) + E                  # K = B^2 + E
 
+        X2 = J * K                       # X2 = J * K
+        Y2 = F * E                       # Y2 = F * E
+        Z2 = F * J                       # Z2 = F * J
+        
+        #print(point(X2, Y2, Z2).is_on_curve())
+        #print("X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value))
+        return point(X2, Y2, Z2)
 
 
     def __add__(self, other: 'point') -> 'point':
@@ -140,6 +118,8 @@ class point:
             if(M_in_bin[i]=="1"):
                 r = r + self
         return r
+    def is_on_curve(self): # require self.Z=1
+        return (self.Y*self.Y-self.X*self.X)*self.Z*self.Z == self.Z*self.Z*self.Z*self.Z + d * self.X*self.X*self.Y*self.Y
     def add(self, other: 'point') -> 'point':
         """
         Perform point addition on the curve using the provided formula:
@@ -158,6 +138,8 @@ class point:
         Z3 = F * G
         """
         d = number(0x52036cee2b6ffe738cc740797779e89800700a4d4141d8ab75eb4dca135978a3)  # Curve constant `d` as a `number`
+        if(self.is_on_curve() == 0):
+            text = "Invalid point"
 
         B = other.Z * other.Z          # B = Z2^2
         C = self.X * other.X           # C = X1 * X2
@@ -190,22 +172,25 @@ class point:
 # Test the fixed implementation with an example point
 X1 = number(0x0213a2a9da05bdaa1fa87c871ab1639ac8d09aabdd48647236545d78833e8b05)
 Y1 = number(0x0e7052766ed413741cc448c4a4c39e3231637854f325858968f5ece490d47bc8)
-Z1 = number(0x1)
-
+Z1 = number(-1)
+#print("Z: {:064x}\n".format(Z1.value % q))
 P1 = point(X1, Y1, Z1)
 
-X2 = number(0x0ef3bf337846b32b5b9996c3a9a1e1d19aa9b8e755b09bbed0bf325aa41f76e7)
-Y2 = number(0x5f954fcb59a73b56103b452621716b448130118193debd3540fc40dfb260c422)
-Z2 = number(0x5a77322f6e1a748f50499e7e2df04f2e4583ff663c2f3067585bf5d5472e1ade)
+X2 = number(0x5b90ea17eaf962ef96588677a54b09c016ad982c842efa107c078796f88449a8)
+Y2 = number(0x6a210d43f514ec3c7a8e677567ad835b5c2e4bc5dd3480e135708e41b42c0ac6)
+Z2 = number(0x5a7732e1a748f50499e7e2df04f2e4583ff663c2f3067585bf5d5472e1ade)
 
-P2 = point(X2, Y2, Z2)
+P2 = point(X2, Y2)
+print(P2.is_on_curve())
 
 P3 = (P2 + P2)
-print("point P3:")
+print("point doubling TA:")
 print(P3)
 
 P4 = P2.double()  # Perform point doubling
-print("point P4:")
+print("point doubling paper:")
 print(P4)
 
+t = number(-1)*P4.Z
+print("Z*(-1): {:064x}\n".format(t.value))
 #P3 = P + P2
