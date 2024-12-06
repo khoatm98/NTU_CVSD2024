@@ -22,12 +22,14 @@ localparam S_P1      = 4;
 
 reg	   i_first_lvl_r, i_first_lvl_r1;
 reg [5:0] lvl_count;
+reg [2:0] state_r1, state_r2, state_r3, state_r4, state_r5;
 reg [3:0] pd_level;
 reg [255:0] B_r, D_r, F_r, J_r;
 reg [255:0] a_addsub_r0, a_addsub_r1;
 reg [255:0] b_addsub_r0, b_addsub_r1;
 reg [255:0] a_mult_r, b_mult_r;
 //reg [255:0] lvl4_res_addsub;
+wire	  add_sub_en1;
 wire	  valid_pd, i_first_lvl;
 wire	  addsub_valid_0, addsub_valid_1;
 wire [255:0] a_addsub_w0, a_addsub_w1;
@@ -135,16 +137,17 @@ always @(posedge i_clk) begin
 		lvl_count <= lvl_count + 1;
 	end
 end
+
 always @(posedge i_clk) begin
-	if (i_rst) begin
-		pd_level <= 0;
-	end else if (i_state == S_PROCESS) begin
-		if (i_first) begin
-			pd_level <= 0;
-		end else if (valid_pd) begin
-			pd_level <= (pd_level ==8) ? 0: pd_level + 1;
-		end 
-	end else pd_level <= 0;
+        if (i_rst) begin
+                pd_level <= 0;
+        end else if (i_state == S_PROCESS) begin
+                if (i_first) begin
+                        pd_level <= 0;
+                end else if ((valid_pd) && (state_r5 == S_PROCESS)) begin
+                        pd_level <= (pd_level ==8) ? 0: pd_level + 1;
+                end
+        end else pd_level <= 0;
 end
 
 always @(posedge i_clk) begin
@@ -154,6 +157,21 @@ always @(posedge i_clk) begin
 	end else begin
 		i_first_lvl_r <= (i_state == S_PROCESS) ? (i_first || valid_pd) : 0; // update with state later
 		i_first_lvl_r1 <= i_first_lvl_r;
+	end
+end
+always @(posedge i_clk) begin
+	if (i_rst) begin
+		state_r1 <= 0;
+		state_r2 <= 0;
+		state_r3 <= 0;
+		state_r4 <= 0;
+		state_r5 <= 0;
+	end else begin
+		state_r1 <= i_state;
+		state_r2 <= state_r1;
+		state_r3 <= state_r2;
+		state_r4 <= state_r3;
+		state_r5 <= state_r4;
 	end
 end
 assign i_first_lvl = i_first_lvl_r1; 
@@ -167,7 +185,7 @@ assign x2	   = B_r;
 assign y2	   = D_r;
 assign z2	   = J_r;
 assign o_valid	   = (pd_level == 8) ? i_first_lvl : 0;
-
+assign add_sub_en1 = (pd_level == 5) ? 1'b1 : 1'b0;
 modular_add_sub modular_add_sub_pd_inst0 (
         .i_clk    (i_clk),
 	.i_rst    (i_rst),
@@ -184,7 +202,7 @@ modular_add_sub modular_add_sub_pd_inst1 (
 	.i_rst    (i_rst),
         .a        (a_addsub_w1),
         .b        (b_addsub_w1),
-        .i_add_sub(1'b0),
+        .i_add_sub(add_sub_en1),
         .i_first  (i_first_lvl),
         .o_valid  (addsub_valid_1),
 	.res      (res_addsub_w1)
