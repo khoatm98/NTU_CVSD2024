@@ -63,11 +63,10 @@ class number:
 d = number(0x52036cee2b6ffe738cc740797779e89800700a4d4141d8ab75eb4dca135978a3)
 
 class point:
-    def __init__(self, X: 'number', Y: 'number', Z: 'number'):
-        self.X = X
-        self.Y = Y
-        self.Z = Z
-
+    def __init__(self, number_X: number, number_Y: number, number_Z: number = number(1)):
+        self.X = number_X
+        self.Y = number_Y
+        self.Z = number_Z
     def double(self) -> 'point':
         """
         Perform point doubling on the curve using the given formula:
@@ -118,10 +117,11 @@ class point:
         Y2 = C*A #z4
         Z2 = C*B #z4
         
-        print("X2", X2.value)
-        print("Y2", Y2.value)
-        print("Z2", Z2.value)
+        #print("X2", X2.value)
+        #print("Y2", Y2.value)
+        #print("Z2", Z2.value)
         return point(X2, Y2, Z2)
+
 
 
     def __add__(self, other: 'point') -> 'point':
@@ -140,23 +140,72 @@ class point:
             if(M_in_bin[i]=="1"):
                 r = r + self
         return r
+    def add(self, other: 'point') -> 'point':
+        """
+        Perform point addition on the curve using the provided formula:
+        B = Z2^2
+        C = X1 * X2
+        D = Y1 * Y2
+        E = d * C * D
+        F = B - E
+        G = B + E
+        H = (X1 + Y1) * (X2 + Y2)
+        I = H - (C + D)
+        J = F * Z2
+        K = G * Z2
+        X3 = J * I
+        Y3 = K * (C + D)
+        Z3 = F * G
+        """
+        d = number(0x52036cee2b6ffe738cc740797779e89800700a4d4141d8ab75eb4dca135978a3)  # Curve constant `d` as a `number`
+
+        B = other.Z * other.Z          # B = Z2^2
+        C = self.X * other.X           # C = X1 * X2
+        D = self.Y * other.Y           # D = Y1 * Y2
+        E = d * C * D                  # E = d * C * D
+        F = B - E                      # F = B - E
+        G = B + E                      # G = B + E
+        H = (self.X + self.Y) * (other.X + other.Y)  # H = (X1 + Y1) * (X2 + Y2)
+        I = H - (C + D)                # I = H - (C + D)
+        J = F * other.Z                # J = F * Z2
+        K = G * other.Z                # K = G * Z2
+
+        X3 = J * I                     # X3 = J * I
+        Y3 = K * (C + D)               # Y3 = K * (C + D)
+        Z3 = F * G                     # Z3 = F * G
+        return point(X3, Y3, Z3)
+    def reduce(self) -> 'point':
+        x = self.X/self.Z
+        y = self.Y/self.Z
+        if(x.value%2==1): x.value = q-x.value
+        if(y.value%2==1): y.value = q-y.value
+        return point(x, y)
     def __str__(self): # used for debug
         # if(self.is_on_curve()):
             # text = "X: {:064x}\n".format(self.X.value) + "Y: {:064x}\n".format(self.Y.value) + "Z: {:064x}\n".format(self.Z.value)
         # else:
             # text = "Invalid point"
-        text = "X: {:064d}\n".format(self.X.value) + "Y: {:064d}\n".format(self.Y.value) + "Z: {:064d}\n".format(self.Z.value)
+        text = "X: {:064x}\n".format(self.X.value) + "Y: {:064x}\n".format(self.Y.value) + "Z: {:064x}\n".format(self.Z.value)
         return text
 # Test the fixed implementation with an example point
-X1 = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)
-Y1 = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
-Z1 = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
+X1 = number(0x0213a2a9da05bdaa1fa87c871ab1639ac8d09aabdd48647236545d78833e8b05)
+Y1 = number(0x0e7052766ed413741cc448c4a4c39e3231637854f325858968f5ece490d47bc8)
+Z1 = number(0x1)
 
-P = point(X1, Y1, Z1)
-P3 = P+P
-P2 = P.double()  # Perform point doubling
+P1 = point(X1, Y1, Z1)
 
+X2 = number(0x0ef3bf337846b32b5b9996c3a9a1e1d19aa9b8e755b09bbed0bf325aa41f76e7)
+Y2 = number(0x5f954fcb59a73b56103b452621716b448130118193debd3540fc40dfb260c422)
+Z2 = number(0x5a77322f6e1a748f50499e7e2df04f2e4583ff663c2f3067585bf5d5472e1ade)
 
+P2 = point(X2, Y2, Z2)
 
+P3 = (P2 + P2)
+print("point P3:")
 print(P3)
+
+P4 = P2.double()  # Perform point doubling
+print("point P4:")
+print(P4)
+
 #P3 = P + P2
