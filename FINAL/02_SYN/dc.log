@@ -1,0 +1,527 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version U-2022.12 for linux64 - Nov 22, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+# Setting environment
+sh mkdir -p Netlist
+sh mkdir -p Report
+define_design_lib work -path ./work
+1
+set company {NTUGIEE}
+NTUGIEE
+set designer {Student}
+Student
+set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  $search_path ../ ./"
+. /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  . /usr/cad/synopsys/synthesis/cur/libraries/syn /usr/cad/synopsys/synthesis/cur/dw/syn_ver /usr/cad/synopsys/synthesis/cur/dw/sim_ver ../ ./
+set target_library   "slow.db "              
+slow.db 
+set link_library     "* $target_library dw_foundation.sldb"
+* slow.db  dw_foundation.sldb
+set symbol_library   "tsmc13.sdb generic.sdb"
+tsmc13.sdb generic.sdb
+set synthetic_library "dw_foundation.sldb"
+dw_foundation.sldb
+set default_schematic_options {-size infinite}
+-size infinite
+# Import Design
+set DESIGN "ed25519"
+ed25519
+set hdlin_translate_off_skip_text "TRUE"
+Information: Variable 'hdlin_translate_off_skip_text' is obsolete and is being ignored. (INFO-100)
+TRUE
+set edifout_netlist_only "TRUE"
+TRUE
+set verilogout_no_tri true
+true
+set hdlin_enable_presto_for_vhdl "TRUE"
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+TRUE
+set sh_enable_line_editing true
+true
+set sh_line_editing_mode emacs
+emacs
+history keep 100
+100
+alias h history
+#read_file -format sverilog  "../01_RTL/ed25519.sv"
+read_file -format sverilog "./flist.sv"
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow'
+  Loading link library 'gtech'
+Loading sverilog file '/home/raid7_2/user12/r2k41036/FINAL/02_SYN/flist.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/raid7_2/user12/r2k41036/FINAL/02_SYN/flist.sv
+Opening include file ../01_RTL/ed25519.v
+Warning:  ../01_RTL/ed25519.v:538: the undeclared symbol 'scalar_end_round_w' assumed to have the default net type, which is 'wire'. (VER-936)
+Opening include file ../01_RTL/modular_mult.v
+Opening include file ../01_RTL/modular_add_sub.v
+
+Statistics for case statements in always block at line 140 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           141            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 285 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           288            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 388 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           389            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 396 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           398            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 493 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           497            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 540 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           542            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 658 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           659            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 666 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           668            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 807 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           811            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 842 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           846            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 869 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           873            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1004 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1005           |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1020 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1021           |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 1039 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1045           |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1054 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1055           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine ed25519 line 140 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| modmult_i_valid_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  modadd_a_in_r_reg  | Flip-flop |  255  |  Y  | N  | N  | N  | N  | N  | N  |
+|  modadd_b_in_r_reg  | Flip-flop |  255  |  Y  | N  | N  | N  | N  | N  | N  |
+| modmult_a_in_r_reg  | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+| modmult_b_in_r_reg  | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|   modadd_inst_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| modadd_i_valid_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 255 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     round_r_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 842 in file
+		'../01_RTL/ed25519.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   redZ_b_in_w_reg   | Latch |  256  |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 869 in file
+		'../01_RTL/ed25519.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+| next_inv_state_reg  | Latch |   4   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1004 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   data_buf_r_reg    | Flip-flop |  768  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1020 in file
+		'../01_RTL/ed25519.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   next_state_reg    | Latch |   4   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1039 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  curr_s_state_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|   curr_state_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1054 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       D_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       X_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       Y_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       Z_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       A_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       B_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       C_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1152 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   generic_cnt_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 49 in file
+	'../01_RTL/modular_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            50            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 171 in file
+	'../01_RTL/modular_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           172            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 200 in file
+	'../01_RTL/modular_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           201            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 226 in file
+	'../01_RTL/modular_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           227            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine modular_mult line 139 in file
+		'../01_RTL/modular_mult.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| accumulated_res_r_reg | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|        cnt_reg        | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine modular_mult line 243 in file
+		'../01_RTL/modular_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        S_reg        | Flip-flop |  408  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine modular_mult line 251 in file
+		'../01_RTL/modular_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        R_reg        | Flip-flop |  272  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine modular_mult line 259 in file
+		'../01_RTL/modular_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        C_reg        | Flip-flop |  265  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine modular_mult line 284 in file
+		'../01_RTL/modular_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     a_in_r_reg      | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     b_in_r_reg      | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 41 in file
+	'../01_RTL/modular_add_sub.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            42            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine modular_add_sub line 58 in file
+		'../01_RTL/modular_add_sub.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine modular_add_sub line 65 in file
+		'../01_RTL/modular_add_sub.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        C_reg        | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/raid7_2/user12/r2k41036/FINAL/02_SYN/ed25519.db:ed25519'
+Loaded 4 designs.
+Current design is 'ed25519'.
+ed25519 modular_mult multiplier_64x64 modular_add_sub
+current_design [get_designs $DESIGN]
+Current design is 'ed25519'.
+{ed25519}
+link
+
+  Linking design 'ed25519'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (4 designs)               /home/raid7_2/user12/r2k41036/FINAL/02_SYN/ed25519.db, etc
+  slow (library)              /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+1
+source -echo -verbose ./ed25519_dc.sdc
+# operating conditions and boundary conditions #
+set cycle  10         ;#clock period defined by designer
+10
+create_clock -period $cycle [get_ports  i_clk]
+1
+set_dont_touch_network      [get_clocks i_clk]
+1
+set_fix_hold                [get_clocks i_clk]
+1
+set_ideal_network           [get_ports i_clk]
+1
+set_clock_uncertainty  0.1  [get_clocks i_clk]
+1
+set_clock_latency      0.5  [get_clocks i_clk]
+1
+set_input_delay  1      -clock i_clk [remove_from_collection [all_inputs] [get_ports i_clk]]
+1
+set_output_delay 1      -clock i_clk [all_outputs] 
+1
+set_load         1     [all_outputs]
+1
+set_drive        1     [all_inputs]
+1
+set_operating_conditions  -max_library slow -max slow               
+Using operating conditions 'slow' found in library 'slow'.
+1
+set_max_fanout 20 [all_inputs]
+1
+1
+# Compile Design
+current_design [get_designs ${DESIGN}]
+Current design is 'ed25519'.
+{ed25519}
+check_design > Report/check_design.txt
+check_timing > Report/check_timing.txt
+set high_fanout_net_threshold 0
+0
+uniquify
+Information: Uniquified 2 instances of design 'modular_add_sub'. (OPT-1056)
+1
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+1
+set_host_options -max_cores 16
+Warning: You requested 16 cores. However, load on host cad27 is 22.34. Tool will ignore the request and use 10 cores. (UIO-231)
+1
+#set_clock_gating_style -max_fanout 4
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 10 cores. (OPT-1500)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | U-2022.12-DWBB_202212.0 |     *     |
+| Licensed DW Building Blocks        | U-2022.12-DWBB_202212.0 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Comand Line  | compile_ultra                                                                     |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 7455                                   |
+| Number of User Hierarchies                              | 4                                      |
+| Sequential Cell Count                                   | 5719                                   |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 841                                    |
+| Number of Dont Touch Nets                               | 4                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 251 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'ed25519'
+
+Loaded alib file './alib-52/slow.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 5 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+...
