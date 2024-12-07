@@ -83,22 +83,42 @@ class point:
         Z2 = F * J
         """
         p = number(pow(2, 255) - 19)  # Prime field size as a `number`
-
-        A = self.Z * self.Z * number(2)  # A = 2 * Z1^2
-        B = self.X + self.Y              # B = X1 + Y1
-        C = self.X * self.X              # C = X1^2
-        D = self.Y * self.Y              # D = Y1^2
-        E = p - (C + D)                  # E = p - (C + D)
-        F = C - D                        # F = C - D
-        J = F + A                        # J = F - A
-        K = (B * B) + E                  # K = B^2 + E
-
-        X2 = J * K                       # X2 = J * K
-        Y2 = F * E                       # Y2 = F * E
-        Z2 = F * J                       # Z2 = F * J
+        X = self.X
+        Y = self.Y
+        Z = self.Z
+        
+        C = X
+        X = X+Y
+        Y = Y*Y
+        #print("round 0 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value))
+        C = C*C
+        #print("round 1 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value))
+        X = X*X
+        D = Y
+        Y = Y+C 
+        #print("round 2 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        Y = p - Y
+        #print("round 3 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        D = C - D 
+        #print("round 4 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        X = X + Y
+        Z = Z*Z 
+        #print("round 5 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        Z = Z + Z 
+        #print("round 6 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        Z = Z + D 
+        Y = Y*D 
+        #print("round 7 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        X = X*Z 
+        #print("round 8 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        Z = D*Z
+        #print("round 9 \n X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        X2 = X                      # X2 = J * K
+        Y2 = Y                      # Y2 = F * E
+        Z2 = Z                       # Z2 = F * J
         
         #print(point(X2, Y2, Z2).is_on_curve())
-        #print("X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value))
+        print("X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value))
         return point(X2, Y2, Z2)
 
 
@@ -140,7 +160,10 @@ class point:
         d = number(0x52036cee2b6ffe738cc740797779e89800700a4d4141d8ab75eb4dca135978a3)  # Curve constant `d` as a `number`
         if(self.is_on_curve() == 0):
             text = "Invalid point"
-
+        X = self.X
+        Y = self.Y
+        Z = self.Z
+        
         B = other.Z * other.Z          # B = Z2^2
         C = self.X * other.X           # C = X1 * X2
         D = self.Y * other.Y           # D = Y1 * Y2
@@ -170,6 +193,10 @@ class point:
         text = "X: {:064x}\n".format(self.X.value) + "Y: {:064x}\n".format(self.Y.value) + "Z: {:064x}\n".format(self.Z.value)
         return text
 # Test the fixed implementation with an example point
+scalar_M = 0x259f4329e6f4590b9a164106cf6a659eb4862b21fb97d43588561712e8e5216a
+x = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)
+y = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
+
 X1 = number(0x0213a2a9da05bdaa1fa87c871ab1639ac8d09aabdd48647236545d78833e8b05)
 Y1 = number(0x0e7052766ed413741cc448c4a4c39e3231637854f325858968f5ece490d47bc8)
 Z1 = number(-1)
@@ -180,7 +207,7 @@ X2 = number(0x5b90ea17eaf962ef96588677a54b09c016ad982c842efa107c078796f88449a8)
 Y2 = number(0x6a210d43f514ec3c7a8e677567ad835b5c2e4bc5dd3480e135708e41b42c0ac6)
 Z2 = number(0x5a7732e1a748f50499e7e2df04f2e4583ff663c2f3067585bf5d5472e1ade)
 
-P2 = point(X2, Y2)
+P2 = point(x, y)
 print(P2.is_on_curve())
 
 P3 = (P2 + P2)
@@ -191,6 +218,13 @@ P4 = P2.double()  # Perform point doubling
 print("point doubling paper:")
 print(P4)
 
+P3 = (P4 + P2)
+print("point adding TA:")
+print(P3)
+
+P5 = P2.add(P4)
+print("point adding paper:")
+print(P5)
 t = number(-1)*P4.Z
 print("Z*(-1): {:064x}\n".format(t.value))
 #P3 = P + P2

@@ -109,7 +109,7 @@ def dec_to_bin(num):
     return format(struct.unpack('!I', struct.pack('!d', num))[0], '255b')
 if __name__ == "__main__":
     #testcase 1
-    scalar_M = 0x03
+    scalar_M = 0x259f4329e6f4590b9a164106cf6a659eb4862b21fb97d43588561712e8e5216a
     x = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)
     y = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
 
