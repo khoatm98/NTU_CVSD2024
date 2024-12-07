@@ -24,19 +24,19 @@ localparam S_RST            = 4'd0;
 localparam S_INPUT          = 4'd1;
 localparam S_SCALAR_MULT_D  = 4'd2;  // point doubling
 localparam S_SCALAR_MULT_A  = 4'd3;  // point addition
-localparam S_SCALAR_CHECK   = 4'd10; 
-localparam S_REDUCE_Z_INV   = 4'd4;  // compute z_inv
-localparam S_REDUCE_XZ_INV  = 4'd5;  // compute x* z_inv
-localparam S_REDUCE_YZ_INV  = 4'd6;  // compute y* z_inv
-localparam S_REDUCE_X_TRAN  = 4'd7;  // make x even
-localparam S_REDUCE_Y_TRAN  = 4'd8;  // make y even
-localparam S_OUTPUT         = 4'd9;                 
+localparam S_SCALAR_CHECK   = 4'd4; 
+localparam S_REDUCE_Z_INV   = 4'd5;  // compute z_inv
+localparam S_REDUCE_XZ_INV  = 4'd6;  // compute x* z_inv
+localparam S_REDUCE_YZ_INV  = 4'd7;  // compute y* z_inv
+localparam S_REDUCE_X_TRAN  = 4'd8;  // make x even
+localparam S_REDUCE_Y_TRAN  = 4'd9;  // make y even
+localparam S_OUTPUT         = 4'd10;                 
 
 // ---------------------------------------------------------------------------
 // Reg and wire declaration
 // ---------------------------------------------------------------------------
 reg [3:0] curr_state, next_state;
-reg [3:0] curr_s_state, next_s_state;
+reg [3:0] curr_s_state, next_s_state; //sub state
 reg [3:0] generic_cnt;
 
 reg [DATA_W-1:0]   o_out_data_r;
@@ -45,6 +45,8 @@ wire m_reg_wren;
 wire m_reg_rden;
 
 reg [BUFF_W*3-1:0]   data_buf_r;
+
+
 reg [255:0] X_r;
 reg [255:0] Y_r;
 reg [255:0] Z_r;
@@ -64,11 +66,6 @@ assign o_out_data = data_buf_r[BUFF_W*3-1 -:64];
 reg [255:0] modadd_a_in_r;
 reg [255:0] modadd_b_in_r;
 
-reg [255:0] modadd_a_in_w;
-reg [255:0] modadd_b_in_w;
-reg [255:0] modmult_a_in_w;
-reg [255:0] modmult_b_in_w;
-
 reg         modadd_inst;
 reg         modadd_i_valid;
 reg         modadd_o_valid;
@@ -81,6 +78,39 @@ reg         modmult_i_valid;
 reg         modmult_o_valid;
 reg [255:0] modmult_res_r;
 
+
+reg [255:0] addD_a_in_w;
+reg [255:0] addD_b_in_w;
+reg [255:0] multD_a_in_w;
+reg [255:0] multD_b_in_w;
+reg [255:0] addA_a_in_w;
+reg [255:0] addA_b_in_w;
+reg [255:0] multA_a_in_w;
+reg [255:0] multA_b_in_w;
+
+reg [255:0] redZ_a_in_w;
+reg [255:0] redZ_b_in_w;
+reg [255:0] redXZ_a_in_w;
+reg [255:0] redXZ_b_in_w;
+reg [255:0] redYZ_a_in_w;
+reg [255:0] redYZ_b_in_w;
+reg [255:0] tranX_a_in_w;
+reg [255:0] tranX_b_in_w;
+reg [255:0] tranY_a_in_w;
+reg [255:0] tranY_b_in_w;
+
+reg         addD_inst;
+reg         addD_i_valid;
+reg         multD_i_valid;
+reg         addA_inst;
+reg         addA_i_valid;
+reg         multA_i_valid;
+
+reg         redZ_i_valid;
+reg         redXZ_i_valid;
+reg         redYZ_i_valid;
+reg         tranX_i_valid;
+reg         tranY_i_valid;
 modular_add_sub modular_add_sub_inst (
         .i_clk    (i_clk)        ,
 		.i_rst    (i_rst)        ,
@@ -103,11 +133,80 @@ modular_mult modular_mult_inst(
 );
 
 always@ (posedge i_clk) begin
-	modadd_a_in_r <= modadd_a_in_w;
-	modadd_b_in_r <= modadd_b_in_w;
-	
-	modmult_a_in_r <= modmult_a_in_w;
-	modmult_b_in_r <= modmult_b_in_w;
+	case(curr_state)       
+		S_SCALAR_MULT_D  : begin
+			modadd_a_in_r   <= addD_a_in_w;
+			modadd_b_in_r   <= addD_b_in_w;
+			modmult_a_in_r  <= multD_a_in_w;
+			modmult_b_in_r  <= multD_b_in_w;
+			modadd_inst     <= addD_inst;
+			modadd_i_valid  <= addD_i_valid;
+			modmult_i_valid <= multD_i_valid;
+		end
+		S_SCALAR_MULT_A  : begin
+			modadd_a_in_r   <= addA_a_in_w;
+			modadd_b_in_r   <= addA_b_in_w;
+			modmult_a_in_r  <= multA_a_in_w;
+			modmult_b_in_r  <= multA_b_in_w;
+			modadd_inst     <= addA_inst;
+			modadd_i_valid  <= addA_i_valid;
+			modmult_i_valid <= multA_i_valid;
+		end 
+		S_REDUCE_Z_INV   : begin
+			modadd_a_in_r   <= 0;
+			modadd_b_in_r   <= 0;
+			modmult_a_in_r  <= redZ_a_in_w;
+			modmult_b_in_r  <= redZ_b_in_w;
+			modadd_inst     <= 0;
+			modadd_i_valid  <= 0;
+			modmult_i_valid <= redZ_i_valid;
+		end 
+		S_REDUCE_XZ_INV  : begin
+			modadd_a_in_r   <= 0;
+			modadd_b_in_r   <= 0;
+			modmult_a_in_r  <= redXZ_a_in_w;
+			modmult_b_in_r  <= redXZ_b_in_w;
+			modadd_inst     <= 0;
+			modadd_i_valid  <= 0;
+			modmult_i_valid <= redXZ_i_valid;
+		end 
+		S_REDUCE_YZ_INV  : begin
+			modadd_a_in_r   <= 0;
+			modadd_b_in_r   <= 0;
+			modmult_a_in_r  <= redYZ_a_in_w;
+			modmult_b_in_r  <= redYZ_b_in_w;
+			modadd_inst     <= 0;
+			modadd_i_valid  <= 0;
+			modmult_i_valid <= redYZ_i_valid;
+		end 
+		S_REDUCE_X_TRAN  : begin
+			modadd_a_in_r   <= 0;
+			modadd_b_in_r   <= 0;
+			modmult_a_in_r  <= tranX_a_in_w;
+			modmult_b_in_r  <= tranX_b_in_w;
+			modadd_inst     <= 0;
+			modadd_i_valid  <= 0;
+			modmult_i_valid <= tranX_i_valid;
+		end 
+		S_REDUCE_Y_TRAN  : begin
+			modadd_a_in_r   <= 0;
+			modadd_b_in_r   <= 0;
+			modmult_a_in_r  <= tranY_a_in_w;
+			modmult_b_in_r  <= tranY_b_in_w;
+			modadd_inst     <= 0;
+			modadd_i_valid  <= 0;
+			modmult_i_valid <= tranY_i_valid;
+		end 
+		default          : begin
+			modadd_a_in_r   <= 0;
+			modadd_b_in_r   <= 0;
+			modmult_a_in_r  <= 0;
+			modmult_b_in_r  <= 0;
+			modadd_inst     <= 0;
+			modadd_i_valid  <= 0;
+			modmult_i_valid <= 0;
+		end         
+	endcase 
 end
 
 // ---------------------------------------------------------------------------
@@ -135,7 +234,7 @@ localparam S_LEVEL_6  = 4'd6;
 localparam S_LEVEL_7  = 4'd7; 
 localparam S_LEVEL_8  = 4'd8; 
 localparam S_LEVEL_9  = 4'd9; 
-localparam S_LEVEL_10  = 4'd10; 
+localparam S_LEVEL_10 = 4'd10; 
 
 reg [7:0]   round_r;
 reg [7:0]   round_scalar_w;
