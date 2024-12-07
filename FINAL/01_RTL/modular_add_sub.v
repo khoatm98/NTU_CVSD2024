@@ -61,8 +61,6 @@ end
 
 
 wire carry = C[DATA_W];
-wire carry1 = i_add_sub ? sub[DATA_W] : C[DATA_W];
-
 
 always @(posedge i_clk) begin
 	if(state == IDLE && i_first)

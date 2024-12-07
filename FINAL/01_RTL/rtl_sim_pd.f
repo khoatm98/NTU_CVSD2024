@@ -30,7 +30,7 @@
 
 // Your Design Files
 // -----------------------------------------------------------------------------
-./ed25519.v
++define+q=255'h7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffed
 ./modular_add_sub.v
 ./modular_mult.v
 ./mod_q_reduce.v

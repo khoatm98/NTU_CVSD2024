@@ -28,9 +28,11 @@ set sh_line_editing_mode emacs
 history keep 100
 alias h history
 
-read_file -format sverilog  "../01_RTL/ed25519.sv"
+#read_file -format sverilog  "../01_RTL/ed25519.sv"
+read_file -format sverilog "./flist.sv"
 current_design [get_designs $DESIGN]
 link
+
 
 source -echo -verbose ./ed25519_dc.sdc
 
@@ -39,13 +41,14 @@ current_design [get_designs ${DESIGN}]
 
 check_design > Report/check_design.txt
 check_timing > Report/check_timing.txt
-#set high_fanout_net_threshold 0
+set high_fanout_net_threshold 0
 
 uniquify
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
-
+set_host_options -max_cores 16
 #set_clock_gating_style -max_fanout 4
-compile_ultra -no_autoungroup
+compile_ultra
+optimize_netlist -area 
 
 
 

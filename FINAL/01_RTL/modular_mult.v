@@ -137,7 +137,10 @@ end
 
 // Sequential
 always@ (posedge i_clk ) begin
-	if(i_first || i_rst) begin
+	if(i_rst) begin
+		cnt <= 31;
+		accumulated_res_r <= 0;
+	end else if (i_first) begin
 		cnt <= 0;
 		accumulated_res_r <= 0;
 	end else begin

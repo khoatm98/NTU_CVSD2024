@@ -11,8 +11,10 @@ class number:
 
 	def __add__(self, other: 'number') -> 'number': 
 		r = self.value + other.value
-		if(r>q):
+
+		if(r>=q):
 			r -= q
+
 		assert r == ((self.value + other.value) % q)
 		global count_add_sub
 		count_add_sub += 1
@@ -51,8 +53,11 @@ class number:
 		r = number(1)
 		for i in range(255):
 			r = r*r
+			print(i)
+			print("{:064x}\n".format(r.value))
 			if(q_minus_2_in_bin[i]=="1"):
 				r = r*other
+				print("{:064x}\n".format(r.value))
 		#calculate value1/value2 mod p
 		r = self*r
 		return r
@@ -118,7 +123,7 @@ class point:
         Z2 = Z                       # Z2 = F * J
         
         #print(point(X2, Y2, Z2).is_on_curve())
-        print("X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value))
+        #print("X: {:064x}\n".format(X.value) + "Y: {:064x}\n".format(Y.value) + "Z: {:064x}\n".format(Z.value))
         return point(X2, Y2, Z2)
 
 
@@ -134,9 +139,16 @@ class point:
         r = point(number(0), number(1))  # the zero point
         M_in_bin = "{:0255b}".format(M)
         for i in range(255):
-            r = r + r
+            p = r + r
+            #print(i)
+            r = p
             if(M_in_bin[i]=="1"):
-                r = r + self
+                p = r + self
+                r = p
+                #print("add")
+            ##print(M_in_bin)
+            #print(r)
+            
         return r
     def is_on_curve(self): # require self.Z=1
         return (self.Y*self.Y-self.X*self.X)*self.Z*self.Z == self.Z*self.Z*self.Z*self.Z + d * self.X*self.X*self.Y*self.Y
@@ -160,25 +172,67 @@ class point:
         d = number(0x52036cee2b6ffe738cc740797779e89800700a4d4141d8ab75eb4dca135978a3)  # Curve constant `d` as a `number`
         if(self.is_on_curve() == 0):
             text = "Invalid point"
-        X = self.X
-        Y = self.Y
-        Z = self.Z
+        X1 = self.X
+        Y1 = self.Y
+        X2 = other.X
+        Y2 = other.Y
+        Z2 = other.Z
+        A = number(0x0)
+        B = number(0x0)
+        C = number(0x0)
+        D = number(0x0)
         
-        B = other.Z * other.Z          # B = Z2^2
-        C = self.X * other.X           # C = X1 * X2
-        D = self.Y * other.Y           # D = Y1 * Y2
-        E = d * C * D                  # E = d * C * D
-        F = B - E                      # F = B - E
-        G = B + E                      # G = B + E
-        H = (self.X + self.Y) * (other.X + other.Y)  # H = (X1 + Y1) * (X2 + Y2)
-        I = H - (C + D)                # I = H - (C + D)
-        J = F * other.Z                # J = F * Z2
-        K = G * other.Z                # K = G * Z2
+        B  = Y2+X2
+        X2 = X1*X2           # B = Z2^2
+        #print("round 0 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        C  = Y1+X1 
+        Y2 = Y2 * Y1 
+        #print("round 1 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
 
-        X3 = J * I                     # X3 = J * I
-        Y3 = K * (C + D)               # Y3 = K * (C + D)
-        Z3 = F * G                     # Z3 = F * G
-        return point(X3, Y3, Z3)
+        A = Z2*Z2 
+        D = Y2 
+        Y2 = Y2 + X2 
+        
+        #print("round 2 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        D = X2*D 
+        #print("round 3 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        D = d*D 
+        #print("round 4 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        B = C*B 
+        C = D + A 
+        #print("round 5 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        D = A - D 
+        #print("round 6 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        A = Z2 * D 
+        B = B - Y2 
+        #print("round 7 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        Z2 = Z2*C
+        #print("round 8 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        G = Z2
+        Z2 = D * C
+        C = G 
+        #print("round 9 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        X2 = A*B
+        #print("round 10 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+
+        Y2 = G*Y2
+        #print("round 11 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        
+        Z2 = Z2
+        #print("round 12 \n X: {:064x}\n".format(X2.value) + "Y: {:064x}\n".format(Y2.value) + "Z: {:064x}\n".format(Z2.value) + "A: {:064x}\n".format(A.value) + "B: {:064x}\n".format(B.value) + "C: {:064x}\n".format(C.value) + "D: {:064x}\n".format(D.value))
+        
+     
+        
+        
+        return point(X2, Y2, Z2)
     def reduce(self) -> 'point':
         x = self.X/self.Z
         y = self.Y/self.Z
@@ -195,36 +249,37 @@ class point:
 # Test the fixed implementation with an example point
 scalar_M = 0x259f4329e6f4590b9a164106cf6a659eb4862b21fb97d43588561712e8e5216a
 x = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)
+y  = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
+mx = number(-1)*x
+my = number(-1)*y
+print(mx)
+print(my)
+X1 =  number(0x5ca8_2910_c5e3_09fd_31fa_3dfd_b540_c957_e14c_ed49_f7bf_cb3f_6cd4_d5a3_8264_cc41)
+Y1 =  number(0x32c6_be10_0598_8fa5_5959_b5d0_3a4d_b3cb_5833_fb03_9976_bf8e_b76a_3b84_b649_40a7)
+Z1 =  number(0x570b_acc0_1d04_49d4_1dc8_130e_7abc_823f_dc56_907d_eefd_fd8a_091e_b67d_39b7_f867)
+point_M = point(X1,Y1,Z1)
+point_P = point(x, y)
+print("point P:")
+print(point_M.reduce())
+point_G = point_P * scalar_M
+print("point G:")
+print(point_G)
+
+t= number(1)/point_G.Z
+print("X: {:064x}\n".format(t.value))
+#testcase 1
+scalar_M = 0x259f4329e6f4590b9a164106cf6a659eb4862b21fb97d43588561712e8e5216a
+x = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)
 y = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
 
-X1 = number(0x0213a2a9da05bdaa1fa87c871ab1639ac8d09aabdd48647236545d78833e8b05)
-Y1 = number(0x0e7052766ed413741cc448c4a4c39e3231637854f325858968f5ece490d47bc8)
-Z1 = number(-1)
-#print("Z: {:064x}\n".format(Z1.value % q))
-P1 = point(X1, Y1, Z1)
+#testcase 2
+#scalar_M = 0x17e0aa3c03983ca8ea7e9d498c778ea6eb2083e6ce164dba0ff18e0242af9fc3
+#x = number(0x2e2c9fbf00b87ab7cde15119d1c5b09aa9743b5c6fb96ec59dbf2f30209b133c)
+#y = number(0x116943db82ba4a31f240994b14a091fb55cc6edd19658a06d5f4c5805730c232)
 
-X2 = number(0x5b90ea17eaf962ef96588677a54b09c016ad982c842efa107c078796f88449a8)
-Y2 = number(0x6a210d43f514ec3c7a8e677567ad835b5c2e4bc5dd3480e135708e41b42c0ac6)
-Z2 = number(0x5a7732e1a748f50499e7e2df04f2e4583ff663c2f3067585bf5d5472e1ade)
+#testcase 3
+#scalar_M = 0x1759edc372ae22448b0163c1cd9d2b7d247a8333f7b0b7d2cda8056c3d15eef7
+#x = number(0x5b90ea17eaf962ef96588677a54b09c016ad982c842efa107c078796f88449a8)
+#y = number(0x6a210d43f514ec3c7a8e677567ad835b5c2e4bc5dd3480e135708e41b42c0ac6)
 
-P2 = point(x, y)
-print(P2.is_on_curve())
-
-P3 = (P2 + P2)
-print("point doubling TA:")
-print(P3)
-
-P4 = P2.double()  # Perform point doubling
-print("point doubling paper:")
-print(P4)
-
-P3 = (P4 + P2)
-print("point adding TA:")
-print(P3)
-
-P5 = P2.add(P4)
-print("point adding paper:")
-print(P5)
-t = number(-1)*P4.Z
-print("Z*(-1): {:064x}\n".format(t.value))
 #P3 = P + P2

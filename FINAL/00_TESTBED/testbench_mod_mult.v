@@ -70,7 +70,7 @@ module testbench #(
 		.res      (odata)
 	);
     initial begin
-       $fsdbDumpfile("modular_add_sub.fsdb");
+       $fsdbDumpfile("modular_add_sub2.fsdb");
        $fsdbDumpvars(0, testbench, "+mda");
     end
 
@@ -138,9 +138,8 @@ module testbench #(
                 if (odata === golden_data[k]) begin
                     correct = correct + 1;
 					$display(
-                        "Test[%d]: Correct! Inst=%b, A=%x, B=%x, Golden=%x, Yours=%x",
+                        "Test[%d]: Correct! A=%x, B=%x, Golden=%x, Yours=%x",
                         k,
-                        input_data[k][255],
                         input_data[k][2*255-1 -: 255],
                         input_data[k][255-1 -: 255],
                         golden_data[k],
@@ -150,15 +149,14 @@ module testbench #(
                 else begin
                     error = error + 1;
                     $display(
-                        "Test[%d]: Error! Inst=%b, A=%x, B=%x, Golden=%x, Yours=%x",
+                        "Test[%d]: Error! A=%x, B=%x, Golden=%x, Yours=%x",
                         k,
-                        input_data[k][255],
                         input_data[k][2*255-1 -: 255],
                         input_data[k][255-1 -: 255],
                         golden_data[k],
                         odata
                     );
-					//$finish;
+					$finish;
                 end
                 k = k+1;
             end

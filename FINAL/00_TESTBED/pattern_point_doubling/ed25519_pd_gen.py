@@ -102,7 +102,7 @@ class point:
             # text = "X: {:064x}\n".format(self.X.value) + "Y: {:064x}\n".format(self.Y.value) + "Z: {:064x}\n".format(self.Z.value)
         # else:
             # text = "Invalid point"
-        text = "X: {:064d}\n".format(self.X.value) + "Y: {:064d}\n".format(self.Y.value) + "Z: {:064d}\n".format(self.Z.value)
+        text = "X: {:064x}\n".format(self.X.value) + "Y: {:064x}\n".format(self.Y.value) + "Z: {:064x}\n".format(self.Z.value)
         return text
 
 def dec_to_bin(num):
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     scalar_M = 0x03
     x = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)
     y = number(0x2f0fe2678dedf6671e055f1a557233b324f44fb8be4afe607e5541eb11b0bea2)
-    z = number(0x01)
+
     #testcase 2
     #scalar_M = 0x17e0aa3c03983ca8ea7e9d498c778ea6eb2083e6ce164dba0ff18e0242af9fc3
     #x = number(0x2e2c9fbf00b87ab7cde15119d1c5b09aa9743b5c6fb96ec59dbf2f30209b133c)
@@ -123,17 +123,16 @@ if __name__ == "__main__":
     #x = number(0x5b90ea17eaf962ef96588677a54b09c016ad982c842efa107c078796f88449a8)
     #y = number(0x6a210d43f514ec3c7a8e677567ad835b5c2e4bc5dd3480e135708e41b42c0ac6)
 
-    point_P = point(x, y,z)
-    point_M = point_P * scalar_M
-    point_G = ( point_P + point_P)
-
-    print("point P:")
-    print(point_P)
-    print("point G:")
-    print(point_G)
+    # point_P = point(x, y)
+    # point_M = point_P * scalar_M
+    # point_G = ( point_M + point_P)
+    # print("point P:")
+    # print(point_P)
+    # print("point G:")
+    # print(point_G)
 
     
-    GEN_NUM = 0
+    GEN_NUM = 1000
     
     f_x1 = open("pd_x1_I.dat", "w")
     f_y1 = open("pd_y1_I.dat", "w")
@@ -153,13 +152,13 @@ if __name__ == "__main__":
         fl_y2 = []
         fl_z2 = []
         #point A 
-        a = 2#andom.randint(0, 2**255 - 19)
-        b = 1#andom.randint(0, 2**255 - 19)
-        c = 1#andom.randint(0, 2**255 - 19)
+        a = random.randint(0, 2**255 - 19)
+        b = random.randint(0, 2**255 - 19)
+        c = random.randint(0, 2**255 - 19)
         
         fl_x1.append(str(f"{a:0{255}b}"))
         fl_y1.append(str(f"{b:0{255}b}"))
-        fl_z1.append(str(f"{c:0{255}b}"))
+        fl_z1.append(str(f"{b:0{255}b}"))
         pointA = point(number(a), number(b), number(c) )
         
         pointB = pointA * 2

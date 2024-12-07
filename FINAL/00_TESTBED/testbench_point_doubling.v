@@ -22,10 +22,10 @@
 `define IDATA_z1  "../00_TESTBED/pattern_point_doubling/pd_z1_I.dat"
 
 
-`define ODATA_x2  "../00_TESTBED/pattern_point_doubling/pd_x2_O.dat"
-`define ODATA_y2  "../00_TESTBED/pattern_point_doubling/pd_y2_O.dat"
-`define ODATA_z2  "../00_TESTBED/pattern_point_doubling/pd_z2_O.dat"
-`define PAT_LEN 1000
+`define ODATA_x2  "../00_TESTBED/pattern_point_doubling/pd_x3_O.dat"
+`define ODATA_y2  "../00_TESTBED/pattern_point_doubling/pd_y3_O.dat"
+`define ODATA_z2  "../00_TESTBED/pattern_point_doubling/pd_z3_O.dat"
+`define PAT_LEN 1
 
 
 module testbench #(
@@ -73,7 +73,7 @@ module testbench #(
         $readmemb(`ODATA_x2, golden_data_x2);
 		$readmemb(`ODATA_y2, golden_data_y2);
 		$readmemb(`ODATA_z2, golden_data_z2);
-    end
+    end 
 
     clk_gen u_clk_gen (
         .clk   (clk  ),
@@ -84,7 +84,7 @@ module testbench #(
 	point_doubling point_doubling_inst (
 		.i_clk   (clk),
 		.i_rst	 (rst),
-		.i_state (3'd4     ),
+		.i_state (3'd2     ),
 		.x1      (x1_in    ),
 		.y1      (y1_in    ),
 		.z1      (z1_in    ),
@@ -183,8 +183,8 @@ module testbench #(
                 else begin
                     error = error + 1;
                     $display(
-                        "Test[%d]: Incorrect! x1=%x, y1=%x, z1=%x, Golden=%x %x %x, Yours=%x %x %x",
-                        k,
+                        "Test[%d]: Incorrect! \n x1=%x, \n y1=%x, \n z1=%x, \n Golden \n %d \n %d \n %d,  \n Yours \n %d \n %d \n %d",
+                        k, 
                         input_data_x1_in[k][255-1    :   0],
                         input_data_y1_in[k][255-1    :   0],
                         input_data_z1_in[k][255-1    :   0],
@@ -195,7 +195,7 @@ module testbench #(
 						y2_out,
 						z2_out
                     );
-					$finish;
+					//$finish;
                 end
                 k = k+1;
             end

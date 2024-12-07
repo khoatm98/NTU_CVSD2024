@@ -27,8 +27,8 @@ wire [136 -1:0] L2 = R[136*2 -1 -:136];
 wire [136 -1:0] L1 = R[136*1 -1 -:136];
 
 
-reg [136 -1:0] accum_l;
-reg [136 -1:0] accum_h;
+wire [136 -1:0] accum_l;
+wire [136 -1:0] accum_h;
 
 reg [136 -1:0] shifted_cl;
 reg [136 -1:0] shifted_ch;
