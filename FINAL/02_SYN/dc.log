@@ -311,32 +311,32 @@ Statistics for case statements in always block at line 49 in file
 |            50            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 171 in file
+Statistics for case statements in always block at line 192 in file
 	'../01_RTL/modular_mult.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           172            |    auto/auto     |
+|           193            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 200 in file
+Statistics for case statements in always block at line 229 in file
 	'../01_RTL/modular_mult.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           201            |    auto/auto     |
+|           230            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 226 in file
+Statistics for case statements in always block at line 265 in file
 	'../01_RTL/modular_mult.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           227            |    auto/auto     |
+|           266            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine modular_mult line 139 in file
+	in routine modular_mult line 145 in file
 		'../01_RTL/modular_mult.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -346,7 +346,16 @@ Inferred memory devices in process
 =================================================================================
 
 Inferred memory devices in process
-	in routine modular_mult line 243 in file
+	in routine modular_mult line 161 in file
+		'../01_RTL/modular_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    res_out_r_reg    | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine modular_mult line 282 in file
 		'../01_RTL/modular_mult.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -355,7 +364,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine modular_mult line 251 in file
+	in routine modular_mult line 290 in file
 		'../01_RTL/modular_mult.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -364,16 +373,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine modular_mult line 259 in file
-		'../01_RTL/modular_mult.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|        C_reg        | Flip-flop |  265  |  Y  | N  | N  | N  | N  | N  | N  |
-===============================================================================
-
-Inferred memory devices in process
-	in routine modular_mult line 284 in file
+	in routine modular_mult line 327 in file
 		'../01_RTL/modular_mult.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -409,9 +409,9 @@ Inferred memory devices in process
 ===============================================================================
 Presto compilation completed successfully.
 Current design is now '/home/raid7_2/user12/r2k41036/FINAL/02_SYN/ed25519.db:ed25519'
-Loaded 4 designs.
+Loaded 5 designs.
 Current design is 'ed25519'.
-ed25519 modular_mult multiplier_64x64 modular_add_sub
+ed25519 modular_mult multiplier_64x64 multiplier_128x128 modular_add_sub
 current_design [get_designs $DESIGN]
 Current design is 'ed25519'.
 {ed25519}
@@ -420,15 +420,15 @@ link
   Linking design 'ed25519'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (4 designs)               /home/raid7_2/user12/r2k41036/FINAL/02_SYN/ed25519.db, etc
+  * (5 designs)               /home/raid7_2/user12/r2k41036/FINAL/02_SYN/ed25519.db, etc
   slow (library)              /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db
   dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
 
 1
 source -echo -verbose ./ed25519_dc.sdc
 # operating conditions and boundary conditions #
-set cycle  10         ;#clock period defined by designer
-10
+set cycle  4.15         ;#clock period defined by designer
+4.15
 create_clock -period $cycle [get_ports  i_clk]
 1
 set_dont_touch_network      [get_clocks i_clk]
@@ -469,13 +469,13 @@ Information: Uniquified 2 instances of design 'modular_add_sub'. (OPT-1056)
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 1
 set_host_options -max_cores 16
-Warning: You requested 16 cores. However, load on host cad27 is 22.34. Tool will ignore the request and use 10 cores. (UIO-231)
+Warning: You requested 16 cores. However, load on host cad27 is 30.54. Tool will ignore the request and use 2 cores. (UIO-231)
 1
 #set_clock_gating_style -max_fanout 4
 compile_ultra
 Information: Performing power optimization. (PWR-850)
 Alib files are up-to-date.
-Information: Running optimization using a maximum of 10 cores. (OPT-1500)
+Information: Running optimization using a maximum of 2 cores. (OPT-1500)
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
 ============================================================================
@@ -494,15 +494,15 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 7455                                   |
+| Leaf Cell Count                                         | 7409                                   |
 | Number of User Hierarchies                              | 4                                      |
-| Sequential Cell Count                                   | 5719                                   |
+| Sequential Cell Count                                   | 5582                                   |
 | Macro Count                                             | 0                                      |
 | Number of Power Domains                                 | 0                                      |
 | Number of Path Groups                                   | 2                                      |
 | Number of VT Class                                      | 0                                      |
 | Number of Clocks                                        | 1                                      |
-| Number of Dont Touch Cells                              | 841                                    |
+| Number of Dont Touch Cells                              | 900                                    |
 | Number of Dont Touch Nets                               | 4                                      |
 | Number of Size Only Cells                               | 0                                      |
 | Design with UPF Data                                    | false                                  |
@@ -513,7 +513,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ====================================================================================================
 Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
 
-Information: There are 251 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 250 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
   Simplifying Design 'ed25519'
 
@@ -524,4 +524,4 @@ Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping
   ------------------------
-...
+.

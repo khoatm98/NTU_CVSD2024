@@ -942,12 +942,12 @@ end
 // Transform x
 // ---------------------------------------------------------------------------
 reg [255:0]  tranX_X_w;
-wire         tranX_end_w = modmult_o_valid;
+wire         tranX_end_w = X_r[0] ? modmult_o_valid : 1;
 
 always @ (*) begin
 	if (next_state == S_REDUCE_X_TRAN && curr_state != next_state) begin
 		tranX_a_in_w = X_r;
-		tranX_b_in_w = X_r[0] ? `minus_one : 256'd1;
+		tranX_b_in_w = `minus_one;
 		tranX_i_valid = 1;
 	end else begin
 		tranX_a_in_w = modmult_a_in_r;
@@ -967,12 +967,12 @@ end
 // Transform y
 // ---------------------------------------------------------------------------
 reg [255:0]  tranY_Y_w;
-wire         tranY_end_w = modmult_o_valid;
+wire         tranY_end_w = Y_r[0] ? modmult_o_valid : 1;
 
 always @ (*) begin
 	if (next_state == S_REDUCE_Y_TRAN && curr_state != next_state) begin
 		tranY_a_in_w = Y_r;
-		tranY_b_in_w = Y_r[0] ? `minus_one : 256'd1;
+		tranY_b_in_w = `minus_one;
 		tranY_i_valid = 1;
 	end else begin
 		tranY_a_in_w = modmult_a_in_r;
@@ -1150,14 +1150,14 @@ end
 // Description: counter start from 0 at every state transition
 // ---------------------------------------------------------------------------
 always@ (posedge i_clk ) begin
-	if(i_rst || curr_state != next_state) begin
+	if(i_rst) begin
 		generic_cnt <= 0;
 	end else if(curr_state == S_INPUT) begin
 		generic_cnt <= m_reg_rden ? generic_cnt + 1 : generic_cnt;
 	end else if(curr_state == S_OUTPUT) begin
 		generic_cnt <= m_reg_wren ? generic_cnt + 1 : generic_cnt;
 	end else begin
-		generic_cnt <= generic_cnt + 1;
+		generic_cnt <= 0;
 	end
 end
 

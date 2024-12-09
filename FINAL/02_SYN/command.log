@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version U-2022.12 for linux64 -- Nov 22, 2022
-#@ # Date:   Sun Dec  8 06:27:09 2024
+#@ # Date:   Mon Dec  9 18:29:43 2024
 #@ # Run by: r2k41036@cad27
 #@ 
 
@@ -9435,7 +9435,7 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 
 #@ # operating conditions and boundary conditions #
 #@ 
-#@ set cycle  10         ;#clock period defined by designer
+#@ set cycle  4.15         ;#clock period defined by designer
 #@ 
 #@ create_clock -period $cycle [get_ports  i_clk]
 #@ set_dont_touch_network      [get_clocks i_clk]
@@ -9468,5 +9468,6 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 #@ uniquify
 #@ set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 #@ set_host_options -max_cores 16
+#@ 
 #@ #set_clock_gating_style -max_fanout 4
 #@ compile_ultra

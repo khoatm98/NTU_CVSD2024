@@ -1,1 +1,1 @@
-vcs -R -full64 -f rtl_sim.f +define+PAT$1 | tee rtl_sim_p0.log
+vcs -R -full64 -f rtl_sim.f +define+PAT$1 +define+PERIOD=$2 | tee rtl_sim_p0.log

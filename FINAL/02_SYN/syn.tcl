@@ -46,14 +46,16 @@ set high_fanout_net_threshold 0
 uniquify
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 set_host_options -max_cores 16
+
 #set_clock_gating_style -max_fanout 4
 compile_ultra
-optimize_netlist -area 
+optimize_netlist  -area 
 
 
 
 # Report Output
 current_design [get_designs ${DESIGN}]
+report_timing > "./Report/${DESIGN}_syn.timing"
 report_timing -delay min -max_paths 10 > "./Report/${DESIGN}_syn.timing_min" 
 report_timing -delay max -max_paths 10 > "./Report/${DESIGN}_syn.timing_max"
 report_area -hierarchy > "./Report/${DESIGN}_syn.area"
