@@ -535,7 +535,7 @@ wire [255:0] Y1_w = data_buf_r[256*1 - 1 -: 256];
 
 wire         PA_end_w = next_addition_state == S_LEVEL_12;
 
-assign       scalar_end_round_w = M_w[254] ? PA_end_w : PD_end_w;
+wire         scalar_end_round_w = M_w[254] ? PA_end_w : PD_end_w;
 
 always@ (*) begin
 	if (next_addition_state != curr_s_state || curr_state != next_state) begin  // State transition
