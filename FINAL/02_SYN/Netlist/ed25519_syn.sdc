@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Mon Dec  9 18:50:44 2024
+# Created by write_sdc on Mon Dec  9 23:45:53 2024
 
 ###################################################################
 set sdc_version 1.8
@@ -142,7 +142,7 @@ set_max_fanout 20 [get_ports {i_in_data[1]}]
 set_max_fanout 20 [get_ports {i_in_data[0]}]
 set_max_fanout 20 [get_ports i_out_ready]
 set_ideal_network [get_ports i_clk]
-create_clock [get_ports i_clk]  -period 4.15  -waveform {0 2.075}
+create_clock [get_ports i_clk]  -period 7  -waveform {0 3.5}
 set_clock_latency 0.5  [get_clocks i_clk]
 set_clock_uncertainty 0.1  [get_clocks i_clk]
 set_input_delay -clock i_clk  1  [get_ports i_rst]

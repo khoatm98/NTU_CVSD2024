@@ -2,7 +2,7 @@
 ****************************************
 check_design summary:
 Version:     U-2022.12
-Date:        Mon Dec  9 18:29:57 2024
+Date:        Mon Dec  9 23:29:26 2024
 ****************************************
 
                    Name                                            Total
@@ -16,9 +16,9 @@ Cells                                                             249
     Nets connected to multiple pins on same cell (LINT-33)          1
 --------------------------------------------------------------------------------
 
-Warning: In design 'ed25519', cell 'C44437' does not drive any nets. (LINT-1)
-Warning: In design 'ed25519', cell 'C45058' does not drive any nets. (LINT-1)
-Warning: In design 'ed25519', cell 'C45063' does not drive any nets. (LINT-1)
+Warning: In design 'ed25519', cell 'B_145' does not drive any nets. (LINT-1)
+Warning: In design 'ed25519', cell 'C45176' does not drive any nets. (LINT-1)
+Warning: In design 'ed25519', cell 'C45181' does not drive any nets. (LINT-1)
 Warning: In design 'modular_mult', cell 'B_37' does not drive any nets. (LINT-1)
 Warning: In design 'modular_mult', cell 'C7558' does not drive any nets. (LINT-1)
 Warning: In design 'modular_mult', cell 'C7566' does not drive any nets. (LINT-1)

@@ -14,7 +14,7 @@
 
 `timescale 1ns/10ps
 `define PERIOD    10.0
-`define MAX_CYCLE 1_000_000
+`define MAX_CYCLE 120000
 //`define MAX_CYCLE 1_00
 `define RST_CYCLE 5
 
@@ -23,7 +23,7 @@
 
 `ifdef GATE
     `define SDF
-    `define SDF_FILE "../03_GATE/ed25519_syn.sdf" // Modify your sdf file name
+    `define SDF_FILE "../02_SYN/Netlist/ed25519_syn.sdf" // Modify your sdf file name
 `elsif POST
     `define SDF
     `define SDF_FILE "../05_POST/ed25519_pr.sdf"  // Modify your sdf file name
@@ -91,6 +91,7 @@ module testbench #(
 
 `ifdef SDF
     initial begin
+		$display("%d" , `SDF_FILE);
         $sdf_annotate(`SDF_FILE, u_ed25519);
     `ifdef FSDB
         $fsdbDumpfile("ed25519_gate.fsdb");

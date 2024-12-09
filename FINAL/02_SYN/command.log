@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version U-2022.12 for linux64 -- Nov 22, 2022
-#@ # Date:   Mon Dec  9 18:29:43 2024
+#@ # Date:   Mon Dec  9 23:29:10 2024
 #@ # Run by: r2k41036@cad27
 #@ 
 
@@ -9435,7 +9435,7 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 
 #@ # operating conditions and boundary conditions #
 #@ 
-#@ set cycle  4.15         ;#clock period defined by designer
+#@ set cycle  7        ;#clock period defined by designer
 #@ 
 #@ create_clock -period $cycle [get_ports  i_clk]
 #@ set_dont_touch_network      [get_clocks i_clk]
@@ -9454,7 +9454,6 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 #@ set_max_fanout 20 [all_inputs]
 #@ 
 #@ 
-#@ 
 #@ # -- End source ./ed25519_dc.sdc
 
 #@ 
@@ -9471,3 +9470,36 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 #@ 
 #@ #set_clock_gating_style -max_fanout 4
 #@ compile_ultra
+#@ optimize_netlist  -area 
+#@ 
+#@ 
+#@ 
+#@ # Report Output
+#@ current_design [get_designs ${DESIGN}]
+#@ report_timing > "./Report/${DESIGN}_syn.timing"
+#@ report_timing -delay min -max_paths 10 > "./Report/${DESIGN}_syn.timing_min" 
+#@ report_timing -delay max -max_paths 10 > "./Report/${DESIGN}_syn.timing_max"
+#@ report_area -hierarchy > "./Report/${DESIGN}_syn.area"
+#@ report_clock_gating > "./Report/${DESIGN}_syn.cg"
+#@ 
+#@ # Output Design
+#@ current_design [get_designs ${DESIGN}]
+#@ 
+#@ set bus_inference_style {%s[%d]}
+#@ set bus_naming_style {%s[%d]}
+#@ set hdlout_internal_busses true
+#@ change_names -hierarchy -rule verilog
+#@ define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+#@ define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+#@ define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+#@ define_name_rules name_rule -case_insensitive
+#@ change_names -hierarchy -rules name_rule
+#@ 
+#@ remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+#@ set verilogout_higher_designs_first true
+#@ write -format ddc     -hierarchy -output "./Netlist/${DESIGN}_syn.ddc"
+#@ write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
+#@ write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
+#@ write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
+#@ 
+#@ exit

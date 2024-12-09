@@ -1,6 +1,6 @@
 # operating conditions and boundary conditions #
 
-set cycle  4.15         ;#clock period defined by designer
+set cycle  7        ;#clock period defined by designer
 
 create_clock -period $cycle [get_ports  i_clk]
 set_dont_touch_network      [get_clocks i_clk]
@@ -19,4 +19,3 @@ set_operating_conditions  -max_library slow -max slow
 set_max_fanout 20 [all_inputs]
 
 
-                       

@@ -85,132 +85,141 @@ Reading with Presto HDL Compiler (equivalent to -rtl option).
 Running PRESTO HDLC
 Compiling source file /home/raid7_2/user12/r2k41036/FINAL/02_SYN/flist.sv
 Opening include file ../01_RTL/ed25519.v
-Warning:  ../01_RTL/ed25519.v:538: the undeclared symbol 'scalar_end_round_w' assumed to have the default net type, which is 'wire'. (VER-936)
 Opening include file ../01_RTL/modular_mult.v
 Opening include file ../01_RTL/modular_add_sub.v
 
-Statistics for case statements in always block at line 140 in file
+Statistics for case statements in always block at line 147 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           141            |    auto/auto     |
+|           148            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 285 in file
+Statistics for case statements in always block at line 292 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           288            |    auto/auto     |
+|           295            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 388 in file
+Statistics for case statements in always block at line 395 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           389            |    auto/auto     |
+|           396            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 396 in file
+Statistics for case statements in always block at line 403 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           398            |    auto/auto     |
+|           405            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 493 in file
+Statistics for case statements in always block at line 500 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           497            |    auto/auto     |
+|           504            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 540 in file
+Statistics for case statements in always block at line 547 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           542            |    auto/auto     |
+|           549            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 658 in file
+Statistics for case statements in always block at line 665 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           659            |    auto/auto     |
+|           666            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 666 in file
+Statistics for case statements in always block at line 673 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           668            |    auto/auto     |
+|           675            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 807 in file
+Statistics for case statements in always block at line 814 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           811            |    auto/auto     |
+|           818            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 842 in file
+Statistics for case statements in always block at line 849 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           846            |    auto/auto     |
+|           853            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 869 in file
+Statistics for case statements in always block at line 876 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           873            |    auto/auto     |
+|           880            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 1004 in file
+Statistics for case statements in always block at line 1011 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           1005           |    auto/auto     |
+|           1012           |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 1020 in file
+Statistics for case statements in always block at line 1027 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           1021           |     no/auto      |
+|           1028           |     no/auto      |
 ===============================================
 
-Statistics for case statements in always block at line 1039 in file
+Statistics for case statements in always block at line 1046 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           1045           |    auto/auto     |
+|           1052           |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 1054 in file
+Statistics for case statements in always block at line 1061 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           1055           |    auto/auto     |
+|           1062           |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine ed25519 line 140 in file
+	in routine ed25519 line 61 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    o_valid_r_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   i_in_data_r_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 147 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -225,7 +234,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 255 in file
+	in routine ed25519 line 262 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -234,7 +243,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 842 in file
+	in routine ed25519 line 849 in file
 		'../01_RTL/ed25519.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -243,7 +252,7 @@ Inferred memory devices in process
 ===========================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 869 in file
+	in routine ed25519 line 876 in file
 		'../01_RTL/ed25519.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -252,7 +261,7 @@ Inferred memory devices in process
 ===========================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1004 in file
+	in routine ed25519 line 1011 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -261,7 +270,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1020 in file
+	in routine ed25519 line 1027 in file
 		'../01_RTL/ed25519.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -270,7 +279,7 @@ Inferred memory devices in process
 ===========================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1039 in file
+	in routine ed25519 line 1046 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -280,7 +289,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1054 in file
+	in routine ed25519 line 1061 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -295,7 +304,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1152 in file
+	in routine ed25519 line 1159 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -373,7 +382,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine modular_mult line 327 in file
+	in routine modular_mult line 328 in file
 		'../01_RTL/modular_mult.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -427,8 +436,8 @@ link
 1
 source -echo -verbose ./ed25519_dc.sdc
 # operating conditions and boundary conditions #
-set cycle  4.15         ;#clock period defined by designer
-4.15
+set cycle  7        ;#clock period defined by designer
+7
 create_clock -period $cycle [get_ports  i_clk]
 1
 set_dont_touch_network      [get_clocks i_clk]
@@ -469,13 +478,12 @@ Information: Uniquified 2 instances of design 'modular_add_sub'. (OPT-1056)
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 1
 set_host_options -max_cores 16
-Warning: You requested 16 cores. However, load on host cad27 is 30.54. Tool will ignore the request and use 2 cores. (UIO-231)
+Warning: You requested 16 cores. However, load on host cad27 is 32.18. Tool will ignore the request and use 1 cores. (UIO-231)
 1
 #set_clock_gating_style -max_fanout 4
 compile_ultra
 Information: Performing power optimization. (PWR-850)
 Alib files are up-to-date.
-Information: Running optimization using a maximum of 2 cores. (OPT-1500)
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
 ============================================================================
@@ -494,15 +502,15 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 | Design Information                                      | Value                                  |
 ====================================================================================================
 | Number of Scenarios                                     | 0                                      |
-| Leaf Cell Count                                         | 7409                                   |
+| Leaf Cell Count                                         | 7465                                   |
 | Number of User Hierarchies                              | 4                                      |
-| Sequential Cell Count                                   | 5582                                   |
+| Sequential Cell Count                                   | 5647                                   |
 | Macro Count                                             | 0                                      |
 | Number of Power Domains                                 | 0                                      |
 | Number of Path Groups                                   | 2                                      |
 | Number of VT Class                                      | 0                                      |
 | Number of Clocks                                        | 1                                      |
-| Number of Dont Touch Cells                              | 900                                    |
+| Number of Dont Touch Cells                              | 898                                    |
 | Number of Dont Touch Nets                               | 4                                      |
 | Number of Size Only Cells                               | 0                                      |
 | Design with UPF Data                                    | false                                  |
@@ -524,4 +532,299 @@ Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping
   ------------------------
-.
+  Processing 'ed25519'
+Information: Added key list 'DesignWare' to design 'ed25519'. (DDB-72)
+Information: The register 'next_inv_state_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'next_inv_state_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'A_r_reg[255]' is a constant and will be removed. (OPT-1206)
+Information: The register 'B_r_reg[255]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Z_r_reg[255]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'ed25519'.
+  Processing 'modular_mult'
+Information: The register 'R_reg[135]' is a constant and will be removed. (OPT-1206)
+Information: The register 'R_reg[134]' is a constant and will be removed. (OPT-1206)
+Information: The register 'R_reg[133]' is a constant and will be removed. (OPT-1206)
+Information: The register 'R_reg[132]' is a constant and will be removed. (OPT-1206)
+Information: The register 'R_reg[131]' is a constant and will be removed. (OPT-1206)
+Information: The register 'R_reg[130]' is a constant and will be removed. (OPT-1206)
+Information: The register 'R_reg[129]' is a constant and will be removed. (OPT-1206)
+Information: The register 'R_reg[128]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'modular_mult'.
+  Processing 'modular_add_sub_0'
+ Implement Synthetic for 'modular_add_sub_0'.
+  Processing 'multiplier_64x64'
+ Implement Synthetic for 'multiplier_64x64'.
+  Processing 'modular_add_sub_1'
+ Implement Synthetic for 'modular_add_sub_1'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: The register 'X_r_reg[255]' is a constant and will be removed. (OPT-1206)
+Information: The register 'Y_r_reg[255]' is a constant and will be removed. (OPT-1206)
+Information: The register 'D_r_reg[255]' is a constant and will be removed. (OPT-1206)
+Information: The register 'C_r_reg[255]' is a constant and will be removed. (OPT-1206)
+Information: The register 'modmult_a_in_r_reg[255]' is a constant and will be removed. (OPT-1206)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'modular_mult'. (DDB-72)
+Information: Ungrouping hierarchy modular_add_sub_inst 'modular_add_sub_1' #insts = 1302. (OPT-777)
+Information: Ungrouping hierarchy modular_mult_inst/multiplier_64x64_inst 'multiplier_64x64' #insts = 0. (OPT-777)
+Information: Ungrouping hierarchy modular_mult_inst/modular_add_sub_inst 'modular_add_sub_0' #insts = 1053. (OPT-777)
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:08:37 1076458.8      0.00       0.0   47408.5                           1003001856.0000      0.00  
+    0:08:43 1076306.1      0.00       0.0   47408.5                           1002882880.0000      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:08:48 1076791.5      0.00       0.0   47408.5                           1003555520.0000      0.00  
+    0:08:53 1076791.5      0.00       0.0   47408.5                           1003555520.0000      0.00  
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:09:58  497565.7      0.91     111.0   62023.0                           314210112.0000      0.00  
+    0:10:17  502642.6      0.00       0.0   62023.0                           322767808.0000      0.00  
+    0:10:17  502642.6      0.00       0.0   62023.0                           322767808.0000      0.00  
+    0:10:19  502613.7      0.00       0.0   62023.0                           322720160.0000      0.00  
+    0:10:42  498966.0      0.00       0.0   62023.0                           321583136.0000      0.00  
+    0:10:49  497942.5      0.00       0.0   62023.0                           321222592.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:11:16  494133.5      0.00       0.0   62018.4                           316861248.0000      0.00  
+    0:11:28  487439.0      0.00       0.0   62007.2                           310771680.0000      0.00  
+    0:11:35  486598.8      0.00       0.0   62007.2                           311197760.0000      0.00  
+    0:11:37  486137.1      0.00       0.0   62007.2                           310996064.0000      0.00  
+    0:11:38  486137.1      0.00       0.0   62007.2                           310996064.0000      0.00  
+    0:11:38  486137.1      0.00       0.0   62007.2                           310996064.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:11:44  485152.6      0.00       0.0   62007.2                           307548416.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:11:48  486111.6      0.00       0.0       0.0                           308724160.0000      0.00  
+    0:11:48  486111.6      0.00       0.0       0.0                           308724160.0000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:11:48  486111.6      0.00       0.0       0.0                           308724160.0000      0.00  
+    0:11:49  502323.5      0.00       0.0       0.0                           329809184.0000      0.00  
+    0:11:49  502323.5      0.00       0.0       0.0                           329809184.0000      0.00  
+    0:11:49  502323.5      0.00       0.0       0.0                           329809184.0000      0.00  
+    0:12:07  491753.8      0.01       0.1       0.0                           299573472.0000      0.00  
+    0:12:07  491753.8      0.01       0.1       0.0                           299573472.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:08  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:12:12  491881.1      0.00       0.0       0.0                           299698688.0000      0.00  
+    0:12:25  488959.8      0.00       0.0       0.0                           292941472.0000      0.00  
+    0:12:25  488959.8      0.00       0.0       0.0                           292941472.0000      0.00  
+    0:12:25  488959.8      0.00       0.0       0.0                           292941472.0000      0.00  
+    0:12:31  488842.7      0.00       0.0       0.0                           292261440.0000      0.00  
+    0:12:42  485220.5      0.00       0.0       0.0                           288803520.0000      0.00  
+    0:12:49  484582.2      0.00       0.0       0.0                           288219616.0000      0.00  
+    0:13:01  483628.3      0.00       0.0       0.0                           286257408.0000      0.00  
+    0:13:01  483628.3      0.00       0.0       0.0                           286257408.0000      0.00  
+    0:13:01  483628.3      0.00       0.0       0.0                           286257408.0000      0.00  
+    0:13:01  483628.3      0.00       0.0       0.0                           286257408.0000      0.00  
+    0:13:01  483628.3      0.00       0.0       0.0                           286257408.0000      0.00  
+    0:13:01  483628.3      0.00       0.0       0.0                           286257408.0000      0.00  
+    0:13:14  478575.1      0.00       0.0       1.3                           278445184.0000      0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+optimize_netlist  -area 
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Updating timing information
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+
+  Beginning Area Optimization
+  -----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:05  478575.1      0.00       0.0       1.3                           278445184.0000      0.00  
+    0:02:26  475207.5      0.00       0.0       1.3                           278491232.0000      0.00  
+Loading db file '/home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+# Report Output
+current_design [get_designs ${DESIGN}]
+Current design is 'ed25519'.
+{ed25519}
+report_timing > "./Report/${DESIGN}_syn.timing"
+report_timing -delay min -max_paths 10 > "./Report/${DESIGN}_syn.timing_min" 
+report_timing -delay max -max_paths 10 > "./Report/${DESIGN}_syn.timing_max"
+report_area -hierarchy > "./Report/${DESIGN}_syn.area"
+report_clock_gating > "./Report/${DESIGN}_syn.cg"
+# Output Design
+current_design [get_designs ${DESIGN}]
+Current design is 'ed25519'.
+{ed25519}
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+Removing port 'a[255]' from design 'modular_mult'
+Removing port 'res[255]' from design 'modular_mult'
+1
+set verilogout_higher_designs_first true
+true
+write -format ddc     -hierarchy -output "./Netlist/${DESIGN}_syn.ddc"
+Writing ddc file './Netlist/ed25519_syn.ddc'.
+1
+write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
+Writing verilog file '/home/raid7_2/user12/r2k41036/FINAL/02_SYN/Netlist/ed25519_syn.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
+Information: Writing timing information to file '/home/raid7_2/user12/r2k41036/FINAL/02_SYN/Netlist/ed25519_syn.sdf'. (WT-3)
+1
+write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
+1
+exit
+
+Memory usage for this session 426 Mbytes.
+Memory usage for this session including child processes 572 Mbytes.
+CPU usage for this session 967 seconds ( 0.27 hours ).
+Elapsed time for this session 1012 seconds ( 0.28 hours ).
+
+Thank you...

@@ -311,6 +311,7 @@ wire [254:0] b_debug_w = S_debug_w[1][135:127]*19;
 
 assign a_w = a_debug_w ; //C[254:0];
 assign b_w = b_debug_w ; //C[264:255]*19;
+
 // Connect with reduction module
 reg o_valid_r;
 modular_add_sub modular_add_sub_inst (

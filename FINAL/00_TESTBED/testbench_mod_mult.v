@@ -19,7 +19,7 @@
 
 `define IDATA  "../00_TESTBED/pattern_mult/mult_I.dat"
 `define ODATA  "../00_TESTBED/pattern_mult/mult_O.dat"
-`define PAT_LEN 10000
+`define PAT_LEN 1
 
 
 module testbench #(

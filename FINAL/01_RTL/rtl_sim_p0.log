@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version T-2022.06_Full64 -- Mon Dec  9 18:29:21 2024
+         Version T-2022.06_Full64 -- Mon Dec  9 23:28:41 2024
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -79,12 +79,12 @@ rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
 rm -f _cuarc0.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _59878_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _47949_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 Notice: timing checks disabled with +notimingcheck at compile-time
 Chronologic VCS simulator copyright 1991-2022
 Contains Synopsys proprietary information.
-Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Dec  9 18:29 2024
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Dec  9 23:28 2024
 *Verdi* Loading libsscore_vcs202206.so
 *Verdi* WARNING: No '-debug_access' in VCS compile options
 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
@@ -95,14 +95,14 @@ FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
 *Verdi* : Enable +mda dumping.
 *Verdi* : End of traversing.
 **********************************************
-                 PAT 1 PASS!                 
+                 PAT 0 PASS!                 
 ----------------------------------------------
-Simulation Cycle: 111220, Time:   461563.00 ns
+Simulation Cycle: 109612, Time:  1096120.00 ns
 **********************************************
-$finish called from file "../00_TESTBED/testbed.sv", line 262.
-$finish at simulation time             46270222
+$finish called from file "../00_TESTBED/testbed.sv", line 263.
+$finish at simulation time            109618500
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 462702220 ps
-CPU Time:      3.840 seconds;       Data structure size:   0.1Mb
-Mon Dec  9 18:29:31 2024
-CPU time: 1.040 seconds to compile + .673 seconds to elab + .460 seconds to link + 3.885 seconds in simulation
+Time: 1096185000 ps
+CPU Time:      3.720 seconds;       Data structure size:   0.1Mb
+Mon Dec  9 23:28:50 2024
+CPU time: 1.036 seconds to compile + .715 seconds to elab + .443 seconds to link + 3.777 seconds in simulation

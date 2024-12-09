@@ -55,6 +55,13 @@ reg [255:0] A_r;
 reg [255:0] B_r;
 reg [255:0] C_r;
 reg [255:0] D_r;
+
+reg                o_valid_r  ;
+reg [DATA_W-1:0]   i_in_data_r;
+always@ (posedge i_clk) begin
+	o_valid_r    <= m_reg_rden || m_reg_wren;
+	i_in_data_r  <=  m_reg_rden || m_reg_wren ? i_in_data : i_in_data_r;
+end
 // ---------------------------------------------------------------------------
 // Continuous assignment
 // ---------------------------------------------------------------------------
@@ -220,8 +227,8 @@ end
 reg [BUFF_W*3-1:0]   data_in_buf_w;
 
 always@(*) begin
-	if (m_reg_rden)
-		data_in_buf_w =  {data_buf_r[BUFF_W*3-1-64:0], i_in_data};
+	if (o_valid_r)
+		data_in_buf_w =  {data_buf_r[BUFF_W*3-1-64:0], i_in_data_r};
 	else
 		data_in_buf_w =  data_buf_r;
 end
@@ -254,7 +261,7 @@ reg         end_round;
 
 always@(posedge i_clk) begin
 	if((curr_state == S_INPUT        && next_state == S_SCALAR_CHECK) || 
-	   (curr_state == S_SCALAR_CHECK && next_state == S_REDUCE_CHECK)) begin
+	   (0)) begin
 		round_r <= 255;
 	end
 	else begin
@@ -1020,7 +1027,7 @@ end
 always@ (*) begin
 	case(curr_state)
 		S_RST           :   next_state = S_INPUT;
-		S_INPUT         :   next_state = generic_cnt == 11 && m_reg_rden ? S_SCALAR_CHECK : S_INPUT;
+		S_INPUT         :   next_state = generic_cnt == 11 && o_valid_r ? S_SCALAR_CHECK : S_INPUT;
 		S_SCALAR_MULT_D :   next_state = PD_end_w ? (scalar_end_round_w ? S_SCALAR_CHECK : S_SCALAR_MULT_A) :  S_SCALAR_MULT_D;
 		S_SCALAR_MULT_A :   next_state = PA_end_w ? S_SCALAR_CHECK :  S_SCALAR_MULT_A;
 		S_SCALAR_CHECK  :   next_state = round_r == 0  ? S_REDUCE_CHECK :  S_SCALAR_MULT_D;
@@ -1030,7 +1037,7 @@ always@ (*) begin
 		S_REDUCE_YZ_INV :   next_state = redYZ_end_w   ? S_REDUCE_X_TRAN :  S_REDUCE_YZ_INV;
 		S_REDUCE_X_TRAN :   next_state = tranX_end_w   ? S_REDUCE_Y_TRAN :  S_REDUCE_X_TRAN;
 		S_REDUCE_Y_TRAN :   next_state = tranY_end_w   ? S_OUTPUT :  S_REDUCE_Y_TRAN;
-		S_OUTPUT        :   next_state = generic_cnt == 11 && m_reg_wren ? S_INPUT  : S_OUTPUT;
+		S_OUTPUT        :   next_state = generic_cnt == 7 && m_reg_wren ? S_INPUT  : S_OUTPUT;
 	endcase
 end
 // ---------------------------------------------------------------------------
@@ -1153,7 +1160,7 @@ always@ (posedge i_clk ) begin
 	if(i_rst) begin
 		generic_cnt <= 0;
 	end else if(curr_state == S_INPUT) begin
-		generic_cnt <= m_reg_rden ? generic_cnt + 1 : generic_cnt;
+		generic_cnt <= o_valid_r ? generic_cnt + 1 : generic_cnt;
 	end else if(curr_state == S_OUTPUT) begin
 		generic_cnt <= m_reg_wren ? generic_cnt + 1 : generic_cnt;
 	end else begin
