@@ -3,7 +3,7 @@
 Report : area
 Design : ed25519
 Version: U-2022.12
-Date   : Mon Dec  9 16:26:56 2024
+Date   : Mon Dec  9 18:50:32 2024
 ****************************************
 
 Library(s) Used:
@@ -11,21 +11,21 @@ Library(s) Used:
     slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
 
 Number of ports:                          906
-Number of nets:                         53479
-Number of cells:                        51514
-Number of combinational cells:          46202
-Number of sequential cells:              5308
+Number of nets:                         52947
+Number of cells:                        50934
+Number of combinational cells:          45366
+Number of sequential cells:              5564
 Number of macros/black boxes:               0
-Number of buf/inv:                       7894
-Number of references:                     111
+Number of buf/inv:                       7576
+Number of references:                     114
 
-Combinational area:             445733.843780
-Buf/Inv area:                    34475.891129
-Noncombinational area:          138499.354786
+Combinational area:             417983.050955
+Buf/Inv area:                    31675.181146
+Noncombinational area:          143876.718615
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                584233.198566
+Total cell area:                561859.769569
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,9 +36,9 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-    Black-
                                   Total        Total    national     national     boxes   Design
 --------------------------------  -----------  -------  -----------  -----------  ------  ------------
-ed25519                           584233.1986    100.0  153813.2972  103543.0989  0.0000  ed25519
-modular_mult_inst                 326876.8025     55.9  291920.5466   34956.2559  0.0000  modular_mult
+ed25519                           561859.7696    100.0  155702.5032  102911.6664  0.0000  ed25519
+modular_mult_inst                 303245.6000     54.0  262280.5478   40965.0522  0.0000  modular_mult
 --------------------------------  -----------  -------  -----------  -----------  ------  ------------
-Total                                                   445733.8438  138499.3548  0.0000
+Total                                                   417983.0510  143876.7186  0.0000
 
 1
