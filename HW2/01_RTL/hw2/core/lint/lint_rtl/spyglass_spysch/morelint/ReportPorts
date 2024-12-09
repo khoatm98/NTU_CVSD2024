@@ -1,9 +1,0 @@
-SCHEMA@@PName@@Dir@@Msb@@Lsb@@Desc@@DU@@DU_BBOX
-VALUE@@i_clk@@INPUT@@0@@0@@DO NOT MODIFY INTERFACE!!!@@core@@No
-VALUE@@i_rst_n@@INPUT@@0@@0@@-@@core@@No
-VALUE@@o_status@@OUTPUT@@2@@0@@Testbench IOs@@core@@No
-VALUE@@o_status_valid@@OUTPUT@@0@@0@@-@@core@@No
-VALUE@@o_addr@@OUTPUT@@31@@0@@Memory IOs@@core@@No
-VALUE@@o_wdata@@OUTPUT@@31@@0@@-@@core@@No
-VALUE@@o_we@@OUTPUT@@0@@0@@-@@core@@No
-VALUE@@i_rdata@@INPUT@@31@@0@@-@@core@@No

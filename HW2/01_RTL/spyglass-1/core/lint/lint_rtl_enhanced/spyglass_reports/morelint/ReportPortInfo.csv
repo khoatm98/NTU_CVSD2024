@@ -1,9 +1,0 @@
-Module Name,Module Type,Port Name,Direction,Width,Index,Comment Source,Comment 
-core,Top_Level,i_clk,INPUT,1,-,module port,DO NOT MODIFY INTERFACE!!!
-core,Top_Level,i_rst_n,INPUT,1,-,-,-
-core,Top_Level,o_status,OUTPUT,3,[2:0],module port,Testbench IOs
-core,Top_Level,o_status_valid,OUTPUT,1,-,-,-
-core,Top_Level,o_addr,OUTPUT,32,[31:0],module port,Memory IOs
-core,Top_Level,o_wdata,OUTPUT,32,[31:0],-,-
-core,Top_Level,o_we,OUTPUT,1,-,-,-
-core,Top_Level,i_rdata,INPUT,32,[31:0],-,-

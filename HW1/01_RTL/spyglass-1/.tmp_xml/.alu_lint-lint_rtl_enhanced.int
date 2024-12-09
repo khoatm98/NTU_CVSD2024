@@ -1,5 +1,0 @@
-INPUT@@/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/alu/lint/lint_rtl_enhanced/spyglass_reports@@/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/html_reports/data_files/@@alu@@lint-lint_rtl_enhanced@@
-COPY@@/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/alu/lint/lint_rtl_enhanced/spyglass_reports/moresimple.rpt@@data_files/alu_lint-lint_rtl_enhanced_moresimple.rpt@@
-COPY@@/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/alu/lint/lint_rtl_enhanced/spyglass_reports/no_msg_reporting_rules.rpt@@data_files/alu_lint-lint_rtl_enhanced_no_msg_reporting_rules.rpt@@
-PROCESS@@Audits@@area@@lowpower@@clock-reset@@const_intern1@@constraints@@dft@@dft_dsm@@power_est@@txv@@miscellaneous@@starc2002@@timing@@morelint@@latch@@lint@@simulation@@erc@@starc2005@@starc@@openmore@@SpyGlass
-COPY@@/home/raid7_2/user12/r2k41036/NTU_CVSD2024/1131_hw1/01_RTL/spyglass-1/alu/lint/lint_rtl_enhanced/spyglass.log@@data_files/alu_lint-lint_rtl_enhanced_spyglass.log@@
