@@ -1,0 +1,511 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Mon Dec  9 14:49:08 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      1
+    Constant outputs (LINT-52)                                      1
+
+Cells                                                             248
+    Cells do not drive (LINT-1)                                     5
+    Connected to power or ground (LINT-32)                        242
+    Nets connected to multiple pins on same cell (LINT-33)          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'ed25519', cell 'C44437' does not drive any nets. (LINT-1)
+Warning: In design 'ed25519', cell 'C45058' does not drive any nets. (LINT-1)
+Warning: In design 'ed25519', cell 'C45063' does not drive any nets. (LINT-1)
+Warning: In design 'modular_mult', cell 'B_36' does not drive any nets. (LINT-1)
+Warning: In design 'modular_mult', cell 'C7531' does not drive any nets. (LINT-1)
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[254]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[253]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[252]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[251]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[250]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[249]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[248]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[247]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[246]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[245]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[244]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[243]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[242]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[241]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[240]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[239]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[238]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[237]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[236]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[235]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[234]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[233]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[232]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[231]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[230]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[229]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[228]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[227]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[226]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[225]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[224]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[223]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[222]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[221]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[220]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[219]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[218]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[217]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[216]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[215]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[214]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[213]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[212]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[211]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[210]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[209]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[208]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[207]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[206]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[205]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[204]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[203]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[202]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[201]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[200]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[199]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[198]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[197]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[196]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[195]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[194]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[193]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[192]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[191]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[190]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[189]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[188]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[187]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[186]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[185]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[184]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[183]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[182]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[181]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[180]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[179]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[178]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[177]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[176]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[175]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[174]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[173]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[172]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[171]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[170]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[169]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[168]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[167]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[166]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[165]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[164]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[163]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[162]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[161]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[160]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[159]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[158]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[157]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[156]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[155]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[154]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[153]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[152]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[151]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[150]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[149]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[148]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[147]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[146]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[145]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[144]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[143]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[142]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[141]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[140]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[139]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[138]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[137]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[136]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[135]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[134]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[133]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[132]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[131]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[130]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[129]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[128]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[127]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[126]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[125]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[124]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[123]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[122]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[121]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[120]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[119]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[118]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[117]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[116]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[115]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[114]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[113]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[112]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[111]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[110]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[109]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[108]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[107]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[106]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[105]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[104]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[103]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[102]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[101]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[100]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[99]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[98]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[97]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[96]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[95]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[94]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[93]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[92]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[91]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[90]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[89]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[88]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[87]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[86]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[85]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[84]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[83]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[82]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[81]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[80]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[79]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[78]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[77]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[76]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[75]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[74]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[73]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[72]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[71]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[70]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[69]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[68]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[67]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[66]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[65]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[64]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[63]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[62]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[61]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[60]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[59]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[58]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[57]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[56]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[55]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[54]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[53]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[52]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[51]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[50]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[49]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[48]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[47]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[46]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[45]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[44]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[43]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[42]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[41]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[40]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[39]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[38]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[37]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[36]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[35]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[34]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[33]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[32]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[31]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[30]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[29]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[28]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[27]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[26]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[25]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[24]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[23]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[22]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[21]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[20]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[19]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[18]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[17]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[16]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[15]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[14]' is connected to logic 0. 
+Warning: In design 'modular_mult', a pin on submodule 'modular_add_sub_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_add_sub' is connected to logic 1. 
+Warning: In design 'modular_mult', the same net is connected to more than one pin on submodule 'modular_add_sub_inst'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'b[254]', 'b[253]'', 'b[252]', 'b[251]', 'b[250]', 'b[249]', 'b[248]', 'b[247]', 'b[246]', 'b[245]', 'b[244]', 'b[243]', 'b[242]', 'b[241]', 'b[240]', 'b[239]', 'b[238]', 'b[237]', 'b[236]', 'b[235]', 'b[234]', 'b[233]', 'b[232]', 'b[231]', 'b[230]', 'b[229]', 'b[228]', 'b[227]', 'b[226]', 'b[225]', 'b[224]', 'b[223]', 'b[222]', 'b[221]', 'b[220]', 'b[219]', 'b[218]', 'b[217]', 'b[216]', 'b[215]', 'b[214]', 'b[213]', 'b[212]', 'b[211]', 'b[210]', 'b[209]', 'b[208]', 'b[207]', 'b[206]', 'b[205]', 'b[204]', 'b[203]', 'b[202]', 'b[201]', 'b[200]', 'b[199]', 'b[198]', 'b[197]', 'b[196]', 'b[195]', 'b[194]', 'b[193]', 'b[192]', 'b[191]', 'b[190]', 'b[189]', 'b[188]', 'b[187]', 'b[186]', 'b[185]', 'b[184]', 'b[183]', 'b[182]', 'b[181]', 'b[180]', 'b[179]', 'b[178]', 'b[177]', 'b[176]', 'b[175]', 'b[174]', 'b[173]', 'b[172]', 'b[171]', 'b[170]', 'b[169]', 'b[168]', 'b[167]', 'b[166]', 'b[165]', 'b[164]', 'b[163]', 'b[162]', 'b[161]', 'b[160]', 'b[159]', 'b[158]', 'b[157]', 'b[156]', 'b[155]', 'b[154]', 'b[153]', 'b[152]', 'b[151]', 'b[150]', 'b[149]', 'b[148]', 'b[147]', 'b[146]', 'b[145]', 'b[144]', 'b[143]', 'b[142]', 'b[141]', 'b[140]', 'b[139]', 'b[138]', 'b[137]', 'b[136]', 'b[135]', 'b[134]', 'b[133]', 'b[132]', 'b[131]', 'b[130]', 'b[129]', 'b[128]', 'b[127]', 'b[126]', 'b[125]', 'b[124]', 'b[123]', 'b[122]', 'b[121]', 'b[120]', 'b[119]', 'b[118]', 'b[117]', 'b[116]', 'b[115]', 'b[114]', 'b[113]', 'b[112]', 'b[111]', 'b[110]', 'b[109]', 'b[108]', 'b[107]', 'b[106]', 'b[105]', 'b[104]', 'b[103]', 'b[102]', 'b[101]', 'b[100]', 'b[99]', 'b[98]', 'b[97]', 'b[96]', 'b[95]', 'b[94]', 'b[93]', 'b[92]', 'b[91]', 'b[90]', 'b[89]', 'b[88]', 'b[87]', 'b[86]', 'b[85]', 'b[84]', 'b[83]', 'b[82]', 'b[81]', 'b[80]', 'b[79]', 'b[78]', 'b[77]', 'b[76]', 'b[75]', 'b[74]', 'b[73]', 'b[72]', 'b[71]', 'b[70]', 'b[69]', 'b[68]', 'b[67]', 'b[66]', 'b[65]', 'b[64]', 'b[63]', 'b[62]', 'b[61]', 'b[60]', 'b[59]', 'b[58]', 'b[57]', 'b[56]', 'b[55]', 'b[54]', 'b[53]', 'b[52]', 'b[51]', 'b[50]', 'b[49]', 'b[48]', 'b[47]', 'b[46]', 'b[45]', 'b[44]', 'b[43]', 'b[42]', 'b[41]', 'b[40]', 'b[39]', 'b[38]', 'b[37]', 'b[36]', 'b[35]', 'b[34]', 'b[33]', 'b[32]', 'b[31]', 'b[30]', 'b[29]', 'b[28]', 'b[27]', 'b[26]', 'b[25]', 'b[24]', 'b[23]', 'b[22]', 'b[21]', 'b[20]', 'b[19]', 'b[18]', 'b[17]', 'b[16]', 'b[15]', 'b[14]'.
+Warning: In design 'modular_mult', output port 'res[255]' is connected directly to 'logic 0'. (LINT-52)
+1

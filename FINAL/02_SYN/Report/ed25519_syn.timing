@@ -1,0 +1,70 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ed25519
+Version: U-2022.12
+Date   : Mon Dec  9 16:26:55 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: modular_mult_inst/modular_add_sub_inst/state_reg[0]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/modular_add_sub_inst/C_reg[157]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/modular_add_sub_inst/state_reg[0]/CK (DFFHQX4)
+                                                          0.00       0.50 r
+  modular_mult_inst/modular_add_sub_inst/state_reg[0]/Q (DFFHQX4)
+                                                          0.21       0.71 r
+  modular_mult_inst/U15442/Y (NAND2BX1)                   0.20       0.91 r
+  modular_mult_inst/U3134/Y (CLKINVX1)                    0.14       1.05 f
+  modular_mult_inst/U12802/Y (INVX6)                      0.16       1.20 r
+  modular_mult_inst/U3131/Y (BUFX4)                       0.45       1.66 r
+  modular_mult_inst/U18830/Y (NOR2X1)                     0.15       1.81 f
+  modular_mult_inst/U8376/Y (NAND2BX1)                    0.20       2.01 f
+  modular_mult_inst/U8375/Y (NOR3BXL)                     0.20       2.21 r
+  modular_mult_inst/U2832/Y (NAND2XL)                     0.13       2.34 f
+  modular_mult_inst/U18872/Y (NOR2X1)                     0.16       2.50 r
+  modular_mult_inst/U18930/Y (NAND2X1)                    0.11       2.61 f
+  modular_mult_inst/U6964/Y (NOR2X1)                      0.20       2.82 r
+  modular_mult_inst/U3949/Y (NAND2X1)                     0.10       2.91 f
+  modular_mult_inst/U3920/Y (NOR2X1)                      0.10       3.02 r
+  modular_mult_inst/U3384/Y (AND2X2)                      0.13       3.15 r
+  modular_mult_inst/U2833/Y (NAND2X1)                     0.05       3.20 f
+  modular_mult_inst/U3282/Y (XOR2X1)                      0.11       3.31 r
+  modular_mult_inst/U20046/Y (NAND2BX4)                   0.16       3.46 r
+  modular_mult_inst/U3175/Y (INVX3)                       0.12       3.58 f
+  modular_mult_inst/U3176/Y (BUFX4)                       0.29       3.87 f
+  modular_mult_inst/U24998/Y (AOI22XL)                    0.25       4.12 r
+  modular_mult_inst/U24999/Y (OAI2BB1X1)                  0.07       4.19 f
+  modular_mult_inst/modular_add_sub_inst/C_reg[157]/D (DFFQX2)
+                                                          0.00       4.19 f
+  data arrival time                                                  4.19
+
+  clock i_clk (rise edge)                                 4.05       4.05
+  clock network delay (ideal)                             0.50       4.55
+  clock uncertainty                                      -0.10       4.45
+  modular_mult_inst/modular_add_sub_inst/C_reg[157]/CK (DFFQX2)
+                                                          0.00       4.45 r
+  library setup time                                     -0.26       4.19
+  data required time                                                 4.19
+  --------------------------------------------------------------------------
+  data required time                                                 4.19
+  data arrival time                                                 -4.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

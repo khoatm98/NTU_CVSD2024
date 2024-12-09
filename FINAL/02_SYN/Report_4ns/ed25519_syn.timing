@@ -1,0 +1,88 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ed25519
+Version: U-2022.12
+Date   : Mon Dec  9 14:15:10 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: modular_mult_inst/a_in_r_reg[13]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/accumulated_res_r_reg[182]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[13]/CK (DFFHQX4)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[13]/Q (DFFHQX4)            0.21       0.71 r
+  modular_mult_inst/U9123/Y (XNOR2X4)                     0.19       0.90 r
+  modular_mult_inst/U9978/Y (BUFX12)                      0.17       1.07 r
+  modular_mult_inst/U12268/Y (BUFX16)                     0.15       1.21 r
+  modular_mult_inst/U9113/Y (OAI2BB2X4)                   0.10       1.31 f
+  modular_mult_inst/U10253/Y (OAI21X2)                    0.16       1.47 r
+  modular_mult_inst/U8850/Y (OAI2BB1X4)                   0.09       1.56 f
+  modular_mult_inst/U10276/Y (XNOR2X4)                    0.15       1.70 r
+  modular_mult_inst/U11229/Y (XNOR2X4)                    0.14       1.84 r
+  modular_mult_inst/U13106/Y (XOR2X4)                     0.14       1.98 r
+  modular_mult_inst/U10252/Y (XOR2X4)                     0.16       2.13 r
+  modular_mult_inst/U10251/Y (XOR2X4)                     0.14       2.28 r
+  modular_mult_inst/U9456/Y (XOR2X4)                      0.14       2.42 r
+  modular_mult_inst/U9455/Y (XOR2X4)                      0.17       2.59 r
+  modular_mult_inst/U9454/Y (XOR2X4)                      0.15       2.74 r
+  modular_mult_inst/U8679/Y (XOR2X4)                      0.17       2.91 r
+  modular_mult_inst/U8678/Y (XNOR2X4)                     0.16       3.07 f
+  modular_mult_inst/U9973/Y (NAND2X4)                     0.09       3.16 r
+  modular_mult_inst/U9909/Y (NAND2X6)                     0.06       3.21 f
+  modular_mult_inst/U10071/Y (OAI21X4)                    0.13       3.34 r
+  modular_mult_inst/U10069/Y (AOI21X4)                    0.09       3.43 f
+  modular_mult_inst/U10066/Y (OAI21X4)                    0.11       3.54 r
+  modular_mult_inst/U14245/Y (AOI21X4)                    0.07       3.61 f
+  modular_mult_inst/U16285/Y (OAI21X2)                    0.19       3.80 r
+  modular_mult_inst/U12925/Y (INVX4)                      0.12       3.93 f
+  modular_mult_inst/U12390/Y (OAI21X2)                    0.14       4.07 r
+  modular_mult_inst/U9516/Y (XOR2X4)                      0.15       4.23 f
+  modular_mult_inst/U9169/Y (NAND2X6)                     0.07       4.30 r
+  modular_mult_inst/U3157/Y (NAND2X6)                     0.05       4.35 f
+  modular_mult_inst/U3178/Y (NAND2X4)                     0.06       4.41 r
+  modular_mult_inst/U5555/Y (NAND2X4)                     0.06       4.47 f
+  modular_mult_inst/U9514/Y (AOI21X4)                     0.12       4.59 r
+  modular_mult_inst/U9696/Y (OAI21X4)                     0.08       4.67 f
+  modular_mult_inst/U8801/Y (NAND2X4)                     0.06       4.73 r
+  modular_mult_inst/U8199/Y (INVX4)                       0.05       4.78 f
+  modular_mult_inst/U8771/Y (NOR2X8)                      0.11       4.89 r
+  modular_mult_inst/U8770/Y (OAI21X1)                     0.08       4.98 f
+  modular_mult_inst/U17538/Y (AOI21X1)                    0.13       5.10 r
+  modular_mult_inst/U14243/Y (OAI2BB1X2)                  0.08       5.19 f
+  modular_mult_inst/U3196/Y (XOR2X4)                      0.11       5.30 f
+  modular_mult_inst/U3195/Y (NAND2X4)                     0.06       5.36 r
+  modular_mult_inst/U3190/Y (NAND2BX2)                    0.06       5.41 f
+  modular_mult_inst/accumulated_res_r_reg[182]/D (DFFRHQX4)
+                                                          0.00       5.41 f
+  data arrival time                                                  5.41
+
+  clock i_clk (rise edge)                                 4.00       4.00
+  clock network delay (ideal)                             0.50       4.50
+  clock uncertainty                                      -0.10       4.40
+  modular_mult_inst/accumulated_res_r_reg[182]/CK (DFFRHQX4)
+                                                          0.00       4.40 r
+  library setup time                                     -0.14       4.26
+  data required time                                                 4.26
+  --------------------------------------------------------------------------
+  data required time                                                 4.26
+  data arrival time                                                 -5.41
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.15
+
+
+1

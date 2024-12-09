@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : modular_mult
+Version: U-2022.12
+Date   : Mon Dec  9 12:10:31 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
+
+Number of ports:                          772
+Number of nets:                         26760
+Number of cells:                        24390
+Number of combinational cells:          22804
+Number of sequential cells:              1584
+Number of macros/black boxes:               0
+Number of buf/inv:                       3511
+Number of references:                     123
+
+Combinational area:             247012.436474
+Buf/Inv area:                    16768.614428
+Noncombinational area:           43142.816593
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                290155.253067
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  ------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-   Black-
+                                  Total        Total    national     national    boxes   Design
+--------------------------------  -----------  -------  -----------  ----------  ------  ---------
+modular_mult                      290155.2531    100.0  247012.4365  43142.8166  0.0000  modular_mult
+--------------------------------  -----------  -------  -----------  ----------  ------  ---------
+Total                                                   247012.4365  43142.8166  0.0000
+
+1

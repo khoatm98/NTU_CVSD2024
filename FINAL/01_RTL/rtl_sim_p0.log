@@ -1,0 +1,108 @@
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Mon Dec  9 18:29:21 2024
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '../00_TESTBED/testbed.sv'
+Parsing included file '../00_TESTBED/pattern/tb_dat.sv'.
+Back to file '../00_TESTBED/testbed.sv'.
+Parsing design file './ed25519.v'
+Parsing design file './modular_add_sub.v'
+Parsing design file './modular_mult.v'
+Parsing design file './mod_q_reduce.v'
+Parsing design file './inversion.v'
+Top Level Modules:
+       testbench
+       multiplier_128x128
+       mod_q_reduce
+       inversion
+TimeScale is 1 ns / 10 ps
+
+Warning-[TFIPC] Too few instance port connections
+./mod_q_reduce.v, 149
+mod_q_reduce, "modular_add_sub modular_add_sub_inst( .i_clk (i_clk),  .i_rst (i_rst),  .a (a_w),  .b (b_w),  .i_add_sub (1'b1),  .i_first ((round == 17)),  .res (res_r));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[PCWM-W] Port connection width mismatch
+./inversion.v, 42
+"modular_mult modular_mult_inst( .i_clk (i_clk),  .i_rst (i_rst),  .a (im_data_1_r),  .b (in_b_r),  .i_first (in_mult_valid_r),  .o_valid (o_valid_w),  .res (im_data_w));"
+  The following 255-bit expression is connected to 256-bit port "a" of module 
+  "modular_mult", instance "modular_mult_inst".
+  Expression: im_data_1_r
+  Instantiated module defined at: "./modular_mult.v", 7
+  Use +lint=PCWM for more details.
+
+
+Warning-[PCWM-W] Port connection width mismatch
+./inversion.v, 42
+"modular_mult modular_mult_inst( .i_clk (i_clk),  .i_rst (i_rst),  .a (im_data_1_r),  .b (in_b_r),  .i_first (in_mult_valid_r),  .o_valid (o_valid_w),  .res (im_data_w));"
+  The following 255-bit expression is connected to 256-bit port "b" of module 
+  "modular_mult", instance "modular_mult_inst".
+  Expression: in_b_r
+  Instantiated module defined at: "./modular_mult.v", 7
+  Use +lint=PCWM for more details.
+
+
+Warning-[PCWM-W] Port connection width mismatch
+./inversion.v, 42
+"modular_mult modular_mult_inst( .i_clk (i_clk),  .i_rst (i_rst),  .a (im_data_1_r),  .b (in_b_r),  .i_first (in_mult_valid_r),  .o_valid (o_valid_w),  .res (im_data_w));"
+  The following 255-bit expression is connected to 256-bit port "res" of 
+  module "modular_mult", instance "modular_mult_inst".
+  Expression: im_data_w
+  Instantiated module defined at: "./modular_mult.v", 7
+  Use +lint=PCWM for more details.
+
+Starting vcs inline pass...
+
+8 modules and 0 UDP read.
+recompiling module testbench
+	However, due to incremental compilation, only 1 module needs to be compiled. 
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/2022.06/linux64/lib -L/usr/cad/synopsys/vcs/2022.06/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1     _59878_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Dec  9 18:29 2024
+*Verdi* Loading libsscore_vcs202206.so
+*Verdi* WARNING: No '-debug_access' in VCS compile options
+FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'ed25519.fsdb'
+*Verdi* : Begin traversing the scope (testbench), layer (0).
+*Verdi* : Enable +mda dumping.
+*Verdi* : End of traversing.
+**********************************************
+                 PAT 1 PASS!                 
+----------------------------------------------
+Simulation Cycle: 111220, Time:   461563.00 ns
+**********************************************
+$finish called from file "../00_TESTBED/testbed.sv", line 262.
+$finish at simulation time             46270222
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 462702220 ps
+CPU Time:      3.840 seconds;       Data structure size:   0.1Mb
+Mon Dec  9 18:29:31 2024
+CPU time: 1.040 seconds to compile + .673 seconds to elab + .460 seconds to link + 3.885 seconds in simulation

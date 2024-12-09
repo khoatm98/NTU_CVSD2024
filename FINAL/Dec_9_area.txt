@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : area
+Design : ed25519
+Version: U-2022.12
+Date   : Mon Dec  9 12:51:26 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
+
+Number of ports:                         2702
+Number of nets:                         53428
+Number of cells:                        49245
+Number of combinational cells:          43537
+Number of sequential cells:              5701
+Number of macros/black boxes:               0
+Number of buf/inv:                       8405
+Number of references:                      96
+
+Combinational area:             397985.982210
+Buf/Inv area:                    32152.150475
+Noncombinational area:          146008.653337
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                543994.635547
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  -------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-    Black-
+                                  Total        Total    national     national     boxes   Design
+--------------------------------  -----------  -------  -----------  -----------  ------  -----------------
+ed25519                           543994.6355    100.0  116587.6172   96033.8016  0.0000  ed25519
+modular_add_sub_inst               43597.7186      8.0   37025.3857    6572.3329  0.0000  modular_add_sub_1
+modular_mult_inst                 287775.4981     52.9   66692.5426   36536.5357  0.0000  modular_mult
+modular_mult_inst/modular_add_sub_inst
+                                   34677.8815      6.4   27811.8984    6865.9831  0.0000  modular_add_sub_0
+modular_mult_inst/multiplier_64x64_inst
+                                  149868.5383     27.5  149868.5383       0.0000  0.0000  multiplier_64x64
+--------------------------------  -----------  -------  -----------  -----------  ------  -----------------
+Total                                                   397985.9822  146008.6533  0.0000
+
+1
