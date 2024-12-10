@@ -7,8 +7,8 @@ define_design_lib work -path ./work
 set company {NTUGIEE}
 set designer {Student}
 
-set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  $search_path ../ ./"
-set target_library   "slow.db "              
+set search_path      ". /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/  $search_path ../ ./"
+set target_library   "slow.db "               
 set link_library     "* $target_library dw_foundation.sldb"
 set symbol_library   "tsmc13.sdb generic.sdb"
 set synthetic_library "dw_foundation.sldb"
@@ -46,12 +46,14 @@ set high_fanout_net_threshold 0
 uniquify
 set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 set_host_options -max_cores 16
-
+set_leakage_optimization  false
 #set_clock_gating_style -max_fanout 4
-compile_ultra
+compile_ultra -retime
 optimize_netlist  -area 
-
-
+optimize_netlist  -area 
+optimize_netlist  -area 
+optimize_netlist  -area 
+optimize_netlist  -area 
 
 # Report Output
 current_design [get_designs ${DESIGN}]

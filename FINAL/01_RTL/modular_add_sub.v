@@ -17,23 +17,25 @@ output                o_valid   ,
 output [DATA_W-1:0]   res
 );
 
-localparam IDLE   = 2'd0;
-localparam ONE    = 2'd1;
-localparam TWO    = 2'd2;
-localparam THREE  = 2'd3;
+localparam IDLE   = 3'd0;
+localparam ONE    = 3'd1;
+localparam TWO    = 3'd2;
+localparam THREE  = 3'd3;
+localparam FOUR   = 3'd4;
 
-reg     [1:0]     state, n_state;
+reg     [2:0]     state, n_state;
 reg  [DATA_W:0]   C;
 reg  [DATA_W:0]   C_;
-
+reg  [DATA_W-1:0]  a_r;
+reg  [DATA_W-1:0]  b_r;
 wire  [DATA_W:0]   sum;
 wire  [DATA_W:0]   sub;
 
 wire  [DATA_W:0]          a_;
 wire  [DATA_W:0]          b_;
 
-assign a_ = state == IDLE ? {1'b0,a} : (state == TWO ? C[DATA_W:0] : {1'b0,C[DATA_W-1:0]});
-assign b_ = state == IDLE ? {1'b0,b} : (state == TWO ? {1'b0,`q} : 19);
+assign a_ = state == ONE ? {1'b0,a_r} : (state == THREE ? C[DATA_W:0] : {1'b0,C[DATA_W-1:0]});
+assign b_ = state == ONE ? {1'b0,b_r} : (state == THREE ? {1'b0,`q} : 19);
 
 assign sum = a_ + b_;
 assign sub = a_ - b_;
@@ -50,6 +52,9 @@ always @(*) begin
                         n_state = THREE;
                 end
 				THREE: begin
+                        n_state = FOUR;
+                end
+				FOUR: begin
                         n_state = IDLE;
                 end
         endcase
@@ -57,22 +62,26 @@ end
 
 always @(posedge i_clk) begin
 	state <= i_rst ? IDLE : n_state;
+	a_r   <= i_first ? a : a_r;
+	b_r   <= i_first ? b : b_r;
 end
 
 
 wire carry = C[DATA_W];
 
 always @(posedge i_clk) begin
-	if(state == IDLE && i_first)
+	if(state == IDLE)
+		C <= C;
+	else if(state == ONE)
+		C <= i_add_sub ? sum : sub;	
+	else if(state == TWO && C[DATA_W])
 		C <= i_add_sub ? sum : sub;
-	else if(state == ONE && C[DATA_W])
-		C <= i_add_sub ? sum : sub;
-	else if(state == TWO)
+	else if(state == THREE)
 		C <= i_add_sub ? (sub[DATA_W] ? C : sub[DATA_W-1:0]) : (C[DATA_W] ? sum[DATA_W-1:0] : C[DATA_W-1:0]);
 	else
 		C <= C;
 end
 
 assign res = C;
-assign o_valid = (state == THREE);
+assign o_valid = (state == FOUR);
 endmodule

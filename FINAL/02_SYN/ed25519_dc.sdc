@@ -6,7 +6,7 @@ create_clock -period $cycle [get_ports  i_clk]
 set_dont_touch_network      [get_clocks i_clk]
 set_fix_hold                [get_clocks i_clk]
 set_ideal_network           [get_ports i_clk]
-set_clock_uncertainty  0.8  [get_clocks i_clk]
+set_clock_uncertainty  1  [get_clocks i_clk]
 set_clock_latency      0.5  [get_clocks i_clk]
 
 set_input_delay  1      -clock i_clk [remove_from_collection [all_inputs] [get_ports i_clk]]

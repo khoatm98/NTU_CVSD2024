@@ -16,19 +16,19 @@ module modular_mult  #(
 	output [DATA_W-1:0]	  res
 );
 
-localparam S_IDLE     = 4'd0;
-localparam S_MULT_C3  = 4'd1;
-localparam S_MULT_C0  = 4'd2;
-localparam S_MULT_C2  = 4'd3;
-localparam S_MULT_C1  = 4'd4;
-localparam S_ACCUM    = 4'd5;
-localparam S_RED1     = 4'd6;
-localparam S_RED2     = 4'd7;
-localparam S_RED3     = 4'd8;
+localparam S_IDLE     = 3'd0;
+localparam S_MULT_C3  = 3'd1;
+localparam S_MULT_C0  = 3'd2;
+localparam S_MULT_C2  = 3'd3;
+localparam S_MULT_C1  = 3'd4;
+localparam S_RED1     = 3'd5;
+localparam S_RED2     = 3'd6;
+localparam S_RED3     = 3'd7;
+localparam S_ACCUM    = 4'd8;
 localparam S_OUTPUT   = 4'd9;
 
 
-reg [3:0]    curr_state, next_state;
+reg [2:0]    curr_state, next_state;
 reg [255:0]  res_out_r;
 reg [255:0]  res_out_w;
 
@@ -58,14 +58,14 @@ always@ (*) begin
 			a_in_w = a[255:128];
 			b_in_w = b[127:0];
 		end 
-		S_MULT_C2 : begin
+		default : begin
 			a_in_w = a[127:0];
 			b_in_w = b[255:128];
 		end 
-		default : begin
-			a_in_w = a_in_r;
-			b_in_w = b_in_r;
-		end  
+		//default : begin
+		//	a_in_w = a_in_r;
+		//	b_in_w = b_in_r;
+		//end  
 	endcase
 end
 
@@ -79,8 +79,8 @@ always@ (*) begin
 		//S_ACCUM     : next_state = S_RED1   ;
 		S_RED1      : next_state = S_RED2   ;
 		S_RED2      : next_state = S_RED3   ;
-		S_RED3      : next_state = S_OUTPUT   ;
-		S_OUTPUT    : next_state = S_IDLE   ;
+		default     : next_state = S_IDLE   ;
+		//S_OUTPUT    : next_state = S_IDLE   ;
 	endcase
 end
 
@@ -91,7 +91,7 @@ wire [255:0] temp;
 assign temp = sum[254:0] + sum[384:255]*19;
 
 wire [255:0] temp1; 
-assign temp1 = sum[255:0] - `q;
+assign temp1 = temp - `q;
 
 assign sum_temp = sum + buff_w;
 
@@ -113,9 +113,9 @@ always@ (posedge i_clk) begin
 		S_MULT_C2 : sum <= sum_temp;
 		S_MULT_C1 : sum <= sum_temp;
 		S_RED1    : sum <= temp;
-		S_RED2    : sum <= temp;
-		S_RED3    : sum <= temp1[255] ? sum : temp1;
-		S_OUTPUT  : sum <= sum;
+		S_RED2    : sum <= temp1[255] ? temp : temp1;
+		default    : sum <= sum;
+		//S_OUTPUT  : sum <= sum;
 		//S_OUTPUT  : sum <= sum;
 	endcase
 end
@@ -135,7 +135,7 @@ always@ (posedge i_clk) begin
 end
 
 
-assign o_valid = curr_state == S_OUTPUT;
+assign o_valid = curr_state == S_RED3;
 assign res = sum[255:0];
 endmodule
 
