@@ -1,0 +1,791 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version S-2021.06-SP2 for linux64 - Aug 24, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+# Setting environment
+sh mkdir -p Netlist
+sh mkdir -p Report
+define_design_lib work -path ./work
+1
+set company {NTUGIEE}
+NTUGIEE
+set designer {Student}
+Student
+set search_path      ". /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/  $search_path ../ ./"
+. /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/  . /usr/cad/synopsys/synthesis/cur/libraries/syn /usr/cad/synopsys/synthesis/cur/dw/syn_ver /usr/cad/synopsys/synthesis/cur/dw/sim_ver ../ ./
+set target_library   "slow.db "               
+slow.db 
+set link_library     "* $target_library dw_foundation.sldb"
+* slow.db  dw_foundation.sldb
+set symbol_library   "tsmc13.sdb generic.sdb"
+tsmc13.sdb generic.sdb
+set synthetic_library "dw_foundation.sldb"
+dw_foundation.sldb
+set default_schematic_options {-size infinite}
+-size infinite
+# Import Design
+set DESIGN "ed25519"
+ed25519
+set hdlin_translate_off_skip_text "TRUE"
+Information: Variable 'hdlin_translate_off_skip_text' is obsolete and is being ignored. (INFO-100)
+TRUE
+set edifout_netlist_only "TRUE"
+TRUE
+set verilogout_no_tri true
+true
+set hdlin_enable_presto_for_vhdl "TRUE"
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+Information: Variable 'hdlin_enable_presto_for_vhdl' is obsolete and is being ignored. (INFO-100)
+TRUE
+set sh_enable_line_editing true
+true
+set sh_line_editing_mode emacs
+emacs
+history keep 100
+100
+alias h history
+#read_file -format sverilog  "../01_RTL/ed25519.sv"
+read_file -format sverilog "./flist.sv"
+Loading db file '/home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow'
+  Loading link library 'gtech'
+Loading sverilog file '/home/MingKe/NTU_CVSD2024/FINAL/02_SYN/flist.sv'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/MingKe/NTU_CVSD2024/FINAL/02_SYN/flist.sv
+Opening include file ../01_RTL/ed25519.v
+Opening include file ../01_RTL/modular_mult.v
+Opening include file ../01_RTL/modular_add_sub.v
+
+Statistics for case statements in always block at line 140 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           141            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 284 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           287            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 387 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           388            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 395 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           397            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 492 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           496            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 539 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           541            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 657 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           658            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 665 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           667            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 806 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           810            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 841 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           845            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 868 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           872            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1003 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1004           |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1019 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1020           |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 1038 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1044           |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 1053 in file
+	'../01_RTL/ed25519.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1054           |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine ed25519 line 140 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| modmult_i_valid_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  modadd_a_in_r_reg  | Flip-flop |  255  |  Y  | N  | N  | N  | N  | N  | N  |
+|  modadd_b_in_r_reg  | Flip-flop |  255  |  Y  | N  | N  | N  | N  | N  | N  |
+| modmult_a_in_r_reg  | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+| modmult_b_in_r_reg  | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|   modadd_inst_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| modadd_i_valid_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 255 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     round_r_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 841 in file
+		'../01_RTL/ed25519.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   redZ_b_in_w_reg   | Latch |  256  |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 868 in file
+		'../01_RTL/ed25519.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+| next_inv_state_reg  | Latch |   4   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1003 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   data_buf_r_reg    | Flip-flop |  768  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1019 in file
+		'../01_RTL/ed25519.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   next_state_reg    | Latch |   4   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1038 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  curr_s_state_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|   curr_state_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1053 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       D_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       X_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       Y_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       Z_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       A_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       B_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|       C_r_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine ed25519 line 1151 in file
+		'../01_RTL/ed25519.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   generic_cnt_reg   | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 47 in file
+	'../01_RTL/modular_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            48            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 72 in file
+	'../01_RTL/modular_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            73            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 95 in file
+	'../01_RTL/modular_mult.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            96            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine modular_mult line 72 in file
+		'../01_RTL/modular_mult.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   next_state_reg    | Latch |   4   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine modular_mult line 95 in file
+		'../01_RTL/modular_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       sum_reg       | Flip-flop |  385  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine modular_mult line 110 in file
+		'../01_RTL/modular_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   curr_state_reg    | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine modular_mult line 118 in file
+		'../01_RTL/modular_mult.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    res_out_r_reg    | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+|     a_in_r_reg      | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+|     b_in_r_reg      | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 43 in file
+	'../01_RTL/modular_add_sub.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            44            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine modular_add_sub line 43 in file
+		'../01_RTL/modular_add_sub.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     n_state_reg     | Latch |   3   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+
+Inferred memory devices in process
+	in routine modular_add_sub line 63 in file
+		'../01_RTL/modular_add_sub.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|       a_r_reg       | Flip-flop |  255  |  Y  | N  | N  | N  | N  | N  | N  |
+|       b_r_reg       | Flip-flop |  255  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine modular_add_sub line 72 in file
+		'../01_RTL/modular_add_sub.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        C_reg        | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/MingKe/NTU_CVSD2024/FINAL/02_SYN/ed25519.db:ed25519'
+Loaded 6 designs.
+Current design is 'ed25519'.
+ed25519 modular_mult multiplier_64x64 multiplier_128x128 multiplier_256x256 modular_add_sub
+current_design [get_designs $DESIGN]
+Current design is 'ed25519'.
+{ed25519}
+link
+
+  Linking design 'ed25519'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (6 designs)               /home/MingKe/NTU_CVSD2024/FINAL/02_SYN/ed25519.db, etc
+  slow (library)              /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+1
+source -echo -verbose ./ed25519_dc.sdc
+# operating conditions and boundary conditions #
+set cycle  5.2         ;#clock period defined by designer
+5.2
+create_clock -period $cycle [get_ports  i_clk]
+1
+set_dont_touch_network      [get_clocks i_clk]
+1
+set_fix_hold                [get_clocks i_clk]
+1
+set_ideal_network           [get_ports i_clk]
+1
+set_clock_uncertainty  0.75  [get_clocks i_clk]
+1
+set_clock_latency      0.5  [get_clocks i_clk]
+1
+set_input_delay  1      -clock i_clk [remove_from_collection [all_inputs] [get_ports i_clk]]
+1
+set_output_delay 1      -clock i_clk [all_outputs] 
+1
+set_load         1     [all_outputs]
+1
+set_drive        1     [all_inputs]
+1
+set_operating_conditions  -max_library slow -max slow               
+Using operating conditions 'slow' found in library 'slow'.
+1
+set_max_fanout 10 [all_inputs]
+1
+1
+# Compile Design
+current_design [get_designs ${DESIGN}]
+Current design is 'ed25519'.
+{ed25519}
+check_design > Report/check_design.txt
+check_timing > Report/check_timing.txt
+set high_fanout_net_threshold 0
+0
+uniquify
+1
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+1
+set_host_options -max_cores 16
+1
+#set_clock_gating_style -max_fanout 4
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 16 cores. (OPT-1500)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | S-2021.06-DWBB_202106.2 |     *     |
+| Licensed DW Building Blocks        | S-2021.06-DWBB_202106.2 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 7 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'ed25519'
+
+Loaded alib file './alib-52/slow.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping 0 of 4 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+.....
+  Processing 'ed25519'
+Information: Added key list 'DesignWare' to design 'ed25519'. (DDB-72)
+Information: In design 'ed25519', the register 'next_inv_state_reg[3]' is removed because it is merged to 'next_inv_state_reg[2]'. (OPT-1215)
+ Implement Synthetic for 'ed25519'.
+Information: The register 'next_inv_state_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'modular_mult'
+ Implement Synthetic for 'modular_mult'.
+  Processing 'modular_add_sub'
+ Implement Synthetic for 'modular_add_sub'.
+  Processing 'multiplier_128x128'
+ Implement Synthetic for 'multiplier_128x128'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+.
+Information: Ungrouping hierarchy modular_add_sub_inst 'modular_add_sub' #insts = 1822. (OPT-777)
+Information: Ungrouping hierarchy modular_mult_inst/multiplier_128x128_inst 'multiplier_128x128' #insts = 0. (OPT-777)
+Information: Ungrouping hierarchy modular_mult_inst 'modular_mult' #insts = 2881. (OPT-777)
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:03:44 2165279.8      1.05     903.0   46666.0                           2415418368.0000      0.00  
+    0:03:51 2165006.5      1.11     910.6   46666.0                           2415171072.0000      0.00  
+
+  Beginning Constant Register Removal
+  -----------------------------------
+    0:03:54 2165398.6      1.11     910.5   46666.0                           2415503616.0000      0.00  
+    0:03:58 2165398.6      1.11     910.5   46666.0                           2415503616.0000      0.00  
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Mapping 'ed25519_DW_mult_uns_1'
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:05:12 1018170.1      2.83     573.9   46691.5                           942157056.0000      0.00  
+    0:05:38 1029556.3      1.46     330.5   46691.5                           958462976.0000      0.00  
+    0:05:38 1029556.3      1.46     330.5   46691.5                           958462976.0000      0.00  
+    0:05:40 1027499.0      1.46     393.9   46691.5                           954605824.0000      0.00  
+    0:05:57 1026708.0      1.46     393.4   46691.5                           954967872.0000      0.00  
+    0:06:02 1026677.5      1.46     393.4   46691.5                           954954304.0000      0.00  
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:06:27 1026244.7      1.46     395.8   46678.6                           952806144.0000      0.00  
+    0:06:30 1023372.7      1.46     395.6   46678.6                           948115136.0000      0.00  
+    0:06:35 1019069.7      1.46     396.4   46645.5                           943196928.0000      0.00  
+    0:06:41 1011546.9      1.44     418.2   46645.5                           934256704.0000      0.00  
+    0:06:43 1010604.8      1.44     415.1   46645.5                           933241216.0000      0.00  
+    0:06:47 1010078.6      1.42     407.2   46645.5                           932560448.0000      0.00  
+    0:06:47 1010078.6      1.42     407.2   46645.5                           932560448.0000      0.00  
+    0:06:58 1009956.4      1.41     371.9   46626.2                           921039168.0000      0.00  
+    0:06:58 1009956.4      1.41     371.9   46626.2                           921039168.0000      0.00  
+    0:07:35 1053601.6      1.34     351.3   46626.2                           970850240.0000      0.00  
+    0:07:36 1053601.6      1.34     351.3   46626.2                           970850240.0000      0.00  
+    0:07:51 1065033.6      1.10     306.5   46626.2                           987138432.0000      0.00  
+    0:07:51 1065033.6      1.10     306.5   46626.2                           987138432.0000      0.00  
+    0:08:40 1116817.9      1.04     283.8   46626.2                           1046994816.0000      0.00  
+    0:08:40 1116817.9      1.04     283.8   46626.2                           1046994816.0000      0.00  
+    0:10:14 1192666.2      0.51     158.0   46651.3                           1133816448.0000      0.00  
+    0:10:14 1192666.2      0.51     158.0   46651.3                           1133816448.0000      0.00  
+    0:10:33 1206342.2      0.53     161.8   46651.3                           1149390336.0000      0.00  
+    0:10:33 1206342.2      0.53     161.8   46651.3                           1149390336.0000      0.00  
+    0:10:54 1225626.3      0.46     141.5   46655.6                           1173283200.0000      0.00  
+    0:10:54 1225626.3      0.46     141.5   46655.6                           1173283200.0000      0.00  
+    0:11:06 1231998.4      0.42     136.2   46655.6                           1180231040.0000      0.00  
+    0:11:06 1231998.4      0.42     136.2   46655.6                           1180231040.0000      0.00  
+    0:11:24 1244542.2      0.41     130.2   46657.5                           1194443648.0000      0.00  
+    0:11:24 1244542.2      0.41     130.2   46657.5                           1194443648.0000      0.00  
+    0:11:43 1254996.5      0.45     137.8   46657.5                           1206278400.0000      0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:11:43 1254996.5      0.45     137.8   46657.5                           1206278400.0000      0.00  
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:11:48 1256651.4      0.40     132.9       0.0                           1208427264.0000      0.00  
+    0:12:09 1271712.4      0.39     130.3       0.0                           1224734592.0000      0.00  
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:12:09 1271712.4      0.39     130.3       0.0                           1224734592.0000      0.00  
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+    0:12:56 1212072.6      0.46     291.2       0.0                           1156949760.0000      0.00  
+    0:13:19 1225768.9      0.47     294.7       0.0                           1172879360.0000      0.00  
+    0:13:19 1225768.9      0.47     294.7       0.0                           1172879360.0000      0.00  
+    0:13:35 1191014.7      0.45     241.9       0.0                           1126989056.0000      0.00  
+    0:13:35 1191014.7      0.45     241.9       0.0                           1126989056.0000      0.00  
+    0:13:51 1204624.4      0.45     231.5       0.0                           1141720064.0000      0.00  
+    0:13:51 1204624.4      0.45     231.5       0.0                           1141720064.0000      0.00  
+    0:13:55 1208951.1      0.41     220.6       0.0                           1147247616.0000      0.00  
+    0:13:55 1208951.1      0.41     220.6       0.0                           1147247616.0000      0.00  
+    0:14:16 1224686.0      0.39     243.6       4.9                           1164794112.0000      0.00  
+    0:14:16 1224686.0      0.39     243.6       4.9                           1164794112.0000      0.00  
+    0:14:50 1244584.6      0.31     102.9      12.4                           1185853312.0000      0.00  
+    0:14:50 1244584.6      0.31     102.9      12.4                           1185853312.0000      0.00  
+    0:15:04 1254100.2      0.34     109.5      12.4                           1196511360.0000      0.00  
+    0:15:04 1254100.2      0.34     109.5      12.4                           1196511360.0000      0.00  
+    0:15:17 1264895.7      0.33      97.1      15.1                           1208770688.0000      0.00  
+    0:15:17 1264895.7      0.33      97.1      15.1                           1208770688.0000      0.00  
+    0:15:35 1274645.6      0.34     101.2      15.1                           1219252864.0000      0.00  
+    0:15:35 1274645.6      0.34     101.2      15.1                           1219252864.0000      0.00  
+    0:16:09 1292352.8      0.26      77.4      19.2                           1238410240.0000      0.00  
+    0:16:09 1292352.8      0.26      77.4      19.2                           1238410240.0000      0.00  
+    0:16:26 1301201.4      0.25      77.8      19.2                           1248264192.0000      0.00  
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:16:30 1301198.0      0.25      77.8      19.2                           1248263680.0000      0.00  
+    0:16:45 1263571.7      0.26      58.5       0.0                           1196631552.0000      0.00  
+    0:16:58 1266182.3      0.23      54.5       0.0 modular_mult_inst/res_out_r_reg[251]/D 1200255488.0000      0.00  
+    0:17:01 1266589.7      0.22      54.1       0.0                           1200892288.0000      0.00  
+    0:17:02 1266363.9      0.22      54.1       0.0                           1200661888.0000      0.00  
+    0:17:03 1266155.2      0.22      54.1       0.0                           1200469888.0000      0.00  
+    0:17:03 1266155.2      0.22      54.1       0.0                           1200469888.0000      0.00  
+    0:17:14 1255285.0      0.23      54.0       0.0                           1187334784.0000      0.00  
+    0:17:19 1252475.8      0.23      54.1       0.0                           1184276992.0000      0.00  
+    0:17:28 1246134.3      0.23      54.6       0.0                           1178043520.0000      0.00  
+    0:17:33 1245197.4      0.23      54.5       0.0                           1177079936.0000      0.00  
+    0:17:39 1244004.1      0.23      54.7       0.0                           1175373056.0000      0.00  
+    0:17:41 1242075.8      0.23      53.9       0.0                           1172985344.0000      0.00  
+    0:17:44 1239867.5      0.23      53.9       0.0                           1170322816.0000      0.00  
+    0:18:01 1251900.4      0.20      50.0       0.0                           1184526208.0000      0.00  
+    0:18:01 1251900.4      0.20      50.0       0.0                           1184526208.0000      0.00  
+    0:18:04 1252177.1      0.20      48.9       0.0                           1185067648.0000      0.00  
+    0:18:04 1252177.1      0.20      48.9       0.0                           1185067648.0000      0.00  
+    0:18:04 1252406.2      0.20      49.0       0.0                           1185315072.0000      0.00  
+    0:18:30 1221987.1      0.19      47.2       0.0                           1142713216.0000      0.00  
+Loading db file '/home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+optimize_netlist  -area 
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 16 cores. (OPT-1500)
+
+
+  Updating timing information
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+
+  Beginning Area Optimization
+  -----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:05 1221987.1      0.19      47.2       0.0                           1142713216.0000      0.00  
+    0:01:56 1193491.2      0.19      47.1       0.0                           1110214400.0000      0.00  
+    0:03:27 1166575.5      0.19      46.9       0.0                           1078804480.0000      0.00  
+    0:04:31 1159332.7      0.19      45.3       0.0                           1073283968.0000      0.00  
+Loading db file '/home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+# Report Output
+current_design [get_designs ${DESIGN}]
+Current design is 'ed25519'.
+{ed25519}
+report_timing > "./Report/${DESIGN}_syn.timing"
+report_timing -delay min -max_paths 10 > "./Report/${DESIGN}_syn.timing_min" 
+report_timing -delay max -max_paths 10 > "./Report/${DESIGN}_syn.timing_max"
+report_area -hierarchy > "./Report/${DESIGN}_syn.area"
+report_clock_gating > "./Report/${DESIGN}_syn.cg"
+# Output Design
+current_design [get_designs ${DESIGN}]
+Current design is 'ed25519'.
+{ed25519}
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+remove_unconnected_ports -blast_buses [get_cells -hierarchical *]
+1
+set verilogout_higher_designs_first true
+true
+write -format ddc     -hierarchy -output "./Netlist/${DESIGN}_syn.ddc"
+Writing ddc file './Netlist/ed25519_syn.ddc'.
+1
+write -format verilog -hierarchy -output "./Netlist/${DESIGN}_syn.v"
+Writing verilog file '/home/MingKe/NTU_CVSD2024/FINAL/02_SYN/Netlist/ed25519_syn.v'.
+1
+write_sdf -version 2.1  -context verilog -load_delay cell ./Netlist/${DESIGN}_syn.sdf
+Information: Writing timing information to file '/home/MingKe/NTU_CVSD2024/FINAL/02_SYN/Netlist/ed25519_syn.sdf'. (WT-3)
+1
+write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
+1
+exit
+
+Memory usage for this session 656 Mbytes.
+Memory usage for this session including child processes 1129 Mbytes.
+CPU usage for this session 16353 seconds ( 4.54 hours ).
+Elapsed time for this session 1430 seconds ( 0.40 hours ).
+
+Thank you...

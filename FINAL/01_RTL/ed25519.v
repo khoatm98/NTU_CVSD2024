@@ -55,13 +55,6 @@ reg [255:0] A_r;
 reg [255:0] B_r;
 reg [255:0] C_r;
 reg [255:0] D_r;
-
-reg                o_valid_r  ;
-reg [DATA_W-1:0]   i_in_data_r;
-always@ (posedge i_clk) begin
-	o_valid_r    <= m_reg_rden || m_reg_wren;
-	i_in_data_r  <=  m_reg_rden || m_reg_wren ? i_in_data : i_in_data_r;
-end
 // ---------------------------------------------------------------------------
 // Continuous assignment
 // ---------------------------------------------------------------------------
@@ -227,8 +220,8 @@ end
 reg [BUFF_W*3-1:0]   data_in_buf_w;
 
 always@(*) begin
-	if (o_valid_r)
-		data_in_buf_w =  {data_buf_r[BUFF_W*3-1-64:0], i_in_data_r};
+	if (m_reg_rden)
+		data_in_buf_w =  {data_buf_r[BUFF_W*3-1-64:0], i_in_data};
 	else
 		data_in_buf_w =  data_buf_r;
 end
@@ -260,8 +253,7 @@ reg         end_round;
 
 
 always@(posedge i_clk) begin
-	if((curr_state == S_INPUT        && next_state == S_SCALAR_CHECK) || 
-	   (0)) begin
+	if(curr_state == S_INPUT) begin
 		round_r <= 255;
 	end
 	else begin
@@ -290,7 +282,7 @@ reg [255:0] PD_D_w;
 wire   PD_end_w = next_doubling_state == S_LEVEL_10;
 
 always@ (*) begin
-	if (next_doubling_state != curr_s_state || curr_state != next_state) begin
+	if (next_doubling_state != curr_s_state || curr_state == S_SCALAR_CHECK) begin
 		
 		case(next_doubling_state)
 			S_LEVEL_0 : begin
@@ -498,7 +490,7 @@ always@ (*) begin
 end
 // Sub state transition
 always@ (*) begin
-	if (next_state == S_SCALAR_MULT_D && curr_state != next_state) begin
+	if (curr_state == S_SCALAR_CHECK) begin
 		next_doubling_state = S_LEVEL_0;
 	end else begin
 		case(curr_s_state)
@@ -542,10 +534,10 @@ wire [255:0] Y1_w = data_buf_r[256*1 - 1 -: 256];
 
 wire         PA_end_w = next_addition_state == S_LEVEL_12;
 
-wire         scalar_end_round_w = M_w[254] ? PA_end_w : PD_end_w;
+wire       scalar_end_round_w = M_w[254] ? PA_end_w : PD_end_w;
 
 always@ (*) begin
-	if (next_addition_state != curr_s_state || curr_state != next_state) begin  // State transition
+	if (next_addition_state != curr_s_state || (curr_state == S_SCALAR_MULT_D)) begin  // State transition
 		case(next_addition_state)
 			S_LEVEL_0 : begin
 				addA_a_in_w  = X_r;	
@@ -671,7 +663,7 @@ always@ (*) begin
 end
 
 always@ (*) begin
-	if ((next_addition_state != curr_s_state) || (curr_state != next_state)) begin
+	if ((next_addition_state != curr_s_state) || (curr_state == S_SCALAR_MULT_D)) begin
 		case(next_addition_state)
 			S_LEVEL_0 : begin
 				PA_X_w = X_r;	
@@ -812,7 +804,7 @@ always@ (*) begin
 end
 
 always@ (*) begin
-	if (next_state == S_SCALAR_MULT_A && curr_state != next_state) begin
+	if (curr_state == S_SCALAR_MULT_D) begin
 		next_addition_state = S_LEVEL_0;
 	end else begin
 		case(curr_s_state)
@@ -847,7 +839,7 @@ reg [255:0] inv_C_w;
 wire        redZ_end_w = next_inv_state == S_END;
 
 always @ (*) begin
-	if (next_inv_state != curr_s_state || curr_state != next_state) begin
+	if (next_inv_state != curr_s_state || curr_state == S_REDUCE_CHECK) begin
 		redZ_a_in_w = round_r == 255 ? 1 : modmult_res_r;
 		redZ_i_valid = 1;
 		case(next_inv_state)
@@ -874,7 +866,7 @@ always @ (*) begin
 end
 
 always@ (*) begin
-	if (next_state == S_REDUCE_Z_INV && curr_state != next_state) begin
+	if (curr_state == S_REDUCE_CHECK) begin
 		next_inv_state = S_SQUARE;
 	end else begin
 		case(curr_s_state)
@@ -901,7 +893,7 @@ reg [255:0]  redXZ_X_w;
 wire         redXZ_end_w = modmult_o_valid;
 
 always @ (*) begin
-	if (next_state == S_REDUCE_XZ_INV && curr_state != next_state) begin
+	if (curr_state == S_REDUCE_CHECK) begin
 		redXZ_a_in_w = X_r;
 		redXZ_b_in_w = C_r;
 		redXZ_i_valid = 1;
@@ -927,7 +919,7 @@ reg [255:0]  redYZ_Y_w;
 wire         redYZ_end_w = modmult_o_valid;
 
 always @ (*) begin
-	if (next_state == S_REDUCE_YZ_INV && curr_state != next_state) begin
+	if (curr_state == S_REDUCE_XZ_INV) begin
 		redYZ_a_in_w = Y_r;
 		redYZ_b_in_w = C_r;
 		redYZ_i_valid = 1;
@@ -949,12 +941,12 @@ end
 // Transform x
 // ---------------------------------------------------------------------------
 reg [255:0]  tranX_X_w;
-wire         tranX_end_w = X_r[0] ? modmult_o_valid : 1;
+wire         tranX_end_w = modmult_o_valid;
 
 always @ (*) begin
-	if (next_state == S_REDUCE_X_TRAN && curr_state != next_state) begin
+	if (curr_state == S_REDUCE_YZ_INV) begin
 		tranX_a_in_w = X_r;
-		tranX_b_in_w = `minus_one;
+		tranX_b_in_w = X_r[0] ? `minus_one : 1;
 		tranX_i_valid = 1;
 	end else begin
 		tranX_a_in_w = modmult_a_in_r;
@@ -974,12 +966,12 @@ end
 // Transform y
 // ---------------------------------------------------------------------------
 reg [255:0]  tranY_Y_w;
-wire         tranY_end_w = Y_r[0] ? modmult_o_valid : 1;
+wire         tranY_end_w = modmult_o_valid;
 
 always @ (*) begin
-	if (next_state == S_REDUCE_Y_TRAN && curr_state != next_state) begin
+	if (curr_state == S_REDUCE_X_TRAN) begin
 		tranY_a_in_w = Y_r;
-		tranY_b_in_w = `minus_one;
+		tranY_b_in_w = Y_r[0] ? `minus_one : 1;
 		tranY_i_valid = 1;
 	end else begin
 		tranY_a_in_w = modmult_a_in_r;
@@ -1027,7 +1019,7 @@ end
 always@ (*) begin
 	case(curr_state)
 		S_RST           :   next_state = S_INPUT;
-		S_INPUT         :   next_state = generic_cnt == 11 && o_valid_r ? S_SCALAR_CHECK : S_INPUT;
+		S_INPUT         :   next_state = generic_cnt == 11 && m_reg_rden ? S_SCALAR_CHECK : S_INPUT;
 		S_SCALAR_MULT_D :   next_state = PD_end_w ? (scalar_end_round_w ? S_SCALAR_CHECK : S_SCALAR_MULT_A) :  S_SCALAR_MULT_D;
 		S_SCALAR_MULT_A :   next_state = PA_end_w ? S_SCALAR_CHECK :  S_SCALAR_MULT_A;
 		S_SCALAR_CHECK  :   next_state = round_r == 0  ? S_REDUCE_CHECK :  S_SCALAR_MULT_D;
@@ -1160,7 +1152,7 @@ always@ (posedge i_clk ) begin
 	if(i_rst) begin
 		generic_cnt <= 0;
 	end else if(curr_state == S_INPUT) begin
-		generic_cnt <= o_valid_r ? generic_cnt + 1 : generic_cnt;
+		generic_cnt <= m_reg_rden ? generic_cnt + 1 : generic_cnt;
 	end else if(curr_state == S_OUTPUT) begin
 		generic_cnt <= m_reg_wren ? generic_cnt + 1 : generic_cnt;
 	end else begin

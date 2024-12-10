@@ -1,0 +1,73 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ed25519
+Version: S-2021.06-SP2
+Date   : Tue Dec 10 21:53:54 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: modular_mult_inst/a_in_r_reg[67]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[178]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[67]/CK (EDFFX4)            0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[67]/QN (EDFFX4)            0.38       0.88 f
+  U24211/Y (INVX16)                                       0.14       1.03 r
+  U45964/Y (BUFX20)                                       0.15       1.18 r
+  U18388/Y (XOR2X1)                                       0.18       1.35 f
+  U18245/Y (OAI22X2)                                      0.12       1.47 r
+  U60227/S (ADDFHX1)                                      0.36       1.83 r
+  U40754/S (ADDFHX2)                                      0.40       2.22 f
+  U43184/Y (OAI21X2)                                      0.08       2.30 r
+  U44502/Y (NAND2X2)                                      0.07       2.37 f
+  U61039/CO (ADDFHX2)                                     0.36       2.73 f
+  U17220/Y (XOR2X2)                                       0.16       2.89 r
+  U20541/Y (XNOR2X4)                                      0.17       3.06 r
+  U44982/Y (XOR2X4)                                       0.14       3.20 r
+  U46082/Y (XOR2X4)                                       0.15       3.35 f
+  U46024/Y (OAI21X1)                                      0.10       3.46 r
+  U35757/Y (NAND2X2)                                      0.10       3.56 f
+  U16841/Y (NAND2X1)                                      0.16       3.72 r
+  U39738/Y (OAI21X4)                                      0.11       3.82 f
+  U45017/Y (AOI21X4)                                      0.12       3.95 r
+  U20192/Y (OAI21X4)                                      0.08       4.02 f
+  U20191/Y (AOI21X4)                                      0.10       4.12 r
+  U46046/Y (OAI21X4)                                      0.08       4.20 f
+  U46045/Y (AOI21X4)                                      0.11       4.31 r
+  U20461/Y (OAI21X4)                                      0.09       4.40 f
+  U20460/Y (NAND2X4)                                      0.08       4.48 r
+  U20441/Y (NAND2X8)                                      0.11       4.59 f
+  U22146/Y (BUFX16)                                       0.13       4.72 f
+  U16427/Y (NOR2BX1)                                      0.18       4.90 f
+  U38426/Y (OAI21X2)                                      0.10       5.01 r
+  modular_mult_inst/res_out_r_reg[178]/D (DFFHQX4)        0.00       5.01 r
+  data arrival time                                                  5.01
+
+  clock i_clk (rise edge)                                 5.20       5.20
+  clock network delay (ideal)                             0.50       5.70
+  clock uncertainty                                      -0.75       4.95
+  modular_mult_inst/res_out_r_reg[178]/CK (DFFHQX4)       0.00       4.95 r
+  library setup time                                     -0.13       4.82
+  data required time                                                 4.82
+  --------------------------------------------------------------------------
+  data required time                                                 4.82
+  data arrival time                                                 -5.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.19
+
+
+1
