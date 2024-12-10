@@ -2,30 +2,30 @@
 ****************************************
 Report : area
 Design : ed25519
-Version: U-2022.12
-Date   : Mon Dec  9 23:45:43 2024
+Version: S-2021.06-SP2
+Date   : Wed Dec 11 01:00:20 2024
 ****************************************
 
 Library(s) Used:
 
-    slow (File: /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db/slow.db)
+    slow (File: /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db)
 
-Number of ports:                          906
-Number of nets:                         48095
-Number of cells:                        45906
-Number of combinational cells:          40275
-Number of sequential cells:              5629
+Number of ports:                          134
+Number of nets:                         82399
+Number of cells:                        74968
+Number of combinational cells:          67796
+Number of sequential cells:              7170
 Number of macros/black boxes:               0
-Number of buf/inv:                       7908
-Number of references:                     101
+Number of buf/inv:                       8668
+Number of references:                     195
 
-Combinational area:             332843.164251
-Buf/Inv area:                    28657.203848
-Noncombinational area:          142364.335482
+Combinational area:             796919.118777
+Buf/Inv area:                    36320.964826
+Noncombinational area:          188623.578577
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                475207.499732
+Total cell area:                985542.697354
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -35,10 +35,9 @@ Hierarchical area distribution
                                   --------------------  -------------------------------- 
 Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-    Black-
                                   Total        Total    national     national     boxes   Design
---------------------------------  -----------  -------  -----------  -----------  ------  ------------
-ed25519                           475207.4997    100.0  156103.0890  104254.3100  0.0000  ed25519
-modular_mult_inst                 214850.1008     45.2  176740.0753   38110.0255  0.0000  modular_mult
---------------------------------  -----------  -------  -----------  -----------  ------  ------------
-Total                                                   332843.1643  142364.3355  0.0000
+--------------------------------  -----------  -------  -----------  -----------  ------  ---------
+ed25519                           985542.6974    100.0  796919.1188  188623.5786  0.0000  ed25519
+--------------------------------  -----------  -------  -----------  -----------  ------  ---------
+Total                                                   796919.1188  188623.5786  0.0000
 
 1

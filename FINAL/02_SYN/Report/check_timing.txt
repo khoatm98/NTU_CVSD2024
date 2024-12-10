@@ -1,6 +1,6 @@
 Information: Checking out the license 'DesignWare'. (SEC-104)
 Information: Updating design information... (UID-85)
-Warning: Design 'ed25519' contains 6 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Design 'ed25519' contains 5 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
 
 Information: Checking generated_clocks...
 
@@ -14,6 +14,13 @@ Warning: The following end-points are not constrained for maximum delay.
 
 End point
 ---------------
+modular_add_sub_inst/n_state_reg[0]/data_in
+modular_add_sub_inst/n_state_reg[1]/data_in
+modular_add_sub_inst/n_state_reg[2]/data_in
+modular_mult_inst/next_state_reg[0]/data_in
+modular_mult_inst/next_state_reg[1]/data_in
+modular_mult_inst/next_state_reg[2]/data_in
+modular_mult_inst/next_state_reg[3]/data_in
 next_inv_state_reg[0]/data_in
 next_inv_state_reg[1]/data_in
 next_state_reg[0]/data_in

@@ -1,0 +1,318 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 10
+Design : modular_mult
+Version: S-2021.06-SP2
+Date   : Tue Dec 10 20:24:42 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: sum_reg[300]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[300]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[300]/CK (DFFHQX2)                0.00       0.50 r
+  sum_reg[300]/Q (DFFHQX2)                 0.23       0.73 r
+  U7444/Y (AO21X1)                         0.16       0.89 r
+  sum_reg[300]/D (DFFHQX2)                 0.00       0.89 r
+  data arrival time                                   0.89
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[300]/CK (DFFHQX2)                0.00       1.00 r
+  library hold time                       -0.04       0.96
+  data required time                                  0.96
+  -----------------------------------------------------------
+  data required time                                  0.96
+  data arrival time                                  -0.89
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.07
+
+
+  Startpoint: sum_reg[318]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[318]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[318]/CK (DFFHQX2)                0.00       0.50 r
+  sum_reg[318]/Q (DFFHQX2)                 0.23       0.73 r
+  U7459/Y (AO21X1)                         0.16       0.89 r
+  sum_reg[318]/D (DFFHQX2)                 0.00       0.89 r
+  data arrival time                                   0.89
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[318]/CK (DFFHQX2)                0.00       1.00 r
+  library hold time                       -0.04       0.96
+  data required time                                  0.96
+  -----------------------------------------------------------
+  data required time                                  0.96
+  data arrival time                                  -0.89
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.07
+
+
+  Startpoint: sum_reg[299]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[299]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[299]/CK (DFFHQX2)                0.00       0.50 r
+  sum_reg[299]/Q (DFFHQX2)                 0.23       0.73 r
+  U13473/Y (AO21XL)                        0.17       0.89 r
+  sum_reg[299]/D (DFFHQX2)                 0.00       0.89 r
+  data arrival time                                   0.89
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[299]/CK (DFFHQX2)                0.00       1.00 r
+  library hold time                       -0.04       0.96
+  data required time                                  0.96
+  -----------------------------------------------------------
+  data required time                                  0.96
+  data arrival time                                  -0.89
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.06
+
+
+  Startpoint: sum_reg[256]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[256]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[256]/CK (DFFQX4)                 0.00       0.50 r
+  sum_reg[256]/Q (DFFQX4)                  0.26       0.76 r
+  U1465/Y (AOI221XL)                       0.09       0.85 f
+  U7652/Y (INVX1)                          0.06       0.91 r
+  sum_reg[256]/D (DFFQX4)                  0.00       0.91 r
+  data arrival time                                   0.91
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[256]/CK (DFFQX4)                 0.00       1.00 r
+  library hold time                       -0.07       0.93
+  data required time                                  0.93
+  -----------------------------------------------------------
+  data required time                                  0.93
+  data arrival time                                  -0.91
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.02
+
+
+  Startpoint: sum_reg[258]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[258]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[258]/CK (DFFQX4)                 0.00       0.50 r
+  sum_reg[258]/Q (DFFQX4)                  0.26       0.76 r
+  U7410/Y (AOI221XL)                       0.09       0.86 f
+  U7650/Y (INVX1)                          0.06       0.92 r
+  sum_reg[258]/D (DFFQX4)                  0.00       0.92 r
+  data arrival time                                   0.92
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[258]/CK (DFFQX4)                 0.00       1.00 r
+  library hold time                       -0.07       0.93
+  data required time                                  0.93
+  -----------------------------------------------------------
+  data required time                                  0.93
+  data arrival time                                  -0.92
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.02
+
+
+  Startpoint: sum_reg[263]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[263]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[263]/CK (DFFQX4)                 0.00       0.50 r
+  sum_reg[263]/Q (DFFQX4)                  0.26       0.76 r
+  U7462/Y (AO21X1)                         0.15       0.92 r
+  sum_reg[263]/D (DFFQX4)                  0.00       0.92 r
+  data arrival time                                   0.92
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[263]/CK (DFFQX4)                 0.00       1.00 r
+  library hold time                       -0.07       0.93
+  data required time                                  0.93
+  -----------------------------------------------------------
+  data required time                                  0.93
+  data arrival time                                  -0.92
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.02
+
+
+  Startpoint: sum_reg[297]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[297]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[297]/CK (DFFQX4)                 0.00       0.50 r
+  sum_reg[297]/Q (DFFQX4)                  0.26       0.76 r
+  U7460/Y (AO21X1)                         0.15       0.92 r
+  sum_reg[297]/D (DFFQX4)                  0.00       0.92 r
+  data arrival time                                   0.92
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[297]/CK (DFFQX4)                 0.00       1.00 r
+  library hold time                       -0.07       0.93
+  data required time                                  0.93
+  -----------------------------------------------------------
+  data required time                                  0.93
+  data arrival time                                  -0.92
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.02
+
+
+  Startpoint: sum_reg[323]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[323]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[323]/CK (DFFQX4)                 0.00       0.50 r
+  sum_reg[323]/Q (DFFQX4)                  0.26       0.76 r
+  U7447/Y (AO21X1)                         0.16       0.92 r
+  sum_reg[323]/D (DFFQX4)                  0.00       0.92 r
+  data arrival time                                   0.92
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[323]/CK (DFFQX4)                 0.00       1.00 r
+  library hold time                       -0.07       0.93
+  data required time                                  0.93
+  -----------------------------------------------------------
+  data required time                                  0.93
+  data arrival time                                  -0.92
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.02
+
+
+  Startpoint: sum_reg[259]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[259]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[259]/CK (DFFQX4)                 0.00       0.50 r
+  sum_reg[259]/Q (DFFQX4)                  0.26       0.76 r
+  U45902/Y (AOI221XL)                      0.09       0.85 f
+  U13567/Y (INVX1)                         0.07       0.92 r
+  sum_reg[259]/D (DFFQX4)                  0.00       0.92 r
+  data arrival time                                   0.92
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[259]/CK (DFFQX4)                 0.00       1.00 r
+  library hold time                       -0.07       0.93
+  data required time                                  0.93
+  -----------------------------------------------------------
+  data required time                                  0.93
+  data arrival time                                  -0.92
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.01
+
+
+  Startpoint: sum_reg[333]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: sum_reg[333]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: min
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  sum_reg[333]/CK (DFFQX4)                 0.00       0.50 r
+  sum_reg[333]/Q (DFFQX4)                  0.26       0.76 r
+  U11428/Y (AO21XL)                        0.16       0.92 r
+  sum_reg[333]/D (DFFQX4)                  0.00       0.92 r
+  data arrival time                                   0.92
+
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.50       1.00
+  sum_reg[333]/CK (DFFQX4)                 0.00       1.00 r
+  library hold time                       -0.07       0.93
+  data required time                                  0.93
+  -----------------------------------------------------------
+  data required time                                  0.93
+  data arrival time                                  -0.92
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.01
+
+
+1
