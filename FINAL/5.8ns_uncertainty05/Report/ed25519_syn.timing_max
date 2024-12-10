@@ -1,0 +1,579 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : ed25519
+Version: S-2021.06-SP2
+Date   : Tue Dec 10 19:04:14 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: modular_mult_inst/a_in_r_reg[55]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[152]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[55]/CK (DFFHQX4)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[55]/Q (DFFHQX4)            0.22       0.72 r
+  U44786/Y (XOR2X2)                                       0.18       0.90 f
+  U35064/Y (AND2X8)                                       0.15       1.05 f
+  U35403/Y (INVX16)                                       0.08       1.13 r
+  U63092/Y (BUFX20)                                       0.15       1.28 r
+  U34746/Y (OAI22X1)                                      0.14       1.41 f
+  U34745/Y (OAI21X1)                                      0.18       1.59 r
+  U31073/Y (OAI2BB1X2)                                    0.11       1.70 f
+  U34743/Y (OAI21X1)                                      0.17       1.87 r
+  U24291/Y (OAI2BB1X2)                                    0.11       1.98 f
+  U36505/Y (XOR2X2)                                       0.17       2.15 r
+  U35030/Y (XOR2X4)                                       0.15       2.30 r
+  U34687/Y (OAI21X2)                                      0.09       2.39 f
+  U29707/Y (NAND2X2)                                      0.10       2.50 r
+  U34686/Y (XOR2X4)                                       0.11       2.61 r
+  U34682/Y (XOR2X4)                                       0.15       2.76 r
+  U34681/Y (XOR2X4)                                       0.20       2.95 r
+  U21818/Y (XOR2X4)                                       0.17       3.13 r
+  U21817/Y (XOR2X4)                                       0.15       3.28 r
+  U42616/Y (XOR2X4)                                       0.14       3.42 r
+  U34028/Y (XOR2X4)                                       0.13       3.56 r
+  U34023/Y (XOR2X4)                                       0.20       3.76 r
+  U20841/Y (NOR2X8)                                       0.08       3.84 f
+  U17612/Y (NOR2X4)                                       0.12       3.96 r
+  U42683/Y (NAND2X4)                                      0.08       4.04 f
+  U67836/Y (NOR2X4)                                       0.11       4.15 r
+  U43147/Y (AOI21X4)                                      0.09       4.23 f
+  U43145/Y (OAI21X4)                                      0.11       4.34 r
+  U43144/Y (AOI21X4)                                      0.08       4.43 f
+  U72384/Y (BUFX8)                                        0.18       4.60 f
+  U72778/Y (OAI21X1)                                      0.13       4.73 r
+  U24224/Y (XNOR2XL)                                      0.15       4.88 f
+  modular_mult_inst/res_out_r_reg[152]/D (DFFHQX2)        0.00       4.88 f
+  data arrival time                                                  4.88
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[152]/CK (DFFHQX2)       0.00       5.00 r
+  library setup time                                     -0.19       4.81
+  data required time                                                 4.81
+  --------------------------------------------------------------------------
+  data required time                                                 4.81
+  data arrival time                                                 -4.88
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[255]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72534/Y (OAI21X1)                                      0.08       4.76 f
+  U22910/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[255]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[255]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[251]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72545/Y (OAI21X1)                                      0.08       4.76 f
+  U22912/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[251]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[251]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[192]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72665/Y (OAI21X1)                                      0.08       4.76 f
+  U22898/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[192]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[192]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[193]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72662/Y (OAI21X1)                                      0.08       4.76 f
+  U22904/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[193]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[193]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[191]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72675/Y (OAI21X1)                                      0.08       4.76 f
+  U22899/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[191]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[191]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[190]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72678/Y (OAI21X1)                                      0.08       4.76 f
+  U22900/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[190]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[190]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[189]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72685/Y (OAI21X1)                                      0.08       4.76 f
+  U22901/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[189]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[189]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[238]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72331/Y (OAI21X1)                                      0.08       4.76 f
+  U55230/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[238]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[238]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+  Startpoint: modular_mult_inst/a_in_r_reg[83]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/res_out_r_reg[248]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modular_mult_inst/a_in_r_reg[83]/CK (DFFHQX8)           0.00       0.50 r
+  modular_mult_inst/a_in_r_reg[83]/Q (DFFHQX8)            0.24       0.74 f
+  U53450/Y (XOR2X2)                                       0.21       0.94 r
+  U33615/Y (NAND2X8)                                      0.13       1.08 f
+  U64472/Y (BUFX20)                                       0.17       1.24 f
+  U56610/Y (OAI22X2)                                      0.14       1.39 r
+  U41291/CO (ADDFHX4)                                     0.33       1.72 r
+  U56609/CO (ADDFHX2)                                     0.37       2.08 r
+  U35316/Y (XOR2X4)                                       0.14       2.23 r
+  U56792/Y (XOR2X4)                                       0.14       2.37 r
+  U56786/S (ADDFHX2)                                      0.32       2.69 f
+  U38272/S (ADDFHX4)                                      0.27       2.96 f
+  U41274/Y (OAI21X4)                                      0.06       3.02 r
+  U41273/Y (OAI2BB1X4)                                    0.09       3.11 f
+  U41792/Y (XNOR2X4)                                      0.16       3.27 r
+  U44161/Y (XNOR2X4)                                      0.13       3.40 r
+  U44160/Y (XOR2X4)                                       0.14       3.55 f
+  U17675/Y (INVX3)                                        0.07       3.61 r
+  U34025/Y (XOR2X4)                                       0.16       3.77 f
+  U34024/Y (NOR2X4)                                       0.09       3.86 r
+  U17612/Y (NOR2X4)                                       0.07       3.93 f
+  U34186/Y (AOI21X4)                                      0.14       4.07 r
+  U34180/Y (OAI21X4)                                      0.08       4.15 f
+  U43147/Y (AOI21X4)                                      0.11       4.25 r
+  U43145/Y (OAI21X4)                                      0.08       4.33 f
+  U43144/Y (AOI21X4)                                      0.14       4.48 r
+  U41423/Y (BUFX8)                                        0.20       4.68 r
+  U72757/Y (OAI21X1)                                      0.08       4.76 f
+  U22902/Y (XNOR2XL)                                      0.14       4.90 r
+  modular_mult_inst/res_out_r_reg[248]/D (DFFHQX4)        0.00       4.90 r
+  data arrival time                                                  4.90
+
+  clock i_clk (rise edge)                                 5.00       5.00
+  clock network delay (ideal)                             0.50       5.50
+  clock uncertainty                                      -0.50       5.00
+  modular_mult_inst/res_out_r_reg[248]/CK (DFFHQX4)       0.00       5.00 r
+  library setup time                                     -0.17       4.83
+  data required time                                                 4.83
+  --------------------------------------------------------------------------
+  data required time                                                 4.83
+  data arrival time                                                 -4.90
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.07
+
+
+1

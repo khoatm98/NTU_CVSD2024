@@ -1,0 +1,433 @@
+
+
+ Static entries in elaborated design under "testbench.u_ed25519":
+	 Annotated by SDF "../02_SYN/Netlist/ed25519_syn.sdf":
+
+	 No. of Pathdelays   = 150410  Annotated = 100.00%
+	 No. of Tchecks      = 34035  Annotated = 98.85%
+
+	                                    Total            Annotated           Percentage
+	 IOPATH                            150410               150410               100.00%
+	 INTERCONNECT                          --               131674                   --
+
+	 Path Delays Summary of above
+
+	 HOLD                                 130                    0                 0.00%
+	 SETUPHOLD                          11389                11258                98.85%
+	 WIDTH                              11127                11127               100.00%
+
+	 Timing checks Summary of above
+
+
+ OverAll Static entries in elaborated design:
+	 No. of Pathdelays   = 150410  Annotated = 100.00%
+	 No. of Tchecks      = 34035  Annotated = 98.85%
+
+	                                    Total            Annotated           Percentage
+	 IOPATH                            150410               150410               100.00%
+	 INTERCONNECT                          --               131674                   --
+
+	 Path Delays Summary of above
+
+	 HOLD                                 130                    0                 0.00%
+	 SETUPHOLD                          11389                11258                98.85%
+	 WIDTH                              11127                11127               100.00%
+
+	 Timing checks Summary of above
+
+
+
+# ***************************** Design Not Annotated ***************************** #
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_63_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_62_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_61_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_60_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_59_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_58_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_57_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_56_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_55_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_53_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_52_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_51_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_50_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_49_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_48_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_47_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_46_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_45_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_44_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_43_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_42_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_41_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_40_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_38_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_37_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_36_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_35_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_34_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_33_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_32_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_31_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_30_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_29_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_28_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_27_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_26_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_25_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_23_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_22_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_21_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_20_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_19_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_18_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_17_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_16_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_15_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_14_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_13_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_12_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_11_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_10_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_8_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_7_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_6_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_5_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_4_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_3_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_2_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRXL, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_1_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRX1, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_54_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRX1, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_39_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRX1, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_24_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRX1, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_9_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRX1, 	Instance Name: testbench.u_ed25519.i_in_data_r_reg_0_
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFNSRX2, 	Instance Name: testbench.u_ed25519.o_valid_r_reg
+		 $setuphold(negedge CKN, posedge RN &&& (SN == 1'b1), tsetup$RN$CKN, thold$RN$CKN, NOTIFIER, , , dCKN, dRN);
+		 $setuphold(negedge CKN, posedge SN, tsetup$SN$CKN, thold$SN$CKN, NOTIFIER, , , dCKN, dSN);
+		 $hold(posedge RN, posedge SN, thold$SN$RN, NOTIFIER);
+		 $hold(posedge SN, posedge RN, thold$RN$SN, NOTIFIER);
+
+	 Module Name: DFFRHQX1, 	Instance Name: testbench.u_ed25519.modular_mult_inst.modular_add_sub_inst_C_reg_123_
+		 $setuphold(posedge CK, posedge RN, tsetup$RN$CK, thold$RN$CK, NOTIFIER, , , dCK, dRN);

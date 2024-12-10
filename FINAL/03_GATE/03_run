@@ -1,1 +1,1 @@
-vcs -R -full64 -f gate_sim.f +define+PAT0 | tee gate_sim_p0.log
+vcs -R -full64 -f gate_sim.f +define+PAT$1 +define+PERIOD=$2 | tee gate_sim_p0.log
