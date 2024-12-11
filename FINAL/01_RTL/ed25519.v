@@ -26,12 +26,13 @@ localparam S_SCALAR_MULT_D  = 4'd2;  // point doubling
 localparam S_SCALAR_MULT_A  = 4'd3;  // point addition
 localparam S_SCALAR_CHECK   = 4'd4; 
 localparam S_REDUCE_CHECK   = 4'd5;  // compute z_inv
-localparam S_REDUCE_Z_INV   = 4'd6;  // compute z_inv
-localparam S_REDUCE_XZ_INV  = 4'd7;  // compute x* z_inv
-localparam S_REDUCE_YZ_INV  = 4'd8;  // compute y* z_inv
-localparam S_REDUCE_X_TRAN  = 4'd9;  // make x even
-localparam S_REDUCE_Y_TRAN  = 4'd10; // make y even
-localparam S_OUTPUT         = 4'd11;                 
+localparam S_REDUCE_Z_INV_SQ= 4'd6;  // compute z_inv
+localparam S_REDUCE_Z_INV_M = 4'd7;  // compute z_inv
+localparam S_REDUCE_XZ_INV  = 4'd8;  // compute x* z_inv
+localparam S_REDUCE_YZ_INV  = 4'd9;  // compute y* z_inv
+localparam S_REDUCE_X_TRAN  = 4'd10; // make x even
+localparam S_REDUCE_Y_TRAN  = 4'd11; // make y even
+localparam S_OUTPUT         = 4'd12;                 
 
 // ---------------------------------------------------------------------------
 // Reg and wire declaration
@@ -45,8 +46,9 @@ reg [DATA_W-1:0]   o_out_data_r;
 wire m_reg_wren;
 wire m_reg_rden;
 
-reg [BUFF_W*3-1:0]   data_buf_r;
-
+reg  m_reg_rden_r;
+reg [BUFF_W*3-1:0] data_buf_r;
+reg [DATA_W-1:0]   in_data_r;
 
 reg [255:0] X_r;
 reg [255:0] Y_r;
@@ -55,16 +57,24 @@ reg [255:0] A_r;
 reg [255:0] B_r;
 reg [255:0] C_r;
 reg [255:0] D_r;
+
+reg  o_out_valid_r;
+reg  o_in_ready_r;
 // ---------------------------------------------------------------------------
 // Continuous assignment
 // ---------------------------------------------------------------------------
 assign o_out_valid = curr_state == S_OUTPUT;
-assign o_in_ready  = curr_state == S_INPUT;
+assign o_in_ready  = curr_state == S_INPUT && (generic_cnt < 11);
 
 assign m_reg_wren  = o_out_valid && i_out_ready;  // write enable
 assign m_reg_rden  = o_in_ready  && i_in_valid;   // read enable
 
 assign o_out_data = data_buf_r[BUFF_W*3-1 -:64];
+
+always @ (posedge i_clk) begin
+	m_reg_rden_r <= m_reg_rden;
+	in_data_r    <= i_in_data;
+end
 // ---------------------------------------------------------------------------
 // MOD ADD/SUB and MOD MULT instanitiate
 // ---------------------------------------------------------------------------
@@ -93,8 +103,11 @@ reg [255:0] addA_b_in_w;
 reg [255:0] multA_a_in_w;
 reg [255:0] multA_b_in_w;
 
-reg [255:0] redZ_a_in_w;
-reg [255:0] redZ_b_in_w;
+reg [255:0] redZ1_a_in_w;
+reg [255:0] redZ1_b_in_w;
+reg [255:0] redZ2_a_in_w;
+reg [255:0] redZ2_b_in_w;
+
 reg [255:0] redXZ_a_in_w;
 reg [255:0] redXZ_b_in_w;
 reg [255:0] redYZ_a_in_w;
@@ -111,7 +124,8 @@ reg         addA_inst;
 reg         addA_i_valid;
 reg         multA_i_valid;
 
-reg         redZ_i_valid;
+reg         redZ1_i_valid;
+reg         redZ2_i_valid;
 reg         redXZ_i_valid;
 reg         redYZ_i_valid;
 reg         tranX_i_valid;
@@ -157,15 +171,24 @@ always@ (posedge i_clk) begin
 			modadd_i_valid  <= addA_i_valid;
 			modmult_i_valid <= multA_i_valid;
 		end 
-		S_REDUCE_Z_INV   : begin
+		S_REDUCE_Z_INV_SQ   : begin
 			modadd_a_in_r   <= 0;
 			modadd_b_in_r   <= 0;
-			modmult_a_in_r  <= redZ_a_in_w;
-			modmult_b_in_r  <= redZ_b_in_w;
+			modmult_a_in_r  <= redZ1_a_in_w;
+			modmult_b_in_r  <= redZ1_b_in_w;
 			modadd_inst     <= 0;
 			modadd_i_valid  <= 0;
-			modmult_i_valid <= redZ_i_valid;
-		end 
+			modmult_i_valid <= redZ1_i_valid;
+		end
+		S_REDUCE_Z_INV_M   : begin
+			modadd_a_in_r   <= 0;
+			modadd_b_in_r   <= 0;
+			modmult_a_in_r  <= redZ2_a_in_w;
+			modmult_b_in_r  <= redZ2_b_in_w;
+			modadd_inst     <= 0;
+			modadd_i_valid  <= 0;
+			modmult_i_valid <= redZ2_i_valid;
+		end 		
 		S_REDUCE_XZ_INV  : begin
 			modadd_a_in_r   <= 0;
 			modadd_b_in_r   <= 0;
@@ -220,8 +243,8 @@ end
 reg [BUFF_W*3-1:0]   data_in_buf_w;
 
 always@(*) begin
-	if (m_reg_rden)
-		data_in_buf_w =  {data_buf_r[BUFF_W*3-1-64:0], i_in_data};
+	if (m_reg_rden_r)
+		data_in_buf_w =  {data_buf_r[BUFF_W*3-1-64:0], in_data_r};
 	else
 		data_in_buf_w =  data_buf_r;
 end
@@ -393,7 +416,7 @@ always@ (*) begin
 end
 
 always@ (*) begin
-	if (next_doubling_state != curr_s_state || curr_state != next_state) begin
+	if (next_doubling_state != curr_s_state || curr_state == S_SCALAR_CHECK) begin
 		case(next_doubling_state)
 			S_LEVEL_0 : begin
 				PD_X_w = X_r;	
@@ -825,67 +848,65 @@ always@ (*) begin
 	end
 end
 // ---------------------------------------------------------------------------
-// Inverse Z
+// Inverse Z S_SQUARE
 // ---------------------------------------------------------------------------
-localparam S_SQUARE  = 4'd0;
-localparam S_MULT    = 4'd1;
-localparam S_END     = 4'd2;
 localparam [254:0] q_sub_2   = `q - 2;
 
-reg [3:0]   next_inv_state;
+reg [3:0]   next_inv1_state;
 
-reg [255:0] inv_C_w;
+reg [255:0] inv1_C_w;
 
-wire        redZ_end_w = next_inv_state == S_END;
-
+wire        redZ1_end_w = modmult_o_valid;
+wire        redZ_end_w  = q_sub_2[round_r];
 always @ (*) begin
-	if (next_inv_state != curr_s_state || curr_state == S_REDUCE_CHECK) begin
-		redZ_a_in_w = round_r == 255 ? 1 : modmult_res_r;
-		redZ_i_valid = 1;
-		case(next_inv_state)
-			S_SQUARE : begin
-				redZ_b_in_w = round_r == 255 ? 1 : modmult_res_r;
-			end
-			S_MULT    : begin
-				redZ_b_in_w = Z_r;
-			end
-		endcase
-	end else begin
-		redZ_a_in_w = modmult_a_in_r;
-		redZ_b_in_w = modmult_b_in_r;
-		redZ_i_valid = 0;
-	end
-end
-
-always @ (*) begin
-	if (next_addition_state != curr_s_state) begin
-		inv_C_w = modmult_o_valid ? modmult_res_r : C_r;
-	end else begin
-		inv_C_w = C_r;
-	end
-end
-
-always@ (*) begin
 	if (curr_state == S_REDUCE_CHECK) begin
-		next_inv_state = S_SQUARE;
+		redZ1_a_in_w = round_r == 255 ? 1 : C_r;
+		redZ1_i_valid = 1;
+		redZ1_b_in_w = round_r == 255 ? 1 : C_r;
 	end else begin
-		case(curr_s_state)
-			S_SQUARE : begin
-				if(modmult_o_valid) begin
-					next_inv_state = q_sub_2[round_r] ? S_MULT : S_END;
-				end
-				else
-					next_inv_state = S_SQUARE;
-			end
-			S_MULT    : begin
-				if(modmult_o_valid) 
-					next_inv_state = S_END;
-				else
-					next_inv_state = S_MULT;
-			end
-		endcase
+		redZ1_a_in_w = modmult_a_in_r;
+		redZ1_b_in_w = modmult_b_in_r;
+		redZ1_i_valid = 0;
 	end
 end
+
+always @ (*) begin
+	if (modmult_o_valid) begin
+		inv1_C_w = modmult_res_r;
+	end else begin
+		inv1_C_w = C_r;
+	end
+end
+
+// ---------------------------------------------------------------------------
+// Inverse Z S_MULT
+// ---------------------------------------------------------------------------
+reg [3:0]   next_inv2_state;
+
+reg [255:0] inv2_C_w;
+
+wire        redZ2_end_w = modmult_o_valid;
+
+always @ (*) begin
+	if (curr_state == S_REDUCE_Z_INV_SQ) begin
+		redZ2_a_in_w = round_r == 255 ? 1 : modmult_res_r;
+		redZ2_i_valid = 1;
+		redZ2_b_in_w = round_r == 255 ? 1 : Z_r;
+	end else begin
+		redZ2_a_in_w = modmult_a_in_r;
+		redZ2_b_in_w = modmult_b_in_r;
+		redZ2_i_valid = 0;
+	end
+end
+
+always @ (*) begin
+	if (modmult_o_valid) begin
+		inv2_C_w = modmult_res_r;
+	end else begin
+		inv2_C_w = C_r;
+	end
+end
+
 //-------------------------------------------------------------------------
 // Reduce x = X/Z
 // ---------------------------------------------------------------------------
@@ -1018,18 +1039,19 @@ end
 
 always@ (*) begin
 	case(curr_state)
-		S_RST           :   next_state = S_INPUT;
-		S_INPUT         :   next_state = generic_cnt == 11 && m_reg_rden ? S_SCALAR_CHECK : S_INPUT;
-		S_SCALAR_MULT_D :   next_state = PD_end_w ? (scalar_end_round_w ? S_SCALAR_CHECK : S_SCALAR_MULT_A) :  S_SCALAR_MULT_D;
-		S_SCALAR_MULT_A :   next_state = PA_end_w ? S_SCALAR_CHECK :  S_SCALAR_MULT_A;
-		S_SCALAR_CHECK  :   next_state = round_r == 0  ? S_REDUCE_CHECK :  S_SCALAR_MULT_D;
-		S_REDUCE_CHECK  :   next_state = round_r == 0  ? S_REDUCE_XZ_INV :  S_REDUCE_Z_INV;
-		S_REDUCE_Z_INV  :   next_state = redZ_end_w    ? S_REDUCE_CHECK :  S_REDUCE_Z_INV;
-		S_REDUCE_XZ_INV :   next_state = redXZ_end_w   ? S_REDUCE_YZ_INV :  S_REDUCE_XZ_INV;
-		S_REDUCE_YZ_INV :   next_state = redYZ_end_w   ? S_REDUCE_X_TRAN :  S_REDUCE_YZ_INV;
-		S_REDUCE_X_TRAN :   next_state = tranX_end_w   ? S_REDUCE_Y_TRAN :  S_REDUCE_X_TRAN;
-		S_REDUCE_Y_TRAN :   next_state = tranY_end_w   ? S_OUTPUT :  S_REDUCE_Y_TRAN;
-		S_OUTPUT        :   next_state = generic_cnt == 7 && m_reg_wren ? S_INPUT  : S_OUTPUT;
+		S_RST              :   next_state = S_INPUT;
+		S_INPUT            :   next_state = generic_cnt == 11 && m_reg_rden_r ? S_SCALAR_CHECK : S_INPUT;
+		S_SCALAR_MULT_D    :   next_state = PD_end_w ? (scalar_end_round_w ? S_SCALAR_CHECK : S_SCALAR_MULT_A) :  S_SCALAR_MULT_D;
+		S_SCALAR_MULT_A    :   next_state = PA_end_w ? S_SCALAR_CHECK :  S_SCALAR_MULT_A;
+		S_SCALAR_CHECK     :   next_state = round_r == 0  ? S_REDUCE_CHECK :  S_SCALAR_MULT_D;
+		S_REDUCE_CHECK     :   next_state = round_r == 0  ? S_REDUCE_XZ_INV :  S_REDUCE_Z_INV_SQ;
+		S_REDUCE_Z_INV_SQ  :   next_state = redZ1_end_w   ? ( redZ_end_w ? S_REDUCE_Z_INV_M : S_REDUCE_CHECK) :  S_REDUCE_Z_INV_SQ;
+		S_REDUCE_Z_INV_M   :   next_state = redZ2_end_w   ? S_REDUCE_CHECK :  S_REDUCE_Z_INV_M;
+		S_REDUCE_XZ_INV    :   next_state = redXZ_end_w   ? S_REDUCE_YZ_INV :  S_REDUCE_XZ_INV;
+		S_REDUCE_YZ_INV    :   next_state = redYZ_end_w   ? S_REDUCE_X_TRAN :  S_REDUCE_YZ_INV;
+		S_REDUCE_X_TRAN    :   next_state = tranX_end_w   ? S_REDUCE_Y_TRAN :  S_REDUCE_X_TRAN;
+		S_REDUCE_Y_TRAN    :   next_state = tranY_end_w   ? S_OUTPUT :  S_REDUCE_Y_TRAN;
+		default           :   next_state = generic_cnt == 7 && m_reg_wren ? S_RST  : S_OUTPUT;
 	endcase
 end
 // ---------------------------------------------------------------------------
@@ -1044,7 +1066,6 @@ always@ (posedge i_clk ) begin
 		case(next_state)
 			S_SCALAR_MULT_D: curr_s_state <= next_doubling_state;
 			S_SCALAR_MULT_A: curr_s_state <= next_addition_state;
-			S_REDUCE_Z_INV:  curr_s_state <= next_inv_state;
 			default        : curr_s_state <= 0;
 		endcase
 	end
@@ -1079,13 +1100,22 @@ always@ (posedge i_clk) begin
 			C_r <= PA_C_w;
 			D_r <= PA_D_w;
 		end 
-		S_REDUCE_Z_INV  : begin
+		S_REDUCE_Z_INV_SQ  : begin
 			X_r <= X_r;
 			Y_r <= Y_r;
 			Z_r <= Z_r;
 			A_r <= A_r;
 			B_r <= B_r;
-			C_r <= inv_C_w;
+			C_r <= inv1_C_w;
+			D_r <= D_r;
+		end
+		S_REDUCE_Z_INV_M  : begin
+			X_r <= X_r;
+			Y_r <= Y_r;
+			Z_r <= Z_r;
+			A_r <= A_r;
+			B_r <= B_r;
+			C_r <= inv2_C_w;
 			D_r <= D_r;
 		end
 		S_SCALAR_CHECK  : begin
@@ -1094,7 +1124,7 @@ always@ (posedge i_clk) begin
 			Z_r <= Z_r;
 			A_r <= 0;
 			B_r <= 0;
-			C_r <= 0;
+			C_r <= 1;
 			D_r <= 0;
 		end
 		S_REDUCE_XZ_INV  : begin
@@ -1152,7 +1182,7 @@ always@ (posedge i_clk ) begin
 	if(i_rst) begin
 		generic_cnt <= 0;
 	end else if(curr_state == S_INPUT) begin
-		generic_cnt <= m_reg_rden ? generic_cnt + 1 : generic_cnt;
+		generic_cnt <= m_reg_rden_r ? generic_cnt + 1 : generic_cnt;
 	end else if(curr_state == S_OUTPUT) begin
 		generic_cnt <= m_reg_wren ? generic_cnt + 1 : generic_cnt;
 	end else begin

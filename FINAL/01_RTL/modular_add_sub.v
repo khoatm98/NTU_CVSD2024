@@ -54,7 +54,7 @@ always @(*) begin
 				THREE: begin
                         n_state = FOUR;
                 end
-				FOUR: begin
+				default: begin
                         n_state = IDLE;
                 end
         endcase

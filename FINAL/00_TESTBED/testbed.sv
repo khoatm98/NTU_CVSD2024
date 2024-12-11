@@ -14,7 +14,7 @@
 
 `timescale 1ns/10ps
 `define PERIOD    10.0
-`define MAX_CYCLE 120000
+`define MAX_CYCLE 40000
 //`define MAX_CYCLE 1_00
 `define RST_CYCLE 5
 
@@ -26,7 +26,7 @@
     `define SDF_FILE "../02_SYN/Netlist/ed25519_syn.sdf" // Modify your sdf file name
 `elsif POST
     `define SDF
-    `define SDF_FILE "../05_POST/ed25519_pr.sdf"  // Modify your sdf file name
+    `define SDF_FILE "../05_POST//ed25519.sdf"  // Modify your sdf file name
 `endif
 
 `include "../00_TESTBED/pattern/tb_dat.sv"
@@ -104,8 +104,8 @@ module testbench #(
 `else
     `ifdef FSDB
     initial begin
-        $fsdbDumpfile("ed25519.fsdb");
-        $fsdbDumpvars(0, testbench, "+mda");
+        //$fsdbDumpfile("ed25519.fsdb");
+        //$fsdbDumpvars(0, testbench, "+mda");
     end
 	`else
 	initial begin

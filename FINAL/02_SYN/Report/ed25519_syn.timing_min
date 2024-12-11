@@ -6,14 +6,14 @@ Report : timing
         -max_paths 10
 Design : ed25519
 Version: S-2021.06-SP2
-Date   : Wed Dec 11 01:00:20 2024
+Date   : Thu Dec 12 03:27:57 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: R_3320 (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: R_2025 (rising edge-triggered flip-flop clocked by i_clk)
+  Startpoint: R_3207 (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_10718 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
@@ -21,283 +21,273 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   clock i_clk (rise edge)                  0.00       0.00
   clock network delay (ideal)              0.50       0.50
-  R_3320/CK (DFFHQX2)                      0.00       0.50 r
-  R_3320/Q (DFFHQX2)                       0.27       0.77 f
-  R_2025/D (DFFQX1)                        0.00       0.77 f
-  data arrival time                                   0.77
+  R_3207/CK (DFFHQX4)                      0.00       0.50 r
+  R_3207/Q (DFFHQX4)                       0.20       0.70 f
+  R_10718/D (DFFQX1)                       0.00       0.70 f
+  data arrival time                                   0.70
 
   clock i_clk (rise edge)                  0.00       0.00
   clock network delay (ideal)              0.50       0.50
   clock uncertainty                        0.80       1.30
-  R_2025/CK (DFFQX1)                       0.00       1.30 r
-  library hold time                       -0.09       1.21
-  data required time                                  1.21
+  R_10718/CK (DFFQX1)                      0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
   -----------------------------------------------------------
-  data required time                                  1.21
-  data arrival time                                  -0.77
+  data required time                                  1.23
+  data arrival time                                  -0.70
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -0.44
+  slack (VIOLATED)                                   -0.53
 
 
-  Startpoint: modadd_a_in_r_reg[0]
-              (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/a_r_reg[0]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Startpoint: R_3207 (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_10717 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_a_in_r_reg[0]/CK (DFFQX1)                        0.00       0.50 r
-  modadd_a_in_r_reg[0]/Q (DFFQX1)                         0.24       0.74 f
-  modular_add_sub_inst/a_r_reg[0]/D (EDFFXL)              0.00       0.74 f
-  data arrival time                                                  0.74
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  R_3207/CK (DFFHQX4)                      0.00       0.50 r
+  R_3207/Q (DFFHQX4)                       0.19       0.69 r
+  U20307/Y (INVX6)                         0.06       0.75 f
+  R_10717/D (DFFQX1)                       0.00       0.75 f
+  data arrival time                                   0.75
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/a_r_reg[0]/CK (EDFFXL)             0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.74
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_10717/CK (DFFQX1)                      0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.75
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
-  Startpoint: modadd_a_in_r_reg[252]
+  Startpoint: A_r_reg[201]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/a_r_reg[252]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_4646 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_a_in_r_reg[252]/CK (DFFQX1)                      0.00       0.50 r
-  modadd_a_in_r_reg[252]/Q (DFFQX1)                       0.24       0.74 f
-  modular_add_sub_inst/a_r_reg[252]/D (EDFFXL)            0.00       0.74 f
-  data arrival time                                                  0.74
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  A_r_reg[201]/CK (DFFQX1)                 0.00       0.50 r
+  A_r_reg[201]/Q (DFFQX1)                  0.24       0.74 f
+  R_4646/D (DFFQX1)                        0.00       0.74 f
+  data arrival time                                   0.74
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/a_r_reg[252]/CK (EDFFXL)           0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.74
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_4646/CK (DFFQX1)                       0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
-  Startpoint: modadd_b_in_r_reg[175]
+  Startpoint: A_r_reg[110]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/b_r_reg[175]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_4650 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_b_in_r_reg[175]/CK (DFFQX1)                      0.00       0.50 r
-  modadd_b_in_r_reg[175]/Q (DFFQX1)                       0.25       0.75 f
-  modular_add_sub_inst/b_r_reg[175]/D (EDFFXL)            0.00       0.75 f
-  data arrival time                                                  0.75
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  A_r_reg[110]/CK (DFFQX1)                 0.00       0.50 r
+  A_r_reg[110]/Q (DFFQX1)                  0.24       0.74 f
+  R_4650/D (DFFQX1)                        0.00       0.74 f
+  data arrival time                                   0.74
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/b_r_reg[175]/CK (EDFFXL)           0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.75
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_4650/CK (DFFQX1)                       0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
-  Startpoint: modadd_a_in_r_reg[16]
-              (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/a_r_reg[16]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Startpoint: D_r_reg[0] (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_4686 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_a_in_r_reg[16]/CK (DFFQX1)                       0.00       0.50 r
-  modadd_a_in_r_reg[16]/Q (DFFQX1)                        0.25       0.75 f
-  modular_add_sub_inst/a_r_reg[16]/D (EDFFXL)             0.00       0.75 f
-  data arrival time                                                  0.75
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  D_r_reg[0]/CK (DFFQX1)                   0.00       0.50 r
+  D_r_reg[0]/Q (DFFQX1)                    0.24       0.74 f
+  R_4686/D (DFFQX1)                        0.00       0.74 f
+  data arrival time                                   0.74
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/a_r_reg[16]/CK (EDFFXL)            0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.75
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_4686/CK (DFFQX1)                       0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
-  Startpoint: modadd_a_in_r_reg[51]
+  Startpoint: C_r_reg[57]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/a_r_reg[51]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_5970 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_a_in_r_reg[51]/CK (DFFQX1)                       0.00       0.50 r
-  modadd_a_in_r_reg[51]/Q (DFFQX1)                        0.25       0.75 f
-  modular_add_sub_inst/a_r_reg[51]/D (EDFFXL)             0.00       0.75 f
-  data arrival time                                                  0.75
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  C_r_reg[57]/CK (DFFQX1)                  0.00       0.50 r
+  C_r_reg[57]/Q (DFFQX1)                   0.24       0.74 f
+  R_5970/D (DFFQX1)                        0.00       0.74 f
+  data arrival time                                   0.74
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/a_r_reg[51]/CK (EDFFXL)            0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.75
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_5970/CK (DFFQX1)                       0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
-  Startpoint: modadd_a_in_r_reg[68]
+  Startpoint: C_r_reg[222]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/a_r_reg[68]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_7366 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_a_in_r_reg[68]/CK (DFFQX1)                       0.00       0.50 r
-  modadd_a_in_r_reg[68]/Q (DFFQX1)                        0.25       0.75 f
-  modular_add_sub_inst/a_r_reg[68]/D (EDFFXL)             0.00       0.75 f
-  data arrival time                                                  0.75
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  C_r_reg[222]/CK (DFFQX1)                 0.00       0.50 r
+  C_r_reg[222]/Q (DFFQX1)                  0.24       0.74 f
+  R_7366/D (DFFQX1)                        0.00       0.74 f
+  data arrival time                                   0.74
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/a_r_reg[68]/CK (EDFFXL)            0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.75
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_7366/CK (DFFQX1)                       0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
-  Startpoint: modadd_a_in_r_reg[81]
+  Startpoint: C_r_reg[115]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/a_r_reg[81]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_7933 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_a_in_r_reg[81]/CK (DFFQX1)                       0.00       0.50 r
-  modadd_a_in_r_reg[81]/Q (DFFQX1)                        0.25       0.75 f
-  modular_add_sub_inst/a_r_reg[81]/D (EDFFXL)             0.00       0.75 f
-  data arrival time                                                  0.75
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  C_r_reg[115]/CK (DFFQX1)                 0.00       0.50 r
+  C_r_reg[115]/Q (DFFQX1)                  0.24       0.74 f
+  R_7933/D (DFFQX1)                        0.00       0.74 f
+  data arrival time                                   0.74
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/a_r_reg[81]/CK (EDFFXL)            0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.75
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_7933/CK (DFFQX1)                       0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
-  Startpoint: modadd_a_in_r_reg[82]
+  Startpoint: data_buf_r_reg[400]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/a_r_reg[82]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_7937 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_a_in_r_reg[82]/CK (DFFQX1)                       0.00       0.50 r
-  modadd_a_in_r_reg[82]/Q (DFFQX1)                        0.25       0.75 f
-  modular_add_sub_inst/a_r_reg[82]/D (EDFFXL)             0.00       0.75 f
-  data arrival time                                                  0.75
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  data_buf_r_reg[400]/CK (DFFQX1)          0.00       0.50 r
+  data_buf_r_reg[400]/Q (DFFQX1)           0.24       0.74 f
+  R_7937/D (DFFQX1)                        0.00       0.74 f
+  data arrival time                                   0.74
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/a_r_reg[82]/CK (EDFFXL)            0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.75
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_7937/CK (DFFQX1)                       0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
-  Startpoint: modadd_a_in_r_reg[90]
+  Startpoint: data_buf_r_reg[288]
               (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_add_sub_inst/a_r_reg[90]
-            (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: R_7941 (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: min
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  modadd_a_in_r_reg[90]/CK (DFFQX1)                       0.00       0.50 r
-  modadd_a_in_r_reg[90]/Q (DFFQX1)                        0.25       0.75 f
-  modular_add_sub_inst/a_r_reg[90]/D (EDFFXL)             0.00       0.75 f
-  data arrival time                                                  0.75
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  data_buf_r_reg[288]/CK (DFFQX1)          0.00       0.50 r
+  data_buf_r_reg[288]/Q (DFFQX1)           0.24       0.74 f
+  R_7941/D (DFFQX1)                        0.00       0.74 f
+  data arrival time                                   0.74
 
-  clock i_clk (rise edge)                                 0.00       0.00
-  clock network delay (ideal)                             0.50       0.50
-  clock uncertainty                                       0.80       1.30
-  modular_add_sub_inst/a_r_reg[90]/CK (EDFFXL)            0.00       1.30 r
-  library hold time                                      -0.12       1.18
-  data required time                                                 1.18
-  --------------------------------------------------------------------------
-  data required time                                                 1.18
-  data arrival time                                                 -0.75
-  --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.43
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  clock uncertainty                        0.80       1.30
+  R_7941/CK (DFFQX1)                       0.00       1.30 r
+  library hold time                       -0.07       1.23
+  data required time                                  1.23
+  -----------------------------------------------------------
+  data required time                                  1.23
+  data arrival time                                  -0.74
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.48
 
 
 1

@@ -1,7 +1,7 @@
 #@ # 
-#@ # Running dc_shell Version U-2022.12 for linux64 -- Nov 22, 2022
-#@ # Date:   Mon Dec  9 23:29:10 2024
-#@ # Run by: r2k41036@cad27
+#@ # Running dc_shell Version S-2021.06-SP2 for linux64 -- Aug 24, 2021
+#@ # Date:   Thu Dec 12 03:06:23 2024
+#@ # Run by: MingKe@cad46
 #@ 
 
 source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
@@ -41,9 +41,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ update_app_var -default true sh_enable_page_mode
 #@ set sh_source_uses_search_path   "true"
 #@ update_app_var -default true sh_source_uses_search_path
-#@ if {$synopsys_program_name == "dc_shell" || \
-#@     $synopsys_program_name == "de_shell" || \
-#@     $synopsys_program_name == "dc_sms_shell" } {
+#@ if {$synopsys_program_name == "dc_shell" ||     $synopsys_program_name == "de_shell" ||     $synopsys_program_name == "dc_sms_shell" } {
 #@ set sh_new_variable_message	 "false"
 #@ update_app_var -default false sh_new_variable_message
 #@ } else {
@@ -176,8 +174,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 	set pos [lsearch -glob $newpaths ${p}/*]
 #@ 	# Cannot use "in", we need the position for the message.
 #@ 	if {$pos >= 0} {
-#@ 	    return -code error \
-#@ 		"$p is ancestor of existing module path [lindex $newpaths $pos]."
+#@ 	    return -code error 		"$p is ancestor of existing module path [lindex $newpaths $pos]."
 #@ 	}
 #@ 
 #@ 	# Now look for existing paths which are ancestors of the new one. This
@@ -186,8 +183,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@ 	foreach ep $newpaths {
 #@ 	    if {[string match ${ep}/* $p]} {
-#@ 		return -code error \
-#@ 		    "$p is subdirectory of existing module path $ep."
+#@ 		return -code error 		    "$p is subdirectory of existing module path $ep."
 #@ 	    }
 #@ 	}
 #@ 
@@ -280,12 +276,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 	    }
 #@ 	    set strip [llength [file split $path]]
 #@ 
-#@ 	    # Get the module files out of the subdirectories.
-#@ 	    # - Safe Base interpreters have a restricted "glob" command that
-#@ 	    #   works in this case.
-#@ 	    # - The "catch" was essential when there was no safe glob and every
-#@ 	    #   call in a safe interp failed; it is retained only for corner
-#@ 	    #   cases in which the eventual call to glob returns an error.
+#@ 	    # We can't use glob in safe interps, so enclose the following in a
+#@ 	    # catch statement, where we get the module files out of the
+#@ 	    # subdirectories. In other words, Tcl Modules are not-functional
+#@ 	    # in such an interpreter. This is the same as for the command
+#@ 	    # "tclPkgUnknown", i.e. the search for regular packages.
 #@ 
 #@ 	    catch {
 #@ 		# We always look for _all_ possible modules in the current
@@ -307,16 +302,12 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 			continue
 #@ 		    }
 #@ 
-#@ 		    if {([package ifneeded $pkgname $pkgversion] ne {})
-#@ 			    && (![interp issafe])
-#@ 		    } {
+#@ 		    if {[package ifneeded $pkgname $pkgversion] ne {}} {
 #@ 			# There's already a provide script registered for
 #@ 			# this version of this package.  Since all units of
 #@ 			# code claiming to be the same version of the same
 #@ 			# package ought to be identical, just stick with
 #@ 			# the one we already have.
-#@ 			# This does not apply to Safe Base interpreters because
-#@ 			# the token-to-directory mapping may have changed.
 #@ 			continue
 #@ 		    }
 #@ 
@@ -334,8 +325,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 		    # Right now LOCATE's implementation assumes that the path
 #@ 		    # of the package file is the last element in the list.
 #@ 
-#@ 		    package ifneeded $pkgname $pkgversion \
-#@ 			"[::list package provide $pkgname $pkgversion];[::list source -encoding utf-8 $file]"
+#@ 		    package ifneeded $pkgname $pkgversion 			"[::list package provide $pkgname $pkgversion];[::list source -encoding utf-8 $file]"
 #@ 
 #@ 		    # We abort in this unknown handler only if we got a
 #@ 		    # satisfying candidate for the requested package.
@@ -384,15 +374,12 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ proc ::tcl::tm::Defaults {} {
 #@     global env tcl_platform
 #@ 
-#@     regexp {^(\d+)\.(\d+)} [package provide Tcl] - major minor
+#@     lassign [split [info tclversion] .] major minor
 #@     set exe [file normalize [info nameofexecutable]]
 #@ 
 #@     # Note that we're using [::list], not [list] because [list] means
 #@     # something other than [::list] in this namespace.
-#@     roots [::list \
-#@ 	    [file dirname [info library]] \
-#@ 	    [file join [file dirname [file dirname $exe]] lib] \
-#@ 	    ]
+#@     roots [::list 	    [file dirname [info library]] 	    [file join [file dirname [file dirname $exe]] lib] 	    ]
 #@ 
 #@     if {$tcl_platform(platform) eq "windows"} {
 #@ 	set sep ";"
@@ -400,10 +387,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 	set sep ":"
 #@     }
 #@     for {set n $minor} {$n >= 0} {incr n -1} {
-#@ 	foreach ev [::list \
-#@ 			TCL${major}.${n}_TM_PATH \
-#@ 			TCL${major}_${n}_TM_PATH \
-#@         ] {
+#@ 	foreach ev [::list 			TCL${major}.${n}_TM_PATH 			TCL${major}_${n}_TM_PATH         ] {
 #@ 	    if {![info exists env($ev)]} continue
 #@ 	    foreach p [split $env($ev) $sep] {
 #@ 		path add $p
@@ -427,7 +411,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ #	Calls 'path add' to paths to the list of module search paths.
 #@ 
 #@ proc ::tcl::tm::roots {paths} {
-#@     regexp {^(\d+)\.(\d+)} [package provide Tcl] - major minor
+#@     regexp {^(\d+)\.(\d+)} [package present Tcl] - major minor
 #@     foreach pa $paths {
 #@ 	set p [file join $pa tcl$major]
 #@ 	for {set n $minor} {$n >= 0} {incr n -1} {
@@ -584,8 +568,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@     }
 #@ 
 #@     try {
-#@ 	set fileList [glob -directory $dir -tails -types {r f} -- \
-#@ 		{*}$patternList]
+#@ 	set fileList [glob -directory $dir -tails -types {r f} -- 		{*}$patternList]
 #@     } on error {msg opt} {
 #@ 	return -options $opt $msg
 #@     }
@@ -625,8 +608,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 		load [lindex $pkg 0] [lindex $pkg 1] $c
 #@ 	    } on error err {
 #@ 		if {$doVerbose} {
-#@ 		    tclLog "warning: load [lindex $pkg 0]\
-#@ 			    [lindex $pkg 1]\nfailed with: $err"
+#@ 		    tclLog "warning: load [lindex $pkg 0]			    [lindex $pkg 1]\nfailed with: $err"
 #@ 		}
 #@ 	    } on ok {} {
 #@ 		if {$doVerbose} {
@@ -689,7 +671,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 	$c eval [list set ::tcl::file $file]
 #@ 	$c eval [list set ::tcl::direct $direct]
 #@ 
-#@ 	# Download needed procedures into the child because we've just deleted
+#@ 	# Download needed procedures into the slave because we've just deleted
 #@ 	# the unknown procedure.  This doesn't handle procedures with default
 #@ 	# arguments.
 #@ 
@@ -777,8 +759,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 			    # leading ::, this is required by the unknown
 #@ 			    # command
 #@ 
-#@ 			    set ::tcl::abs \
-#@ 				    [lindex [auto_qualify $::tcl::abs ::] 0]
+#@ 			    set ::tcl::abs 				    [lindex [auto_qualify $::tcl::abs ::] 0]
 #@ 
 #@ 			    if {$::tcl::x ne $::tcl::abs} {
 #@ 				# Name changed during qualification
@@ -796,8 +777,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 		foreach ::tcl::x [package names] {
 #@ 		    if {[package provide $::tcl::x] ne ""
 #@ 			    && ![info exists ::tcl::packages($::tcl::x)]} {
-#@ 			lappend ::tcl::newPkgs \
-#@ 			    [list $::tcl::x [package provide $::tcl::x]]
+#@ 			lappend ::tcl::newPkgs 			    [list $::tcl::x [package provide $::tcl::x]]
 #@ 		    }
 #@ 		}
 #@ 	    }
@@ -931,15 +911,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 	}
 #@ 	set tclSeenPath($dir) 1
 #@ 
-#@ 	# Get the pkgIndex.tcl files in subdirectories of auto_path directories.
-#@ 	# - Safe Base interpreters have a restricted "glob" command that
-#@ 	#   works in this case.
-#@ 	# - The "catch" was essential when there was no safe glob and every
-#@ 	#   call in a safe interp failed; it is retained only for corner
-#@ 	#   cases in which the eventual call to glob returns an error.
+#@ 	# we can't use glob in safe interps, so enclose the following in a
+#@ 	# catch statement, where we get the pkgIndex files out of the
+#@ 	# subdirectories
 #@ 	catch {
-#@ 	    foreach file [glob -directory $dir -join -nocomplain \
-#@ 		    * pkgIndex.tcl] {
+#@ 	    foreach file [glob -directory $dir -join -nocomplain 		    * pkgIndex.tcl] {
 #@ 		set dir [file dirname $file]
 #@ 		if {![info exists procdDirs($dir)]} {
 #@ 		    try {
@@ -1040,9 +1016,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 	set tclSeenPath($dir) 1
 #@ 
 #@ 	# get the pkgIndex files out of the subdirectories
-#@ 	# Safe interpreters do not use tcl::MacOSXPkgUnknown - see init.tcl.
-#@ 	foreach file [glob -directory $dir -join -nocomplain \
-#@ 		* Resources Scripts pkgIndex.tcl] {
+#@ 	foreach file [glob -directory $dir -join -nocomplain 		* Resources Scripts pkgIndex.tcl] {
 #@ 	    set dir [file dirname $file]
 #@ 	    if {![info exists procdDirs($dir)]} {
 #@ 		try {
@@ -1193,8 +1167,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@     }
 #@ 
 #@     if {[llength $lazyFileList]} {
-#@ 	lappend cmdList "\[list tclPkgSetup \$dir $opts(-name)\
-#@ 		$opts(-version) [list $lazyFileList]\]"
+#@ 	lappend cmdList "\[list tclPkgSetup \$dir $opts(-name)		$opts(-version) [list $lazyFileList]\]"
 #@     }
 #@     append cmdline [join $cmdList "\\n"]
 #@     return $cmdline
@@ -1216,36 +1189,73 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ package ifneeded cae::utils 1.0 [list source [file join $dir utils utils.tcl]]
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/syn/lib/pkgIndex.tcl
 
-#@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/itcl4.2.1/pkgIndex.tcl
-
-#@ # Tcl package index file, version 1.0
-#@ #
-#@ # Do NOT try this command
-#@ #
-#@ #   if {![package vsatisfies [package provide Tcl] 8.6-]} {return}
-#@ #
-#@ # as a way to accept working with all of Tcl 8.6, Tcl 8.X, X>6, and
-#@ # Tcl Y, for Y > 8.
-#@ # Itcl is a binary package, added to an interp with [load].
-#@ # There is no libitcl.so that will [load] into both Tcl 8 and Tcl 9.
-#@ # The indexed libitcl.so was built to [load] into one or the other.
-#@ # Thus the pkgIndex.tcl should only accept the version of Tcl for which
-#@ # the indexed libitcl4.2.1.a was built.
-#@ #
-#@ # More work replacing the literal "8.6" below with the proper value substituted
-#@ # by configure is the right way forward.
-#@ 
-#@ if {![package vsatisfies [package provide Tcl] 8.6]} {return}
-#@ 
-#@ package ifneeded itcl 4.2.1 [list load "libitcl-O.so" Itcl]
-#@ package ifneeded Itcl 4.2.1 [list load "libitcl-O.so" Itcl]
-#@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/itcl4.2.1/pkgIndex.tcl
-
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/iwidgets4.1/pkgIndex.tcl
 
-#@ # Tcl package index file, version 1.0
-#@ 
-#@ package ifneeded Iwidgets 4.1.1 [list source [file join $dir iwidgets.tcl]]
+#@ # Tcl package index file
+#@ package ifneeded iwidgets 4.1 [list ::apply {dir {
+#@   package require itk 4
+#@    namespace eval ::iwidgets {
+#@        namespace export *
+#@        variable version 4.1
+#@   }
+#@   source [file join $dir colors.itcl]
+#@   source [file join $dir roman.itcl]
+#@   source [file join $dir buttonbox.itk]
+#@   source [file join $dir calendar.itk]
+#@   source [file join $dir canvasprintbox.itk]
+#@   source [file join $dir shell.itk]
+#@   source [file join $dir dialogshell.itk]
+#@   source [file join $dir dialog.itk]
+#@   source [file join $dir canvasprintdialog.itk]
+#@   source [file join $dir labeledframe.itk]
+#@   source [file join $dir checkbox.itk]
+#@   source [file join $dir labeledwidget.itk]
+#@   source [file join $dir entryfield.itk]
+#@   source [file join $dir combobox.itk]
+#@   source [file join $dir datefield.itk]
+#@   source [file join $dir dateentry.itk]
+#@   source [file join $dir disjointlistbox.itk]
+#@   source [file join $dir extbutton.itk]
+#@   source [file join $dir extfileselectionbox.itk]
+#@   source [file join $dir extfileselectiondialog.itk]
+#@   source [file join $dir feedback.itk]
+#@   source [file join $dir fileselectionbox.itk]
+#@   source [file join $dir fileselectiondialog.itk]
+#@   source [file join $dir finddialog.itk]
+#@   source [file join $dir scrolledwidget.itk]
+#@   source [file join $dir hierarchy.itk]
+#@   source [file join $dir hyperhelp.itk]
+#@   source [file join $dir mainwindow.itk]
+#@   source [file join $dir menubar.itk]
+#@   source [file join $dir messagebox.itk]
+#@   source [file join $dir messagedialog.itk]
+#@   source [file join $dir notebook.itk]
+#@   source [file join $dir optionmenu.itk]
+#@   source [file join $dir panedwindow.itk]
+#@   source [file join $dir pane.itk]
+#@   source [file join $dir promptdialog.itk]
+#@   source [file join $dir pushbutton.itk]
+#@   source [file join $dir radiobox.itk]
+#@   source [file join $dir regexpfield.itk]
+#@   source [file join $dir scrolledcanvas.itk]
+#@   source [file join $dir scrolledframe.itk]
+#@   source [file join $dir scrolledtext.itk]
+#@   source [file join $dir scrolledhtml.itk]
+#@   source [file join $dir scrolledlistbox.itk]
+#@   source [file join $dir selectionbox.itk]
+#@   source [file join $dir selectiondialog.itk]
+#@   source [file join $dir spindate.itk]
+#@   source [file join $dir spinner.itk]
+#@   source [file join $dir spinint.itk]
+#@   source [file join $dir spintime.itk]
+#@   source [file join $dir tabnotebook.itk]
+#@   source [file join $dir tabset.itk]
+#@   source [file join $dir timefield.itk]
+#@   source [file join $dir timeentry.itk]
+#@   source [file join $dir toolbar.itk]
+#@   source [file join $dir watch.itk]
+#@   package provide iwidgets 4.1
+#@ }} $dir]
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/iwidgets4.1/pkgIndex.tcl
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/snps_tcl/snpsTclPro/pkgIndex.tcl
@@ -1301,14 +1311,14 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/dde/pkgIndex.tcl
 
-#@ if {![package vsatisfies [package provide Tcl] 8.5]} return
-#@ if {[info sharedlibextension] != ".dll"} return
+#@ if {([info commands ::tcl::pkgconfig] eq "")
+#@ 	|| ([info sharedlibextension] ne ".dll")} return
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/dde/pkgIndex.tcl
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/http/pkgIndex.tcl
 
-#@ if {![package vsatisfies [package provide Tcl] 8.6-]} {return}
-#@ package ifneeded http 2.9.5 [list tclPkgSetup $dir http 2.9.5 {{http.tcl source {::http::config ::http::formatQuery ::http::geturl ::http::reset ::http::wait ::http::register ::http::unregister ::http::mapReply}}}]
+#@ if {![package vsatisfies [package provide Tcl] 8.6]} {return}
+#@ package ifneeded http 2.8.9 [list tclPkgSetup $dir http 2.8.9 {{http.tcl source {::http::config ::http::formatQuery ::http::geturl ::http::reset ::http::wait ::http::register ::http::unregister ::http::mapReply}}}]
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/http/pkgIndex.tcl
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/http1.0/pkgIndex.tcl
@@ -1328,8 +1338,8 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/msgcat/pkgIndex.tcl
 
-#@ if {![package vsatisfies [package provide Tcl] 8.5-]} {return}
-#@ package ifneeded msgcat 1.6.1 [list source [file join $dir msgcat.tcl]]
+#@ if {![package vsatisfies [package provide Tcl] 8.5]} {return}
+#@ package ifneeded msgcat 1.6.0 [list source [file join $dir msgcat.tcl]]
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/msgcat/pkgIndex.tcl
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/opt/pkgIndex.tcl
@@ -1344,21 +1354,21 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ # script is sourced, the variable $dir must contain the
 #@ # full path name of this file's directory.
 #@ 
-#@ if {![package vsatisfies [package provide Tcl] 8.5-]} {return}
-#@ package ifneeded opt 0.4.8 [list source [file join $dir optparse.tcl]]
+#@ if {![package vsatisfies [package provide Tcl] 8.2]} {return}
+#@ package ifneeded opt 0.4.6 [list source [file join $dir optparse.tcl]]
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/opt/pkgIndex.tcl
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/platform/pkgIndex.tcl
 
-#@ package ifneeded platform        1.0.15 [list source [file join $dir platform.tcl]]
+#@ package ifneeded platform        1.0.14 [list source [file join $dir platform.tcl]]
 #@ package ifneeded platform::shell 1.1.4 [list source [file join $dir shell.tcl]]
 #@ 
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/platform/pkgIndex.tcl
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/reg/pkgIndex.tcl
 
-#@ if {![package vsatisfies [package provide Tcl] 8.5]} return
-#@ if {[info sharedlibextension] != ".dll"} return
+#@ if {([info commands ::tcl::pkgconfig] eq "")
+#@ 	|| ([info sharedlibextension] ne ".dll")} return
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/reg/pkgIndex.tcl
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/tcltest/pkgIndex.tcl
@@ -1373,8 +1383,8 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ # script is sourced, the variable $dir must contain the
 #@ # full path name of this file's directory.
 #@ 
-#@ if {![package vsatisfies [package provide Tcl] 8.5-]} {return}
-#@ package ifneeded tcltest 2.5.3 [list source [file join $dir tcltest.tcl]]
+#@ if {![package vsatisfies [package provide Tcl] 8.5]} {return}
+#@ package ifneeded tcltest 2.4.0 [list source [file join $dir tcltest.tcl]]
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/tcllib/lib/tcl8.6/tcltest/pkgIndex.tcl
 
 #@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/syn/lib/syn.tcl
@@ -1397,14 +1407,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ # create command group after loading sub packages
 #@ # because last group is listed first by "help"
 #@ 
-#@ create_command_group "syn" \
-#@     -info "synthesis utilities"
+#@ create_command_group "syn"     -info "synthesis utilities"
 #@ 
 #@ namespace eval ::cae {
 #@     variable selfdir [file dirname [info script]]  
-#@     variable scripts [list \
-#@                           auto_path_groups.tcl \
-#@                          ]
+#@     variable scripts [list                           auto_path_groups.tcl                          ]
 #@     variable script
 #@ }
 #@ 
@@ -1560,8 +1567,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@             set optimize_registers_sub_cells {}
 #@             foreach_in_collection cell ${optimize_registers_cells} {
 #@                 redirect -file /dev/null {current_instance ${cell}}
-#@                 append_to_collection optimize_registers_sub_cells \
-#@                     [get_cells -hier -filter {is_hierarchical==true && (optimize_registers==false || undefined(optimize_registers))}]
+#@                 append_to_collection optimize_registers_sub_cells                     [get_cells -hier -filter {is_hierarchical==true && (optimize_registers==false || undefined(optimize_registers))}]
 #@             }
 #@             redirect -file /dev/null {current_instance}
 #@             if { $options(-verbose) } {
@@ -1764,10 +1770,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@     return
 #@ }
 #@ 
-#@ define_proc_attributes create_auto_path_groups \
-#@     -command_group syn -dont_abbrev -hide_body \
-#@     -info "Creates path groups for current design" \
-#@     -define_args {
+#@ define_proc_attributes create_auto_path_groups     -command_group syn -dont_abbrev -hide_body     -info "Creates path groups for current design"     -define_args {
 #@         { -mode "creates path groups for unmapped/mapped netlist" mode one_of_string {required value_help {values {rtl mapped}}} }
 #@         { -exclude "excludes specific path groups (IO ICG macro) (default: empty list)" list list {optional} } 
 #@         { -slack "slack value used to select hierarchy violating timing (default: 0.0) - mapped mode only" slack float optional }
@@ -1833,10 +1836,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@     return
 #@ }
 #@ 
-#@ define_proc_attributes remove_auto_path_groups \
-#@     -command_group syn -dont_abbrev -hide_body \
-#@     -info "Removes path groups for current design" \
-#@     -define_args {
+#@ define_proc_attributes remove_auto_path_groups     -command_group syn -dont_abbrev -hide_body     -info "Removes path groups for current design"     -define_args {
 #@         { -prefix "path group name prefix (default: synopsys_pg)" prefix string optional }
 #@         { -file "file name to dump group_path commands" file_name string optional }
 #@         { -verbose "verbose mode" "" boolean optional }
@@ -1871,11 +1871,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ set auto_oldpath ""
 #@ 
 #@ # Enable customer support banner on fatal
-#@ if { $sh_arch == "linux"    || $sh_arch == "amd64"    || $sh_arch == "linux64" ||\
-#@      $sh_arch == "suse32"   || $sh_arch == "suse64"   || \
-#@      $sh_arch == "sparcOS5" || $sh_arch == "sparc64"  || \
-#@      $sh_arch == "x86sol32" || $sh_arch == "x86sol64" || \
-#@      $sh_arch == "rs6000"   || $sh_arch == "aix64" } {
+#@ if { $sh_arch == "linux"    || $sh_arch == "amd64"    || $sh_arch == "linux64" ||     $sh_arch == "suse32"   || $sh_arch == "suse64"   ||      $sh_arch == "sparcOS5" || $sh_arch == "sparc64"  ||      $sh_arch == "x86sol32" || $sh_arch == "x86sol64" ||      $sh_arch == "rs6000"   || $sh_arch == "aix64" } {
 #@    setenv SYNOPSYS_TRACE ""
 #@ }
 #@ 
@@ -1953,10 +1949,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return 1
 #@ }
 #@ 
-#@ define_proc_attributes group_variable \
-#@     -info "Add a variable to a variable group"  \
-#@     -command_group "Builtins" -permanent -dont_abbrev \
-#@     -define_args { 
+#@ define_proc_attributes group_variable     -info "Add a variable to a variable group"      -command_group "Builtins" -permanent -dont_abbrev     -define_args { 
 #@       {group "Variable group name" group}
 #@       {variable_name "Variable name" variable_name}}
 #@ 
@@ -2015,10 +2008,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return 1
 #@ }
 #@ 
-#@ define_proc_attributes print_variable_group \
-#@     -info "Print the contents of a variable group"  \
-#@     -command_group "Builtins" -permanent  \
-#@     -define_args {{group "Variable group name" group}}
+#@ define_proc_attributes print_variable_group     -info "Print the contents of a variable group"      -command_group "Builtins" -permanent      -define_args {{group "Variable group name" group}}
 #@ 
 #@ 
 #@ 
@@ -2132,17 +2122,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ proc read_verilog { args } {
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@   set cmd [format {read_file -format verilog %s %s [list %s]} \
-#@                      [array names ra -rtl] \
-#@                      [array names ra -netlist] \
-#@                      $ra(file_names)]
+#@   set cmd [format {read_file -format verilog %s %s [list %s]}                      [array names ra -rtl]                      [array names ra -netlist]                      $ra(file_names)]
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes read_verilog \
-#@     -info " Read one or more verilog files" \
-#@     -permanent \
-#@     -define_args {
+#@ define_proc_attributes read_verilog     -info " Read one or more verilog files"     -permanent     -define_args {
 #@       {file_names "Files to read" file_names list required}
 #@    {-netlist "Use structural Verilog netlist reader" "" boolean optional}
 #@    {-rtl "Use RTL Verilog compiler (Presto or HDLC)" "" boolean optional}
@@ -2170,17 +2154,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ proc read_sverilog { args } {
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@   set cmd [format {read_file -format sverilog %s %s [list %s]} \
-#@                      [array names ra -rtl] \
-#@                      [array names ra -netlist] \
-#@                      $ra(file_names)]
+#@   set cmd [format {read_file -format sverilog %s %s [list %s]}                      [array names ra -rtl]                      [array names ra -netlist]                      $ra(file_names)]
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes read_sverilog \
-#@     -info " Read one or more systemverilog files" \
-#@     -permanent \
-#@     -define_args {
+#@ define_proc_attributes read_sverilog     -info " Read one or more systemverilog files"     -permanent     -define_args {
 #@       {file_names "Files to read" file_names list required}
 #@    {-netlist "Use structural Verilog netlist reader" "" boolean optional}
 #@    {-rtl "Use RTL Systemverilog compiler (Presto or HDLC)" "" boolean optional}
@@ -2204,16 +2182,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ proc read_vhdl { args } {
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@   set cmd [format {read_file -format vhdl %s [list %s]} \
-#@ 	       [array names ra -netlist] \
-#@ 	       $ra(file_names)]
+#@   set cmd [format {read_file -format vhdl %s [list %s]} 	       [array names ra -netlist] 	       $ra(file_names)]
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes read_vhdl \
-#@     -info " Read one or more vhdl files" \
-#@     -permanent \
-#@     -define_args {
+#@ define_proc_attributes read_vhdl     -info " Read one or more vhdl files"     -permanent     -define_args {
 #@ 	{file_names "Files to read" file_names list required}
 #@ 	{-netlist "Use structural VHDL netlist reader" "" boolean optional}
 #@ }
@@ -2242,10 +2215,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes read_db \
-#@     -info " Read one or more db files" \
-#@     -permanent \
-#@    -define_args {
+#@ define_proc_attributes read_db     -info " Read one or more db files"     -permanent    -define_args {
 #@       {file_names "Files to read" file_names list required}
 #@       {-netlist_only "Do not read any attributes from db (ignored)" "" boolean {hidden optional}}
 #@       {-library "File is a library DB (ignored)" "" boolean {hidden optional}}
@@ -2273,10 +2243,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes read_edif \
-#@     -info " Read one or more edif files" \
-#@     -permanent \
-#@     -define_args {
+#@ define_proc_attributes read_edif     -info " Read one or more edif files"     -permanent     -define_args {
 #@       {file_names "Files to read" file_names list required}
 #@       {-complete_language "Use ptxr to read the file (ignored)" "" boolean {hidden optional}}
 #@ }
@@ -2313,10 +2280,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [uplevel \#0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes read_ddc \
-#@     -info "Read one or more ddc files" \
-#@     -permanent \
-#@     -define_args {
+#@ define_proc_attributes read_ddc     -info "Read one or more ddc files"     -permanent     -define_args {
 #@       {file_names "Files to read" file_names list required}
 #@       {-scenarios "list of scenarios to be read from ddc file"
 #@ 	  scenario_list list optional}
@@ -2392,64 +2356,34 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ proc set_cell_restriction { args } {
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@     set cmd [format {set_attribute %s -type integer restrictions %s } \
-#@     	$ra(cell) \
-#@     	$ra(value)]
+#@     set cmd [format {set_attribute %s -type integer restrictions %s }     	$ra(cell)     	$ra(value)]
 #@     return [uplevel #0 $cmd]
 #@ 
 #@ }
-#@ define_proc_attributes set_cell_restriction -hidden \
-#@   -define_args { \
-#@            {cell "cell_name" cell string required} \
-#@ 	   {value   "value" value string required} \
-#@    }
+#@ define_proc_attributes set_cell_restriction -hidden   -define_args {            {cell "cell_name" cell string required} 	   {value   "value" value string required}    }
 #@ 
 #@ 
 #@ proc set_cell_soft_keepout {args} {
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@     set cmd [format {set_keepout_margin -type soft -outer {%d %d %d %d} [list %s] } \
-#@         $ra(llx) \
-#@         $ra(lly) \
-#@         $ra(urx) \
-#@         $ra(ury) \
-#@     	$ra(objects)]
+#@     set cmd [format {set_keepout_margin -type soft -outer {%d %d %d %d} [list %s] }         $ra(llx)         $ra(lly)         $ra(urx)         $ra(ury)     	$ra(objects)]
 #@     return [uplevel #0 $cmd]
 #@ 
 #@ 
 #@ }
 #@ 
-#@ define_proc_attributes set_cell_soft_keepout -hidden \
-#@  -define_args { \
-#@          {llx "llx" llx float required} \
-#@          {lly "lly" lly float required} \
-#@          {urx "urx" urx float required} \
-#@          {ury "ury" ury float required} \
-#@          {objects "objects" objects list  required} \
-#@  }
+#@ define_proc_attributes set_cell_soft_keepout -hidden  -define_args {          {llx "llx" llx float required}          {lly "lly" lly float required}          {urx "urx" urx float required}          {ury "ury" ury float required}          {objects "objects" objects list  required}  }
 #@ 
 #@ proc set_cell_hard_keepout {args} {
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@     set cmd [format {set_keepout_margin -type soft -outer {%d %d %d %d} [list %s] } \
-#@         $ra(llx) \
-#@         $ra(lly) \
-#@         $ra(urx) \
-#@         $ra(ury) \
-#@     	$ra(objects)]
+#@     set cmd [format {set_keepout_margin -type soft -outer {%d %d %d %d} [list %s] }         $ra(llx)         $ra(lly)         $ra(urx)         $ra(ury)     	$ra(objects)]
 #@     return [uplevel #0 $cmd]
 #@ 
 #@ 
 #@ }
 #@ 
-#@ define_proc_attributes set_cell_hard_keepout -hidden \
-#@  -define_args { \
-#@          {llx "llx" llx float required} \
-#@          {lly "lly" lly float required} \
-#@          {urx "urx" urx float required} \
-#@          {ury "ury" ury float required} \
-#@          {objects "objects" objects list  required} \
-#@  }
+#@ define_proc_attributes set_cell_hard_keepout -hidden  -define_args {          {llx "llx" llx float required}          {lly "lly" lly float required}          {urx "urx" urx float required}          {ury "ury" ury float required}          {objects "objects" objects list  required}  }
 #@ 
 #@ set mw_use_pdb_lib_format false
 #@ 
@@ -2469,23 +2403,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@   set cmd [format {save_mw_cel -as %s %s %s %s %s} \
-#@                      $ra(-output)\
-#@                      [array names ra -overwrite] \
-#@                      [array names ra -create] \
-#@                      [array names ra -all] \
-#@                      [array names ra -dps]]
+#@   set cmd [format {save_mw_cel -as %s %s %s %s %s}                      $ra(-output)                     [array names ra -overwrite]                      [array names ra -create]                      [array names ra -all]                      [array names ra -dps]]
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes write_milkyway -hidden \
-#@     -info " Saves the design as milkyway CEL" \
-#@     -define_args \
-#@       {{-output fileName "Name" string {optional}} \
-#@       {-overwrite "Overwrite the current version" "" boolean {optional}} \
-#@       {-create "Create from scratch" "" boolean {hidden optional}} \
-#@       {-all "Save all modified cells" "" boolean {hidden optional}} \
-#@       {-dps "Save internal DPS design" "" boolean {hidden optional}}}
+#@ define_proc_attributes write_milkyway -hidden     -info " Saves the design as milkyway CEL"     -define_args       {{-output fileName "Name" string {optional}}       {-overwrite "Overwrite the current version" "" boolean {optional}}       {-create "Create from scratch" "" boolean {hidden optional}}       {-all "Save all modified cells" "" boolean {hidden optional}}       {-dps "Save internal DPS design" "" boolean {hidden optional}}}
 #@ 
 #@ ##############################################################################
 #@ #
@@ -2502,8 +2424,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@   set cmd [format {open_mw_cel %s} \
-#@                      $ra() ]
+#@   set cmd [format {open_mw_cel %s}                      $ra() ]
 #@ 
 #@   if {[info exists ra(-library)]} {
 #@     set cmd [concat [concat $cmd " -library " ] " $ra(-library) "]
@@ -2547,16 +2468,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes read_milkyway -hidden \
-#@     -info " Read milkyway CEL from disk" \
-#@     -define_args \
-#@       {{-library "library name" "lib_name" string {optional}} \
-#@       {-read_only "open design in read only mode" "" boolean {optional}} \
-#@       {-version "version number of the CEL" "number" string {optional}} \
-#@       {-vh_module_only "open design for DPS module only partition" "" boolean {hidden optional}} \
-#@       {-vh_include "list of designs to be included in the DPS partition" "include_designs" list {hidden optional}} \
-#@       {-vh_exclude "list of designs to be excluded in the DPS partition" "exclude_designs" list {hidden optional}} \
-#@       {"" fileName "CEL name" string {required}}}
+#@ define_proc_attributes read_milkyway -hidden     -info " Read milkyway CEL from disk"     -define_args       {{-library "library name" "lib_name" string {optional}}       {-read_only "open design in read only mode" "" boolean {optional}}       {-version "version number of the CEL" "number" string {optional}}       {-vh_module_only "open design for DPS module only partition" "" boolean {hidden optional}}       {-vh_include "list of designs to be included in the DPS partition" "include_designs" list {hidden optional}}       {-vh_exclude "list of designs to be excluded in the DPS partition" "exclude_designs" list {hidden optional}}       {"" fileName "CEL name" string {required}}}
 #@ 
 #@ }
 #@ 
@@ -2595,15 +2507,12 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@   if {[info exists ra(-technology)]} {
 #@ 
-#@     set cmd [format {update_mw_lib -technology %s %s} \
-#@ 		     $ra(-technology) \
-#@ 		     $ra() ]
+#@     set cmd [format {update_mw_lib -technology %s %s} 		     $ra(-technology) 		     $ra() ]
 #@   }
 #@ 
 #@   if {[info exists ra(-alf)]} {
 #@ 
-#@     set cmd [format {update_mw_lib %s} \
-#@ 		     $ra() ]
+#@     set cmd [format {update_mw_lib %s} 		     $ra() ]
 #@ 
 #@     set cmd [concat [concat $cmd " -alf " ] " $ra(-alf) "]
 #@   }
@@ -2611,12 +2520,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes set_mw_technology_file -hide_body \
-#@     -info " Set technology file for the library " \
-#@     -define_args \
-#@       {{-technology "Technology file name" "tech_file" string {optional}} \
-#@       {-alf "alf file name" "file_name" string  {optional}}\
-#@       {"" "Library name" "libName" string {required}}}
+#@ define_proc_attributes set_mw_technology_file -hide_body     -info " Set technology file for the library "     -define_args       {{-technology "Technology file name" "tech_file" string {optional}}       {-alf "alf file name" "file_name" string  {optional}}      {"" "Library name" "libName" string {required}}}
 #@ 
 #@ ##############################################################################
 #@ #
@@ -2630,16 +2534,12 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@   parse_proc_arguments -args $args ra
 #@ 
-#@   set cmd [format {update_mw_lib -rebuild %s} \
-#@                         $ra() ]
+#@   set cmd [format {update_mw_lib -rebuild %s}                         $ra() ]
 #@ 
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes rebuild_mw_lib -hide_body \
-#@     -info " Rebuild the library " \
-#@     -define_args \
-#@       {{"" "Library name" "libName" string {required}}}
+#@ define_proc_attributes rebuild_mw_lib -hide_body     -info " Rebuild the library "     -define_args       {{"" "Library name" "libName" string {required}}}
 #@ 
 #@ ##############################################################################
 #@ #
@@ -2656,25 +2556,16 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   set cmd ""
 #@ 
 #@   if {[info exists ra(-mw_reference_library)]} {
-#@     set cmd [format {set_reference_control_file -reference_libraries {%s} %s} \
-#@                         $ra(-mw_reference_library) \
-#@                         $ra() ]
+#@     set cmd [format {set_reference_control_file -reference_libraries {%s} %s}                         $ra(-mw_reference_library)                         $ra() ]
 #@   }
 #@ 
 #@   if {[info exists ra(-reference_control_file)]} {
-#@     set cmd [format {set_reference_control_file -file %s %s} \
-#@                         $ra(-reference_control_file) \
-#@                         $ra() ]
+#@     set cmd [format {set_reference_control_file -file %s %s}                         $ra(-reference_control_file)                         $ra() ]
 #@   }
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes set_mw_lib_reference -hide_body \
-#@     -info " Set reference for the library " \
-#@     -define_args \
-#@       {{-mw_reference_library "List of reference libraries" "lib_list" list {optional}} \
-#@       {-reference_control_file "Reference control file" "file_name" string {optional}} \
-#@       {"" "Library name" "libName" string {required}}}
+#@ define_proc_attributes set_mw_lib_reference -hide_body     -info " Set reference for the library "     -define_args       {{-mw_reference_library "List of reference libraries" "lib_list" list {optional}}       {-reference_control_file "Reference control file" "file_name" string {optional}}       {"" "Library name" "libName" string {required}}}
 #@ 
 #@ #
 #@ ##############################################################################
@@ -2695,11 +2586,9 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   set log_file "log_file"
 #@  
 #@   if {[info exists ra(-ignore_case)]} {
-#@     set cmd [format {org_create_mw_lib %s} \
-#@                         $ra() ]
+#@     set cmd [format {org_create_mw_lib %s}                         $ra() ]
 #@   } else {
-#@     set cmd [format {org_create_mw_lib -case_sensitive %s} \
-#@                         $ra() ]
+#@     set cmd [format {org_create_mw_lib -case_sensitive %s}                         $ra() ]
 #@   }
 #@ 
 #@   if {[info exists ra(-technology)]} {
@@ -2735,26 +2624,13 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@   if {[info exists ra(-open)]} {
 #@     uplevel #0 $cmd
-#@     set cmd [format {open_mw_lib %s} \
-#@                         $ra() ]
+#@     set cmd [format {open_mw_lib %s}                         $ra() ]
 #@   }
 #@ 
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes create_mw_lib -hide_body \
-#@     -info " Create a milkyway library " \
-#@     -define_args \
-#@       {{-technology "Technology file name" "file_name" string {optional}} \
-#@           {-ignore_tf_error "Ignore the error in technology file" "" boolean {hidden optional}} \
-#@       {-hier_separator "Hierarchical separator, default is backslash / " "separator" string {hidden optional}} \
-#@       {-bus_naming_style "Bus naming style" "bus_naming_style" string {optional}} \
-#@       {-ignore_case "Make case insensitive" "" boolean {hidden optional}} \
-#@       {-case_sensitive "Make case sensitive" "" boolean {hidden optional}} \
-#@       {-mw_reference_library "List of reference libraries" "lib_list" list {optional}} \
-#@       {-reference_control_file "Reference control file" "file_name" string {optional}} \
-#@       {-open "Open the library after creation" "" boolean {optional}} \
-#@       {"" "Library name to create" "libName" string {required}}}
+#@ define_proc_attributes create_mw_lib -hide_body     -info " Create a milkyway library "     -define_args       {{-technology "Technology file name" "file_name" string {optional}}           {-ignore_tf_error "Ignore the error in technology file" "" boolean {hidden optional}}       {-hier_separator "Hierarchical separator, default is backslash / " "separator" string {hidden optional}}       {-bus_naming_style "Bus naming style" "bus_naming_style" string {optional}}       {-ignore_case "Make case insensitive" "" boolean {hidden optional}}       {-case_sensitive "Make case sensitive" "" boolean {hidden optional}}       {-mw_reference_library "List of reference libraries" "lib_list" list {optional}}       {-reference_control_file "Reference control file" "file_name" string {optional}}       {-open "Open the library after creation" "" boolean {optional}}       {"" "Library name to create" "libName" string {required}}}
 #@ 
 #@ #
 #@ ##############################################################################
@@ -2782,8 +2658,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@   if {[info exists ra(-unit_range)]} {
 #@     if {[info exists ra()]} {
-#@       set cmd [format {org_report_mw_lib -unit_range %s} \
-#@                         $ra() ]
+#@       set cmd [format {org_report_mw_lib -unit_range %s}                         $ra() ]
 #@     } else {
 #@       echo "Error : Library name must be specified when using this option"
 #@       return 0;
@@ -2793,12 +2668,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@ }
 #@ 
-#@ define_proc_attributes report_mw_lib -hide_body \
-#@     -info " Report information about the library " \
-#@     -define_args \
-#@       {{-unit_range "Report unit range of library" "" boolean {optional}} \
-#@       {-mw_reference_library "Report list of reference libraries" "" boolean {optional}} \
-#@       {"" "Library to be reported" "libName" string {optional}}}
+#@ define_proc_attributes report_mw_lib -hide_body     -info " Report information about the library "     -define_args       {{-unit_range "Report unit range of library" "" boolean {optional}}       {-mw_reference_library "Report list of reference libraries" "" boolean {optional}}       {"" "Library to be reported" "libName" string {optional}}}
 #@ 
 #@ ##############################################################################
 #@ #
@@ -2854,17 +2724,9 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ }
 #@ 
 #@ if { [string match -nocase {*icc_shell*} $synopsys_program_name] } {
-#@   define_proc_attributes close_mw_lib -hide_body \
-#@       -info " Closes the milkyway library " \
-#@       -define_args \
-#@         {{-save "Save open cels" "" boolean {optional}} \
-#@         {"" "libraries to be closed" "lib list" list {hidden optional}}}
+#@   define_proc_attributes close_mw_lib -hide_body       -info " Closes the milkyway library "       -define_args         {{-save "Save open cels" "" boolean {optional}}         {"" "libraries to be closed" "lib list" list {hidden optional}}}
 #@ } else {
-#@   define_proc_attributes close_mw_lib -hide_body \
-#@       -info " Closes the milkyway library " \
-#@       -define_args \
-#@         {{-no_save "Don't save open cels" "" boolean {hidden optional}} \
-#@         {"" "libraries to be closed" "lib list" list {hidden optional}}}
+#@   define_proc_attributes close_mw_lib -hide_body       -info " Closes the milkyway library "       -define_args         {{-no_save "Don't save open cels" "" boolean {hidden optional}}         {"" "libraries to be closed" "lib list" list {hidden optional}}}
 #@ }
 #@ ##############################################################################
 #@ #
@@ -2899,9 +2761,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@        echo "Error: Cannot specify '-reference_control_file' with '-stream_layer_map_file'.(CMD-001)"
 #@        return 0
 #@      } else {
-#@        set cmd [format {report_mw_lib_ref_ctrl_file -output %s %s} \
-#@                            $ra(-output) \
-#@                            $ra() ]
+#@        set cmd [format {report_mw_lib_ref_ctrl_file -output %s %s}                            $ra(-output)                            $ra() ]
 #@        return [uplevel #0 $cmd]
 #@      }
 #@   }
@@ -2917,9 +2777,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@        echo "Error: Cannot specify '-technology' with '-stream_layer_map_file'.(CMD-001)"
 #@        return 0
 #@      } else {
-#@        set cmd [format {org_report_mw_lib -output %s %s} \
-#@                            $ra(-output) \
-#@                            $ra() ]
+#@        set cmd [format {org_report_mw_lib -output %s %s}                            $ra(-output)                            $ra() ]
 #@        return [uplevel #0 $cmd]
 #@      }
 #@   }
@@ -2929,32 +2787,19 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@        echo "Error: Cannot specify '-vt_cell_placement_properties' with '-stream_layer_map_file'.(CMD-001)"
 #@        return 0
 #@      } else {
-#@        set cmd [format {org_report_mw_lib -vt_cell_placement_properties  -output %s %s} \
-#@        $ra(-output) \
-#@        $ra() ]
+#@        set cmd [format {org_report_mw_lib -vt_cell_placement_properties  -output %s %s}        $ra(-output)        $ra() ]
 #@        return [uplevel #0 $cmd]
 #@      }
 #@   }
 #@ 
 #@   if {[info exists ra(-stream_layer_map_file)]} {
-#@        set cmd [format {org_report_mw_lib -stream_layer_map_file %s -output %s %s} \
-#@ 			$ra(-stream_layer_map_file) \
-#@                         $ra(-output) \
-#@                         $ra() ]
+#@        set cmd [format {org_report_mw_lib -stream_layer_map_file %s -output %s %s} 			$ra(-stream_layer_map_file)                         $ra(-output)                         $ra() ]
 #@        return [uplevel #0 $cmd]
 #@   }
 #@   
 #@ }
 #@ 
-#@ define_proc_attributes write_mw_lib_files -hide_body \
-#@     -info " Write technology or reference control file " \
-#@     -define_args \
-#@       {{-technology "Dump technology file" "" boolean {optional}} \
-#@       {-vt_cell_placement_properties "Dump multi-VT cells' implant layer information of library" "" boolean {optional hidden}} \
-#@       {-reference_control_file "Dump reference control file" "" boolean {optional}} \
-#@       {-stream_layer_map_file "Dump layer map file during stream in/out" "" string {optional}} \
-#@       {-output "Output file" "file_name" string {required}} \
-#@       {"" "Library to be reported" "libName" string {required}}}
+#@ define_proc_attributes write_mw_lib_files -hide_body     -info " Write technology or reference control file "     -define_args       {{-technology "Dump technology file" "" boolean {optional}}       {-vt_cell_placement_properties "Dump multi-VT cells' implant layer information of library" "" boolean {optional hidden}}       {-reference_control_file "Dump reference control file" "" boolean {optional}}       {-stream_layer_map_file "Dump layer map file during stream in/out" "" string {optional}}       {-output "Output file" "file_name" string {required}}       {"" "Library to be reported" "libName" string {required}}}
 #@ }
 #@ ##############################################################################
 #@ #
@@ -3024,16 +2869,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   }
 #@ }
 #@ 
-#@ define_proc_attributes close_mw_cel -hide_body \
-#@     -info " Closes the design " \
-#@     -define_args \
-#@       {{-save "Save the design" "" boolean {optional}} \
-#@       {-discard "Discard any changes" "" boolean {optional hidden}} \
-#@       {-verbose "Print out debugging messages" "" boolean {optional hidden}} \
-#@       {-hierarchy "Close top design and its child designs" "" boolean {optional}} \
-#@       {-all_views "Close all views of the design" "" boolean {optional}} \
-#@       {-all_versions "Close all versions of the design" "" boolean {optional}} \
-#@       {"" "designs to be closed" "design list" list {optional}}}
+#@ define_proc_attributes close_mw_cel -hide_body     -info " Closes the design "     -define_args       {{-save "Save the design" "" boolean {optional}}       {-discard "Discard any changes" "" boolean {optional hidden}}       {-verbose "Print out debugging messages" "" boolean {optional hidden}}       {-hierarchy "Close top design and its child designs" "" boolean {optional}}       {-all_views "Close all views of the design" "" boolean {optional}}       {-all_versions "Close all versions of the design" "" boolean {optional}}       {"" "designs to be closed" "design list" list {optional}}}
 #@ 
 #@ ##############################################################################
 #@ #
@@ -3136,8 +2972,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return 1
 #@ }
 #@ 
-#@ define_proc_attributes execute_command_and_create_cel_from_scratch -hidden \
-#@     -hide_body
+#@ define_proc_attributes execute_command_and_create_cel_from_scratch -hidden     -hide_body
 #@ 
 #@ ##############################################################################
 #@ #  PROCEDURE:   read_def
@@ -3154,20 +2989,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [eval execute_command_and_create_cel_from_scratch "org_read_def" $args]
 #@ }
 #@ 
-#@ define_proc_attributes dc_read_def -hide_body \
-#@     -info " Read a def file " \
-#@     -define_args \
-#@       {{-design "name of design for which clusters are to be read" "" string {optional}} \
-#@        {-quiet "do not print out any warnings" "" boolean {optional}} \
-#@        {-verbose "print out more warnings" "" boolean {optional}} \
-#@        {-allow_physical_cells "allow physical cells" "" boolean {optional}} \
-#@        {-allow_physical_ports "allow physical ports" "" boolean {optional}} \
-#@        {-allow_physical_nets "allow physical nets" "" boolean {optional}} \
-#@        {-skip_signal_nets "skip signal nets" "" boolean {optional}} \
-#@        {-incremental "incremental" "" boolean {optional}} \
-#@        {-enforce_scaling "enforce_scaling" "" boolean {optional}} \
-#@        {-move_bounds "move bounds" "" boolean {optional}} \
-#@        {"" "input def file names" "input_def_file_name" string {required}}}
+#@ define_proc_attributes dc_read_def -hide_body     -info " Read a def file "     -define_args       {{-design "name of design for which clusters are to be read" "" string {optional}}        {-quiet "do not print out any warnings" "" boolean {optional}}        {-verbose "print out more warnings" "" boolean {optional}}        {-allow_physical_cells "allow physical cells" "" boolean {optional}}        {-allow_physical_ports "allow physical ports" "" boolean {optional}}        {-allow_physical_nets "allow physical nets" "" boolean {optional}}        {-skip_signal_nets "skip signal nets" "" boolean {optional}}        {-incremental "incremental" "" boolean {optional}}        {-enforce_scaling "enforce_scaling" "" boolean {optional}}        {-move_bounds "move bounds" "" boolean {optional}}        {"" "input def file names" "input_def_file_name" string {required}}}
 #@ 
 #@ 
 #@ ##############################################################################
@@ -3181,10 +3003,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [eval execute_command_and_create_cel_from_scratch "org_group" $args]
 #@ }
 #@ 
-#@ define_proc_attributes group -hide_body \
-#@   -info " create new hierarchy" \
-#@   -define_args \
-#@    {{-except "cells not to be included in the group" "exclude_list" list {optional}}
+#@ define_proc_attributes group -hide_body   -info " create new hierarchy"   -define_args    {{-except "cells not to be included in the group" "exclude_list" list {optional}}
 #@     {-design_name "name of design created for new hierarchy" "design_name" string {optional}}
 #@     {-cell_name "name of cell created for new hierarchy" "cell_name" string {optional}}
 #@     {-logic "group any combinational elements" "" boolean {optional}}
@@ -3207,10 +3026,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [eval execute_command_and_create_cel_from_scratch "org_copy_design" $args]
 #@ }
 #@ 
-#@ define_proc_attributes copy_design -hide_body \
-#@   -info " copy_design" \
-#@   -define_args \
-#@    {{"design" "List of designs to be copied" "design_list" list {required}}
+#@ define_proc_attributes copy_design -hide_body   -info " copy_design"   -define_args    {{"design" "List of designs to be copied" "design_list" list {required}}
 #@     {"name" "Name of new design or target file" "target_name" string {required}}}
 #@ 
 #@ ##############################################################################
@@ -3224,10 +3040,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [eval execute_command_and_create_cel_from_scratch "org_create_design" $args]
 #@ }
 #@ 
-#@ define_proc_attributes create_design -hide_body \
-#@   -info " Creates a design in dc_shell memory" \
-#@   -define_args \
-#@    {{"design" "name of the design to create" "<design_name>" string {required}}
+#@ define_proc_attributes create_design -hide_body   -info " Creates a design in dc_shell memory"   -define_args    {{"design" "name of the design to create" "<design_name>" string {required}}
 #@     {"name" "name of file for design; optional" "<file_name>" string {optional}}}
 #@ 
 #@ ##############################################################################
@@ -3252,10 +3065,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [eval execute_command_and_create_cel_from_scratch "org_rename_design" $args]
 #@ }
 #@ 
-#@ define_proc_attributes rename_design -hide_body \
-#@   -info " rename_design" \
-#@   -define_args \
-#@    {{"design" "List of designs to be renamed" "design_list" list {required}}
+#@ define_proc_attributes rename_design -hide_body   -info " rename_design"   -define_args    {{"design" "List of designs to be renamed" "design_list" list {required}}
 #@     {"name" "Name of new design or target file" "target_name" string {required}}}
 #@ 
 #@ }
@@ -3375,11 +3185,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ ## $RCSfile: write_timing_context.tcl,v $ $Revision: 1.4 $
 #@ #
 #@ ## This is the version 2.0 for write_timing_context script;
-#@ ## Any new change should be added to this script or the
+#@ ## Any new change should be added to this script or the 
 #@ ## helper script write_timing_context_translation_procs_v2_0.tcl
 #@ ## To invoke the version 2.0 from dcnxt_shell
-#@ ##   package forget snpsWriteTimingContext
-#@ ##   package require -exact snpsWriteTimingContext 2.0
+#@ ##   package forget snpsWriteTimingContext 
+#@ ##   package require -exact snpsWriteTimingContext 2.0 
 #@ # TclPro::Compiler::Include
 #@ 
 #@ if {[catch {package require tbcload 1.6} err] == 1} {
@@ -3421,7 +3231,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 0
 #@ 
 #@ x
-#@ 19576
+#@ 19284
 #@ 7n%sFja0;@u@#D+?AhAG!X&(FHRM`FA2::+S4AsFja0;@u@#D+moe^FpWg:@LJW(4/&LBDs2
 #@ K(Ff.fRA)3Q<@W&k)<*s(B+<#V<+D-<cE(opcB*wjiC(aEiCwMBRA'(L;@26sJDZSSF+<#V<
 #@ +LdV<+0;m|;)LtA+A:be0LHRc1_<@3@MjV?39@ke0F'@D2IvV<+LdV<+91VE+vdE/Du;!iC&
@@ -3530,238 +3340,233 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ a1::+Ai87,XEn9,XEn9,XEn9,XEn9,XEn9,YgX8ARF=SAr#0bEt>mlBD&V9,XEn9,XEn9,XE
 #@ n9,XEn9,XEn9,XEn9,XEn9,XEn9,XEn9,#H8:+)<..D!:p;@oPYKA0JbD+`2&M9om<@wLdV<
 #@ +ww'j7v-0bE'Y#D+unsdD!CIID6LJ&G*6ylBqYtfA'A#D+,HX/D.0?SA?_9fD6k2DFv%)oA6
-#@ dV<+R*r<+a#K(F.8oTA+c:-Bv-0bEkj|7A9mtD+fLA@+xSmX?>xgb1;LGN/YXk8w6dV<+6,a
-#@ aEegpgC#WSkBy4#4B>)6-E'w/gC=xVE+<rCEF*'f^FAt/<I:,veD)QYKAqf<JD&osdD!CIID
-#@ A<SF+daI(Fxo9i:!miJD+S5D+Y2F/Du@oC+j:2`FU`xQHn@w7Ia#v&=jEx7I`f%c;<hn|;rZ
-#@ !iCacV/DmgY8AX`xQH4*a8IoardC=CDE+X?IIDwFV5BLbt6BHsRF+)<gAGA9SF+cFx7I1-pR
-#@ A)x*JDsP5cE#HK(FY`xQHn?YA+fU74A,3=JDL`xQHJFfRA;Jx:I'g1)E+R.lB0dmlBG-SF+>
-#@ qmU?V`iaEAjf<I@;/QB0vgq@Zh*:@kiJ(FX`xQHM1sp@rZmIDY`xQHqLK;@0dhTAimK;@g!l
-#@ SAL?SF+)01`F*FV5BXwf*F;-SQB,|o(F?Bh'>BMMEFG8d'46dV<+R*r<+%6|,EwAoC+gLoRA
-#@ tJTfDELME+DPA@+Y97hC`XPaD!CIIDy02+4R*r<+Te&d0?x(00&E1m-mliJD4u>0A8APQB+`
-#@ |N@kcy^F2D3'DCxVE+w3F/Ds/B(F%3DTA>OA@+Y2F/Ds/B(F9mtD+XdpZ3KM9:+Mn%sFja0;
-#@ @u@#D+rTN+EtJTfDELME+pGo(F0ao-<%s<JDXC#FD1SV*FF<SF+=*v/D3Gm:IMnVV6AF#%?Q
-#@ vV<+9bN<@ktWU@)2RECfR9Z?w3F/Ds/B(FruwlBGR,!Fh=ap@!:_LChfACFj7=Y?`=Bq@0uJ
-#@ TAmR1kBogpgC`gwhCi.aY?rcmlBdk`p@hp^LC9MfCFm&sJD.?ffD-8>D+#k|Z?-#cDF/A2`F
-#@ e'7ID7;-gD=7,!FjOBRA7I-<@'<XeDw*T,E26sJD8uJTAmC,8A^.jY?41VE+#k|Z?`t`:@kj
-#@ tSAD/6cE0uJTAm:K;@vk>r@jh87A>S;EF,ZbDF*/uDF1oG)F9MfCFrGYxG`6*+En55DFdUfR
-#@ A9MfCFrGYxGsH-<@6f5DF3+uD+#k|Z?sj|Z?n#BbE2u|fDEO,!FtTRdDup,<@*FV5Bl#sJDv
-#@ 'nlB=FME+#k|Z?,1gZ?<;2*FgKxhC8O,!F&?fwG(=?<@+qeZE/5M&G`gwhCi.aY?rcmlBdk`
-#@ p@hp^LC9MfCFa-7hCk^BRA5*v/D%<XeDw*T,E26sJD8uJTA#^J(F#_T;@26sJD*/uDF1oG)F
-#@ CF.>Hf44Y?vwviCrimlB<7fZE/5M&GiZ8bEk(ap@w1cSA'<XeD3Pl^F/jmIDi.oRA)x*JD#k
-#@ 84wR<n9,cw>SA&-B3@)QYKAv1?SA<y-fD0TvhC(?elBeI|7ACBDE+lN!iC8ebDF8APQB-.N0
-#@ A4iW<@Fok<+8aVE+-H>0A(0U?wLdV<+*XxlBagbSAv^,8Ac-!eD!CIIDtuI9>4/;EF#k84wL
-#@ dV<+IIr:6,IY/03lt>+?a1kB64G<F17ME+^d^LC9mtD+#k|Z?tiE+E2fbDFlf`aE+ntD+6vV
-#@ <+/&I;@+dmIDvWSkBXe`p@vkT;@2(ME+B1lDFf=+Y?mxPSA7XME+7G#%G^:K;@vk>r@j_W:@
-#@ 7*Y<+#k|Z?rNZ<@2RRdD,f:EFw@VTABrY<+#k|Z?3DccE,&MEF:T)!Ff++:@/%1Z?n-6<@_%
-#@ +Y?e+nX?2u(*F:tJTAq'mdDu7X:@1dRdD2*v/D0KBCF3+uD+9MfCF`*7hCscreDncmlB?QY<
-#@ +#k|Z?mZ!iCoo`aEs0^Z?/;2*F8%DE+9MfCF`*7hCo-DTA:<ylB'<XeDCT)!Fh=ap@!:_LCh
-#@ fACF^:K;@vk>r@NT)!Fh=ap@!:_LChfACFj7=Y?mxPSA7XME+9MfCFjoreDaF#4Bw3=JD%f:
-#@ EF7A#D+9MfCFkoW/Dv(cSAk&TbErimlB;+ME+9MfCFl#sJDvmSCFrd'Z?pl&(FHT)!Fh=ap@
-#@ -@^Z?26XeD@b!wH:tJTAuHraE!%gq@kWNaEhm5SA:tJTAi.oRA)x*JDuqCEF*'f^F9+ME+9M
-#@ fCFhlJ(FjL'Z?@72E+9MfCFj&oCFe*cr@l#sJD#E>_F(dmlB?QY<+#k|Z?jm|Z?'aMTA6<Xe
-#@ Dl-!eDqs(5B43BCF3+uD+9MfCFm&sJDv.DTA'.lSA:tJTAs3*eD--0CF'1cOB:tJTAo^CkB1
-#@ Kt_F1Es+Em0m*E,=^Z?2u(*F:tJTArw@hC&wWTACT)!FnsYjB&=cSA,ZbDF%<XeDCT)!FnsY
-#@ jB1?0bEjoreD^+'7A#Nt!H*/uDF1oG)F:tJTA'!o(F(!BCF3+uD+9MfCFvW|fDvdmlBl+ap@
-#@ ;2ccE=KY<+#k|Z?rTN+E/F^Z?tE%6B9QY<+#k|Z?l4O:@m-%lBqsUgCkg,<@MrY<+#k|Z?#@
-#@ MkBVq8q@:tJTA&dreD_emX?/G#D+9MfCFnT_5Br/(=H3:)E+9MfCFjT*+Eu/4iCNT)!FrBq-
-#@ Df7+:@%iSC+9MfCFrGYxGs>fCFkWmID0k>D+9MfCF%TsiCudtjB**T,E26sJDHT)!FsK7IDv
-#@ pNaE9KnlBsHNaE3A#D+9MfCF*/uDF15.>Hh-DTA//;EF7RME+9MfCF(o5cEuNACF)kKV@9HK
-#@ (F:tJTA*'BfD):VgCtZACF3+uD+9MfCFj*Z4B-!WTApdkSA(a<JD<T)!FvpNaEu8o(Fv_KZ?
-#@ :p2TA:tJTA!vlr@`=BRAp!lSADcY<+#k|Z?rwIIDj*Z4B-!WTA6D!wH76Y<+#k|Z?3'8UAu/
-#@ 4iCNT)!F#wj'F6g)s@8pDTA:tJTA5,7BGu-cOBj7=Y?nimlBDb!wH:tJTAw:VTAt++:@@o90
-#@ D:T)!Fw-0CF#@^Z?t0H8A:tJTA.<TKD&BjJDnEVTA9T)!F%6K^F.KTfDGWY<+#k|Z?.dxlB`
-#@ vO:@26sJDv0ylB6c5DFNT)!F'H,@Gl7+Y?mC97Apr<JDilreDm|i'F5k#D+9MfCF)`TbElcr
-#@ eD^gp-D%)#D+9MfCF)`TbElcreD^gp-Dq-7hC:tJTA+p3mBoaUgC`S!Y?!qbSA'<XeDs`AbE
-#@ AI2E+:uMTA#HK(F'j&fDvVbD+Q1::+O*S9,_VSf:kcegA;%lD+82--E-A#/0<)2&GBZ(p/Ai
-#@ 0fDGhV*F:oW/DGJfCF.BG%G9(m^F;NX/D4Yu4@-a%lBncmlBv:7ID3HK(FEqCEF^R>SA_^Ck
-#@ B@|:60<O1,1csK_;>WT,EQ?+w-Lt0|F9o5cErqXJ09p!w-`pPQBcqXJ0:XB77/@be0>%oh/F
-#@ GvA5hy*QAk'cOBl+V`Fr'7`E2W77AyA`:@0n6>-hy*QAk'cOBl+V`FpwxyFs|/bEASm8-a&M
-#@ 8@yLZyF|bO8w/&I;@+dmIDvWSkBXe`p@vkT;@2(ME+k*T7A(o5cE2f:EF'Y#D+k*T7A-GhAG
-#@ !si'F&@VTA'T67AsJY)F2f:EF'Y#D+4bt)Fi40;@#Li'F9?FiC(4MTA8eZN@g%vY?`=Bq@/%
-#@ DE+-#sJDvmSCFnT_5Bfm6ID;cY<+&BjJDhd|Z?@r|,E*x7ID;cY<+hIa:@qaUgCoRfq@s>fC
-#@ F74paEl?VTAnT_5Bh*m*EBXVE+'9DTAf=+Y?3'rTAq3*eDrN<JD74paEl?VTA-GhAG!si'F&
-#@ @VTAtJTfDGWY<+hIa:@u0m*E5H0bE*W4mB,8>D+'9DTAf=+Y?DxVE+'9DTAf=+Y?@r|,E*x7
-#@ ID;cY<+hIa:@#Li'F9?FiC/'BfDHcY<+hIa:@#Li'F9?FiC(4MTA:v<0A%0saEyy*Y?49BCF
-#@ vZbcE#0elB26sJD1JAkBmwRdDaCBq@I`Y<+mC97AvmMoA0,R;@#!o(F(!BCFrd'Z?mZ!iC0,
-#@ R;@m^bSAs:jY?vqbnAv_KZ?mZ!iC0,R;@&'BfD%_KZ??r5DF-?Y<+jF9Z?(LVTA2<XeDb(fR
-#@ A:KY<+njkSAsP5cE/%VE+8u_TA%Map@iOjY?6>;EFdUfRAFBH?E=Jd#H`*7hCf@T;@!_|7AH
-#@ NA`F'x6x?/B=iC%<XeDABH?E=Jd#HjT*+E-GhAG!si'F/Fur@;BH?E=Jd#Hs>fCF(o5cEI`Y
-#@ <+5B0bE/'BfD+L7ID;cY<+5B0bE/'BfD0wj'F&@VTAHNA`F'x6x?3'rTAq3*eDrN<JDHNA`F
-#@ 'x6x?3'rTA3,7BGu-cOBHNA`F'x6x?DxVE+8u_TA2mm*E1wj'F&@VTAHNA`F'x6x?(LVTA2<
-#@ XeDABH?E=Jd#HvKfCF(6nlBl+ap@;2ccE=KY<+5B0bE8oU`F=G.#Hs>fCF6P3<@'^J^F89Y<
-#@ +#k|Z?ridlBbn*:@;<ylB('WTAHT)!FiF'7AuE)5B(?ffDET)!FiF'7AsjkjB-oU`F=G.#Hs
-#@ >fCF:tJTA!LiFE-@Q<@+ZbDF:tJTA'!o(F(!BCF3+uD+9MfCFvW|fDvdmlBl+ap@;2ccE=KY
-#@ <+#k|Z?wXhTAsNIQBuNVTAGT)!Fu|m*E(BnlBh<RdD+ZbcE&KaiC%<XeDCT)!Fu|m*E,=^Z?
-#@ 3DccE,&MEF:`Y<+#k|Z?(LVTA2<XeDCT)!FvpNaEwpmID26sJDl#sJD9?=iC:tJTAv.DTA3Z
-#@ bDFrd'Z?pNR.D2;)*F:tJTA!vlr@1M#D+9MfCFu&v/D49BCFXv|RAuo*mBC|Y<+v84Y?8ik)
-#@ F3+uD+Q1::+Cij`CsT2TA'iUHB^b*Y?w3F/Ds/B(F9MfCFj*Z4B-!WTApdkSA(a<JD,uJTAv
-#@ .DTA//;EFuiNaEva%lBncmlB=@,!Fu|m*E'FMTAwD+Y?n0Hr@_qr:@9%,!Fw-0CF,EG)F,Qs
-#@ /DsP5cEvKfCF%s<JDy'T9,F@r:6(15/0FjHD20LGJ0>^gb1m==8w6dV<+*Q*+EtsY8Av^,8A
-#@ c-!eD!CIID9`Y<+#k|Z?cLK;@iYN:@(6siC%<XeDw*T,E26sJD8uJTA&dreDy.jY?&jmMCcX
-#@ KV@6>d#H9MfCFnT_5Byh&7A(uJTA&dreD_emX?/G#D+#k|Z?#@MkBn|7UAAC,!Fu|m*E,=^Z
-#@ ?l4O:@26sJD7G#%G^:K;@vk>r@j_W:@5n+!Fg4FU@.OZ8A#x6x?4<nlB)Xu<@26sJD9MfCF`
-#@ *7hCiRo;@1ZbDFpPk_F6?0bE9MfCF`*7hCo-DTA:<ylB'<XeD3uJTAogwhCi.aY?n?VTAmuA
-#@ CF'`1vH9MfCFjoreDaF#4Bw3=JDdU,W@slSCF8uJTAogwhCi.aY?rcmlBtQi'F6XcSA9MfCF
-#@ koW/Dv(cSAk&TbErimlB;+ME+#k|Z?ridlBuo/CF?F,!FiF'7AjF'7Ad_`p@w7DkB'L-<@26
-#@ sJD9MfCFj&oCF!|G)F,BnlBl+ap@w7DkB'L-<@26sJD9MfCFm&sJDv.DTA'.lSA9MfCF_OK;
-#@ @3pmID9MfCFjT*+Eu/4iC>uJTA-Kt_F#qKV@#URdD4<XeDAO,!FtTRdD2*v/DtO+Y?t!MkB6
-#@ ?0bE8uJTA*'BfD):VgCtZACF3+uD+#k|Z?t!MkB6?0bEp)0bErEV5B9MfCFc@O:@ks6hCrZm
-#@ ID9uJTA!vlr@m|NaEu8o(Fv_KZ?:p2TA9MfCF0AccE9,_`F7%,!Fw-0CF#@^Z?4VV`F2%,!F
-#@ w-0CF#@^Z?t0H8A9MfCFwE0bEhOfq@%<XeD'B>cE+-ylBTNN9w6dV<+*Q*+EtsY8Av^,8Ac-
-#@ !eD!CIID7O,!Fh=ap@!:_LChfACFj7=Y?c.XU@N.O?+kOT?39@ke0C!7)2FvV<+/&I;@+dmI
-#@ DvWSkBXe`p@vkT;@2(ME+#k|Z?'NB,Ef%+Y?!>=Y?r^oRA#NfCF*FV5Bh'T9,#7CK0<ULG1M
-#@ QE&36dV<+*Q*+EtsY8Av^,8Ac-!eD!CIID'i#j@waACF!K#gDum54Bd<`aECvO?+G`4*C%%6
-#@ SAnqa/0A:YJ0^%::+Cij`CsT2TA'iUHB^b*Y?w3F/Ds/B(F9MfCFoo<JDl-%lBtu`aE8oU`F
-#@ &NfCFm<n9,0LGJ0B*!&3o^09wLdV<+%6|,EwAoC+gLoRAkoW/DmgY8A8uJTA#4MTAe7#4Bw3
-#@ =JDdU,W@slSCFh'T9,#7CK0C6*`2I!qG16dV<+*Q*+EtsY8Av^,8Ac-!eD!CIID7O,!Fh=ap
-#@ @<>;EFo0^Z?t!MkB6?0bEp`R.D*LhgCm<n9,HBQJ0Bggb1;O^(2rLX8wLdV<+%6|,EwAoC+g
-#@ LoRAkoW/DmgY8A8uJTA0N5-EZ(fRAq*q-Dv(U;@G,r(4R*r<+rhla3HBQJ0Bggb1:FCb1nOj
-#@ 8wLdV<+%6|,EwAoC+gLoRAkoW/DmgY8A8uJTA2f:EFf=+Y?s'LZ?,pmlB#FV5Bm<n9,XLJ;@
-#@ Ru/i0>X1f0:tSM/MZr&36dV<+*Q*+EtsY8Av^,8Ac-!eD!CIID7O,!FjOBRA)6BfDv1^Z?tE
-#@ %6BTIO?+&6|K8IqE?+(-uA+3-y2C)+VE+.&ZKAB#Q)F+S5D+0<o(F,oW/DmgY8A*a';@=bl(
-#@ F>%lDF%'Q<@e(XU@t,B3@<bl(F9mtD+#E+.1@i@cD3lmID#osdDwyBq@>JklB#FV5B)mfq@8
-#@ pDTAE?)E+#E+.1Kj2DFNEfZE,EvmB(&oC+DLG<F,EG)Fs?VTA?<VE++u>cE20ylBs|7hCI+d
-#@ fDfEOU62n74wLdV<+91VE+gLoRAkoW/DmgY8A'w/gC@;2EF<e/kB'<XeD2>d#HRNRKD,!`TA
-#@ 7bSkBXe`p@vkT;@oOs#?;H8:+JS)!F.DVHB^b*Y?w3F/Ds/B(F!E</D7A2*F7bSkBXe`p@vk
-#@ T;@2(ME+&X#SAn-!eD!CIID<oc'4R*r<+3GV`FbS_K8sQ,8AKuSE+0ot)FGH2E+?1)E+`s-h
-#@ Cc,74w6dV<+>eTfDq,3SAsp,<@m=>OB^b*Y?)^xlBLExQH8pRF+<#V<+LdV<+*XxlBagbSAv
-#@ ^,8Ac-!eD!CIID><N9wLdV<+9bN<@ktWU@)2RECfR9Z?w3F/Ds/B(FQvV<+LdV<+*XxlBagb
-#@ SAvX#SAu`AbE?8Z)FQvV<+LdV<+*XxlBagbSAv^,8Aj`AbE?8Z)F;H8:+LdV<+9MfCF,oW/D
-#@ mgY8AJ_3a3G)fCFxL>nAmX|7AkoW/DmgY8A7OM9wLdV<+R<n9,sB-<@I(RKD91VE+w3F/D_%
-#@ vY?5;2`FL2::+LdV<+>!x3@6`t!HC+H)F-;;-B>)6-EkoW/DmgY8AQvV<+LdV<+91VE++R.l
-#@ Bdk`p@vkT;@2(ME+pGo(F8OM9wLdV<+:tJTA2WSkBh?mIDkoW/DmgY8AA^vIB^b*Y?w3F/Ds
-#@ /B(Fm<n9,cw>SA2D3'D54OBD2c|N@)oATA//;EFmd|7A6dV<+=3rfAtIa:@pG#j@vkT;@8Wp
-#@ T,w3F/Ds/B(F<H<:+LdV<+@NncBC5>F+lZMTAk'cOBLH&yG%+VE+&^,8Ac-!eD!CIID=/qT,
-#@ w3F/D|h@v?2n_?+d@PF+5'I;@+dmIDvWSkBh?mIDkoW/DmgY8A<1Ej@vkT;@=4nl@26nlBPP
-#@ W(4>#V<+LdV<+R<n9,cw>SA.o<iC3K4mB5+,!F0ZsiCwWrSA:%DE+k^YSA?<VE+GgC9G,XVT
-#@ At/saEw6U?wLdV<+LdV<+lNI9>pR5SAP9xQH*2BTA=;2EF?!`TANhZgD2*v/D<V@tH>c5DF5
-#@ )?_F=r4mBF&gm/bLPF+0oW/DmgY8A(>|s@26nlBPPW(4>#V<+LdV<+R<n9,cw>SA(?#j@vkT
-#@ ;@2(ME+%S#D++);-B>)6-E<APQB`+`K8HI2`F24bWF-IhgCI0D9G0LVE+85VHB^a!>wLdV<+
-#@ LdV<+7pZQHlZMTAk'cOBLH&yG%+VE+&X#SAn-!eD!CIID=/qT,w3F/D|h@v?2n_?+d@PF+:o
-#@ sdD13=JDW.O?+>#V<+LdV<+5(^aE9C.F+3aMTA*plRAv=xhCO2::+LdV<+8x?3@6`t!H9MfC
-#@ F*ueCF!Q5)Fi35SAi.oRAo3uSAb-!eD!CIIDF+fK/k'?<@5@ME+0oW/DmgY8A92::+LdV<+=
-#@ 3rfAtIa:@tk:-B>)6-E/&mRAv=xhCAe?bE?8Z)FEm<@wLdV<+LdV<+R<n9,acV/DmgY8A75:
-#@ JD.0?SA,c:-B>)6-E3WrSA*+G<F(-3SAD+dfDCb0<wLdV<+LdV<+1A`nA88J9>rLa:@*8>D+
-#@ 8?c<@=2qT,rTN+EtJTfDELME+9JTfD/r/C+BM`H0Z_xQH,#cDF)m_TAYN<:+LdV<+LdV<+R*
-#@ r<+Y2F/Ds/B(F9mtD+,wK(F+M?bE?8Z)F4Pt!H&'MLC/k2DFE?)E+ENA3@|P_K83`IIDD+df
-#@ Dv^,8A.APQBss;:+LdV<+LdV<+1=,D+/w/gC#O`aE:_eK/nUsp@B^vIB^b*Y?5;2`FI/qT,5
-#@ ;2`FM-4s4wp=>+Dn<@wLdV<+LdV<+LdV<+%6|,EwAoC+fCT7Ab+ap@vkT;@2(ME+0oW/DmgY
-#@ 8AQvV<+LdV<+LdV<+6.gaE988)46dV<+LdV<+TX93I6dV<+LdV<+O*S9,vE_bDIxS`F;IC9G
-#@ l:`K8sQ,8AKuSE+>S;EF5d(E+0<o(F!bSh/1=,D+unsdD!CIIDt,R;@0+ME+>xG<F17ME+20
-#@ 59/;MXNC/k2DF7vV<+LdV<+LdV<+Irj`CsT2TA'iUHBc=oRAl-!eD!CIID=/qT,w3F/D;5N(
-#@ 4u!V<+LdV<+LdV<+5/I;@+dmID#osdD!CIIDi`AbEI<au-9JTfDP8V=+0oW/DmgY8AQvV<+L
-#@ dV<+LdV<+5/I;@+dmID*M?bE+.:Z?w3F/D(4It-0oW/DmgY8A_^'RH5;2`FTZN9wLdV<+LdV
-#@ <+>#V<+LdV<+C`4dB)K.C>rLa:@*8>D+.ueCF!Q5)F=JTfDNHB<.)QHiB#FV5By,4s4wp=>+
-#@ Dn<@wLdV<+LdV<+Fij`CsT2TA3+G<F%s<JDe-!eD!CIID=/qT,w3F/D;5N(46dV<+LdV<+A-
-#@ O@wLdV<+>wO@wLdV<+:tJTA2WSkBh?mIDkoW/DmgY8A'w/gC@;2EF<e/kB'<XeD2>d#HRNRK
-#@ D,!`TA7bSkBh?mIDkoW/DmgY8A7OM9wLdV<+JJHwEIXME+j`@lBvw/gC@;2EF<e/kB'<XeD2
-#@ >d#HCUklB#FV5BkoW/DmgY8An<dT>2OM9wLdV<+7+:eDhqrp@'osdD!CIID2^vIBc=oRAl-!
-#@ eD!CIID?BxQH6dV<+LdV<+FOMEF?LAgA<E?wE1>fC+0oW/DmgY8A;;aaED<SF+v41!,QvV<+
-#@ LdV<+>#V<+>wO@w6dV<+R*r<+hxR#H.0?SA&97hC4%DE+)^xlB:MqcB7APQBR2(*<Z+:eDtc
-#@ /bE7yG)Fk%97A7O,D+3yR#H+S5D+.5#D+;P)*F7O,D+.5#D+)^xlB2ZB3@3u'eDtx;:+O*S9
-#@ ,<4:JD7,ylBld|;@/cir@7rtDF7wVE+B;wLD=#seDwvlr@7rtDFX6KEF*Q5DF=|:60vdE/DN
-#@ DylBwU/CF%s<JDe-!eD7u(yGF>sr@-#V<+R<n9,iD4cE7yG)F%O!iCw^T;@I.O?+3yR#H&97
-#@ hCs^KZ?)^xlB72ufA;%lD+.5#D+<GV*FfgggC(KxhCt>/kB&mSCF1C<:+O*S9,oikaD.TvhC
-#@ (ZbDF@&6cE(,t.D5&W(4/5T,E33<SA+30bEt/saE:RVE+5NTfD1D>D+.5#D+=H+iCnNX>wLd
-#@ V<+,CHr@?DylBm=>OBsH2TAt!lr@7rtDF7|DkBmX|;@<gRF+<#V<+R<n9,gHUkB<bl(F.0?S
-#@ A.0?SA&97hCs^KZ?)^xlBSZq=F/e.MA6dV<+JS)!F.DVHBsH2TAt!lr@7rtDFgKxhChB6mA'
-#@ A#D+(w=JD/Ny|3Ai0fDGhV*F'Z9fD7DZ^FP^,!F8c>0A;!D9G,XVTA!*v/Dj7=Y?,#cDF(O^
-#@ Z?-RIID,!BCFrd'Z?,CHr@G#R31S7o=F'0Y<+92::+LdV<+-l?q@;f:s+/5T,E33<SA+30bE
-#@ 5/saE:RVE+*97hCs^KZ?)^xlB!Y|mA'A#D+I#qT,m'cSAnjkSA.c:s+QvV<+LdV<+lNI9>m'
-#@ cSA32=mBGXME+*97hCs^KZ?)^xlB!Y|mAdhIv?<H<:+LdV<+@NncBC5>F+cKxhC?0t#H;ZpT
-#@ ,!*9,E!si'F&?s+Eo^CkBpP/C+3w9s+&jmMCV@PF+<#V<+LdV<+LdV<+91VE+!*9,Eo3VgC/
-#@ kYD+cKxhC)oATAg<%lB?lpT,!*9,E!si'F&?s+Eo^CkBp|*p>6dV<+LdV<+JS)!F670wE5Qe
-#@ lBy.jY?m'cSA#;tfA'A#D+(w=JDlQCkBvH>0Av+^;@8ZpT,!*9,E!si'F&?s+Eo^CkBpP/C+
-#@ *97hCs^KZ?&jmMCsB;:+LdV<+LdV<+1=,D+cKxhC/v&yG;J)*F>4,QB0vgq@_@|mAdhIv?<H
-#@ <:+LdV<+LdV<+O*S9,lWNeD<sui@Ep.F+<GV*FfgggC5/saE:RVE+5NTfD1D>D+&jmMC>4,Q
-#@ B0vgq@_@|mA'A#D+I#qT,m'cSAnjkSA.c:s+QvV<+LdV<+LdV<+1JAkB!?#j@Ep.F+AP5cE.
-#@ ZpT,<GV*FfgggCgKxhC1LAgAuWmID;8W(46dV<+LdV<+TX93I1D5)F,n<@wLdV<+LdV<+LdV
-#@ <+uTbOBHqh<+I<xhCtqpcB-osdD&FV5B>._vHmvO:@/cir@7rtDF;PKbE+I2PB0o<JDAQQwE
-#@ 5QelBy.jY?m'cSAE?)E+,KxhCn<..DqFtD+S1::+LdV<+LdV<+>N<:+LdV<+TX93I1D5)F,n
-#@ <@wLdV<+LdV<+1JAkB!?#j@Ep.F+*97hCs^KZ?)^xlB!Y|mA'A#D+,KxhCn<..DA2::+LdV<
-#@ +LdV<+-l?q@;f:s+d)S,Et%oC+!*9,E7L,!F&?s+EB^vIBsH2TAt!lr@7rtDFgKxhCq;nHDS
-#@ FK9wLdV<+LdV<+>#V<+LdV<+=:GQB%Em.DLXu|2%snT,m'cSAnjkSAQvV<+LdV<+;`4hC@mZ
-#@ QH6dV<+LdV<+-l?q@;f:s+x-6hC4%DE+)^xlBJ2qT,!*9,E!si'F&?s+Eo^CkBvH>0A4+ME+
-#@ >OVE+1lo(F)7qHDSFK9wLdV<+>wO@wLdV<+:tJTA/B&PB'rS,E9upT,m'cSAnjkSA+>9q>Qv
-#@ V<+LdV<+IOMEF?LAgAAqh<+!*9,E7L,!F&?s+EB^vIBsH2TAt!lr@7rtDFgKxhCq;nHDSFK9
-#@ wLdV<+GH8`FM/qT,2Q:s+.c:s+QvV<+LdV<+l'uSAw@VTAa^,8Ag!lr@7rtDF4M&PBQvV<+L
-#@ dV<+)lP)F1LAgAD2::+TX93Iu!V<+R<n9,4`DTAtsY8A&2#j@hp^LC*a';@7CQC+)^xlB:Mq
-#@ cBGUJ`F25:JDrLoRA.0?SA'HmIDw3BCFwJNBDs2K(Ff.fRA6dV<+>eTfD2.<cEucmID_F|;@
-#@ -T#-EU_*Y?`=Bq@6>|s@6gDTA)1^;@-MNBD#:^;@-MNBDs2K(Ff.fRAnjkSADn<@wLdV<+1A
-#@ `nAS+uW+lQCkB#QYKA@/;EF>xl^F/jmID(=..D,g;3I<H<:+LdV<+<*WKA=u5cEp/_^EZ.|c
-#@ 3rTkjBv&oC+6#ufA(AoC+m'cSA>xl^F/jmID(=..DCGK9wLdV<+>wO@wLdV<+:tJTA0KAkB%
-#@ ?+dD0btD+;kkcE1ZbDFnjkSAWZ'<I92::+LdV<+1=,D+Sk_<+cKxhC)oATAUeWU@7ZpT,4;Q
-#@ cE-cKKD|kIv?Z_xQH6dV<+LdV<+6_PcEEo:s+ekTfDT-sfA'A#D+;kkcE1ZbDFnjkSA>6ME+
-#@ >OVE+i%97AagbSAS1::+LdV<+>N<:+LdV<+9MfCF7k1`F+?+dD0btD+;Yb@GnjkSAy#U<I92
-#@ ::+LdV<+FOMEF?LAgAEaVE+3=,D+t:i?>njkSAt=sp@*Pl^F/jmIDo5/C+Q0cT>5uxW,/=..
-#@ D!:p;@dX|;@#1^^>yAPF+?A-bE@CDE+mIUkB6cir@7rtDF_L8mA'A#D+v=xhCbg4jB0k(E+)
-#@ ^xlBjJM!?na+!F0ZsiC.y-fD(dZRAD=2`Fk7|7A,&TbEu/jiCs!P?+xGK9wLdV<++iHq@Ep.
-#@ F+.|<JD;7:eDP?N9wLdV<+1SvhC4V#D+.|<JDQvV<+LdV<+)lP)F1LAgA`U5*46dV<+O*S9,
-#@ DI5UA=ti|DJxG<FuYtfA'A#D+h1O:@)H>0Av9fCFnWg:@t#L?wLdV<+1SvhC4V#D+lQ2TA71
-#@ Ej@6gDTA)1^;@:mZQHY8d'4R*r<+AuTKDj?VTA4#V<+LdV<+m'cSAv-7hC+Y#D+AP5cE.ZpT
-#@ ,4;QcE-cKKD;8W(46dV<+(2;4w6dV<+>eTfDq,3SAomHID1SV*F'*0CF;M#D+``xQHu!V<+L
-#@ dV<+sB-<@I(RKD91VE+lj|Z?i3hgC@|o(F4PZ-EA2::+LdV<+(d|7ApxBq@YhFtFja0;@u@#
-#@ D+MBxQHmgBTA=;2EFgdfRAvXxlBg02+46dV<+JS)!F8IfZE&LxhCubB'F1Q5DFKNi)F.AnHD
-#@ ;NM9wLdV<+E'RKD91VE+bXO?+A*<0AEs1=F%a#SA.k2DF6dV<+O*S9,>%TTA:2ufA<tNBDw7
-#@ Ce9tQGA+iN!iCufY8AtfLLC/k2DF6dV<+JS)!F4%OBDq!lr@si`aEh7'7Ao|<JDa^UgC)G#D
-#@ +lZMTAk'cOBKNi)Fm'cSA%XbbD(dfRAvXxlB%plRAo3uSA,l!%?QvV<+LdV<+7pZQHCg-fDg
-#@ dfRAvXxlBd.oRAo3uSAe-%lBSE4s4wp=>+Dn<@wLdV<+LdV<+MQ8`FOBxQHfc59@/!=JDWVE
-#@ <F17ME+ridlB+;qcB=y-fDM.TV6|5p=+0g!iCtfLLC.APQB(cir@si`aE.>qcB-Q5cE#dmlB
-#@ b!2+46dV<+LdV<+9MfCF8uhoA'A#D+kTDTAm1sp@=c2xE&LxhC9?pBDq!lr@si`aEh7'7Ao|
-#@ <JDa^UgC)G#D+-g0Z?!=mID#6XeDxL>nAmX|7Aoo<JDuWTg;dX|;@7t(E+w2D?+=)2EFn.jY
-#@ ?!=mID#6XeD>6ME+nimlBS)f4Is^Io@si`aE4ti|D4<XeD|RF?+n1_`Fi!)bD^kxH9_:B;@H
-#@ dxg:5H0bEAOM9wLdV<+>wO@wLdV<+R<n9,:uMTA.0?SA(dfRAvXxlB;em`C=xVE+vWB3@25:
-#@ JD.I%F+2lffD1UtD+sB-<@;fAoA&|ACFv#V<+LdV<+91VE+0TbDF0<&#46dV<+JS)!F/MqcB
-#@ rXKV@apK9wLdV<+7+:eDhqrp@*ovlB9ZpT,,FDkB9mZQH6dV<+LdV<+1=,D+5Z'aE!N(yG6f
-#@ *@?V<mID#6XeD>tMm-6qy4.2bL'Fw_:d;TincB>734@.&l%G0K=JDnimlB-6aU>fLqT,u3uS
-#@ A/#BCF+.,!F2LVE+'=..DkKpp@0dhTA<APF+X=n9,-f`aE?R8EF4XVE+5(,!FdX|;@!X'?wL
-#@ dV<+LdV<+:tJTA.0*8AO'@KD)@m:.<nir@I?N9wLdV<+LdV<+>#V<+LdV<+1A`nAS+uW+t;<
-#@ JD'oYKA@/;EFAq?KD|kIv?Z_xQH6dV<+LdV<+:mui@26nlBPPW(46dV<+LdV<+>N<:+LdV<+
-#@ O*S9,BXpJD9J;-B.DVHB)S#D+/(,!FnjkSA)`&(Fn<#SAwplRAo3uSA%#V<+LdV<+1A`nAVF
-#@ qT,nimlBZ<nW4csUmBs`SCF9Sx:IZ_xQH6dV<+LdV<+:mui@26nlBPPW(4R*r<+:A.#H>eTf
-#@ D&ot)F%`SCF1_#D+!=mID#6XeD4#V<+LdV<+>wO@wLdV<+LdV<+91VE+njkSADnir@MDV=+3
-#@ -^;@9gM9w6dV<+LdV<+R*r<+-1VE+.5#D+86=0AbwS=wLdV<+LdV<+7pZQHtuCTA,rP-EvbD
-#@ x>na#FD1SV*Fr66w<vl.y>U.=a3uYXU>Fx64I;%#lB-D3'Dm-cOBplHID1SV*F'*0CF#uIv?
-#@ Z_xQH6dV<+LdV<+JS)!F'ZB3@,o-#H&qTZ?:p2TAO'@KD)@m:.&9(:@,o-#H&qTZ?:p2TA`'
-#@ RKD91VE+yL|;@9QelB7D!wH!y;:+LdV<+LdV<+-#sJD8o(`FA2::+LdV<+TX93I6dV<+TX93
-#@ I6dV<+O*S9,8qjID&fAoA0o`aE)FV5B.0?SA4&O+E,<U?wLdV<+E'RKD91VE+,FDkB8gM9wL
-#@ dV<+9nATAAl9KDp/`aE9C.F+-1VE+i3hgC@|o(F4PZ-E)OM9wLdV<+(I8:+O*S9,!*-NB7vO
-#@ BDniA(FE?)E+&qeZE/EylB3pmID7vV<+D-<cE&|:-B#wj'FdX|;@!Y0Z?4<nlB=FME+>cir@
-#@ si`aE8IME+Dn<@wLdV<+1A`nA88J9>#XmID0k>D+,dfRAvXxlB,&0C+AM`H0Z_xQH6dV<+Ld
-#@ V<+8JfCFB4uD+pGo(F8OM9wLdV<+>wO@wLdV<+R<n9,BtTKD4&O+E,=^Z?!=mID#6XeD*/uD
-#@ F1oG)FE?)E+-1VE+.5#D+4<nlB@x(sFtf_TA5,:eD(plRA+LDTA'cir@si`aEv-L?wLdV<+9
-#@ nATAqKDTAF.fK/*XxlBagbSAAq|fD-Hy|3.9BfD0wj'FdX|;@!Y0Z?4<nlB=FME+5dfRAvXx
-#@ lB*!J9>4/;EF<nir@si`aEups#?nFK9wLdV<+5(^aE9C.F+3aMTA7cir@si`aEsERdD4<XeD
-#@ H<N9wLdV<+:tJTAFCi)FvLxhCubB'F1Q5DFKNi)F/;tT>J%a'4C+H)F8IfZEI0N9wLdV<+:t
-#@ JTAHR8EF2G)*F'&5)Fh!cr@8U`4@GkeK/pR5SAN&qT,2aDoA'A#D+y|Ho@si`aEy:)6IsvV<
-#@ +LdV<+91VE+2'aaE*7VgCpfI9>#XmID0k>D+9Q?<@.+t#?QvV<+LdV<+%6|,EwAoC+2'aaE/
-#@ !J9>78?cEu;!iC&K#DF@c2xE):DkBpP/C+nTa'46dV<+=3rfAI?xQH91VE+_p=>+^YU^,kcU
-#@ ?+9Q?<@0=UZ?4VW;I?G=JD:w_TGesPF+<#V<+LdV<+:tJTA?sDD+ko<JD.I%F+9Q?<@FXME+
-#@ V(d'46dV<+LdV<+9MfCF(dfRAvXxlBjF|;@oKI9>t*Z8AC>qT,2aDoA'A#D+U0(d092::+Ld
-#@ V<+=3rfAI?xQH9MfCFR3(d0Z_xQHE/ND+(9k>+Z5>F+w!saER3(d0Z_xQH6dV<+LdV<+Cij`
-#@ CsT2TA2v,!FdX|;@!Y0Z?4<nlBE9'!.,dfRAvXxlBjF|;@=lU=+ko<JD.I%F+Eq|fDm'cSA%
-#@ )(yGH,qT,D<Y*C,Cdq>ruwlB'E(yGKNi)FvLxhCg9pQAGFDE+SR*V,;kB*192::+LdV<+TX9
-#@ 3I6dV<+TX93I6dV<+IJcZE8JlcEljX9@6`t!H-)fCF(dfRAvXxlB%*T,E26sJD7OM9wLdV<+
-#@ g,74wLdV<+,CHr@E46-E2BK(F*9>)FD5>F+sF=Y?-(ME+Dn<@wLdV<+5(^aE9C.F+3aMTAIx
-#@ S`F/aDTA'h|7AQvV<+LdV<+w^DTAn7>D+sF=Y?3WpT,sF=Y?-(ME+<#V<+LdV<+:tJTAIxS`
-#@ F/aDTA'h|7AN0<)F`C,8A-KQ3BrBq-DwL6<@aFYjB0k(E+<f!/DC2qT,sF=Y?2Bc'46dV<+L
-#@ dV<+9MfCFq2K(FmF5SAi<;oAGH:eB76U'DoLYjB?c6bC+T5DFbsK9wLdV<+>wO@wLdV<+9nA
-#@ TAAl9KDp/`aE9C.F+-1VE+@r|,E5ot)F.Bc'46dV<+>N<:+G8-wE1>fC+CGV`F/aDTA*@q-D
-#@ BsZQH4o.6BXk!Y?4/;EFZ_xQH6dV<+8x?3@6`t!H9MfCFE46-E2BK(F)&oC+8o.6BXk!Y?4/
-#@ ;EFm<n9,FaqcBs&I;@4?fwGtf_TA/1oC+,l:EFoKhgCJ_+g/p-:3I6dV<+=3rfAtIa:@%M3'
-#@ DoLYjBbjX9@6`t!H)<..D8O,!F?u>cE(pMTA#+-C+<#V<+LdV<+:tJTArdkSA&k54BhH<JDD
-#@ teK/3WpT,sF=Y?<SeK/#R.lBMlM!F?u>cE(pMTA?NU'DoLYjBIyK9wLdV<+>wO@wLdV<+g,7
-#@ 4wo4/+4R*r<+wAoC+`2&M9=,74wR<n9,m>eCFB4uD+8w`TA1=,D+;TjJD+S5D+j0p|;>WT,E
-#@ X)?9/<A4iC8UME+.5#D+*XxlBagbSAX<bf99=`_3WV0fD%Da:@<bl(F9MfCFuoggCwy;:+R*
-#@ r<+e;o(F&N!iCFaME+yUF<F-EnlB64G<F2u+lB&,fC+7<0bE:qP-Er0HSA#&#D+u@oC+u5se
-#@ D'hs`:q%TTA63=JD7+dfD*p#SA5|VkBpG#j@vkT;@q`K?wR<n9,>a#D+%S#D+i<xhC+S5D+3
-#@ |#j@m-cOB1G5cE&mSCF1C<:+>eTfD1q?KD3j2TA<BxQHDn<@wLdV<+*XxlBagbSA=V0fD%Da
-#@ :@O2::+@NncBC5>F+AV0fD%Da:@RAPF+<#V<+LdV<+MQ8`FKr:s+WjJOAESNb39MfCF*FV5B
-#@ =V0fD%Da:@QGK9wLdV<+9nATAqKDTAF.fK/*XxlBagbSA>yB,E@2NTABq?KD3j2TAquI9>`=
-#@ Bq@l-%lB!QG)FshGuG8&Z)F8suC;d7a:@=Ec'4hwSKD91VE+Y%f)46dV<+>N<:+@NncBGYU^
-#@ ,?AhAG!X&(FDn<@wLdV<+GH8`FOBxQHYl<eD,wBCFMk8c3gHUkB6cir@7rtDF>6ME+;TjJD+
-#@ S5D+#ZB3@'/#LDCqm#H<DblBI5.>+k#pq69^w)222K(FmF5SA@y1mB3bNBD2c|N@:xS`F/aD
-#@ TA'h|7AY2::+LdV<+8JfCFB4uD+b1::+TX93I6dV<+8JfCFB4uD+a1::+(2;4w
+#@ dV<+R*r<+a#K(F.8oTA+c:-Bv-0bEkj|7A9mtD+fLA@+xSmX?>xgb1;LGN/YXk8w659:+Mn%
+#@ sFja0;@u@#D+gLoRAtJTfDELME+pGo(F=,'=@;<ylB('WTAX`xQH!^DTAtc1kB+S5D+w3F/D
+#@ s/B(F)&g!7uE)5BXbJ;@+!=JDxXPaD!CIID_6q^EI=j;IIV2V6(`xQHH9q@<.`xQHlLC0:b!
+#@ >SA|2gQ6vkT;@:q/<IT!u'<8`xQH|G9fDp6ueCsf7lB?mRF+8'vmB5=Xj:5H0bE:j5I<.`xQ
+#@ HridlBgF|mA,'0CFAO9<IE>cU6,48=+S85DF3Gm:IrjWhB!QG)FJ`xQHi;nlB)Xu<@26sJD5
+#@ =Xj:(lVhBtu`aE^`xQH<GV*FfgggCSq/q@@I0<IwI#fCc3R.D<@9<I?,ETAvdmlBv1m*Eb.f
+#@ RA,ZbDF7O9L;9KnlB?mRF+M;wLD,wK(FF<SF+.wTfDCMx:I92::+O*S9,2&I;@+dmIDvWSkB
+#@ y4#4B>)6-Et%g!7@wwNB*kbD+Y2F/Ds/B(Fr'T9,F@r:6(15/0FjHD2.|L:@7&lDF5d(E+0<
+#@ o(Fl*Bq@&!NTA<nP)F3osdD!CIID%WB3@|&-m67XPaD!CIID-JqcB7&WU6&JRn-6dV<+6,aa
+#@ EegpgCvEWSAhU#4B>)6-E'w/gC=xVE+rsu.D+S5D+I3hgC@|o(FY-,FF%s<JDL`xQHLudh9A
+#@ OM9wLdV<+*XxlBagbSAvX#SAn-!eD!CIIDtuI9>4/;EF9MfCFjoreDaF#4Bw3=JD^CbOBuIY
+#@ D+#k|Z?n-6<@_%+Y?n0Hr@_qr:@*FV5ByR>SA.7,!FiF'7A(1^Z?3^)s@-uJTAs3*eD--0CF
+#@ '1cOBs>fCF;?=NC9MfCF(AhEFvaSCFrd'Z?4<nlB=FME+#k|Z?`t`:@kjtSA9uJTAmC,8A^.
+#@ jY?6D@BG9vZD+#k|Z?s?VTA!.6x?qGY_F1OlSA(URdD4<XeDAO,!FrBq-DhIap@b=sp@wXII
+#@ D(%,!FrBq-Dw90CF,EG)F-<XeD3uJTAsjtSAh.54B)BK(F?2l)F9MfCFpQ2TA(dmlBdk`p@v
+#@ +2kB26sJD8uJTA+wjiC(aEiC%V|mA%0K(F9MfCF(K=iCnF5SA1`R.D!D+Y?n0Hr@_qr:@*FV
+#@ 5ByR>SA.7,!FiF'7A#Nt!H##;EF#wBCFrd'Z?4<nlB=FME+#k|Z?-EnlB#dmlB#CRdD4<XeD
+#@ AO,!F/64eDd-!eDmIBq@26sJD1`R.D!D+Y?,HX/Djf<iCulSCF3+uD+4;QcEs0^Z?ridlB:`
+#@ c'4uGU6wR<n9,cw>SA&-B3@)QYKAv1?SA<y-fD0TvhC(?elBeI|7ACBDE+lN!iC8ebDF8APQ
+#@ B-.N0A4iW<@Fok<+8aVE+-H>0A(0U?wLdV<+*XxlBagbSAv^,8Ac-!eD!CIIDtuI9>4/;EF#
+#@ k84wLdV<+IIr:6,IY/03lt>+?a1kB64G<F17ME+^d^LC9mtD+#k|Z?tiE+E2fbDFlf`aE+nt
+#@ D+6vV<+/&I;@+dmIDvWSkBXe`p@vkT;@2(ME+B1lDFf=+Y?mxPSA7XME+7G#%G^:K;@vk>r@
+#@ j_W:@7*Y<+#k|Z?rNZ<@2RRdD,f:EFw@VTABrY<+#k|Z?3DccE,&MEF:T)!Ff++:@/%1Z?n-
+#@ 6<@_%+Y?e+nX?2u(*F:tJTAq'mdDu7X:@1dRdD2*v/D0KBCF3+uD+9MfCF`*7hCscreDncml
+#@ B?QY<+#k|Z?mZ!iCoo`aEs0^Z?/;2*F8%DE+9MfCF`*7hCo-DTA:<ylB'<XeDCT)!Fh=ap@!
+#@ :_LChfACF^:K;@vk>r@NT)!Fh=ap@!:_LChfACFj7=Y?mxPSA7XME+9MfCFjoreDaF#4Bw3=
+#@ JD%f:EF7A#D+9MfCFkoW/Dv(cSAk&TbErimlB;+ME+9MfCFl#sJDvmSCFrd'Z?pl&(FHT)!F
+#@ h=ap@-@^Z?26XeD@b!wH:tJTAuHraE!%gq@kWNaEhm5SA:tJTAi.oRA)x*JDuqCEF*'f^F9+
+#@ ME+9MfCFhlJ(FjL'Z?@72E+9MfCFj&oCFe*cr@l#sJD#E>_F(dmlB?QY<+#k|Z?jm|Z?'aMT
+#@ A6<XeDl-!eDqs(5B43BCF3+uD+9MfCFm&sJDv.DTA'.lSA:tJTAs3*eD--0CF'1cOB:tJTAo
+#@ ^CkB1Kt_F1Es+Em0m*E,=^Z?2u(*F:tJTArw@hC&wWTACT)!FnsYjB&=cSA,ZbDF%<XeDCT)
+#@ !FnsYjB1?0bEjoreD^+'7A#Nt!H*/uDF1oG)F:tJTA'!o(F(!BCF3+uD+9MfCFvW|fDvdmlB
+#@ l+ap@;2ccE=KY<+#k|Z?rTN+E/F^Z?tE%6B9QY<+#k|Z?l4O:@m-%lBqsUgCkg,<@MrY<+#k
+#@ |Z?#@MkBVq8q@:tJTA&dreD_emX?/G#D+9MfCFnT_5Br/(=H3:)E+9MfCFjT*+Eu/4iCNT)!
+#@ FrBq-Df7+:@%iSC+9MfCFrGYxGs>fCFkWmID0k>D+9MfCF%TsiCudtjB**T,E26sJDHT)!Fs
+#@ K7IDvpNaE9KnlBsHNaE3A#D+9MfCF*/uDF15.>Hh-DTA//;EF7RME+9MfCF(o5cEuNACF)kK
+#@ V@9HK(F:tJTA*'BfD):VgCtZACF3+uD+9MfCFj*Z4B-!WTApdkSA(a<JD<T)!FvpNaEu8o(F
+#@ v_KZ?:p2TA:tJTA!vlr@`=BRAp!lSADcY<+#k|Z?rwIIDj*Z4B-!WTA6D!wH76Y<+#k|Z?3'
+#@ 8UAu/4iCNT)!F#wj'F6g)s@8pDTA:tJTA5,7BGu-cOBj7=Y?nimlBDb!wH:tJTAw:VTAt++:
+#@ @@o90D:T)!Fw-0CF#@^Z?t0H8A:tJTA.<TKD&BjJDnEVTA9T)!F%6K^F.KTfDGWY<+#k|Z?.
+#@ dxlB`vO:@26sJDv0ylB6c5DFNT)!F'H,@Gl7+Y?mC97Apr<JDilreDm|i'F5k#D+9MfCF)`T
+#@ bElcreD^gp-D%)#D+9MfCF)`TbElcreD^gp-Dq-7hC:tJTA+p3mBoaUgC`S!Y?!qbSA'<XeD
+#@ s`AbEAI2E+:uMTA#HK(F'j&fDvVbD+Q1::+O*S9,_VSf:kcegA;%lD+82--E-A#/0<)2&GBZ
+#@ (p/Ai0fDGhV*F:oW/DGJfCF.BG%G9(m^F;NX/D4Yu4@-a%lBncmlBv:7ID3HK(FEqCEF^R>S
+#@ A_^CkB@|:60<O1,1csK_;>WT,EQ?+w-Lt0|F9o5cErqXJ09p!w-`pPQBcqXJ0:XB77/@be0>
+#@ %oh/FGvA5hy*QAk'cOBl+V`Fr'7`E2W77AyA`:@0n6>-hy*QAk'cOBl+V`FpwxyFs|/bEASm
+#@ 8-a&M8@yLZyF|bO8w/&I;@+dmIDvWSkBXe`p@vkT;@2(ME+k*T7A(o5cE2f:EF'Y#D+k*T7A
+#@ -GhAG!si'F&@VTA'T67AsJY)F2f:EF'Y#D+4bt)Fi40;@#Li'F9?FiC(4MTA8eZN@g%vY?`=
+#@ Bq@/%DE+-#sJDvmSCFnT_5Bfm6ID;cY<+&BjJDhd|Z?@r|,E*x7ID;cY<+hIa:@qaUgCoRfq
+#@ @s>fCF74paEl?VTAnT_5Bh*m*EBXVE+'9DTAf=+Y?3'rTAq3*eDrN<JD74paEl?VTA-GhAG!
+#@ si'F&@VTAtJTfDGWY<+hIa:@u0m*E5H0bE*W4mB,8>D+'9DTAf=+Y?DxVE+'9DTAf=+Y?@r|
+#@ ,E*x7ID;cY<+hIa:@#Li'F9?FiC/'BfDHcY<+hIa:@#Li'F9?FiC(4MTA:v<0A%0saEyy*Y?
+#@ 49BCFvZbcE#0elB26sJD1JAkBmwRdDaCBq@I`Y<+mC97AvmMoA0,R;@#!o(F(!BCFrd'Z?mZ
+#@ !iC0,R;@m^bSAs:jY?vqbnAv_KZ?mZ!iC0,R;@&'BfD%_KZ??r5DF-?Y<+jF9Z?(LVTA2<Xe
+#@ Db(fRA:KY<+njkSAsP5cE/%VE+8u_TA%Map@iOjY?6>;EFdUfRAFBH?E=Jd#H`*7hCf@T;@!
+#@ _|7AHNA`F'x6x?/B=iC%<XeDABH?E=Jd#HjT*+E-GhAG!si'F/Fur@;BH?E=Jd#Hs>fCF(o5
+#@ cEI`Y<+5B0bE/'BfD+L7ID;cY<+5B0bE/'BfD0wj'F&@VTAHNA`F'x6x?3'rTAq3*eDrN<JD
+#@ HNA`F'x6x?3'rTA3,7BGu-cOBHNA`F'x6x?DxVE+8u_TA2mm*E1wj'F&@VTAHNA`F'x6x?(L
+#@ VTA2<XeDABH?E=Jd#HvKfCF(6nlBl+ap@;2ccE=KY<+5B0bE8oU`F=G.#Hs>fCF6P3<@'^J^
+#@ F89Y<+#k|Z?ridlBbn*:@;<ylB('WTAHT)!FiF'7AuE)5B(?ffDET)!FiF'7AsjkjB-oU`F=
+#@ G.#Hs>fCF:tJTA!LiFE-@Q<@+ZbDF:tJTA'!o(F(!BCF3+uD+9MfCFvW|fDvdmlBl+ap@;2c
+#@ cE=KY<+#k|Z?wXhTAsNIQBuNVTAGT)!Fu|m*E(BnlBh<RdD+ZbcE&KaiC%<XeDCT)!Fu|m*E
+#@ ,=^Z?3DccE,&MEF:`Y<+#k|Z?(LVTA2<XeDCT)!FvpNaEwpmID26sJDl#sJD9?=iC:tJTAv.
+#@ DTA3ZbDFrd'Z?pNR.D2;)*F:tJTA!vlr@1M#D+9MfCFu&v/D49BCFXv|RAuo*mBC|Y<+v84Y
+#@ ?8ik)F3+uD+Q1::+Cij`CsT2TA'iUHB^b*Y?w3F/Ds/B(F9MfCFj*Z4B-!WTApdkSA(a<JD,
+#@ uJTAv.DTA//;EFuiNaEva%lBncmlB=@,!Fu|m*E'FMTAwD+Y?n0Hr@_qr:@9%,!Fw-0CF,EG
+#@ )F,Qs/DsP5cEvKfCF%s<JDy'T9,F@r:6(15/0FjHD20LGJ0>^gb1m==8w6dV<+*Q*+EtsY8A
+#@ v^,8Ac-!eD!CIID9`Y<+#k|Z?cLK;@iYN:@(6siC%<XeDw*T,E26sJD8uJTA&dreDy.jY?&j
+#@ mMCcXKV@6>d#H9MfCFnT_5Byh&7A(uJTA&dreD_emX?/G#D+#k|Z?#@MkBn|7UAAC,!Fu|m*
+#@ E,=^Z?l4O:@26sJD7G#%G^:K;@vk>r@j_W:@5n+!Fg4FU@.OZ8A#x6x?4<nlB)Xu<@26sJD9
+#@ MfCF`*7hCiRo;@1ZbDFpPk_F6?0bE9MfCF`*7hCo-DTA:<ylB'<XeD3uJTAogwhCi.aY?n?V
+#@ TAmuACF'`1vH9MfCFjoreDaF#4Bw3=JDdU,W@slSCF8uJTAogwhCi.aY?rcmlBtQi'F6XcSA
+#@ 9MfCFkoW/Dv(cSAk&TbErimlB;+ME+#k|Z?ridlBuo/CF?F,!FiF'7AjF'7Ad_`p@w7DkB'L
+#@ -<@26sJD9MfCFj&oCF!|G)F,BnlBl+ap@w7DkB'L-<@26sJD9MfCFm&sJDv.DTA'.lSA9MfC
+#@ F_OK;@3pmID9MfCFjT*+Eu/4iC>uJTA-Kt_F#qKV@#URdD4<XeDAO,!FtTRdD2*v/DtO+Y?t
+#@ !MkB6?0bE8uJTA*'BfD):VgCtZACF3+uD+#k|Z?t!MkB6?0bEp)0bErEV5B9MfCFc@O:@ks6
+#@ hCrZmID9uJTA!vlr@m|NaEu8o(Fv_KZ?:p2TA9MfCF0AccE9,_`F7%,!Fw-0CF#@^Z?4VV`F
+#@ 2%,!Fw-0CF#@^Z?t0H8A9MfCFwE0bEhOfq@%<XeD'B>cE+-ylBTNN9w6dV<+*Q*+EtsY8Av^
+#@ ,8Ac-!eD!CIID7O,!Fh=ap@!:_LChfACFj7=Y?c.XU@N.O?+kOT?39@ke0C!7)2FvV<+/&I;
+#@ @+dmIDvWSkBXe`p@vkT;@2(ME+#k|Z?'NB,Ef%+Y?!>=Y?r^oRA#NfCF*FV5Bh'T9,#7CK0<
+#@ ULG1MQE&36dV<+*Q*+EtsY8Av^,8Ac-!eD!CIID'i#j@waACF!K#gDum54Bd<`aECvO?+G`4
+#@ *C%%6SAnqa/0A:YJ0^%::+Cij`CsT2TA'iUHB^b*Y?w3F/Ds/B(F9MfCFoo<JDl-%lBtu`aE
+#@ 8oU`F&NfCFm<n9,0LGJ0B*!&30&2?+6dV<+*Q*+EtsY8Av^,8Ac-!eD!CIID7O,!F#wj'Fc+
+#@ 4Y?rcmlBp-RdDaCBq@dXO?+kOT?3<xgb1M3I)2I59:+Cij`CsT2TA'iUHB^b*Y?w3F/Ds/B(
+#@ F9MfCFvmMoA`*7hCn3.lB-wBCFH7O?+&6|K8IqE?+ZF(,1AU1f0;RL,1FX84wLdV<+91VE+g
+#@ LoRAkoW/DmgY8A'w/gC@;2EF<e/kB'<XeD2>d#HRNRKD,!`TA7bSkBXe`p@vkT;@oOs#?QvV
+#@ <+6dV<+9MfCFv^,8Ac-!eD!CIIDtuI9>(s<JDN/qT,gLoRAkoW/DmgY8ADwtECfR9Z?w3F/D
+#@ s/B(FR'T9,8qjID7pDTAdG=0A/I3Z-3QiSAHabWF@+dfDt?C:@uG-@wu!V<+6dV<+>eTfDq,
+#@ 3SAsp,<@m=>OB^b*Y?)^xlBLExQH8pRF+<#V<+LdV<+*XxlBagbSAv^,8Ac-!eD!CIID><N9
+#@ wLdV<+9bN<@ktWU@)2RECfR9Z?w3F/Ds/B(FQvV<+LdV<+*XxlBagbSAvX#SAu`AbE?8Z)FQ
+#@ vV<+LdV<+*XxlBagbSAv^,8Aj`AbE?8Z)F;H8:+LdV<+9MfCF,oW/DmgY8AJ_3a3G)fCFxL>
+#@ nAmX|7AkoW/DmgY8A7OM9wLdV<+R<n9,sB-<@I(RKD91VE+w3F/D_%vY?5;2`FL2::+LdV<+
+#@ >!x3@6`t!HC+H)F-;;-B>)6-EkoW/DmgY8AQvV<+LdV<+91VE++R.lBdk`p@vkT;@2(ME+pG
+#@ o(F8OM9wLdV<+:tJTA2WSkBh?mIDkoW/DmgY8AA^vIB^b*Y?w3F/Ds/B(Fm<n9,cw>SA2D3'
+#@ D54OBD2c|N@)oATA//;EFmd|7A6dV<+=3rfAtIa:@pG#j@vkT;@8WpT,w3F/Ds/B(F<H<:+L
+#@ dV<+@NncBC5>F+lZMTAk'cOBLH&yG%+VE+&^,8Ac-!eD!CIID=/qT,w3F/D|h@v?2n_?+d@P
+#@ F+5'I;@+dmIDvWSkBh?mIDkoW/DmgY8A<1Ej@vkT;@=4nl@26nlBPPW(4>#V<+LdV<+R<n9,
+#@ cw>SA.o<iC3K4mB5+,!F0ZsiCwWrSA:%DE+k^YSA?<VE+GgC9G,XVTAt/saEw6U?wLdV<+Ld
+#@ V<+lNI9>pR5SAP9xQH*2BTA=;2EF?!`TANhZgD2*v/D<V@tH>c5DF5)?_F=r4mBF&gm/bLPF
+#@ +0oW/DmgY8A(>|s@26nlBPPW(4>#V<+LdV<+R<n9,cw>SA(?#j@vkT;@2(ME+%S#D++);-B>
+#@ )6-E<APQB`+`K8HI2`F24bWF-IhgCI0D9G0LVE+85VHB^a!>wLdV<+LdV<+7pZQHlZMTAk'c
+#@ OBLH&yG%+VE+&X#SAn-!eD!CIID=/qT,w3F/D|h@v?2n_?+d@PF+:osdD13=JDW.O?+>#V<+
+#@ LdV<+5(^aE9C.F+3aMTA*plRAv=xhCO2::+LdV<+8x?3@6`t!H9MfCF*ueCF!Q5)Fi35SAi.
+#@ oRAo3uSAb-!eD!CIIDF+fK/k'?<@5@ME+0oW/DmgY8A92::+LdV<+=3rfAtIa:@tk:-B>)6-
+#@ E/&mRAv=xhCAe?bE?8Z)FEm<@wLdV<+LdV<+R<n9,acV/DmgY8A75:JD.0?SA,c:-B>)6-E3
+#@ WrSA*+G<F(-3SAD+dfDCb0<wLdV<+LdV<+1A`nA88J9>rLa:@*8>D+8?c<@=2qT,rTN+EtJT
+#@ fDELME+9JTfD/r/C+BM`H0Z_xQH,#cDF)m_TAYN<:+LdV<+LdV<+R*r<+Y2F/Ds/B(F9mtD+
+#@ ,wK(F+M?bE?8Z)F4Pt!H&'MLC/k2DFE?)E+ENA3@|P_K83`IIDD+dfDv^,8A.APQBss;:+Ld
+#@ V<+LdV<+1=,D+/w/gC#O`aE:_eK/nUsp@B^vIB^b*Y?5;2`FI/qT,5;2`FM-4s4wp=>+Dn<@
+#@ wLdV<+LdV<+LdV<+%6|,EwAoC+fCT7Ab+ap@vkT;@2(ME+0oW/DmgY8AQvV<+LdV<+LdV<+6
+#@ .gaE988)46dV<+LdV<+TX93I6dV<+LdV<+O*S9,vE_bDIxS`F;IC9Gl:`K8sQ,8AKuSE+>S;
+#@ EF5d(E+0<o(F!bSh/1=,D+unsdD!CIIDt,R;@0+ME+>xG<F17ME+2059/;MXNC/k2DF7vV<+
+#@ LdV<+LdV<+Irj`CsT2TA'iUHBc=oRAl-!eD!CIID=/qT,w3F/D;5N(46dV<+LdV<+6HU6wLd
+#@ V<+LdV<+R<n9,%6|,EwAoC+w3F/D_%vY?5;2`FEmy-B>)6-EG0Ej@vkT;@9dM9wLdV<+LdV<
+#@ +R<n9,%6|,EwAoC+5;2`Fn-!eD!CIID5IEj@vkT;@=iU=+E_BbEI=j;IQvV<+LdV<+>wO@wL
+#@ dV<+LdV<+4=,D+-'5)Fh!cr@2:`0Ap*ljB;h..B>)6-E|0gN.`Q.lB)K0q>2n_?+d@PF+<#V
+#@ <+LdV<+O!r<+*Q*+EtsY8A7)v/Dj7=Y?w3F/Ds/B(F8%tdD!CIID@2::+LdV<+O*S9,>#V<+
+#@ LdV<+>#V<+LdV<+91VE+fCT7Ab+ap@vkT;@2(ME+!`|fDU.fK/q#TCFt!^;@Z=fK/5<9GE@Z
+#@ pT,fCT7Ab+ap@vkT;@oOs#?QvV<+LdV<+IOMEF%gM0C3ntD+!`|fDU.fK/q#TCFt!^;@QAqT
+#@ ,+R.lBdk`p@vkT;@oOs#?imE#?QvV<+LdV<+w^DTAn7>D+w3F/Du@oC+&^,8AcF'Z?w3F/Ds
+#@ /B(F<H<:+LdV<+G8-wEIXME+4@>D+@eTfD,1Ej@vkT;@:jZQH%N|(Fb)!=InFK9wLdV<+>wO
+#@ @wLdV<+(I8:+O*S9,lWPaDJjG<FvlUHBsH2TA5cir@7rtDF9mtD+.5#D+0+B@+r0H8A-GqcB
+#@ 2!WTA!Si|D%osdD8B=JD0APQB.h;_FC+j|D/APQB(cir@7rtDF6sLE+sEuSA6dV<+R*r<+3q
+#@ i|D#.MkB(JbD+)^xlB2ZB3@D7W)FI%ShA)Fwx?)^xlBS5;606!yhC#7HSA?l3r@Mf!;G,XVT
+#@ A!*v/Dj7=Y?,#cDFL>)p/o3a>wLdV<+#p`N77GqcB.R?<@.5qcBgF5SAOnsdD>SVHBsH2TAt
+#@ !lr@7rtDF4GTfD6APQB*),QB0vgq@untfA'A#D+qKDTA4S.#H6dV<+R*r<+iBDE+jsGSAAP;
+#@ EF3S#D+kX54BEj!j@Ep.F+!*9,E!si'F&?s+E=APQB5-A6B1APQB>*k#H(p<JD,#V<+D-<cE
+#@ 6CC9G,XVTAe97hCs^KZ?)^xlBLExQHm'cSAnjkSADn<@wLdV<+1D3w<17ME+=XG<F..G<Fvl
+#@ UHBsH2TAt!lr@7rtDF>Q%hC4nW6wLdV<+:tJTA.3<SA+30bEt/saEw7^Z?m'cSAlQCkB()7*
+#@ C3ntD+-?l#F>WT,E6LUZ?<)lDF;Fd|GQ*k#Hv^6q@JX&dEn=+Y?+R.lBdk`p@.gVTA7-0CF,
+#@ EG)FvdmlBwLm*E/-9(F3eZS?V4XW@v8(p>QvV<+LdV<+uTbOBHqh<+3yR#H&97hC4%DE+)^x
+#@ lBJ2qT,!*9,E!si'F&?s+Eo^CkB2.G<F;LAgAuWmIDyb.y>beG!46dV<+@NncBiB6mA'A#D+
+#@ 1lo(FM/qT,!*9,E!si'F&?s+Eo^CkBpP/C+<#V<+LdV<+1A`nA88J9>m'cSAJOZ-E3^vIBsH
+#@ 2TAt!lr@7rtDFgKxhCAwnW4bu'aC1(;&,Z_xQH6dV<+LdV<+JS)!F.DVHBsH2TAs-%lB!^I9
+#@ >m'cSA%Ia:@to<JD9^vIBsH2TAt!lr@7rtDFgKxhCcc+=wLdV<+LdV<+:tJTA9),QB0vgq@_
+#@ @|mA'A#D+lJAkB()7*C3ntD+cKxhCt>/kB&=..D3^vIBsH2TAt!lr@7rtDFgKxhC(BpT,!*9
+#@ ,Eo3VgC/kYD+svV<+LdV<+LdV<+lNI9>m'cSA32=mBGXME+B._vHmvO:@g^CkBpP/C+<#V<+
+#@ LdV<+LdV<+?<rKA'q(E+6nsdDFF0wE5QelBrIbD+)^xlBExG<F6;2`F(Dm`C/kYD+B._vHmv
+#@ O:@g^CkB2.G<F;LAgAuWmIDyb.y>beG!46dV<+LdV<+LdV<+(KxhCwosdDX=fK/vLcr@;QQw
+#@ E5QelBy.jY?m'cSA5VAkBmX|;@9gM9wLdV<+LdV<+T@PF+!xMTA<H<:+LdV<+LdV<+O*S9,l
+#@ WNeDtl`N7h'cSA(5:JD/5T,E+S5D+<GV*FfgggC5/saE:RVE+5NTfD1D>D+&jmMC>4,QB0vg
+#@ q@_@|mA'A#D+I#qT,m'cSAnjkSA.c:s+QvV<+LdV<+LdV<+>#V<+LdV<+T@PF+!xMTA<H<:+
+#@ LdV<+LdV<+(KxhCwosdDOAqT,!*9,E!si'F&?s+Eo^CkB7ZpT,m'cSAnjkSAQvV<+LdV<+Ld
+#@ V<+uTbOBHqh<+XuIlBshUHBsH2TA5cir@7rtDF3><SA+30bEt/saEw7^Z?m'cSA,FtD+S1::
+#@ +LdV<+TX93I6dV<+LdV<+=g>D+t/'fDgXc)2VKAgAuWmID;8W(46dV<+TX93I1D5)F,n<@wL
+#@ dV<+LdV<+uTbOBHqh<+V)9,E7L,!F&?s+EB^vIBsH2TAt!lr@7rtDFgKxhC%u'eD3vOBD5)Z
+#@ KA@/;EF*GtD+S1::+LdV<+>N<:+LdV<+9MfCF0@>D+lQ2TA:LAgAuWmIDuC#D+F@a'46dV<+
+#@ O*S9,DP)*F4M&PBAKSHBsH2TA5cir@7rtDF3><SA+30bEt/saEw7^Z?m'cSA,FtD+S1::+Ld
+#@ V<+FOMEF?LAgA(;tT>beG!46dV<+><8-Bv-0bEf=+Y?gLoRAt/saE:RVE+O4r(46dV<+:mui
+#@ @+dMTA4M&PBQvV<+>wO@w6dV<+R*r<+/'O+EwAoC+n/`OBuIYD+)jACF6m+!F&?s+E=bl(FB
+#@ tTKD7yG)Ft(#D+.5#D+l'uSAw@VTAu2x;@-T#-EU^!>wLdV<+,CHr@4`DTAtsY8Ah<..D!:p
+#@ ;@We`p@hp^LC@bo^F/jmID(=..D%WrSA+=..D!3x;@-T#-Ed<mID(8x:I<H<:+LdV<+1=,D+
+#@ Sk_<+cKxhC/v&yG=xVE+;kkcE1ZbDFnjkSA<APF+<#V<+LdV<+9@-bE@CDE+mSOcE|OF?+i<
+#@ xhC*+G<F+KAkB%WtfA'A#D+;kkcE1ZbDFnjkSAS1::+LdV<+>N<:+LdV<+9MfCF*|<JD'rS,
+#@ E9upT,4;QcE-cKKDuC#D+?aw%?QvV<+LdV<+7pZQH3(G9>m'cSA%Ia:@`gpgC.1Ej@6gDTA)
+#@ 1^;@qP/C+Dn<@wLdV<+LdV<+0lTfDpjW37=u5cEKJAkB7ZpT,4;QcE-cKKDuC#D+7vOBDBIf
+#@ ZEXeW:@vSY%,QvV<+LdV<+>#V<+LdV<+91VE+6MMEF'rS,E9upT,0ZfKDuC#D+Dpw%?QvV<+
+#@ LdV<+DP)*F;7:eDMu:s+7pZQHg?gHDs2K(Ff.fRA7kkcE1ZbDFq&tW+Vx%XH5X(RHnjkSAt=
+#@ sp@n<..D32_9IZ_xQH6_PcEI?xQHe;o(F5/saE:RVE+SRCkB2.G<F#bbD+x<<JD5C,!F&?s+
+#@ EVT:x>%;GQB,CH8A>%lDF)v#D+A;lcEn%oC+qKDTA4S.#HvV:3IS1::+LdV<+%B!eDOAqT,*
+#@ ntD+;k1`FP2::+LdV<++oreD>ZpT,EbS)46dV<+:mui@+dMTA;7:eDP?N9wLdV<+R<n9,>P0
+#@ bE@C/`F=APQB!KAkB'upcBrQ&(FpolRAvLVTArTkjB+1<:+LdV<++oreDuKI9>*dmID>xl^F
+#@ /jmID(=..DDH(CGWkN?+QeD<F0F?r@%HK(F6dV<+=3rfA'A#D+gpbSAHVeK/vLcr@.1Ej@6g
+#@ DTA)1^;@9gM9wLdV<+g,74wLdV<+,CHr@-)fCFyL|;@9QelB7D!wH=mZQHDn<@wLdV<+6dV<
+#@ +8x?3@6`t!HC+H)F-;;-Bf++:@,o-#H&qTZ?:p2TAQvV<+LdV<+qd1kB&mSCFF4O<@ktWU@0
+#@ qeZEjuVd3N&O+E,=^Z?!=mID#6XeDWZN9wLdV<+:tJTAFCi)Fm'cSA+5#-E6=VE+KQME+0XU
+#@ &,92::+LdV<+C+H)F8IfZEh'T9,8t'eDKuSE+i=|7A)uT?wLdV<+R<n9,9GK(F6,:eD<y-fD
+#@ M.TV6?Kvj@&kbD+u@oC+d^YSA)uT?wLdV<+:tJTA>y-fDgdfRAvXxlBd.oRAo3uSAe-%lBpK
+#@ I9>rLa:@*8>D+<uhoA'A#D+%#(E+!=mID#6XeDqK>nAmX|7AX7d'46dV<+@NncBC5>F+-g0Z
+#@ ?!=mID#6XeDxL>nAmX|7Aoo<JDv!(x4d3:3I<H<:+LdV<+O*S9,IOMEF%y_p89w`aEwFV5BX
+#@ @PQB-r>0AuE)5B7bl(F8DsJD,W_g92GA9G.kbD+d^YSA.0?SA(dfRAvXxlB35:JD,Qs/D%<X
+#@ eDRZN9wLdV<+LdV<+91VE+,FDkBnKI9>+'O+Eb.fRAKNi)Fm'cSACg-fDgdfRAvXxlBd.oRA
+#@ o3uSAe-%lB9ZpT,'ji'FdX|;@!Y0Z?epCkBc_!Y?u3uSAs^Io@si`aE=oU9,vh&sF<Y_`Fl`
+#@ i'FdX|;@7t(E+*WB3@.&l%GRkPF+cYeRAvXxlB;kQ,E26sJDB,n|;686-Eei;iCW4=PAaR54
+#@ BPesbDCn&<I92::+LdV<+>N<:+LdV<+R*r<+:V#D+.5#D+!=mID#6XeD5ovlB5ZB3@/ZFID(
+#@ *Z8A3YqcB>@)E+rGB3@6`t!H7O,D+gp><@6dV<+JS)!F9R,!F2LVE+osK9wLdV<+:tJTA85:
+#@ JDw&|C+a1::+LdV<+4P5cE^IbOB0o<JD=c2xE&LxhC,n<@wLdV<+LdV<+7pZQHtuCTA,rP-E
+#@ neOd;dX|;@7t(E+%hUU>61_U>Vrvs.wyTo.Gal(F.cpp@0dhTA,e|;@.&l%G:iKm/O-:aC)G
+#@ #D+r-ur@+cir@BR,!FnjkSA%`SCFn1Jv?Z_xQHR*r<+#j<NC5Q?<@B.j|D)cir@si`aEw%<:
+#@ +LdV<+LdV<+9MfCF7wIt-3-^;@=lU=+5`xIDP2::+LdV<+TX93I6dV<+LdV<+1=,D+Sk_<+e
+#@ <;oA9v&yG;J)*F/-^;@qP/C+Dn<@wLdV<+LdV<+4nsdD13=JDAgM9wLdV<+LdV<+>#V<+LdV
+#@ <+R<n9,6/4iC2-3SA.3<SA-upcB4q?KDuC#D+)tLE+gBmIDqK>nAmX|7A6dV<+LdV<+1=,D+
+#@ Btc3@.&l%G!psZ4?G=JDnimlBEgRF+Dn<@wLdV<+LdV<+4nsdD13=JDW.O?+L8g|D@d.F+,C
+#@ Hr@8UME+nimlB;%,!FdX|;@5cP)F6dV<+LdV<+>N<:+LdV<+JS)!F4%OBD(7Rt-5`xIDXOnT
+#@ ,'=..DAEV6wLdV<+659:+LdV<+O*S9,1,3SA=APQB9heV6&|ACFv#V<+LdV<+1A`nA88J9>p
+#@ R5SAP9xQHwjyW.I3hgC@|o(F*DY-E+jyW.2bL'FwyTo.aLqT,u3uSA/#BCFl#aQ?i3hgC@|o
+#@ (F4PZ-E,g;3I<H<:+LdV<+LdV<+9MfCFrK|;@9QelB7D!wHC5dU,'=..DIOnT,yL|;@9QelB
+#@ 7D!wHR.O?+3aMTA!.(:@,o-#H&qTZ?:p2TA6dV<+LdV<+:mui@26nlBPPW(46dV<+LdV<+>N
+#@ <:+LdV<+>N<:+LdV<+R*r<+wAoC+2b/wE'<elB64G<F,qeZE.o5cE5#V<+LdV<+3aMTAFCi)
+#@ Fm'cSAQvV<+LdV<+82_`F(gI9>sB-<@2-3SA0ZFID1SV*F'*0CF#uIv?QvV<+>wO@w6dV<+R
+#@ *r<+e;o(F%a#SA8XG<F#dZRA;eb@G;5DEFu:a6wLdV<+,CHr@-)fCFgdfRAvXxlB%*T,E26s
+#@ JDP5>F+!=mID#6XeDRAPF+<#V<+LdV<+7pZQHu;!iC&K#DFAlM!FdX|;@5cP)FnosZ4d3:3I
+#@ <H<:+LdV<+IJcZE8JlcEvw/gC%.(w?QvV<+LdV<+>#V<+LdV<+OScZEB7fZE.o5cE!vlr@si
+#@ `aEsERdD4<XeDBXG<F(-3SA=APQB1kQ,E26sJD0KhgC:+ME+4CDE+ridlB(&oC+!=mID#6Xe
+#@ D4#V<+LdV<+qd1kB&mSCFF4O<@ktWU@0qeZEFf:s+mgBTA=;2EFgdfRAvXxlB%*T,E26sJDU
+#@ MJvFdX|;@5cP)FruwlBM2qT,!=mID#6XeDO(0!,QvV<+LdV<+sB-<@I(RKD91VE+!=mID#6X
+#@ eD*/uDF1oG)FQvV<+LdV<+91VE+2aDoA'A#D+vHFiCC2qT,A=)E+0XU&,Ob`WF2NfCFAq|fD
+#@ QvV<+LdV<+91VE+2'aaE/!J9>rLa:@*8>D+3N!iCF@BTA,rP-EKNi)FvLxhC+f*@?V<mID#6
+#@ XeD@'/=wLdV<+:tJTAHR8EF2G)*FkWmIDu;!iC&K#DFAlM!F3f1EF7OM9wLdV<+/&I;@+dmI
+#@ D8R8EF2G)*F%)(yG*sI9>#XmID0k>D+Eq|fDm'cSASVa+192::+LdV<+4P5cE@2NTAN##F+d
+#@ @PF+Y/#F+jkM!F3f1EFp^bSAS`xQHw!saE`|(d0Dn<@wLdV<+LdV<+91VE+r#/gCmxoRAQlM
+#@ !F3f1EFQD+UG92::+LdV<+JS)!F9R,!FdX|;@!Y0Z?njkSAruwlB'E(yGKNi)FvLxhC4g=dB
+#@ `Qa'46dV<+LdV<+4P5cEPf,!F0V7*Ce6:3IVFqT,|cU?+i@PF+?5:JD,P7*Ce6:3I<H<:+Ld
+#@ V<+LdV<+*Q*+EtsY8A(dfRAvXxlB%*T,E26sJDT/N!FdX|;@!Y0Z?njkSA2#/gCmxoRAPc2x
+#@ E):DkBnKI9>78?cEO7pq.-_/C+*3I9>t*Z8AC>qT,2aDoA'A#D+uqP-EAg=dB8Wtv?aTa'46
+#@ dV<+LdV<+>N<:+LdV<+>N<:+LdV<+8JfCFB4uD+mSPcE.J;-B9R,!FdX|;@!Y0Z?4<nlB%ns
+#@ #?QvV<+>wO@w6dV<+6dV<+>eTfD8xS`F/aDTA*@q-DBsZQH4o.6BluA(FZ_xQH6dV<+8x?3@
+#@ 6`t!HC+H)F9R,!F?u>cE(pMTA@2::+LdV<+4P5cE^IbOB4o.6Bn1oC+8o.6BluA(F<H<:+Ld
+#@ V<+JS)!F9R,!F?u>cE(pMTA?NU'DoLYjB*AG9>lj|Z?0ot)FYk*Y?wm<eDD@#lB7=VE+8o.6
+#@ BVY@v?QvV<+LdV<+:tJTArdkSA&k54BhH<JDDteK/3WpT,sF=Y?<SeK/#R.lBvk%#46dV<+T
+#@ X93I6dV<+IJcZE8JlcEljX9@6`t!H-)fCFE46-E2BK(FfM@v?QvV<+>wO@wLdV<+,CHr@C+H
+#@ )F?u>cEv:UZ?4b5D+H%<)F`C,8AtGo(FSAPF+<#V<+LdV<+sB-<@>uJTAIxS`F/aDTA'h|7A
+#@ F0<)F`C,8AtGo(Fi'T9,U4>F+&8m`Ct?^Z?0Kk_Ft/*8A-l&(FvvQ<@3y#D+!9,>+>#V<+Ld
+#@ V<+w^DTAn7>D+sF=Y?jHI9>sB-<@53x;@2+ME+@r|,E5ot)FhZ*p><xX6wLdV<+LdV<+#k|Z
+#@ ?0ot)FYk*Y?wm<eD<V*8AF0<)F`C,8AD@#lB7=VE+I46-E2BK(F1nHt-8o.6Bv.d:.QvV<+L
+#@ dV<+>#V<+>wO@wu!V<+r'T9,8qjIDO&k)<iV'<wu!V<+/2RB;8JlcEAF`cE0upcB:UJ`F+!=
+#@ JD);?CF'/#LDCqm#HV5`WF*0K(F<APQB)cN<@ktWU@M!rZ39W_g9V?l#F<5H-E&tLE+<O,!F
+#@ ,2ufArZMTA9*S9,!*-NB*WB3@6;hAGxos_<9GK(F*FV5BE?)E+wR.lB8U/*F)#ZKA730bElj
+#@ >r@!ZFIDsGegC=PD*F|;DB+8#;EF+S5D+CC,!F.IC9GiabOB,oW/DmgY8A4#V<+T+A9G%)^a
+#@ EnWg:@wp<JD7+dfD%ZACFpG#j@0gDTA4S.#H18-wE1>fC+?AhAG!X&(FZSSF+<#V<+9bN<@k
+#@ tWU@1%,!F<5H-EAh+*46dV<+1=,D+TlM!F<5H-E&tLE+Dn<@wLdV<+R<n9,DP)*FEFr:6Moe
+#@ ^FVM*!F.HnlB5+,!F<5H-E(1.',QvV<+LdV<+qd1kB&mSCFF4O<@ktWU@2.G<FE9xQH91VE+
+#@ ?AhAG!X&(Fh6bOB_.aY?jFfRA3V#D+!i0fDGhV*FrK6hCk9MTAr10+43aMTABn-0DL2::+TX
+#@ 93I6dV<+1=,D+M(@KD3j2TA><SF+<#V<+LdV<+DP)*Ft0oFD,Qs/D%<XeD>54w<17ME+)^xl
+#@ B:MqcBGUJ`F+!=JD);?CFkKo|;>WT,ELgME+-XVTA(LdQ6ex,J0iy1'DwL6<@,+ME+0g!iC>
+#@ %lDF)v#D+@r|,E5ot)FNX1+46dV<+IJcZE8JlcEqj%#46dV<+>N<:+IJcZE8JlcEpdqv4>X9
+#@ 3I9mV<+njkSAt=sp@/v&yG=;2EF?DylBwU/CF%s<JDe-!eD7u(yG:k84w
 #@ x
 #@ 4
 #@ ,CHr@
@@ -3772,92 +3577,75 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 6
 #@ 'E%6B_-v
 #@ p
-#@ 287 0 4001 190 4 2 1532 2 13 287 327 -1 -1
-#@ 4001
+#@ 233 0 3108 162 2 2 1216 1 13 233 253 -1 -1
+#@ 3108
 #@ )Nr<!JAe`B8F=B(v*<<!&<`W!*TA9v2fSs!8BW<!.Qr<!4`8s!5v!!!0!!!!,|/=!D59s!5v
-#@ !!!0!!!!.iA=!F59s!5v!!!0!!!!0uS=!F59s!5v!!!0!!!!1&|=!F59s!5v!!!0!!!!2,f=
-#@ !F59s!B:3-&3f=6#/HW<!Kqgqv<vqqv;N2,!B=Mw!#0E<!I^w!!5|!!!8=e`'Cn:3w9cJs!D
-#@ 59s!5v!!!1!!!!A:@rv3K+;v8^w!!9i!!!0/>:v:/C=!YFRrvJSa<!RN2,!0&Tv!#0E<!|I`
-#@ H&;tMH&y,@<*9oSs!IeTs!>hk>!T5,Uv.Z/s!_G<9+9oSs!8^w!!.H!!!.8UNwOPe`B8F=B(
-#@ v*<<!R`VT+K_s<!Nvg9vPSe`BCTho+v*<<!@_>t!XaDbB/JHK%v*<<!l7ol,xSa<!RN2,!O6
-#@ n%!w6N<!RTpmw<Y`U4uDON-pGji-m&3,!/uJv!#0E<!dg4+'bsB?)8^w!!Vm(!!1SQK%knEI
-#@ '5v!!!-!!!!uHU-KuDON-pGji-v9SQ,Zks<!oSa<!b.%fB.A-0%v*<<!^-`qv7>,>!e-96w2
-#@ NW<!V`8s!Z2!s*9f/X!-BW<!h?T6wS#/p+|_w!!G?%!!NSKK.,6L=!.assvo2o<v&9xm?5v!
-#@ !!8!!!!O0n@!UBE<!.pftvAJfs!5v!!!e!!!!R|,7wvdYa15v!!!.!!!!YG@L&<tMH&y,@<*
-#@ ;uSs!ZCUs!>hk>!VA>Uv.Z/s!_G<9+;uSs!bsB?)bsB?)8^w!!mx#!!0/>:v/k*gB0Scf%v*
-#@ <<!Y4t<!RYe`B0Scf%v*<<!Z7t<!@ZW<!F^w!!1Q!!!UC%'1Mv!!!Y`aA!<EQuvMSa<!RN2,
-#@ !6J5#!#0E<!)oq8wdPcuvDy,t!5v!!!6!!!!@+;?!gfi<!t:iH&DN2,!4>##!#0E<!q;T=!u
-#@ 4`H&J^a|(tcor3BC+'(2iSs!k=S9w9Z/s!5v!!!6!!!!@+;?!gfi<!w;iH&FN2,!.oAv!#0E
-#@ <!OtPt!5v!!!X!!!!9)aNJw<rr!!xw!*Kkmo4:iSs!uDON-pGji-l#3,!.oAv!#0E<!38Gq+
-#@ C1_u!5v!!!4!!!!f+89wmb)!#Eh>t!Qp31%gd(v!@GKs!.EW<!QA|=!m`8s!Qp31%lwVs!Gd
-#@ `5w&b4:wl:`xv0`8s!Qp31%o-Vs!Gd`5w%P8v#@^a|(*rEK71Saf7B5Ts!r3Ms!AGe`BI5ai
-#@ -v*<<!K(r9-^d`5ww;*D!1/mC!u;5pvrX8yvO#/p+C1_u!Qp31%u?Vs!+Ki<!wtnv#-|yTve
-#@ |%*9!7u<!BJe`B.B6K@v*<<!@yq9-:Ki<!hYWD!;,VqvO)8p+&_w!!4Z!!!(WyTvii%*9K!o
-#@ .&8^w!!Qyv!!=I/.&3v!!!5^w!!?&v!!txp#;E'8?;F0SZ;G9nu;AmF)!=x4F'IN2,!@1;w!
-#@ #0E<!5_w!!1Q!!!w4NW<p!!!!;.WH&JN2,!-c&v!,,:3wX7ut!d!!!!eC#!!Ha.%!'-)%C9O
-#@ X|(v*<<!@yq9-86I<w`r%p+C1_u!5v!!!,#!!!>CW1%rlVbB-8giwv*<<!EQ*A-qB!t+tlA7
-#@ -|iYmwuDON-pGji-Jh4,!aMg'!hG307v*<<!*VMT=C+aZ)9s+6>HQGQ>5)5Uvp5o<vujZRI#
-#@ 3WW!?v87w4=+3?S<0U#5FFN?9RuQ65v!!!b!!!!rP%R5954,!P<v&!gA*07#3WW!1@ai?C+a
-#@ Z)9s+6>HQGQ>5)5Uvp5o<vujZRI#3WW!KSa<!KHw0@>w^f@PD!-A>WSpv8^w!!<r!!!?'w!*
-#@ g-xUvTaFC(<<Ns!RZg((8^w!!4Z!!!6,8EBVtS`BRiH_(8^w!!B/v!!74JE'BYq9-F^w!!.H
-#@ !!!8>n&Cyxn<vS7f`BBKMT+v*<<!?y>t!Wx;bB.A-0%v*<<!M,Gf(bsB?)8^w!!2T!!!:PO|
-#@ CBK<X!O2X<!TjqG!8`8s!5v!!!2!!!!;chG!T/WH&Xh0?DH/YNw.EW<!F^w!!-E!!!>tfuDr
-#@ Zs&#E7HWEKJ9X!J@:bB/JHK%v*<<!Lv!!!ae0'#Ah0?D|3(%).EW<!Mk9'#@h0?D`BC@).EW
-#@ <!NqB'#Hx_oFVtS`BH*(((7on9vG;O8sKEC?)8^w!!9jw!!74JE'BYq9-=_w!!.H!!!8vmjw
-#@ _+f`B4v&*'v*<<!U^+((LlNs!a1f`BBKMT+v*<<!?y>t!Wx;bB.A-0%v*<<!M,Gf(bsB?)L.
-#@ ??wDZ/s!c3,((=93X!My|X!Qsm<v@5X<!f8hqv:N2,!.oAv!w6N<!kmqu!<a46#)!!!!M9,J
-#@ &/i-(!f8di6v*<<!NWnovwaw!!.H!!!.8UNwhFf`Bcuw36v*<<!;8uW,!ZO3-yy4I!c&.4wA
-#@ T`<!R)usvo2o<vtSbsvp5o<v+kJL&5v!!!.!!!!YG@L&gSa<!KHw0@>w^f@PD!-A>WSpv8^w
-#@ !!0N!!!Asaa'+b#;+8^w!!PYv!!0/>:vJ(d>!HJ.rv?^a|(_Q=NHG;0X!Zu(O%Qp31%h<fa'
-#@ 1fSs!8^w!!.H!!!.8UNwkOf`BBKMT+v*<<!tGt/IDx;bB.A-0%v*<<!%+Zq+bsB?)8^w!!Xq
-#@ v!!MK9KI,6L=!-bssvo2o<v,nJL&5v!!!.!!!!?USI&4C)bB.A-0%v*<<!&4u7,8^w!!Xqv!
-#@ !NTTfI,6L=!.bssvo2o<v,nJL&5v!!!.!!!!?USI&5C)bB.A-0%v*<<!'=;S,8^w!!@)v!!K
-#@ #rs*Wx;bB.A-0%v*<<!_p<**bsB?)8^w!!C3%!!+rXQ#;,tl#wagE!QA|=!lrP>!vw5pv@^a
-#@ |(e26HJnSQcJoyl)Kpe2EK4G'-88&Ts!8^w!!LMv!!N>np+)c47,uDON-pGji-lwb|(iVM`K
-#@ VQf6wQp31%yJXs!l0b|(kh.BL4G'-82iSs!Gd`5w&b4:wl:`xv0`8s!5v!!!;!!!!jlPT4lw
-#@ b|(lqI|LPpm<vS7f`BOkYc/v*<<!>Y>t!E_6>!QA|=!v*c>!dw5pvWFw>!QA|=!w*c>!dw5p
-#@ v;N2,!;hb#!,,:3w<+nmwQp31%byXs!bsB?)Gd`5wmWr)#;N2,!sef2!,,:3wf-m>!e-96w9
-#@ Nm<wC'D^vTGF3-qB!t+uuyR-LQf,J5v!!!Ev!!!>CW1%rlVbB-8giwv*<<!EQ*A-qB!t+tlA
-#@ 7-|iYmwuDON-pGji-BQc|(rRBWN&t|rN2iSs!Gd`5wt8PBw9Nm<wC'D^v2`8s!Qp31%gkXs!
-#@ Gd`5wmWr)#x^H>!QA|=!ps&=!GrP>!80GpvKSa<!RN2,!w2?3!#0E<!:cW<!2>77wwNtsvo2
-#@ o<v%/77w%Qtsvo2o<vq/0%!c??nBD|.6,v*<<!xXr9-J^w!!2T!!!Asaa'gb4X!fgn<v@5X<
-#@ !QA|=!lrP>!nw5pv@^a|(e26HJ,UVlP-^q2Q.g7NQ+L;QP8&Ts!Gd`5w#E,+#@^a|(&N.36q
-#@ 5IN62iSs!8^w!!;o!!!-iA=!<;U=!QA|=!;%/p+C1_u!5v!!!O!!!!<7E1%Gjfg&Qp31%v!H
-#@ C(_POs!y2_0&Qp31%w'HC(_POs!AGe`B;a9?)v*<<!:AV9-Pd`5w%Q>+#KSa<!W^a|(qI'<N
-#@ AGe`Bsy6ZVv*<<!oF|a(y,@<*9s+6>HQGQ>3lSs!uDON-pGji-H!!!!`_w!!E9%!!1SQK%kn
-#@ EI'5v!!!-!!!!uHU-KuDON-pGji-v9SQ,Zks<!oSa<!R>2B!QA|=!%sP>!uw5pv@^a|(td#9
-#@ O9s+6>HQGQ>4oSs!Gd`5wqoA*#@^a|(qI'<N`V!I'Qp31%pU?7#G.ea'3-/UvPpm<vb`n<vS
-#@ 7f`By0B<3v*<<!:M>t!*W5S->&6W`Qp31%r7Ys!Gd`5w(cY+#-|yTvr#KcS.EW<!tLED!)`w
-#@ !!?&v!!txp#;+.7?;-@mu;,7RZ;'tE)!/2bpv.|yTvcLMcS^HfI&BJe`B=qfuDv*<<!_j8U-
-#@ pBC#qQp31%i9!w;J>-ET4G'-84oSs!Gd`5w,&),#@^a|(1|b&USf3n,oWWZ;j|,'(4G'-86u
-#@ Ss!Gd`5w/8D,#@^a|(4#_#VSf3n,r`WZ;Q(AZV4G'-86uSs!Gd`5wmWr)#;N2,!Xmp/!,,:3
-#@ wV#1%!KvbI!QA|=!*5m8%gXN5w&wBdv2`8s!5v!!!.v!!!;x6U5_Sd|(0TG`T.EW<!QA|=!&
-#@ A*9%AZ|M!R18@!WqP>!r<Ypv@^a|(3oC|U.EW<!QA|=!)A*9%Dl#N!R18@!>sP>!r<Ypv@^a
-#@ |(qI'<NPpm<vb`n<v!lB'DQp31%i9!w;S:v<WQ`3n,W|ba'!Xd6#.EW<!QA|=!wb8s!Qp31%
-#@ o|ru;MY)BURc3n,W|ba'!Xd6#.EW<!QA|=!'b8s!Qp31%rfru;Pt%?VRc3n,>iga'!Xd6#.E
-#@ W<!QA|=!/%/p+8Li<!vib+#-|yTvcLMcS5v!!!?!!!!ujrD!+q&E!-(9E!,v0E!&e#!!3,o9
-#@ v+Ki<!l8%DwZ:_qvA^a|(9P<WWP|3n,t`<?;MY)BURc3n,#wsu;j|,'(4G'-8:,Ts!G;O8sH
-#@ KC?)8^w!!B0%!!+rXQ#;,tl#r6(E!QA|=!/b8s!Qp31%.kYs!Gd`5w9tI-#@^a|(j_h&L.EW
-#@ <!QA|=!G`8s!Qp31%0qYs!J@:bB/JHK%v*<<!Lv!!!2S)O!c1e-#_jZ>!F^w!!/K!!!M(Y.!
-#@ +`8=!5b8s!Qp31%p6_X!mwMs!.EW<!QA|=!6b8s!5v!!!;!!!!jlPT4lwb|(lqI|LPpm<vS7
-#@ f`BCTho+v*<<!>Y>t!?;U=!QA|=!V%/p+Nd`5w@I4.#;N2,!;hb#!,,:3w<+nmwQp31%byXs
-#@ !bsB?)Gd`5wAO=.#@^a|(qI'<N.EW<!QA|=!;VN<!vw5pv@^a|(Gwd,y.EW<!%o:qv6d)HyA
-#@ ,9X!8^w!!PYv!!;=ig%Tdi?!K:/P!pcW<!F7,Uv0Z/s!Qu&E|pE@t!:#o9vbsB?)8^w!!@)v
-#@ !!0/>:vDY->!MXkpv)Cir<=u8X!bsB?)z
-#@ 287
-#@ 1GUm#I^&.&aBf.&BkHOwI/PQ#L_>Y!PLEL%yNb+'_Tfh%av@0%Qmyd&IxJ.&I.mOwPk17#PH
-#@ H<*MI*1%K1h7#NC@n#Ypdn#M+hm#HSkpvY->a'@Jk6#Hkpm#|;8U+^VJ>*l.b7,xQBU#kLU4
-#@ -`cCG'eZGe&Engm#F7WH&F@mn#O6(C(cT5/&T=78#Z|PN%sr|h%TI3L%^NGe&Y0'M%Y0'M%b
-#@ K|h%iX74wZmW1%^*'M%a;W=*u;Z+'#aeJ/oy3y)TmW1%^*'M%a;W=*u;Z+'dJRc'BSkpvulL
-#@ b'iGRx)^Q|M%iGRx)rGRx)XUqm#/'B+0Nngm#>/TX!|!fh%U*K.&OxW1%K=In#NwoI&Gu`!
-#@ 327
-#@ P*BlwP-f.&yj3PwfY!I'T*Cw)NI.S#xi-_(03K+02N3<!c*_,%Q7@Owj*#^(.F^R%Kn^R#=P
-#@ N-&eA_((_TGF'U?b'(#23<#T^xS#QO`g%PXdS#sFqm#I5!g@QIxS#AbC<+ET3<!GK-%)'w*!
-#@ !w(bR5gbPpv_Zph%.Stq+o#-e&H4hqvP7M7#Tk17#XmQ@DrJc3%KI3L%#w*!!-DjO6W3|.&p
-#@ @*kwA&7v3!<6v3^bS:+&07y)j=<L%-Li*0`6FT#*w*!!Sn?nGXgmn#;Z3<!I(qc,eBao#-Li
-#@ *0`6FT#*w*!!Rk?nGXgmn#;Z3<!e%rr##7_x*.w*!!xC.o#i0ao#!w!!!.X=vwh'FT#i0ao#
-#@ t%CO-?b!:GEngm#YK#N%xLIn#oT9U#UI_m#In17#u/YkwMZW!
-#@ 190
+#@ !!!0!!!!.iA=!F59s!5v!!!0!!!!0uS=!F59s!5v!!!0!!!!1&|=!F59s!@.mf%3f=6#/HW<
+#@ !Ik^qv;qgqv;N2,!B=Mw!#0E<!H^w!!5|!!!74JE'Bk:3w9cJs!D59s!5v!!!1!!!!@47rv3
+#@ K+;v8^w!!9i!!!0/>:v:/C=!W@IrvJSa<!QN2,!0&Tv!#0E<!yI`H&:k2-&Zuw!*9oSs!HbT
+#@ s!=bb>!S5,Uv.Z/s!|;!s*9oSs!8^w!!mx#!!0/>:v/k*gB0Scf%v*<<!IYs<!OPe`B0Scf%
+#@ v*<<!Jys<!=QW<!E^w!!1Q!!!E|qo+Mv!!!IU%@!q9jsvMSa<!QN2,!6J5#!#0E<!mc57wTE
+#@ 'tvAJfs!5v!!!6!!!!?%2?!Wfi<!d:iH&AN2,!4>##!#0E<!^)9=!e4`H&FUFB(atff.A:e`
+#@ '2iSs!x2l7w6Z/s!5v!!!6!!!!?%2?!Wfi<!i:iH&CN2,!.oAv!#0E<!Lb5t!5v!!!X!!!!)
+#@ swMJw<rr!uQ^Z)+Udc/:iSs!)ADE0wD_`0l#3,!.oAv!#0E<!=&,q+B+Vu!5v!!!.!!!!?US
+#@ I&EN2,!Xlj&!w6N<!+R%!!yydg&m!**0ew@t!VEssv#No<v54KL&5v!!!.!!!!f@aM&USa<!
+#@ QN2,!4>##!#0E<!|#0=!e4`H&FUFB(atff.A:e`'2iSs!F^W5wf>Huv?UFB(kwvw2.EW<!M/
+#@ B=!dTN<!f#5pv?UFB(n?su2.EW<!M/B=!f`8s!MR74w#u_Z)rrSOwgN5942iSs!8^w!!IDv!
+#@ !8vmjwM:*?!M/B=!&&2?!CZ%5%.NW<!k#5pvKSa<!UUFB(tuko4.EW<!.Qr<!l`8s!h#MQ5N
+#@ 1jl52ln9v8^w!!.Iw!!0/>:vE_6>!hY-C!yh=:w=u+pvL9sgB4v&*'v*<<!lGdi6jsUs!Whe
+#@ `BQ(;E0#3WW!Kcu+!5,J`B?0QW*v*<<!Ef''1Fi''1Gl''1Ho''1p!!!!O(Qt!5v!!!@!!!!
+#@ +=8hB1y)-&v*<<!f2H)!(|vpvG%Zt!6+<<!u!!!!K-oI&#i-(!e2xi6zI*<<!o^w!!9i!!!0
+#@ />:v=/C=!:>qqvJSa<!55>E9i&v':9+;B:)mRpv8^w!!<r!!!>s|Z)WRZUv=eda''RMs!PH1
+#@ G'8^w!!4Z!!!!nQZ;?xmu;PWg((8^w!!B/v!!6+/*'BYq9-F^w!!.H!!!#+3<<ZUn<vR4f`B
+#@ BKMT+v*<<!?y>t!Wx;bB.A-0%v*<<!60e/(aj'w)8^w!!2T!!!%=ir<-a;X!M,X<!*A|E!8`
+#@ 8s!5v!!!2!!!!&:TE!?/WH&AUJT=3EXNw.EW<!E^w!!-E!!!)a+6>|1_w#0wbl>ID9X!I:1b
+#@ B/JHK%v*<<!Lv!!!J<qw#,UJT=F7FC(.EW<!8B%%#+UJT=IFa^(.EW<!9H.%#3Hw0@?xmu;F
+#@ mFF'7on9vG;O8sVb.w)8^w!!9jw!!6+/*'BYq9-=_w!!.H!!!5ypm#|%f`B4v&*'v*<<!>bI
+#@ F'7-Ns!_+f`BBKMT+v*<<!?y>t!Wx;bB.A-0%v*<<!60e/(aj'w)7Z*=wBZ/s!L7JF'(O2X!
+#@ KV|X!Qsm<v?2X<!O,Vqv:N2,!.oAv!w6N<!ha_u!:OSTv+!!!!K-oI&-i-(!f8di6v*<<!LE
+#@ 89v&aw!!.H!!!.8UNwf@f`Bcuw36v*<<!;8uW,!ZO3-G3uF!Kig3w?T`<!x)usv#No<v(obs
+#@ vwQo<v41KL&5v!!!.!!!!f@aM&eSa<!55>E9i&v':9+;B:)mRpv8^w!!0N!!!?a++''JBY*8
+#@ ^w!!PYv!!0/>:vJ(d>!:>qqv>UFB(G5WcAE50X!Zu(O%MR74wQ@/+'1fSs!8^w!!.H!!!.8U
+#@ NwiIf`BBKMT+v*<<!|.9EBDx;bB.A-0%v*<<!0@w;+aj'w)8^w!!@)v!!If;=*Wx;bB.A-0%
+#@ v*<<!xXxH)aj'w)8^w!!8gw!!+rXQ#;,tl#nsXD!M/B=!Sf>>!k#5pv?UFB(KYn&CU(5BCV1
+#@ P|CW:k#D&*6948&Ts!8^w!!A,v!!L,8:+?;U=!M/B=!ew/p+M^W5wLMa&#WFw>!M/B=!Zf>>
+#@ !k#5pv?UFB(l-=?2esWZ22iSs!8^w!!;o!!!-iA=!<;U=!M/B=!hw/p+B+Vu!5v!!!O!!!!<
+#@ 7E1%Gjfg&MR74w^sea'H`Ns!y2_0&MR74w`wfa'H`Ns!AGe`B;a9?)v*<<!:AV9-O^W5wRqB
+#@ '#KSa<!UUFB(Wp_oFAGe`Bo9(|pv*<<!:M>t!)No7-&XN6-%wst+)WYS-Q*M&g5v!!!D!!!!
+#@ 41LT5p/3,!22fv!,,:3wyt9avbPXr+B+Vu!MR74wSF/+'MoNs!.EW<!M/B=!Tf>>!cf>>!df
+#@ >>!ef>>!XHkpv?UFB(|QXiH.EW<!M/B=!dTN<!f#5pv;N2,!;hb#!,,:3w<+nmwMR74wS/Xs
+#@ !aj'w)8^w!!OVv!!/ApiwBYq9-U^W5wS.??wZyj`vO#/p+S^W5wU:Q?wZyj`v0`8s!5v!!!;
+#@ !!!!jlPT4kpFB(_c9KIPpm<v?2X<!M/B=!mw/p+B+Vu!74WW!3!!!!8tu0%xF;I/I*<<!8`W
+#@ 5wyXH(#?UFB(auo,J.EW<!.Qr<!Ya8s!h#MQ5bu6,!?+2w!#0E<!soJ=!toJ=!!pJ=!n1@C:
+#@ )iOQ#/HW<!hY-C!v)02%=fAs!6+<<!j!!!!7CgT5H!!!!k`W5wZ=1J!@nh?!mf>>!m/Gpv?U
+#@ FB(eD2EK.EW<!M/B=!RMg7%uUUJ!Bnh?!Te>>!o;Ypv?UFB(h_.BL.EW<!M/B=!UMg7%#hpJ
+#@ !Bnh?!tf>>!o;Ypv?UFB(Wp_oF.EW<!M/B=!VAU7%bRE5w|%Cav2`8s!MR74wZDXs!F^W5w|
+#@ OLJ!Cnh?!RG^7%bRE5w|%Cav4`8s!MR74w|MXs!F^W5w`agJ!Cnh?!UG^7%-jnAw|%Cav4`8
+#@ s!MR74wLoWs!s@JB(c2QcJ@jpU+KGJK7eHf`'&*6946uSs!F^W5wa!!)#?UFB(fMM`KCspU+
+#@ F>ef7eHf`'&*6946uSs!F^W5wd3<)#?UFB(ihI|LCspU+IGef70k+?M&*6946uSs!F^W5wSv
+#@ L'#WG*G!.Qr<!Ya8s!h#MQ5bu6,!?+2w!#0E<!soJ=!toJ=!!pJ=!n1@C:)iOQ#/HW<!hY-C
+#@ !v)02%=fAs!MR74wKA/072(buMAmpU+F>ef74:CWNCspU+TH,+'nW&OwP#J6,-MuG&R4f`BB
+#@ LVoFv*<<!:M>t!)No7-@_W5wlc/*#?UFB(qx#9O.EW<!M/B=!ia8s!MR74wEZWs!F^W5wKFR
+#@ rv?UFB(smYoO.EW<!E^w!!/K!!!M(Y.!(Nr<!0|.@!81Ap+y:1bB/JHK%v*<<!Lv!!!n2f*#
+#@ ?UFB(l-=?2esWZ22iSs!F^W5ws8o*#;N2,!;hb#!,,:3w<+nmwMR74wG`Ws!aj'w)8^w!!C2
+#@ v!!/ApiwBYq9-O^W5wt>#+#QvC=!M/B=!pa8s!5v!!!I!!!!w&eR5wFGB(%Xm/Rw9pr3ew@t
+#@ !gN5942iSs!aj'w)8^w!!;o!!!-iA=!<;U=!M/B=!lw/p+B+Vu!MR74wp1Ys!F^W5wSvL'#?
+#@ UFB('jNfRjK5942iSs!F^W5ww|P+#Th,-/=u8X!v2qCw7Z/s!5v!!!P!!!!#uxR5+xGB(EOh
+#@ c/'wf)T9re9v-BW<!4HBM!i_L3wR)8p+B+Vu!5v!!!P!!!!w&eR5+xGB(J'FB1'wf)T9re9v
+#@ -BW<!4HBM!n_L3wR)8p+B+Vu!5v!!!@!!!!pDhQ5P`G`T9i8X!%C1;wRr%p+?eY#!
+#@ 233
+#@ 1GUm#I^&.&yj3PwNNLC(@%<L%K(@0%L7@n#:#BX!|17n#Qxrg%L^iL%YWke&U'>F'Vxrg%K=
+#@ In#Ma&M%N=hm#BkCqvH%%n#TvUX!l0vPw`cCG'eZGe&Engm#F7WH&F@mn#O6(C(cT5/&T=78
+#@ #Z|PN%sr|h%TI3L%^NGe&bK|h%^774wZmW1%^*'M%f,uN%jBao#x*K.&xmW1%U=hm#^oY3%k
+#@ 5Rx)cfYa'iGRx)jGRx)XUqm#/'B+0Nngm#>/TX!|!fh%U*K.&HqCqvZ@7n#In17#XK5J&_99
+#@ M%(!
+#@ 253
+#@ P*BlwP-f.&WLxOwlDQJ&IORrvS7@Ow69v;v_Zk/&asN5wS(h7#29?v3MaiL%v>31%U:In#K+
+#@ hm#(MB+(J=*1%G,GqvtD?;#.66/&v-<<!OnEg%.Stq+o#-e&H4hqvP7M7#Tk17#XmQ@DrJc3
+#@ %KI3L%#w*!!-JjO6W3|.&p@*kw)MT:+pc6y)_=<L%-Li*0`6FT#*w*!!P/@L&c0ag%,)JP%Z
+#@ @DR##6WW!Nngm#sv^srkeAH8c0ao#ca*o#h'FT#i0ao#t%CO-?b!:GEngm#YK#N%xLIn#oT9
+#@ U#r&P5wVkgm#GPt6#IOSF0d?O9#'!
+#@ 162
 #@ x
 #@ 14
 #@ Ludh9vj@KD3j2TAK(%
@@ -3900,9 +3688,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 8
 #@ JqP)F1Q5DF
-#@ x
-#@ 5
-#@ =o<JD7v
 #@ x
 #@ 20
 #@ .|k)FsA>cE_M*:@3K90D2;)*F
@@ -3962,53 +3747,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 5
 #@ r!2kB>v
 #@ x
-#@ 4
-#@ 1kn.0
-#@ x
-#@ 19
-#@ 4;QcEs0^Z?ridlBo97IDUvg+
-#@ x
-#@ 5
-#@ -96O8g!
-#@ x
-#@ 21
-#@ kg#lBk=|mA)Fwx?/ct)Fi'ljB2v
-#@ x
-#@ 4
-#@ 8w`TA
-#@ x
-#@ 42
-#@ |V7q@1O^Z?c.XU@fFYjBw,ZS?&jmMCgBqPBdUfRAtG,-Emw@hC|4%
-#@ x
-#@ 1
-#@ R!
-#@ i
-#@ 0
-#@ x
-#@ 105
-#@ 6dV<+LdV<+FOMEFLv8s+e/9KDE>Nb3W!6hC(3=JD1v&yG1EnlB&N>0ApxBq@Fhd#H:y3<@ig
-#@ 1kB5<9:+LdV<+=3rfA'A#D+gpbSAHVeK/vLcr@>lM!FaOf7A'.<:+LdV<+A!
-#@ x
-#@ 35
-#@ btdq@vd(:@vai'Fyv4Y?/ct)Fj7=Y?h^oRAbR'Z?e.Q,
-#@ x
-#@ 13
-#@ lj|Z?3DccE,&MEF1v
-#@ x
-#@ 19
-#@ 4;QcEs0^Z?ridlBo97IDUvg+
-#@ x
-#@ 18
-#@ ridlBiX>OBu2K^F!_KZ?KGw
-#@ x
-#@ 6
-#@ IDvmBP+%
-#@ x
-#@ 117
-#@ 6dV<+LdV<+LdV<+FOMEFLv8s+e/9KDE>Nb3W!6hC(3=JD1v&yG1EnlB&N>0ApxBq@Fhd#H:y
-#@ 3<@ig1kB5<9:+LdV<+LdV<+=3rfA'A#D+gpbSAHVeK/vLcr@>lM!FaOf7A'.<:+LdV<+LdV<
-#@ +A!
-#@ x
 #@ 20
 #@ eOjY?nimlB%Li'FdX|;@5cP)F
 #@ x
@@ -4059,6 +3797,17 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 8
 #@ i%97AagbSA
+#@ x
+#@ 1
+#@ R!
+#@ i
+#@ 0
+#@ x
+#@ 4
+#@ 8w`TA
+#@ x
+#@ 12
+#@ <?Qr@m%vY?m'cSA
 #@ x
 #@ 43
 #@ DP)*Fp#lFD,Qs/D%<XeD|M*!F1^cr@+S5D+e<;oA2cir@7rtDF1B;'
@@ -4133,33 +3882,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 16
 #@ 4;QcEs0^Z?!=mID#6XeD
-#@ x
-#@ 10
-#@ >c5DFed5<@FVw
-#@ x
-#@ 13
-#@ :QDs@vqoRAs#F+E0v
-#@ x
-#@ 11
-#@ KeTfDfvs:@_Y|+
-#@ x
-#@ 10
-#@ 7dfRAvXxlBEAw
-#@ x
-#@ 5
-#@ 8'ljB2v
-#@ x
-#@ 4
-#@ lWNeD
-#@ x
-#@ 38
-#@ &jmMCm#seDve5<@dIYjBJVAc3?DylB#Li'Fr=,D+i<xhC@Pw
-#@ x
-#@ 41
-#@ &jmMCm#seDve5<@dIYjBJVAc3?DylB#Li'Fr=,D+&Y0q@`@oRA0v
-#@ x
-#@ 4
-#@ LyjiC
 #@ x
 #@ 6
 #@ )'|(FNJw
@@ -4251,12 +3973,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 5
 #@ hi+@G/v
 #@ x
-#@ 17
-#@ kg#lBk=|mA)Fwx?k%FU@/v
-#@ x
-#@ 31
-#@ kg#lBk=|mA)Fwx?k%FU@n&BfD%_KZ?4<nlBrw<-
-#@ x
 #@ 12
 #@ hIa:@rjp-D%)#D+
 #@ x
@@ -4303,21 +4019,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 1
 #@ Iv
 #@ x
-#@ 37
-#@ lNI9>3'8UAdh`p@w1cSA'<XeDrKQ3B#wj'FdX|;@5cP)FA!
-#@ x
-#@ 26
-#@ >qAkB/?0bE8b#LDgdfq@-GhAG^JV!?g?%
-#@ x
-#@ 12
-#@ 9nATAdHi'Fr=,D+
-#@ x
-#@ 43
-#@ DP)*F9tvlBk=|mA)Fwx?pxbnAi<;oA^M*!Fr=,D+m'cSA%Ia:@8B;'
-#@ x
-#@ 10
-#@ i%97Ai'ljBR-v
-#@ x
 #@ 3
 #@ FJT+
 #@ x
@@ -4344,9 +4045,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 55
 #@ +By|3#k|Z?0ot)FYk*Y?wm<eD<V*8Ak#pq69^w)2D@#lB7=VE+(3MTA`'RKD91VE+Y4g+
-#@ x
-#@ 29
-#@ fkeC+5KxhC8%DE+w@^;@eemX?3'rTAn8/C+Gv
 #@ x
 #@ 18
 #@ 0;m|;dX|;@7t(E+i8BCF_(%
@@ -4415,24 +4113,25 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ QeD<FrEMTA;G0bE.APQBkKpp@1_#D+u@oC+4;QcE4LVE+!=mID#6XeD75:JD.0?SA'HmIDw3
 #@ BCF3+uD+6ot)Fh^c,
 #@ x
-#@ 747
+#@ 749
 #@ 6dV<+G8-wEIXME+4@>D++<..D!:p;@oPYKA0JbD+=&8lB,F;kB(y%XHS1::+LdV<+FOMEF?L
 #@ AgAAqh<+6,aaEegpgC)5:JDnimlB%Li'FdX|;@5cP)F3i5a3K`R.D!D+Y?,HX/Djf<iCulSC
 #@ F3+uD+MJ^|3lj|Z?!=mID#6XeDn5/C+MJ^|3lj|Z?!=mID#6XeDl:i?>4/;EF*Wpp@0dhTAl
 #@ fi'FdX|;@5cP)F?ZL!?8(0!,QvV<+LdV<+DP)*F4M&PBNjV<+nmKTA!vlr@si`aEvji'F6&_
-#@ `FCU`4@.&l%G8F`cEF;iN.nFK9wLdV<+GH8`FM/qT,2Q:s+1A`nA3i5a3|F.>Hf44Y?vwviC
-#@ rimlB&pdT>)d|;@.&l%Gg!lr@si`aEtgX|>!y%XHS1::+LdV<+FOMEF?LAgAAqh<+fOoZ3SM
-#@ fCFgdfRAvXxlB-f:EF5S2*F3rpp@0dhTAuoggC!UdT>)d|;@.&l%Gg!lr@si`aES=,*4S1::
-#@ +LdV<+FOMEF?LAgAAqh<+=|3(,QvV<+LdV<+DP)*F4M&PBNjV<+mWdT>d?l#F/64eDd-!eDm
-#@ IBq@26sJD3i5a3G)fCFgdfRAvXxlBQ+fK/,:HSA9b-R?4;QcEs0^Z?!=mID#6XeD?ZL!?;Q!
-#@ (,QvV<+LdV<+DP)*F4M&PBNjV<++By|34;QcEs0^Z?!=mID#6XeD(K^p@6gDTA,wj'FdX|;@
-#@ Rhy)4S1::+LdV<+FOMEF?LAgAAqh<+;KRF+!xMTAu|K^>EeV<+FOMEF37Zw,e/9KDE>Nb3/N
-#@ y|3Ai0fDGhV*F(fTfDtH..Dh<..D*Pl^F/jmID!vlr@si`aEBG3m-(cn^F/jmID!vlr@si`a
-#@ EC5V=+#9K(F>%lDF32=mB25|w,GFtD+=|3(,QvV<+LdV<+DP)*F4M&PB=sx9IS1::+,CEw
+#@ `FCU`4@.&l%G8F`cEF;iN./cL?+6dV<+G8-wEIXME+4@>D+BNncB_:i?>r<clB,7DoAjf<iC
+#@ ulSCF3+uD+wA:JDnimlB%Li'FdX|;@5cP)FW<dT>YGK9wLdV<+GH8`FM/qT,2Q:s+LdV<+nm
+#@ KTA!vlr@si`aEvji'F6&_`FCU`4@.&l%GnWg:@1V#D+wA:JDnimlB%Li'FdX|;@5cP)F/cL?
+#@ +6dV<+G8-wEIXME+4@>D+5.bT>xGK9wLdV<+GH8`FM/qT,2Q:s+1A`nA3i5a3|F.>Hf44Y?v
+#@ wviCrimlB&pdT>X(&0B#wj'FdX|;@5cP)FUuA`F/1VE+(cn^F/jmID!vlr@si`aE^;M!?W<d
+#@ T>YGK9wLdV<+GH8`FM/qT,2Q:s+LdV<+nHm^F/jmID!vlr@si`aE>#qT,!lkcE1ZbDFgdfRA
+#@ vXxlB)bH!46dV<+G8-wEIXME+4@>D+5.bT>;`4hC!UdT>2GtD+G8-wEIXME+XX49@/!=JDy-
+#@ oT,-#l#H8&Z)F3xm*E2<BbEh67IDuC#D+4;QcEs0^Z?!=mID#6XeDBw.R?4;QcEs0^Z?!=mI
+#@ D#6XeD>t'eD3vOBD5)ZKA@/;EF7-XW>,/bT>xGK9wLdV<+GH8`FM/qT,2Q:s+X)K!46dV<+A
+#@ !
 #@ x
-#@ 59
-#@ 6dV<+G8-wEIXME+4@>D+;MfCFgdfRAvXxlB-f:EF5S2*F3rpp@0dhTAHRM`Fa@;v4S1::+,C
-#@ Ew
+#@ 60
+#@ 6dV<+G8-wEIXME+4@>D+;MfCFgdfRAvXxlB-f:EF5S2*F3rpp@0dhTAHRM`Fa@;v4SDV6wLd
+#@ V<+
 #@ x
 #@ 200
 #@ 6dV<+G8-wEIXME+4@>D++<..D!:p;@oPYKA0JbD+=&8lB,F;kB(y%XHS1::+LdV<+FOMEF?L
@@ -4449,6 +4148,9 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 39
 #@ DwxfD'bfRAA@tdD13=JDu'RdDqT/bE@CDE+ridlBDHq=F,v>'
+#@ x
+#@ 28
+#@ DwxfD'bfRAA@tdD13=JDu'RdDqT/bE@CDE+
 #@ x
 #@ 34
 #@ :tJTA*Cy|3#O`aEg9m*E*k>D+(3MTAk'cOBq,BCFo)#
@@ -4473,21 +4175,19 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 20
 #@ #k|Z?nimlB%Li'FdX|;@5cP)F
-#@ 4
-#@ L 0 1207 485 1698 1197 -1
-#@ C 1 1296 26 -1 -1 1320
-#@ C 1 1376 26 -1 -1 1400
-#@ L 0 1861 1763 3630 1851 -1
+#@ 2
+#@ L 0 917 303 1226 907 -1
+#@ L 0 1389 1253 2648 1379 -1
 #@ 2
 #@ F
-#@ 1 19 20
+#@ 1 17 18
 #@ 1
-#@ 21
+#@ 19
 #@ F
-#@ 1 29 30
+#@ 1 27 28
 #@ 1
-#@ 21
-#@ 1 38
+#@ 19
+#@ 1 34
 #@ 4
 #@ %N|(F
 #@ 0 0 256
@@ -4506,102 +4206,90 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 6
 #@ 4s;9AR%%
 #@ 5 0 0
-#@ 37
-#@ hXTZ?7<0bEt|2TAh'DkBhHi'F/Fur@sEV5Bd`SCF4o5DFEv
-#@ 6 0 0
-#@ 7
-#@ pxbnAad2-
-#@ 7 0 0
-#@ 15
-#@ 3DccE,&MEFh!Q<@h:g+
-#@ 8 0 0
 #@ 17
 #@ d`SCFpC+Y?!=mID#6XeD?v
-#@ 9 0 0
+#@ 6 0 0
 #@ 17
 #@ !lkcE1ZbDFgdfRAvXxlB;v
-#@ 10 0 0
+#@ 7 0 0
 #@ 8
 #@ *q9Z?m'cSA
-#@ 11 0 0
+#@ 8 0 0
 #@ 11
 #@ ridlBgF|mAytf+
-#@ 12 0 0
+#@ 9 0 0
 #@ 2
 #@ Eyw
-#@ 13 0 0
+#@ 10 0 0
 #@ 18
 #@ !*9,E!si'F&?s+Eo^CkBHSw
-#@ 14 0 0
+#@ 11 0 0
 #@ 21
 #@ _a1kB26sJDiEm*E/-9(FgKxhC1v
-#@ 15 0 0
+#@ 12 0 0
+#@ 11
+#@ )a!eDd(|mAytf+
+#@ 13 0 0
 #@ 9
 #@ !=mID#6XeD?v
-#@ 16 0 0
+#@ 14 0 0
 #@ 16
 #@ !=mID#6XeD*/uDF1oG)F
-#@ 17 0 0
+#@ 15 0 0
 #@ 15
 #@ sF=Y?@r|,E5ot)Fh^c,
-#@ 18 0 0
+#@ 16 0 0
 #@ 0
 #@ 
-#@ 19 0 512
+#@ 17 0 512
 #@ 0
 #@ 
-#@ 20 0 512
+#@ 18 0 512
 #@ 8
 #@ !=mID#6XeD
-#@ 21 0 0
+#@ 19 0 0
 #@ 17
 #@ >c5DFg!lr@7rtDFgKxhC1v
-#@ 22 0 0
+#@ 20 0 0
 #@ 11
 #@ 3KfCF2x7IDUvg+
-#@ 23 0 0
+#@ 21 0 0
 #@ 16
 #@ >c5DFg!lr@7rtDF`gP8A
-#@ 24 0 0
+#@ 22 0 0
 #@ 6
 #@ =B=iCHMw
-#@ 25 0 0
+#@ 23 0 0
 #@ 5
 #@ ?TsJD>v
-#@ 26 0 0
+#@ 24 0 0
 #@ 12
 #@ bXYjBw,ZS?r^oRA
-#@ 27 0 0
+#@ 25 0 0
 #@ 18
 #@ nimlBus6IDgdfRAvXxlBY(%
-#@ 28 0 0
+#@ 26 0 0
 #@ 0
 #@ 
-#@ 29 0 512
+#@ 27 0 512
 #@ 0
 #@ 
-#@ 30 0 512
+#@ 28 0 512
 #@ 9
 #@ i(+:@.&l%G1v
-#@ 31 0 0
+#@ 29 0 0
 #@ 5
 #@ yL|;@8v
-#@ 32 0 0
+#@ 30 0 0
 #@ 13
 #@ i3hgC@|o(F4PZ-E1v
-#@ 33 0 0
+#@ 31 0 0
 #@ 5
 #@ hi+@G/v
-#@ 34 0 0
-#@ 9
-#@ hIa:@gyEU@/v
-#@ 35 0 0
-#@ 23
-#@ hIa:@gyEU@n&BfD%_KZ?4<nlBrw<-
-#@ 36 0 0
+#@ 32 0 0
 #@ 10
 #@ ,dRdD4<XeDX(%
-#@ 37 0 0
+#@ 33 0 0
 #@ x
 #@ 20
 #@ hIa:@he`p@vkT;@e1#4B>)6-E
@@ -4628,7 +4316,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 12
 #@ )L>nAh++Y?%N|(F
 #@ x
-#@ 577
+#@ 658
 #@ _TJU/@5--EQExQHQKDTA0&6cE;,:eDCC/`FEPMEF(KxhC|L26I5Q2kBmF|;@<gRF+LAccE3G
 #@ m:I?,ETA9ZTbE3dRF+ZGXQH5dfRAvXxlBJBxQHV<mID#6XeDC+dfD?DylBV.O?+=(j:@BFVE
 #@ +*WB3@mmo|;dX|;@5cP)FF,'=@vai'FdX|;@5cP)FQ:RjCEO9<IG(U,E26sJD7'SF+ZGXQHA
@@ -4636,10 +4324,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ QHn++Y?tNi'F5-=JDL`xQH4<nlBv4hgC?uQ<@1KK(F49gq@yk3=IyAPF+X2pCD6HFiCEExQH
 #@ .kNBDCR,!F1Q5DF0o<JD<sC9G(btD++uk_F.utfAkgG8AELJ&G!^@hCPHSF+``xQHw6=iC)J
 #@ W;IG(U,E26sJD7?<3IT(Z<+PYfTA.NP)FJ)!=IZSSF+3*9fDm*IIDTUNgD4<XeD(JbD+fCT7
-#@ A=E<3IT(Z<+JA#lBA*xQHb)!=I9&ndDn7a:@S`xQH4<nlBv4hgCv^,8AwbtD+yAPF+Kgc4@r
-#@ 85DFt!^;@%B>cEq^TZ?m'cSA7|DkB!?#j@*C?<@&!=JDnT67Av'nlBv4hgC>eTfD7XG<F#dZ
-#@ RA:uMTA(5:JDari8I:,veD?AccEXwf*F5-=JDL`xQH4<nlBv4hgCv^,8A,VW;IT(Z<+6dV<+
-#@ A!
+#@ A=E<3IT(Z<+:'77Av'nlBv4hgC(fTfDhU|mA'A#D+.LxhCwosdDw+ljBwFV5Bk*T7A-<XeD(
+#@ JbD+,CHr@C+dfD)v#D+)h|7A9mtD+a3RF+3wsJDNF'<IOd;EF(FV5BTUNgD4<XeD(JbD+fCT
+#@ 7A=-SF+ZGXQH<?Qr@m%vY?m'cSA7|DkB!?#j@*C?<@&!=JD3kQ,Ew3BCF+S5D+q<Z8A-<XeD
+#@ 3uJTAIU/*F+S5D+#k|Z?rN<JDcXKV@6>d#H,oW/DmgY8AH>|s@<>;EFW`xQH:<ylB?mRF+F/
+#@ uDFt!^;@*WSkBh?mIDyAPF+6vV<+a,v
 #@ x
 #@ 15
 #@ rpwhC;Z2b3<?<+EfqT+
@@ -4723,18 +4412,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   return [uplevel #0 $cmd]
 #@ }
 #@ 
-#@ define_proc_attributes get_dont_touch_nets \
-#@   -info " Get dont_touch nets " \
-#@   -permanent \
-#@   -define_args { \
-#@     {"" "Match net names against patterns" "patterns" list {optional}} \
-#@     {-type "Match net dont_touch reasons" "reasons" list {required}} \
-#@     {-hierarchical "Search level-by-level in current instance" "" boolean {optional}} \
-#@     {-quiet "Suppress all messages" "" boolean {optional hidden}} \
-#@     {-regexp "Patterns are full regular expressions" "" boolean {optional hidden}} \
-#@     {-nocase "With -regexp, matches are case-insensitive" "" boolean {optional hidden}} \
-#@     {-exact "Wildcards are considered as plain characters" "" boolean {optional hidden}} \
-#@   }
+#@ define_proc_attributes get_dont_touch_nets   -info " Get dont_touch nets "   -permanent   -define_args {     {"" "Match net names against patterns" "patterns" list {optional}}     {-type "Match net dont_touch reasons" "reasons" list {required}}     {-hierarchical "Search level-by-level in current instance" "" boolean {optional}}     {-quiet "Suppress all messages" "" boolean {optional hidden}}     {-regexp "Patterns are full regular expressions" "" boolean {optional hidden}}     {-nocase "With -regexp, matches are case-insensitive" "" boolean {optional hidden}}     {-exact "Wildcards are considered as plain characters" "" boolean {optional hidden}}   }
 #@ 
 #@ alias get_dont_touch_net get_dont_touch_nets
 #@ }
@@ -4819,20 +4497,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@     }
 #@     return $results
 #@   } else {
-#@     set cmd [format {_real_filter_collection %s %s %s {%s}} \
-#@                          $regexp $nocase $coll $filter_expr]
+#@     set cmd [format {_real_filter_collection %s %s %s {%s}}                          $regexp $nocase $coll $filter_expr]
 #@     return [uplevel #0 $cmd]
 #@   }
 #@ }
-#@ define_proc_attributes filter_collection \
-#@   -info " Filter a collection, resulting in new collection " \
-#@   -permanent \
-#@   -define_args { \
-#@     {-regexp "Operators =~ and !~ use regular expressions" "" boolean {optional}} \
-#@     {-nocase "Case insensitive string match" "" boolean {optional}} \
-#@     {collection1 "Collection to filter" "collection1" string {required}} \
-#@     {expression "Filter expression" "expression" string {required}} \
-#@   }
+#@ define_proc_attributes filter_collection   -info " Filter a collection, resulting in new collection "   -permanent   -define_args {     {-regexp "Operators =~ and !~ use regular expressions" "" boolean {optional}}     {-nocase "Case insensitive string match" "" boolean {optional}}     {collection1 "Collection to filter" "collection1" string {required}}     {expression "Filter expression" "expression" string {required}}   }
 #@ 
 #@ }
 #@ 
@@ -4948,13 +4617,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ if {![info exists ::fastMode::sourced] || ! $::fastMode::sourced} { 
 #@   set ::fastMode::sourced true
 #@ #these are the defined fast_mode_variables and their values
-#@   set ::fastMode::fast_mode_variables [dict create \
-#@                 "all_regs_skip_dw_netlisting" TRUE \
-#@                 "enable_connectivity_fanin_fanout" TRUE \
-#@                 "ui_copy_design_fast_lookup" TRUE \
-#@                 "no_netlist_collection_update_due_to_path_collection_change" TRUE \
-#@                 "preserve_collections_in_compile" FALSE \
-#@                 ]
+#@   set ::fastMode::fast_mode_variables [dict create                 "all_regs_skip_dw_netlisting" TRUE                 "enable_connectivity_fanin_fanout" TRUE                 "ui_copy_design_fast_lookup" TRUE                 "no_netlist_collection_update_due_to_path_collection_change" TRUE                 "preserve_collections_in_compile" FALSE                 ]
 #@   ::fastMode::createFastModeVar
 #@ }
 #@ 
@@ -4992,9 +4655,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ set symbol_library  your_library.sdb 
 #@ 
 #@ # Turn on Formality SVF recording
-#@ if { $synopsys_program_name == "dc_shell"      || \
-#@      $synopsys_program_name == "de_shell"      || \
-#@      $synopsys_program_name == "design_vision" } { 
+#@ if { $synopsys_program_name == "dc_shell"      ||      $synopsys_program_name == "de_shell"      ||      $synopsys_program_name == "design_vision" } { 
 #@   set_svf -default default.svf
 #@ }
 #@ 
@@ -5137,10 +4798,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@     set list_duplicate_designs1 $ldd_return_val
 #@ }
 #@ 
-#@ define_proc_attributes list_duplicate_designs \
-#@     -info " List designs of same names" \
-#@     -permanent \
-#@     -define_args {
+#@ define_proc_attributes list_duplicate_designs     -info " List designs of same names"     -permanent     -define_args {
 #@     }
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/syn/scripts/list_duplicate_designs.tcl
 
@@ -5149,8 +4807,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ set compile_log_format "  %elap_time %area %wns %tns %drc %endpoint";
 #@ 
 #@ set compile_top_all_paths "false"
-#@ alias compile_inplace_changed_list_file_name \
-#@                 reoptimize_design_changed_list_file_name
+#@ alias compile_inplace_changed_list_file_name                 reoptimize_design_changed_list_file_name
 #@ 
 #@ #
 #@ #  These variables affects compile, report_timing and report_constraints
@@ -5599,8 +5256,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ set hdlin_sv_union_member_naming        "FALSE"
 #@ set hdlin_enable_hier_map               "FALSE"
 #@ set hdlin_sv_interface_only_modules     ""
-#@ set hdlin_elaborate_black_box    	""
-#@ set hdlin_elaborate_black_box_all_except	""
 #@ set hdlin_intermediate_file_method      "legacy"
 #@ set hdlin_sv_enable_rtl_attributes      "FALSE"
 #@ set hdlin_vhdl_std		        2008
@@ -5608,9 +5263,8 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ set hdlin_vhdl_syntax_extensions	"FALSE"
 #@ set hdlin_analyze_verbose_mode		0
 #@ set hdlin_report_sequential_pruning	"FALSE"
-#@ set hdlin_sv_enforce_standalone_generate_blocks "TRUE"
 #@ set hdlin_vrlg_std                	2005
-#@ set hdlin_sverilog_std                	2017
+#@ set hdlin_sverilog_std                	2012
 #@ set hdlin_while_loop_iterations   	4096	
 #@ set hdlin_reporting_level        	"basic"
 #@ set hdlin_autoread_verilog_extensions ".v"
@@ -5623,11 +5277,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ set hdlin_ff_always_sync_set_reset   FALSE
 #@ set hdlin_ff_always_async_set_reset   TRUE
 #@ set hdlin_always_fsm_complete   FALSE
-#@ set hdlin_failsafe_fsm   TRUE
+#@ set hdlin_failsafe_fsm   FALSE
 #@ set hdlin_check_input_netlist   FALSE
 #@ set hdlin_check_no_latch   FALSE
 #@ set hdlin_mux_for_array_read_sparseness_limit 90
-#@ set hdlin_tic_tic_discards_whitespace  TRUE
+#@ set hdlin_tic_tic_discards_whitespace  FALSE
 #@ set hdlin_infer_mux   "default"
 #@ set hdlin_mux_oversize_ratio   100
 #@ set hdlin_mux_size_limit   32
@@ -5770,11 +5424,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ # unless you also update the UIL files.  So, customers can not add
 #@ # dialogs to this list, only Synopsys can do that.
 #@ #
-#@ set view_independent_dialogs   { "test_report"    " Test Reports " \
-#@                              "report_print"   " Report " \
-#@                              "report_options" " Report Options " \
-#@                              "report_win"     " Report Output " \
-#@                              "manual_page"    " Manual Page " } 
+#@ set view_independent_dialogs   { "test_report"    " Test Reports "                              "report_print"   " Report "                              "report_options" " Report Options "                              "report_win"     " Report Output "                              "manual_page"    " Manual Page " } 
 #@ 
 #@ # if color Silicon Graphics workstation 
 #@ if { [info exists x11_vendor_string] && [info exists x11_is_color]} {
@@ -5912,25 +5562,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   set acs_verilog_extensions                  {.v}
 #@   set acs_vhdl_extensions                     {.vhd}
 #@   set acs_work_dir                            [pwd]
-#@   set check_error_list [list \
-#@         CMD-004 CMD-006 CMD-007 CMD-008 CMD-009 CMD-010 CMD-011 CMD-012 \
-#@         CMD-014 CMD-015 CMD-016 CMD-019 CMD-026 CMD-031 CMD-037 \
-#@         DB-1 \
-#@         DCSH-11 \
-#@         DES-001 \
-#@ 	ACS-193 \
-#@         FILE-1 FILE-2 FILE-3 FILE-4 \
-#@         LINK-7 LINT-7 LINT-20 LNK-023 \
-#@         OPT-100 OPT-101 OPT-102 OPT-114 OPT-124 OPT-127 OPT-128 OPT-155 \
-#@ 	OPT-157 OPT-181 OPT-462 \
-#@         UI-11 UI-14 UI-15 UI-16 UI-17 UI-19 UI-20 UI-21 UI-22 UI-23 UI-40 \
-#@         UI-41  \
-#@         UID-4 UID-6 UID-7 UID-8 UID-9 UID-13 UID-14 UID-15 UID-19 UID-20 \
-#@         UID-25 UID-27 UID-28 UID-29 UID-30 UID-32 UID-58 UID-87 UID-103 \
-#@         UID-109 UID-270  UID-272 UID-403 UID-440 UID-444  \
-#@         UIO-2 UIO-3 UIO-4 UIO-25 UIO-65 UIO-66 UIO-75 UIO-94 UIO-95 \
-#@         EQN-6 EQN-11 EQN-15 EQN-16 EQN-18 EQN-20 \
-#@       ]
+#@   set check_error_list [list         CMD-004 CMD-006 CMD-007 CMD-008 CMD-009 CMD-010 CMD-011 CMD-012         CMD-014 CMD-015 CMD-016 CMD-019 CMD-026 CMD-031 CMD-037         DB-1         DCSH-11         DES-001 	ACS-193         FILE-1 FILE-2 FILE-3 FILE-4         LINK-7 LINT-7 LINT-20 LNK-023         OPT-100 OPT-101 OPT-102 OPT-114 OPT-124 OPT-127 OPT-128 OPT-155 	OPT-157 OPT-181 OPT-462         UI-11 UI-14 UI-15 UI-16 UI-17 UI-19 UI-20 UI-21 UI-22 UI-23 UI-40         UI-41          UID-4 UID-6 UID-7 UID-8 UID-9 UID-13 UID-14 UID-15 UID-19 UID-20         UID-25 UID-27 UID-28 UID-29 UID-30 UID-32 UID-58 UID-87 UID-103         UID-109 UID-270  UID-272 UID-403 UID-440 UID-444          UIO-2 UIO-3 UIO-4 UIO-25 UIO-65 UIO-66 UIO-75 UIO-94 UIO-95         EQN-6 EQN-11 EQN-15 EQN-16 EQN-18 EQN-20       ]
 #@   set ilm_preserve_core_constraints                       "false"
 #@ }
 #@ 
@@ -6441,7 +6073,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   group_variable hdl "hdlin_vhdl_std"
 #@   group_variable hdl "hdlin_vhdl93_concat"
 #@   group_variable hdl "hdlin_vhdl_syntax_extensions"
-#@   group_variable hdl "hdlin_sv_enforce_standalone_generate_blocks"
 #@   group_variable hdl "hdlin_vrlg_std"
 #@   group_variable hdl "hdlin_while_loop_iterations"
 #@   group_variable hdl "hdlin_auto_save_templates"
@@ -6765,8 +6396,7 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@   set sh_new_variable_message false
 #@ }
 #@ 
-#@ if { $synopsys_program_name == "icc_shell" || \
-#@      (($synopsys_program_name == "dc_shell") && ([shell_is_in_topographical_mode])) } {
+#@ if { $synopsys_program_name == "icc_shell" ||      (($synopsys_program_name == "dc_shell") && ([shell_is_in_topographical_mode])) } {
 #@     source $synopsys_root/auxx/syn/psyn/verify_ilm.tcl
 #@ }
 #@ 
@@ -6910,109 +6540,26 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ #*/
 #@ 
 #@ 
-#@ define_name_rules sverilog -type net -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
+#@ define_name_rules sverilog -type net -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
 #@ 
-#@ define_name_rules sverilog -type port -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
+#@ define_name_rules sverilog -type port -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
 #@ 
-#@ define_name_rules sverilog -type cell -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
-#@ define_name_rules sverilog -reserved { "always" "always_comb" "always_ff"	\
-#@ "always_latch" "and" "assert" "assert_strobe" "assign" "automatic"	\
-#@ "begin" "bit" "break" "buf" "bufif0" "bufif1" "byte" "case" "casex" "casez"	\
-#@ "cell" "changed" "char" "cmos" "config" "const" "continue" "deassign"	\
-#@ "default" "defparam" "design" "disable" "do" "edge" "else" "end"	\
-#@ "endcase" "endconfig" "endfunction" "endgenerate" "endinterface" "endmodule" "endprimitive"	\
-#@ "endspecify" "endtable" "endtask" "endtransition" "enum" "event" "export" "extern"	\
-#@ "for" "force" "forever" "fork" "forkjoin" "function" "generate" "genvar"	\
-#@ "highz0" "highz1" "if" "iff" "ifnone" "import" "incdir" "include" "initial"	\
-#@ "inout" "input" "instance" "int" "integer" "interface" "join" "large"	\
-#@ "liblist" "library" "localparam" "logic" "longint" "longreal" "macromodule" "medium"	\
-#@ "modport" "module" "nand" "negedge" "nmos" "nor" "noshowcancelled" "not" "notif0"	\
-#@ "notif1" "or" "output" "packed" "parameter" "pmos" "posedge"	\
-#@ "primitive" "process" "priority" "pull0" "pull1" "pullup"  "pulldown"	\
-#@ "pulsestyle_onevent" "pulsestyle_ondetect"	\
-#@ "rcmos" "real" "realtime" "reg" "release" "repeat" "return" "rnmos" "rpmos" "rtran"	\
-#@ "rtranif0" "rtranif1" "scalared" "shortint" "shortreal" "showcancelled"	\
-#@ "signed" "small" "specify" "specparam" "static"	\
-#@ "strong0" "strong1" "struct" "supply0" "supply1" "table" "task"	\
-#@ "time" "timeprecision" "timeunit" "tran" "tranif0" "tranif1" "transition" "tri" "tri0" "tri1"	\
-#@ "triand" "trior" "trireg" "type" "typedef" "union" "unique" "use" "unsigned" "vectored"	\
-#@ "void" "wait" "wand" "weak0" "weak1" "while" "wire" "wor" "xor" "xnor" }	\
-#@ 	-special verilog -target_bus_naming_style {%s[%d]}	\
-#@ 	-flatten_multi_dimension_busses  \
-#@         -check_internal_net_name \
-#@ 	-check_bus_indexing 
+#@ define_name_rules sverilog -type cell -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
+#@ define_name_rules sverilog -reserved { "always" "always_comb" "always_ff"	"always_latch" "and" "assert" "assert_strobe" "assign" "automatic"	"begin" "bit" "break" "buf" "bufif0" "bufif1" "byte" "case" "casex" "casez"	"cell" "changed" "char" "cmos" "config" "const" "continue" "deassign"	"default" "defparam" "design" "disable" "do" "edge" "else" "end"	"endcase" "endconfig" "endfunction" "endgenerate" "endinterface" "endmodule" "endprimitive"	"endspecify" "endtable" "endtask" "endtransition" "enum" "event" "export" "extern"	"for" "force" "forever" "fork" "forkjoin" "function" "generate" "genvar"	"highz0" "highz1" "if" "iff" "ifnone" "import" "incdir" "include" "initial"	"inout" "input" "instance" "int" "integer" "interface" "join" "large"	"liblist" "library" "localparam" "logic" "longint" "longreal" "macromodule" "medium"	"modport" "module" "nand" "negedge" "nmos" "nor" "noshowcancelled" "not" "notif0"	"notif1" "or" "output" "packed" "parameter" "pmos" "posedge"	"primitive" "process" "priority" "pull0" "pull1" "pullup"  "pulldown"	"pulsestyle_onevent" "pulsestyle_ondetect"	"rcmos" "real" "realtime" "reg" "release" "repeat" "return" "rnmos" "rpmos" "rtran"	"rtranif0" "rtranif1" "scalared" "shortint" "shortreal" "showcancelled"	"signed" "small" "specify" "specparam" "static"	"strong0" "strong1" "struct" "supply0" "supply1" "table" "task"	"time" "timeprecision" "timeunit" "tran" "tranif0" "tranif1" "transition" "tri" "tri0" "tri1"	"triand" "trior" "trireg" "type" "typedef" "union" "unique" "use" "unsigned" "vectored"	"void" "wait" "wand" "weak0" "weak1" "while" "wire" "wor" "xor" "xnor" }		-special verilog -target_bus_naming_style {%s[%d]}		-flatten_multi_dimension_busses          -check_internal_net_name 	-check_bus_indexing 
 #@ 
-#@ define_name_rules verilog -type net -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
+#@ define_name_rules verilog -type net -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
 #@ 
-#@ define_name_rules verilog -type port -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
+#@ define_name_rules verilog -type port -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
 #@ 
-#@ define_name_rules verilog -type cell -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
-#@ define_name_rules verilog -reserved { "always"	\
-#@ "and" "assign" "automatic"	\
-#@ "begin" "buf" "bufif0" "bufif1" "case" "casex" "casez"	\
-#@ "cell" "cmos" "config" "deassign"	\
-#@ "default" "defparam" "design" "disable" "edge" "else" "end"	\
-#@ "endcase" "endconfig" "endfunction" "endgenerate" "endmodule" "endprimitive"	\
-#@ "endspecify" "endtable" "endtask" "event" \
-#@ "for" "force" "forever" "fork" "function" "generate" "genvar"	\
-#@ "highz0" "highz1" "if" "ifnone" "incdir" "include" "initial"	\
-#@ "inout" "input" "instance" "integer" "join" "large"	\
-#@ "liblist" "library" "localparam" "macromodule" "medium"	\
-#@ "module" "nand" "negedge" "nmos" "nor" "noshowcancelled" "not" "notif0"	\
-#@ "notif1" "or" "output" "parameter" "pmos" "posedge"	\
-#@ "primitive" "pull0" "pull1" "pullup"  "pulldown"	\
-#@ "pulsestyle_onevent" "pulsestyle_ondetect"	\
-#@ "rcmos" "real" "realtime" "reg" "release" "repeat" "rnmos" "rpmos" "rtran"	\
-#@ "rtranif0" "rtranif1" "scalared" "showcancelled"	\
-#@ "signed" "small" "specify" "specparam"	\
-#@ "strong0" "strong1" "supply0" "supply1" "table" "task"	\
-#@ "time" "tran" "tranif0" "tranif1" "tri" "tri0" "tri1"	\
-#@ "triand" "trior" "trireg" "unsigned" "use" "vectored"	\
-#@ "wait" "wand" "weak0" "weak1" "while" "wire" "wor" "xor" "xnor" }	\
-#@ 	-special verilog -target_bus_naming_style {%s[%d]}	\
-#@ 	-flatten_multi_dimension_busses  \
-#@ 	-check_internal_net_name \
-#@         -check_bus_indexing
+#@ define_name_rules verilog -type cell -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
+#@ define_name_rules verilog -reserved { "always"	"and" "assign" "automatic"	"begin" "buf" "bufif0" "bufif1" "case" "casex" "casez"	"cell" "cmos" "config" "deassign"	"default" "defparam" "design" "disable" "edge" "else" "end"	"endcase" "endconfig" "endfunction" "endgenerate" "endmodule" "endprimitive"	"endspecify" "endtable" "endtask" "event" "for" "force" "forever" "fork" "function" "generate" "genvar"	"highz0" "highz1" "if" "ifnone" "incdir" "include" "initial"	"inout" "input" "instance" "integer" "join" "large"	"liblist" "library" "localparam" "macromodule" "medium"	"module" "nand" "negedge" "nmos" "nor" "noshowcancelled" "not" "notif0"	"notif1" "or" "output" "parameter" "pmos" "posedge"	"primitive" "pull0" "pull1" "pullup"  "pulldown"	"pulsestyle_onevent" "pulsestyle_ondetect"	"rcmos" "real" "realtime" "reg" "release" "repeat" "rnmos" "rpmos" "rtran"	"rtranif0" "rtranif1" "scalared" "showcancelled"	"signed" "small" "specify" "specparam"	"strong0" "strong1" "supply0" "supply1" "table" "task"	"time" "tran" "tranif0" "tranif1" "tri" "tri0" "tri1"	"triand" "trior" "trireg" "unsigned" "use" "vectored"	"wait" "wand" "weak0" "weak1" "while" "wire" "wor" "xor" "xnor" }		-special verilog -target_bus_naming_style {%s[%d]}		-flatten_multi_dimension_busses  	-check_internal_net_name         -check_bus_indexing
 #@ 
-#@ define_name_rules verilog_1995 -type net -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
+#@ define_name_rules verilog_1995 -type net -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
 #@ 
-#@ define_name_rules verilog_1995 -type port -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
+#@ define_name_rules verilog_1995 -type port -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
 #@ 
-#@ define_name_rules verilog_1995 -type cell -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
-#@ define_name_rules verilog_1995 -reserved { "always"	\
-#@ "and" "assign"	\
-#@ "begin" "buf" "bufif0" "bufif1" "case" "casex" "casez"	\
-#@ "cell" "cmos" "deassign"	\
-#@ "default" "defparam" "design" "disable" "edge" "else" "end"	\
-#@ "endcase" "endfunction" "endmodule" "endprimitive"	\
-#@ "endspecify" "endtable" "endtask" "event" \
-#@ "for" "force" "forever" "fork" "function"	\
-#@ "highz0" "highz1" "if" "ifnone" "initial"	\
-#@ "inout" "input" "integer" "join" "large"	\
-#@ "macromodule" "medium"	\
-#@ "module" "nand" "negedge" "nmos" "nor" "notif0"	\
-#@ "notif1" "or" "output" "parameter" "pmos" "posedge"	\
-#@ "primitive" "pull0" "pull1" "pullup"  "pulldown"	\
-#@ "rcmos" "real" "realtime" "reg" "release" "repeat" "rnmos" "rpmos" "rtran"	\
-#@ "rtranif0" "rtranif1" "scalared"	\
-#@ "small" "specify" "specparam"	\
-#@ "strong0" "strong1" "supply0" "supply1" "table" "task"	\
-#@ "time" "tran" "tranif0" "tranif1" "tri" "tri0" "tri1"	\
-#@ "triand" "trior" "trireg" "vectored"	\
-#@ "wait" "wand" "weak0" "weak1" "while" "wire" "wor" "xor" "xnor" }	\
-#@ 	-special verilog -target_bus_naming_style {%s[%d]}	\
-#@ 	-flatten_multi_dimension_busses  \
-#@ 	-check_internal_net_name \
-#@ 	-check_bus_indexing
+#@ define_name_rules verilog_1995 -type cell -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
+#@ define_name_rules verilog_1995 -reserved { "always"	"and" "assign"	"begin" "buf" "bufif0" "bufif1" "case" "casex" "casez"	"cell" "cmos" "deassign"	"default" "defparam" "design" "disable" "edge" "else" "end"	"endcase" "endfunction" "endmodule" "endprimitive"	"endspecify" "endtable" "endtask" "event" "for" "force" "forever" "fork" "function"	"highz0" "highz1" "if" "ifnone" "initial"	"inout" "input" "integer" "join" "large"	"macromodule" "medium"	"module" "nand" "negedge" "nmos" "nor" "notif0"	"notif1" "or" "output" "parameter" "pmos" "posedge"	"primitive" "pull0" "pull1" "pullup"  "pulldown"	"rcmos" "real" "realtime" "reg" "release" "repeat" "rnmos" "rpmos" "rtran"	"rtranif0" "rtranif1" "scalared"	"small" "specify" "specparam"	"strong0" "strong1" "supply0" "supply1" "table" "task"	"time" "tran" "tranif0" "tranif1" "tri" "tri0" "tri1"	"triand" "trior" "trireg" "vectored"	"wait" "wand" "weak0" "weak1" "while" "wire" "wor" "xor" "xnor" }		-special verilog -target_bus_naming_style {%s[%d]}		-flatten_multi_dimension_busses  	-check_internal_net_name 	-check_bus_indexing
 #@ 
 #@ 
 #@ ####/* Name rule for VHDL */
@@ -7021,93 +6568,19 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@ ####/* Name rule for VHDL */
 #@ 
-#@ define_name_rules vhdl -reserved_words {                                \
-#@         "abs"  "access"  "after" "alias"  "all"  "and"                  \
-#@         "architecture"  "array"  "assert" "attribute"                   \                  
-#@         "begin"  "block"  "body"  "buffer"  "bus"                       \
-#@         "case" "component"  "configuration"  "constant"                 \
-#@         "disconnect" "downto"                                           \
-#@         "else"  "elsif"  "end"  "entity"  "exit"                        \
-#@         "file" "for"  "function"                                        \
-#@         "generate"  "generic" "group" "guarded"                         \
-#@         "if" "impure" "in" "inertial" "inout"  "is"                     \
-#@         "label"  "library"  "linkage" "literal" "loop"                  \
-#@         "map"  "mod"                                                    \
-#@         "nand"  "new"  "next"  "nor"  "not"  "null"                     \
-#@         "of"  "on"  "open"  "or"  "others"  "out"                       \
-#@         "package"  "port" "postponed" "procedure"  "process" "pure"     \
-#@         "range"  "record"  "register" "reject" "rem"                    \
-#@         "report"  "return"  "rol" "ror"                                 \
-#@         "select"  "severity"  "signal" "shared" "sla" "sll"             \
-#@         "sra" "srl" "subtype"                                           \
-#@         "then"  "to"  "transport"  "type"                               \
-#@         "unaffected" "units"  "until"  "use"                            \
-#@         "variable"                                                      \
-#@         "wait"  "when"  "while"  "with"                                 \
-#@         "xnor" "xor"}                                                   \
-#@ 	-case_insensitive 						\
-#@ 	-target_bus_naming_style "%s(%d)"				\
-#@ 	-replacement_char "x"						\
-#@ 	-special vhdl
-#@ define_name_rules vhdl -type net					\
-#@ 	-allowed "A-Z a-z _ 0-9 " 					\
-#@ 	-first_restricted "0-9 _"  					\
-#@ 	-last_restricted "_"
-#@ define_name_rules vhdl -type port					\
-#@ 	-allowed "A-Z a-z _ 0-9 " 					\
-#@ 	-first_restricted "0-9 _"  					\
-#@ 	-last_restricted "_"
-#@ define_name_rules vhdl -type cell					\
-#@ 	-allowed "A-Z a-z _ 0-9" 					\
-#@ 	-first_restricted "0-9 _"  					\
-#@ 	-last_restricted "_"						\
-#@ 
+#@ define_name_rules vhdl -reserved_words {                                        "abs"  "access"  "after" "alias"  "all"  "and"                          "architecture"  "array"  "assert" "attribute"                   \                  
+#@         "begin"  "block"  "body"  "buffer"  "bus"                               "case" "component"  "configuration"  "constant"                         "disconnect" "downto"                                                   "else"  "elsif"  "end"  "entity"  "exit"                                "file" "for"  "function"                                                "generate"  "generic" "group" "guarded"                                 "if" "impure" "in" "inertial" "inout"  "is"                             "label"  "library"  "linkage" "literal" "loop"                          "map"  "mod"                                                            "nand"  "new"  "next"  "nor"  "not"  "null"                             "of"  "on"  "open"  "or"  "others"  "out"                               "package"  "port" "postponed" "procedure"  "process" "pure"             "range"  "record"  "register" "reject" "rem"                            "report"  "return"  "rol" "ror"                                         "select"  "severity"  "signal" "shared" "sla" "sll"                     "sra" "srl" "subtype"                                                   "then"  "to"  "transport"  "type"                                       "unaffected" "units"  "until"  "use"                                    "variable"                                                              "wait"  "when"  "while"  "with"                                         "xnor" "xor"}                                                   	-case_insensitive 							-target_bus_naming_style "%s(%d)"					-replacement_char "x"							-special vhdl
+#@ define_name_rules vhdl -type net						-allowed "A-Z a-z _ 0-9 " 						-first_restricted "0-9 _"  						-last_restricted "_"
+#@ define_name_rules vhdl -type port						-allowed "A-Z a-z _ 0-9 " 						-first_restricted "0-9 _"  						-last_restricted "_"
+#@ define_name_rules vhdl -type cell						-allowed "A-Z a-z _ 0-9" 						-first_restricted "0-9 _"  						-last_restricted "_"						
 #@ define_name_rules vhdl -map { {{"__","_"},{"_$",""}} }
 #@ 
-#@ define_name_rules vhdl2008 -reserved_words {                            \
-#@         "abs"  "access"  "after" "alias"  "all"  "and"                  \
-#@         "architecture"  "array"  "assert" "assume"                      \                  
+#@ define_name_rules vhdl2008 -reserved_words {                                    "abs"  "access"  "after" "alias"  "all"  "and"                          "architecture"  "array"  "assert" "assume"                      \                  
 #@         "assume_guarantee"  "attribute"                                 \                  
-#@         "begin"  "block"  "body"  "buffer"  "bus"                       \
-#@         "case" "component"  "configuration"  "constant"                 \
-#@         "context"  "cover"  "default"  "disconnect" "downto"            \
-#@         "else"  "elsif"  "end"  "entity"  "exit"                        \
-#@         "fairness"  "file" "for"  "force"  "function"                   \
-#@         "generate"  "generic" "group" "guarded"                         \
-#@         "if" "impure" "in" "inertial" "inout"  "is"                     \
-#@         "label"  "library"  "linkage" "literal" "loop"                  \
-#@         "map"  "mod"                                                    \
-#@         "nand"  "new"  "next"  "nor"  "not"  "null"                     \
-#@         "of"  "on"  "open"  "or"  "others"  "out"                       \
-#@         "package"  "parameter"  "port" "postponed" "procedure"          \
-#@         "process" "property"  "protected"  "pure"                       \
-#@         "range"  "record"  "register" "reject" "release"                \
-#@         "restrict"  "restrict_guarantee"  "rem"                         \
-#@         "report"  "return"  "rol" "ror"                                 \
-#@         "select"  "sequence"  "severity"  "signal" "shared"             \
-#@         "sla"  "sll" "sra" "srl" "subtype"  "strong"                    \
-#@         "then"  "to"  "transport"  "type"                               \
-#@         "unaffected" "units"  "until"  "use"                            \
-#@         "variable"  "vmode"  "vprop"  "vunit"                           \
-#@         "wait"  "when"  "while"  "with"                                 \
-#@         "xnor" "xor"}                                                   \
-#@ 	-case_insensitive 						\
-#@ 	-target_bus_naming_style "%s(%d)"				\
-#@ 	-replacement_char "x"						\
-#@ 	-special vhdl
-#@ define_name_rules vhdl2008 -type net					\
-#@ 	-allowed "A-Z a-z _ 0-9 " 					\
-#@ 	-first_restricted "0-9 _"  					\
-#@ 	-last_restricted "_"
-#@ define_name_rules vhdl2008 -type port					\
-#@ 	-allowed "A-Z a-z _ 0-9 " 					\
-#@ 	-first_restricted "0-9 _"  					\
-#@ 	-last_restricted "_"
-#@ define_name_rules vhdl2008 -type cell					\
-#@ 	-allowed "A-Z a-z _ 0-9" 					\
-#@ 	-first_restricted "0-9 _"  					\
-#@ 	-last_restricted "_"						\
-#@ 
+#@         "begin"  "block"  "body"  "buffer"  "bus"                               "case" "component"  "configuration"  "constant"                         "context"  "cover"  "default"  "disconnect" "downto"                    "else"  "elsif"  "end"  "entity"  "exit"                                "fairness"  "file" "for"  "force"  "function"                           "generate"  "generic" "group" "guarded"                                 "if" "impure" "in" "inertial" "inout"  "is"                             "label"  "library"  "linkage" "literal" "loop"                          "map"  "mod"                                                            "nand"  "new"  "next"  "nor"  "not"  "null"                             "of"  "on"  "open"  "or"  "others"  "out"                               "package"  "parameter"  "port" "postponed" "procedure"                  "process" "property"  "protected"  "pure"                               "range"  "record"  "register" "reject" "release"                        "restrict"  "restrict_guarantee"  "rem"                                 "report"  "return"  "rol" "ror"                                         "select"  "sequence"  "severity"  "signal" "shared"                     "sla"  "sll" "sra" "srl" "subtype"  "strong"                            "then"  "to"  "transport"  "type"                                       "unaffected" "units"  "until"  "use"                                    "variable"  "vmode"  "vprop"  "vunit"                                   "wait"  "when"  "while"  "with"                                         "xnor" "xor"}                                                   	-case_insensitive 							-target_bus_naming_style "%s(%d)"					-replacement_char "x"							-special vhdl
+#@ define_name_rules vhdl2008 -type net						-allowed "A-Z a-z _ 0-9 " 						-first_restricted "0-9 _"  						-last_restricted "_"
+#@ define_name_rules vhdl2008 -type port						-allowed "A-Z a-z _ 0-9 " 						-first_restricted "0-9 _"  						-last_restricted "_"
+#@ define_name_rules vhdl2008 -type cell						-allowed "A-Z a-z _ 0-9" 						-first_restricted "0-9 _"  						-last_restricted "_"						
 #@ define_name_rules vhdl2008 -map { {{"__","_"},{"_$",""}} }
 #@ 
 #@ 
@@ -7115,46 +6588,12 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 
 #@ 
 #@ ####/* Name rule for System Verilog with keywords updated to 1800-2017 */
-#@ define_name_rules sverilog2017 -type net -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
+#@ define_name_rules sverilog2017 -type net -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
 #@ 
-#@ define_name_rules sverilog2017 -type port -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
+#@ define_name_rules sverilog2017 -type port -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
 #@ 
-#@ define_name_rules sverilog2017 -type cell -allow "a-z A-Z 0-9 _ " 		\
-#@ 			  -first_restrict "_ 0-9"		
-#@ define_name_rules sverilog2017 -reserved { "accept_on" "alias" "always" "always_comb"	\
-#@ "always_ff" "always_latch" "and" "assert" "assign"	\
-#@ "assume" "automatic" "before" "begin" "bind" "bins" "binsof" "bit" "break" "buf" "bufif0"	\
-#@ "bufif1" "byte" "case" "casex" "casez" "cell" "chandle" "checker" "class" "clocking" "cmos"	\
-#@ "config" "const" "constraint" "context" "continue" "cover" "covergroup" "coverpoint" "cross"	\
-#@ "deassign" "default" "defparam" "design" "disable" "dist" "do" "edge" "else" "end" "endcase"	\
-#@ "endchecker" "endclass" "endclocking" "endconfig" "endfunction" "endgenerate" "endgroup"	\
-#@ "endinterface" "endmodule" "endpackage" "endprimitive" "endprogram" "endproperty"	\
-#@ "endsequence" "endspecify" "endtable" "endtask" "enum" "event" "eventually" "expect" "export"	\
-#@ "extends" "extern" "final" "first_match" "for" "force" "foreach" "forever" "fork" "forkjoin"	\
-#@ "function" "generate" "genvar" "global" "highz0" "highz1" "if" "iff" "ifnone" "ignore_bins"	\
-#@ "illegal_bins" "implements" "implies" "import" "incdir" "include" "initial" "inout" "input"	\
-#@ "inside" "instance" "int" "integer" "interconnect" "interface" "intersect" "join" "join_any"	\
-#@ "join_none" "large" "let" "liblist" "library" "local" "localparam" "logic" "longint"	\
-#@ "macromodule" "matches" "medium" "modport" "module" "nand" "negedge" "nettype" "new" "nexttime"	\
-#@ "nmos" "nor" "noshowcancelled" "not" "notif0" "notif1" "null" "or" "output" "package" "packed"	\
-#@ "parameter" "pmos" "posedge" "primitive" "priority" "program" "property" "protected" "pull0"	\
-#@ "pull1" "pulldown" "pullup" "pulsestyle_ondetect" "pulsestyle_onevent" "pure" "rand" "randc"	\
-#@ "randcase" "randsequence" "rcmos" "real" "realtime" "ref" "reg" "reject_on" "release" "repeat"	\
-#@ "restrict" "return" "rnmos" "rpmos" "rtran" "rtranif0" "rtranif1" "s_always" "s_eventually"	\
-#@ "s_nexttime" "s_until" "s_until_with" "scalared" "sequence" "shortint" "shortreal"	\
-#@ "showcancelled" "signed" "small" "soft" "solve" "specify" "specparam" "static" "string" "strong"	\
-#@ "strong0" "strong1" "struct" "super" "supply0" "supply1" "sync_accept_on" "sync_reject_on"	\
-#@ "table" "tagged" "task" "this" "throughout" "time" "timeprecision" "timeunit" "tran" "tranif0"	\
-#@ "tranif1" "tri" "tri0" "tri1" "triand" "trior" "trireg" "type" "typedef" "union" "unique"	\
-#@ "unique0" "unsigned" "until" "until_with" "untyped" "use" "uwire" "var" "vectored" "virtual"	\
-#@ "void" "wait" "wait_order" "wand" "weak" "weak0" "weak1" "while" "wildcard" "wire" "with"	\
-#@ "within" "wor" "xnor" "xor"}	\
-#@ 	-special verilog -target_bus_naming_style {%s[%d]}	\
-#@ 	-flatten_multi_dimension_busses  \
-#@         -check_internal_net_name \
-#@ 	-check_bus_indexing 
+#@ define_name_rules sverilog2017 -type cell -allow "a-z A-Z 0-9 _ " 					  -first_restrict "_ 0-9"		
+#@ define_name_rules sverilog2017 -reserved { "accept_on" "alias" "always" "always_comb"	"always_ff" "always_latch" "and" "assert" "assign"	"assume" "automatic" "before" "begin" "bind" "bins" "binsof" "bit" "break" "buf" "bufif0"	"bufif1" "byte" "case" "casex" "casez" "cell" "chandle" "checker" "class" "clocking" "cmos"	"config" "const" "constraint" "context" "continue" "cover" "covergroup" "coverpoint" "cross"	"deassign" "default" "defparam" "design" "disable" "dist" "do" "edge" "else" "end" "endcase"	"endchecker" "endclass" "endclocking" "endconfig" "endfunction" "endgenerate" "endgroup"	"endinterface" "endmodule" "endpackage" "endprimitive" "endprogram" "endproperty"	"endsequence" "endspecify" "endtable" "endtask" "enum" "event" "eventually" "expect" "export"	"extends" "extern" "final" "first_match" "for" "force" "foreach" "forever" "fork" "forkjoin"	"function" "generate" "genvar" "global" "highz0" "highz1" "if" "iff" "ifnone" "ignore_bins"	"illegal_bins" "implements" "implies" "import" "incdir" "include" "initial" "inout" "input"	"inside" "instance" "int" "integer" "interconnect" "interface" "intersect" "join" "join_any"	"join_none" "large" "let" "liblist" "library" "local" "localparam" "logic" "longint"	"macromodule" "matches" "medium" "modport" "module" "nand" "negedge" "nettype" "new" "nexttime"	"nmos" "nor" "noshowcancelled" "not" "notif0" "notif1" "null" "or" "output" "package" "packed"	"parameter" "pmos" "posedge" "primitive" "priority" "program" "property" "protected" "pull0"	"pull1" "pulldown" "pullup" "pulsestyle_ondetect" "pulsestyle_onevent" "pure" "rand" "randc"	"randcase" "randsequence" "rcmos" "real" "realtime" "ref" "reg" "reject_on" "release" "repeat"	"restrict" "return" "rnmos" "rpmos" "rtran" "rtranif0" "rtranif1" "s_always" "s_eventually"	"s_nexttime" "s_until" "s_until_with" "scalared" "sequence" "shortint" "shortreal"	"showcancelled" "signed" "small" "soft" "solve" "specify" "specparam" "static" "string" "strong"	"strong0" "strong1" "struct" "super" "supply0" "supply1" "sync_accept_on" "sync_reject_on"	"table" "tagged" "task" "this" "throughout" "time" "timeprecision" "timeunit" "tran" "tranif0"	"tranif1" "tri" "tri0" "tri1" "triand" "trior" "trireg" "type" "typedef" "union" "unique"	"unique0" "unsigned" "until" "until_with" "untyped" "use" "uwire" "var" "vectored" "virtual"	"void" "wait" "wait_order" "wand" "weak" "weak0" "weak1" "while" "wildcard" "wire" "with"	"within" "wor" "xnor" "xor"}		-special verilog -target_bus_naming_style {%s[%d]}		-flatten_multi_dimension_busses          -check_internal_net_name 	-check_bus_indexing 
 #@ ####/* Name rule for System Verilog with keywords updated to 1800-2017 */
 #@ ####/* END */
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/admin/setup/.dc_name_rules
@@ -7312,21 +6751,21 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ }
 #@ tbcload::bceval {
 #@ TclPro ByteCode 2 0 1.7 8.5
-#@ 43 0 435 61 0 0 324 0 5 43 43 -1 -1
-#@ 435
-#@ `:G<!(H&s!/HW<!(3E<!2`8s!egwpv2/YQ#/HW<!-Qr<!2`8s!5v!!!k!!!!*Qr<!3HN<!`w
+#@ 41 0 415 59 0 0 308 0 5 41 41 -1 -1
+#@ 415
+#@ ^4G<!(H&s!/HW<!(3E<!2`8s!cawpv2/YQ#/HW<!-Qr<!2`8s!5v!!!k!!!!*Qr<!3HN<!`w
 #@ :C25v!!!3!!!!/oJ=!7;kpv:uW<!A^w!!/K!!!0J60%^d1J!B8#>!@lJs!@kUNwOmm<v9uW<
-#@ !sPG>!?..rv-TA9v<;|Tv.EW<!uyY>!A:@rv-TA9v>A|Tv.EW<!vik>!xLxrv-TA9v@G|Tv.
-#@ EW<!%&2?!a^!sv-TA9vCP|Tv.EW<!(8M?!gp<sv-TA9vFY|Tv.EW<!+Jh?!L'Osv-TA9vIb|
-#@ Tv.EW<!-V%@!q9jsv-TA9vKh|Tv.EW<!0h@@!QE'tv-TA9vNq|Tv.EW<!2tR@!SQ9tv-TA9v
-#@ Pv^Tv.EW<!4+e@!*dTtv-TA9vR(^Tv.EW<!7=+A!Xoftv-TA9vU1^Tv.EW<!9I=A!4--uv-T
-#@ A9vW7^Tv.EW<!<xXA!v9?uv-TA9vZ@^Tv.EW<!>gjA!>KZuv-TA9vyF^Tv.EW<!Aw1B!D|uu
-#@ v-TA9v_O^Tv.EW<!D6LB!Fi2!#-TA9vbX^Tv**!!
-#@ 43
-#@ @1IOwI7xOwMjrPwI%%n#I%%n#I%%n#I%%n#I%%n#I%%n#I%%n#@)0v
-#@ 43
-#@ I%%n#62qqvY(.OwI1IOwI1IOwI1IOwI1IOwI1IOwI1IOwI1IOw=ri!
-#@ 61
+#@ !qPG>!?..rv-TA9v<;|Tv.EW<!syY>!A:@rv-TA9v>A|Tv.EW<!uhk>!xLxrv-TA9v@G|Tv.
+#@ EW<!#&2?!a^!sv-TA9vCP|Tv.EW<!&8M?!gp<sv-TA9vFY|Tv.EW<!)Jh?!L'Osv-TA9vIb|
+#@ Tv.EW<!+V%@!q9jsv-TA9vKh|Tv.EW<!.h@@!QE'tv-TA9vNq|Tv.EW<!0tR@!SQ9tv-TA9v
+#@ Pv^Tv.EW<!2+e@!*dTtv-TA9vR(^Tv.EW<!5=+A!Xoftv-TA9vU1^Tv.EW<!7I=A!4--uv-T
+#@ A9vW7^Tv.EW<!:xXA!v9?uv-TA9vZ@^Tv.EW<!<gjA!>KZuv-TA9vyF^Tv.EW<!?w1B!D|uu
+#@ v-TA9v_O^Tv**!!
+#@ 41
+#@ @1IOwI7xOwMjrPwI%%n#I%%n#I%%n#I%%n#I%%n#I%%n#I%%n#,!
+#@ 41
+#@ I%%n#62qqvY(.OwI1IOwI1IOwI1IOwI1IOwI1IOwI1IOwI1IOw)!
+#@ 59
 #@ x
 #@ 4
 #@ ,CHr@
@@ -7576,19 +7015,19 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 15
 #@ 3aMTAu'V5Bq`ewGh0<-
 #@ p
-#@ 40 0 331 15 0 0 160 0 3 40 40 -1 -1
+#@ 40 0 331 16 0 0 160 0 3 40 40 -1 -1
 #@ 331
-#@ w0E<!-fSs!O,uc/ViA9v,|8X!M`yTv8^w!!B/v!!w-*!!*`vpv'qrD!-A77w-ivpvOmm<v>M
-#@ e`BBKMT+#3WW!w0E<!2uSs!O,uc/ViA9v1l8X!M`yTv8^w!!B/v!!w-*!!,rXQ#'qrD!-A77
-#@ w/&YQ#Omm<v>Me`BBKMT+#3WW!w0E<!4&Ts!O,uc/ViA9v3r8X!M`yTv8^w!!B/v!!w-*!!.
-#@ /:3w'qrD!-A77w18:3wOmm<v>Me`BBKMT+#3WW!w0E<!6,Ts!O,uc/ViA9v5#9X!M`yTv8^w
-#@ !!B/v!!w-*!!0Apiw'qrD!-A77w3JpiwOmm<v>Me`BBKMT+#3WW!w0E<!82Ts!O,uc/ViA9v
-#@ 7)9X!M`yTv8^w!!B/v!!w-*!!2SQK%'qrD!-A77w5yQK%Omm<v'0!!
+#@ w0E<!-fSs!O,uc/ViA9v,|8X!M`yTv8^w!!B/v!!w-*!!*`vpv'qrD!-A77w.r=6#Omm<v>M
+#@ e`BBKMT+#3WW!w0E<!3#Ts!O,uc/ViA9v2o8X!M`yTv8^w!!B/v!!w-*!!-&tl#'qrD!-A77
+#@ w0/tl#Omm<v>Me`BBKMT+#3WW!w0E<!5)Ts!O,uc/ViA9v4u8X!M`yTv8^w!!B/v!!w-*!!/
+#@ 8UNw'qrD!-A77w2AUNwOmm<v>Me`BBKMT+#3WW!w0E<!7/Ts!O,uc/ViA9v6&9X!M`yTv8^w
+#@ !!B/v!!w-*!!1J60%'qrD!-A77w4S60%Omm<v>Me`BBKMT+#3WW!w0E<!95Ts!O,uc/ViA9v
+#@ 8,9X!M`yTv8^w!!B/v!!w-*!!3ylf%'qrD!-A77w6elf%Omm<v'0!!
 #@ 40
 #@ /JHK%CeHK%CeHK%CeHK%CeHK%CeHK%CeHK%CeHK%CeHK%CeHK%
 #@ 40
 #@ QMbpvZMbpvZMbpvZMbpvZMbpvZMbpvZMbpvZMbpvZMbpvYMbpv
-#@ 15
+#@ 16
 #@ x
 #@ 4
 #@ wm<eD
@@ -7609,6 +7048,9 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 18
 #@ kaT5Bm<NaE1fsiCqRo;@Syw
+#@ x
+#@ 16
+#@ qd,r@!BK(F,+^Z?%xRQB
 #@ x
 #@ 22
 #@ kaT5Bm<NaEomK;@'(ur@g^CkBHSw
@@ -7703,15 +7145,15 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 5
 #@ %N|(FA!
 #@ p
-#@ 10 0 96 15 0 0 40 0 5 10 10 -1 -1
-#@ 96
+#@ 10 0 94 14 0 0 40 0 5 10 10 -1 -1
+#@ 94
 #@ )Nr<!8^w!!;o!!!w3E<!19N<!3|`W!7MkUv;u&s!5v!!!4!!!!2G^3w/)Ppv:&0s!5/|X!-B
-#@ W<!?PC3w-`8s!75|X!-BW<!7NE<!?M1qv6P60%,?W<!69*!!
+#@ W<!?PC3w-`8s!75|X!-BW<!7NE<!8`8s!5rr<!8S:qvv!!
 #@ 10
-#@ Jwao#CV17#10!
+#@ Jwao#CV17#/0!
 #@ 10
-#@ |3yS#Ct6Ow*-!
-#@ 15
+#@ |3yS#AbUm#*-!
+#@ 14
 #@ x
 #@ 14
 #@ #k|Z?r0H8Aw9fwGJ%%
@@ -7748,9 +7190,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 4
 #@ 8w`TA
-#@ x
-#@ 5
-#@ s85)F1v
 #@ x
 #@ 21
 #@ w3F/D'gi'FrZ!iCdIa:@VhrU@?v
@@ -8016,13 +7455,13 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 21
 #@ w3F/D'gi'FrZ!iC`jbSAp#K^F<v
 #@ p
-#@ 3 0 36 10 0 0 16 0 6 3 3 -1 -1
+#@ 3 0 36 10 0 0 12 0 6 3 3 -1 -1
 #@ 36
-#@ /rS=!;-x^)(H&s!,`yTv5Qr<!<)Ks!/HW<!Rlqo+/Zr!!
+#@ /rS=!6U(+((H&s!,`yTv5Qr<!<)Ks!Qsm<v.TW<!19*!!
 #@ 3
-#@ <V##
+#@ @nG#
 #@ 3
-#@ xrE!
+#@ VoE!
 #@ 10
 #@ x
 #@ 27
@@ -8049,11 +7488,11 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 15
 #@ kaT5BgxUgCr6m*E_I-,
 #@ x
-#@ 15
-#@ 3aMTAu'V5Bq`ewGh0<-
-#@ x
 #@ 0
 #@ 
+#@ x
+#@ 15
+#@ 3aMTAu'V5Bq`ewGh0<-
 #@ 0
 #@ 0
 #@ 0 0
@@ -8179,27 +7618,24 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 19
 #@ ,v(Z?!aiaEmo3mBm+BRAyOl,
 #@ x
-#@ 30
-#@ o4jY?m'cSA:uMTAF%aWF4'MV6t!>SAa%YbD@Sw
+#@ 14
+#@ o4jY?m'cSA:uMTAxA#
 #@ p
-#@ 47 0 617 38 2 0 232 1 8 47 55 -1 -1
-#@ 617
-#@ =Sq9-|^w!!E8v!!#**!!&<`W!2?W<!-BE<!1H<<!4c&=!B4`H&_y)jBw=&9=v*<<!>Vq9-|^
-#@ w!!E8v!!#**!!,rXQ#8c8=!3BE<!1H<<!4c&=!B4`H&+#PdBEfIQ,v*<<!w0E<!75T=!6G(q
-#@ v2G^3w-u4Uv6/Ypv;,9s!5v!!!Q!!!!;.*kwgfvdB>'6<*v*<<!0G60%=,f=!M13-&<vNH&?
-#@ _(;vZ+ic&8^w!!.H!!!6+/*'NMe`B.A-0%v*<<!MO_qv8^w!!.H!!!6+/*'PSe`BbiLQ5v*<
-#@ <!E*<<!Z^w!!<r!!!/ApiwJ4nmwEk>:v<#Ts!Z+ic&8^w!!n^#!!:I+'(,e<)!p53,!0&Tv!
-#@ #0E<!C1_':Les<!xSa<!Ar4dB.A-0%v*<<!Rd%8#DRE5w4Z/s!5v!!!+!!!!5/p<vKte`B@:
-#@ u8Fv*<<!Ceq9-`^w!!HAv!!=d'w),e<)!HqQ>!NPbpv:N2,!+|&v!crgl5Z+ic&AY4,!^;L'
-#@ !#0E<!X%2?!e-96wNd*svxY5:,5v!!!5!!!!D=V?!U5,UvC%DVv8^w!!+?!!!1;l!,;Vkt!5
-#@ v!!!a!!!!qJqQ5824,!O6n%!,,:3wTo!%*5v!!!.!!!!U/qK&>N2,!+|&v!d&.36aRe`';o8
-#@ X!Z+ic&QKf6wN-XsvjZs(1E!<rrbXkt!5v!!!O!!!!hF#!!GoRQ,6`8X!xKn<vujZRI#3WW!
-#@ ?WW<!9rtsvm,o<vKte`B:Xs#)v*<<!%&yR5!6SQ,7c8X!Z+ic&z
-#@ 47
-#@ 8bgm#U(hm#Zsv+'`Q,N%Z'9h%XNgw)Sd&M%JLi-&PLdjwZsrL%Txmn#V4Uv
-#@ 55
-#@ !w!!!<Jr;veIr;v>@&a0l*sL%/w*!!2,QT#=b&M%wboZ-uDMU4WF.4wRxy4w#@;D)F;X!
-#@ 38
+#@ 31 0 418 32 2 0 152 1 8 31 35 -1 -1
+#@ 418
+#@ =Sq9-|^w!!E8v!!#**!!&<`W!2?W<!-BE<!1H<<!4c&=!B4`H&*#PdBEfIQ,v*<<!w0E<!75
+#@ T=!4;kpv2G^3w-u4Uv6/Ypv:&0s!5v!!!Q!!!!9vmjwgfvdB>'6<*v*<<!.5UNw;uS=!ItQK
+#@ %:elf%>Vbt!Xn2-&8^w!!.H!!!4nMH&MJe`B.A-0%v*<<!J@DVv8^w!!2V'!!EL_w!+GPqB<
+#@ jTZ)v*<<!#uxR5gL/*'>GtpvPpm<vIne`B^HGT4v*<<!L!f`'P9GB(Jga|(>bq9-X^w!!5|!
+#@ !!=d'w)J%?:vCOAI&<N2,!+|&v!d&.36Xn2-&8^w!!a7#!!0/>:v##heBOkYc/v*<<!A_q9-
+#@ Q^w!!.H!!!>s|Z)NMe`B+&13wv*<<!9l0=!JDPpvJSa<!Q-w!*K3?<*<tMH&#BO8s7u5-&8^
+#@ w!!OVv!!hq?(!#0E<!Q,,pvWhXq+P#wS7Jv!!!>D|s!2l#8-ig-s+9JYt!5v!!!:!!!!9vmj
+#@ w=/C=!R25pvJSa<!1!!
+#@ 31
+#@ 8bgm#Zsv+'`Q,N%Yp`1%PLdjwZsrL%Txmn#V4Uv
+#@ 35
+#@ |Ir;v>@&a0l*sL%!w!!!@.Wp4WF.4wRxy4w#@;D)F;X!
+#@ 32
 #@ x
 #@ 4
 #@ *dmID
@@ -8227,12 +7663,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 19
 #@ kaT5BnEi'Fh!cr@eRo;@05A&
-#@ x
-#@ 21
-#@ JaGQB*kbD+-,ZS?w:7hCMD/yEA!
-#@ x
-#@ 23
-#@ lj|Z?!aiaEw>m#H8&Z)F5mNaEt-E-
 #@ x
 #@ 23
 #@ lj|Z?!aiaEw>m#H8&Z)F5mNaEt-E-
@@ -8265,18 +7695,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 4
 #@ DP)*F
-#@ x
-#@ 8
-#@ 'paU64eWP.
-#@ x
-#@ 30
-#@ ekTfD<T;*:3cN<@&2oC+jFfRA3V#D+0lTKDZKv
-#@ x
-#@ 1
-#@ R!
-#@ x
-#@ 13
-#@ Ip><@GtJV6t?_(2K!
 #@ x
 #@ 6
 #@ :<ylBLYw
@@ -8314,53 +7732,47 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 0
 #@ 
 #@ 2
-#@ L 0 237 287 541 525 -1
-#@ C 0 558 12 -1 -1 568
+#@ L 0 171 154 342 326 -1
+#@ C 0 359 12 -1 -1 369
 #@ 0
-#@ 3 10
+#@ 2 8
 #@ 8
 #@ o4jY?m'cSA
 #@ 0 0 256
 #@ 5
 #@ f9&P9d!
 #@ 1 0 256
-#@ 15
-#@ f9&P9RZwNBWW+l9Zyf+
-#@ 2 0 256
 #@ 4
 #@ g3IID
-#@ 3 0 0
+#@ 2 0 0
 #@ 3
 #@ d4w,
-#@ 4 0 0
+#@ 3 0 0
 #@ 4
 #@ lWNeD
-#@ 5 0 0
+#@ 4 0 0
 #@ 9
 #@ ,uk)Fdd;JD1v
-#@ 6 0 0
-#@ 10
-#@ jFfRAXOg:7x%%
-#@ 7 0 0
+#@ 5 0 0
 #@ 4
 #@ u3uSA
-#@ 8 0 0
+#@ 6 0 0
 #@ 5
 #@ bT/bE>v
-#@ 9 0 0
+#@ 7 0 0
 #@ x
 #@ 15
 #@ qd,r@s&O+E,=^Z?YYK+
 #@ p
-#@ 9 0 82 14 0 0 36 0 5 9 9 -1 -1
-#@ 82
+#@ 9 0 80 13 0 0 36 0 5 9 9 -1 -1
+#@ 80
 #@ /rS=!1Gwjw'E&s!H=rH&*TA9v?Ae`B4v&*'v*<<!2uA=!1rSs!8BW<!:,,pv/#YQ#7c&v!.E
-#@ W<!<,,pv15:3w88UNw88o9v8S:qvv!!
+#@ W<!<,,pv15:3w88UNw.EW<!49*!!
 #@ 9
-#@ AqCm#CV17#,!
+#@ AqCm#CV17#*!
 #@ 9
-#@ TFxS#Ct6Ow%!
-#@ 14
+#@ TFxS#AbUm#%!
+#@ 13
 #@ x
 #@ 18
 #@ kaT5Bm<NaE1fsiCqRo;@Syw
@@ -8397,9 +7809,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ x
 #@ 4
 #@ 8w`TA
-#@ x
-#@ 5
-#@ s85)F1v
 #@ x
 #@ 21
 #@ w3F/D'gi'FrZ!iC`jbSAp#K^F<v
@@ -8485,14 +7894,14 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ 11
 #@ 0Q%hCgKxhC,tEw
 #@ p
-#@ 10 0 99 15 0 0 40 0 5 10 10 -1 -1
-#@ 99
+#@ 10 0 97 15 0 0 40 0 5 10 10 -1 -1
+#@ 97
 #@ /rS=!1Gwjw'E&s!H=rH&9N2,!4>##!#0E<!1NE<!@4`H&-fvpv5|8X!6Sp3w25bpv/o=6#7)
-#@ tl#2Q/X!.EW<!5TN<!7`8s!9;|X!-BW<!9NE<!BS:qv7YQK%(w!!
+#@ tl#2Q/X!.EW<!5TN<!7`8s!9;|X!-BW<!9NE<!:`8s!7#s<!z
 #@ 10
-#@ GFIOwG17n#3B!
+#@ GFIOwG17n#1<!
 #@ 10
-#@ Vv)7#Gh17#0-!
+#@ Vv)7#Gh17#.-!
 #@ 15
 #@ x
 #@ 18
@@ -8552,82 +7961,6 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ g3IID
 #@ 2 0 0
 #@ x
-#@ 22
-#@ qd,r@f9DTAf=+Y?/EelBu'VgCBJw
-#@ p
-#@ 11 0 113 17 0 0 44 0 5 11 11 -1 -1
-#@ 113
-#@ )Nr<!8^w!!;o!!!w3E<!19N<!3|`W!7MkUv;u&s!5v!!!4!!!!2G^3w/)Ppv:&0s!5/|X!-B
-#@ W<!6TN<!6`8s!62|X!6&'v!1fSs!7Yw4w5G(qv4Gpiw5|8X!<vR4w2,f=!=fAs!9)s<!z
-#@ 11
-#@ Jwao#I7*1%<#0v
-#@ 11
-#@ |3yS#G17n#7ZE!
-#@ 17
-#@ x
-#@ 14
-#@ #k|Z?r0H8Aw9fwGJ%%
-#@ x
-#@ 18
-#@ kaT5Bm<NaE1fsiCqRo;@Syw
-#@ x
-#@ 1
-#@ P!
-#@ x
-#@ 15
-#@ kaT5BgxUgCr6m*E_I-,
-#@ x
-#@ 22
-#@ kaT5Bm<NaEomK;@'(ur@g^CkBHSw
-#@ x
-#@ 4
-#@ *dmID
-#@ x
-#@ 1
-#@ -v
-#@ x
-#@ 14
-#@ 4rBfD1-0CFq&fwGJ%%
-#@ x
-#@ 4
-#@ DP)*F
-#@ x
-#@ 45
-#@ =P6X5r*r<+fF'Z?qd,r@f9DTAf=+Y?/EelBu'VgCjxTZ?,CHr@(okcE1v
-#@ x
-#@ 7
-#@ A;lcE_iGw
-#@ x
-#@ 7
-#@ =P6X5R^`w
-#@ x
-#@ 5
-#@ )lP)F1v
-#@ x
-#@ 19
-#@ ,v(Z?!aiaEmo3mBm+BRAyOl,
-#@ x
-#@ 5
-#@ s85)F1v
-#@ x
-#@ 4
-#@ 8w`TA
-#@ x
-#@ 21
-#@ w3F/D'gi'FrZ!iC`jbSAp#K^F<v
-#@ 0
-#@ 0
-#@ 1 3
-#@ 9
-#@ o4jY?m'cSAQ!
-#@ 0 0 256
-#@ 8
-#@ o4jY?m'cSA
-#@ 1 0 0
-#@ 2
-#@ Mtw
-#@ 2 0 0
-#@ x
 #@ 15
 #@ rpwhC;Z2b3<?<+EfqT+
 #@ 0
@@ -8635,764 +7968,10 @@ source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 #@ }
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/syn/lc_commands.tbc
 
-#@ source ${synopsys_root}/auxx/syn/libcorr.tbc
-#@ # -- Starting source /usr/cad/synopsys/synthesis/cur/auxx/syn/libcorr.tbc
-
-#@ ################################################################################
-#@ # run_lc_cmd: run lc cmd in the lc session
-#@ ################################################################################
-#@ # TclPro::Compiler::Include
-#@ 
-#@ if {[catch {package require tbcload 1.6} err] == 1} {
-#@     return -code error "[info script]: The TclPro ByteCode Loader is not available or does not support the correct version -- $err"
-#@ }
-#@ tbcload::bceval {
-#@ TclPro ByteCode 2 0 1.7 8.5
-#@ 16 0 222 40 0 0 192 0 8 16 16 -1 -1
-#@ 222
-#@ KPF<!(H&s!/HW<!(3E<!.Qr<!2|/=!:#|s!TL;3w0;UNw/HW<!1iA=!4uS=!2|/=!>#|s!Xp
-#@ RK%4_lf%/HW<!5,f=!88#>!2|/=!B#|s!y?jc&8./*'/HW<!9D5>!<PG>!2|/=!F#|s!`c,'
-#@ (<RFB(/HW<!=yY>!@hk>!2|/=!F#|s!c))w)?mB?)/HW<!@nt>!C%2?!G+;?!cd*svT;ON-D
-#@ AaW!Lto9v*E`<!GKi<!L|/=!RrSs!m.96,IrRQ,/HW<!JU%@!Ma7@!V?ssv'!!
-#@ 16
-#@ Ha<PwYa<PwYa<PwYU*Pw
-#@ 16
-#@ Y0TI&Y0TI&xB5+'TdWL%
-#@ 40
-#@ x
-#@ 4
-#@ ,CHr@
-#@ x
-#@ 10
-#@ ,v(Z?^_`p@HPw
-#@ x
-#@ 4
-#@ %N|(F
-#@ p
-#@ 6 0 71 8 0 0 24 0 5 6 6 -1 -1
-#@ 71
-#@ w0E<!.9`W!BJe`B0Scf%v*<<!45#Y!JAe`BLP|f.#3WW!R7b.!coUQ5|/|Tv-ivpv4&B=!Zi
-#@ Gmw.lvpv4&B=!+-!!
-#@ 6
-#@ EIRn#9K!
-#@ 6
-#@ n>g:#7?!
-#@ 8
-#@ x
-#@ 20
-#@ .|k)FsA>cE_M*:@3K90D2;)*F
-#@ x
-#@ 5
-#@ 4E%6B?v
-#@ x
-#@ 2
-#@ JGw
-#@ x
-#@ 3
-#@ Vq|+
-#@ x
-#@ 8
-#@ GD0bE!dMTA
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 7
-#@ CqCEFNk,,
-#@ x
-#@ 4
-#@ .gP8A
-#@ 0
-#@ 0
-#@ 1 3
-#@ 4
-#@ %N|(F
-#@ 0 0 256
-#@ 3
-#@ Vq|+
-#@ 1 0 0
-#@ 2
-#@ JGw
-#@ 2 0 0
-#@ x
-#@ 22
-#@ epCkBo0m*EpvnX?3DccE,&MEFO(%
-#@ x
-#@ 5
-#@ 7<;oA;v
-#@ x
-#@ 34
-#@ B=uD+t8#j@vkT;@(rpcB*9*r@l-?SA8:,!F,?elBTnw
-#@ x
-#@ 7
-#@ /^,8AY@c,
-#@ x
-#@ 12
-#@ )L>nAh++Y?%N|(F
-#@ x
-#@ 89
-#@ 6dV<+`%JtFu`mdD<H:s+'%HW@6hY%,P!i<+w6=iC!VtD+4<nlBv4hgC>#V<+@=|s@5E:s+4-
-#@ vj@vkT;@6?k<+!>oC+:<ylB4vfZE,EvmB0oQ:I+!
-#@ x
-#@ 16
-#@ 2'aaEoL,r@vEK(F16sJD
-#@ p
-#@ 22 0 254 16 0 0 88 0 4 22 22 -1 -1
-#@ 254
-#@ w0E<!.9`W!BJe`BAB29+v*<<!,Wr<!VU2bB-8giwv*<<!H`ho+-WAs!5v!!!Z!!!!*Ki<!+9
-#@ N<!)PYE9(Ko7-H^w!!0N!!!,&tl#:>,>!h#3,!0&Tv!#0E<!HCWH&9N2,!M*y%!w6N<!.Qr<
-#@ !4Atpv%UxQ#GgMbB0Scf%v*<<!;J#Y!xpm<v=Je`B2eDH&v*<<!82B=!=y(;v8^w!!IDv!!N
-#@ +Y.!du^Q5r53,!4>##!,,:3w<qH4w=1`H&LSa<!<N2,!Ig7%!w6N<!ZQ%!!4Vq9-J^w!!2T!
-#@ !!0/>:v7&0X!ysm<v*HW<!D8>pv#!!
-#@ 22
-#@ <b17#Kv*-&K@Rn#Wlke&SpEo#Ac!
-#@ 22
-#@ |^7jw*yig%lk;Swu-!2.i;U:#83!
-#@ 16
-#@ x
-#@ 20
-#@ .|k)FsA>cE_M*:@3K90D2;)*F
-#@ x
-#@ 5
-#@ 4E%6B?v
-#@ x
-#@ 2
-#@ JGw
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 0
-#@ 
-#@ x
-#@ 5
-#@ sB-<@Ev
-#@ x
-#@ 5
-#@ njkSA?v
-#@ x
-#@ 9
-#@ R.6cEdR1kB>v
-#@ i
-#@ 0
-#@ x
-#@ 3
-#@ m:^+
-#@ x
-#@ 10
-#@ <c%UA`Ro;@Syw
-#@ x
-#@ 31
-#@ ,v(Z?nEi'FrZ!iCDxpaEl?VTAUc*gDm+'7Ar;Hw
-#@ x
-#@ 12
-#@ LH&yGd*m*E*k>D+
-#@ x
-#@ 8
-#@ GD0bE!dMTA
-#@ x
-#@ 9
-#@ JXfTA.NP)F1v
-#@ x
-#@ 4
-#@ uKhgC
-#@ 0
-#@ 0
-#@ 1 5
-#@ 4
-#@ %N|(F
-#@ 0 0 256
-#@ 8
-#@ ;?=NCk&TbE
-#@ 1 0 0
-#@ 2
-#@ JGw
-#@ 2 0 0
-#@ 9
-#@ rmBq@q,BCF4v
-#@ 3 0 0
-#@ 5
-#@ .j@.D0v
-#@ 4 0 0
-#@ x
-#@ 22
-#@ 2'aaE09*r@l-?SA8:,!F,?elBTnw
-#@ x
-#@ 171
-#@ 6dV<+O6&MAlYmX?%xRQB3>*r@l-?SA+otfA:kbD+%xRQBA!&yGd*m*E*k>D+:<ylB1yi|D4<
-#@ XeD0>E;I6dV<+a.e:G#yaY?,1DE+G.6cE!FV5B,&TbE#KffDO)l<+;?=NCk&TbEF@ccE+S5D
-#@ +4<nlBv4hgC>#V<+_TJU/'%HW@4V#D+<D0bE!dMTAR-Js+-)9fDm*IID@.uDFt!^;@j-+v
-#@ x
-#@ 16
-#@ )lP)F`L,r@vEK(F16sJD
-#@ p
-#@ 9 0 106 9 0 0 36 0 4 9 9 -1 -1
-#@ 106
-#@ w0E<!.9`W!BJe`BAB29+v*<<!,Wr<!SU2bB-8giwv*<<!H`ho+-WAs!5v!!!.!!!!91rH&9N
-#@ 2,!Ig7%!w6N<!SQ%!!4Vq9-J^w!!2T!!!-iA=!0f/X!Yjm<v*HW<!:&#pv#!!
-#@ 9
-#@ <b17#S1.4w7!
-#@ 9
-#@ |^7jwp`0I&'!
-#@ 9
-#@ x
-#@ 20
-#@ .|k)FsA>cE_M*:@3K90D2;)*F
-#@ x
-#@ 5
-#@ 4E%6B?v
-#@ x
-#@ 2
-#@ JGw
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 0
-#@ 
-#@ x
-#@ 20
-#@ ,v(Z?nEi'FrZ!iC8AmRAmIbOB
-#@ x
-#@ 8
-#@ GD0bE!dMTA
-#@ x
-#@ 9
-#@ JXfTA.NP)F1v
-#@ x
-#@ 4
-#@ uKhgC
-#@ 0
-#@ 0
-#@ 1 3
-#@ 4
-#@ %N|(F
-#@ 0 0 256
-#@ 5
-#@ .j@.D0v
-#@ 1 0 0
-#@ 2
-#@ JGw
-#@ 2 0 0
-#@ x
-#@ 22
-#@ )lP)F!9*r@l-?SA8:,!F,?elBTnw
-#@ x
-#@ 46
-#@ 6dV<+`%JtFu`mdD<H:s+'%HW@6hY%,P!i<+w6=iC!VtD+4<nlBv4hgCS@!
-#@ x
-#@ 11
-#@ j!RdDoF'Z?YYK+
-#@ p
-#@ 11 0 137 16 1 1 44 1 5 11 11 -1 -1
-#@ 137
-#@ w0E<!.9`W!BJe`BZw0<3#3WW!*TA9v*ZyTv#VED!8:,.'5v!!!0!!!!0/YpvV8ro+F^w!!0N
-#@ !!!(WyTvBA,>!8^w!!6`!!!+rXQ#6,B=!62o9vLGe`BNb>H/v*<<!C_(;vg@#!!ee6(!G#+3
-#@ -AoJ=!<&|=!D;5Uv0fAs!>rtf%z
-#@ 11
-#@ 5#s!!RRr-&Q:c#
-#@ 11
-#@ &mA4wYNU((fRLv
-#@ 16
-#@ x
-#@ 20
-#@ .|k)FsA>cE_M*:@3K90D2;)*F
-#@ x
-#@ 5
-#@ 4E%6B?v
-#@ x
-#@ 2
-#@ JGw
-#@ x
-#@ 5
-#@ sB-<@Ev
-#@ x
-#@ 5
-#@ njkSA?v
-#@ x
-#@ 5
-#@ 1XKV@?v
-#@ i
-#@ 0
-#@ x
-#@ 8
-#@ lj|Z?vj/(F
-#@ x
-#@ 13
-#@ lj|Z?3DccE,&MEF1v
-#@ x
-#@ 6
-#@ IDvmBP+%
-#@ x
-#@ 16
-#@ A;lcEZ+|mAf%+Y?njkSA
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 7
-#@ CqCEFNk,,
-#@ x
-#@ 4
-#@ .gP8A
-#@ x
-#@ 9
-#@ *dmIDcXKV@A!
-#@ x
-#@ 0
-#@ 
-#@ 1
-#@ L 0 117 14 134 110 -1
-#@ 1
-#@ F
-#@ 1 4 5
-#@ 1
-#@ 6
-#@ 1 7
-#@ 4
-#@ %N|(F
-#@ 0 0 256
-#@ 4
-#@ vj/(F
-#@ 1 0 0
-#@ 2
-#@ JGw
-#@ 2 0 0
-#@ 5
-#@ gXKV@?v
-#@ 3 0 0
-#@ 0
-#@ 
-#@ 4 0 512
-#@ 0
-#@ 
-#@ 5 0 512
-#@ 4
-#@ gXKV@
-#@ 6 0 0
-#@ x
-#@ 24
-#@ *dmID%9%lB+JqcB*9*r@8DK(F16sJD
-#@ x
-#@ 44
-#@ 6dV<+Vu9bC+vME+&XKV@&XxlB<lk<+vj/(F5Go(F@kQ,E26sJD!`Q@w
-#@ x
-#@ 10
-#@ m<NaEVS!Y?=Jw
-#@ p
-#@ 15 0 192 16 2 2 72 2 5 15 15 -1 -1
-#@ 192
-#@ w0E<!.9`W!BJe`BZw0<3#3WW!*TA9v*ZyTv#VED!8:,.'5v!!!0!!!!0/YpvV8ro+F^w!!0N
-#@ !!!(WyTvBA,>!8^w!!6`!!!+rXQ#6,B=!62o9vLGe`B0Tl,Av*<<!C_(;vg@#!!ee6(!G#+3
-#@ -*_w!!fF#!!2Atpv*QxN6v*<<!e!!!!2M(eB8F=B(w<rr!FTu+!728*Bv*<<!@ZW<!:uS=!G
-#@ (x4w8r+pvrbSNdV>/p+:+Tv!
-#@ 15
-#@ 5#s!!RRr-&k%'B)9&Tv
-#@ 15
-#@ &mA4wYNU((Bs%e(B5Kv
-#@ 16
-#@ x
-#@ 20
-#@ .|k)FsA>cE_M*:@3K90D2;)*F
-#@ x
-#@ 5
-#@ 4E%6B?v
-#@ x
-#@ 2
-#@ JGw
-#@ x
-#@ 5
-#@ sB-<@Ev
-#@ x
-#@ 5
-#@ njkSA?v
-#@ x
-#@ 5
-#@ 1XKV@?v
-#@ i
-#@ 0
-#@ x
-#@ 8
-#@ lj|Z?vj/(F
-#@ x
-#@ 13
-#@ lj|Z?3DccE,&MEF1v
-#@ x
-#@ 6
-#@ IDvmBP+%
-#@ x
-#@ 23
-#@ kW`aEjEVTA.Xu<@26sJDtr@lBv7<-
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 7
-#@ CqCEFNk,,
-#@ x
-#@ 4
-#@ .gP8A
-#@ x
-#@ 8
-#@ i%97AgkyC+
-#@ x
-#@ 0
-#@ 
-#@ 2
-#@ L 0 117 69 189 110 -1
-#@ L 1 143 38 184 136 -1
-#@ 2
-#@ F
-#@ 1 4 5
-#@ 1
-#@ 6
-#@ F
-#@ 1 7 8
-#@ 1
-#@ 9
-#@ 1 11
-#@ 4
-#@ %N|(F
-#@ 0 0 256
-#@ 4
-#@ vj/(F
-#@ 1 0 0
-#@ 2
-#@ JGw
-#@ 2 0 0
-#@ 3
-#@ h*<-
-#@ 3 0 0
-#@ 0
-#@ 
-#@ 4 0 512
-#@ 0
-#@ 
-#@ 5 0 512
-#@ 2
-#@ Jtw
-#@ 6 0 0
-#@ 0
-#@ 
-#@ 7 0 512
-#@ 0
-#@ 
-#@ 8 0 512
-#@ 4
-#@ 'gR.D
-#@ 9 0 0
-#@ 2
-#@ =Jw
-#@ 10 0 0
-#@ x
-#@ 22
-#@ i%97A&Z/(F9mtD+/t+!F,?elBTnw
-#@ x
-#@ 14
-#@ #k|Z?j!RdD4<XeDX(%
-#@ p
-#@ 24 0 287 17 0 0 108 0 4 24 24 -1 -1
-#@ 287
-#@ w0E<!.9`W!BJe`B=t#<Ev*<<!,Wr<!R>ijB)jXl>#3WW!R7b.!FlRQ,M^w!!1Q!!!(WyTvMv
-#@ !!!Mes<!NSa<!#*&cB1y)-&v*<<!VCb.!FlRQ,P&Jp+SPj3-Cc8=!6Z/s!5v!!!-!!!!.f/v
-#@ !SAUNwSAUNw8^w!!kU#!!,uXQ#Mv!!!jcU^25v!!!:!!!!^b%+K=/C=!AM1qvJSa<!CN2,!:
-#@ bY#!w6N<!n1!:-:&|=!Yr%p+SDvq+4,,t!5v!!!H!!!!TuPHJv*<<!ZmVbB1y)-&v*<<!3oA
-#@ 9vdtjq+4,,t!5v!!!H!!!!U&ZHJv*<<!ZmVbB1y)-&v*<<!6)|Tvdtjq+4,,t!B:3-&)'!!
-#@ 24
-#@ <b17#gn&B)PF.4wDqwn#I4.4w^6ba'
-#@ 24
-#@ U0,m>OFq7#Dn&@)F:Vu!fTj-&fvVqv
-#@ 17
-#@ x
-#@ 20
-#@ .|k)FsA>cE_M*:@3K90D2;)*F
-#@ x
-#@ 5
-#@ 4E%6B?v
-#@ x
-#@ 2
-#@ JGw
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 10
-#@ <c%UA`Ro;@Syw
-#@ x
-#@ 9
-#@ R.6cEdR1kB>v
-#@ i
-#@ 0
-#@ x
-#@ 1
-#@ R!
-#@ x
-#@ 6
-#@ DAK(FP+%
-#@ x
-#@ 4
-#@ lWNeD
-#@ x
-#@ 102
-#@ ekTfD^2.wErW&(F9UJ`F>!(aCjNIQBLH&yGAok<+3|#j@+dMTA7kkcE1ZbDFpmmX?w:7hC1u
-#@ JTA69XeDvdZRAw^DTA9MfCF*FV5B7Yb@GpmmX?w:7hC8kQ,E26sJDmWv
-#@ x
-#@ 0
-#@ 
-#@ x
-#@ 16
-#@ yD;Y?`qARAlYmX?%xRQB
-#@ x
-#@ 5
-#@ 3aMTA@v
-#@ x
-#@ 15
-#@ yD;Y?ri+@G#yaY?ad2-
-#@ x
-#@ 16
-#@ .9BfD):VgC!f:EF5S2*F
-#@ x
-#@ 10
-#@ 6g0Z?49BCF_(%
-#@ 0
-#@ 0
-#@ 1 2
-#@ 4
-#@ %N|(F
-#@ 0 0 256
-#@ 2
-#@ JGw
-#@ 1 0 0
-#@ x
-#@ 28
-#@ 91VE+V`iaE9!/F+yMB,Ew'0bE@.uDF1oG)F
-#@ x
-#@ 216
-#@ 6dV<+O6&MAlYmX?%xRQB5Dm;@=7G<FD?UaCjNIQB1U!Z-YLJV@6>d#HacV/Dv(cSA<v&yG))
-#@ MEFagbSA@6iKAlYmX?%xRQBKQ8EF(FV5B@.uDFt!^;@5O<:+RFXQHR.6cEdR1kBM/S9G-aqk
-#@ B&N>0ApxBq@Fhd#HR.S9G#yaY?.C%',F@ccE+S5D+4<nlBv4hgC>#V<+_TJU/'FMTAJWuZE)
-#@ NfCF&N!iC14fC+4<nlB?X.',P!i<+w6=iC!VtD+4<nlBv4hgC>#V<+
-#@ x
-#@ 18
-#@ )L>nAh++Y?fC=Y?5;2`FZ(%
-#@ x
-#@ 75
-#@ 6vV<+BO>UA4Qk_F/dhTAyV2yE)NfCFLH&yGd*m*E2_!;I>#V<+BO>UA4Qk_F/dhTAyV2yE)N
-#@ fCFUc*gDm+'7AM-6=IkBEw
-#@ x
-#@ 16
-#@ .9BfD):VgC!f:EF5S2*F
-#@ p
-#@ 20 0 182 16 0 0 96 0 4 20 20 -1 -1
-#@ 182
-#@ w0E<!.9`W!BJe`Bcuw36#3WW!Q4b.!_NPT45)4,!LwS%!#0E<!i`PT4dD|Tv0i8X!8^w!!-E
-#@ !!!*i=6#Lk0=!55bpvJSa<!3|yTv3r8X!+Ki<!6Z/s!3DUNw@De`BCTho+#3WW!GIB_5y,|T
-#@ v<epiw:r+pvNk0=!:S:qv:N2,!CCVw!w6N<!n1!:-7Ki<!K:<kw0|8X!QlyTv9/9X!8^w!!-
-#@ E!!!*i=6#z
-#@ 20
-#@ ?(.4wF43L%AJt6#DkU7#DkU7#
-#@ 20
-#@ LEJg.>_1qvYGn6,XMe6,A(Ijw
-#@ 16
-#@ x
-#@ 20
-#@ .|k)FsA>cE_M*:@3K90D2;)*F
-#@ x
-#@ 5
-#@ 4E%6B?v
-#@ x
-#@ 2
-#@ JGw
-#@ x
-#@ 10
-#@ 6g0Z?49BCF_(%
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 4
-#@ lWNeD
-#@ x
-#@ 57
-#@ i8BCFdRF?+kXm`CjNIQB*kbD+6ot)F3+uD+;FfZE2g7lB+&qcB7APQBj?C:@t/BbE.OZ8AO!
-#@ 
-#@ x
-#@ 1
-#@ R!
-#@ x
-#@ 54
-#@ i8BCFdRF?+nEi'FrZ!iC8DK(F16sJD>6ME+;TjJD+S5D+8IG<Fq5|N@c!;5B<lTKD^Wv
-#@ x
-#@ 0
-#@ 
-#@ x
-#@ 24
-#@ V`iaE9!/F+yMB,Ew'0bE@.uDF1oG)F
-#@ x
-#@ 60
-#@ +P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P/M/+P
-#@ /M/
-#@ x
-#@ 16
-#@ yD;Y?`qARAlYmX?%xRQB
-#@ x
-#@ 31
-#@ V`iaE9!/F+yMB,Ew'0bE/c%UA%X?<@u@#D+F<Fw
-#@ x
-#@ 15
-#@ yD;Y?ri+@G#yaY?ad2-
-#@ x
-#@ 31
-#@ p>=NC,&TbE#KffDMrY<+LdV<+LdV<+LdV<+F<Fw
-#@ 0
-#@ 0
-#@ 1 2
-#@ 4
-#@ %N|(F
-#@ 0 0 256
-#@ 2
-#@ JGw
-#@ 1 0 0
-#@ x
-#@ 31
-#@ .9BfDtFyH9kg,<@pYgQ6-pIlB0%DE+4<nlBrw<-
-#@ x
-#@ 68
-#@ 6dV<+X2pCD-f:EF5S2*FA^pJDDXfZE.o5cE09*r@'h>D+4<nlB?X.',P!i<+w6=iC!VtD+4<
-#@ nlBv4hgC>#V<+
-#@ x
-#@ 5
-#@ nEi'F4v
-#@ p
-#@ 28 0 333 19 1 1 136 1 4 28 32 -1 -1
-#@ 333
-#@ 4;,>!8^w!!.H!!!w3E<!KDe`B&Oyo=v*<<!?Mbt!g@#!!ee6(!G#+3-u^w!!@)v!!.ryX!Tx
-#@ ;bB.A-0%v*<<!vt&E!KN&s!8^w!!.H!!!'NA9vKDe`B.A-0%v*<<!.('E!ZZKP!;N2,!.oAv
-#@ !#0E<!v:)s!5v!!!(#!!!.#Gpv1o0%!,MYqB#4`r<#3WW!>qEb4Nt4,!0&Tv!#0E<!@(NH&>
-#@ N2,!UZO&!-2C3w#1D9vHaDbB/JHK%v*<<!8PtpvldQ>!9;kpv:N2,!-i8v!#0E<!Jgm<v<Ge
-#@ `BD|.6,#3WW!B(Fb4o,3,!1,|v!#0E<!=G(qvxKn<v<Ge`B8F=B(v*<<!5,#pv<&|=!@2f9v
-#@ =QW<!FJYpvJSa<!;N2,!?+2w!#0E<!v'MQ5f73-&FRic&6ln9vKN&s!z
-#@ 28
-#@ Noc@)bWP+'Ktpm#@bUm#Qj/I&E%@4wTb17#
-#@ 32
-#@ Z<oB+WmiL%!w!!!3|>'vl,L#vfnaR,PB(^(SCV3w
-#@ 19
-#@ x
-#@ 1
-#@ C!
-#@ x
-#@ 1
-#@ R!
-#@ x
-#@ 1
-#@ A!
-#@ x
-#@ 0
-#@ 
-#@ i
-#@ 0
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 16
-#@ yD;Y?`qARAlYmX?%xRQB
-#@ x
-#@ 23
-#@ l)fCFZnmX?w:7hCu5(yGd*m*E_I-,
-#@ x
-#@ 4
-#@ lWNeD
-#@ x
-#@ 123
-#@ ekTfD1FeQ67s1=F*|<JD=O&yG))MEF!9*r@l-?SA.5qcBgF5SA,6ueCk9MTABtTKDA4KTAoL
-#@ ,r@*/uDF1oG)FLH&yGd*m*E1URY-E?)E+.w=JDD+dfD.0?SA1G5cE&mSCFpmmX?w:7hC6v&y
-#@ G%Y/wE_I-,
-#@ x
-#@ 15
-#@ yD;Y?ri+@G#yaY?ad2-
-#@ x
-#@ 3
-#@ m:^+
-#@ x
-#@ 28
-#@ 2'aaEoL,r@vEK(F16sJDLH&yGd*m*E*k>D+
-#@ x
-#@ 11
-#@ Uc*gDm+'7Ar;Hw
-#@ x
-#@ 4
-#@ uKhgC
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 12
-#@ ,v(Z?nEi'FrZ!iC
-#@ x
-#@ 7
-#@ CqCEFNk,,
-#@ x
-#@ 4
-#@ .gP8A
-#@ 1
-#@ L 0 45 59 107 38 -1
-#@ 1
-#@ F
-#@ 1 3 4
-#@ 1
-#@ 5
-#@ 1 8
-#@ 4
-#@ %N|(F
-#@ 0 0 256
-#@ 3
-#@ Vq|+
-#@ 1 0 0
-#@ 5
-#@ ,uk)F@v
-#@ 2 0 0
-#@ 0
-#@ 
-#@ 3 0 512
-#@ 0
-#@ 
-#@ 4 0 512
-#@ 3
-#@ y=w,
-#@ 5 0 0
-#@ 12
-#@ |(j:@,+^Z?%xRQB
-#@ 6 0 0
-#@ 5
-#@ .j@.D0v
-#@ 7 0 0
-#@ x
-#@ 40
-#@ B=uD+nEi'FrZ!iC,oW/DmgY8A9mtD+nEi'FrZ!iC8DK(F16sJD
-#@ x
-#@ 83
-#@ 6dV<+;;aaE>r:s+nEi'FrZ!iC,oW/DmgY8A/ZFIDw)^aE&RlSABXME+2T|N@/v&yG))MEF*b
-#@ ?3@91ME+:<ylB4vfZE,EvmB0oQ:IkBEw
-#@ x
-#@ 15
-#@ rpwhC;Z2b3<?<+EfqT+
-#@ 0
-#@ 0
-#@ }
-#@ # -- End source /usr/cad/synopsys/synthesis/cur/auxx/syn/libcorr.tbc
-
-#@ 
-#@ if {$synopsys_program_name == "dc_shell"} {
-#@   if {[string match "*NXT Version*" $sh_full_product_version]} {
-#@     source ${synopsys_root}/auxx/syn/scripts/set_cdc_restrictions.tbc
-#@   }
-#@ }
-#@ 
 #@ # -- End source /usr/cad/synopsys/synthesis/cur/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
-#@ # -- Starting source /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
+source -echo -verbose /home/MingKe/NTU_CVSD2024/02_SYN/syn.tcl
+#@ # -- Starting source /home/MingKe/NTU_CVSD2024/02_SYN/syn.tcl
 
 #@ # Setting environment
 #@ sh mkdir -p Netlist
@@ -9403,8 +7982,8 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 #@ set company {NTUGIEE}
 #@ set designer {Student}
 #@ 
-#@ set search_path      ". /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/SynopsysDC/db  $search_path ../ ./"
-#@ set target_library   "slow.db "              
+#@ set search_path      ". /home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/  $search_path ../ ./"
+#@ set target_library   "slow.db "               
 #@ set link_library     "* $target_library dw_foundation.sldb"
 #@ set symbol_library   "tsmc13.sdb generic.sdb"
 #@ set synthetic_library "dw_foundation.sldb"
@@ -9435,13 +8014,14 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 
 #@ # operating conditions and boundary conditions #
 #@ 
-#@ set cycle  7        ;#clock period defined by designer
+#@ set cycle  5.85        ;#clock period defined by designer
 #@ 
 #@ create_clock -period $cycle [get_ports  i_clk]
 #@ set_dont_touch_network      [get_clocks i_clk]
 #@ set_fix_hold                [get_clocks i_clk]
 #@ set_ideal_network           [get_ports i_clk]
-#@ set_clock_uncertainty  0.1  [get_clocks i_clk]
+#@ set_clock_uncertainty -setup 0.8 [get_clocks i_clk] 
+#@ set_clock_uncertainty -hold  0.8 [get_clocks i_clk]
 #@ set_clock_latency      0.5  [get_clocks i_clk]
 #@ 
 #@ set_input_delay  1      -clock i_clk [remove_from_collection [all_inputs] [get_ports i_clk]]
@@ -9452,6 +8032,7 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 #@ set_operating_conditions  -max_library slow -max slow               
 #@ 
 #@ set_max_fanout 20 [all_inputs]
+#@ 
 #@ 
 #@ 
 #@ # -- End source ./ed25519_dc.sdc
@@ -9467,12 +8048,10 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 #@ uniquify
 #@ set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
 #@ set_host_options -max_cores 16
-#@ 
+#@ set_leakage_optimization  false
 #@ #set_clock_gating_style -max_fanout 4
-#@ compile_ultra
+#@ compile_ultra -retime
 #@ optimize_netlist  -area 
-#@ 
-#@ 
 #@ 
 #@ # Report Output
 #@ current_design [get_designs ${DESIGN}]
@@ -9480,7 +8059,7 @@ source -echo -verbose /home/raid7_2/user12/r2k41036/FINAL/02_SYN/syn.tcl
 #@ report_timing -delay min -max_paths 10 > "./Report/${DESIGN}_syn.timing_min" 
 #@ report_timing -delay max -max_paths 10 > "./Report/${DESIGN}_syn.timing_max"
 #@ report_area -hierarchy > "./Report/${DESIGN}_syn.area"
-#@ report_clock_gating > "./Report/${DESIGN}_syn.cg"
+#@ report_clock_gating >    "./Report/${DESIGN}_syn.cg"
 #@ 
 #@ # Output Design
 #@ current_design [get_designs ${DESIGN}]

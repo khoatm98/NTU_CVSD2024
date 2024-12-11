@@ -7,7 +7,7 @@ define_design_lib work -path ./work
 set company {NTUGIEE}
 set designer {Student}
 
-set search_path      ". /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/  $search_path ../ ./"
+set search_path      ". /home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/  $search_path ../ ./"
 set target_library   "slow.db "               
 set link_library     "* $target_library dw_foundation.sldb"
 set symbol_library   "tsmc13.sdb generic.sdb"
@@ -50,10 +50,6 @@ set_leakage_optimization  false
 #set_clock_gating_style -max_fanout 4
 compile_ultra -retime
 optimize_netlist  -area 
-optimize_netlist  -area 
-optimize_netlist  -area 
-optimize_netlist  -area 
-optimize_netlist  -area 
 
 # Report Output
 current_design [get_designs ${DESIGN}]
@@ -61,7 +57,7 @@ report_timing > "./Report/${DESIGN}_syn.timing"
 report_timing -delay min -max_paths 10 > "./Report/${DESIGN}_syn.timing_min" 
 report_timing -delay max -max_paths 10 > "./Report/${DESIGN}_syn.timing_max"
 report_area -hierarchy > "./Report/${DESIGN}_syn.area"
-report_clock_gating > "./Report/${DESIGN}_syn.cg"
+report_clock_gating >    "./Report/${DESIGN}_syn.cg"
 
 # Output Design
 current_design [get_designs ${DESIGN}]

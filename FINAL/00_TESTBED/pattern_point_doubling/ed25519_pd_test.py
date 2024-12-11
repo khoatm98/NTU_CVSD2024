@@ -266,11 +266,7 @@ print("point G:")
 print(point_G)
 
 t= number(1)/point_G.Z
-a = 0x4ee126d0105401b8d213e390e4a3f92eae724f4d2ab96700a5b061839e2cc1db
-b = 0x3af4e2d44bf64b1fbfa2431eae14145991437239a914b3efd85d012375f7578b;
-print("X: {:064x}\n".format(a*b))
-
-
+print("X: {:064x}\n".format(t.value))
 #testcase 1
 scalar_M = 0x259f4329e6f4590b9a164106cf6a659eb4862b21fb97d43588561712e8e5216a
 x = number(0x0fa4d2a95dafe3275eaf3ba907dbb1da819aba3927450d7399a270ce660d2fae)

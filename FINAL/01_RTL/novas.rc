@@ -111,6 +111,8 @@ FSM = 1
 Branch = 1
 [DesignTree]
 IfShowModule = {TRUE, FALSE}
+[DisabledMessages]
+version = Verdi_S-2021.09
 [Editor]
 editorName = TurboEditor
 [Emacs]
@@ -126,7 +128,6 @@ displaySeedOnly = TRUE
 DisplayExcludedItem = FALSE
 adaptiveExclusion = TRUE
 warningExcludeInstance = TRUE
-propagateExclusion = FALSE
 favorite_exclude_annotation = ""
 [FSM]
 viewport = 65 336 387 479
@@ -201,15 +202,16 @@ StickSet-TextColor = ID_BLACK
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveOpenFsdbDirHistory = "\"/home/raid7_2/user12/r2k41036/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\""
+nWaveOpenFsdbDirHistory = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd.fsdb\"" "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd\"" "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\"" "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/modular_add_sub2.fsdb\""
 [Form]
-version = Verdi_T-2022.06
+version = Verdi_S-2021.09
+wave/localformat.fm = 100,100,435,332
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
 cmd_enter_form = FALSE
 SyncBrowserDir = TRUE
-version = Verdi_T-2022.06
+version = Verdi_S-2021.09
 SignalCaseInSensitive = FALSE
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
@@ -319,8 +321,13 @@ FileName = test.ps
 PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
 [QtDialog]
-openFileDlg = 233,267,602,483
-qWaveSignalDialog = 560,288,800,479
+tipViewerDlg = 751,371,398,259
+QwInfoMsgDlg = 575,375,750,250
+QwUserAskDlg = 360,133,324,134
+QwQuestionMsgDlg = 788,436,324,110
+QwWarnMsgDlg = 2570,375,600,250
+openFileDlg = 659,286,602,483
+qWaveSignalDialog = 215,288,1489,479
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
@@ -598,8 +605,8 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 560 288 800 479 164 381 390 89
-viewPort = 8 31 1920 1009 100 65
+getSignalForm = 215 288 1489 479 368 381 875 89
+viewPort = 0 23 1920 1009 216 763
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -765,7 +772,10 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/raid7_2/user12/r2k41036/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\""
+RecentFile1 = "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\""
+RecentFile2 = "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/modular_add_sub2.fsdb\""
+RecentFile3 = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd.fsdb\""
+RecentFile4 = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -811,9 +821,9 @@ sou_fillColor_uncov = red
 sou_fillColor_pc = yellow
 fca_sou_fillColor_pc = greenyellow
 sou_fillColor_cov = green3
-sou_fillColor_exuncov = darkgray
+sou_fillColor_exuncov = grey
 sou_fillColor_excov = #3C9371
-sou_fillColor_unreach = gray
+sou_fillColor_unreach = grey
 sou_fillColor_unreachcon = cyan
 sou_fillColor_uncov_coi = violet
 sou_fillColor_non_active = yellow

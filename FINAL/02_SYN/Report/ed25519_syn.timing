@@ -7,14 +7,15 @@ Report : timing
         -max_paths 1
 Design : ed25519
 Version: S-2021.06-SP2
-Date   : Wed Dec 11 01:00:20 2024
+Date   : Thu Dec 12 03:27:57 2024
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: R_5028 (rising edge-triggered flip-flop clocked by i_clk)
-  Endpoint: modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_1264
+  Startpoint: modmult_a_in_r_reg[85]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_2706
             (rising edge-triggered flip-flop clocked by i_clk)
   Path Group: i_clk
   Path Type: max
@@ -23,47 +24,48 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock i_clk (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.50       0.50
-  R_5028/CK (DFFHQX4)                                     0.00       0.50 r
-  R_5028/Q (DFFHQX4)                                      0.21       0.71 f
-  U24610/Y (NAND2X4)                                      0.08       0.79 r
-  U28093/Y (INVX8)                                        0.06       0.85 f
-  U31770/Y (INVX20)                                       0.07       0.92 r
-  U25735/Y (CLKINVX1)                                     0.09       1.01 f
-  U32023/Y (AOI22X2)                                      0.18       1.19 r
-  U46404/Y (NAND2X6)                                      0.27       1.46 f
-  U39244/Y (XOR2X1)                                       0.23       1.69 f
-  U36513/Y (OAI22XL)                                      0.25       1.94 r
-  U58963/CO (ADDFXL)                                      0.72       2.67 r
-  U58992/S (ADDFX1)                                       0.47       3.14 f
-  U46078/S (ADDFHX2)                                      0.26       3.40 r
-  U59016/CO (ADDFX1)                                      0.43       3.83 r
-  U33048/Y (OAI21X1)                                      0.08       3.91 f
-  U26619/Y (OAI2BB1X1)                                    0.10       4.01 r
-  U59176/S (ADDFX1)                                       0.46       4.47 f
-  U59051/Y (NAND2X1)                                      0.10       4.57 r
-  U46081/Y (INVXL)                                        0.06       4.63 f
-  U34553/Y (AOI21X1)                                      0.13       4.76 r
-  U16658/Y (OAI21X1)                                      0.10       4.86 f
-  U22559/Y (AOI21X2)                                      0.17       5.03 r
-  U32380/Y (OAI21X2)                                      0.09       5.11 f
-  U24745/Y (AOI21X1)                                      0.14       5.26 r
-  U35619/Y (OAI21X2)                                      0.10       5.36 f
-  U32293/Y (AOI21X4)                                      0.11       5.47 r
-  U46417/Y (OAI21X1)                                      0.08       5.55 f
-  modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_1264/D (DFFHQX4)
-                                                          0.00       5.55 f
-  data arrival time                                                  5.55
+  modmult_a_in_r_reg[85]/CK (DFFQX1)                      0.00       0.50 r
+  modmult_a_in_r_reg[85]/Q (DFFQX1)                       0.26       0.76 f
+  U43374/Y (AND2X2)                                       0.20       0.95 f
+  U31487/Y (NOR2X6)                                       0.17       1.13 r
+  U22485/Y (XOR2X2)                                       0.21       1.34 f
+  U22486/Y (BUFX4)                                        0.29       1.62 f
+  U44716/Y (OAI22XL)                                      0.34       1.96 r
+  U31483/Y (XOR2X1)                                       0.25       2.22 f
+  U31482/Y (XOR2X1)                                       0.17       2.39 r
+  U60762/S (ADDFX1)                                       0.47       2.87 f
+  U60761/CO (ADDFX1)                                      0.38       3.25 f
+  U44767/Y (XOR2X1)                                       0.16       3.41 r
+  U47079/Y (XOR2X1)                                       0.16       3.57 r
+  U45562/Y (OAI21X1)                                      0.09       3.66 f
+  U16753/Y (OAI2BB1XL)                                    0.14       3.80 r
+  U44389/S (ADDFHX2)                                      0.29       4.09 f
+  U24078/Y (BUFX2)                                        0.16       4.25 f
+  U42578/Y (OAI21X2)                                      0.11       4.36 r
+  U16243/Y (NAND2X2)                                      0.10       4.46 f
+  U30626/Y (OAI21X1)                                      0.13       4.59 r
+  U16127/Y (NAND2X1)                                      0.09       4.68 f
+  U23957/Y (CLKINVX1)                                     0.09       4.77 r
+  U42254/Y (NAND2BX4)                                     0.09       4.86 f
+  U29845/Y (AOI21X4)                                      0.12       4.98 r
+  U30724/Y (OAI21X2)                                      0.09       5.07 f
+  U42732/Y (AOI21X4)                                      0.11       5.18 r
+  U45050/Y (INVX4)                                        0.07       5.25 f
+  U46451/Y (AOI21XL)                                      0.14       5.39 r
+  modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_2706/D (DFFHQX2)
+                                                          0.00       5.39 r
+  data arrival time                                                  5.39
 
-  clock i_clk (rise edge)                                 6.00       6.00
-  clock network delay (ideal)                             0.50       6.50
-  clock uncertainty                                      -0.80       5.70
-  modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_1264/CK (DFFHQX4)
-                                                          0.00       5.70 r
-  library setup time                                     -0.15       5.55
-  data required time                                                 5.55
+  clock i_clk (rise edge)                                 5.85       5.85
+  clock network delay (ideal)                             0.50       6.35
+  clock uncertainty                                      -0.80       5.55
+  modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_2706/CK (DFFHQX2)
+                                                          0.00       5.55 r
+  library setup time                                     -0.16       5.39
+  data required time                                                 5.39
   --------------------------------------------------------------------------
-  data required time                                                 5.55
-  data arrival time                                                 -5.55
+  data required time                                                 5.39
+  data arrival time                                                 -5.39
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
 
