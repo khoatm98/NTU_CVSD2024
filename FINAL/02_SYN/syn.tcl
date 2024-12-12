@@ -50,7 +50,9 @@ set_leakage_optimization  false
 #set_clock_gating_style -max_fanout 4
 compile_ultra -retime
 optimize_netlist  -area 
-
+optimize_netlist  -area 
+optimize_netlist  -area 
+optimize_netlist  -area 
 # Report Output
 current_design [get_designs ${DESIGN}]
 report_timing > "./Report/${DESIGN}_syn.timing"

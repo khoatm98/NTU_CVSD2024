@@ -101,103 +101,103 @@ Statistics for case statements in always block at line 166 in file
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           176            |    auto/auto     |
+|           167            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 329 in file
+Statistics for case statements in always block at line 319 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           332            |    auto/auto     |
+|           322            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 432 in file
+Statistics for case statements in always block at line 422 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           433            |    auto/auto     |
+|           423            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 440 in file
+Statistics for case statements in always block at line 430 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           442            |    auto/auto     |
+|           432            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 537 in file
+Statistics for case statements in always block at line 527 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           541            |    auto/auto     |
+|           531            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 584 in file
+Statistics for case statements in always block at line 574 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           586            |    auto/auto     |
+|           576            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 702 in file
+Statistics for case statements in always block at line 692 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           703            |    auto/auto     |
+|           693            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 710 in file
+Statistics for case statements in always block at line 700 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           712            |    auto/auto     |
+|           702            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 851 in file
+Statistics for case statements in always block at line 841 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           855            |    auto/auto     |
+|           845            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 1046 in file
+Statistics for case statements in always block at line 1036 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           1047           |    auto/auto     |
+|           1037           |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 1062 in file
+Statistics for case statements in always block at line 1052 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           1063           |    auto/auto     |
+|           1053           |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 1082 in file
+Statistics for case statements in always block at line 1072 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           1088           |    auto/auto     |
+|           1078           |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 1096 in file
+Statistics for case statements in always block at line 1086 in file
 	'../01_RTL/ed25519.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           1097           |    auto/auto     |
+|           1087           |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
@@ -235,7 +235,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 300 in file
+	in routine ed25519 line 290 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -244,7 +244,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1046 in file
+	in routine ed25519 line 1036 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -253,7 +253,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1082 in file
+	in routine ed25519 line 1072 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -263,7 +263,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1096 in file
+	in routine ed25519 line 1086 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -278,7 +278,7 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine ed25519 line 1203 in file
+	in routine ed25519 line 1193 in file
 		'../01_RTL/ed25519.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -393,8 +393,8 @@ link
 1
 source -echo -verbose ./ed25519_dc.sdc
 # operating conditions and boundary conditions #
-set cycle  5.2        ;#clock period defined by designer
-5.2
+set cycle  5.1        ;#clock period defined by designer
+5.1
 create_clock -period $cycle [get_ports  i_clk]
 1
 set_dont_touch_network      [get_clocks i_clk]
@@ -468,7 +468,7 @@ Information: State dependent leakage is now switched from on to off.
 
   Beginning Pass 1 Mapping
   ------------------------
-......
+....
   Processing 'ed25519'
 Information: Added key list 'DesignWare' to design 'ed25519'. (DDB-72)
  Implement Synthetic for 'ed25519'.
@@ -483,17 +483,13 @@ Information: Added key list 'DesignWare' to design 'ed25519'. (DDB-72)
 Information: Updating design information... (UID-85)
 Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
 Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
-Information: Complementing port 'i_rst' in design 'modular_add_sub'.
-	 The new name of the port is 'i_rst_BAR'. (OPT-319)
-Information: Complementing port 'i_rst' in design 'modular_mult'.
-	 The new name of the port is 'i_rst_BAR'. (OPT-319)
 
   Beginning Mapping Optimizations  (Ultra High effort)
   -------------------------------
 .
-Information: Ungrouping hierarchy modular_add_sub_inst 'modular_add_sub' #insts = 1817. (OPT-777)
+Information: Ungrouping hierarchy modular_add_sub_inst 'modular_add_sub' #insts = 1815. (OPT-777)
 Information: Ungrouping hierarchy modular_mult_inst/multiplier_128x128_inst 'multiplier_128x128' #insts = 0. (OPT-777)
-Information: Ungrouping hierarchy modular_mult_inst 'modular_mult' #insts = 3760. (OPT-777)
+Information: Ungrouping hierarchy modular_mult_inst 'modular_mult' #insts = 3761. (OPT-777)
   Mapping Optimization (Phase 1)
   Mapping Optimization (Phase 2)
   Mapping Optimization (Phase 3)
@@ -503,13 +499,13 @@ Information: Ungrouping hierarchy modular_mult_inst 'modular_mult' #insts = 3760
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:04:46 2371945.1      0.67    1102.0   48501.0                           2590920960.0000      0.00  
-    0:04:51 2366095.8      0.80     983.3   48483.5                           2585066752.0000      0.00  
+    0:05:31 2354507.7      0.76     773.8   47955.4                           2591973632.0000      0.00  
+    0:05:36 2351275.8      1.52     828.0   48011.6                           2588930048.0000      0.00  
 
   Beginning Constant Register Removal
   -----------------------------------
-    0:05:09 2361845.5      0.59     912.0   48483.5                           2579015680.0000      0.00  
-    0:05:12 2361815.0      0.88    1027.4   48483.5                           2578994176.0000      0.00  
+    0:06:06 2351303.0      0.94     787.5   48047.5                           2586632960.0000      0.00  
+    0:06:13 2351303.0      0.94     787.5   48047.5                           2586632960.0000      0.00  
 
   Beginning Global Optimizations
   ------------------------------
@@ -552,42 +548,43 @@ Information: Ungrouping hierarchy modular_mult_inst 'modular_mult' #insts = 3760
 
   Beginning Delay Optimization
   ----------------------------
-    0:05:52 1118540.8      1.79     582.1   62619.1                           1086022784.0000      0.00  
-    0:06:16 1129582.4      0.69     290.4   62619.1                           1100604800.0000      0.00  
-    0:06:16 1129582.4      0.69     290.4   62619.1                           1100604800.0000      0.00  
-    0:06:17 1129631.6      0.69     221.7   62619.1                           1100331904.0000      0.00  
-    0:06:32 1123059.3      0.69     221.6   62619.1                           1093550848.0000      0.00  
-    0:06:37 1123025.3      0.69     221.4   62619.1                           1093517056.0000      0.00  
+    0:07:06  961256.3      2.27     978.4   62328.7                           837601088.0000      0.00  
+    0:07:35  975650.3      1.25     663.2   62328.7                           858913088.0000      0.00  
+    0:07:35  975650.3      1.25     663.2   62328.7                           858913088.0000      0.00  
+    0:07:37  974246.5      1.25     585.2   62328.7                           857939136.0000      0.00  
+    0:07:52  971498.4      1.25     585.2   62328.7                           854702016.0000      0.00  
+    0:07:56  971442.4      1.25     585.2   62328.7                           854673280.0000      0.00  
 
   Beginning WLM Backend Optimization
   --------------------------------------
-    0:06:56 1121944.1      0.69     220.7   62602.3                           1090464384.0000      0.00  
-    0:06:58 1118357.5      0.69     219.3   62602.3                           1084120576.0000      0.00  
-    0:07:01 1113732.0      0.69     219.6   62602.3                           1078601344.0000      0.00  
-    0:07:06 1106238.0      0.69     229.2   62602.3                           1069993280.0000      0.00  
-    0:07:09 1101378.4      0.69     227.0   62602.3                           1065362560.0000      0.00  
-    0:07:10 1100487.2      0.69     228.3   62602.3                           1064408896.0000      0.00  
-    0:07:17 1099214.2      0.66     199.0   62602.3                           1062480192.0000      0.00  
-    0:07:17 1099214.2      0.66     199.0   62602.3                           1062480192.0000      0.00  
-    0:07:26 1096065.5      0.67     181.9   62565.6                           1050615104.0000      0.00  
-    0:07:26 1096065.5      0.67     181.9   62565.6                           1050615104.0000      0.00  
-    0:07:46 1122792.8      0.64     184.0   62565.6                           1080263552.0000      0.00  
-    0:07:46 1122792.8      0.64     184.0   62565.6                           1080263552.0000      0.00  
-    0:08:01 1129533.1      0.53     152.8   62565.6                           1089836928.0000      0.00  
-    0:08:01 1129533.1      0.53     152.8   62565.6                           1089836928.0000      0.00  
-    0:08:19 1154040.2      0.55     158.5   62565.6                           1116595456.0000      0.00  
-    0:08:19 1154040.2      0.55     158.5   62565.6                           1116595456.0000      0.00  
-    0:09:13 1182838.3      0.19      29.0   62565.6                           1144947200.0000      0.00  
-    0:09:13 1182838.3      0.19      29.0   62565.6                           1144947200.0000      0.00  
-    0:09:32 1204436.0      0.24      57.3   62565.6                           1169881856.0000      0.00  
-    0:09:32 1204436.0      0.24      57.3   62565.6                           1169881856.0000      0.00  
-    0:10:20 1243819.1      0.00       0.0   62839.8                           1213998720.0000      0.00  
-    0:10:20 1243819.1      0.00       0.0   62839.8                           1213998720.0000      0.00  
-    0:10:20 1243819.1      0.00       0.0   62839.8                           1213998720.0000      0.00  
-    0:10:20 1243819.1      0.00       0.0   62839.8                           1213998720.0000      0.00  
-    0:10:20 1243819.1      0.00       0.0   62839.8                           1213998720.0000      0.00  
-    0:10:20 1243819.1      0.00       0.0   62839.8                           1213998720.0000      0.00  
-    0:10:20 1243819.1      0.00       0.0   62839.8                           1213998720.0000      0.00  
+    0:08:16  970568.2      1.25     581.1   62291.6                           852051840.0000      0.00  
+    0:08:19  969814.6      1.25     583.5   62291.6                           850453760.0000      0.00  
+    0:08:23  967075.0      1.24     579.9   62291.6                           847524160.0000      0.00  
+    0:08:27  961952.2      1.24     948.7   62291.6                           841738752.0000      0.00  
+    0:08:30  958756.0      1.24     578.4   62291.6                           838800320.0000      0.00  
+    0:08:30  958419.9      1.24     578.7   62291.6                           838455040.0000      0.00  
+    0:08:37  958951.2      1.20     542.4   62291.6                           839392064.0000      0.00  
+    0:08:37  958927.5      1.20     541.9   62291.6                           839354816.0000      0.00  
+    0:08:37  958927.5      1.20     541.9   62291.6                           839354816.0000      0.00  
+    0:08:45  958105.9      1.20     488.8   62269.3                           828160704.0000      0.00  
+    0:08:45  958105.9      1.20     488.8   62269.3                           828160704.0000      0.00  
+    0:09:22  986433.8      1.24     519.7   62269.3                           861927168.0000      0.00  
+    0:09:22  986433.8      1.24     519.7   62269.3                           861927168.0000      0.00  
+    0:09:39 1002204.4      1.00     424.1   62269.3                           885791104.0000      0.00  
+    0:09:39 1002204.4      1.00     424.1   62269.3                           885791104.0000      0.00  
+    0:10:18 1045936.2      1.01     405.7   62269.3                           936054336.0000      0.00  
+    0:10:18 1045936.2      1.01     405.7   62269.3                           936054336.0000      0.00  
+    0:11:56 1087028.5      0.50     187.6   62269.3                           989370816.0000      0.00  
+    0:11:56 1087028.5      0.50     187.6   62269.3                           989370816.0000      0.00  
+    0:12:21 1106144.7      0.53     228.1   62269.3                           1012023488.0000      0.00  
+    0:12:21 1106144.7      0.53     228.1   62269.3                           1012023488.0000      0.00  
+    0:14:13 1169437.3      0.21      55.1   62269.3                           1095938560.0000      0.00  
+    0:14:13 1169437.3      0.21      55.1   62269.3                           1095938560.0000      0.00  
+    0:14:46 1190602.2      0.31      94.0   62269.3                           1120762880.0000      0.00  
+    0:14:46 1190602.2      0.31      94.0   62269.3                           1120762880.0000      0.00  
+    0:15:54 1219992.7      0.13      31.8   62269.3                           1159533184.0000      0.00  
+    0:15:54 1219992.7      0.13      31.8   62269.3                           1159533184.0000      0.00  
+    0:16:27 1239405.8      0.23      69.5   62269.3                           1182576768.0000      0.00  
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
@@ -597,12 +594,12 @@ Information: Ungrouping hierarchy modular_mult_inst 'modular_mult' #insts = 3760
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:10:20 1243819.1      0.00       0.0   62839.8                           1213998720.0000      0.00  
+    0:16:27 1239405.8      0.23      69.5   62269.3                           1182576768.0000      0.00  
   Global Optimization (Phase 32)
   Global Optimization (Phase 33)
   Global Optimization (Phase 34)
-    0:10:21 1244773.0      0.00       0.0       0.0                           1214703744.0000      0.00  
-    0:10:21 1244773.0      0.00       0.0       0.0                           1214703744.0000      0.00  
+    0:16:32 1243486.4      0.21      62.0       0.0                           1188769920.0000      0.00  
+    0:17:02 1258793.5      0.25      78.1       0.0                           1207461120.0000      0.00  
 
 
   Beginning Leakage Power Optimization  (max_leakage_power 0)
@@ -612,7 +609,7 @@ Information: Ungrouping hierarchy modular_mult_inst 'modular_mult' #insts = 3760
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:10:21 1244773.0      0.00       0.0       0.0                           1214703744.0000      0.00  
+    0:17:02 1258793.5      0.25      78.1       0.0                           1207461120.0000      0.00  
   Global Optimization (Phase 35)
   Global Optimization (Phase 36)
   Global Optimization (Phase 37)
@@ -629,50 +626,51 @@ Information: Ungrouping hierarchy modular_mult_inst 'modular_mult' #insts = 3760
   Global Optimization (Phase 48)
   Global Optimization (Phase 49)
   Global Optimization (Phase 50)
-    0:11:01 1183337.3      0.13      91.2       0.2                           1133923968.0000      0.00  
-    0:11:24 1201365.4      0.14      33.0       0.2                           1153754496.0000      0.00  
-    0:11:24 1201365.4      0.14      33.0       0.2                           1153754496.0000      0.00  
-    0:11:40 1152952.2      0.12      15.3       0.0                           1097452672.0000      0.00  
-    0:11:40 1152952.2      0.12      15.3       0.0                           1097452672.0000      0.00  
-    0:11:55 1174341.1      0.11      16.6       0.0                           1122181760.0000      0.00  
-    0:11:55 1174341.1      0.11      16.6       0.0                           1122181760.0000      0.00  
-    0:12:01 1184815.8      0.07       5.2       0.0                           1137228416.0000      0.00  
-    0:12:01 1184815.8      0.07       5.2       0.0                           1137228416.0000      0.00  
-    0:12:18 1205318.6      0.06       6.0       0.0                           1160640256.0000      0.00  
-    0:12:18 1205318.6      0.06       6.0       0.0                           1160640256.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:23 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
+    0:18:50 1210587.4      0.25     250.7     101.8 modadd_a_in_r_reg[254]/D  1120138624.0000      0.00  
+    0:18:55 1211646.6      0.05      10.9     101.8                           1121689984.0000      0.00  
+    0:19:23 1232660.4      0.03       1.9     137.7                           1143753856.0000      0.00  
+    0:19:23 1232660.4      0.03       1.9     137.7                           1143753856.0000      0.00  
+    0:19:46 1139564.8      0.02       0.2     101.8                           1027862720.0000      0.00  
+    0:19:46 1139564.8      0.02       0.2     101.8                           1027862720.0000      0.00  
+    0:20:19 1157326.4      0.07       6.7     101.8                           1049148480.0000      0.00  
+    0:20:19 1157326.4      0.07       6.7     101.8                           1049148480.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:27 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
 
                                   TOTAL                                                            
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:12:25 1205929.7      0.00       0.0       0.0                           1161305216.0000      0.00  
-    0:12:37 1155707.0      0.00       0.0       0.0                           1085364096.0000      0.00  
-    0:12:38 1155700.2      0.00       0.0       0.0                           1085356928.0000      0.00  
-    0:12:38 1155700.2      0.00       0.0       0.0                           1085356928.0000      0.00  
-    0:12:55 1113757.5      0.03       0.8       0.0                           1034976448.0000      0.00  
-    0:12:57 1111457.5      0.03       1.4       0.0                           1032469440.0000      0.00  
-    0:13:05 1106925.5      0.03       2.1       0.0                           1027831808.0000      0.00  
-    0:13:08 1105481.0      0.03       2.2       0.0                           1025484800.0000      0.00  
-    0:13:11 1103544.2      0.03       1.6       0.0                           1022402304.0000      0.00  
-    0:13:14 1101174.7      0.03       1.5       0.0                           1018999488.0000      0.00  
-    0:13:17 1102369.6      0.00       0.0     218.4                           1020050880.0000      0.00  
-    0:13:17 1102369.6      0.00       0.0     218.4                           1020050880.0000      0.00  
-    0:13:17 1102369.6      0.00       0.0     218.4                           1020050880.0000      0.00  
-    0:13:17 1102369.6      0.00       0.0     218.4                           1020050880.0000      0.00  
-    0:13:17 1102369.6      0.00       0.0     218.4                           1020050880.0000      0.00  
-    0:13:42 1053852.9      0.00       0.0     218.4                           945813952.0000      0.00  
-    0:13:47 1051043.7      0.00       0.0       0.1                           942735552.0000      0.00  
+    0:20:29 1160770.4      0.00       0.0     101.8                           1053899136.0000      0.00  
+    0:20:41 1124856.8      0.00       0.0     101.8                           995656512.0000      0.00  
+    0:20:42 1124856.8      0.00       0.0     101.8                           995656512.0000      0.00  
+    0:20:42 1124856.8      0.00       0.0     101.8                           995656512.0000      0.00  
+    0:21:02 1101549.8      0.01       0.0     101.8                           969811456.0000      0.00  
+    0:21:04 1099950.8      0.01       0.2     101.8                           968079552.0000      0.00  
+    0:21:11 1095274.5      0.01       0.7     101.8                           963525632.0000      0.00  
+    0:21:18 1093414.2      0.01       0.1     101.8                           960381568.0000      0.00  
+    0:21:24 1091180.4      0.01       0.6     101.8                           957072512.0000      0.00  
+    0:21:30 1089832.6      0.00       0.0       0.0                           955198592.0000      0.00  
+    0:21:30 1089832.6      0.00       0.0       0.0                           955198592.0000      0.00  
+    0:21:30 1089832.6      0.00       0.0       0.0                           955198592.0000      0.00  
+    0:21:30 1089832.6      0.00       0.0       0.0                           955198592.0000      0.00  
+    0:21:30 1089832.6      0.00       0.0       0.0                           955198592.0000      0.00  
+    0:21:30 1089832.6      0.00       0.0       0.0                           955198592.0000      0.00  
+    0:22:11 1055962.7      0.00       0.0       0.0                           907896512.0000      0.00  
+    0:22:19 1052842.9      0.00       0.0       0.0                           904301696.0000      0.00  
 Loading db file '/home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
 
 
@@ -702,9 +700,96 @@ Information: The target library(s) contains cell(s), other than black boxes, tha
    ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
   --------- --------- --------- --------- --------- ------------------------- --------- -----------
-    0:00:04 1051043.7      0.00       0.0       0.1                           942735552.0000      0.00  
-    0:01:33 1026098.7      0.00       0.0       0.1                           909481024.0000      0.00  
-    0:02:50 1018085.2      0.00       0.0       0.1                           907007872.0000      0.00  
+    0:00:04 1052842.9      0.00       0.0       0.0                           904301696.0000      0.00  
+    0:02:17 1033288.9      0.00       0.0       0.0                           884131904.0000      0.00  
+    0:02:50 1031795.1      0.00       0.0       0.0                           887070848.0000      0.00  
+Loading db file '/home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+optimize_netlist  -area 
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 16 cores. (OPT-1500)
+
+
+  Updating timing information
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+
+  Beginning Area Optimization
+  -----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:04 1031795.1      0.00       0.0       0.0                           887070848.0000      0.00  
+    0:02:14 1028789.0      0.00       0.0       0.0                           884645952.0000      0.00  
+Loading db file '/home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+optimize_netlist  -area 
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 16 cores. (OPT-1500)
+
+
+  Updating timing information
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+
+  Beginning Area Optimization
+  -----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:04 1028789.0      0.00       0.0       0.0                           884645952.0000      0.00  
+    0:02:05 1028493.7      0.00       0.0       0.0                           884162624.0000      0.00  
+Loading db file '/home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+optimize_netlist  -area 
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Running optimization using a maximum of 16 cores. (OPT-1500)
+
+
+  Updating timing information
+Information: The library cell 'HOLDX1' in the library 'slow' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+
+
+  Beginning Area Optimization
+  -----------------------------
+
+                                  TOTAL                                                            
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE   MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER      COST    
+  --------- --------- --------- --------- --------- ------------------------- --------- -----------
+    0:00:04 1028493.7      0.00       0.0       0.0                           884162624.0000      0.00  
+    0:02:08 1028446.2      0.00       0.0       0.0                           884074624.0000      0.00  
 Loading db file '/home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db'
 
 
@@ -762,9 +847,9 @@ write_sdc  ./Netlist/${DESIGN}_syn.sdc -version 1.8
 1
 exit
 
-Memory usage for this session 679 Mbytes.
-Memory usage for this session including child processes 1167 Mbytes.
-CPU usage for this session 10695 seconds ( 2.97 hours ).
-Elapsed time for this session 1040 seconds ( 0.29 hours ).
+Memory usage for this session 678 Mbytes.
+Memory usage for this session including child processes 1162 Mbytes.
+CPU usage for this session 24282 seconds ( 6.75 hours ).
+Elapsed time for this session 1942 seconds ( 0.54 hours ).
 
 Thank you...

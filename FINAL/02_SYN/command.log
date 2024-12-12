@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version S-2021.06-SP2 for linux64 -- Aug 24, 2021
-#@ # Date:   Thu Dec 12 15:07:23 2024
+#@ # Date:   Thu Dec 12 15:37:43 2024
 #@ # Run by: MingKe@cad46
 #@ 
 
@@ -8014,7 +8014,7 @@ source -echo -verbose /home/MingKe/NTU_CVSD2024/02_SYN/syn.tcl
 
 #@ # operating conditions and boundary conditions #
 #@ 
-#@ set cycle  5.2        ;#clock period defined by designer
+#@ set cycle  5.1        ;#clock period defined by designer
 #@ 
 #@ create_clock -period $cycle [get_ports  i_clk]
 #@ set_dont_touch_network      [get_clocks i_clk]
@@ -8052,7 +8052,9 @@ source -echo -verbose /home/MingKe/NTU_CVSD2024/02_SYN/syn.tcl
 #@ #set_clock_gating_style -max_fanout 4
 #@ compile_ultra -retime
 #@ optimize_netlist  -area 
-#@ 
+#@ optimize_netlist  -area 
+#@ optimize_netlist  -area 
+#@ optimize_netlist  -area 
 #@ # Report Output
 #@ current_design [get_designs ${DESIGN}]
 #@ report_timing > "./Report/${DESIGN}_syn.timing"
