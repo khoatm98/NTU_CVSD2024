@@ -3,7 +3,7 @@
 Report : area
 Design : ed25519
 Version: S-2021.06-SP2
-Date   : Thu Dec 12 03:27:57 2024
+Date   : Thu Dec 12 15:24:31 2024
 ****************************************
 
 Library(s) Used:
@@ -11,21 +11,21 @@ Library(s) Used:
     slow (File: /home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db)
 
 Number of ports:                          134
-Number of nets:                         83238
-Number of cells:                        76153
-Number of combinational cells:          67671
-Number of sequential cells:              8437
+Number of nets:                         87448
+Number of cells:                        80986
+Number of combinational cells:          75085
+Number of sequential cells:              5860
 Number of macros/black boxes:               0
-Number of buf/inv:                       8278
-Number of references:                     173
+Number of buf/inv:                       8613
+Number of references:                     183
 
-Combinational area:             801564.901471
-Buf/Inv area:                    35290.643083
-Noncombinational area:          221454.689827
+Combinational area:             859018.491067
+Buf/Inv area:                    37704.345877
+Noncombinational area:          159066.751719
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:               1023019.591298
+Total cell area:               1018085.242786
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,8 +36,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute      Percent  Combi-       Noncombi-    Black-
                                   Total         Total    national     national     boxes   Design
 --------------------------------  ------------  -------  -----------  -----------  ------  ---------
-ed25519                           1023019.5913    100.0  801564.9015  221454.6898  0.0000  ed25519
+ed25519                           1018085.2428    100.0  859018.4911  159066.7517  0.0000  ed25519
 --------------------------------  ------------  -------  -----------  -----------  ------  ---------
-Total                                                    801564.9015  221454.6898  0.0000
+Total                                                    859018.4911  159066.7517  0.0000
 
 1

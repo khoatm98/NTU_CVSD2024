@@ -202,7 +202,8 @@ StickSet-TextColor = ID_BLACK
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveOpenFsdbDirHistory = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd.fsdb\"" "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd\"" "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\"" "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/modular_add_sub2.fsdb\""
+nWaveOpenFsdbDirHistory = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd.fsdb\"" "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd\"" "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\"" "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/modular_add_sub2.fsdb\"" "\"/home/M\
+ingKe/NTU_CVSD2024/01_RTL/ed25519.fsdb\"" "\"/home/MingKe/NTU_CVSD2024/03_GATE/ed25519_gate.fsdb\""
 [Form]
 version = Verdi_S-2021.09
 wave/localformat.fm = 100,100,435,332
@@ -323,11 +324,11 @@ ColorPrint = FALSE
 [QtDialog]
 tipViewerDlg = 751,371,398,259
 QwInfoMsgDlg = 575,375,750,250
-QwUserAskDlg = 360,133,324,134
 QwQuestionMsgDlg = 788,436,324,110
-QwWarnMsgDlg = 2570,375,600,250
 openFileDlg = 659,286,602,483
-qWaveSignalDialog = 215,288,1489,479
+QwUserAskDlg = 788,430,324,114
+QwWarnMsgDlg = 2570,375,600,250
+qWaveSignalDialog = 202,389,1489,479
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
@@ -605,8 +606,8 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 215 288 1489 479 368 381 875 89
-viewPort = 0 23 1920 1009 216 763
+getSignalForm = 202 389 1489 479 368 381 875 89
+viewPort = 0 23 1920 1009 216 133
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -772,10 +773,11 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\""
-RecentFile2 = "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/modular_add_sub2.fsdb\""
-RecentFile3 = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd.fsdb\""
-RecentFile4 = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd\""
+RecentFile1 = "\"/home/MingKe/NTU_CVSD2024/03_GATE/ed25519_gate.fsdb\""
+RecentFile2 = "\"/home/MingKe/NTU_CVSD2024/01_RTL/ed25519.fsdb\""
+RecentFile3 = "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\""
+RecentFile4 = "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/modular_add_sub2.fsdb\""
+RecentFile5 = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5

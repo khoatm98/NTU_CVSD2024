@@ -1,0 +1,1 @@
+vcs -R -full64 -f rtl_sim_all.f +define+PERIOD=$1  -P /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab  | tee rtl_sim_p0.log

@@ -1,0 +1,71 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ed25519
+Version: S-2021.06-SP2
+Date   : Wed Dec 11 17:39:37 2024
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: modmult_a_in_r_reg[61]
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_1191
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  modmult_a_in_r_reg[61]/CK (DFFQX1)                      0.00       0.50 r
+  modmult_a_in_r_reg[61]/Q (DFFQX1)                       0.33       0.83 r
+  U33207/Y (NAND2BX1)                                     0.15       0.99 r
+  U41560/Y (NAND2X2)                                      0.10       1.08 f
+  U28558/Y (BUFX2)                                        0.20       1.28 f
+  U41563/Y (INVX6)                                        0.24       1.52 r
+  U50698/Y (XNOR2X1)                                      0.23       1.75 r
+  U32880/Y (OAI22X1)                                      0.13       1.88 f
+  U27794/CO (CMPR32X2)                                    0.42       2.30 f
+  U24665/CO (ADDFX1)                                      0.40       2.71 f
+  U30877/Y (OR2XL)                                        0.21       2.92 f
+  U42416/Y (OAI2BB1X1)                                    0.19       3.11 f
+  U50854/CO (ADDFX1)                                      0.39       3.50 f
+  U41918/CO (ADDFX2)                                      0.32       3.81 f
+  U29612/Y (XOR2X1)                                       0.20       4.01 r
+  U42415/Y (XOR2X4)                                       0.17       4.18 r
+  U17110/S (ADDFHX2)                                      0.32       4.51 f
+  U42414/Y (XOR2X1)                                       0.14       4.64 f
+  U42413/Y (XOR2X1)                                       0.17       4.81 f
+  U23035/Y (NOR2X1)                                       0.14       4.96 r
+  U23171/Y (INVXL)                                        0.07       5.03 f
+  U22135/Y (AND2X1)                                       0.22       5.25 f
+  U32271/Y (AOI21X1)                                      0.13       5.37 r
+  U64780/Y (OAI21XL)                                      0.08       5.45 f
+  U39553/Y (AOI21XL)                                      0.13       5.58 r
+  U22692/Y (OAI21XL)                                      0.09       5.67 f
+  modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_1191/D (DFFHQX2)
+                                                          0.00       5.67 f
+  data arrival time                                                  5.67
+
+  clock i_clk (rise edge)                                 5.85       5.85
+  clock network delay (ideal)                             0.50       6.35
+  clock uncertainty                                      -0.50       5.85
+  modular_mult_inst/multiplier_128x128_inst/mult_x_1/R_1191/CK (DFFHQX2)
+                                                          0.00       5.85 r
+  library setup time                                     -0.18       5.67
+  data required time                                                 5.67
+  --------------------------------------------------------------------------
+  data required time                                                 5.67
+  data arrival time                                                 -5.67
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

@@ -26,7 +26,7 @@
     `define SDF_FILE "../02_SYN/Netlist/ed25519_syn.sdf" // Modify your sdf file name
 `elsif POST
     `define SDF
-    `define SDF_FILE "../05_POST//ed25519.sdf"  // Modify your sdf file name
+    `define SDF_FILE "../05_POST/ed25519.sdf"  // Modify your sdf file name
 `endif
 
 `include "../00_TESTBED/pattern/tb_dat.sv"
@@ -122,7 +122,7 @@ module testbench #(
         // reset
         wait (rst === 1'b1);
         wait (rst === 1'b0);
-
+		$display("--------------------START--------------------");
         while (!input_end) begin
             @(posedge clk);
             #(`I_DELAY);

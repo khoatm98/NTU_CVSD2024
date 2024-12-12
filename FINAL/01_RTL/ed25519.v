@@ -47,6 +47,7 @@ wire m_reg_wren;
 wire m_reg_rden;
 
 reg  m_reg_rden_r;
+
 reg [BUFF_W*3-1:0] data_buf_r;
 reg [DATA_W-1:0]   in_data_r;
 
@@ -64,7 +65,7 @@ reg  o_in_ready_r;
 // Continuous assignment
 // ---------------------------------------------------------------------------
 assign o_out_valid = curr_state == S_OUTPUT;
-assign o_in_ready  = curr_state == S_INPUT && (generic_cnt < 11);
+assign o_in_ready  = o_in_ready_r;
 
 assign m_reg_wren  = o_out_valid && i_out_ready;  // write enable
 assign m_reg_rden  = o_in_ready  && i_in_valid;   // read enable
@@ -72,6 +73,17 @@ assign m_reg_rden  = o_in_ready  && i_in_valid;   // read enable
 assign o_out_data = data_buf_r[BUFF_W*3-1 -:64];
 
 always @ (posedge i_clk) begin
+	if (i_rst) 
+		o_in_ready_r <= 0;
+	else begin
+		case (curr_state)
+			S_RST   : o_in_ready_r <= 1;
+			default : o_in_ready_r <= generic_cnt == 11 && i_in_valid ? 0 : o_in_ready_r;
+		endcase
+	end
+end
+
+always @ (negedge i_clk) begin
 	m_reg_rden_r <= m_reg_rden;
 	in_data_r    <= i_in_data;
 end
@@ -1051,7 +1063,7 @@ always@ (*) begin
 		S_REDUCE_YZ_INV    :   next_state = redYZ_end_w   ? S_REDUCE_X_TRAN :  S_REDUCE_YZ_INV;
 		S_REDUCE_X_TRAN    :   next_state = tranX_end_w   ? S_REDUCE_Y_TRAN :  S_REDUCE_X_TRAN;
 		S_REDUCE_Y_TRAN    :   next_state = tranY_end_w   ? S_OUTPUT :  S_REDUCE_Y_TRAN;
-		default           :   next_state = generic_cnt == 7 && m_reg_wren ? S_RST  : S_OUTPUT;
+		default           :    next_state = generic_cnt == 7 && m_reg_wren ? S_RST  : S_OUTPUT;
 	endcase
 end
 // ---------------------------------------------------------------------------
@@ -1182,7 +1194,7 @@ always@ (posedge i_clk ) begin
 	if(i_rst) begin
 		generic_cnt <= 0;
 	end else if(curr_state == S_INPUT) begin
-		generic_cnt <= m_reg_rden_r ? generic_cnt + 1 : generic_cnt;
+		generic_cnt <= m_reg_rden ? generic_cnt + 1 : generic_cnt;
 	end else if(curr_state == S_OUTPUT) begin
 		generic_cnt <= m_reg_wren ? generic_cnt + 1 : generic_cnt;
 	end else begin

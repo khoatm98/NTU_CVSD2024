@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : ed25519
+Version: S-2021.06-SP2
+Date   : Wed Dec 11 18:01:17 2024
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/MingKe/Study/NTU_CVSD2023/HW3/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db)
+
+Number of ports:                          134
+Number of nets:                         81557
+Number of cells:                        74614
+Number of combinational cells:          68269
+Number of sequential cells:              6343
+Number of macros/black boxes:               0
+Number of buf/inv:                       8186
+Number of references:                     181
+
+Combinational area:             786855.234240
+Buf/Inv area:                    34353.678267
+Noncombinational area:          165827.496208
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                952682.730448
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  -------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-    Black-
+                                  Total        Total    national     national     boxes   Design
+--------------------------------  -----------  -------  -----------  -----------  ------  ---------
+ed25519                           952682.7304    100.0  786855.2342  165827.4962  0.0000  ed25519
+--------------------------------  -----------  -------  -----------  -----------  ------  ---------
+Total                                                   786855.2342  165827.4962  0.0000
+
+1

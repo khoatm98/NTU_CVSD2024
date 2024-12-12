@@ -1,0 +1,18 @@
+ 
+****************************************
+check_design summary:
+Version:     S-2021.06-SP2
+Date:        Thu Dec 12 00:58:10 2024
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               4
+    Cells do not drive (LINT-1)                                     4
+--------------------------------------------------------------------------------
+
+Warning: In design 'ed25519', cell 'B_151' does not drive any nets. (LINT-1)
+Warning: In design 'ed25519', cell 'C42428' does not drive any nets. (LINT-1)
+Warning: In design 'ed25519', cell 'C42433' does not drive any nets. (LINT-1)
+Warning: In design 'modular_mult', cell 'B_27' does not drive any nets. (LINT-1)
+1
