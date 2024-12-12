@@ -3,7 +3,7 @@
 Report : clock_gating
 Design : ed25519
 Version: S-2021.06-SP2
-Date   : Thu Dec 12 19:08:03 2024
+Date   : Thu Dec 12 21:19:31 2024
 ****************************************
 
 Information: Identification of clock-gating cells has not been performed. Pre-existing clock-gating cells will not be reported. (PWR-947)
@@ -15,9 +15,9 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
           |                                       |                  |
           |    Number of Gated registers          |     0 (0.00%)    |
           |                                       |                  |
-          |    Number of Ungated registers        |  5701 (100.00%)  |
+          |    Number of Ungated registers        |  6137 (100.00%)  |
           |                                       |                  |
-          |    Total number of registers          |     5701         |
+          |    Total number of registers          |     6137         |
           ------------------------------------------------------------
 
 
@@ -37,9 +37,9 @@ Information: Identification of clock-gating cells has not been performed. Pre-ex
           |                                                 |                  |
           |  Number of pre-existing gated registers         |     0 (0.00%)    |
           |                                                 |                  |
-          |  Number of ungated registers                    |  5701 (100.00%)  |
+          |  Number of ungated registers                    |  6137 (100.00%)  |
           |                                                 |                  |
-          |  Number of registers                            |     5701         |
+          |  Number of registers                            |     6137         |
           +-------------------------------------------------+------------------+
 
 

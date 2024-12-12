@@ -325,10 +325,10 @@ ColorPrint = FALSE
 tipViewerDlg = 751,371,398,259
 QwInfoMsgDlg = 575,375,750,250
 QwQuestionMsgDlg = 788,436,324,110
-openFileDlg = 659,286,602,483
 QwUserAskDlg = 788,430,324,114
+openFileDlg = 659,286,602,483
 QwWarnMsgDlg = 2570,375,600,250
-qWaveSignalDialog = 202,389,1489,479
+qWaveSignalDialog = 215,288,1489,479
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
@@ -606,7 +606,7 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 202 389 1489 479 368 381 875 89
+getSignalForm = 215 288 1489 479 368 381 875 89
 viewPort = 0 23 1920 1009 216 133
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
@@ -773,8 +773,8 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/MingKe/NTU_CVSD2024/03_GATE/ed25519_gate.fsdb\""
-RecentFile2 = "\"/home/MingKe/NTU_CVSD2024/01_RTL/ed25519.fsdb\""
+RecentFile1 = "\"/home/MingKe/NTU_CVSD2024/01_RTL/ed25519.fsdb\""
+RecentFile2 = "\"/home/MingKe/NTU_CVSD2024/03_GATE/ed25519_gate.fsdb\""
 RecentFile3 = "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/ed25519.fsdb\""
 RecentFile4 = "\"/home/MingKe/NTU_CVSD2024/FINAL/01_RTL/modular_add_sub2.fsdb\""
 RecentFile5 = "\"/home/MingKe/Study/NTU_CVSD2023/HW3/01_RTL/core.vcd.fsdb\""

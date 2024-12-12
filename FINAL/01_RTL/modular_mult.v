@@ -77,7 +77,7 @@ always@ (*) begin
 		S_MULT_C2   : next_state = S_MULT_C1 ;
 		S_MULT_C1   : next_state = S_RED1 ;
 		//S_ACCUM     : next_state = S_RED1   ;
-		S_RED1      : next_state = S_RED2   ;
+		//S_RED1      : next_state = S_RED2   ;
 		//S_RED2      : next_state = S_RED3   ;
 		default     : next_state = S_IDLE   ;
 		//S_OUTPUT    : next_state = S_IDLE   ;
@@ -91,7 +91,11 @@ wire [255:0] temp;
 assign temp = sum[254:0] + sum[384:255]*19;
 
 wire [255:0] temp1; 
-assign temp1 = temp - `q;
+wire [255:0] temp2;
+
+assign temp2 = temp[254:0] + temp[255]*19;
+
+assign temp1 = temp2 - `q;
 
 assign sum_temp = sum + buff_w;
 
@@ -112,7 +116,7 @@ always@ (posedge i_clk) begin
 		S_MULT_C0 : sum <= sum_temp;
 		S_MULT_C2 : sum <= sum_temp;
 		S_MULT_C1 : sum <= sum_temp;
-		S_RED1    : sum <= temp;
+		//S_RED1    : sum <= temp;
 		//S_RED2    : sum <= temp1[255] ? temp : temp1;
 		default    : sum <= sum;
 		//S_OUTPUT  : sum <= sum;
@@ -135,8 +139,8 @@ always@ (posedge i_clk) begin
 end
 
 
-assign o_valid = curr_state == S_RED2;
-assign res = temp1[255] ?  sum[255:0] : temp1[255:0];
+assign o_valid = curr_state == S_RED1;
+assign res = temp1[255] ?  temp2[255:0] : temp1[255:0];
 endmodule
 
 // ---------------------------------------------------------------------------

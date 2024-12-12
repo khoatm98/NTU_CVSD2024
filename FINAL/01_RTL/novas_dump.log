@@ -84,7 +84,7 @@ ANF: vhdi_enc_def_get_handle_by_module_id('simv: undefined symbol: vhdi_enc_def_
 VCS compile option:
  option[0]: simv
  option[1]: +define+PAT0
- option[2]: +define+PERIOD=5
+ option[2]: +define+PERIOD=5.0
  option[3]: /usr/cad/synopsys/vcs/cur/linux64/bin/vcs1
  option[4]: -Mcc=gcc
  option[5]: -Mcplusplus=g++
@@ -106,7 +106,7 @@ VCS compile option:
  option[21]: -Xvcs_run_simv=1
  option[22]: -full64
  option[23]: +define+PAT0
- option[24]: +define+PERIOD=5
+ option[24]: +define+PERIOD=5.0
  option[25]: -P
  option[26]: /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
  option[27]: -picarchive
@@ -153,7 +153,7 @@ PERL_MB_OPT=--install_base /home/MingKe/perl5
 SSH_TTY=/dev/pts/9
 LC_ALL=C
 SG_HTML_BROWSER=/usr/bin/mozilla
-SNPS_VCS_INTERNAL_ROOT_PID=1046817
+SNPS_VCS_INTERNAL_ROOT_PID=1077310
 QT_GRAPHICSSYSTEM_CHECKED=1
 USER=MingKe
 GROUP=DCSLab
@@ -168,7 +168,7 @@ VCS_MODE_FLAG=64
 MAIL=/var/spool/mail/MingKe
 PATH=.:/usr/cad/synopsys/vcs/cur/bin:/usr/cad/synopsys/vcs/cur/linux/bin:/usr/cad/synopsys/vcs/cur/linux/util:/usr/cad/synopsys/vcs/cur/linux/flexlm:/usr/bin/X11:/usr/cad/synopsys/primetime/cur/amd64/syn/bin:/usr/cad/synopsys/spyglass/cur/SPYGLASS_HOME/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cad/synopsys/verdi/cur/bin:/usr/cad/synopsys/verdi/cur/nLint/bin:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/bin/64bit:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/bin:/tools/Xilinx/Vitis_HLS/2023.2/bin:/tools/Xilinx/Vivado/2023.2/bin:/tools/Xilinx/Model_Composer/2023.2/bin:/tools/Xilinx/Vitis/2023.2/bin:/tools/Xilinx/Vitis/2023.2/gnu/microblaze/lin/bin:/tools/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-linux/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-none/bin:/tools/Xilinx/Vitis/2023.2/gnu/armr5/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.2/tps/lnx64/cmake-3.3.2/bin:/tools/Xilinx/Vitis/2023.2/aietools/bin:/tools/Xilinx/Vitis/2023.2/gnu/riscv/lin/riscv64-unknown-elf/bin:/tools/Xilinx/DocNav:/usr/lib64/qt-3.3/bin:/home/MingKe/perl5/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/MingKe/.local/bin:/home/MingKe/bin
 XILINX_VITIS=/tools/Xilinx/Vitis/2023.2
-SNPS_VCS_INTERNAL_CURR_PID=1046817
+SNPS_VCS_INTERNAL_CURR_PID=1077310
 PWD=/home/MingKe/NTU_CVSD2024/01_RTL
 VCS_HOME=/usr/cad/synopsys/vcs/cur
 SNPS_VCS_INTERNAL_MEMPRELOAD_USE_LIBC=1
@@ -185,7 +185,7 @@ LM_LICENSE_FILE=26585@lshc:5280@lshc
 PRIMETIME=/usr/cad/synopsys/primetime/cur
 HISTCONTROL=ignoredups
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20241212115127_1046817
+SNPS_VCS_TMPDIR=/tmp/vcs_20241212124542_1077310
 PERL_HOMEDIR=1
 RISCV=/home/MingKe/lab/riscv
 SHLVL=4
@@ -197,7 +197,7 @@ VENDOR=unknown
 LOGNAME=MingKe
 MACHTYPE=x86_64
 QTLIB=/usr/lib64/qt-3.3/lib
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1734004287.259725238
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1734007542.600115924
 SSH_CONNECTION=192.168.10.5 55360 192.168.1.201 30101
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 SHLIB_PATH=/usr/cad/synopsys/verdi/cur/etc/lib/libstdc++/LINUX64/
@@ -218,10 +218,10 @@ FLEXLM_BORROWFILE=/home/MingKe/.cad46-borrow.txt
 Runtime command line arguments:
 argv[0]=simv
 argv[1]=+define+PAT0
-argv[2]=+define+PERIOD=5
+argv[2]=+define+PERIOD=5.0
 221 profile - 100
-          CPU/Mem usage: 0.030 sys,  0.170 user,  256.76M mem
-222 Elapsed time:    0:00:01    Thu Dec 12 19:51:32 2024
+          CPU/Mem usage: 0.030 sys,  0.180 user,  254.64M mem
+222 Elapsed time:    0:00:01    Thu Dec 12 20:45:47 2024
 223 User CPU time used: 0 seconds
 224 System CPU time used: 0 seconds
 225 pliAppInit
@@ -242,7 +242,7 @@ argv[2]=+define+PERIOD=5
 240 *Verdi* : Create FSDB file 'ed25519.fsdb'
 241 [spi_vcs_vd_ppi_create_root]: no upf option
 242 compile option from '/home/MingKe/NTU_CVSD2024/01_RTL/simv.daidir/vcs_rebuild'.
-243   "vcs '-R' '-full64' '-f' 'rtl_sim.f' '+define+PAT0' '+define+PERIOD=5' '-P' '/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab' 2>&1"
+243   "vcs '-R' '-full64' '-f' 'rtl_sim.f' '+define+PAT0' '+define+PERIOD=5.0' '-P' '/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab' 2>&1"
 244 DVDI_is_vir_unload_enabled is enable
 245 FSDB_VCS_ENABLE_NATIVE_VC is enable
 246 sps_call_fsdbDumpvars_vd_main at 0 : ../00_TESTBED/testbed.sv(113)
@@ -253,55 +253,55 @@ argv[2]=+define+PERIOD=5
 251 *Verdi* : Enable +mda dumping.
 252 *Verdi* : End of traversing.
 253 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.040 sys,  0.180 user,  357.44M mem
-                   incr: 0.000 sys,  0.010 user,  8.34M mem
-                   accu: 0.000 sys,  0.010 user,  8.34M mem
-              accu incr: 0.000 sys,  0.010 user,  8.34M mem
+          CPU/Mem usage: 0.040 sys,  0.180 user,  355.32M mem
+                   incr: 0.000 sys,  0.000 user,  8.34M mem
+                   accu: 0.000 sys,  0.000 user,  8.34M mem
+              accu incr: 0.000 sys,  0.000 user,  8.34M mem
 
-          Count usage: 173 var,  165 idcode,  81 callback
-                 incr: 173 var,  165 idcode,  81 callback
-                 accu: 173 var,  165 idcode,  81 callback
-            accu incr: 173 var,  165 idcode,  81 callback
-254 Elapsed time:    0:00:01    Thu Dec 12 19:51:32 2024
+          Count usage: 174 var,  166 idcode,  81 callback
+                 incr: 174 var,  166 idcode,  81 callback
+                 accu: 174 var,  166 idcode,  81 callback
+            accu incr: 174 var,  166 idcode,  81 callback
+254 Elapsed time:    0:00:01    Thu Dec 12 20:45:47 2024
 255 User CPU time used: 0 seconds
 256 System CPU time used: 0 seconds
 257 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.040 sys,  0.180 user,  358.49M mem
+          CPU/Mem usage: 0.040 sys,  0.180 user,  356.38M mem
                    incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.000 sys,  0.010 user,  9.39M mem
+                   accu: 0.000 sys,  0.000 user,  9.39M mem
               accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
-          Count usage: 173 var,  165 idcode,  81 callback
+          Count usage: 174 var,  166 idcode,  81 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 173 var,  165 idcode,  81 callback
+                 accu: 174 var,  166 idcode,  81 callback
             accu incr: 0 var,  0 idcode,  0 callback
-258 Elapsed time:    0:00:01    Thu Dec 12 19:51:32 2024
+258 Elapsed time:    0:00:01    Thu Dec 12 20:45:47 2024
 259 User CPU time used: 0 seconds
 260 System CPU time used: 0 seconds
-261 End of simulation at 15230250
-262 Memory usage: 441.360 M
-263 Maximum resident set size: 87 MB
-264 Hard page faults: 4
-265 Soft page faults: 32411
-266 Elapsed time:    0:00:01    Thu Dec 12 19:51:32 2024
+261 End of simulation at 13419750
+262 Memory usage: 438.194 M
+263 Maximum resident set size: 161 MB
+264 Hard page faults: 3
+265 Soft page faults: 30048
+266 Elapsed time:    0:00:01    Thu Dec 12 20:45:47 2024
 267 User CPU time used: 0 seconds
 268 System CPU time used: 0 seconds
 269 Begin FSDB profile info:
-270 FSDB Writer : bc1(89830) bcn(167335) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.140380) io wait(0.000000) theadpool wait(0.000000)
+270 FSDB Writer : bc1(80740) bcn(156459) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.133420) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 271 End FSDB profile info
-272 FSDB closed. Name: ed25519.fsdb Size: 2465998
+272 FSDB closed. Name: ed25519.fsdb Size: 2372745
 273 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-274                      - BlockUsed:6 Acquire:333255 BufferUsed:9938833
+274                      - BlockUsed:6 Acquire:304199 BufferUsed:9190431
 275                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:4
-276                      - MainProducerTime:0.466112423 TotalConsumerTime:0.019569508
-277                      - ElapsedTime:0.606740000
-278 Producer   0 profile - BlockUsed:6 Acquire:333255 BufferUsed:9938833
-279 Consumer   0 profile - Affinity:-1 CPUTime:0.019569508 LifeTime:0.087484498 (0.22%)
-280                      - BlockUsed:6 Acquire:333255 BufferUsed:9938833
+276                      - MainProducerTime:0.463320083 TotalConsumerTime:0.017679722
+277                      - ElapsedTime:0.382719000
+278 Producer   0 profile - BlockUsed:6 Acquire:304199 BufferUsed:9190431
+279 Consumer   0 profile - Affinity:-1 CPUTime:0.017679722 LifeTime:0.077637852 (0.23%)
+280                      - BlockUsed:6 Acquire:304199 BufferUsed:9190431
 281 SimExit
-282 Elapsed time:    0:00:02    Thu Dec 12 19:51:33 2024
+282 Elapsed time:    0:00:01    Thu Dec 12 20:45:47 2024
 283 User CPU time used: 0 seconds
 284 System CPU time used: 0 seconds
 285 Sim process exit
