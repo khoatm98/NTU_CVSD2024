@@ -83,34 +83,36 @@ ANF: vhdi_enc_ist_get_module_id('simv: undefined symbol: vhdi_enc_ist_get_module
 ANF: vhdi_enc_def_get_handle_by_module_id('simv: undefined symbol: vhdi_enc_def_get_handle_by_module_id')
 VCS compile option:
  option[0]: simv
- option[1]: +define+PERIOD=5.2
- option[2]: /usr/cad/synopsys/vcs/cur/linux64/bin/vcs1
- option[3]: -Mcc=gcc
- option[4]: -Mcplusplus=g++
- option[5]: -Masflags=
- option[6]: -Mcfl= -pipe -fPIC -O -I/usr/cad/synopsys/vcs/cur/include 
- option[7]: -Mxllcflags=
- option[8]: -Mxcflags= -pipe -fPIC -I/usr/cad/synopsys/vcs/cur/include
- option[9]: -Mldflags= -rdynamic 
- option[10]: -Mout=simv
- option[11]: -Mamsrun=
- option[12]: -Mvcsaceobjs=
- option[13]: -Mobjects= /usr/cad/synopsys/vcs/cur/linux64/lib/libvirsim.so /usr/cad/synopsys/vcs/cur/linux64/lib/liberrorinf.so /usr/cad/synopsys/vcs/cur/linux64/lib/libsnpsmalloc.so /usr/cad/synopsys/vcs/cur/linux64/lib/libvfs.so 
- option[14]: -Mexternalobj=
- option[15]: -Msaverestoreobj=/usr/cad/synopsys/vcs/cur/linux64/lib/vcs_save_restore_new.o
- option[16]: -Mcrt0=
- option[17]: -Mcrtn=
- option[18]: -Mcsrc=
- option[19]: -Msyslibs=-ldl -lm 
- option[20]: -Xvcs_run_simv=1
- option[21]: -full64
- option[22]: +define+PERIOD=5.2
- option[23]: -P
- option[24]: /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
- option[25]: -picarchive
- option[26]: -gen_obj
- option[27]: -f
- option[28]: rtl_sim_all.f
+ option[1]: +define+PAT0
+ option[2]: +define+PERIOD=5
+ option[3]: /usr/cad/synopsys/vcs/cur/linux64/bin/vcs1
+ option[4]: -Mcc=gcc
+ option[5]: -Mcplusplus=g++
+ option[6]: -Masflags=
+ option[7]: -Mcfl= -pipe -fPIC -O -I/usr/cad/synopsys/vcs/cur/include 
+ option[8]: -Mxllcflags=
+ option[9]: -Mxcflags= -pipe -fPIC -I/usr/cad/synopsys/vcs/cur/include
+ option[10]: -Mldflags= -rdynamic 
+ option[11]: -Mout=simv
+ option[12]: -Mamsrun=
+ option[13]: -Mvcsaceobjs=
+ option[14]: -Mobjects= /usr/cad/synopsys/vcs/cur/linux64/lib/libvirsim.so /usr/cad/synopsys/vcs/cur/linux64/lib/liberrorinf.so /usr/cad/synopsys/vcs/cur/linux64/lib/libsnpsmalloc.so /usr/cad/synopsys/vcs/cur/linux64/lib/libvfs.so 
+ option[15]: -Mexternalobj=
+ option[16]: -Msaverestoreobj=/usr/cad/synopsys/vcs/cur/linux64/lib/vcs_save_restore_new.o
+ option[17]: -Mcrt0=
+ option[18]: -Mcrtn=
+ option[19]: -Mcsrc=
+ option[20]: -Msyslibs=-ldl -lm 
+ option[21]: -Xvcs_run_simv=1
+ option[22]: -full64
+ option[23]: +define+PAT0
+ option[24]: +define+PERIOD=5
+ option[25]: -P
+ option[26]: /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab
+ option[27]: -picarchive
+ option[28]: -gen_obj
+ option[29]: -f
+ option[30]: rtl_sim.f
 Chronologic Simulation VCS Release S-2021.09_Full64
 Linux 3.10.0-1160.62.1.el7.x86_64 #1 SMP Tue Apr 5 16:57:59 UTC 2022 x86_64
 CPU cores: 128
@@ -119,7 +121,7 @@ Limit information:
 cputime		unlimited
 filesize		unlimited
 datasize		unlimited
-stacksize		8299 kbytes
+stacksize		8194 kbytes
 coredumpsize		0 kbytes
 memoryuse		unlimited
 vmemoryuse		unlimited
@@ -151,7 +153,7 @@ PERL_MB_OPT=--install_base /home/MingKe/perl5
 SSH_TTY=/dev/pts/9
 LC_ALL=C
 SG_HTML_BROWSER=/usr/bin/mozilla
-SNPS_VCS_INTERNAL_ROOT_PID=419239
+SNPS_VCS_INTERNAL_ROOT_PID=1046817
 QT_GRAPHICSSYSTEM_CHECKED=1
 USER=MingKe
 GROUP=DCSLab
@@ -166,7 +168,7 @@ VCS_MODE_FLAG=64
 MAIL=/var/spool/mail/MingKe
 PATH=.:/usr/cad/synopsys/vcs/cur/bin:/usr/cad/synopsys/vcs/cur/linux/bin:/usr/cad/synopsys/vcs/cur/linux/util:/usr/cad/synopsys/vcs/cur/linux/flexlm:/usr/bin/X11:/usr/cad/synopsys/primetime/cur/amd64/syn/bin:/usr/cad/synopsys/spyglass/cur/SPYGLASS_HOME/bin:/usr/bin/X11:/usr/cad/synopsys/coreConsultant/cur/bin:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cad/synopsys/verdi/cur/bin:/usr/cad/synopsys/verdi/cur/nLint/bin:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/bin/64bit:/usr/cad/cadence/INNOVUS/INNOVUS_20.10.000/tools/bin:/tools/Xilinx/Vitis_HLS/2023.2/bin:/tools/Xilinx/Vivado/2023.2/bin:/tools/Xilinx/Model_Composer/2023.2/bin:/tools/Xilinx/Vitis/2023.2/bin:/tools/Xilinx/Vitis/2023.2/gnu/microblaze/lin/bin:/tools/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-linux/bin:/tools/Xilinx/Vitis/2023.2/gnu/aarch64/lin/aarch64-none/bin:/tools/Xilinx/Vitis/2023.2/gnu/armr5/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.2/tps/lnx64/cmake-3.3.2/bin:/tools/Xilinx/Vitis/2023.2/aietools/bin:/tools/Xilinx/Vitis/2023.2/gnu/riscv/lin/riscv64-unknown-elf/bin:/tools/Xilinx/DocNav:/usr/lib64/qt-3.3/bin:/home/MingKe/perl5/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/MingKe/.local/bin:/home/MingKe/bin
 XILINX_VITIS=/tools/Xilinx/Vitis/2023.2
-SNPS_VCS_INTERNAL_CURR_PID=419239
+SNPS_VCS_INTERNAL_CURR_PID=1046817
 PWD=/home/MingKe/NTU_CVSD2024/01_RTL
 VCS_HOME=/usr/cad/synopsys/vcs/cur
 SNPS_VCS_INTERNAL_MEMPRELOAD_USE_LIBC=1
@@ -183,7 +185,7 @@ LM_LICENSE_FILE=26585@lshc:5280@lshc
 PRIMETIME=/usr/cad/synopsys/primetime/cur
 HISTCONTROL=ignoredups
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20241212075717_419239
+SNPS_VCS_TMPDIR=/tmp/vcs_20241212115127_1046817
 PERL_HOMEDIR=1
 RISCV=/home/MingKe/lab/riscv
 SHLVL=4
@@ -195,7 +197,7 @@ VENDOR=unknown
 LOGNAME=MingKe
 MACHTYPE=x86_64
 QTLIB=/usr/lib64/qt-3.3/lib
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1733990237.765605024
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1734004287.259725238
 SSH_CONNECTION=192.168.10.5 55360 192.168.1.201 30101
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 SHLIB_PATH=/usr/cad/synopsys/verdi/cur/etc/lib/libstdc++/LINUX64/
@@ -215,90 +217,91 @@ SPECMAN_OUTPUT_TO_TTY=1
 FLEXLM_BORROWFILE=/home/MingKe/.cad46-borrow.txt
 Runtime command line arguments:
 argv[0]=simv
-argv[1]=+define+PERIOD=5.2
-218 profile - 100
-          CPU/Mem usage: 0.030 sys,  0.180 user,  257.82M mem
-219 Elapsed time:    0:00:03    Thu Dec 12 15:57:26 2024
-220 User CPU time used: 0 seconds
-221 System CPU time used: 0 seconds
-222 pliAppInit
-223 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
-224 FSDB_GATE is set.
-225 FSDB_RTL is set.
-226 FSDB_FIELDTYPE is set.
-227 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
-228 Enable Parallel Dumping.
-229 pliAppMiscSet: New Sim Round
-230 pliEntryInit
-231 LIBSSCORE=found /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/libsscore_vcs202109.so through $LD_LIBRARY_PATH setting.
-232 FSDB Dumper for VCS, Release Verdi_S-2021.09, Linux x86_64/64bit, 08/29/2021
-233 (C) 1996 - 2021 by Synopsys, Inc.
-234 sps_call_fsdbDumpfile_main at 0 : ../00_TESTBED/testbed_full.sv(120)
-235 argv[0]: (ed25519.fsdb)
-236 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-237 *Verdi* : Create FSDB file 'ed25519.fsdb'
-238 [spi_vcs_vd_ppi_create_root]: no upf option
-239 compile option from '/home/MingKe/NTU_CVSD2024/01_RTL/simv.daidir/vcs_rebuild'.
-240   "vcs '-R' '-full64' '-f' 'rtl_sim_all.f' '+define+PERIOD=5.2' '-P' '/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab' 2>&1"
-241 DVDI_is_vir_unload_enabled is enable
-242 FSDB_VCS_ENABLE_NATIVE_VC is enable
-243 sps_call_fsdbDumpvars_vd_main at 0 : ../00_TESTBED/testbed_full.sv(121)
-244 argv[0]: (0)
-245 argv[1]: (handle) testbench
-246 argv[2]: (+mda)
-247 *Verdi* : Begin traversing the scope (testbench), layer (0).
-248 *Verdi* : Enable +mda dumping.
-249 *Verdi* : End of traversing.
-250 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.040 sys,  0.190 user,  358.54M mem
-                   incr: 0.000 sys,  0.010 user,  8.37M mem
-                   accu: 0.000 sys,  0.010 user,  8.37M mem
-              accu incr: 0.000 sys,  0.010 user,  8.37M mem
+argv[1]=+define+PAT0
+argv[2]=+define+PERIOD=5
+221 profile - 100
+          CPU/Mem usage: 0.030 sys,  0.170 user,  256.76M mem
+222 Elapsed time:    0:00:01    Thu Dec 12 19:51:32 2024
+223 User CPU time used: 0 seconds
+224 System CPU time used: 0 seconds
+225 pliAppInit
+226 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
+227 FSDB_GATE is set.
+228 FSDB_RTL is set.
+229 FSDB_FIELDTYPE is set.
+230 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
+231 Enable Parallel Dumping.
+232 pliAppMiscSet: New Sim Round
+233 pliEntryInit
+234 LIBSSCORE=found /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/libsscore_vcs202109.so through $LD_LIBRARY_PATH setting.
+235 FSDB Dumper for VCS, Release Verdi_S-2021.09, Linux x86_64/64bit, 08/29/2021
+236 (C) 1996 - 2021 by Synopsys, Inc.
+237 sps_call_fsdbDumpfile_main at 0 : ../00_TESTBED/testbed.sv(112)
+238 argv[0]: (ed25519.fsdb)
+239 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+240 *Verdi* : Create FSDB file 'ed25519.fsdb'
+241 [spi_vcs_vd_ppi_create_root]: no upf option
+242 compile option from '/home/MingKe/NTU_CVSD2024/01_RTL/simv.daidir/vcs_rebuild'.
+243   "vcs '-R' '-full64' '-f' 'rtl_sim.f' '+define+PAT0' '+define+PERIOD=5' '-P' '/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab' 2>&1"
+244 DVDI_is_vir_unload_enabled is enable
+245 FSDB_VCS_ENABLE_NATIVE_VC is enable
+246 sps_call_fsdbDumpvars_vd_main at 0 : ../00_TESTBED/testbed.sv(113)
+247 argv[0]: (0)
+248 argv[1]: (handle) testbench
+249 argv[2]: (+mda)
+250 *Verdi* : Begin traversing the scope (testbench), layer (0).
+251 *Verdi* : Enable +mda dumping.
+252 *Verdi* : End of traversing.
+253 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.040 sys,  0.180 user,  357.44M mem
+                   incr: 0.000 sys,  0.010 user,  8.34M mem
+                   accu: 0.000 sys,  0.010 user,  8.34M mem
+              accu incr: 0.000 sys,  0.010 user,  8.34M mem
 
-          Count usage: 182 var,  174 idcode,  85 callback
-                 incr: 182 var,  174 idcode,  85 callback
-                 accu: 182 var,  174 idcode,  85 callback
-            accu incr: 182 var,  174 idcode,  85 callback
-251 Elapsed time:    0:00:03    Thu Dec 12 15:57:26 2024
-252 User CPU time used: 0 seconds
-253 System CPU time used: 0 seconds
-254 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.040 sys,  0.190 user,  359.59M mem
+          Count usage: 173 var,  165 idcode,  81 callback
+                 incr: 173 var,  165 idcode,  81 callback
+                 accu: 173 var,  165 idcode,  81 callback
+            accu incr: 173 var,  165 idcode,  81 callback
+254 Elapsed time:    0:00:01    Thu Dec 12 19:51:32 2024
+255 User CPU time used: 0 seconds
+256 System CPU time used: 0 seconds
+257 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.040 sys,  0.180 user,  358.49M mem
                    incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.000 sys,  0.010 user,  9.42M mem
+                   accu: 0.000 sys,  0.010 user,  9.39M mem
               accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
-          Count usage: 182 var,  174 idcode,  85 callback
+          Count usage: 173 var,  165 idcode,  81 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 182 var,  174 idcode,  85 callback
+                 accu: 173 var,  165 idcode,  81 callback
             accu incr: 0 var,  0 idcode,  0 callback
-255 Elapsed time:    0:00:03    Thu Dec 12 15:57:26 2024
-256 User CPU time used: 0 seconds
-257 System CPU time used: 0 seconds
-258 End of simulation at 48152780
-259 Memory usage: 458.252 M
-260 Maximum resident set size: 104 MB
-261 Hard page faults: 4
-262 Soft page faults: 36794
-263 Elapsed time:    0:00:04    Thu Dec 12 15:57:27 2024
-264 User CPU time used: 0 seconds
-265 System CPU time used: 0 seconds
-266 Begin FSDB profile info:
-267 FSDB Writer : bc1(303620) bcn(508698) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.419683) io wait(0.000000) theadpool wait(0.000000)
+258 Elapsed time:    0:00:01    Thu Dec 12 19:51:32 2024
+259 User CPU time used: 0 seconds
+260 System CPU time used: 0 seconds
+261 End of simulation at 15230250
+262 Memory usage: 441.360 M
+263 Maximum resident set size: 87 MB
+264 Hard page faults: 4
+265 Soft page faults: 32411
+266 Elapsed time:    0:00:01    Thu Dec 12 19:51:32 2024
+267 User CPU time used: 0 seconds
+268 System CPU time used: 0 seconds
+269 Begin FSDB profile info:
+270 FSDB Writer : bc1(89830) bcn(167335) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.140380) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-268 End FSDB profile info
-269 FSDB closed. Name: ed25519.fsdb Size: 7458851
-270 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-271                      - BlockUsed:17 Acquire:1059061 BufferUsed:30742967
-272                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:15
-273                      - MainProducerTime:0.969709805 TotalConsumerTime:0.058639973
-274                      - ElapsedTime:1.005232000
-275 Producer   0 profile - BlockUsed:17 Acquire:1059061 BufferUsed:30742967
-276 Consumer   0 profile - Affinity:-1 CPUTime:0.058639973 LifeTime:0.305130059 (0.19%)
-277                      - BlockUsed:17 Acquire:1059061 BufferUsed:30742967
-278 SimExit
-279 Elapsed time:    0:00:04    Thu Dec 12 15:57:27 2024
-280 User CPU time used: 0 seconds
-281 System CPU time used: 0 seconds
-282 Sim process exit
+271 End FSDB profile info
+272 FSDB closed. Name: ed25519.fsdb Size: 2465998
+273 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+274                      - BlockUsed:6 Acquire:333255 BufferUsed:9938833
+275                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:4
+276                      - MainProducerTime:0.466112423 TotalConsumerTime:0.019569508
+277                      - ElapsedTime:0.606740000
+278 Producer   0 profile - BlockUsed:6 Acquire:333255 BufferUsed:9938833
+279 Consumer   0 profile - Affinity:-1 CPUTime:0.019569508 LifeTime:0.087484498 (0.22%)
+280                      - BlockUsed:6 Acquire:333255 BufferUsed:9938833
+281 SimExit
+282 Elapsed time:    0:00:02    Thu Dec 12 19:51:33 2024
+283 User CPU time used: 0 seconds
+284 System CPU time used: 0 seconds
+285 Sim process exit

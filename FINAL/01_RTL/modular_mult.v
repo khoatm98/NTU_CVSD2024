@@ -89,10 +89,9 @@ reg [383 : 0 ] buff_w;
 wire [384 : 0 ] sum_temp;
 wire [255:0] temp; 
 assign temp = sum[254:0] + sum[384:255]*19;
-wire [255:0] temp2; 
-assign temp2 = temp[254:0] + (temp[255] ? 19 : 0);
+
 wire [255:0] temp1; 
-assign temp1 = temp2 - `q;
+assign temp1 = temp - `q;
 
 assign sum_temp = sum + buff_w;
 
@@ -113,7 +112,7 @@ always@ (posedge i_clk) begin
 		S_MULT_C0 : sum <= sum_temp;
 		S_MULT_C2 : sum <= sum_temp;
 		S_MULT_C1 : sum <= sum_temp;
-		S_RED1    : sum <= temp1[255] ? temp2 : temp1;
+		S_RED1    : sum <= temp;
 		//S_RED2    : sum <= temp1[255] ? temp : temp1;
 		default    : sum <= sum;
 		//S_OUTPUT  : sum <= sum;
@@ -137,7 +136,7 @@ end
 
 
 assign o_valid = curr_state == S_RED2;
-assign res = sum[255:0];
+assign res = temp1[255] ?  sum[255:0] : temp1[255:0];
 endmodule
 
 // ---------------------------------------------------------------------------

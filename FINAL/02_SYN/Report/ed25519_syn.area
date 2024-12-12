@@ -3,7 +3,7 @@
 Report : area
 Design : ed25519
 Version: S-2021.06-SP2
-Date   : Thu Dec 12 16:09:54 2024
+Date   : Thu Dec 12 19:08:02 2024
 ****************************************
 
 Library(s) Used:
@@ -11,33 +11,33 @@ Library(s) Used:
     slow (File: /home/MingKe/CBDK_IC_Contest_v2.1/SynopsysDC/db/slow.db)
 
 Number of ports:                          134
-Number of nets:                         89888
-Number of cells:                        82977
-Number of combinational cells:          74772
-Number of sequential cells:              8200
+Number of nets:                         84793
+Number of cells:                        77610
+Number of combinational cells:          71907
+Number of sequential cells:              5701
 Number of macros/black boxes:               0
-Number of buf/inv:                       6827
-Number of references:                     176
+Number of buf/inv:                       7951
+Number of references:                     177
 
-Combinational area:             811151.813619
-Buf/Inv area:                    30083.019958
-Noncombinational area:          217294.361465
+Combinational area:             815115.242895
+Buf/Inv area:                    34099.068288
+Noncombinational area:          153575.662527
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:               1028446.175084
+Total cell area:                968690.905422
 Total area:                 undefined
 
 Hierarchical area distribution
 ------------------------------
 
-                                  Global cell area               Local cell area
-                                  ---------------------  -------------------------------- 
-Hierarchical cell                 Absolute      Percent  Combi-       Noncombi-    Black-
-                                  Total         Total    national     national     boxes   Design
---------------------------------  ------------  -------  -----------  -----------  ------  ---------
-ed25519                           1028446.1751    100.0  811151.8136  217294.3615  0.0000  ed25519
---------------------------------  ------------  -------  -----------  -----------  ------  ---------
-Total                                                    811151.8136  217294.3615  0.0000
+                                  Global cell area              Local cell area
+                                  --------------------  -------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-    Black-
+                                  Total        Total    national     national     boxes   Design
+--------------------------------  -----------  -------  -----------  -----------  ------  ---------
+ed25519                           968690.9054    100.0  815115.2429  153575.6625  0.0000  ed25519
+--------------------------------  -----------  -------  -----------  -----------  ------  ---------
+Total                                                   815115.2429  153575.6625  0.0000
 
 1
