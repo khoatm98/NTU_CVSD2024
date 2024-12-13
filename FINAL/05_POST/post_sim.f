@@ -17,8 +17,8 @@
 // Simulation Files
 // -----------------------------------------------------------------------------
 ../00_TESTBED/testbed.sv
-./ed25519_pr.v
--v /home/raid7_2/course/cvsd/CBDK_IC_Contest/CIC/Verilog/tsmc13_neg.v
+./ed25519_final.v
+-v /home/MingKe/CBDK_IC_Contest_v2.1/Verilog/tsmc13_neg.v
 
 // =============================================================================
 //                  Your Can Only Modify The Below Part
@@ -27,3 +27,5 @@
 // Define Flags
 // -----------------------------------------------------------------------------
 +define+POST
++define+FSDB
++define+RANDOM_IO_HANDSHAKE

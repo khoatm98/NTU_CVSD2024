@@ -1,0 +1,533 @@
+[12/13 21:40:34      0s] 
+[12/13 21:40:34      0s] Cadence Innovus(TM) Implementation System.
+[12/13 21:40:34      0s] Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+[12/13 21:40:34      0s] 
+[12/13 21:40:34      0s] Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+[12/13 21:40:34      0s] Options:	
+[12/13 21:40:34      0s] Date:		Fri Dec 13 21:40:34 2024
+[12/13 21:40:34      0s] Host:		cad27 (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (8cores*32cpus*Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz 11264KB)
+[12/13 21:40:34      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[12/13 21:40:34      0s] 
+[12/13 21:40:34      0s] License:
+[12/13 21:40:35      1s] 		invs	Innovus Implementation System	17.1	checkout succeeded
+[12/13 21:40:35      1s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[12/13 21:41:14     21s] @(#)CDS: Innovus v17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+[12/13 21:41:14     21s] @(#)CDS: NanoRoute 17.11-s080_1 NR170721-2155/17_11-UB (database version 2.30, 390.7.1) {superthreading v1.44}
+[12/13 21:41:14     21s] @(#)CDS: AAE 17.11-s034 (64bit) 08/04/2017 (Linux 2.6.18-194.el5)
+[12/13 21:41:14     21s] @(#)CDS: CTE 17.11-s053_1 () Aug  1 2017 23:31:41 ( )
+[12/13 21:41:14     21s] @(#)CDS: SYNTECH 17.11-s012_1 () Jul 21 2017 02:29:12 ( )
+[12/13 21:41:14     21s] @(#)CDS: CPE v17.11-s095
+[12/13 21:41:14     21s] @(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
+[12/13 21:41:14     21s] @(#)CDS: OA 22.50-p063 Fri Feb  3 19:45:13 2017
+[12/13 21:41:14     21s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[12/13 21:41:14     21s] @(#)CDS: RCDB 11.10
+[12/13 21:41:14     21s] --- Running on cad27 (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (8cores*32cpus*Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz 11264KB) ---
+[12/13 21:41:14     21s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_64936_cad27_r2k41036_NfquoB.
+
+[12/13 21:41:14     21s] Change the soft stacksize limit to 0.2%RAM (256 mbytes). Set global soft_stack_size_limit to change the value.
+[12/13 21:41:15     22s] 
+[12/13 21:41:15     22s] **INFO:  MMMC transition support version v31-84 
+[12/13 21:41:15     22s] 
+[12/13 21:41:15     22s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[12/13 21:41:15     22s] <CMD> suppressMessage ENCEXT-2799
+[12/13 21:41:16     22s] <CMD> getDrawView
+[12/13 21:41:16     22s] <CMD> loadWorkspace -name Physical
+[12/13 21:41:16     23s] <CMD> win
+[12/13 21:41:58     25s] <CMD> setMultiCpuUsage -localCpu 16
+[12/13 21:41:58     25s] <CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+[12/13 21:41:58     25s] <CMD> set conf_qxconf_file NULL
+[12/13 21:41:58     25s] <CMD> set conf_qxlib_file NULL
+[12/13 21:41:58     25s] <CMD> set defHierChar /
+[12/13 21:41:58     25s] <CMD> set distributed_client_message_echo 1
+[12/13 21:41:58     25s] <CMD> set distributed_mmmc_disable_reports_auto_redirection 0
+[12/13 21:41:58     25s] <CMD> set eco_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[12/13 21:41:58     25s] <CMD> set enc_enable_print_mode_command_reset_options 1
+[12/13 21:41:58     25s] <CMD> set init_gnd_net VSS
+[12/13 21:41:58     25s] <CMD> set init_lef_file {../library/lef/tsmc13fsg_8lm_cic.lef ../library/lef/antenna_8.lef}
+[12/13 21:41:58     25s] <CMD> set init_mmmc_file ../design_data/MMMC/mmmc.view
+[12/13 21:41:58     25s] <CMD> set init_pwr_net VDD
+[12/13 21:41:58     25s] <CMD> set init_top_cell ed25519
+[12/13 21:41:58     25s] <CMD> set init_verilog ../design_data/core_design/ed25519_syn.v
+[12/13 21:41:58     25s] <CMD> set latch_time_borrow_mode max_borrow
+[12/13 21:41:58     25s] <CMD> set pegDefaultResScaleFactor 1
+[12/13 21:41:58     25s] <CMD> set pegDetailResScaleFactor 1
+[12/13 21:41:58     25s] <CMD> set report_inactive_arcs_format {from to when arc_type sense reason}
+[12/13 21:41:58     25s] <CMD> set soft_stack_size_limit 96
+[12/13 21:41:58     25s] <CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[12/13 21:41:58     25s] <CMD> init_design
+[12/13 21:41:58     25s] #% Begin Load MMMC data ... (date=12/13 21:41:58, mem=422.7M)
+[12/13 21:41:58     25s] #% End Load MMMC data ... (date=12/13 21:41:58, total cpu=0:00:00.0, real=0:00:00.0, peak res=422.8M, current mem=422.8M)
+[12/13 21:41:58     25s] 
+[12/13 21:41:58     25s] Loading LEF file ../library/lef/tsmc13fsg_8lm_cic.lef ...
+[12/13 21:41:58     25s] Set DBUPerIGU to M2 pitch 920.
+[12/13 21:41:59     26s] 
+[12/13 21:41:59     26s] Loading LEF file ../library/lef/antenna_8.lef ...
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'METAL1' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'METAL2' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'METAL3' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'METAL4' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'METAL5' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'METAL6' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'METAL7' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'METAL8' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'VIA12' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'VIA23' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'VIA34' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'VIA45' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'VIA56' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'VIA67' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-119):	LAYER 'VIA78' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:41:59     26s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:41:59     26s] Type 'man IMPLF-119' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PDC0102CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PDC0204CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PDC0408CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PDC1216CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PDS0102CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PDS0204CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PDS0408CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PDS1216CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PRC0102CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PRC0204CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PRC0408CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PRC1216CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PRS0102CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PRS0204CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PRS0408CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PRS1216CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PVDD1CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PVSS1CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PVSS3CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (IMPLF-44):	Macro 'PXOE1CDG' has no SIZE statement or a zero SIZE
+[12/13 21:41:59     26s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:41:59     26s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:41:59     26s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:41:59     26s] netlist.
+[12/13 21:41:59     26s] **WARN: (EMS-27):	Message (IMPLF-44) has exceeded the current message display limit of 20.
+[12/13 21:41:59     26s] To increase the message display limit, refer to the product command reference manual.
+[12/13 21:41:59     26s] WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file ../library/lef/antenna_8.lef at line 606.
+[12/13 21:41:59     26s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[12/13 21:41:59     26s] Type 'man IMPLF-200' for more detail.
+[12/13 21:41:59     26s] 
+[12/13 21:41:59     26s] viaInitial starts at Fri Dec 13 21:41:59 2024
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM1 GENERATE.
+[12/13 21:41:59     26s] Type 'man IMPPP-557' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM2 GENERATE.
+[12/13 21:41:59     26s] Type 'man IMPPP-557' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM3 GENERATE.
+[12/13 21:41:59     26s] Type 'man IMPPP-557' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM4 GENERATE.
+[12/13 21:41:59     26s] Type 'man IMPPP-557' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM5 GENERATE.
+[12/13 21:41:59     26s] Type 'man IMPPP-557' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM6 GENERATE.
+[12/13 21:41:59     26s] Type 'man IMPPP-557' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM7 GENERATE.
+[12/13 21:41:59     26s] Type 'man IMPPP-557' for more detail.
+[12/13 21:41:59     26s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM8 GENERATE.
+[12/13 21:41:59     26s] Type 'man IMPPP-557' for more detail.
+[12/13 21:41:59     26s] viaInitial ends at Fri Dec 13 21:41:59 2024
+Loading view definition file from ../design_data/MMMC/mmmc.view
+[12/13 21:41:59     26s] Starting library reading in 'Multi-threaded flow' (with '16' threads)
+[12/13 21:42:00     29s] Reading lib_max timing library /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib.
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO0' of cell 'ACCSHCINX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO1' of cell 'ACCSHCINX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ACHCINX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDFX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO0N' of cell 'ACCSIHCONX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO1N' of cell 'ACCSIHCONX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDHX1' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDHX1' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDFX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDFX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDFX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ACHCINX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDHX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDHX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDFXL' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDHX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDFXL' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDHX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDHXL' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDHXL' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] Message <TECHLIB-436> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[12/13 21:42:00     29s] **WARN: (TECHLIB-302):	No function defined for cell 'HOLDX1'. The cell will only be used for analysis. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] Read 527 cells in library slow.
+[12/13 21:42:00     29s] Library reading multithread flow ended. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:42:00     29s] Starting library reading in 'Multi-threaded flow' (with '16' threads)
+[12/13 21:42:00     33s] Reading lib_min timing library /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/fast.lib.
+[12/13 21:42:00     33s] **WARN: (TECHLIB-302):	No function defined for cell 'HOLDX1'. The cell will only be used for analysis. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/fast.lib)
+[12/13 21:42:00     33s] Read 527 cells in library fast.
+[12/13 21:42:01     33s] Library reading multithread flow ended. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/fast.lib)
+[12/13 21:42:01     33s] *** End library_loading (cpu=0.12min, real=0.03min, mem=71.2M, fe_cpu=0.56min, fe_real=1.45min, fe_mem=574.5M) ***
+[12/13 21:42:01     33s] #% Begin Load netlist data ... (date=12/13 21:42:01, mem=550.4M)
+[12/13 21:42:01     33s] *** Begin netlist parsing (mem=574.5M) ***
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3XL' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3XL' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3X4' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3X4' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3X2' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3X2' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3X1' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3X1' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2XL' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2XL' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2X4' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2X4' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2X2' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2X2' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XNOR3XL' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XNOR3XL' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XNOR3X4' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XNOR3X4' is defined in LEF but not in the timing library.
+[12/13 21:42:01     33s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[12/13 21:42:01     33s] To increase the message display limit, refer to the product command reference manual.
+[12/13 21:42:01     33s] Created 527 new cells from 2 timing libraries.
+[12/13 21:42:01     33s] Reading netlist ...
+[12/13 21:42:01     33s] Backslashed names will retain backslash and a trailing blank character.
+[12/13 21:42:01     33s] Reading verilog netlist '../design_data/core_design/ed25519_syn.v'
+[12/13 21:42:03     34s] 
+[12/13 21:42:03     34s] *** Memory Usage v#1 (Current mem = 593.527M, initial mem = 179.695M) ***
+[12/13 21:42:03     34s] *** End netlist parsing (cpu=0:00:01.1, real=0:00:02.0, mem=593.5M) ***
+[12/13 21:42:03     34s] #% End Load netlist data ... (date=12/13 21:42:03, total cpu=0:00:01.2, real=0:00:02.0, peak res=550.4M, current mem=493.0M)
+[12/13 21:42:03     34s] Set top cell to ed25519.
+[12/13 21:42:03     34s] **DIAG[/icd/cm_t1nb_001/INNOVUS171/Rel/17.11/main/lnx86_64_opt/17.11-s080_1/include/dbInline.h:2278:getNrSel]: Assert "getTopCellData()!=NULL"
+[12/13 21:42:03     34s] Innovus terminated by internal (SEGV) error/signal...
+[12/13 21:42:03     34s] *** Stack trace:
+*** Stack trace:
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0xe53733a]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(syStackTrace+0x7c)[0xe53770c]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x38b68f5]
+/usr/lib64/libpthread.so.0(+0xf630)[0x7fb0b5c3a630]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0xc9df01c]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_Z15winUpdateCurLocP7winsWin+0x5d)[0xce9093d]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_Z14winEventNotifyP7winsWiniiii+0x2f)[0xce80fdf]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN6winsQt14mouseMoveEventEP11QMouseEvent+0x9b)[0xce9269b]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4(_ZN7QWidget5eventEP6QEvent+0xb89)[0x7fb0bab39419]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN6winsQt5eventEP6QEvent+0x2c)[0xce92ecc]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4(_ZN19QApplicationPrivate13notify_helperEP7QObjectP6QEvent+0x8c)[0x7fb0baae336c]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4(_ZN12QApplication6notifyEP7QObjectP6QEvent+0x3d6)[0x7fb0baaebe56]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4(_ZN16QCoreApplication14notifyInternalEP7QObjectP6QEvent+0x6d)[0x7fb0ba453e8d]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4(_ZN19QApplicationPrivate14sendMouseEventEP7QWidgetP11QMouseEventS1_S1_PS1_R8QPointerIS0_Eb+0x153)[0x7fb0baaeb5e3]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4(_ZN19QApplicationPrivate23sendSyntheticEnterLeaveEP7QWidget+0x1a5)[0x7fb0baaeba25]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4(_ZN7QWidgetD1Ev+0x67e)[0x7fb0bab35b1e]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN6qtfsLLD0Ev+0x32)[0xcdd35f2]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4(_ZN14QObjectPrivate14deleteChildrenEv+0xdb)[0x7fb0ba46b97b]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4(_ZN7QWidgetD1Ev+0x38a)[0x7fb0bab3582a]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN9qtfsLayerD0Ev+0x9)[0xcdd0459]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN16qtfsLayerControl10fCleanDataEv+0x28c)[0xcdd3d0c]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN16qtfsLayerControl11fParserJsonEPc+0x32)[0xcdd6432]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0xced0559]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN10tcmBaseCmd7executeEP10Tcl_InterpiPPc+0x1f9)[0x101538a9]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN6tcmMgr9cmdParserEPvP10Tcl_InterpiPPc+0x794)[0x1013c4a4]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(TclInvokeStringCommand+0x80)[0x12a21610]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x47)[0x12a25eb7]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x12a27fa0]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_EvalEx+0x16)[0x12a289a6]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x12b07d48]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(TclCallVarTraces+0x211)[0x12b09d01]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x12b12117]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_ObjSetVar2+0x72)[0x12b14d12]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_SetVar2Ex+0x5b)[0x12b14f0b]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_SetVar2+0x39)[0x12b14fb9]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_Z14rdaiSetTopCellP10Tcl_InterpP7dbsHeadPc+0x99a)[0x391e5ea]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x391f754]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN10tcmBaseCmd7executeEP10Tcl_InterpiPPc+0x1f9)[0x101538a9]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN6tcmMgr9cmdParserEPvP10Tcl_InterpiPPc+0x794)[0x1013c4a4]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(TclInvokeStringCommand+0x80)[0x12a21610]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x47)[0x12a25eb7]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x12a27fa0]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_EvalEx+0x16)[0x12a289a6]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(TclNREvalObjEx+0x6f)[0x12a28a4f]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x12adc3db]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x12a3b221]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x47)[0x12a25eb7]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_RecordAndEvalObj+0xf4)[0x12ac26b4]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_RecordAndEval+0x37)[0x12ac2817]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_Z17rdaEditCmdLineEndPc+0x158)[0x3985b68]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN9seConsole7sesMode9DoExecuteERKSsPv+0xc7)[0xba53ac7]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN7Redline9EmacsMode10AcceptLineEv+0x3e)[0xc7714ae]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN7Redline11ModeCommandINS_9EmacsModeEE15CommandFnNoKeysERKN5boost8functionIFvRS1_EEERNS_6EditorE+0x61)[0xc77a701]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN5boost6detail8function26void_function_obj_invoker2INS_3_bi6bind_tINS3_11unspecifiedENS_8functionIFvRN7Redline6EditorEEEENS3_5list1INS_3argILi1EEEEEEEvS9_RKNS7_14KeyCombinationEE6invokeERNS1_15function_bufferES9_SJ_+0x1b)[0xc78913b]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZNK7Redline7Command3RunERNS_6EditorERKNS_14KeyCombinationE+0x1c)[0xc787d2c]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_ZN7Redline6Editor9Internals3RunEb+0xd5)[0xc770c05]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x12b26437]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_ServiceEvent+0x87)[0x12ae83d7]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_DoOneEvent+0x129)[0x12ae86d9]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/lib/64bit/libtq.so(_ZN17TqEventDispatcher13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE+0x7f)[0x7fb0bbe6de2f]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4(_ZN10QEventLoop13processEventsE6QFlagsINS_17ProcessEventsFlagEE+0x2f)[0x7fb0ba45202f]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4(_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE+0x17d)[0x7fb0ba45232d]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4(_ZN16QCoreApplication4execEv+0x89)[0x7fb0ba4595a9]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/lib/64bit/libtq.so(_ZN13TqApplication4execEv+0xdf)[0x7fb0bbe7087f]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(_Z12edi_app_initP10Tcl_Interp+0x259)[0x3958069]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(Tcl_MainEx+0x177)[0x12ae2f17]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus(main+0x1d6)[0x3368176]
+/usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fb0b4d5e555]
+/home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/innovus/bin/64bit/innovus[0x38b3369]
+========================================
+               pstack
+========================================
+========================================
+                gdb
+========================================
+Using: gdb
+[New LWP 65643]
+[New LWP 65642]
+[New LWP 65065]
+[New LWP 65044]
+[New LWP 65042]
+[New LWP 65041]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/usr/lib64/libthread_db.so.1".
+0x00007fb0b4e01659 in waitpid () from /usr/lib64/libc.so.6
+
+Thread 7 (Thread 0x7fb0b2305700 (LWP 65041)):
+#0  0x00007fb0b4e31b43 in select () from /usr/lib64/libc.so.6
+#1  0x0000000012b26118 in NotifierThreadProc ()
+#2  0x0000000003b00ad9 in create_head(void*) ()
+#3  0x00007fb0b5c32ea5 in start_thread () from /usr/lib64/libpthread.so.0
+#4  0x00007fb0b4e3ab0d in clone () from /usr/lib64/libc.so.6
+
+Thread 6 (Thread 0x7fb0ab3d3700 (LWP 65042)):
+#0  0x00007fb0b4e019fd in nanosleep () from /usr/lib64/libc.so.6
+#1  0x00007fb0b4e01894 in sleep () from /usr/lib64/libc.so.6
+#2  0x000000000e550f7a in syiPeakMem(void*) ()
+#3  0x0000000003b00ad9 in create_head(void*) ()
+#4  0x00007fb0b5c32ea5 in start_thread () from /usr/lib64/libpthread.so.0
+#5  0x00007fb0b4e3ab0d in clone () from /usr/lib64/libc.so.6
+
+Thread 5 (Thread 0x7fb0a9f41700 (LWP 65044)):
+#0  0x00007fb0b5c39e9d in nanosleep () from /usr/lib64/libpthread.so.0
+#1  0x00000000049b48f6 in rdaiLicRecheck(void*) ()
+#2  0x0000000003b00ad9 in create_head(void*) ()
+#3  0x00007fb0b5c32ea5 in start_thread () from /usr/lib64/libpthread.so.0
+#4  0x00007fb0b4e3ab0d in clone () from /usr/lib64/libc.so.6
+
+Thread 4 (Thread 0x7fb0a77f1700 (LWP 65065)):
+#0  0x00007fb0b5c3a3c1 in sigwait () from /usr/lib64/libpthread.so.0
+#1  0x00000000038b35fd in ctrlCHandle(void*) ()
+#2  0x0000000003b00ad9 in create_head(void*) ()
+#3  0x00007fb0b5c32ea5 in start_thread () from /usr/lib64/libpthread.so.0
+#4  0x00007fb0b4e3ab0d in clone () from /usr/lib64/libc.so.6
+
+Thread 3 (Thread 0x7fb092b55700 (LWP 65642)):
+#0  0x00007fb0b5c36a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /usr/lib64/libpthread.so.0
+#1  0x00007fb0ba32a9f6 in QWaitCondition::wait(QMutex*, unsigned long) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#2  0x00007fb0bb036dde in QFileInfoGatherer::run() () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4
+#3  0x00007fb0ba329f4b in QThreadPrivate::start(void*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#4  0x0000000003b00ad9 in create_head(void*) ()
+#5  0x00007fb0b5c32ea5 in start_thread () from /usr/lib64/libpthread.so.0
+#6  0x00007fb0b4e3ab0d in clone () from /usr/lib64/libc.so.6
+
+Thread 2 (Thread 0x7fb092354700 (LWP 65643)):
+#0  0x00007fb0b4e31b43 in select () from /usr/lib64/libc.so.6
+#1  0x00007fb0ba48559b in qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#2  0x00007fb0ba489d73 in QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#3  0x00007fb0ba48a472 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#4  0x00007fb0ba45202f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#5  0x00007fb0ba45232d in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#6  0x00007fb0ba32739f in QThread::exec() () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#7  0x00007fb0ba42fd93 in QInotifyFileSystemWatcherEngine::run() () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#8  0x00007fb0ba329f4b in QThreadPrivate::start(void*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#9  0x0000000003b00ad9 in create_head(void*) ()
+#10 0x00007fb0b5c32ea5 in start_thread () from /usr/lib64/libpthread.so.0
+#11 0x00007fb0b4e3ab0d in clone () from /usr/lib64/libc.so.6
+
+Thread 1 (Thread 0x7fb0beb75200 (LWP 64936)):
+#0  0x00007fb0b4e01659 in waitpid () from /usr/lib64/libc.so.6
+#1  0x00007fb0b4d7ef62 in do_system () from /usr/lib64/libc.so.6
+#2  0x00007fb0b4d7f311 in system () from /usr/lib64/libc.so.6
+#3  0x000000000e537389 in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x000000000e53770c in syStackTrace ()
+#5  0x00000000038b68f5 in rdaiErrorHandler(int, siginfo*, void*) ()
+#6  <signal handler called>
+#7  0x000000000c9df01c in uiiUpdateMsg(winsWin*, int, void*) ()
+#8  0x000000000ce9093d in winUpdateCurLoc(winsWin*) ()
+#9  0x000000000ce80fdf in winEventNotify(winsWin*, int, int, int, int) ()
+#10 0x000000000ce9269b in winsQt::mouseMoveEvent(QMouseEvent*) ()
+#11 0x00007fb0bab39419 in QWidget::event(QEvent*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4
+#12 0x000000000ce92ecc in winsQt::event(QEvent*) ()
+#13 0x00007fb0baae336c in QApplicationPrivate::notify_helper(QObject*, QEvent*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4
+#14 0x00007fb0baaebe56 in QApplication::notify(QObject*, QEvent*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4
+#15 0x00007fb0ba453e8d in QCoreApplication::notifyInternal(QObject*, QEvent*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#16 0x00007fb0baaeb5e3 in QApplicationPrivate::sendMouseEvent(QWidget*, QMouseEvent*, QWidget*, QWidget*, QWidget**, QPointer<QWidget>&, bool) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4
+#17 0x00007fb0baaeba25 in QApplicationPrivate::sendSyntheticEnterLeave(QWidget*) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4
+#18 0x00007fb0bab35b1e in QWidget::~QWidget() () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4
+#19 0x000000000cdd35f2 in qtfsLL::~qtfsLL() ()
+#20 0x00007fb0ba46b97b in QObjectPrivate::deleteChildren() () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#21 0x00007fb0bab3582a in QWidget::~QWidget() () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtGui.so.4
+#22 0x000000000cdd0459 in qtfsLayer::~qtfsLayer() ()
+#23 0x000000000cdd3d0c in qtfsLayerControl::fCleanData() ()
+#24 0x000000000cdd6432 in qtfsLayerControl::fParserJson(char*) ()
+#25 0x000000000ced0559 in qtfiLayerControlLoadCmd(void*, Tcl_Interp*, int, char**) ()
+#26 0x00000000101538a9 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#27 0x000000001013c4a4 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#28 0x0000000012a21610 in TclInvokeStringCommand ()
+#29 0x0000000012a25eb7 in TclNRRunCallbacks ()
+#30 0x0000000012a27fa0 in TclEvalEx ()
+#31 0x0000000012a289a6 in Tcl_EvalEx ()
+#32 0x0000000012b07d48 in TraceVarProc ()
+#33 0x0000000012b09d01 in TclCallVarTraces ()
+#34 0x0000000012b12117 in TclPtrSetVar ()
+#35 0x0000000012b14d12 in Tcl_ObjSetVar2 ()
+#36 0x0000000012b14f0b in Tcl_SetVar2Ex ()
+#37 0x0000000012b14fb9 in Tcl_SetVar2 ()
+#38 0x000000000391e5ea in rdaiSetTopCell(Tcl_Interp*, dbsHead*, char*) ()
+#39 0x000000000391f754 in rdaiSetTopCellCmd ()
+#40 0x00000000101538a9 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#41 0x000000001013c4a4 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#42 0x0000000012a21610 in TclInvokeStringCommand ()
+#43 0x0000000012a25eb7 in TclNRRunCallbacks ()
+#44 0x0000000012a27fa0 in TclEvalEx ()
+#45 0x0000000012a289a6 in Tcl_EvalEx ()
+#46 0x0000000012a28a4f in TclNREvalObjEx ()
+#47 0x0000000012adc3db in TclNREvalFile ()
+#48 0x0000000012a3b221 in TclNRSourceObjCmd ()
+#49 0x0000000012a25eb7 in TclNRRunCallbacks ()
+#50 0x0000000012ac26b4 in Tcl_RecordAndEvalObj ()
+#51 0x0000000012ac2817 in Tcl_RecordAndEval ()
+#52 0x0000000003985b68 in rdaEditCmdLineEnd(char*) ()
+#53 0x000000000ba53ac7 in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#54 0x000000000c7714ae in Redline::EmacsMode::AcceptLine() ()
+#55 0x000000000c77a701 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#56 0x000000000c78913b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#57 0x000000000c787d2c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#58 0x000000000c770c05 in Redline::Editor::Internals::Run(bool) ()
+#59 0x0000000012b26437 in FileHandlerEventProc ()
+#60 0x0000000012ae83d7 in Tcl_ServiceEvent ()
+#61 0x0000000012ae86d9 in Tcl_DoOneEvent ()
+#62 0x00007fb0bbe6de2f in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/lib/64bit/libtq.so
+#63 0x00007fb0ba45202f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#64 0x00007fb0ba45232d in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#65 0x00007fb0ba4595a9 in QCoreApplication::exec() () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/Qt/64bit/lib/libcdsQtCore.so.4
+#66 0x00007fb0bbe7087f in TqApplication::exec() () from /home/raid7_4/raid1_1/linux/innovus/INNOVUS17.11/tools/lib/64bit/libtq.so
+#67 0x0000000003958069 in edi_app_init(Tcl_Interp*) ()
+#68 0x0000000012ae2f17 in Tcl_MainEx ()
+#69 0x0000000003368176 in main ()
+A debugging session is active.
+
+	Inferior 1 [process 64936] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Inferior 1 (process 64936) detached]
+[12/13 21:43:30     35s] 
+[12/13 21:43:30     35s] *** Memory Usage v#1 (Current mem = 593.527M, initial mem = 179.695M) ***
+[12/13 21:43:30     35s] 
+[12/13 21:43:30     35s] *** Summary of all messages that are not suppressed in this session:
+[12/13 21:43:30     35s] Severity  ID               Count  Summary                                  
+[12/13 21:43:30     35s] WARNING   IMPLF-44            21  Macro '%s' has no SIZE statement or a ze...
+[12/13 21:43:30     35s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[12/13 21:43:30     35s] WARNING   IMPLF-119           15  LAYER '%s' has been found in the databas...
+[12/13 21:43:30     35s] WARNING   IMPVL-159         1054  Pin '%s' of cell '%s' is defined in LEF ...
+[12/13 21:43:30     35s] WARNING   IMPPP-557            8  A single-layer VIARULE GENERATE for turn...
+[12/13 21:43:30     35s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[12/13 21:43:30     35s] WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+[12/13 21:43:30     35s] *** Message Summary: 1121 warning(s), 0 error(s)
+[12/13 21:43:30     35s] 
+[12/13 21:43:30     35s] --- Ending "Innovus" (totcpu=0:00:35.8, real=0:02:56, mem=593.5M) ---

@@ -1,1 +1,1 @@
-vcs -R -full64 -f post_sim.f +define+PAT0 | tee post_sim_p0.log
+vcs -R -full64 -f post_sim.f +define+PAT$1 +define+PERIOD=$2  -P /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/novas.tab   | tee post_sim_p0.log

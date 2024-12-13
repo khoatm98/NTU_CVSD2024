@@ -1,0 +1,33 @@
+setMultiCpuUsage -localCpu 16
+
+place_design -incremental
+
+
+setOptMode -fixCap true -fixTran true -fixFanoutLoad true
+optDesign -preCTS
+setOptMode -fixCap true -fixTran true -fixFanoutLoad true
+optDesign -preCTS
+setOptMode -fixCap true -fixTran true -fixFanoutLoad true
+optDesign -preCTS
+setOptMode -fixCap true -fixTran true -fixFanoutLoad true
+optDesign -preCTS
+
+
+add_ndr -width {METAL7 0.4 METAL8 0.88 METAL5 0.4 METAL6 0.4 METAL3 0.4 METAL4 0.4} -spacing {METAL7 0.42 METAL8 0.92 METAL5 0.42 METAL6 0.42 METAL3 0.42 METAL4 0.42} -min_cut {VIA78 2 } -name CTS_2W2S
+add_ndr -width {METAL5 0.4 METAL6 0.4 } -spacing {METAL5 0.42 METAL6 0.42 } -min_cut {VIA56 2 } -name CTS_2W2S_TR
+add_ndr -width {METAL3 0.4 METAL4 0.4 } -spacing {METAL3 0.42 METAL4 0.42 } -min_cut {VIA34 2 } -name CTS_2W1S
+
+create_ccopt_clock_tree_spec -file ./ccopt.spec
+
+create_route_type -name top_rule -non_default_rule CTS_2W2S -top_preferred_layer METAL8 -bottom_preferred_layer METAL7 -shield_net VSS
+create_route_type -name trunk_rule -non_default_rule CTS_2W2S -top_preferred_layer METAL7 -bottom_preferred_layer METAL6 -shield_net VSS
+create_route_type -name leaf_rule -non_default_rule CTS_2W2S -top_preferred_layer METAL5 -bottom_preferred_layer METAL4
+
+set_ccopt_property -clock_tree i_clk routing_top_min_fanout 1000
+
+set_ccopt_property -net_type top route_type top_rule
+set_ccopt_property -net_type trunk route_type trunk_rule
+set_ccopt_property -net_type leaf route_type leaf_rule
+
+set timing_enable_simultaneous_setup_hold_mode true
+

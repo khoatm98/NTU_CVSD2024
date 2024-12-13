@@ -1,6 +1,0 @@
-{"vcs1":{"timestamp_begin":1727771256.968670495, "rt":1.73, "ut":0.10, "st":0.08}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1727771256.080055693}
-{"VCS_COMP_START_TIME": 1727771256.080055693}
-{"VCS_COMP_END_TIME": 1727771258.865167230}
-{"VCS_USER_OPTIONS": "-full64 +v2k -R +neg_tchk -debug_access+all Lab2_test_alu.v Lab2_alu_s.v /home/raid7 2/course/cvsd/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v"}
-{"vcs1": {"peak_mem": 313384}}

@@ -33,8 +33,6 @@
 ./ed25519.v
 ./modular_add_sub.v
 ./modular_mult.v
-./mod_q_reduce.v
-./inversion.v
 
 // Define Flags
 // -----------------------------------------------------------------------------

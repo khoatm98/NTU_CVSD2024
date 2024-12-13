@@ -1,6 +1,6 @@
 *** Using c compiler gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version S-2021.09_Full64 -- Thu Dec 12 20:45:42 2024
+         Version S-2021.09_Full64 -- Sat Dec 14 03:15:10 2024
 
                     Copyright (c) 1991 - 2021 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -74,48 +74,37 @@ Warning-[PCWM-W] Port connection width mismatch
 Starting vcs inline pass...
 
 9 modules and 0 UDP read.
-recompiling package dat_0
-recompiling package dat_1
-recompiling package dat_2
 recompiling module testbench
-recompiling module modular_mult
-recompiling module multiplier_64x64
-recompiling module multiplier_256x256
-recompiling module mod_q_reduce
-recompiling module inversion
-All of 9 modules done
-make: Warning: File `filelist.cu' has modification time 307 s in the future
-make[1]: Warning: File `filelist.cu' has modification time 307 s in the future
+	However, due to incremental compilation, only 1 module needs to be compiled. 
+make: Warning: File `filelist.cu' has modification time 309 s in the future
+make[1]: Warning: File `filelist.cu' has modification time 309 s in the future
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 make[1]: warning:  Clock skew detected.  Your build may be incomplete.
-make[1]: Warning: File `filelist.cu' has modification time 307 s in the future
+make[1]: Warning: File `filelist.cu' has modification time 309 s in the future
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
 make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/cur/linux64/lib -L/usr/cad/synopsys/vcs/cur/linux64/lib  -Wl,-rpath-link=./ -Wl,--no-as-needed   objs/amcQw_d.o   _1077622_archive_1.so _prev_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lnuma -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/cur/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/cur/linux64/lib/vcs_save_restore_new.o -ldl -lm  -lc -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/cad/synopsys/vcs/cur/linux64/lib -L/usr/cad/synopsys/vcs/cur/linux64/lib  -Wl,-rpath-link=./ -Wl,--no-as-needed     _2587746_archive_1.so _prev_archive_1.so _cuarc0.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lnuma -lvirsim -lerrorinf -lsnpsmalloc -lvfs /usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/cur/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/cur/linux64/lib/vcs_save_restore_new.o -ldl -lm  -lc -lpthread -ldl 
 ../simv up to date
 make: warning:  Clock skew detected.  Your build may be incomplete.
 Notice: timing checks disabled with +notimingcheck at compile-time
 Chronologic VCS simulator copyright 1991-2021
 Contains Synopsys proprietary information.
-Compiler version S-2021.09_Full64; Runtime version S-2021.09_Full64;  Dec 12 20:45 2024
-*Verdi* Loading libsscore_vcs202109.so
-FSDB Dumper for VCS, Release Verdi_S-2021.09, Linux x86_64/64bit, 08/29/2021
-(C) 1996 - 2021 by Synopsys, Inc.
-*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-*Verdi* : Create FSDB file 'ed25519.fsdb'
-*Verdi* : Begin traversing the scope (testbench), layer (0).
-*Verdi* : Enable +mda dumping.
-*Verdi* : End of traversing.
---------------------START--------------------
+Compiler version S-2021.09_Full64; Runtime version S-2021.09_Full64;  Dec 14 03:15 2024
 **********************************************
+==> Send Input Done...
+==> Waiting Calculation...
+==> Receive Output Done...
+----------------------------------------------
                  PAT 0 PASS!                 
 ----------------------------------------------
-Simulation Cycle:  26833, Time:   134165.00 ns
+Simulation Cycle:  26831, Time:   134155.00 ns
 **********************************************
-$finish called from file "../00_TESTBED/testbed.sv", line 263.
-$finish at simulation time             13419750
+$finish called from file "../00_TESTBED/testbed.sv", line 246.
+$finish at simulation time             13419500
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 134197500 ps
-CPU Time:      0.470 seconds;       Data structure size:   0.1Mb
-Thu Dec 12 20:45:47 2024
-CPU time: .414 seconds to compile + .224 seconds to elab + .126 seconds to link + .495 seconds in simulation
+Time: 134195000 ps
+CPU Time:      0.280 seconds;       Data structure size:   0.1Mb
+Sat Dec 14 03:15:14 2024
+CPU time: .371 seconds to compile + .229 seconds to elab + .136 seconds to link + .313 seconds in simulation

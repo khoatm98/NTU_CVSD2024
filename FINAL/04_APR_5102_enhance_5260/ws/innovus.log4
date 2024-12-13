@@ -1,0 +1,15 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.13-s100_1, built Fri Mar 4 14:32:31 PST 2022
+Options:	
+Date:		Fri Dec 13 23:10:55 2024
+Host:		cad27 (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (8cores*32cpus*Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz 11264KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[23:10:55.440711] Configured Lic search path (20.02-s004): /usr/cad/cadence/IC/cur/share/license/license.dat:26585@lstc:5280@lshc:5280@lstc:5280@lstn:1717@lstc:
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.

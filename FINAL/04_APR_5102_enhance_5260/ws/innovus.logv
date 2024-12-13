@@ -1,0 +1,666 @@
+[12/13 21:28:09      0s] 
+[12/13 21:28:09      0s] Cadence Innovus(TM) Implementation System.
+[12/13 21:28:09      0s] Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+[12/13 21:28:09      0s] 
+[12/13 21:28:09      0s] Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+[12/13 21:28:09      0s] Options:	
+[12/13 21:28:09      0s] Date:		Fri Dec 13 21:28:09 2024
+[12/13 21:28:09      0s] Host:		cad27 (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (8cores*32cpus*Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz 11264KB)
+[12/13 21:28:09      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[12/13 21:28:09      0s] 
+[12/13 21:28:09      0s] License:
+[12/13 21:28:14      1s] 		invs	Innovus Implementation System	17.1	checkout succeeded
+[12/13 21:28:14      1s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[12/13 21:28:55     22s] @(#)CDS: Innovus v17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+[12/13 21:28:55     22s] @(#)CDS: NanoRoute 17.11-s080_1 NR170721-2155/17_11-UB (database version 2.30, 390.7.1) {superthreading v1.44}
+[12/13 21:28:55     22s] @(#)CDS: AAE 17.11-s034 (64bit) 08/04/2017 (Linux 2.6.18-194.el5)
+[12/13 21:28:55     22s] @(#)CDS: CTE 17.11-s053_1 () Aug  1 2017 23:31:41 ( )
+[12/13 21:28:55     22s] @(#)CDS: SYNTECH 17.11-s012_1 () Jul 21 2017 02:29:12 ( )
+[12/13 21:28:55     22s] @(#)CDS: CPE v17.11-s095
+[12/13 21:28:55     22s] @(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
+[12/13 21:28:55     22s] @(#)CDS: OA 22.50-p063 Fri Feb  3 19:45:13 2017
+[12/13 21:28:55     22s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[12/13 21:28:55     22s] @(#)CDS: RCDB 11.10
+[12/13 21:28:55     22s] --- Running on cad27 (x86_64 w/Linux 3.10.0-1160.el7.x86_64) (8cores*32cpus*Intel(R) Xeon(R) Silver 4110 CPU @ 2.10GHz 11264KB) ---
+[12/13 21:28:56     22s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_56205_cad27_r2k41036_7qEiYc.
+
+[12/13 21:28:56     22s] Change the soft stacksize limit to 0.2%RAM (256 mbytes). Set global soft_stack_size_limit to change the value.
+[12/13 21:28:58     23s] 
+[12/13 21:28:58     23s] **INFO:  MMMC transition support version v31-84 
+[12/13 21:28:58     23s] 
+[12/13 21:28:58     23s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[12/13 21:28:58     23s] <CMD> suppressMessage ENCEXT-2799
+[12/13 21:28:58     23s] <CMD> getDrawView
+[12/13 21:28:58     23s] <CMD> loadWorkspace -name Physical
+[12/13 21:28:59     23s] <CMD> win
+[12/13 21:30:01     28s] **ERROR: (IMPCCOPT-2065):	The command 'set_db' can only be used for keyless properties until a design is loaded. The property 'cts_buffer_cells' is keyed.
+**ERROR: (IMPCCOPT-2065):	The command 'set_db' can only be used for keyless properties until a design is loaded. The property 'cts_inverter_cells' is keyed.
+**ERROR: (IMPCCOPT-2065):	The command 'set_db' can only be used for keyless properties until a design is loaded. The property 'cts_clock_gating_cells' is keyed.
+**ERROR: (IMPCCOPT-2065):	The command 'set_db' can only be used for keyless properties until a design is loaded. The property 'cts_use_inverters' is keyed.
+**ERROR: (IMPCCOPT-2065):	The command 'set_db' can only be used for keyless properties until a design is loaded. The property 'cts_target_max_transition_time' is keyed.
+**ERROR: (IMPCCOPT-2065):	The command 'set_db' can only be used for keyless properties until a design is loaded. The property 'cts_target_max_transition_time_trunk' is keyed.
+**ERROR: (IMPCCOPT-2065):	The command 'set_db' can only be used for keyless properties until a design is loaded. The property 'cts_target_max_transition_time_leaf' is keyed.
+**ERROR: (IMPCCOPT-2065):	The command 'set_db' can only be used for keyless properties until a design is loaded. The property 'cts_target_skew' is keyed.
+<CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+[12/13 21:30:09     29s] <CMD> set conf_qxconf_file NULL
+[12/13 21:30:09     29s] <CMD> set conf_qxlib_file NULL
+[12/13 21:30:09     29s] <CMD> set defHierChar /
+[12/13 21:30:09     29s] <CMD> set distributed_client_message_echo 1
+[12/13 21:30:09     29s] <CMD> set distributed_mmmc_disable_reports_auto_redirection 0
+[12/13 21:30:09     29s] <CMD> set eco_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[12/13 21:30:09     29s] <CMD> set enc_enable_print_mode_command_reset_options 1
+[12/13 21:30:09     29s] <CMD> set init_gnd_net VSS
+[12/13 21:30:09     29s] <CMD> set init_lef_file {../library/lef/tsmc13fsg_8lm_cic.lef ../library/lef/antenna_8.lef}
+[12/13 21:30:09     29s] <CMD> set init_mmmc_file ../design_data/MMMC/mmmc.view
+[12/13 21:30:09     29s] <CMD> set init_pwr_net VDD
+[12/13 21:30:09     29s] <CMD> set init_top_cell ed25519
+[12/13 21:30:09     29s] <CMD> set init_verilog ../design_data/core_design/ed25519_syn.v
+[12/13 21:30:09     29s] <CMD> set latch_time_borrow_mode max_borrow
+[12/13 21:30:09     29s] <CMD> set pegDefaultResScaleFactor 1
+[12/13 21:30:09     29s] <CMD> set pegDetailResScaleFactor 1
+[12/13 21:30:09     29s] <CMD> set report_inactive_arcs_format {from to when arc_type sense reason}
+[12/13 21:30:09     29s] <CMD> set soft_stack_size_limit 96
+[12/13 21:30:09     29s] <CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[12/13 21:31:46     36s] <CMD> set init_verilog ../design_data/core_design/ed25519_syn5102_enhance.v
+[12/13 21:31:46     36s] <CMD> init_design
+[12/13 21:31:46     36s] #% Begin Load MMMC data ... (date=12/13 21:31:46, mem=434.1M)
+[12/13 21:31:46     36s] **ERROR: (TCLCMD-989):	cannot open SDC file '../design_data/core_design/ed25519_syn.sdc' for mode 'func_mode'
+<CMD> init_design
+[12/13 21:33:28     42s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/13 21:33:28     42s] % Begin Load MMMC data ... (date=12/13 21:33:28, mem=434.1M)
+[12/13 21:33:28     42s] Extraction setup Delayed 
+[12/13 21:33:28     42s] % End Load MMMC data ... (date=12/13 21:33:28, total cpu=0:00:00.0, real=0:00:00.0, peak res=434.2M, current mem=434.2M)
+[12/13 21:33:28     42s] 
+[12/13 21:33:28     42s] Loading LEF file ../library/lef/tsmc13fsg_8lm_cic.lef ...
+[12/13 21:33:28     42s] Set DBUPerIGU to M2 pitch 920.
+[12/13 21:33:29     43s] 
+[12/13 21:33:29     43s] Loading LEF file ../library/lef/antenna_8.lef ...
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'METAL1' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'METAL2' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'METAL3' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'METAL4' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'METAL5' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'METAL6' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'METAL7' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'METAL8' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'VIA12' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'VIA23' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'VIA34' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'VIA45' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'VIA56' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'VIA67' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-119):	LAYER 'VIA78' has been found in the database. Its content except ANTENNA* data will be ignored.
+[12/13 21:33:29     43s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[12/13 21:33:29     43s] Type 'man IMPLF-119' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PDC0102CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PDC0204CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PDC0408CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PDC1216CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PDS0102CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PDS0204CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PDS0408CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PDS1216CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PRC0102CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PRC0204CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PRC0408CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PRC1216CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PRS0102CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PRS0204CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PRS0408CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PRS1216CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PVDD1CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PVSS1CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PVSS3CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (IMPLF-44):	Macro 'PXOE1CDG' has no SIZE statement or a zero SIZE
+[12/13 21:33:29     43s] statement and it is a class CORE macro so it needs a correct SIZE. There
+[12/13 21:33:29     43s] is no SITE statement, so a useful SIZE cannot be computed, so this macro
+[12/13 21:33:29     43s] is not loaded in the Innovus database and cannot be used in the
+[12/13 21:33:29     43s] netlist.
+[12/13 21:33:29     43s] **WARN: (EMS-27):	Message (IMPLF-44) has exceeded the current message display limit of 20.
+[12/13 21:33:29     43s] To increase the message display limit, refer to the product command reference manual.
+[12/13 21:33:29     43s] WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file ../library/lef/antenna_8.lef at line 606.
+[12/13 21:33:29     43s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[12/13 21:33:29     43s] Type 'man IMPLF-200' for more detail.
+[12/13 21:33:29     43s] 
+[12/13 21:33:29     43s] viaInitial starts at Fri Dec 13 21:33:29 2024
+**WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM1 GENERATE.
+[12/13 21:33:29     43s] Type 'man IMPPP-557' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM2 GENERATE.
+[12/13 21:33:29     43s] Type 'man IMPPP-557' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM3 GENERATE.
+[12/13 21:33:29     43s] Type 'man IMPPP-557' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM4 GENERATE.
+[12/13 21:33:29     43s] Type 'man IMPPP-557' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM5 GENERATE.
+[12/13 21:33:29     43s] Type 'man IMPPP-557' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM6 GENERATE.
+[12/13 21:33:29     43s] Type 'man IMPPP-557' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM7 GENERATE.
+[12/13 21:33:29     43s] Type 'man IMPPP-557' for more detail.
+[12/13 21:33:29     43s] **WARN: (IMPPP-557):	A single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. Remove this statement from the technology file: VIARULE TURNM8 GENERATE.
+[12/13 21:33:29     43s] Type 'man IMPPP-557' for more detail.
+[12/13 21:33:29     43s] viaInitial ends at Fri Dec 13 21:33:29 2024
+Loading view definition file from ../design_data/MMMC/mmmc.view
+[12/13 21:33:29     43s] Reading lib_max timing library '/home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib' ...
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO0' of cell 'ACCSHCINX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO1' of cell 'ACCSHCINX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO0' of cell 'ACCSHCINX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO1' of cell 'ACCSHCINX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO0N' of cell 'ACCSHCONX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO1N' of cell 'ACCSHCONX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO0N' of cell 'ACCSHCONX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO1N' of cell 'ACCSHCONX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO0N' of cell 'ACCSIHCONX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO1N' of cell 'ACCSIHCONX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO0N' of cell 'ACCSIHCONX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO1N' of cell 'ACCSIHCONX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ACHCINX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ACHCINX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CON' of cell 'ACHCONX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CON' of cell 'ACHCONX4' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDFHX1' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDFHX1' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'S' of cell 'ADDFHX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'CO' of cell 'ADDFHX2' is not defined in the library. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:29     43s] Message <TECHLIB-436> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[12/13 21:33:31     44s] **WARN: (TECHLIB-302):	No function defined for cell 'HOLDX1'. The cell will only be used for analysis. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/slow.lib)
+[12/13 21:33:31     44s] Read 527 cells in library 'slow' 
+[12/13 21:33:31     44s] Reading lib_min timing library '/home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/fast.lib' ...
+[12/13 21:33:33     45s] **WARN: (TECHLIB-302):	No function defined for cell 'HOLDX1'. The cell will only be used for analysis. (File /home/raid7_2/user12/r2k41036/FINAL/04_APR_5102_enhance/library/lib/fast.lib)
+[12/13 21:33:33     45s] Read 527 cells in library 'fast' 
+[12/13 21:33:33     45s] *** End library_loading (cpu=0.04min, real=0.07min, mem=16.9M, fe_cpu=0.76min, fe_real=5.42min, fe_mem=546.8M) ***
+[12/13 21:33:34     45s] % Begin Load netlist data ... (date=12/13 21:33:33, mem=509.8M)
+[12/13 21:33:34     45s] *** Begin netlist parsing (mem=546.8M) ***
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3XL' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3XL' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3X4' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3X4' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3X2' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3X2' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3X1' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3X1' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2XL' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2XL' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2X4' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2X4' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2X2' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2X2' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2X1' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XNOR3XL' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XNOR3XL' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XNOR3X4' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XNOR3X4' is defined in LEF but not in the timing library.
+[12/13 21:33:34     45s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[12/13 21:33:34     45s] To increase the message display limit, refer to the product command reference manual.
+[12/13 21:33:34     45s] Created 527 new cells from 2 timing libraries.
+[12/13 21:33:34     45s] Reading netlist ...
+[12/13 21:33:34     45s] Backslashed names will retain backslash and a trailing blank character.
+[12/13 21:33:34     46s] Reading verilog netlist '../design_data/core_design/ed25519_syn.v'
+[12/13 21:33:35     46s] 
+[12/13 21:33:35     46s] *** Memory Usage v#1 (Current mem = 578.777M, initial mem = 187.695M) ***
+[12/13 21:33:35     46s] *** End netlist parsing (cpu=0:00:01.1, real=0:00:01.0, mem=578.8M) ***
+[12/13 21:33:35     46s] % End Load netlist data ... (date=12/13 21:33:35, total cpu=0:00:01.1, real=0:00:01.0, peak res=509.8M, current mem=496.2M)
+[12/13 21:33:35     46s] Set top cell to ed25519.
+[12/13 21:33:36     47s] Hooked 1054 DB cells to tlib cells.
+[12/13 21:33:36     47s] Starting recursive module instantiation check.
+[12/13 21:33:36     47s] No recursion found.
+[12/13 21:33:36     47s] Building hierarchical netlist for Cell ed25519 ...
+[12/13 21:33:36     47s] *** Netlist is unique.
+[12/13 21:33:36     47s] ** info: there are 1063 modules.
+[12/13 21:33:36     47s] ** info: there are 73893 stdCell insts.
+[12/13 21:33:36     47s] 
+[12/13 21:33:36     47s] *** Memory Usage v#1 (Current mem = 651.449M, initial mem = 187.695M) ***
+[12/13 21:33:37     47s] Generated pitch 0.41 in METAL7 is different from 0.615 defined in technology file in preferred direction.
+[12/13 21:33:37     48s] Set Default Net Delay as 1000 ps.
+[12/13 21:33:37     48s] Set Default Net Load as 0.5 pF. 
+[12/13 21:33:37     48s] Set Default Input Pin Transition as 0.1 ps.
+[12/13 21:33:37     48s] Extraction setup Delayed 
+[12/13 21:33:37     48s] *Info: initialize multi-corner CTS.
+[12/13 21:33:38     48s] Reading timing constraints file '../design_data/core_design/ed25519_syn.sdc' ...
+[12/13 21:33:38     48s] Current (total cpu=0:00:48.7, real=0:05:29, peak res=664.4M, current mem=664.4M)
+[12/13 21:33:38     48s] **WARN: (TCLCMD-1014):	The SDC set_operating_conditions assertion is not supported. Please use the create_delay_corner command to specify the desired operating enviroment. Use the setAnalysisMode command to control single vs. bestCase/worstCase vs. on-chip variation timing analysis. (File ../design_data/core_design/ed25519_syn.sdc, Line 9).
+[12/13 21:33:38     48s] 
+[12/13 21:33:38     48s] INFO (CTE): Reading of timing constraints file ../design_data/core_design/ed25519_syn.sdc completed, with 1 WARNING
+[12/13 21:33:38     48s] WARNING (CTE-25): Line: 8 of File ../design_data/core_design/ed25519_syn.sdc : Skipped unsupported command: set_units
+[12/13 21:33:38     48s] 
+[12/13 21:33:38     48s] 
+[12/13 21:33:38     48s] Ending "Constraint file reading stats" (total cpu=0:00:00.3, real=0:00:00.0, peak res=682.3M, current mem=682.3M)
+[12/13 21:33:38     48s] Current (total cpu=0:00:49.0, real=0:05:29, peak res=682.3M, current mem=682.3M)
+[12/13 21:33:38     48s] Creating Cell Server ...(0, 1, 1, 1)
+[12/13 21:33:38     49s] Summary for sequential cells identification: 
+[12/13 21:33:38     49s]   Identified SBFF number: 112
+[12/13 21:33:38     49s]   Identified MBFF number: 0
+[12/13 21:33:38     49s]   Identified SB Latch number: 0
+[12/13 21:33:38     49s]   Identified MB Latch number: 0
+[12/13 21:33:38     49s]   Not identified SBFF number: 8
+[12/13 21:33:38     49s]   Not identified MBFF number: 0
+[12/13 21:33:38     49s]   Not identified SB Latch number: 0
+[12/13 21:33:38     49s]   Not identified MB Latch number: 0
+[12/13 21:33:38     49s]   Number of sequential cells which are not FFs: 34
+[12/13 21:33:38     49s] Total number of combinational cells: 363
+[12/13 21:33:38     49s] Total number of sequential cells: 154
+[12/13 21:33:38     49s] Total number of tristate cells: 10
+[12/13 21:33:38     49s] Total number of level shifter cells: 0
+[12/13 21:33:38     49s] Total number of power gating cells: 0
+[12/13 21:33:38     49s] Total number of isolation cells: 0
+[12/13 21:33:38     49s] Total number of power switch cells: 0
+[12/13 21:33:38     49s] Total number of pulse generator cells: 0
+[12/13 21:33:38     49s] Total number of always on buffers: 0
+[12/13 21:33:38     49s] Total number of retention cells: 0
+[12/13 21:33:38     49s] List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 BUFX3 CLKBUFX2 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+[12/13 21:33:38     49s] Total number of usable buffers: 16
+[12/13 21:33:38     49s] List of unusable buffers:
+[12/13 21:33:38     49s] Total number of unusable buffers: 0
+[12/13 21:33:38     49s] List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX3 CLKINVX4 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+[12/13 21:33:38     49s] Total number of usable inverters: 19
+[12/13 21:33:38     49s] List of unusable inverters: RFRDX2 RFRDX1 RFRDX4
+[12/13 21:33:38     49s] Total number of unusable inverters: 3
+[12/13 21:33:38     49s] List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+[12/13 21:33:38     49s] Total number of identified usable delay cells: 8
+[12/13 21:33:38     49s] List of identified unusable delay cells:
+[12/13 21:33:38     49s] Total number of identified unusable delay cells: 0
+[12/13 21:33:38     49s] Creating Cell Server, finished. 
+[12/13 21:33:38     49s] 
+[12/13 21:33:38     49s] Deleting Cell Server ...
+[12/13 21:33:38     49s] Patterns Extraction called explicitly through PreRoutePatternsIfNeeded call 
+[12/13 21:33:38     49s] Extraction setup Started 
+[12/13 21:33:38     49s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[12/13 21:33:38     49s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for preRoute and postRoute extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for preRoute and postRoute (effort level medium/high/signoff) extraction engines.
+[12/13 21:33:38     49s] Type 'man IMPEXT-6202' for more detail.
+[12/13 21:33:38     49s] Reading Capacitance Table File ../library/captable/tsmc013.capTbl ...
+[12/13 21:33:38     49s] Cap table was created using Encounter 04.20-s274_1.
+[12/13 21:33:38     49s] Process name: t013s8ml_fsg.
+[12/13 21:33:38     49s] Importing multi-corner RC tables ... 
+[12/13 21:33:38     49s] Summary of Active RC-Corners : 
+[12/13 21:33:38     49s]  
+[12/13 21:33:38     49s]  Analysis View: av_func_mode_max
+[12/13 21:33:38     49s]     RC-Corner Name        : RC_corner
+[12/13 21:33:38     49s]     RC-Corner Index       : 0
+[12/13 21:33:38     49s]     RC-Corner Temperature : 25 Celsius
+[12/13 21:33:38     49s]     RC-Corner Cap Table   : '../library/captable/tsmc013.capTbl'
+[12/13 21:33:38     49s]     RC-Corner PreRoute Res Factor         : 1
+[12/13 21:33:38     49s]     RC-Corner PreRoute Cap Factor         : 1
+[12/13 21:33:38     49s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[12/13 21:33:38     49s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[12/13 21:33:38     49s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[12/13 21:33:38     49s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[12/13 21:33:38     49s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[12/13 21:33:38     49s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[12/13 21:33:38     49s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[12/13 21:33:38     49s]     RC-Corner Technology file: '../library/tsmc13_8lm.cl/icecaps_8lm.tch'
+[12/13 21:33:38     49s]  
+[12/13 21:33:38     49s]  Analysis View: av_func_mode_min
+[12/13 21:33:38     49s]     RC-Corner Name        : RC_corner
+[12/13 21:33:38     49s]     RC-Corner Index       : 0
+[12/13 21:33:38     49s]     RC-Corner Temperature : 25 Celsius
+[12/13 21:33:38     49s]     RC-Corner Cap Table   : '../library/captable/tsmc013.capTbl'
+[12/13 21:33:38     49s]     RC-Corner PreRoute Res Factor         : 1
+[12/13 21:33:38     49s]     RC-Corner PreRoute Cap Factor         : 1
+[12/13 21:33:38     49s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[12/13 21:33:38     49s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[12/13 21:33:38     49s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[12/13 21:33:38     49s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[12/13 21:33:38     49s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[12/13 21:33:38     49s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[12/13 21:33:38     49s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[12/13 21:33:38     49s]     RC-Corner Technology file: '../library/tsmc13_8lm.cl/icecaps_8lm.tch'
+[12/13 21:33:38     49s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/13 21:36:22     60s] <CMD> init_design
+[12/13 21:36:22     60s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/13 21:36:22     60s] **WARN: (IMPSYT-7329):	Cannot load design with init_design, after design is already in memory.  This command is skipped.
+[12/13 21:36:22     60s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[12/13 21:36:35     61s] <CMD> set init_verilog ../design_data/core_design/ed25519_syn.v
+[12/13 21:38:21     68s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[12/13 21:38:21     68s] <CMD> suppressMessage ENCEXT-2799
+[12/13 21:38:21     68s] <CMD> getDrawView
+[12/13 21:38:21     68s] <CMD> loadWorkspace -name Physical
+[12/13 21:38:22     68s] <CMD> setMultiCpuUsage -localCpu 16
+[12/13 21:38:22     68s] <CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+[12/13 21:38:22     68s] <CMD> set conf_qxconf_file NULL
+[12/13 21:38:22     68s] <CMD> set conf_qxlib_file NULL
+[12/13 21:38:22     68s] <CMD> set defHierChar /
+[12/13 21:38:22     68s] <CMD> set distributed_client_message_echo 1
+[12/13 21:38:22     68s] <CMD> set distributed_mmmc_disable_reports_auto_redirection 0
+[12/13 21:38:22     68s] <CMD> set eco_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[12/13 21:38:22     68s] <CMD> set enc_enable_print_mode_command_reset_options 1
+[12/13 21:38:22     68s] <CMD> set init_gnd_net VSS
+[12/13 21:38:22     68s] <CMD> set init_lef_file {../library/lef/tsmc13fsg_8lm_cic.lef ../library/lef/antenna_8.lef}
+[12/13 21:38:22     68s] <CMD> set init_mmmc_file ../design_data/MMMC/mmmc.view
+[12/13 21:38:22     68s] <CMD> set init_pwr_net VDD
+[12/13 21:38:22     68s] <CMD> set init_top_cell ed25519
+[12/13 21:38:22     68s] <CMD> set init_verilog ../design_data/core_design/ed25519_syn.v
+[12/13 21:38:22     68s] <CMD> set latch_time_borrow_mode max_borrow
+[12/13 21:38:22     68s] <CMD> set pegDefaultResScaleFactor 1
+[12/13 21:38:22     68s] <CMD> set pegDetailResScaleFactor 1
+[12/13 21:38:22     68s] <CMD> set report_inactive_arcs_format {from to when arc_type sense reason}
+[12/13 21:38:22     68s] <CMD> set soft_stack_size_limit 96
+[12/13 21:38:24     68s] <CMD> set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+[12/13 21:38:32     69s] <CMD> init_design
+[12/13 21:38:32     69s] report_message: '-start_cmd/-end_cmd' can not be nested. Retire previous calls.
+[12/13 21:38:32     69s] **WARN: (IMPSYT-7329):	Cannot load design with init_design, after design is already in memory.  This command is skipped.
+[12/13 21:38:32     69s] 
+[12/13 21:38:32     69s] *** Summary of all messages that are not suppressed in this session:
+[12/13 21:38:32     69s] Severity  ID               Count  Summary                                  
+[12/13 21:38:32     69s] WARNING   IMPSYT-7329          1  Cannot load design with init_design, aft...
+[12/13 21:38:32     69s] *** Message Summary: 1 warning(s), 0 error(s)
+[12/13 21:38:32     69s] 
+[12/13 21:38:32     69s] <CMD> globalNetConnect VDD -type pgpin -pin VDD -inst *
+[12/13 21:38:33     69s] <CMD> globalNetConnect VDD -type net -net VDD
+[12/13 21:38:33     69s] <CMD> globalNetConnect VSS -type pgpin -pin VSS -inst *
+[12/13 21:38:40     69s] <CMD> globalNetConnect VSS -type net -net VSS
+[12/13 21:38:48     70s] <CMD> saveDesign DB/init
+[12/13 21:38:48     70s] % Begin save design ... (date=12/13 21:38:48, mem=790.9M)
+[12/13 21:38:49     70s] % Begin Save netlist data ... (date=12/13 21:38:48, mem=791.5M)
+[12/13 21:38:49     70s] Writing Binary DB to DB/init.dat/ed25519.v.bin in single-threaded mode...
+[12/13 21:38:49     70s] % End Save netlist data ... (date=12/13 21:38:49, total cpu=0:00:00.4, real=0:00:00.0, peak res=799.2M, current mem=799.2M)
+[12/13 21:38:49     70s] % Begin Save AAE data ... (date=12/13 21:38:49, mem=799.2M)
+[12/13 21:38:49     70s] Saving AAE Data ...
+[12/13 21:38:49     70s] % End Save AAE data ... (date=12/13 21:38:49, total cpu=0:00:00.0, real=0:00:00.0, peak res=799.2M, current mem=799.2M)
+[12/13 21:38:49     70s] % Begin Save clock tree data ... (date=12/13 21:38:49, mem=799.8M)
+[12/13 21:38:50     70s] % End Save clock tree data ... (date=12/13 21:38:49, total cpu=0:00:00.0, real=0:00:01.0, peak res=799.9M, current mem=799.9M)
+[12/13 21:38:50     70s] Saving preference file DB/init.dat/gui.pref.tcl ...
+[12/13 21:38:50     70s] Saving mode setting ...
+[12/13 21:38:50     70s] Saving global file ...
+[12/13 21:38:50     70s] Saving symbol-table file in separate thread ...
+[12/13 21:38:50     70s] Saving Drc markers ...
+[12/13 21:38:50     70s] ... No Drc file written since there is no markers found.
+[12/13 21:38:50     71s] % Begin Save routing data ... (date=12/13 21:38:50, mem=801.0M)
+[12/13 21:38:50     71s] Saving route file ...
+[12/13 21:38:51     71s] *** Completed saveRoute (cpu=0:00:00.3 real=0:00:01.0 mem=996.0M) ***
+[12/13 21:38:51     71s] % End Save routing data ... (date=12/13 21:38:51, total cpu=0:00:00.4, real=0:00:01.0, peak res=801.6M, current mem=801.6M)
+[12/13 21:38:51     71s] Saving floorplan file in separate thread ...
+[12/13 21:38:51     71s] Saving PG Conn file in separate thread ...
+[12/13 21:38:51     71s] Saving placement file in separate thread ...
+[12/13 21:38:51     71s] TAT_INFO: savePGConnFile REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:38:51     71s] ** Saving stdCellPlacement_binary (version# 1) ...
+[12/13 21:38:51     71s] *** Completed savePlace (cpu=0:00:00.1 real=0:00:00.0 mem=1020.0M) ***
+[12/13 21:38:51     71s] TAT_INFO: ::saveFPlan REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:38:51     71s] TAT_INFO: ::savePlace REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:38:51     71s] Saving property file DB/init.dat/ed25519.prop
+[12/13 21:38:51     71s] *** Completed saveProperty (cpu=0:00:00.1 real=0:00:00.0 mem=1020.0M) ***
+[12/13 21:38:51     71s] % Begin Save power constraints data ... (date=12/13 21:38:51, mem=805.0M)
+[12/13 21:38:51     71s] % End Save power constraints data ... (date=12/13 21:38:51, total cpu=0:00:00.0, real=0:00:00.0, peak res=805.0M, current mem=805.0M)
+[12/13 21:38:52     71s] TAT_INFO: ::db::saveSymbolTable REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:38:52     71s] **ERROR: (IMPIMEX-7003):	QX library database NULL in the config file not found. File not copied to the testcase directory.
+[12/13 21:38:52     71s] **ERROR: (IMPIMEX-7003):	QX Config File NULL in the config file not found. File not copied to the testcase directory.
+[12/13 21:38:53     71s] Generated self-contained design init.dat
+[12/13 21:38:53     72s] % End save design ... (date=12/13 21:38:53, total cpu=0:00:01.7, real=0:00:05.0, peak res=805.2M, current mem=805.2M)
+[12/13 21:38:53     72s] 
+[12/13 21:38:53     72s] *** Summary of all messages that are not suppressed in this session:
+[12/13 21:38:53     72s] Severity  ID               Count  Summary                                  
+[12/13 21:38:53     72s] ERROR     IMPIMEX-7003         2  %s %s in the config file not found. File...
+[12/13 21:38:53     72s] *** Message Summary: 0 warning(s), 2 error(s)
+[12/13 21:38:53     72s] 
+[12/13 21:38:53     72s] <CMD> setDesignMode -process 130
+[12/13 21:38:53     72s] Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+[12/13 21:38:53     72s] 	These values will be used by all post-route extraction engines, including tQuantus, IQRC and Quantus QRC extraction.
+[12/13 21:38:53     72s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[12/13 21:38:53     72s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+[12/13 21:38:53     72s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+[12/13 21:38:53     72s] Updating process node dependent CCOpt properties for the 130nm process node.
+[12/13 21:38:53     72s] <CMD> floorPlan -site TSM13SITE -r 1 0.6 6 6 6 6
+[12/13 21:38:53     72s] Generated pitch 0.41 in METAL7 is different from 0.615 defined in technology file in preferred direction.
+[12/13 21:38:53     72s] **WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+[12/13 21:38:53     72s] <CMD> saveIoFile -locations -temp ed25519.save.io
+[12/13 21:38:53     72s] ** Writing IO pins constraint template file, all existing constraints are ignored.
+[12/13 21:38:53     72s] Dumping FTerm of cell ed25519 to file
+[12/13 21:38:53     72s] <CMD> loadIoFile ed25519.save.io -ECO
+[12/13 21:38:53     72s] Reading IO assignment file "ed25519.save.io" ...
+[12/13 21:38:53     72s] ********************IO ECO summary********************
+[12/13 21:38:53     72s] Number of New Instances:                     	  0
+[12/13 21:38:53     72s] Number of Moved Instances:                   	  0
+[12/13 21:38:53     72s] Number of Rotated Instances:                 	  0
+[12/13 21:38:53     72s] Number of Placement Status Changed Instances:	  0
+[12/13 21:38:53     72s] Number of Deleted Instances:                  	  0
+[12/13 21:38:53     72s] Number of New Bumps:                         	  0
+[12/13 21:38:53     72s] Number of Moved Bumps:                       	  0
+[12/13 21:38:53     72s] Number of Assignment Changed Bumps:          	  0
+[12/13 21:38:53     72s] Number of New Fixed Bumps:                   	  0
+[12/13 21:38:53     72s] Number of New unFixed Bumps:                 	  0
+[12/13 21:38:53     72s] Number of Placement Status Changed Bumps:    	  0
+[12/13 21:38:53     72s] Number of Deleted Bumps:                      	  0
+[12/13 21:40:03     76s] <CMD> init_design
+[12/13 21:40:03     76s] **WARN: (IMPSYT-7329):	Cannot load design with init_design, after design is already in memory.  This command is skipped.
+[12/13 21:40:03     76s] 
+[12/13 21:40:03     76s] *** Summary of all messages that are not suppressed in this session:
+[12/13 21:40:03     76s] Severity  ID               Count  Summary                                  
+[12/13 21:40:03     76s] WARNING   IMPSYT-7329          1  Cannot load design with init_design, aft...
+[12/13 21:40:03     76s] *** Message Summary: 1 warning(s), 0 error(s)
+[12/13 21:40:03     76s] 
+[12/13 21:40:03     76s] <CMD> globalNetConnect VDD -type pgpin -pin VDD -inst *
+[12/13 21:40:03     76s] <CMD> globalNetConnect VDD -type net -net VDD
+[12/13 21:40:03     76s] <CMD> globalNetConnect VSS -type pgpin -pin VSS -inst *
+[12/13 21:40:03     76s] <CMD> globalNetConnect VSS -type net -net VSS
+[12/13 21:40:03     76s] <CMD> saveDesign DB/init
+[12/13 21:40:03     76s] % Begin save design ... (date=12/13 21:40:03, mem=805.9M)
+[12/13 21:40:03     76s] % Begin Save netlist data ... (date=12/13 21:40:03, mem=805.9M)
+[12/13 21:40:03     76s] Writing Binary DB to DB/init.dat.tmp/ed25519.v.bin in single-threaded mode...
+[12/13 21:40:04     77s] % End Save netlist data ... (date=12/13 21:40:04, total cpu=0:00:00.4, real=0:00:01.0, peak res=810.2M, current mem=810.2M)
+[12/13 21:40:04     77s] % Begin Save AAE data ... (date=12/13 21:40:04, mem=810.2M)
+[12/13 21:40:04     77s] Saving AAE Data ...
+[12/13 21:40:04     77s] % End Save AAE data ... (date=12/13 21:40:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=810.2M, current mem=810.2M)
+[12/13 21:40:04     77s] % Begin Save clock tree data ... (date=12/13 21:40:04, mem=810.2M)
+[12/13 21:40:04     77s] % End Save clock tree data ... (date=12/13 21:40:04, total cpu=0:00:00.0, real=0:00:00.0, peak res=810.2M, current mem=810.2M)
+[12/13 21:40:04     77s] Saving preference file DB/init.dat.tmp/gui.pref.tcl ...
+[12/13 21:40:04     77s] Saving mode setting ...
+[12/13 21:40:04     77s] Saving global file ...
+[12/13 21:40:04     77s] Saving symbol-table file in separate thread ...
+[12/13 21:40:04     77s] Saving Drc markers ...
+[12/13 21:40:04     77s] ... No Drc file written since there is no markers found.
+[12/13 21:40:04     77s] % Begin Save routing data ... (date=12/13 21:40:04, mem=810.3M)
+[12/13 21:40:04     77s] Saving route file ...
+[12/13 21:40:05     77s] *** Completed saveRoute (cpu=0:00:00.3 real=0:00:01.0 mem=1045.1M) ***
+[12/13 21:40:05     77s] % End Save routing data ... (date=12/13 21:40:05, total cpu=0:00:00.4, real=0:00:01.0, peak res=810.9M, current mem=810.9M)
+[12/13 21:40:05     77s] Saving floorplan file in separate thread ...
+[12/13 21:40:05     77s] Saving PG Conn file in separate thread ...
+[12/13 21:40:05     77s] Saving placement file in separate thread ...
+[12/13 21:40:05     77s] ** Saving stdCellPlacement_binary (version# 1) ...
+[12/13 21:40:05     77s] TAT_INFO: savePGConnFile REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:40:05     77s] *** Completed savePlace (cpu=0:00:00.0 real=0:00:00.0 mem=1045.1M) ***
+[12/13 21:40:05     77s] TAT_INFO: ::saveFPlan REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:40:05     77s] TAT_INFO: ::savePlace REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:40:05     77s] Saving property file DB/init.dat.tmp/ed25519.prop
+[12/13 21:40:06     78s] *** Completed saveProperty (cpu=0:00:00.1 real=0:00:01.0 mem=1045.1M) ***
+[12/13 21:40:06     78s] % Begin Save power constraints data ... (date=12/13 21:40:06, mem=811.4M)
+[12/13 21:40:06     78s] % End Save power constraints data ... (date=12/13 21:40:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=811.4M, current mem=811.4M)
+[12/13 21:40:06     78s] TAT_INFO: ::db::saveSymbolTable REAL = 1 : CPU = 0 : MEM = 0.
+[12/13 21:40:06     78s] **ERROR: (IMPIMEX-7003):	QX library database NULL in the config file not found. File not copied to the testcase directory.
+[12/13 21:40:06     78s] **ERROR: (IMPIMEX-7003):	QX Config File NULL in the config file not found. File not copied to the testcase directory.
+[12/13 21:40:07     78s] Generated self-contained design init.dat.tmp
+[12/13 21:40:07     78s] % End save design ... (date=12/13 21:40:07, total cpu=0:00:01.6, real=0:00:04.0, peak res=811.4M, current mem=811.4M)
+[12/13 21:40:07     78s] 
+[12/13 21:40:07     78s] *** Summary of all messages that are not suppressed in this session:
+[12/13 21:40:07     78s] Severity  ID               Count  Summary                                  
+[12/13 21:40:07     78s] ERROR     IMPIMEX-7003         2  %s %s in the config file not found. File...
+[12/13 21:40:07     78s] *** Message Summary: 0 warning(s), 2 error(s)
+[12/13 21:40:07     78s] 
+[12/13 21:40:07     78s] <CMD> setDesignMode -process 130
+[12/13 21:40:07     78s] Applying the recommended capacitance filtering threshold values for 130nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.4.
+[12/13 21:40:07     78s] 	These values will be used by all post-route extraction engines, including tQuantus, IQRC and Quantus QRC extraction.
+[12/13 21:40:07     78s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[12/13 21:40:07     78s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+[12/13 21:40:07     78s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+[12/13 21:40:07     78s] Updating process node dependent CCOpt properties for the 130nm process node.
+[12/13 21:40:07     78s] <CMD> floorPlan -site TSM13SITE -r 1 0.6 6 6 6 6
+[12/13 21:40:08     78s] Generated pitch 0.41 in METAL7 is different from 0.615 defined in technology file in preferred direction.
+[12/13 21:40:08     78s] <CMD> saveIoFile -locations -temp ed25519.save.io
+[12/13 21:40:08     78s] ** Writing IO pins constraint template file, all existing constraints are ignored.
+[12/13 21:40:08     78s] Dumping FTerm of cell ed25519 to file
+[12/13 21:40:08     78s] <CMD> loadIoFile ed25519.save.io -ECO
+[12/13 21:40:08     78s] Reading IO assignment file "ed25519.save.io" ...
+[12/13 21:40:08     78s] ********************IO ECO summary********************
+[12/13 21:40:08     78s] Number of New Instances:                     	  0
+[12/13 21:40:08     78s] Number of Moved Instances:                   	  0
+[12/13 21:40:08     78s] Number of Rotated Instances:                 	  0
+[12/13 21:40:08     78s] Number of Placement Status Changed Instances:	  0
+[12/13 21:40:08     78s] Number of Deleted Instances:                  	  0
+[12/13 21:40:08     78s] Number of New Bumps:                         	  0
+[12/13 21:40:08     78s] Number of Moved Bumps:                       	  0
+[12/13 21:40:08     78s] Number of Assignment Changed Bumps:          	  0
+[12/13 21:40:08     78s] Number of New Fixed Bumps:                   	  0
+[12/13 21:40:08     78s] Number of New unFixed Bumps:                 	  0
+[12/13 21:40:08     78s] Number of Placement Status Changed Bumps:    	  0
+[12/13 21:40:08     78s] Number of Deleted Bumps:                      	  0
+[12/13 21:40:08     78s] <CMD> saveDesign DB/floorplan
+[12/13 21:40:08     78s] % Begin save design ... (date=12/13 21:40:08, mem=807.7M)
+[12/13 21:40:08     78s] % Begin Save netlist data ... (date=12/13 21:40:08, mem=807.7M)
+[12/13 21:40:08     78s] Writing Binary DB to DB/floorplan.dat/ed25519.v.bin in single-threaded mode...
+[12/13 21:40:09     79s] % End Save netlist data ... (date=12/13 21:40:09, total cpu=0:00:00.4, real=0:00:01.0, peak res=810.7M, current mem=810.7M)
+[12/13 21:40:09     79s] % Begin Save AAE data ... (date=12/13 21:40:09, mem=810.7M)
+[12/13 21:40:09     79s] Saving AAE Data ...
+[12/13 21:40:09     79s] % End Save AAE data ... (date=12/13 21:40:09, total cpu=0:00:00.0, real=0:00:00.0, peak res=810.7M, current mem=810.7M)
+[12/13 21:40:09     79s] % Begin Save clock tree data ... (date=12/13 21:40:09, mem=810.7M)
+[12/13 21:40:10     79s] % End Save clock tree data ... (date=12/13 21:40:09, total cpu=0:00:00.0, real=0:00:01.0, peak res=810.7M, current mem=810.7M)
+[12/13 21:40:10     79s] Saving preference file DB/floorplan.dat/gui.pref.tcl ...
+[12/13 21:40:10     79s] Saving mode setting ...
+[12/13 21:40:10     79s] Saving global file ...
+[12/13 21:40:10     79s] Saving symbol-table file in separate thread ...
+[12/13 21:40:10     79s] Saving Drc markers ...
+[12/13 21:40:10     79s] ... No Drc file written since there is no markers found.
+[12/13 21:40:10     79s] % Begin Save routing data ... (date=12/13 21:40:10, mem=810.8M)
+[12/13 21:40:10     79s] Saving route file ...
+[12/13 21:40:10     79s] *** Completed saveRoute (cpu=0:00:00.3 real=0:00:00.0 mem=1047.9M) ***
+[12/13 21:40:10     79s] % End Save routing data ... (date=12/13 21:40:10, total cpu=0:00:00.3, real=0:00:00.0, peak res=811.7M, current mem=811.7M)
+[12/13 21:40:10     79s] Saving floorplan file in separate thread ...
+[12/13 21:40:10     79s] Saving PG Conn file in separate thread ...
+[12/13 21:40:10     79s] Saving placement file in separate thread ...
+[12/13 21:40:10     79s] TAT_INFO: savePGConnFile REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:40:11     79s] ** Saving stdCellPlacement_binary (version# 1) ...
+[12/13 21:40:11     79s] *** Completed savePlace (cpu=0:00:00.0 real=0:00:01.0 mem=1047.9M) ***
+[12/13 21:40:11     80s] TAT_INFO: ::saveFPlan REAL = 1 : CPU = 0 : MEM = 0.
+[12/13 21:40:11     80s] TAT_INFO: ::savePlace REAL = 1 : CPU = 0 : MEM = 0.
+[12/13 21:40:12     80s] Saving property file DB/floorplan.dat/ed25519.prop
+[12/13 21:40:13     80s] **INFO (INTERRUPT): The current script will stop before next command.
+[12/13 21:40:13     80s] **INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+[12/13 21:40:13     80s] *** Completed saveProperty (cpu=0:00:00.1 real=0:00:02.0 mem=1047.9M) ***
+[12/13 21:40:13     80s] % Begin Save power constraints data ... (date=12/13 21:40:13, mem=812.0M)
+[12/13 21:40:13     80s] % End Save power constraints data ... (date=12/13 21:40:13, total cpu=0:00:00.0, real=0:00:00.0, peak res=812.0M, current mem=812.0M)
+[12/13 21:40:14     80s] TAT_INFO: ::db::saveSymbolTable REAL = 0 : CPU = 0 : MEM = 0.
+[12/13 21:40:14     80s] Innovus terminated by user interrupt.
+[12/13 21:40:14     80s] 
+[12/13 21:40:14     80s] *** Memory Usage v#1 (Current mem = 1038.945M, initial mem = 187.695M) ***
+[12/13 21:40:14     80s] 
+[12/13 21:40:14     80s] *** Summary of all messages that are not suppressed in this session:
+[12/13 21:40:14     80s] Severity  ID               Count  Summary                                  
+[12/13 21:40:14     80s] WARNING   IMPLF-44            21  Macro '%s' has no SIZE statement or a ze...
+[12/13 21:40:14     80s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[12/13 21:40:14     80s] WARNING   IMPLF-119           15  LAYER '%s' has been found in the databas...
+[12/13 21:40:14     80s] WARNING   IMPFP-325            1  Floorplan of the design is resized. All ...
+[12/13 21:40:14     80s] WARNING   IMPEXT-6202          1  In addition to the technology file, the ...
+[12/13 21:40:14     80s] WARNING   IMPSYT-7329          3  Cannot load design with init_design, aft...
+[12/13 21:40:14     80s] WARNING   IMPVL-159         1054  Pin '%s' of cell '%s' is defined in LEF ...
+[12/13 21:40:14     80s] WARNING   IMPPP-557            8  A single-layer VIARULE GENERATE for turn...
+[12/13 21:40:14     80s] ERROR     IMPCCOPT-2065        8  The command '%s' can only be used for ke...
+[12/13 21:40:14     80s] ERROR     IMPIMEX-7003         4  %s %s in the config file not found. File...
+[12/13 21:40:14     80s] ERROR     TCLCMD-989           1  cannot open SDC file '%s' for mode '%s'  
+[12/13 21:40:14     80s] WARNING   TCLCMD-1014          1  The SDC set_operating_conditions asserti...
+[12/13 21:40:14     80s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...
+[12/13 21:40:14     80s] WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+[12/13 21:40:14     80s] *** Message Summary: 1127 warning(s), 13 error(s)
+[12/13 21:40:14     80s] 
+[12/13 21:40:14     80s] --- Ending "Innovus" (totcpu=0:01:20, real=0:12:05, mem=1038.9M) ---

@@ -1,0 +1,7 @@
+FORMATVERSION 1
+ADDINST ANTENNA DIODE_1 1 addPortAsNeeded
+INSTTERM A i_in_data[3] -
+ADDINST ANTENNA DIODE_2 1 addPortAsNeeded
+INSTTERM A i_in_data[56] -
+ADDINST ANTENNA DIODE_3 1 addPortAsNeeded
+INSTTERM A FE_OFN1272_modular_mult_inst_b_in_w_79 -

@@ -1,0 +1,3 @@
+source /usr/cad/innovus/CIC/license.cshrc
+source /home/raid7_2/user12/r2k41032/113_1/CVSD/lab/lab5/innovus.cshrc
+innovus -init runInn_TA.tcl 

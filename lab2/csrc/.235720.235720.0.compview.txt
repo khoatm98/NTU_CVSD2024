@@ -1,9 +1,0 @@
-{"vcs1":{"timestamp_begin":1727771273.767934501, "rt":7.00, "ut":3.30, "st":0.69}}
-{"vcselab":{"timestamp_begin":1727771280.933147618, "rt":2.54, "ut":0.48, "st":0.27}}
-{"link":{"timestamp_begin":1727771283.606770808, "rt":0.87, "ut":0.30, "st":0.34}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1727771272.921009923}
-{"VCS_COMP_START_TIME": 1727771272.921009923}
-{"VCS_COMP_END_TIME": 1727771289.631186468}
-{"VCS_USER_OPTIONS": "-full64 +v2k -R +neg_tchk -debug_access+all Lab2_test_alu.v Lab2_alu_s.v /home/raid7_2/course/cvsd/CBDK_IC_Contest_v2.5/Verilog/tsmc13_neg.v"}
-{"vcs1": {"peak_mem": 346736}}
-{"stitch_vcselab": {"peak_mem": 221060}}

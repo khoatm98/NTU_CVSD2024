@@ -1,0 +1,8 @@
+set_db cts_buffer_cells {CLKBUFX20 CLKBUFX16 CLKBUFX12 CLKBUFX8 CLKBUFX6 CLKBUFX4}
+set_db cts_inverter_cells {CLKINVX20 CLKINVX16 CLKINVX12 CLKINVX8 CLKINVX6}
+set_db cts_clock_gating_cells {TLATNTSCAX20 TLATNTSCAX16 TLATNTSCAX12 TLATNTSCAX8 TLATNTSCAX6 TLATNTSCAX4}
+set_db cts_use_inverters true
+set_db cts_target_max_transition_time 600ps
+set_db cts_target_max_transition_time_trunk 1ns
+set_db cts_target_max_transition_time_leaf 600s
+set_db cts_target_skew 300ps

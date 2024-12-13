@@ -26,7 +26,7 @@
     `define SDF_FILE "../02_SYN/Netlist/ed25519_syn.sdf" // Modify your sdf file name
 `elsif POST
     `define SDF
-    `define SDF_FILE "../05_POST/ed25519.sdf"  // Modify your sdf file name
+    `define SDF_FILE "../05_POST/ed25519_01CTS_08.sdf"  // Modify your sdf file name
 `endif
 
 `include "../00_TESTBED/pattern/tb_dat.sv"
